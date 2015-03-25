@@ -97,7 +97,9 @@
 
 同时，我们针对每期最优秀的一些学员，会给与最佳学员的荣誉称号，以及进入百度实习甚至校招的机会。
 
-## Q & A
+## 联系我们
 
 欢迎在项目的issue中提问，我们会在那里进行回答。
-如果有不方便公开讨论的问题，可以通过邮件（ife(at)baidu.com）联系我们
+如果有不方便公开讨论的问题，可以通过邮件（ife(at)baidu.com）联系我们。
+更加欢迎关注我们的[微博 weibo.com/baiduife](http://weibo.com/baiduife){:target="_blank"}
+关注我们的微信公众号：搜索baidu_ife或扫描[二维码](asset/weixin.jpeg){:target="_blank"}
