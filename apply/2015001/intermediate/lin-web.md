@@ -1,5 +1,5 @@
 
-<table border-collapse="collapse" border="1px" id="information">
+<table border-collapse="collapse" id="information">
 <th colspan="2">个人简介</th>
 <tr><td>姓名：</td><td>linqf</td></tr>
 <tr><td>学校：</td><td>中山大学</td></tr>
