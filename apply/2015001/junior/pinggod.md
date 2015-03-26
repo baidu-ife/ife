@@ -17,7 +17,7 @@
 
 （必填）Email：pinggodstudio@gmail.com
 （选填）联系电话：
-（选填）QQ：
+（选填）QQ：798547599
 
 ## 关于前端
 
