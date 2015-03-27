@@ -40,6 +40,6 @@
 
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平  
 写过chrome插件，写过hybird，写过terminal小工具，写过node，仿写过jq(可以忽略),用CI写过整站项目，维护过学校社团服务器。但感觉水平应该处于学生中的中等吧，自我评价为感觉自己有个**瓶颈**，需要细节上的注意去提高。一般常用的东西效果，或者新的前端知识，可能没有接触过，但是可以比较较快入手。
-例如[(这个)[http://polande.com/demo/points/]自己看一个学长写的，在完全没看他代码的情况下，按照效果写的(only chrome,没有做兼容)(代码)[https://github.com/polandeme/demo/blob/gh-pagrs/points/main.js]。
+例如[这个](http://polande.com/demo/points/)自己看一个学长写的，在完全没看他代码的情况下，按照效果写的(only chrome,没有做兼容)【[代码](https://github.com/polandeme/demo/blob/gh-pagrs/points/main.js)】。
 但问题是：一般任务可以完成，但代码欠考虑，优化。希望有人能够指导。
 
