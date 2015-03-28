@@ -86,3 +86,9 @@
  - `css3`动画没有深入的学习和使用。
  - `js`的面向对象，继承，闭包基础不是很扎实。
  - `js`数据结构和算法都不是很了解。
+
+一些作品：
+
+ -春风品牌:http://www.cfppmall.com/
+ -珠海市斗门区非物质文化遗产：http://fy.dmlib.cn/
+ - 珠海一职移动端：http://www.zhyz.net.cn/webyizhi/index.aspl
