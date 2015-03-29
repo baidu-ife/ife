@@ -62,7 +62,7 @@ QQ：459288729
  静态页面结构和普通CSS不成问题。比较熟练原生JavaScript。jQuery用起来无压力，但要翻API。  
  可以快速构建基于MEAN(Mongo/Express/Angular/Node)架构的web App。理解前端的MV*架构。但实际的编码功力还需增强。  
  能够畅快地使用一些前端工具，npm、bower、RequireJS、grunt、chrome控制台。  
- 隔三差五写点技术[blog](www.hywilliam.com)。但多为知识点总结，不深刻。
+ 隔三差五写点技术[blog](http://hywilliam.com/)。但多为知识点总结，不甚深刻。
  
  本来是想选者中级的，但是，对自己衡量再三，觉着主要的软肋症结在实际的项目动手上，所以，不希望因为自己瘦削的项目经验而丧失这么好的一次学习机会。
 
