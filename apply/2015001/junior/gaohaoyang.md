@@ -36,6 +36,6 @@
 
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平   
 
-熟悉html，css，JavaScript基本用法，在不断的学习完善中，了解一些前端框架和工具（BootStrap, jQuery, AngularJS）。最近用jekyll在GitHub上做了一个博客（http://gaohaoyang.github.io），帮同学写过一统计小工具（https://github.com/Gaohaoyang/statistical-tools-for-VMD），GitHub上其他仓库是自己平时学习过程的一些小练习，比如曲边阴影翘边阴影（http://gaohaoyang.github.io/shadow-demo-css3/），幽灵按钮（http://gaohaoyang.github.io/ghost-button-css3/）等。  
+熟悉html，css，JavaScript基本用法，在不断的学习完善中，了解一些前端框架和工具（BootStrap, jQuery, AngularJS）。最近用jekyll在GitHub上做了一个博客（http://gaohaoyang.github.io）；帮同学写过一统计小工具（https://github.com/Gaohaoyang/statistical-tools-for-VMD）；GitHub上其他仓库是自己平时学习过程的一些小练习，比如曲边阴影翘边阴影（http://gaohaoyang.github.io/shadow-demo-css3/）和幽灵按钮（http://gaohaoyang.github.io/ghost-button-css3/）等。  
 报名初级班是想好好巩固一下自己的基础，毕竟接触前端还不到一年，基础很重要。
 
