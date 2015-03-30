@@ -43,6 +43,6 @@
 
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平
 
-前端基础知识相对较扎实，也正在不断学习完善中；有丰富的创意和很强的动手能力，基于兴趣做过很多有意思的前端开源项目（ https://github.com/Ovilia ）；关注前端发展趋势，熟悉主流前端框架和工具（jQuery、Bootstrap、Three.js、Gulp、Bower 等），写过 Three.js 电子书（ http://read.douban.com/ebook/7412854/ ），做过 jQuery 插件（ https://github.com/01org/jWebAudio 和 https://github.com/Ovilia/jCorner ）、Chrome 扩展应用（ https://github.com/Ovilia/readfree-chrome-extension 和 https://github.com/Ovilia/handian-chrome-extension）；长期写技术博客（ https://github.com/Ovilia/blog ）。
+前端基础知识相对较扎实，也正在不断学习完善中；有丰富的创意和很强的动手能力，基于兴趣做过很多有意思的前端开源项目（ https://github.com/Ovilia ）；关注前端发展趋势，熟悉主流前端框架和工具（jQuery、Bootstrap、Three.js、Gulp、Bower 等），写过 Three.js 电子书（ http://read.douban.com/ebook/7412854/ ），做过 jQuery 插件（ https://github.com/01org/jWebAudio 和 https://github.com/Ovilia/jCorner ）、Chrome 扩展应用（ https://github.com/Ovilia/readfree-chrome-extension 和 https://github.com/Ovilia/handian-chrome-extension ）；长期写技术博客（ https://github.com/Ovilia/blog ）。
 
 想参与这次 IFE 的高级版，一方面是想多结实一些百度的大神们，锻炼自己的能力；另一方面也是想找准自己的定位，希望报名高级版没有太过自负呢~ (⊙o⊙)
