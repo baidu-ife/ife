@@ -28,7 +28,7 @@
 
 （必填）你理解的前端是做些什么事情？   
 
-我喜欢大前端这个概念。前端越来越重要，越来越庞大。后台可以简单的只是传输一些数据到前端，然后前端可以进行大部分的业务逻辑和计算处理，再将处理结果友好地展示给用户，这样可以避免多次请求服务器，可以带来更友好的交互。当然前端还可以做一些别的，比如nodeJS是在服务端运行的脚本语言。还有，JS现在已经可以写原生App了(React native)。
+我喜欢大前端这个概念。前端越来越重要，越来越庞大。后台可以简单的只是传输一些数据到前端，然后前端可以进行大部分的业务逻辑和计算处理，再将处理结果友好地展示给用户，这样可以避免多次请求服务器，可以带来更友好的交互。当然前端还可以做一些别的，比如nodeJS是在服务端运行的脚本语言。还有，JS现在已经可以写原生App了（React native）。
 
 （必填）你为什么要学习前端？   
 
@@ -36,6 +36,6 @@
 
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平   
 
-熟悉html，css，JavaScript基本用法，在不断的学习完善中，了解一些前端框架和工具(BootStrap, jQuery, AngularJS)。最近用jekyll在GitHub上做了一个博客(http://gaohaoyang.github.io)，帮同学写过一统计小工具(https://github.com/Gaohaoyang/statistical-tools-for-VMD)，GitHub上其他仓库是自己平时学习过程的一些小练习，比如曲边阴影翘边阴影(http://gaohaoyang.github.io/shadow-demo-css3/)，幽灵按钮(http://gaohaoyang.github.io/ghost-button-css3/)等。  
+熟悉html，css，JavaScript基本用法，在不断的学习完善中，了解一些前端框架和工具（BootStrap, jQuery, AngularJS）。最近用jekyll在GitHub上做了一个博客（http://gaohaoyang.github.io），帮同学写过一统计小工具（https://github.com/Gaohaoyang/statistical-tools-for-VMD），GitHub上其他仓库是自己平时学习过程的一些小练习，比如曲边阴影翘边阴影（http://gaohaoyang.github.io/shadow-demo-css3/），幽灵按钮（http://gaohaoyang.github.io/ghost-button-css3/）等。  
 报名初级班是想好好巩固一下自己的基础，毕竟接触前端还不到一年，基础很重要。
 
