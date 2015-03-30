@@ -33,5 +33,5 @@
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平
   1，在网站技术部中通过W3CSchool学会了基本的HTML+CSS的知识，接触用C++布置后台，能够利用WebStrom进行调试。
   2，学习了《Head First HTML&CSS》、《Head First HTML5 Programming》，目前正在看《Javascript, The Definitive Guide》。由于专业原因接触过C、C++等底层语言，接触JavaScript相对容易。正尝试搭建自己的个人博客。
-  3，目前没有经过系统的培训和项目实训，希望能够通过ife课程全面提升自己。
+  3，没有经过系统的培训和项目实训，希望能够通过ife课程全面提升自己。
 
