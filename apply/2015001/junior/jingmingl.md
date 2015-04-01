@@ -27,4 +27,4 @@
 3,web前端有很好的发展前景，随着移动互联的时代的到来，web前端开发越来越受到企业的重视，我相信它有很大的发展空间。<br>
 <br>（必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平<br>
         能够完成常见的页面制作，通过js和jquery实现部分常见的交互效果，之前在某公司做过web前端实习生，对移动端开发比较熟悉，能够做到良好的兼容效果，熟悉ps,自己的小案例网址如下：【pc端】 http://jingmingl.tstx.hk1.yun.tstxwang.com/pc/index.html
-【移动端】（1）jingmingl.tstx.hk1.yun.tstxwang.com/yrj.html   （2）http://jingmingl.tstx.hk1.yun.tstxwang.com/over/download.html （3）http://jingmingl.tstx.hk1.yun.tstxwang.com/over/partake.html   <br> 还有参与过联通流量售卖的项目页面制作和简单的js交互。<br> 以及某浏览器的搜索框的文字滚动特效和相关的事件处理。
+<br>【移动端】（1）jingmingl.tstx.hk1.yun.tstxwang.com/yrj.html   （2）http://jingmingl.tstx.hk1.yun.tstxwang.com/over/download.html （3）http://jingmingl.tstx.hk1.yun.tstxwang.com/over/partake.html   <br> 还有参与过联通流量售卖的项目页面制作和简单的js交互。<br> 以及某浏览器的搜索框的文字滚动特效和相关的事件处理。
