@@ -53,10 +53,12 @@
     
 （必填）介绍一个你做过的最复杂的前端项目，其中遇到最困难的技术问题是什么，你如何解决的？
 
-        是一个Web App. 欢迎点击[这里](https://www.codepp.net/ppt/index.php?client=web)试用:-). [这里](http://www.codepp.net)是它的介绍网站。主要是一个提供代码高亮，定义跳转等常见IDE功能的Web App, 可以作为一个插件直接在PPT中使用。
+        是一个Web App. 欢迎点击[这里](https://www.codepp.net/ppt/index.php?client=web)试用:-).
+        [这里](http://www.codepp.net)是它的介绍网站。主要是一个提供代码高亮，定义跳转等常见IDE功能的Web App,
+        可以作为一个插件直接在PPT中使用。
         
-        事实上最困难的问题并不是一个前端问题，而是那个自动识别用户代码语言的问题，
-        自己想了很久才想到如何解决。点击[这里](https://github.com/tianzhi0549/detect_code_lang)
+        事实上最困难的问题并不是一个前端问题，而是那个自动识别用户代码语言的问题，自己想了很久才想到如何解决。
+        点击[这里](https://github.com/tianzhi0549/detect_code_lang)
         可以访问解决方案的github仓库。
         
         还有一个问题是程序发布的时候，在Office
