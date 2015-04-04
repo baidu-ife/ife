@@ -8,7 +8,7 @@
  未来期望工作城市：北京 
 
  联系方式 
- Email： qiumuzinaruto@qiumuzinaruto126.com 
+ Email： qiumuzinaruto@126.com 
  QQ：2024959316 
  
  关于前端 
