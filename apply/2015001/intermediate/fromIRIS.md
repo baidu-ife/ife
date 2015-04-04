@@ -30,16 +30,24 @@
 	首先，机缘巧合接触到前端并让我爱上前端，也爱上了这个职位。我想做一名前端工程师。以前学习C语言觉得枯燥乏味，现在学这些弱语言虽然也不易但学的很舒心。我喜欢这种语言的既视感。写出来的看得见，大家也能看得见。我也迫不及待地去巩固加深js，日后再去接触一些后端语言python，ruby。
 
 （必填）介绍一个你做过的最复杂的前端项目，其中遇到最困难的技术问题是什么，你如何解决的？
-	一个手机端零食网站。
-	写购物车的时候不知道怎么通过点击复选框以及商品增减按钮共同影响总价格显示。
-	我在把代码放到jsbin上，在segmentfault上贴demo地址发问，在豪情的qq群里发问，有些人会跟我说思路，有些人会贴代码，有些人给我stackoverflow的链接。最后自己再摸索，去解决。
+	一个手机端零食网站。(http://lvdada.coding.io)
+	技术问题：写购物车的时候不知道怎么通过点击复选框以及商品增减按钮共同影响总价格显示。（多个事件共同影响一个结果时还比较模糊）
+	解决办法：我在把代码放到jsbin上，在segmentfault上贴demo地址发问，在豪情的qq群里发问，有些人会跟我说思路，有些人会贴代码，有些人给我stackoverflow的链接。通过google或者百度去搜一些相关购物车的插件，去理解，最后自己再摸索，去解决。
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平
 
-	入门不久的水平。只能写一些零碎的简单的js代码。对这门语言没有深入的学习了解。
-	阅读书方面：DOM编程艺术，高程3，css那些事，还有一些相关书籍。
-	小作品：
+	入门不久的水平。只能写一些零碎的简单的js代码。对这门语言没有深入的学习了解运行机制，还停留在表层。
+	技能略知：html，css3，javascript，jquery，json。
 
+	阅读书方面：DOM编程艺术，高程3，css那些事，还有一些jquery，css3相关书籍。
+	
+	网络自学方面：在慕课（imooc.com）上学习过许多课件，尝试跟着学习一些小案例。在上面学习了jquery的基础知识。
+
+	小作品：
+	
 	* [lvdada.coding.io](http://lvdada.coding.io)
 	  coding地址：[https://coding.net/lv_dada/qiaoqiao.git](https://coding.net/lv_dada/qiaoqiao.git)
+	  14年12月份写的只适配手机端的一个前端小网站，主要用了bootstrp为了适配手机屏幕，用了jquery写了购物车的功能。
+
 	* [caichen.coding.io](http://caichen.coding.io)
 	  coding地址：[https://coding.net/lv_dada/caichen.git](https://coding.net/lv_dada/caichen.git)
+	  14年10月左右帮朋友做的一个静态企业网站，主要用了html、css。自己没有用原生js写，而是用了网上的插件。
