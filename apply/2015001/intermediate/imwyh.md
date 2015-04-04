@@ -45,23 +45,23 @@
 	也许是类似于爬虫记录百度贴吧的发帖记录并记录在MYSQL。当时不会其他语言，只能非常讨巧的使用PHP+浏览器解决问题。
 	原理是利用本机作为php服务器，file_get_contents()函数获取到对应帖子内容并在网页中加入自己一小段JS代码。该段代码通过查找指定对象内text内容，存于数组中，再利用AJAX发送给本机php程序中另一个路径，最后自动跳转到帖号+x的下一个页面。使用浏览器打开后，发现不能发送。经过自己在控制台窗口中各种测试，发现是贴吧的JQ不是原始的文件，而是修改过的jquery-1.9.1.min.js。因为该JS是加密压缩的，没法获得修改的内容，只能在PHP中替换改JQ的URL。而后经过测试，发现楼中楼内容不能正常获取。一番分析后发现，楼中楼是AJAX加载，但请求域名不是locohost，因此所有请求都失败了。所以搭建了局域网内A电脑作为PHP服务器，B电脑的tieba.baidu.com指向B电脑。以下为写的JQ内容：
 
-//author是用户名数组
-//content是内容数组
-//pageID是百度贴吧页码id
-var floor = Array();//add
-var author = Array();
-var content = Array();
-var lzl_floor = Array();//add
-var lzl_author = Array();//add
-var lzl_content = Array();//add
-var author_temp = "";
-var lzl_author_temp = "";//add
-var v0 = 0;//num
-var v = 0;//floor num
-var pageID = window.location.pathname.substr(3);//获取页码Id
-//写入数据到数组中
+	//author是用户名数组
+	//content是内容数组
+	//pageID是百度贴吧页码id
+	var floor = Array();//add
+	var author = Array();
+	var content = Array();
+	var lzl_floor = Array();//add
+	var lzl_author = Array();//add
+	var lzl_content = Array();//add
+	var author_temp = "";
+	var lzl_author_temp = "";//add
+	var v0 = 0;//num
+	var v = 0;//floor num
+	var pageID = window.location.pathname.substr(3);//获取页码Id
+	//写入数据到数组中
 
-for(author_no in $(".p_author_name")){
+	for(author_no in $(".p_author_name")){
 	author_temp = $(".p_author_name").eq(author_no).text();
 	if((author_temp==null)||(author_temp=="")||(author_temp.indexOf("贴吧游戏")!=-1)) continue;
 	floor[v] = v+1;
@@ -69,66 +69,60 @@ for(author_no in $(".p_author_name")){
 	content[v] = $(".p_author_name").eq(v).parents(".l_post").find(".d_post_content").text();
 	lzl_author_temp = $(".p_author_name").eq(v).parents(".l_post").find(".j_user_card").text();
 	if(lzl_author_temp!=""&&lzl_author_temp!=""){
-		var lzl = $(".p_author_name").eq(v).parents(".l_post").find(".j_lzl_m_w");
-
+	var lzl = $(".p_author_name").eq(v).parents(".l_post").find(".j_lzl_m_w");
 	}
 	v++;
 	}
-scroll();//获取楼中楼
-function scroll(){
+	scroll();//获取楼中楼
+	function scroll(){
 	if( $(document).scrollTop()>$('body').height()- $(window).height()-100) {main();return;}//检测是否滚动到底部
 	$('body,html').animate({scrollTop: '+=' + $(window).height()},100);//滚动页面
 	setTimeout("scroll();",200);//循环
-}
-
-
-function main(){
+	}
+	function main(){
 	for(author_no in $(".p_author_name")){
-		author_temp = $(".p_author_name").eq(author_no).text();
-		if((author_temp==null)||(author_temp=="")||(author_temp.indexOf("贴吧游戏")!=-1)) continue;
-		var tag = $(".p_author_name").eq(v).parents(".l_post");
-		floor[v0] = v+1;
-		author[v0] = author_temp;
-		content[v0] = tag.find(".d_post_content").text();
-		lzl_floor[v0] = 0;
-		lzl_author[v0] = " ";
-		lzl_content[v0] = " ";
-		lzl_author_temp = tag.find(".j_lzl_m_w").find(".j_user_card").text();
-		v0++;
-		if(lzl_author_temp!=""&&lzl_author_temp!=null){
-			var lzl = tag.find(".j_lzl_m_w");
-			for(lzl_author_no in lzl.find(".lzl_cnt")){
-				if(lzl_author_no=="length")break;
-				floor[v0] = v+1;
-				author[v0] = author_temp;
-				content[v0] = content[v0-1];
-				lzl_floor[v0] = 1+parseInt(lzl_author_no);
-				lzl_author[v0] = lzl.find(".j_user_card").eq(lzl_author_no).text();
-				lzl_content[v0] = lzl.find(".lzl_content_main").eq(lzl_author_no).text();
-				v0++;
-			}
-
-		}
-
-		v++;
+	author_temp = $(".p_author_name").eq(author_no).text();
+	if((author_temp==null)||(author_temp=="")||(author_temp.indexOf("贴吧游戏")!=-1)) continue;
+	var tag = $(".p_author_name").eq(v).parents(".l_post");
+	floor[v0] = v+1;
+	author[v0] = author_temp;
+	content[v0] = tag.find(".d_post_content").text();
+	lzl_floor[v0] = 0;
+	lzl_author[v0] = " ";
+	lzl_content[v0] = " ";
+	lzl_author_temp = tag.find(".j_lzl_m_w").find(".j_user_card").text();
+	v0++;
+	if(lzl_author_temp!=""&&lzl_author_temp!=null){
+	var lzl = tag.find(".j_lzl_m_w");
+	for(lzl_author_no in lzl.find(".lzl_cnt")){
+	if(lzl_author_no=="length")break;
+	floor[v0] = v+1;
+	author[v0] = author_temp;
+	content[v0] = content[v0-1];
+	lzl_floor[v0] = 1+parseInt(lzl_author_no);
+	lzl_author[v0] = lzl.find(".j_user_card").eq(lzl_author_no).text();
+	lzl_content[v0] = lzl.find(".lzl_content_main").eq(lzl_author_no).text();
+	v0++;
+	}
+	}
+	v++;
 	}
 	communicate();
-}
-
-var num = 0;
-function communicate(){
+	}
+	var num = 0;
+	function communicate(){
 	if(num > v0-1) {
-		pageID++;
-		window.location.href = "/p/"+pageID;
-		return;
+	pageID++;
+	window.location.href = "/p/"+pageID;
+	return;
 	}
 	//alert(pageID+"\n"+author[num]+"\n"+content[num])
 	$.get('/get.php',{pageID:pageID,floor:floor[num],author:author[num],content:content[num],lzl_floor:lzl_floor[num],lzl_author:lzl_author[num],lzl_content:lzl_content[num]});
 	num++;
 	//每200毫秒发送一次数据到数据库
 	setTimeout('communicate()',50);
-}
-setTimeout("pageID++;window.location.href = "/p/"+pageID;",30000);//页面超时处理
+	}
+	setTimeout("pageID++;window.location.href = "/p/"+pageID;",30000);//页面超时处理
 
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平
 
