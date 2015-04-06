@@ -15,7 +15,7 @@
 
 ## 联系方式
 
-	Email：ainopika@gmail.com
+	Email：hellodigua@gmail.com
 	QQ：11875849
 
 ## 关于前端
