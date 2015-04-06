@@ -54,4 +54,4 @@
 1. 中等偏下水平，基础知识比较扎实，但缺乏实际开发经验（项目做得少）；html和css基本知识掌握的不错，但对html5和css3目前只处于了解阶段，现在正在努力把JS学的更好，然后在学习html5和css3,Javascript以经看了很多视频，现在为了把基础学好正在看书，已经看完了《Javascript DOM 编程艺术》《Javascript 权威指南》，正在看《Javascript 高级程序设计》,目前想先把JS学好<br/>
 2. 熟悉mysql、PHP和Thinkphp框架有助于协同网站后端开发；<br/>[http://http://10.14.12.254/index.php/Home/Index/home](http://http://10.14.12.254/index.php/Home/Index/home "友邻一家")<br/>在团队我负责的小项目就是是用Thinkphp和Bootstrap框架开发的，目前正在测试中
 
-
+**十分感谢百度这次开展的这个活动，希望自己能加入百度前端技术学院，一旦加入必定每天付出双倍的时间去学习前端知识！**
