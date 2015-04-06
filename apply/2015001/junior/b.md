@@ -24,16 +24,18 @@
 （必填）什么时候开始接触前端？因何接触？
 
 when i was to
+
 college first
 
 （必填）你理解的前端是做些什么事情？
 
 css js sc
+
 php sql ajax
 
-（必填）你为什么要学习前端？
-like so much
+（必填）你为什么要学习前端？like so much
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平
 
 ggg
+
 ddd
