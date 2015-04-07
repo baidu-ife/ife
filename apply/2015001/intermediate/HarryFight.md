@@ -52,8 +52,8 @@
 3. 了解html5、css3等前端新技术。
 4. 能够使用grunt、less、git、svn等工具辅助开发。
 
-[个人介绍：](http://harryfight.github.io/Myresume/)
+个人介绍：[访问](http://harryfight.github.io/Myresume/)
 
-[在线简历：](http://7vzrbt.com1.z0.glb.clouddn.com/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.pdf)
+在线简历：[访问](http://7vzrbt.com1.z0.glb.clouddn.com/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.pdf)
 
 
