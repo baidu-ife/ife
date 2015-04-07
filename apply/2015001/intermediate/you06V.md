@@ -30,4 +30,4 @@
 （必填）介绍一个你做过的最复杂的前端项目，其中遇到最困难的技术问题是什么，你如何解决的？
 学校的失物招领网站，引入masonry插件和Infinite Scroll插件的时候遇到了很多bug，比如瀑布流的基本块的高度加载会出错，原因是有时候没有先加载图片就运行了计算了基本块的高度导致显示异常，引入了imagesloaded.pkgd的插件之后解决了这个问题。
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平
-掌握基本、实用的html和css,从出图到写完整个前端的项目有：交大团委的英文页面(http://xjtuonline.tiaozhan.com/eng/index.html)；一个学生国际会议的页面(http://jck2015.xjtu.edu.cn/)。
+掌握基本、实用的html和css,从出图到写完整个前端的项目有：交大团委的英文页面http://xjtuonline.tiaozhan.com/eng/index.html  一个学生国际会议的页面http://jck2015.xjtu.edu.cn/
