@@ -39,7 +39,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[有待增加更多实战](#有待增加更多实战)
 
-!(![erkang](https://github.com/XfLoops/old-issues/blob/master/assets/201548181759.png?raw=true))
+
 # 个人简介
 |@XfLoops :boy:|Location :house:|Contact :phone:|
 |:------:|:----:|:----:|
