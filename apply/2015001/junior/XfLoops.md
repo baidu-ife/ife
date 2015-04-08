@@ -64,23 +64,23 @@
 
 根据我在拉勾网上对 :point_right: ***45家互联网公司的WEB前端岗位职责***的调研:smiley::smiley:，我总结了以下几个**关键词** :eyes: 从侧面来对前端的工作进行描述：
 
-#### :punch::punch: 设计与开发
+#### 设计与开发:punch::punch: 
 
 在分工越来越精细化的今天，前端工程师更多的是做开发的工作，而设计则一般是由美工或者产品设计师来负责的。通常，前端工程师根据产品设计师的设计稿来开发产品。前端开发的产品大致可以分为WEB系统类、网页游戏类、专题页等类型，当然，前端工程师也会参与到产品的设计中。在不同的公司，前端的工作会有不同的侧重，不过开发的任务都很重。
 
-#### :punch::punch: 兼容与适配
+#### 兼容与适配:punch::punch: 
 
 解决不同浏览器的页面兼容问题，及移动终端页面适配的问题，往往需要耗费很大的精力。IE6浏览器是个大坑，之前看《精通CSS-高级Web标准解决方案》时，里面专门有一章讲如何修复在IE6上运行时出现的BUG，不过貌似大家现在渐渐地都不再理睬它了。移动端的适配也是让人头疼，现在市面上的手机屏幕分辨率大小参差不齐，单是苹果手机就有iphone5s,iphone6,iphone6 plus三种屏幕大小的区别，做移动端的页面适配是很折磨人的，尽管我只是听别人说。
 
-#### :punch::punch: 用户交互
+#### 用户交互:punch::punch: 
 
 用户体验曾是乔布斯极致追求的东西，现在基本上互联网公司都很注重用户体验。一些公司会有专门的交互设计师，这足以说明用户体验的重要性。前端工程师是这些交互功能的实现者，目前有很多优秀的前端JS框架（比如JQuery,AngularJS）可用来丰富网站交互，提升用户体验。
 
-#### :punch::punch: 性能优化
+#### 性能优化:punch::punch: 
 
 优化网站访问及响应速度也是前端工程师的分内之事。之前在慕课网学习过『Yahoo14条军规』，了解了一些性能优化的皮毛，比如减少http请求数，使用CDN，代码的压缩和优化，等等。不过像我这样的初级前端人，能做的就是把`<script>`标签放在页面底端了之类的吧。
 
-#### :punch::punch: 前沿技术研究
+#### 前沿技术研究:punch::punch: 
 
 前端工程师的还有一个工作是：研究Web前沿技术和新技术，并结合实际情况进行应用和推广。我所了解的有两个翻译的例子：1.百度FEX的**zhangtao**等同学业余花费近半年时间翻译的《HTTP/2.0协议》 2.**勾三股四**领头翻译Vue.js中文API文档（我自己也有幸成为翻译小组的一员。）当然，翻译外文文档只是一个方面，前端圈举办的各种会议也是一种推广技术的体现。
 
@@ -103,21 +103,21 @@
 
 ## 4.自我评价当前的前端技术能力，可举例详细描述
 
-#### :point_right::point_right: 具备一定的语言基础
+#### 具备一定的语言基础
 
 现在具备一定的HTML、CSS、JavaScript的基础，对HTML5的特性，CSS3的新属性有一些了解，完整地看过《Beginning JavaScript》、《Interactive Data Visualization for the Web》、《精通CSS-高级Web标准解决方案》、《HTML5从入门到精通》等书，有选择性地阅读过《JavaScript高级程序设计》、《JavaScript权威指南》、《高性能网站建设指南》等书的部分章节。现在能用DIV+CSS实现简单的页面布局，能使用JavaScript实现简单的网页特效，如轮播图效果。
 
-#### :point_right::point_right: 熟悉一些前端工具
+#### 熟悉一些前端工具
 
 熟练使用HBuilder,Nodepad++等开发工具，熟悉Firebug、Chrome开发者工具来进行页面的调试，熟悉Axure RP来进行原型设计，会使用一些常用的git命令来管理代码，熟悉一些非常有用的前端方面的在线手册或工具，如[HTML参考手册](http://www.w3school.com.cn/tags/)、[CSS参考手册](http://www.css88.com/book/css/)、[Can I Use](http://caniuse.com/#tables)、[RGB配色表](http://www.wahart.com.hk/rgb.htm)、[在线作图ProcessOn](https://www.processon.com/network)，等等。:wink:
 
-#### :point_right::point_right: 熟悉D3.js
+#### 熟悉D3.js
 
 运用D3.js实现了两个数据可视化的个人参赛作品，[基于HTML5的肿瘤流行病数据可视化](http://xflcoder.cn/chart/) 和 [粮食安全数据可视化FES](http://xflcoder.cn/demo/)。
 
 ![粮食安全数据可视化](https://github.com/XfLoops/old-issues/blob/master/assets/FSE.png?raw=true)
 
-#### :point_right::point_right: 有待增加更多实战
+#### 有待增加更多实战
 
 对我而言，平常主要是通过看书、看技术博客（常看的博客有[阮一峰](http://www.ruanyifeng.com/home.html)、[张鑫旭](http://www.zhangxinxu.com/php/)、[winter](http://www.cnblogs.com/winter-cn/)等）、看慕课网来学习前端方面的知识，有时候会学着学着就迷失掉方向，因为前端所涵盖的东西太多太广太杂了，虽然我有强烈的投身前端的热情，但是感觉所学的都只是皮毛。没有实际项目锻炼的机会，深度和广度都没有触摸到，有时候为此感到很苦恼。**百度前端技术学院**的成立真是一件利国利民的大好事！:clap::clap::clap: 我果然没有选错前端圈，这个圈子总是会有惊喜等着你！:kissing_heart:
 
