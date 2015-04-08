@@ -124,3 +124,4 @@
 对我而言，平常主要是通过看书、看技术博客（常看的博客有[阮一峰](http://www.ruanyifeng.com/home.html)、[张鑫旭](http://www.zhangxinxu.com/php/)、[winter](http://www.cnblogs.com/winter-cn/)等）、看慕课网来学习前端方面的知识，有时候会学着学着就迷失掉方向，因为前端所涵盖的东西太多太广太杂了，虽然我有强烈的投身前端的热情，但是感觉所学的都只是皮毛。没有实际项目锻炼的机会，深度和广度都没有触摸到，有时候为此感到很苦恼。**百度前端技术学院**的成立真是一件利国利民的大好事！:clap::clap::clap: 我果然没有选错前端圈，这个圈子总是会有惊喜等着你！
 
  我期待加入IFE,期待在前端大大们的带领下成长为一名优秀的前端工程师！:smile:
+![obama](https://github.com/XfLoops/old-issues/blob/master/assets/abama.png?raw=true)
