@@ -105,6 +105,7 @@
 #### 具备一定的语言基础
 
 现在具备一定的HTML、CSS、JavaScript的基础，对HTML5的特性，CSS3的新属性有一些了解，完整地看过《Beginning JavaScript》、《Interactive Data Visualization for the Web》、《精通CSS-高级Web标准解决方案》、《HTML5从入门到精通》等书，有选择性地阅读过《JavaScript高级程序设计》、《JavaScript权威指南》、《高性能网站建设指南》等书的部分章节。现在能用DIV+CSS实现简单的页面布局，能使用JavaScript实现简单的网页特效，如轮播图效果。
+![js漫画](https://github.com/XfLoops/old-issues/blob/master/assets/js2.png?raw=true)
 
 #### 熟悉一些前端工具
 
