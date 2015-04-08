@@ -34,7 +34,7 @@
 
 （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平  
 		评价自身能力需要参照系，很遗憾我学校甚少人涉及这一领域。我只能列出我实现过的小作品：
-		《Head First HTML与CSS》： 完成全书习题。涉及到的静态网页都全部自己写了一遍。
+		《Head First HTML与CSS》： 完成全书习题。涉及到的静态网页都全部自己写了一遍。并在新浪云上搭建出来：http://2.nanbeifengwei.sinaapp.com/index.html
 		www.codecademy.com/zh/learn ： 完成 HTML&CSS 课程，一半javascript课程。
 		Head First HTML5Programming(中文版) ： 刚刚理解完javascript的对象，面对对象编程概念。
 
