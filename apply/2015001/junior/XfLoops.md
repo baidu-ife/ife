@@ -76,6 +76,7 @@
 #### 用户交互
 
 用户体验曾是乔布斯极致追求的东西，现在基本上互联网公司都很注重用户体验。一些公司会有专门的交互设计师，这足以说明用户体验的重要性。**前端工程师是这些交互功能的实现者**，目前有很多优秀的前端JS框架（比如JQuery,AngularJS）可用来丰富网站交互，提升用户体验。
+![dongcunrui](https://github.com/XfLoops/old-issues/blob/master/assets/comeon.jpg?raw=true)
 
 #### 性能优化
 
