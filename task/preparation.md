@@ -31,7 +31,7 @@
 
 * 开发工具：sublime Text、Web Storm等，其中Web Storm可以申请学生的免费使用授权。
 * 装好各种PC浏览器，我们在这次培训中只需要大家考虑Chrome、IE8、IE9三款浏览器，如果大家有余力去考虑更多的浏览器兼容性，可以自行选择。
-* 调试工具：Chrome Develop Tools
+* 调试工具：Chrome Developer Tools
 * 其他工具在您需要的时候可以自行搜索
 
 ### **心态**
