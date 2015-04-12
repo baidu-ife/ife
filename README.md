@@ -4,9 +4,12 @@
 
 # 最新公告
 
-百度Web前端技术学院正式开学，第一期学员已经确定，见[名单](https://github.com/baidu-ife/ife/blob/master/studentlist/201501.md)。
+[任务1已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0001)，初级班Review提交截止时间为**4月23日**，中级班为**4月16日**。
 
-4月13日，我们开始挑战！
+高级班同学会在4月13日晚上8点前邮件大家题目列表供选择。
+
+百度Web前端技术学院正式开学，第一期学员已经确定，见[名单](https://github.com/baidu-ife/ife/blob/master/studentlist/201501.md)。大家可以开始做一些[准备工作](https://github.com/baidu-ife/ife/blob/master/task/preparation.md)
+
 
 ## 目录
 
