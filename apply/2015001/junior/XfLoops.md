@@ -120,7 +120,7 @@
 
 #### 熟悉D3.js
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运用D3.js实现了两个数据可视化的个人参赛作品，[基于HTML5的肿瘤流行病数据可视化](http://xflcoder.cn/chart/) 和 [粮食安全数据可视化FES](http://xflcoder.cn/demo/)。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运用D3.js实现了两个数据可视化的个人参赛作品，[基于HTML5的肿瘤流行病数据可视化](http://www.xfloops.com/chart/) 和 [粮食安全数据可视化FES](http://www.xfloops.com/demo/)。
 
 ![粮食安全数据可视化](https://github.com/XfLoops/old-issues/blob/master/assets/FSE.png?raw=true)
 
