@@ -1,10 +1,10 @@
-# HTML、CSS、JavaScript基础
+# HTML、CSS基础
 
 **任务编号**：`TASK 0001`
 
 ## 任务目的
 
-掌握`HTML`、`CSS`基础知识、能够较为熟练地使用`HTML`、`CSS`编写简单的页面
+掌握`HTML`、`CSS`基础知识、能够较为熟练地使用`HTML`、`CSS`编写页面
 
 ## 任务前说明
 
@@ -16,10 +16,12 @@
 
 最后会对`7.综合练习`的编码作业进行Review
 
-## 任务限制时间
+## 任务Review截止时间
 
-初级班：限时**11**天
-中级班：限时**4**天
+超过以下天数提交的代码不做Review
+
+- 初级班：**11**天
+- 中级班：**4**天
 
 ## Start
 
@@ -40,6 +42,7 @@
 - 一个图片（不能违法、反动、色情等）。
 
 最后的效果如下图：
+
 ![图片](img/task0001_1.jpg)
 
 ### 1.2 期望达成
@@ -70,6 +73,7 @@
 - 图片有一个红色的，`2px`粗的边框
 
 效果如下图：
+
 ![图片](img/task0001_2.jpg)
 
 ### 2.2 期望达成
@@ -162,7 +166,7 @@
 
 ### 6.1 任务描述
 
-在`task0001.html`中，实践以下布局方式
+在`task0001.html`中，实践以下内容：
 
 - 用两种方法来实现一个背景色为`红色`、宽度为`960px`的`<DIV>`在浏览器中居中
 - 利用`position`来实现一个圆角矩形的实现
@@ -189,6 +193,7 @@
 - [慕课网](http://www.imooc.com/code/2057)
 - [学习CSS布局](http://zh.learnlayout.com/no-layout.html)
 - [CSS布局方式](http://teamtreehouse.com/library/css-layout-techniques)
+- [双飞翼布局介绍-始于淘宝UED](http://www.imooc.com/wenda/detail/254035)
 - [W3C Visual formatting model](http://www.w3.org/TR/CSS21/visuren.html#)
 - [MDN Visual formatting model](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Visual_formatting_model)
 - [CSS 101: Block Formatting Context](http://www.yuiblog.com/blog/2010/05/19/css-101-block-formatting-contexts)
@@ -231,6 +236,7 @@ fork本项目，在`work`目录中创建一个以自己`Github`账号名称命�
 - 编码的同时，记录遇到的技术问题和疑惑；
 - 完成编码后，删掉它们，不留一丝痕迹；
 - 开始重(Chong)构(Xie)，让自己的代码要比第一次有提升，尽可能地让第一次遇到问题和疑惑不再存在；
+- 在blog.html页面中真的写上2-3篇这次学习上的技术总结收获；
 - `Pull Request`你的代码，等待Review。
 
 ### 7.2 期望达成
