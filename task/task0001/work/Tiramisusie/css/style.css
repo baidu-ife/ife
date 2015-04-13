@@ -7,9 +7,16 @@ a,a:link,a:visited,a:hover,a:active,a:focus{
     text-decoration: none;
     color: #fff;
 }
+ul,li{
+    list-style: none;
+}
+body{
+    font-family: "宋体","arial",sans-serif;
+}
 
 /*---------header & footer---------*/
 header{
+    min-width: 980px;
     height: 80px;
     background: #522a5c;
     color: #fff;
@@ -24,10 +31,13 @@ header{
 }
 #head-wrapper:after{
     content: "\200B";
+    display: block;
+    height: 0;
     clear: both;
     *zoom: 1;
 }
-h1{
+header h1{
+    font-family: sans-serif;
     float: left;
     position: absolute;
     bottom: 5px;
@@ -38,10 +48,11 @@ h1{
     bottom: 5px;
     right: 0;
 }
+#main-nav a:hover{
+    color: #ccc;
+}
 #main-nav li{
     display: inline-block;
-    list-style: none;
-    font-family: "����",sans-serif;
     font-size: 14px;
     margin-left: 28px;
 }
@@ -57,4 +68,56 @@ h1{
     #github{
         visibility: hidden;
     }
+}
+
+/*-------footer-------*/
+footer{
+    min-width: 980px;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+#footer-nav{
+    width: 100%;
+    padding: 9px 0;
+    border-bottom: 1px solid #ccc;
+}
+#footer-nav-ul{
+    width: 224px;
+    margin: 0 auto;
+}
+#footer-nav-ul li{
+    display: inline-block;
+    margin: 0 13px;
+    font-size: 12px;
+}
+#footer-columns{
+    width: 980px;
+    margin: 0 auto;
+}
+#footer-columns:after{
+    content: "\200B";
+    height: 0;
+    display: block;
+    clear: both;
+    zoom: 1;
+}
+#footer-columns .links{
+    float: left;
+    width: 196px;
+}
+#footer-columns .links h5{
+    font-weight: normal;
+    font-size: 12px;
+    color: #ccc;
+    margin: 44px 0 20px;
+}
+#footer-columns .links li{
+    margin: 8px 0;
+    font-size: 14px;
+}
+#footer-columns .links li a:hover{
+    text-decoration: blink;
 }
