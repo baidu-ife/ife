@@ -1,0 +1,157 @@
+/*global*/
+.clearFix:after,.clearFix:before{
+	display: table;
+	content: ''
+}
+.clearFix:after{
+	clear: both;
+}
+/**/
+body{
+	background-color: #eeeeee;
+}
+.index_header{
+	width: 100%;
+	height: 80px;
+	background-color: #522a5c;
+}
+.index_header_inner{
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+	bottom: 0;
+}
+.github_icon{
+	position: absolute;
+	right: 10px;
+	top: 46px;
+}
+.index_nav_title{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	color: white;
+	font-size: 25px;
+}
+.index_nav{
+	padding-top: 50px;
+	height: 30px;
+}
+.index_nav li{
+	color: white;
+	width: 60px;
+	text-align: center;
+	float: right;
+}
+.index_nav_photo{
+	width: 100%;
+	height: 525px;
+	background-color: yellow;
+	position: relative;
+}
+.index_nav_img{
+	width: 100%;
+	height: 100%;
+}
+.index_nav_tip{
+	position: absolute;
+	bottom: 0;
+
+}
+
+.index_main{
+	width: 980px;
+	margin: 10px auto 0 auto;
+}
+.index_main_ul{
+	width: 980px;
+}
+.index_main_ul li{
+	background-color: white;
+	font-size: 12px;
+	line-height: 170%;
+	width: 320px;
+	float: left;
+	min-height: 350px;
+}
+.index_main_ul li img{
+	width: 300px;
+	height: 180px;
+	display: block;
+	margin: 10px 10px 15px 10px;
+}
+.index_main_ul li p{
+	padding: 0 30px 0 30px;
+	text-indent: 24px;
+}
+.index_main_middle_li{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.index_info{
+	width: 100%;
+	height: 300px;
+	padding-bottom: 150px;
+	background-color: white;
+	margin-top: 120px;
+	text-align: center;
+}
+.index_info h4{
+	text-align: center;
+	font-size: 20px;
+	font-family: Century Gothic;
+	color: black;
+	margin-top: -30px;
+}
+.index_info_portrait{
+	width: 160px;
+	height: 160px;
+	border-radius: 80px;
+	position: relative;
+	top: -80px;
+}
+.index_info_p{
+	width: 600px;
+	margin: 20px auto 0 auto;
+	font-size: 14px;
+}
+
+.footer{
+	color: white;
+	width: 100%;
+	height: 300px;
+	background-color: #000000;
+}
+.footer_nav_wrap{
+	height: 35px;
+	border-bottom: solid 1px #eeeeee;
+	width: 100%;
+}
+.footer_nav{
+	width: 200px;
+	margin: 0 auto;
+}
+.footer_nav li{
+	float: left;
+	width: 50px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 14px;
+}
+
+.footer_inner{
+	width: 980px;
+	margin: 40px auto 0 auto;
+}
+.footer_inner_item{
+	font-size: 14px;
+	width: 196px;
+	height: 100px;
+	float: left;
+}
+.footer_inner a{
+	color: white;
+}
+.footer_inner a:hover{
+	color: #FF0000;
+}
