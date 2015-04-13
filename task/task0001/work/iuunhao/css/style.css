@@ -43,13 +43,15 @@ sup { bottom: -0.25em; }
 -------------------------------------------------------------- */
 .center { width: 980px; margin-left: auto; margin-right: auto; }
 .bg-color1{ background-color: #eee;}
+.txt-color1 { color: #f80; }
+.txt-color2 { color:#3aaff2;font-size: 35px;}
 /*STYLE
 -------------------------------------------------------------- */
 a { text-decoration: none; }
 .top-bar { position: relative; background-color: #522a5c; }
-.top-bar .min-logo{ position: absolute; right: 10px; bottom: 0; width: 25px; height: 25px; background-color: #eee; }
+.top-bar .min-logo{ position: absolute; right: 10px; bottom: 0; width: 31px; height: 31px; background: url(../img/githublogo.png) no-repeat center center; background-size: 100% 100%;}
 .top-centent { position: relative; height: 80px; }
-.top-centent .logo { float: left; margin-top: 15px; width: 100px; height: 50px; background-color: #eee; }
+.top-centent .logo { float: left; margin-top: 15px; width: 100px; height: 50px; background:url(../img/logo.jpg) no-repeat center center;}
 .top-centent .nav { position: absolute; right: 0; bottom: 0; }
 .top-centent li { float: left; margin-left: 18px; }
 .top-centent .nav a { display: block; padding: 30px 20px 15px 20px; color:#fff; font-size: 14px; }
@@ -59,6 +61,7 @@ a { text-decoration: none; }
 .head .center { position: relative; height: 525px; }
 .head .headlines { position: absolute; right: 0; bottom: 0; width: 340px;  padding: 10px; background-color: #fff; color:#fff; background: -webkit-linear-gradient(top,  rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%); }
 .head .headlines h4 { font-size: 14px; text-align: right; }
+.head .headlines a { color: #fff; }
 .head .headlines p { font-size: 12px; padding-bottom: 30px; padding-top: 12px; line-height: 1.5; }
 
 .fig-list { padding-top: 10px; padding-bottom: 110px; background-color: #eee; }
@@ -81,9 +84,9 @@ a { text-decoration: none; }
 .foot .foot-list li{ float: left; width: 190px;}
 .foot .foot-list h5{ margin-bottom: 30px; color: #666;}
 .foot .foot-list a{ display: block; line-height: 20px; color:#fff; text-decoration: underline; font-size: 12px; font-weight: 400;}
-.foot .copyright { text-align: center; }
-.foot .copyright p{ margin-bottom: 30px; }
-.foot .foot-logo { display: block;width: 30px; height: 30px; background-color: #eee; }
+.foot .copyright { text-align: center;padding-bottom: 20px; }
+.foot .copyright p{ margin-bottom: 10px; font-size: 12px; color: #888;}
+.foot .foot-logo { display: block;width: 31px; height: 31px; background: url(../img/githublogo.png) no-repeat center center; background-size: 100% 100%; }
 
 .warp { padding-top: 20px; }
 .article-main { padding-right: 270px; }
@@ -132,8 +135,19 @@ a { text-decoration: none; }
 .calendar td a:hover,
 .calendar td .cur {background-color: #773c88; color:#fff; }
 .calendar td .cur2 { color:#773c88; font-weight: 700; }
-.calendar tr{ border-bottom: 1px solid #ddd; }
+.calendar tr { border-bottom: 1px solid #ddd; }
 
+.auto-warp { position: relative; background-color: #fff; margin-top: 100px; margin-bottom: 20px; text-align: center; border-radius: 30px 30px 0 0;}
+.auto-warp .center-line { position: absolute; left: 50%; top: 0; bottom: 0; z-index: 1; width: 6px; margin-left: -3px; background-color: #eee; }
+.auto-list { position: relative; z-index: 2; padding-bottom: 200px; }
+.auto-list .auto-photo-max,
+.auto-list .auto-photo-min { width: 160px; height: 160px; margin-top: -60px;margin-bottom: 20px; border-radius: 100%; border: 10px solid #eee;border-top-color:#f80;border-left-color:#3aaff2; border-right-color:#3aaff2;border-bottom-color:#f80; }
+.auto-list .auto-photo-min { width: 100px; height: 100px; margin-top: 0; border: 5px solid #eee; border-top-color:#f80;border-left-color:#3aaff2; border-right-color:#3aaff2;border-bottom-color:#f80;}
+.auto-list li { margin-bottom: 30px;text-align: center; }
+.auto-list .auto-title { position: absolute; width: 413px; text-align: right; line-height: 32px;padding-right: 57px; font-size: 20px; font-weight: 700; color:#666;/*text-transform: capitalize;*/}
+.auto-list .auto-text {float: left;width: 220px;margin-left: 550px;line-height: 32px;font-size: 12px; text-align: left;}
+.auto-list .auto-centent { position: relative; margin-bottom: 20px;}
+.auto-list .auto-data { position: absolute; left:50%;margin-left: -35px;display: block;width: 70px; text-align: center; border-radius: 10px; border: 5px solid #eee; background-color: #fff; }
 
 
 
