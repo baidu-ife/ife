@@ -65,7 +65,6 @@ a { text-decoration: none; }
 .head .headlines p { font-size: 12px; padding-bottom: 30px; padding-top: 12px; line-height: 1.5; }
 
 .fig-list { padding-top: 10px; padding-bottom: 110px; background-color: #eee; }
-.fig-list .center { }
 .fig-list li { float: left; width: 300px; margin-left: 10px; padding: 10px; background-color: #fff; }
 .fig-list .btn-img { display: block; width: 300px; height: 180px; overflow: hidden; margin-bottom: 15px; }
 .fig-list .btn-img img { width: 100%; }
@@ -90,7 +89,6 @@ a { text-decoration: none; }
 
 .warp { padding-top: 20px; }
 .article-main { padding-right: 270px; }
-.article-lists {  }
 .article-lists li { position: relative; margin-bottom: 10px; background-color: #fff; padding: 18px 23px 18px 23px}
 .article-lists h3 { font-size: 16px; color: #a660b7; line-height: 2; }
 .article-lists h4 { font-size: 12px; color: #666; line-height: 2; }
@@ -102,13 +100,13 @@ a { text-decoration: none; }
 .article-lists .article-information-warp .article-category { background-color: #a660b7; }
 
 .article-page { margin-bottom: 30px; text-align: center; }
-.article-page a, .article-page span { display: inline-block; height: 35px; line-height: 35px; padding: 0 17px; background-color: #fff; color: #333; margin-right: 10px;  vertical-align: middle;  }
+.article-page a, .article-page span { display: inline-block; height: 35px; line-height: 35px; padding: 0 17px; background-color: #fff; color: #333; margin-right: 10px;  vertical-align: middle; font-size: 12px; color: #666; }
 .article-page span { line-height: 28px; }
 .article-page a:hover, .article-page .article-page-cur { background-color: #a660b7; color: #fff; }
 
 .article-sidebar { float: right; width: 260px; }
 .search{ position: relative; padding: 20px;margin-bottom: 10px; background-color: #fff; }
-.search-btn { position: absolute; top: 22px; right: 28px; display: block; width: 52px; height: 40px; background-color: #ddd; color:#fff; font-size: 18px; text-align: center; line-height: 45px; }
+.search-btn { position: absolute; top: 22px; right: 28px; display: block; width: 52px; height: 40px; background-color: #ddd; color:#fff; font-size: 18px; text-align: center; line-height: 40px; }
 .search-btn:hover { background-color: #aaa; }
 .search-input { width: 96px; border: 1px solid #ddd; background-color: #fff; padding: 10px;padding-left: 50px; padding-right: 63px; outline: 0; background: url(../img/searchioc.jpg) no-repeat 10px center; color:#999;}
 
