@@ -228,6 +228,7 @@ fork本项目，在`task/task0001/work/`目录中创建一个以自己`Github`�
 - 编码过程请尽可能遵守[HTML、CSS的代码规范](https://github.com/ecomfe/spec)；
 - 暂时不要使用`less`、`sass`等，这是后面的任务；
 - 不要使用任何样式框架。
+- 不需要写任何JavaScript，只需要关注HTML、CSS
 
 
 **任务关键执行步骤**
