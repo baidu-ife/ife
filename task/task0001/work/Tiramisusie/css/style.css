@@ -1,0 +1,60 @@
+/*-------css reset-------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+a,a:link,a:visited,a:hover,a:active,a:focus{
+    text-decoration: none;
+    color: #fff;
+}
+
+/*---------header & footer---------*/
+header{
+    height: 80px;
+    background: #522a5c;
+    color: #fff;
+    position: relative;
+}
+#head-wrapper{
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+    background-color: inherit;
+    height: inherit;
+}
+#head-wrapper:after{
+    content: "\200B";
+    clear: both;
+    *zoom: 1;
+}
+h1{
+    float: left;
+    position: absolute;
+    bottom: 5px;
+}
+#main-nav{
+    float: right;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+#main-nav li{
+    display: inline-block;
+    list-style: none;
+    font-family: "����",sans-serif;
+    font-size: 14px;
+    margin-left: 28px;
+}
+#github{
+    background: url("../img/icon-github.png");
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 30px;
+    height: 34px;
+}
+@media (max-width: 980px) {
+    #github{
+        visibility: hidden;
+    }
+}
