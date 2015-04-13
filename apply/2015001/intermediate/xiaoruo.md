@@ -34,6 +34,6 @@
 
 + （必填）你自我评价当前你的前端技术能力如何，可以举一些详细的例子来描述能力水平
 
-有模仿过背单词网站和新浪微博网站，可以进行整体页面布局，也可以使用js写出页面特效。
-在学校有和其他同学一起做大学生创业项目，使用了css3的动画特效以及一些jQuery特效，简单使用ajax进行瀑布流页面。
-使用HTML5 canvas制作画图板，功能实现。http://runjs.cn/detail/g4qjsdje          http://runjs.cn/detail/z0vwmkzx
+   有模仿过背单词网站和新浪微博网站，可以进行整体页面布局，也可以使用js写出页面特效。
+   在学校有和其他同学一起做大学生创业项目，使用了css3的动画特效以及一些jQuery特效，简单使用ajax进行瀑布流页面。
+   使用HTML5 canvas制作画图板，功能实现。http://runjs.cn/detail/g4qjsdje          http://runjs.cn/detail/z0vwmkzx
