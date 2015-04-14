@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.clear {
+    clear: both;
+}
+.header {
+    width: 100%;
+    background-color: #522A5C;
+    position: relative;
+}
+.header img {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+.header-content {
+    width: 980px;
+    height: 80px;
+    background-color: #522A5C;
+    position: relative;
+    margin: 0 auto;
+}
+.header-content p {
+    position: absolute;
+    bottom: 7px;
+    left: 0;
+    color: #fff;
+    font-size: 24px;
+}
+.nav {
+    overflow: hidden;
+    zoom: 1;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+.nav li {
+    float: left;
+    list-style: none;
+    margin-left: 28px;
+}
+.nav li a {
+    font-size: 14px;
+    font-family: "SimSun";
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.body-top {
+    width: 100%;
+    height: 525px;
+    position: relative;
+}
+.body-top img {
+    width: 100%;
+    height: 525px;
+    position: absolute;
+    z-index: -9999;
+}
+.body-top-content {
+    width: 980px;
+    height: 525px;
+    margin: 0 auto;
+    position: relative;
+}
+.body-top-box {
+    width: 340px;
+    height: 80px;
+    background-color: #fff;
+    filter: alpha(opacity:30);
+    background: -webkit-linear-gradient(bottom, rgba(255,255,255,.5), rgba(255,255,255,0));
+    background: -o-linear-gradient(bottom, rgba(255,255,255,.5), rgba(255,255,255,0));
+    background: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(255,255,255,0));
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px 10px 30px;
+    color: #fff;
+}
+.body-top-txt1 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    float: right;
+}
+.body-top-txt2 {
+    font-size: 12px;
+    line-height: 150%;
+}
+
+
+
+.body-middle {
+    width: 100%;
+    background-color: #eee;
+    padding-bottom: 110px;
+    padding-top: 10px;
+}
+.body-middle-wrap {
+    width: 980px;
+    background-color: #eee;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.body-middle-part1 {
+    width: 320px;
+    float: left;
+    margin-left: 10px;
+    background-color: #fff;
+    margin-bottom: -5000px;
+    padding-bottom: 5000px;
+}
+.body-middle-wrap div:first-child {
+    margin-left: 0;
+}
