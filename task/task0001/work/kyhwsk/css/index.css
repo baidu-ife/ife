@@ -1,0 +1,141 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+
+/*首页导航开始*/
+.header{
+    height: 80px;
+    width: 100%;
+    background-color: #533474;
+    position: relative;
+}
+.header-main-wrap{
+    width:100%;
+    float:left;
+    height: 80px;
+}
+.header-main{
+    width: 980px;
+    height: 100%;
+    margin:auto;
+    position: relative;
+}
+ul{
+    list-style:none;
+    margin: 0;
+}
+.header-main ul.nav{
+    margin: 0 0 5px 0;
+    position:absolute;
+    right:0;
+    bottom:5px;
+}
+ul.nav{
+    padding-left: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.nav li{
+    display: inline;
+    margin-left: 28px;
+}
+.nav a{
+    text-decoration: none;
+    color:#fff;
+}
+.nav a:hover {
+    color: #eeeeee;
+}
+#github{
+    float:right;
+    margin-left: -40px;
+    bottom: 0px;
+    position: absolute;
+    height:34px;
+}
+/*首页导航结束*/
+
+
+/* 首页内容开始*/
+
+.center{
+    width: 980px;
+    margin: 0 auto;
+    background-color: #eee;
+}
+/*首页banner*/
+.banner{
+}
+.banner > img{
+    display: block;
+    width: 100%;
+}
+.list-container{
+    margin: 10px -10px 110px -10px;
+}
+.list-wrap{
+    padding: 0;
+    display: table;
+    border-spacing: 10px 0px;
+}
+div.list-wrap :first-child{
+    margin-left: 0;
+}
+.list-item{
+    width: 320px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    display: table-cell;
+}
+.list-item img{
+    width: 300px;
+    height: 180px;
+}
+div.content{
+    width:300px;
+    padding: 15px 20px 25px 20px;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 170%;
+}
+/*文章列表结束*/
+/*个人介绍开始*/
+.wrap{
+    width: 100%;
+}
+.article-wrap{
+    background-color: #fff;
+    min-height: 530px;
+}
+.avatar-article{
+    width: 600px;
+    margin: 0 auto;
+ }
+#avatar{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    top: -50px;
+    border-radius: 50%;
+}
+.avatar-article>h2{
+    font-size: 20px;
+    font-family: Century Gothic;
+    text-align: center;
+}
+.avatar-article>p{
+    margin-top: 50px;
+    font-size: 14px;
+    line-height: 1.7;
+    width:600px;
+    word-break: break-all;
+}
+
+/*个人介绍结束*/
+
+.wrap{
+    width: 980px;
+    margin: 0 auto;
+}

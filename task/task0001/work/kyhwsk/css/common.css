@@ -1,0 +1,115 @@
+/*首页导航开始*/
+.header{
+    height: 80px;
+    width: 100%;
+    background-color: #533474;
+    position: relative;
+}
+.header-main-wrap{
+    width:100%;
+    float:left;
+    height: 80px;
+}
+.header-main{
+    width: 980px;
+    height: 100%;
+    margin:auto;
+    position: relative;
+}
+ul{
+    list-style:none;
+    margin: 0;
+}
+.header-main ul.nav{
+    margin: 0 0 5px 0;
+    position:absolute;
+    right:0;
+    bottom:5px;
+}
+ul.nav{
+    padding-left: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.nav li{
+    display: inline;
+    margin-left: 28px;
+}
+.nav a{
+    text-decoration: none;
+    color:#fff;
+}
+.nav a:hover {
+    color: #eeeeee;
+}
+#github{
+    float:right;
+    margin-left: -40px;
+    bottom: 0px;
+    position: absolute;
+    height:34px;
+}
+/*首页导航结束*/
+
+
+
+/*页脚开始*/
+.footer{
+    width: 100%;
+    min-height: 400px;
+    background-color: #000000;
+}
+.nav-wrapper{
+    height: 40px;
+    width: 100%;
+    border-bottom: solid 1px #333;
+    overflow: hidden;
+}
+.nav-wrapper  ul.nav{
+    margin: 0px auto;
+    line-height: 40px;
+}
+dl.footer-col{
+    margin-top: 40px;
+    font-size: 14px;
+    width: 20%;
+    float:left;
+    min-height: 300px;
+}
+.footer-col dt{
+    line-height: 4;
+    color: #dddddd;
+}
+.footer-col dd{
+    line-height: 1.5;
+}
+.footer-col>dd>a{
+    font-size: 13px;
+}
+.footer-col>dd>a:hover{
+    text-decoration: underline;
+}
+.white-font{
+    color: white;
+}
+.under-footer{
+    width: 100%;
+    text-align: center;
+}
+.under-footer img{
+    margin-top: 10px;
+}
+p.copy-right{
+    font-size: 12px;
+    line-height: 1.5;
+}
+/*页脚结束*/
+/*浮动清除*/
+.cf:before,
+.cf:after{
+    content: " "; /* 1 */
+    display: block; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
