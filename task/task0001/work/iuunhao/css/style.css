@@ -45,6 +45,7 @@ sup { bottom: -0.25em; }
 .bg-color1{ background-color: #eee;}
 .txt-color1 { color: #f80; }
 .txt-color2 { color:#3aaff2; font-weight: 700; }
+.mr10 { margin-right: 10px; }
 /*STYLE
 -------------------------------------------------------------- */
 a { text-decoration: none; }
@@ -171,7 +172,27 @@ a { text-decoration: none; }
 .gallery-tab-title .tit4.cur { border-bottom-color: #fff; border-top-color: #8c2300; }
 .gallery-tab-title .tit5:hover,
 .gallery-tab-title .tit5.cur { border-bottom-color: #fff; border-top-color: #d9a300; }
-.gallery-tab-centent { background-color: #fff; height: 300px; }
+.gallery-tab-centent { background-color: #fff; padding: 20px; }
+.gallery-tab-centent .column-1 { float: left; width: 160px; }
+.gallery-tab-centent .box { width: 100%;margin-bottom: 10px; }
+.gallery-tab-centent .box:hover { outline: 4px solid #f80; }
+.box a { display: block; }
+.box .column-1-txt { padding: 10px; background-color: #d9a300; color: #fff; font-family: "Microsoft YaHei"; }
+.box .txt-j { background-color: #522a5c; }
+.box .txt-a { background-color: #d9a300; }
+.box .txt-u { background-color: #5900b2; }
+.box .txt-f { background-color: #8c2300; }
+.box img { width: 100%; display: block;}
+.column-1-txt .title-ico { float: left; margin-right: 13px; width: 27px; height: 27px; border: 1px solid #fff; border-radius: 100%; text-align: center; line-height: 27px; }
+.column-1-txt h4 {  height: 24px;width: 100px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size: 14px; line-height: 1.5; float: left; font-weight: 700; }
+.column-1-txt p { float: left;font-size: 12px; line-height: 1.2; float: left;}
+.column-1-txt .txt-warp { float: left; width: 96px; }
 
+.column-2 {float: left; width: 330px;}
+.column-2 .column-2-box .txt-warp { width: 260px; }
+.column-2 .column-2-box h4 { width: 260px; }
 
+.btn-more { display: block; margin-top: 10px; margin-bottom: 20px; height: 50px; line-height: 50px; background-color: #fff; text-align: center; color: #666; font-size: 14px;}
+.btn-more:hover { color:#522a5c; }
+.btn-more .btn-more-ico { display: inline-block; width: 18px; height: 16px; vertical-align: middle;margin-right: 10px; background: url(../img/ico2.png) no-repeat center center; }
 
