@@ -6,7 +6,7 @@ h2 {
   font-size: 14px;
 }
 
-p {
+.bio {
   font-size: 12px;
   color: yellow;
   background: black;
@@ -14,4 +14,56 @@ p {
 
 img {
   border: 2px solid red;
+}
+
+.text-indent {
+  text-indent: 20px;
+}
+
+.text-transform {
+  text-transform: uppercase;
+}
+
+.text-decoration {
+  text-decoration: underline;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.word-spacing {
+  word-spacing: 50px;
+}
+
+.white-space {
+  white-space: pre;
+}
+
+.color {
+  color: #F99B17;
+}
+
+.line-height {
+  line-height: 50px;
+}
+
+.font {
+  font: italic bold 20px Arial;
+}
+
+.font-family {
+  font-family: courier;
+}
+
+.font-size {
+  font-size: 30px;
+}
+
+.font-weight {
+  font-weight: 900;
+}
+
+.font-face {
+  font-family: robotolight;
 }
