@@ -115,7 +115,7 @@ a { text-decoration: none; }
 .category-list a:hover{ border-left-color: #522a5c; }
 
 .tags { margin-bottom: 10px; padding: 10px; background-color: #fff;}
-.tags h3 { font-size: 14px; color: #666; line-height: 2; }
+.sidebar-title { font-size: 14px; color: #666; line-height: 2; }
 .tags a {  margin-right: 5px; color:#773c88; font-size: 12px;line-height: 1.3; }
 .tags .f14 {  font-size: 14px!important; }
 .tags .f16 {  font-size: 16px!important; }
@@ -147,8 +147,27 @@ a { text-decoration: none; }
 .auto-list .auto-centent { position: relative; margin-bottom: 20px;}
 .auto-list .auto-data { position: absolute; left:50%;margin-left: -35px;display: block;width: 70px; text-align: center; border-radius: 10px; border: 5px solid #eee; background-color: #fff; }
 
+.ranki { padding: 13px; background-color: #fff; }
+.ranki ul{ margin-top: 10px; }
+.ranki li{ margin-bottom: 10px; }
+.progress-number{ float: left; width: 16px; height: 16px; background-color: #522a5c; border-radius: 100%; color:#fff; text-align: center;line-height: 16px; font-size: 12px; margin-right: 10px;}
+.progress{ position: relative; float: left; width: 98px; height: 16px; border: 1px solid #522a5c;margin-right: 10px;}
+.progress .progress-on{ position: absolute; display: block; height: 16px; left:0;top:0; background-color: #522a5c;}
+.progress-txt{ float: left; color: #333; line-height: 18px; font-size: 14px;}
 
-
+.gallery-main { padding-right: 270px; }
+.gallery-tab-title { overflow: hidden; }
+.gallery-tab-title a { float: left; padding: 0 20px; height: 46px; line-height: 46px; border-top: 4px solid #dfc6e6; border-bottom: 1px solid #eee; border-right: 1px solid #eee; color:#333; font-size: 14px; background-color: #fff; }
+.gallery-tab-title a:hover { border-bottom-color: #fff; }
+.gallery-tab-title .tit2:hover,
+.gallery-tab-title .tit2.cur { border-bottom-color: #fff; border-top-color: #522a5c; }
+.gallery-tab-title .tit3:hover,
+.gallery-tab-title .tit3.cur { border-bottom-color: #fff; border-top-color: #5900b2; }
+.gallery-tab-title .tit4:hover,
+.gallery-tab-title .tit4.cur { border-bottom-color: #fff; border-top-color: #8c2300; }
+.gallery-tab-title .tit5:hover,
+.gallery-tab-title .tit5.cur { border-bottom-color: #fff; border-top-color: #d9a300; }
+.gallery-tab-centent { background-color: #fff; height: 300px; }
 
 
 
