@@ -1,8 +1,16 @@
-* index.html£º¶ÔÓ¦task0001_1¼°task0001_1_markedÉè¼Æ¸å
-* blog.html£º¶ÔÓ¦task0001_2¼°task0001_2_markedÉè¼Æ¸å
-* gallery.html£º¶ÔÓ¦task0001_3¼°task0001_3_markedÉè¼Æ¸å
-* about.html£º¶ÔÓ¦task0001_4¼°task0001_4_markedÉè¼Æ¸å
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+* index.htmlï¼šå¯¹åº”task0001_1åŠtask0001_1_markedè®¾è®¡ç¨¿<br />
+* blog.htmlï¼šå¯¹åº”task0001_2åŠtask0001_2_markedè®¾è®¡ç¨¿<br />
+* gallery.htmlï¼šå¯¹åº”task0001_3åŠtask0001_3_markedè®¾è®¡ç¨¿<br />
+* about.htmlï¼šå¯¹åº”task0001_4åŠtask0001_4_markedè®¾è®¡ç¨¿<br />
+<br />
+* å†åˆ›å»ºä¸€ä¸ªcssç›®å½•ï¼Œåœ¨cssç›®å½•ä¸­åˆ›å»ºä¸€ä¸ªstyle.cssç”¨äºç¼–å†™æ ·å¼ã€‚<br /><br />
 
-* ÔÙ´´½¨Ò»¸öcssÄ¿Â¼£¬ÔÚcssÄ¿Â¼ÖĞ´´½¨Ò»¸östyle.cssÓÃÓÚ±àĞ´ÑùÊ½¡£
-
-* ÔÙ´´½¨Ò»¸öimgÄ¿Â¼£¬ÓÃÓÚ´æ·ÅÒ³Ãæ±àĞ´ÖĞ»áÊ¹ÓÃµ½µÄÍ¼Æ¬¡£
+* å†åˆ›å»ºä¸€ä¸ªimgç›®å½•ï¼Œç”¨äºå­˜æ”¾é¡µé¢ç¼–å†™ä¸­ä¼šä½¿ç”¨åˆ°çš„å›¾ç‰‡ã€‚<br />
+    </body>
+</html>
