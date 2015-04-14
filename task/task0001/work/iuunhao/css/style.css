@@ -111,7 +111,7 @@ a { text-decoration: none; }
 .search-btn { position: absolute; top: 20px; right: 28px; display: block; width: 52px; height: 40px; background-color: #ddd; color:#fff; font-size: 18px; text-align: center; line-height: 40px; }
 .search-btn:hover { background-color: #aaa; }
 .search-input { width: 96px; border: 1px solid #ddd; background-color: #fff; padding: 10px;padding-left: 50px; padding-right: 63px; outline: 0; background: url(../img/searchioc.jpg) no-repeat 10px center; color:#999; }
-
+.search-input:focus + .search-btn { background: #aaa; }
 .category-list { border-bottom: 1px solid #ddd; margin-bottom: 10px; background-color: #fff; }
 .category-list a { display: block; border-top: 1px solid #ddd;  border-left: 4px solid #dfc6e6; color:#666; background-color: #fff; height: 48px; line-height: 48px; text-indent: 2em; font-size: 14px; font-family: "Microsoft YaHei"; }
 .category-list a:hover { border-left-color: #522a5c; color: #773c88; }
