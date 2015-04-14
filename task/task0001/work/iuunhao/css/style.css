@@ -65,10 +65,11 @@ a { text-decoration: none; }
 .head .headlines a { color: #fff; }
 .head .headlines p { font-size: 12px; padding-bottom: 30px; padding-top: 12px; line-height: 1.5; }
 
-.fig-list { padding-top: 10px; padding-bottom: 110px; background-color: #eee; }
-.fig-list li { float: left; width: 300px; margin-left: 10px; padding: 10px; background-color: #fff; }
+.fig-list {  width: 100%;padding-top: 10px; padding-bottom: 110px; background-color: #eee; }
+.fig-list .center { display: table; overflow: hidden; }
+.fig-list .fig-list-box {  display: table-cell; float: left; width: 300px; margin-left: 10px; padding: 10px; background-color: #fff; padding-bottom: 1000px;margin-bottom: -1000px; }
 .fig-list .btn-img { display: block; width: 300px; height: 180px; overflow: hidden; margin-bottom: 15px; }
-.fig-list .btn-img img { width: 100%; }
+.fig-list .btn-img img { width: 100%;display: block; }
 .fig-list .abstract { margin:0 30px 5px 30px; font-size: 12px; line-height: 1.7; }
 
 .introduction { position: relative; padding-bottom: 180px; text-align: center;}
@@ -112,7 +113,7 @@ a { text-decoration: none; }
 .search-input { width: 96px; border: 1px solid #ddd; background-color: #fff; padding: 10px;padding-left: 50px; padding-right: 63px; outline: 0; background: url(../img/searchioc.jpg) no-repeat 10px center; color:#999; }
 
 .category-list { border-bottom: 1px solid #ddd; margin-bottom: 10px; background-color: #fff; }
-.category-list a { display: block; border-top: 1px solid #ddd;  border-left: 4px solid #dfc6e6; color:#666; background-color: #fff; height: 48px; line-height: 48px; text-indent: 2em; font-size: 14px; font-weight: 700; font-family: "Microsoft YaHei"; }
+.category-list a { display: block; border-top: 1px solid #ddd;  border-left: 4px solid #dfc6e6; color:#666; background-color: #fff; height: 48px; line-height: 48px; text-indent: 2em; font-size: 14px; font-family: "Microsoft YaHei"; }
 .category-list a:hover { border-left-color: #522a5c; color: #773c88; }
 
 .tags { margin-bottom: 10px; padding: 10px; padding-bottom: 20px; background-color: #fff; }
@@ -126,11 +127,17 @@ a { text-decoration: none; }
 .tags .f30 {  font-size: 30px; }
 
 .calendar { padding: 24px 20px;background-color: #fff; color:#888; margin-bottom: 10px; }
-.calendar table { width: 100%; }
+.calendar .calendar-tab { position: relative; margin-bottom: 10px; text-align: center;  height: 24px; line-height: 24px; }
+.calendar .calendar-tab p { color: #773c88; font-size: 14px; font-weight: 700; }
+.calendar .calendar-tab span{ margin: 0 5px; }
+.calendar .calendar-tab .month-before,
+.calendar .calendar-tab .month-after{ display: block; width: 24px; height: 24px; line-height: 24px; position: absolute; top: 0; left: 0; background: #fff url(../img/qian.png) no-repeat center center; }
+.calendar .calendar-tab .month-after{ left: auto; right: 0; background: #fff url(../img/hou.png) no-repeat center center; }
+.calendar table { width: 100%; font-size: 12px; }
 .calendar td,
-.calendar th { height: 33px;line-height: 33px; }
+.calendar th { height: 33px;line-height: 33px; color: #777; text-align: center;}
 .calendar td a,
-.calendar th a { display: block; width: 24px;height: 24px; text-align: center; vertical-align: middle;line-height: 24px;font-size: 12px; color: #333; }
+.calendar th a { display: block; width: 24px;height: 24px; text-align: center; vertical-align: middle;line-height: 24px;font-size: 12px; color: #777; }
 .calendar td a:hover,
 .calendar td .cur { background-color: #773c88; color:#fff; font-weight: 700; }
 .calendar td .cur2 { color:#773c88; font-weight: 700; }

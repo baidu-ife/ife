@@ -10,7 +10,6 @@ h5 { color: #333; }
 .p1 { font-size: 12px; color: yellow; background-color: black; text-indent: 2em; line-height: 2; font-family: "sans-serif"; word-spacing: 25px; }
 .p1 span { text-decoration: underline; font-weight: 700; color: red; font-size: 16px; word-spacing:25px; }
 img { border: 2px solid red; }
-/*.p2 { width: 300px; white-space: nowrap; }*/
 .p3 { text-transform: capitalize; font-size: 30px;}
 .warp1 { margin-bottom: 50px; color:#fff; }
 .warp1 .sidle{ float: left; height: 100px; }
@@ -27,10 +26,9 @@ img { border: 2px solid red; }
 .warp3 .tool {float: right; width: 200px; height: 120px; background-color: blue; }
 
 .warp4{ position: relative; margin-bottom: 50px; color:#fff;}
-.warp4 .sidle { position: absolute; left: 0; top: 0; width: 200px; height: 120px; background-color: red; }
-/*.warp4 .content {position: absolute; left: 200px; right: 200px; height: 100px; padding: 10px; background-color: #f80; } 也可以这样*/
-.warp4 .content { height: 100px; padding: 10px 210px; background-color: #f80; overflow: hidden; }
-.warp4 .tool { position: absolute; right: 0; top: 0; width: 200px; height: 120px; background-color: blue; }
+.warp4 .sidle { float: left; width: 200px; height: 120px; margin-left: -100%; background-color: red; }
+.warp4 .content { float: left; height: 100px; padding: 10px 210px; background-color: #f80;  }
+.warp4 .tool { float: left; right: 0; top: 0; width: 200px; height: 120px; margin-left: -200px; background-color: blue; }
 
 .box { position: relative; width: 300px; height: 100px; border: 1px solid black; }
 .box .radioslt,
@@ -45,3 +43,6 @@ img { border: 2px solid red; }
 
 .list-warp { background-color: red; padding-top: 10px;}
 .list-warp li { float: left; width: 100px;height: 50px; margin-right: 30px; margin-bottom: 10px; background-color: blue; list-style: none; }
+
+.auto960 { width: 960px; height: 100px; background: red; margin-left: auto; margin-right: auto; }
+.auto960-2 { position: relative; left: 50%; margin-left: -480px; width: 960px; height: 100px; background: red; }
