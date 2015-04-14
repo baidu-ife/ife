@@ -2,7 +2,7 @@
 	width: 980px;
 	margin: 0 auto;
 	height:auto;
-	margin-top: 20px;
+	margin-top: 80px;
 }
 
 .main > .right{
@@ -26,67 +26,6 @@
 	line-height: 150%;
 	padding: 25px;
 	position: relative;
-}
-
-.search{
-	position: relative;
-	width: inherit;
-	height: 100px;
-	background: #ffffff;
-	overflow: hidden;
-}
-
-.search > i{
-	position: absolute;
-	font-size: 40px;
-	top:30px;
-	left: 30px;
-	color: #dddddd;
-}
-
-.search > input{
-	width:220px;
-	height: 50px;
-	margin-left: 25px;
-	margin-top: 25px;
-	float: left;
-	border: 1px solid #dddddd;
-	padding-left: 50px;
-	box-sizing:border-box;
-}
-
-.search > p{
-	position: absolute;
-	font-size: 15px;
-	color: #dddddd;
-	top:40px;
-	left: 80px;
-}
-
-.search > input:focus ~ p , input[required]:valid ~ p{
-	display: none;
-}
-.search > input:focus ~ i , input[required]:valid ~ i{
-	color: #5c5c5c;
-}
-.search > input:focus,input[required]:valid{
-	border: #5c5c5c solid 1px;
-}
-.search > input:focus ~ .search_button , input[required]:valid ~ .search_button{
-	background: #5c5c5c;
-}
-
-
-.search_button{
-	width: 50px;
-	height: 42px;
-	background: #dddddd;
-	margin-top: 25px;
-	float: left;
-	color: #ffffff;
-	padding-top: 8px;
-	font-size: 34px;
-	text-align: center;
 }
 
 .catalog{
@@ -187,6 +126,7 @@
 }
 .article_block > p{
 	font-size: 12px;
+	margin: 10px;
 }
 .article_block > .date{
 	position: absolute;
