@@ -7,6 +7,29 @@ hr {
   margin: 50px 0;
 }
 
+.flex {
+  color: white;
+  display: flex;
+  flex-flow: row;
+}
+
+.row-wrapper {
+  overflow:hidden;
+}
+
+.row {
+  color: white;
+  margin-bottom: -10000px;
+  padding-bottom: 10000px;
+}
+
+.bottom {
+  height: 50px;
+  background: yellow;
+  margin-bottom: 40px;
+}
+
+/*给你的网页加点样式*/
 h1 {
   color: blue;
 }
@@ -25,6 +48,7 @@ img {
   border: 2px solid red;
 }
 
+/*让页面样式丰富起来*/
 .text-indent {
   text-indent: 20px;
 }
@@ -83,6 +107,7 @@ img {
   background: red;
 }
 
+/*用两种方法来实现一个背景色为红色、宽度为960px的<DIV>在浏览器中居中*/
 .bg1 {
   margin: 0 auto 10px;
 }
@@ -93,13 +118,14 @@ img {
   margin-left: -480px;
 }
 
+/*有的圆角矩形是复杂图案，无法直接用border-radius，请在不使用border-radius的情况下实现一个可复用的高度和宽*/
+.rectangle {
+  margin: 10px;
+}
+
 .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
   height: 1px;
   font-size: 1px;
-}
-
-.rectangle {
-  margin: 10px;
 }
 
 .div1, .div8 {
@@ -145,12 +171,7 @@ img {
   background: black;
 }
 
-.flex {
-  color: white;
-  display: flex;
-  flex-flow: row;
-}
-
+/*用两种不同的方法来实现一个两列布局，其中左侧部分宽度固定、右侧部分宽度随浏览器宽度的变化而自适应变化*/
 .left1 {
   width: 200px;
   background: red;
@@ -159,22 +180,6 @@ img {
 .right1 {
   flex: 2;
   background: blue;
-}
-
-.row-wrapper {
-  overflow:hidden;
-}
-
-.row {
-  color: white;
-  margin-bottom: -10000px;
-  padding-bottom: 10000px;
-}
-
-.bottom {
-  height: 50px;
-  background: yellow;
-  margin-bottom: 40px;
 }
 
 .left2 {
@@ -188,14 +193,15 @@ img {
   background: blue;
 }
 
-.content-center {
-  margin: 0 200px;
-}
-
+/*用两种不同的方式来实现一个三列布局，其中左侧和右侧的部分宽度固定，中间部分宽度随浏览器宽度的变化而自适应变化*/
 .content-wrapper {
   float: left;
   width: 100%;
   background: blue;
+}
+
+.content-center {
+  margin: 0 200px;
 }
 
 .sidebar-left {
@@ -227,6 +233,7 @@ img {
   background: red;
 }
 
+/*实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化*/
 .float-wrapper {
   margin: 10px 0 0;
   background: red;
