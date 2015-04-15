@@ -1,0 +1,256 @@
+/*
+
+Baidu IFE Task0001 
+
+Author: michaelluang
+URL:    http://github.com/michaelluang
+Email:  michaelluang@gmail.com
+
+*/
+
+/* Reset
+-------------------------------------------------- */
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+header, footer, nav, img {
+    display: block;
+}
+
+/* Site
+-------------------------------------------------- */
+html {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -o-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+body {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: #f3f3f3;
+}
+ul {
+    list-style-type: none;
+}
+
+/* Navgation Bar
+-------------------------------------------------- */
+.site-header {
+    position: relative;
+    background-color: #ddd;
+    width: 100%;
+    height: 80px;
+}
+.main {
+    max-width: 980px;
+    margin: 0 auto;
+}
+.logo img {
+    display: block;
+    position: relative;
+    top: 35px;
+    left: 0;
+    padding-bottom: 0;
+}
+.menu {
+    float: right;
+    position: relative;
+    right: 0;
+    bottom: -15px;    
+}
+.menu li {
+    display: inline-block;
+    float: left;
+}
+.menu a {
+    font-family: "宋体";
+    font-size: 14px;
+    color: red;
+    margin-left: 28px;
+}
+.github {
+    position: absolute;
+    right: 10px;
+    bottom: -4px;
+}
+.github img {
+    width: 30px;
+    height: 34px;
+}
+
+/* Navgation Bar
+-------------------------------------------------- */
+.cover {
+    width: 100%;
+    height: 525px;
+    background: url(../img/banner-bg.jpg) no-repeat center;
+}
+.section {
+    position: relative;
+    max-width: 980px;
+    height: 525px;
+    margin: 0 auto;
+}
+.cover-contents {
+    width: 320px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 10px 30px 10px;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7) 70%, rgba(255 , 255, 255, 0) 100%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.7) 0, rgba(255 , 255, 255, 0) 100%);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7) 70%, rgba(255 , 255, 255, 0) 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 0.7) 70%, rgba(255 , 255, 255, 0) 100%);
+}
+.cover-contents h1 {
+    font-size: 14px;
+    text-align: right;
+    padding-bottom: 12px;
+}
+.cover-contents p {
+    font-size: 12px;
+    line-height: 150%;
+    text-align: right;
+}
+
+/* Teaser
+-------------------------------------------------- */
+.teaser-main {
+    height: 400px;
+    padding-top: 10px;
+    padding-bottom: 200px;
+    background: yellow;
+    overflow: hidden;
+}
+.teaser {
+    max-width: 980px;
+    margin: 0 auto;
+    list-style: none;
+}
+.teaser li {
+    float: left;
+    width: 320px;
+    margin: 0 5px;
+    padding-bottom: 5000px;
+    margin-bottom: -5000px;
+    background-color: #e3e3e3;
+}
+.teaser li:first-child {
+    margin-left: 0;
+}
+.teaser li:last-child {
+    margin-right: 0;
+}
+.teaser li img {
+    width: 300px;
+    height: 180px;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+.teaser li p {
+    font-size: 12px;
+    line-height: 170%;
+    margin: 0 30px 25px 30px;
+}
+
+/* Introduction
+-------------------------------------------------- */
+.intro {
+    position: relative;
+    text-align: center;
+    clear: left;
+
+}
+.intro img {
+    width: 160px;
+    height: 160ox;
+    border-radius: 100%;
+    display: inline-block;
+    margin-top: -50px;
+}
+.intro h2 {
+    font-family: "Century Gothic";
+    font-size: 20px;
+    margin-top: 50px;
+   
+}
+.intro p {
+    font-size: 14px;
+    color: #000;
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
+/* Footer
+-------------------------------------------------- */
+.site-footer {
+    background-color: #111;
+    color: #f3f3f3;
+    width: 100%;
+}
+.footer-nav {
+    text-align: center;
+    border-bottom: 2px solid #666;
+}
+.footer-nav li {
+    display: inline-block;
+    margin: 10px;
+}
+.footer-content {
+    width: 980px;
+    margin: 0 auto;
+}
+.column {
+    display: inline-block;
+    vertical-align: top;
+    width: 106px;
+    margin: 20px 0;
+    margin-right: 80px;
+}
+.copyright {
+    text-align: center;
+}
+.copyright img {
+    display: inline-block;
+    width: 30px;
+    height: 34px;
+    margin: 10px;
+    border-radius: 25%;
+    background: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
