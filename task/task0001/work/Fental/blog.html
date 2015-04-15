@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cmn-Hans">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>博客</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page blog-page">
+    <header role="banner">
+        <div class="nav-panel">
+            <img class="my-logo" src="" alt="YourLOGO">
+            <nav role="navigation">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="gallery.html">作品</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a class="to-github" href="https://github.com/"><img src="img/icon-github.png"></a>
+    </header>
+    <div id="blog-panel">
+        <main role="main" id="blog-main">
+            <article>
+                <h1>BFC的理解</h1>
+                <h2>为何如此清楚浮动以及BFC的用途</h2>
+                <p>BFC，独立的容器，对容器中的元素负责，同时容器中的元素不影响容器外的元素，反之亦然。</p>
+                <p>之前在网上查了清楚浮动的资料，有的可以理解，譬如使用clear属性。但是一直不明白为什么使用overflow:hidden、设置float属性等能清除浮动。原来是激活了BFC</p>
+                <p>如何激活BFC？float的值不为none；overflow的值不为visible；display的值为table-cell, table-caption, inline-block中的任何一个；position的值不为relative和static。</p>
+                <p>BFC的用处：不和浮动元素重叠；清除元素内部浮动；解决上下相邻两个元素重叠。</p>
+                <aside class="article-tag">
+                    <p class="article-time"><span>4.16</span></p>
+                    <p class="article-type"><span>HTML, CSS</span></p>
+                </aside>
+                <footer>Fental 发表于 2015年4月16日</footer>
+            </article>
+            <article>
+                <h1>布局的实现</h1>
+                <h2>这里是这篇文章的副标题，12px，#666</h2>
+                <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文。</p>
+                <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文。</p>
+                <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文。</p>
+                <p>正文正文。。。</p>
+                <aside class="article-tag">
+                    <p class="article-time"><span>4.12</span></p>
+                    <p class="article-type"><span>CSS</span></p>
+                </aside>
+                <footer>Fental 发表于 2015年4月12日</footer>
+            </article>
+            <article>
+                <h1>这里是这篇文章的标题，16px</h1>
+                <h2>这里是这篇文章的副标题，12px，#666</h2>
+                <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文。</p>
+                <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文。</p>
+                <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文。</p>
+                <p>正文正文。。。</p>
+                <aside class="article-tag">
+                    <p class="article-time"><span>4.12</span></p>
+                    <p class="article-type"><span>CSS</span></p>
+                </aside>
+                <footer>Fental 发表于 2015年4月12日</footer>
+            </article>
+            <div class="page-bar">
+                <ul>
+                    <li><a href="#">第一页</a></li>
+                    <li><a href="#">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li class="current-page"><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li>...</li>
+                    <li><a href="#">下一页</a></li>
+                    <li><a href="#">最后页</a></li>
+                </ul>
+            </div>
+        </main>
+        <aside id="blog-aside">
+            <form class="form-panel" action="http://www.google.com.hk/search" method="get">
+                <label class="search-panel-label" for="search"><img src="img/search-icon.jpg"></label>
+                <input class="search-panel" id="search" placeholder="Keywords" type="search">
+                <input class="form-submit" type="submit" value="GO">
+            </form>
+            <div class="article-type-panel">
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">其他文章</a></li>
+                </ul>
+            </div>
+            <div class="cal-panel">
+                <ul>
+                    <li id="last-month">&lt;</li>
+                    <li id="current-month">2015.04</li>
+                    <li id="next-month">&gt;</li>
+                </ul>
+                <table class="cal">
+                    <tbody>
+                    <tr>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                        <th>S</th>
+                    </tr>
+                    <tr>
+                        <td><p>1</p></td>
+                        <td><p>2</p></td>
+                        <td><p>3</p></td>
+                        <td><p>4</p></td>
+                        <td><p>5</p></td>
+                        <td><p>6</p></td>
+                        <td><p>7</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>8</p></td>
+                        <td><p>9</p></td>
+                        <td><p>10</p></td>
+                        <td class="current-date"><p>11</p></td>
+                        <td><p>12</p></td>
+                        <td><p>13</p></td>
+                        <td><p>14</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>15</p></td>
+                        <td><p>16</p></td>
+                        <td><p>17</p></td>
+                        <td><p>18</p></td>
+                        <td><p>19</p></td>
+                        <td><p>20</p></td>
+                        <td><p>21</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>22</p></td>
+                        <td><p>23</p></td>
+                        <td><p>24</p></td>
+                        <td><p>25</p></td>
+                        <td><p>26</p></td>
+                        <td><p>27</p></td>
+                        <td><p>28</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>29</p></td>
+                        <td><p>30</p></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tag-panel">
+                <h1>Tags</h1>
+                <p>
+                    <a href ="#" class="level-3">JavaScript</a>
+                    <a class="level-2">CSS</a>
+                    <a class="level-0">flex</a>
+                    <a class="level-0">webGL</a>
+                    <a class="level-3">HTML</a>
+                    <a class="level-1">Canvas</a>
+                    <a class="level-1">prototype</a>
+                    <a class="level-2">HTML5</a>
+                    <a class="level-0">grid</a>
+                    <a class="level-1">nodeJS</a>
+                    <a class="level-1">CSS</a>
+                    <a class="level-2">jQuery</a>
+                    <a class="level-2">ECharts</a>
+                </p>
+            </div>
+        </aside>
+    </div>
+    <footer class="all-footer">
+        <div class="f-head">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">文章</a></li>
+                <li><a href="gallery.html">作品</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+        <div class="panel">
+            <div class="link">
+                <p>学习资料</p>
+                <ul>
+                    <li><a href="index.html">LINK</a></li>
+                    <li><a href="blog.html">LINK</a></li>
+                    <li><a href="gallery.html">LINK</a></li>
+                    <li><a href="about.html">LINK</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <p>友情链接</p>
+                <ul>
+                    <li><a href="index.html">LINK</a></li>
+                    <li><a href="blog.html">LINK</a></li>
+                    <li><a href="gallery.html">LINK</a></li>
+                    <li><a href="about.html">LINK</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <p>学习资料</p>
+                <ul>
+                    <li><a href="index.html">LINK</a></li>
+                    <li><a href="blog.html">LINK</a></li>
+                    <li><a href="gallery.html">LINK</a></li>
+                    <li><a href="about.html">LINK</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <p>学习资料</p>
+                <ul>
+                    <li><a href="index.html">LINK</a></li>
+                    <li><a href="blog.html">LINK</a></li>
+                    <li><a href="gallery.html">LINK</a></li>
+                    <li><a href="about.html">LINK</a></li>
+                    <li><a href="about.html">LINK</a></li>
+                    <li><a href="about.html">LINK</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <p>友情链接</p>
+                <ul>
+                    <li><a href="index.html">LINK</a></li>
+                    <li><a href="blog.html">LINK</a></li>
+                    <li><a href="gallery.html">LINK</a></li>
+                    <li><a href="about.html">LINK</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="info">
+            <p>版权信息</p>
+            <div>
+                <a href="https://github.com/"><img src="img/icon-github.png"></a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
