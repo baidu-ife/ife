@@ -1,0 +1,374 @@
+/*共用样式*/
+.header{
+	position: relative;
+	height: 80px;
+
+	font-family: "宋体", sans-serif;
+	background-color: #6d3353;
+}
+.container {
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+	height: 100%;
+}
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: table;
+	line-height: 0;
+	font-size: 0;
+	clear: both;
+}
+
+.logo {
+	border-radius: 50%;
+}
+.header .logo{
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	height: 50px;
+	max-width: 100px;
+}
+.header-nav{
+	position: absolute;
+	bottom: 5px;
+	right: 0;
+}
+.header-nav li{
+	float: left;
+	margin-left: 28px;
+}
+.header-nav li a{
+	color: white;
+	font-size: 14px;
+}
+.header .link-github{
+	position: absolute;
+	right: 10px;
+	bottom: 0;
+}
+.content{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.footer{
+	background-color: black;
+	color: white;
+}
+.footer a{
+	color: white;
+}
+.footer .footer-nav{
+	text-align: center;
+	font-size: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.footer .footer-nav li{
+	display: inline-block;	
+	margin: 0 20px;
+}
+.footer .footer-nav li a{
+	font-size: 20px;
+	line-height: 40px;
+}
+.footer .footer-links-container{
+	padding: 50px 0 100px;
+}
+.footer .footer-links-container .linklist{
+	width: 20%;
+	float: left;
+}
+.footer .footer-links-container .linklist h1{
+	margin-bottom: 40px;
+}
+.footer .footer-links-container .linklist a{
+	line-height: 1.5;
+}
+.footer .footer-links-container .linklist a:hover{
+	text-decoration: underline;
+}
+.footer .bottom-info{
+	text-align: center;
+}
+.footer .bottom-info .bottom-text{
+	margin-bottom: 30px;
+}
+
+
+/*index.html 页样式*/
+#index .banner{
+	position: relative;
+	font-size: 0;
+}
+#index .banner img{
+	max-width: 100%;
+}
+#index .banner .inner{
+	position: absolute;
+	width: 980px;
+	bottom: 0px;
+	left: 50%;
+	margin-left: -490px;
+}
+#index .banner .inner .banner-image-text{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	width: 400px;
+	vertical-align: bottom;
+	padding: 10px 10px 30px 10px;
+	color: white;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.7)); 
+ 	background: -webkit-gradient(linear, bottom, top, rgba(255, 255, 255, 0.7), color-stop(0.75, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0))); 
+ 	background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.7)); 
+ 	background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 1));	
+}
+#index .banner .inner .banner-image-text h1{
+	font-size: 14px;
+	text-align: right;
+	margin-bottom: 12px;
+}
+#index .banner .inner .banner-image-text p{
+	font-size: 14px;
+	line-height: 150%;
+	text-indent: 2em;
+}
+#index .content{
+	padding-top: 10px;
+	overflow: hidden;
+	border-bottom: 100px solid transparent;
+}
+#index .content .article{
+	float: left;
+	width: 320px;
+	background-color: white;
+	height: 100%;
+	padding-bottom: 10000px;
+	margin-bottom: -10000px;
+}
+#index .content .article+.article{
+	margin-left: 10px;
+}
+#index .content .article .inner{
+	padding: 10px;
+}
+#index .content .article .inner img{
+	max-width: 100%;
+}
+#index .content .article .inner .article-info{
+	font-size: 12px;
+	text-indent: 2em;
+	line-height: 1.7;
+	padding: 5px 20px 15px 20px;
+}
+
+#index .aside{
+	text-align: center;
+	padding-bottom: 100px;
+}
+#index .aside .inner{
+	width: 600px;
+	margin: 0 auto;
+	margin-top: -50px;
+}
+#index .aside .inner .logo{
+	width: 160px;
+	margin-bottom: 50px;
+}
+#index .aside .inner h1{
+	font-size: 20px;
+	font-family: "Century Gothic", Arial, sans-serif;
+	margin-bottom: 50px;
+}
+#index .aside .inner p{
+	font-size: 14px;
+	text-align: left;
+	text-indent: 2em;
+	line-height: 1.7;
+}
+
+/*blog.html页样式*/
+#blog .content{
+	padding: 20px 0 100px 0;
+}
+#blog .content .articles{
+	float: left;
+	width: 720px;
+}
+#blog .content .sidebar{
+	float: right;
+	width: 250px;
+}
+#blog .content .article{
+	background-color: white;
+	margin-bottom: 10px;
+	position: relative;
+}
+#blog .content .article h1{
+	font-size: 16px;
+	font-weight: 600;
+	color: #3b45a6;
+	margin-bottom: 10px;
+	letter-spacing: 1px;
+}
+#blog .content .article h2{
+	font-size: 12px;
+	font-weight: 600;
+	color: #666;
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+}
+#blog .content .article .inner{
+	padding: 20px 15px;
+}
+#blog .content .article .blog p{
+	text-indent: 2em;
+	font-size: 12px;
+	line-height: 1.7;
+}
+#blog .content .article .author-and-time{
+	margin-top: 30px;
+	text-align: right;
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.4);
+}
+#blog .content .article .blog-info{
+	position: absolute;
+	left: -50px;
+	top: 20px;
+	width: 50px;
+	color: white;
+	line-height: 40px;
+	text-align: center;
+}
+#blog .content .article .blog-info .blog-create-date{
+	background-color: #62bfd6;
+}
+#blog .content .article .blog-info .blog-tag{
+	background-color: #9fd8e6;
+}
+
+#blog .content .pager{
+	width: 575px;
+	margin: 0 auto;
+}
+#blog .content .pager li{
+	float: left;
+	background-color: white;
+	font-size: 12px;
+	padding: 15px;
+	text-align: center;
+}
+#blog .content .pager li+li{
+	margin-left: 10px;
+}
+#blog .content .pager .active{
+	background-color: #62bfd6;
+	color: white;
+}
+#blog .content .pager .disabled{
+	color: grey;
+}
+
+#blog .sidebar #search-form input[type='text']{
+	width: 100px;
+	height: 34px;
+	padding: 3px 3px 3px 50px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background: url(../img/icon-search.png) 0px 0px no-repeat;
+	letter-spacing: 1px;
+	vertical-align: middle;
+}
+#blog .sidebar #search-form input[type='submit']{
+	height: 42px;
+	width: 54px;
+	border: none;
+	background-color: rgba(0, 0, 0, 0.2);
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 1px;
+	vertical-align: middle;
+}
+
+#blog .sidebar #sidebar-nav li{
+	padding: 20px 15px;
+	border-left: 4px solid #9fd8e6;
+}
+#blog .sidebar #sidebar-nav li.active,
+#blog .sidebar #sidebar-nav li:hover,{
+	border-left: 4px solid #62bfd6;
+}
+#blog .sidebar #sidebar-nav li+li{
+	border-top: 1px solid #9fd8e6;
+}
+#blog .sidebar #sidebar-nav li a{
+	color: rgba(0, 0, 0, 0.4);
+}
+
+#blog .sidebar #calendar{
+	text-align: center;
+}
+#blog .sidebar #calendar .year-month{
+	position: relative;
+	margin-bottom: 5px;
+	color: #62bfd6;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-weight: 600;
+}
+#blog .sidebar #calendar .year-month:before{
+	content: "<";
+	position: absolute;
+	left: 0;
+}	
+#blog .sidebar #calendar .year-month:after{
+	content: ">";
+	position: absolute;
+	right: 0;
+}
+#blog .sidebar #calendar ul{
+	padding: 5px 0 10px 0;
+	font-size: 14px;
+	line-height: 20px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#blog .sidebar #calendar li{
+	float: left;
+	width: 30px;	
+	color: rgba(0, 0, 0, 0.4);	
+}
+#blog .sidebar #calendar li.active,
+#blog .sidebar #calendar li:hover{
+	color: white;
+	background-color: #62bfd6;
+}
+
+#blog .sidebar #tags{
+	color: #62bfd6;
+	margin-bottom: 15px;
+}
+#blog .sidebar #tags .title{
+	color: rgba(0, 0, 0, 0.4);
+}
+#blog .sidebar #tags .level-5{
+	font-size: 24px;
+	font-weight: 600;
+}
+#blog .sidebar #tags .level-4{
+	font-size: 20px;
+	font-weight: 600;
+}
+#blog .sidebar #tags .level-3{
+	font-size: 16px;
+}
+#blog .sidebar #tags .level-2{
+	font-size: 14px;
+}
+#blog .sidebar #tags .level-1{
+	font-size: 12px;
+}
