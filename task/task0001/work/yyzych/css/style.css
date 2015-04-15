@@ -83,7 +83,8 @@ th {
 
 .clearfix:after,
 .clearfix:before {
-    display: table; /*he use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.*/
+    /*he use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.*/
+    display: table; 
     content: "";
     line-height: 0;
 }
@@ -241,6 +242,8 @@ h5 {
 .web-header .web-inner {
     height: 80px;
     background-color: #640064;
+    /*遮住github图标，不然会盖住导航*/
+    z-index: 2;
 }
 
 .web-header .github-link {
@@ -369,7 +372,6 @@ h5 {
 
 /*搜索框*/
 .field-row {
-    border: 1px solid #ccc;
     position: relative;
 }
 
@@ -389,6 +391,16 @@ h5 {
 .search-area .form-control {
     padding: 0 55px 0 45px;
     height: 40px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+}
+
+.search-area .form-control:focus {
+    border-color: #999;
+}
+
+.search-area .form-control:focus + .search-btn {
+    background-color: #999;
 }
 
 .search-area .icon {
@@ -401,24 +413,21 @@ h5 {
 }
 
 .search-area .search-btn {
-    background-color: #a660b7;
+    background-color: #ddd;
     color: #fff;
     height: 100%;
     line-height: 42px;
     width: 45px;
     text-align: center;
+    right: -1px;
 }
-
-.search-area .search-btn.disabled {
-    background-color: #ddd;
-}
-
 
 /*时间控件*/
 .time-select {
     text-align: center;
     font-size: 12px;
     width: 100%;
+    table-layout: fixed;
 }
 
 .time-select .title {
@@ -498,6 +507,7 @@ h5 {
     color: #fff;
     line-height: 20px;
     text-align: center;
+    position: relative;
 }
 
 .rank-item {
@@ -611,8 +621,6 @@ h5 {
     background-color: #fff;
     width: 300px;
     padding: 10px;
-    /*margin-left: 10px;*/
-    /*float: left;*/
     display: table-cell;/*高度要一样啊！*/;
 }
 
@@ -728,7 +736,7 @@ h5 {
 }
 
 .topic-nav .nli:hover,
-.topic-nav .nli:active {
+.topic-nav .nli.active {
     border-left-color: #522a5c;
 }
 
@@ -739,13 +747,26 @@ h5 {
 }
 
 .gallery-nav .inline-item {
-    padding: 15px 20px 20px;
     border-bottom: 1px solid;
     border-left: 1px solid;
     border-top: 3px solid;
     border-color: #ddd;
     background-color: #fff;
     line-height: normal;
+}
+
+.gallery-nav .inline-item a {
+    display: block;
+    padding: 15px 20px 20px;
+    position: relative;
+    top: 0;
+    -webkit-transition: top .15s ease-out;
+    -moz-transition:    top .15s ease-out;
+    transition:         top .15s ease-out;
+}
+
+.gallery-nav .inline-item:hover a {
+    top: -5px;
 }
 
 .gallery-nav .inline-item.active {
