@@ -1,0 +1,254 @@
+.container{
+	width: 980px;
+	margin: 20px auto 200px;
+}
+.main{
+	width: 710px;
+	float: left;
+	
+}
+.arcticle{
+	width: 670px;
+	background: #fff;
+	position: relative;
+	padding: 18px 22px 60px 18px;
+	margin-bottom: 10px;
+}
+.arcticle-title{
+	font-size: 16px;
+	font-weight: normal;
+	color: #a660b7;
+	line-height: 18px;
+}
+.arcticle-second-title{
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 40px;
+	color: #999;
+}
+.arcticle-content p{
+	text-indent: 2em;
+	line-height: 21px;
+	margin-bottom: 10px;
+}
+.arcticle-content strong {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #666;
+}
+.arcticle-info{
+	position: absolute;
+	right: 24px;
+	bottom: 16px;
+	color: #999;
+}
+.arcticle-info span{
+	padding:0 6px;
+}
+.arcticle-nav{
+	width: 50px;
+	height: 80px;
+	position: absolute;
+	left: -50px;
+	top: 20px;
+}
+.arcticle-nav .arcticle-nav-time,
+.arcticle-nav .arcticle-nav-type{
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+}
+.arcticle-nav .arcticle-nav-time{
+	background: #522a5c;
+}
+.arcticle-nav .arcticle-nav-type{
+	background: #a660b7;
+}
+.arcticle-nav strong{
+	font-weight: normal;
+}
+
+/*分页*/
+.list-page{
+	width: 560px;
+	margin: 0 auto;
+}
+.list-page a{
+	display: inline-block;
+	height: 35px;
+	padding: 0 15px;
+	line-height: 35px;
+	background: #fff;
+	text-align: center;
+	color: #000;
+	margin-right: 10px;
+}
+.list-page a.active,
+.list-page a:hover {
+	background: #a660b7;
+	color: #fff;
+}
+
+/* 侧边栏*/
+.sidebar{
+	width: 260px;
+	float: right;
+}
+.search{
+	width: 222px;
+	height: 42px;
+	background: #fff;
+	padding: 19px;
+
+}
+.search-input{
+	width: 120px;
+	height: 40px;
+	border: 1px solid #ddd;
+	line-height: 40px;
+	padding-left: 49px;
+	outline: none;
+	color: #999999;
+	background: url(../img/icon-search.png) no-repeat 8px 6px;
+}
+.search-submit{
+	width: 51px;
+	height: 42px;
+	background: #ddd;
+	outline: none;
+	border: none;
+	color: #fff;
+	line-height: 42px;
+	cursor: pointer;
+}
+
+.bar-sort {
+	width: 260px;
+	margin-top: 10px;
+	background: #fff;
+
+}
+.bar-sort li {
+	width: 260px;
+	height: 49px;
+	border-top: 1px solid #dddddd;
+	line-height: 49px;
+	vertical-align: top;
+}
+.last-bar-sort {
+	border-bottom: 1px solid #ddd;
+}
+.bar-sort li a {
+	display: block;
+	color: #666;
+	text-indent: 22px;
+}
+.bar-sort li a.active span,
+.bar-sort li a:hover span {
+	background: #522a5c;
+}
+
+.bar-sort li span {
+	width: 4px;
+	height: 49px;
+	background: #dfc6e6;
+	float: left;
+}
+
+.calendar {
+	width: 220px;
+	margin-top: 10px;
+	padding: 16px 20px;
+	background: #fff;
+}
+.calendar-head {
+	width: 220px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	color: #773c88;
+	position: relative;
+}
+.calendar-head strong {
+	font-weight: normal;
+}
+.calendar-head a.next,
+.calendar-head a.prev {
+	width: 14px;
+	height: 25px;
+	position: absolute;
+	right: 30px;
+	top: 0;
+	background: url(../img/canledar_bg.png) no-repeat 0 0;
+}
+.calendar-head a.prev {
+	left: 30px;
+	background-position: 0 -25px;
+}
+
+.calendar li {
+	width: 220px;
+	height: 33px;
+	border-bottom: 1px solid #eeeeee;
+	line-height: 33px;
+	text-align: center;
+}
+.calendar li div {
+	width: 30px;
+	height: 33px;
+	line-height: 33px;
+	float: left;
+
+}
+.calendar .week a {
+	width: 30px;
+	padding: 0;
+}
+.calendar li a {
+	float: left;
+	padding: 0 10px;
+	height: 20px;
+	margin-top: 6px;
+	line-height: 20px;
+	color: #999;
+}
+.calendar li a:hover,
+.calendar li a.active {
+	background: #773c88;
+	color: #fff;
+}
+.calendar .week a:hover {
+	background: #fff;
+	color: #999;
+}
+
+
+.tags {
+	padding: 16px;
+	background: #fff;
+	margin-top: 10px;
+}
+.tags h3 {
+	font-weight: normal;
+	color: #666666;
+	margin-bottom: 10px;
+}
+.tags a {
+	color: #773c88;
+	padding-right: 8px;
+	line-height: 26px;
+}
+.tags .tags-s {
+	font-size: 12px;
+}
+.tags .tags-m {
+	font-size: 16px;
+	font-weight: bold;
+}
+.tags .tags-l {
+	font-size: 24px;
+	font-weight: bold;
+}
