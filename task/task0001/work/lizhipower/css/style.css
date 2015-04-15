@@ -263,34 +263,63 @@ img.avatar {
     background-color: #ffffff;
 
 }
-
-.search {
-    height: 40px;
-    position: relative;
+.search-wrap {
+    background-color: #ffffff;
     padding: 20px;
-    background-color: #fff;
+
 }
-.search>input {
+.search {
+
+    background-color: #ddd;
+    /*width: 280px;*/
+    /*height: 84px;*/
+}
+.search:hover {
+    /*height: 40px;*/
+    /*position: relative;*/
+    /*margin: 20px;*/
+    background-color: purple;
+    /*border: 1px solid #ddd;*/
+
+}
+
+div.search>input {
     display: inline-block;
-    width: 200px;
-    height: 36px;
+    width: 182px;
+    /*height: 36px;*/
     border: 1px solid #ddd;
     background-color: #fff;
     color: #999;
+    height: 40px;
+    /*border: 0px;*/
+    padding: 0px;
 }
 .search-btn {
+    border: 1px solid #ddd;
+    position: absolute;
+    /*right: 0px;*/
+    display: inline-block;
+    width: 55px;
+    height: 40px;
+    /*background-color: #ddd;*/
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+}
+/*.search-btn:hover {
     border: 1px solid #ddd;
     position: absolute;
     right: 28px;
     display: inline-block;
     width: 52px;
     height: 38px;
-    background-color: #ddd;
+    background-color: purple;
     color: #fff;
     font-size: 18px;
     text-align: center;
     line-height: 40px;
-}
+}*/
 .calendar table {
     width: 100%;
     background-color: #ffffff;
