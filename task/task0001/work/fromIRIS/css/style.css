@@ -324,7 +324,7 @@
     padding: 10px 15px;
     display: block;
 }
-.blog-sidebar {
+.sidebar {
     position: absolute;
     right: 0px;
     top: 20px;
@@ -468,4 +468,230 @@
 .blog-sidebar-tag-list .tag-small {
     color: #773C88;
     font-size: 10px;
+}
+
+
+/*gallery.html*/
+.gallery-sidebar-search {
+    width: 222px;
+    height: 42px;
+    background-color: #fff;
+    padding: 19px;
+    margin-bottom: 10px;
+    margin-top: 55px;
+}
+.gallery-sidebar-search > div {
+    border: 1px solid #ddd;
+    height: 40px;
+    position: relative;
+}
+.gallery-sidebar-search > div input[type="text"] {
+    width: 126px;
+    height: 40px;
+    border: 0;
+    position: absolute;
+    top: 0;
+    line-height: 40px;
+}
+.gallery-sidebar-search > div input[type="button"] {
+    width: 50px;
+    height: 40px;
+    background-color: #eee;
+    border: 0;
+    position: absolute;
+    right: 0;
+}
+.gallery-popular-box {
+    width: 250px;
+    height: 180px;
+    padding: 20px 0 40px 10px;
+    background-color: #fff;
+}
+.gallery-popular-box p {
+    font-size: 14px;
+    color: #666;
+    font-family: "SimSon";
+    margin-bottom: 30px;
+}
+.gallery-popular-box-list {
+    overflow: hidden;
+    zoom: 1;
+    margin-bottom: 10px;
+}
+.gallery-popular-box-list > div:first-child {
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    background-color: #522A5C;
+    margin-right: 10px;
+    margin-top: 2px;
+    float: left;
+    text-align: center;
+    line-height: 16px;
+}
+.gallery-popular-precent-box {
+    width: 100px;
+    height: 16px;
+    border: 2px solid #522A5C;
+    float: left;
+    margin-right: 10px;
+}
+.gallery-popular-precent1 {
+    width: 100%;
+    height: 100%;
+    background-color: #522A5C;
+}
+.gallery-popular-precent2 {
+    width: 80%;
+    height: 100%;
+    background-color: #522A5C;
+}
+.gallery-popular-precent3 {
+    width: 60%;
+    height: 100%;
+    background-color: #522A5C;
+}
+.gallery-popular-precent4 {
+    width: 50%;
+    height: 100%;
+    background-color: #522A5C;
+}
+.gallery-popular-precent5 {
+    width: 20%;
+    height: 100%;
+    background-color: #522A5C;
+}
+
+.gallery-tab-box {
+    overflow: hidden;
+    zoom: 1;
+}
+.gallery-tab-box li {
+    padding: 15px 20px 20px;
+    font-size: 14px;
+    font-family: "ArialMT";
+    float: left;
+    list-style: none;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    cursor: pointer;
+}
+.gallery-main-content {
+    width: 710px;
+    height: 800px;
+    background-color: #fff;
+}
+.gallery-click-more {
+    width: 710px;
+    height: 50px;
+    background-color: #fff;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.gallery-click-more a {
+    color: #666;
+    font-size: 12px;
+    width: 110px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 5px 0 5px 10px;
+    line-height: 40px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background: url(../img/20150415100720849_easyicon_net_702.442622951.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.gallery-tab-box .gallery-tab1 {
+    border-left: none;
+    border-top: 4px solid #DFC6E6;
+}
+.gallery-tab-box .gallery-tab2 {
+    border-top: 4px solid #522A5C;
+    border-bottom: 1px solid transparent;
+}
+.gallery-tab-box .gallery-tab3 {
+    border-top: 4px solid #5900B2;
+    border-bottom: 1px solid transparent;
+}
+.gallery-tab-box .gallery-tab4 {
+    border-top: 4px solid #8C2300;
+    border-bottom: 1px solid transparent;
+}
+.gallery-tab-box .gallery-tab5 {
+    border-top: 4px solid #D9A300;
+    border-bottom: 1px solid transparent;
+}
+
+
+/*about.html*/
+.about-content {
+    height: 1370px;
+    background-color: #fff;
+    margin-top: 80px;
+    position: relative;
+}
+.about-longline {
+    width: 5px;
+    height: 1370px;
+    background-color: #eee;
+    margin: 0 auto;
+}
+.about-userpic {
+    position: absolute;
+    left: 400px;
+    top: -60px;
+    border-radius: 90px;
+    border: 10px solid #eee;
+}
+.about-contactpic {
+    position: absolute;
+    left: 435px;
+    top: 300px;
+    border-radius: 55px;
+    border: 5px solid #eee;
+}
+.about-edupic {
+    position: absolute;
+    left: 435px;
+    top: 600px;
+    border-radius: 55px;
+    border: 5px solid #eee;
+}
+.about-workpic {
+    position: absolute;
+    left: 435px;
+    top: 900px;
+    border-radius: 55px;
+    border: 5px solid #eee;
+}
+.about-year {
+    width: 60px;
+    height: 23px;
+    background-color: #fff;
+    border: 5px solid #eee;
+    border-radius: 7px;
+    position: absolute;
+    left: 455px;
+    text-align: center;
+    line-height: 23px;
+    color: #666;
+    font-size: 14px;
+}
+.about-year1 {
+    top: 730px;
+}
+.about-year2 {
+    top: 790px;
+}
+.about-year3 {
+    top: 850px;
+}
+.about-year4 {
+    top: 1050px;
+}
+.about-year5 {
+    top: 1110px;
 }
