@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>居中</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div:not(.container){
+            width: 960px;
+            height: 100px;
+        }
+        div:not(:first-child){
+            margin-top: 15px;
+        }
+        .wrap1{
+            background: red;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .wrap2{
+            background: blue;
+            position: relative;
+            left: 50%;
+            margin-left: -480px;
+        }
+        .wrap3{
+            background: yellow;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .container{
+            text-align: center;
+        }
+        .wrap4{
+            background: green;
+            display: inline-block;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap1">1.</div>
+    <div class="wrap2">2.</div>
+    <div class="wrap3">3.</div>
+    <div class="container">
+        <div class="wrap4">4.</div>
+    </div>
+</body>
+</html>

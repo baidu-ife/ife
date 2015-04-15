@@ -1,0 +1,53 @@
+/*
+* task0001.css
+*/
+p:nth-child(1) {
+  text-indent: 2em;
+}
+p:nth-child(2) {
+  text-overflow: ellipsis;
+  width: 70px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+p:nth-child(3) {
+  text-decoration: line-through;/*underline,overline*/
+}
+p:nth-child(4) {
+  text-align: center;
+}
+p:nth-child(5) {
+  width: 50px;
+  white-space: normal;
+}
+p:nth-child(6) {
+  white-space: pre-wrap;
+  width: 50px;
+}
+p:nth-child(7) {
+  white-space: pre;
+  width: 50px;
+}
+p:nth-child(8) {
+  white-space: nowrap;
+  width: 50px;
+}
+p:nth-child(9) {
+  white-space: pre;
+  width: 500px;
+}
+p:nth-child(10) {
+  width: 50px;
+  word-wrap: break-word;
+}
+p:nth-child(11) {
+  word-break: break-all;
+  width: 50px;
+}
+p:nth-child(12) {
+  word-break: break-word;
+  width: 50px;
+}
+p:nth-child(13) {
+  line-height: 10px;/*行内框(inline box)的高度就是10px,内容区域(content area)的高度是以字体为主的*/
+}

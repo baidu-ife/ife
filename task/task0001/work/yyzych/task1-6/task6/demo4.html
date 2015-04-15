@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .container{
+            position: relative;
+            overflow: hidden;
+            *zoom: 1;
+        }
+        .container > div{
+            height: 100px;
+        }
+        .left
+        {
+            width: 100px;
+            background: red;
+        }
+        .right{
+            background: blue;
+            width: 200px;
+        }
+        .middle{
+            background: yellow;
+        }
+
+
+        .container1 .left{
+            float: left;
+        }
+        .container1 .right{
+            float: right;
+        }
+        .container1 .middle{
+            overflow: hidden;
+        }
+
+
+        .container2 .middle{
+            width: 100%;
+            float: left;
+        }
+        .container2 .middle-wrap{
+            margin-left: 100px;
+            margin-right: 200px;
+        }
+        .container2 .left{
+            float: left;
+            margin-left: -100%;
+        }
+        .container2 .right{
+            float: left;
+            margin-left: -200px;
+        }
+
+
+        .container3 .middle{
+            width: 100%;
+            float: left;
+        }
+        .container3 .middle-wrap{
+            margin-right: 300px;
+        }
+        .container3 .left{
+            float: left;
+            margin-left: -300px;
+        }
+        .container3 .right{
+            float: left;
+            margin-left: -200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container container1">
+        <!-- 顺序很重要 -->
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="middle">middle</div>
+    </div>
+    <br><br>
+    <div class="container container2">
+        <div class="middle">
+            <div class="middle-wrap">
+                middle
+            </div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <br><br>
+    <div class="container container3">
+        <div class="middle">
+            <div class="middle-wrap">
+                middle
+            </div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>

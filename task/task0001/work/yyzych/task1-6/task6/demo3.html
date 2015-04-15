@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .aside1{
+            float: left;
+            width: 130px;
+            background-color: red;
+        }
+        .content1{
+            overflow: hidden;
+            background-color: blue;
+        }
+
+        .aside2{
+            float: left;
+            width: 130px;
+            background-color: red;
+        }
+        .content2{
+            margin-left: 130px;
+            background-color: blue;
+        }
+
+        .container3{
+            overflow: hidden;
+            *zoom: 1;
+            padding-left: 150px;
+        }
+        .container3 div{
+            min-height: 100px;
+        }
+        .aside3{
+            float: left;
+            width: 150px;
+            background-color: red;
+            margin-left: -100%;
+            position: relative;
+            left: -150px;
+        }
+        .content3{
+            float: left;
+            width: 100%;
+            background-color: blue;
+        }
+
+        .container4{
+            overflow: hidden;
+            *zoom: 1;
+        }
+        .container4 div{
+            min-height: 100px;
+        }
+        .content-wrap{
+            margin-left: 150px;
+        }
+        .aside4{
+            float: left;
+            width: 150px;
+            background-color: red;
+            margin-left: -100%;
+        }
+        .content4{
+            float: left;
+            width: 100%;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="aside1">A</div>
+        <div class="content1">
+            DKFJDLKF
+            <br>
+            反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="aside2">B</div>
+        <div class="content2">
+            DKFJDLKF
+            <br>
+            反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法反垄断法空间违法
+        </div>
+    </div>
+    <br><br>
+    <div class="container container3">
+        <div class="content3">c</div>
+        <div class="aside3">C</div>
+    </div>
+    <br><br>
+    <div class="container container4">
+        <div class="content4">
+            <div class="content-wrap">
+                ccccccccc
+            </div>
+        </div>
+        <div class="aside4">C</div>
+    </div>
+</body>
+</html>
