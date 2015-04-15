@@ -231,3 +231,241 @@
 .footer-content-list li a:hover {
     text-decoration: underline;
 }
+
+
+/*blog.html*/
+.container-wrap {
+    width: 100%;
+    background-color: #eee;
+}
+.container {
+    height: 1500px;
+    width: 980px;
+    background-color: #eee;
+    padding-top: 20px;
+    margin: 0 auto;
+    position: relative;
+}
+.blog-main-content {
+    width: 710px;
+}
+.blog-content-box {
+    width: 680px;
+    position: relative;
+    padding: 20px 15px 60px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.blog-heading {
+    font-size: 16px;
+    color: #a660b7;
+    font-family: "Arial";
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.blog-subheading {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+.sign-name {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-family: "SimSon";
+    font-size: 12px;
+    color: #999;
+}
+.blog-content-label {
+    width: 50px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    left: -50px;
+}
+.blog-content-label-time {
+    width: 50px;
+    height: 40px;
+    background-color: #522A5C;
+    line-height: 40px;
+}
+.blog-content-label-type {
+    width: 50px;
+    height: 40px;
+    background-color: #A660B7;
+    line-height: 40px;
+}
+.blog-content-label-time p,
+.blog-content-label-type p {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    font-family: "Arial";
+}
+.blog-pre-next {
+    overflow: hidden;
+    margin-left: 55px;
+}
+.blog-pre-next .blog-pre-next-active {
+    background-color: #A660B7;
+    color: #fff;
+    font-weight: bold;
+}
+.blog-pre-next li {
+    list-style: none;
+    float: left;
+    background-color: #fff;
+    margin-left: 10px;
+}
+.blog-pre-next li a {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: block;
+}
+.blog-sidebar {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    width: 260px;
+}
+.blog-sidebar-search {
+    width: 222px;
+    height: 42px;
+    background-color: #fff;
+    padding: 19px;
+    margin-bottom: 10px;
+}
+.blog-sidebar-search > div {
+    border: 1px solid #ddd;
+    height: 40px;
+    position: relative;
+}
+.blog-sidebar-search > div input[type="text"] {
+    width: 126px;
+    height: 40px;
+    border: 0;
+    position: absolute;
+    top: 0;
+    line-height: 40px;
+}
+.blog-sidebar-search > div input[type="button"] {
+    width: 50px;
+    height: 40px;
+    background-color: #eee;
+    border: 0;
+    position: absolute;
+    right: 0;
+}
+.blog-sidebar-nav {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.blog-sidebar-nav li {
+    list-style: none;
+    width: 256px;
+    height: 49px;
+    background-color: #fff;
+    border-bottom:  1px solid #DFC6E6;
+    border-left: 4px solid #DFC6E6;
+    line-height: 49px;
+}
+.blog-sidebar .sidebar-nav-active {
+    border-left: 4px solid #522A5C;
+}
+.blog-sidebar-nav li:first-child {
+    border-top: 1px solid #dfc6e6;
+}
+.blog-sidebar-nav li a {
+    color: #666;
+    font-size: 14px;
+    font-family: "SimSun";
+    padding-left: 15px;
+    display: block;
+    text-decoration: none;
+}
+
+
+.blog-sidebar-calendar {
+    width: 220px;
+    background-color: #fff;
+    padding: 25px 20px;
+    margin-bottom: 10px;
+}
+.calendar-month {
+    height: 32px;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+}
+.calendar-month-button1 {
+    position: absolute;
+    left: 10px;
+}
+.calendar-month-button2 {
+    position: absolute;
+    right: 10px;
+}
+.calendar-month a {
+    text-decoration: none;
+    color: #773B87;
+    font-weight: bold;
+}
+.calendar-month span {
+    color: #773B87;
+    font-weight: bold;
+}
+.calendar-week {
+    height: 22px;
+    overflow: hidden;
+    padding: 5px 10px;
+    border-bottom: 1px solid #eee;
+}
+.calendar-week li {
+    list-style: none;
+    float: left;
+    height: 20px;
+    width: 28px;
+/*    background-color: #773C88;*/
+    text-align: center;
+    line-height: 20px;
+}
+.calendar-week li a {
+    color: #999;
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+}
+.calendar-week .calendar-active {
+    background-color: #773C88;
+    color: #fff;
+}
+
+
+.blog-sidebar-tag {
+    width: 220px;
+    background-color: #fff;
+    padding: 10px 20px 30px;
+}
+.blog-sidebar-tag-list {
+    margin-top: 30px;
+}
+.blog-sidebar-tag-list a {
+    text-decoration: none;
+    font-size: 12px;
+}
+.blog-sidebar-tag-list .tag-big {
+    font-weight: bolder;
+    color: #773C88;
+    font-size: 40px;
+}
+.blog-sidebar-tag-list .tag-middle {
+    font-weight: bold;
+    color: #773C88;
+    font-size: 30px;
+}
+.blog-sidebar-tag-list .tag-small {
+    color: #773C88;
+    font-size: 10px;
+}
