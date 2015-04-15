@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文章</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/blog.css"/>
+</head>
+<body>
+<!--header部分开始-->
+<div class="header">
+    <div class="wrapper">
+        <div class="logo">
+            <img src="img/logo.png" alt=""/>
+        </div>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="javascript:void(1)">文章</a></li>
+            <li><a href="gallery.html">作品</a></li>
+            <li><a href="about.html">关于</a></li>
+        </ul>
+    </div>
+    <a href="https://github.com/frozenwings" class="github" target="_blank"><img src="img/icon-github.png" alt=""/></a>
+</div>
+<!--header部分结束-->
+<div class="wrapper">
+    <!--左侧文章区域开始-->
+    <div class="main">
+        <div class="article">
+            <span class="date">4.12</span>
+            <span class="tag">CSS</span>
+            <h1>img标签遇到的问题</h1>
+            <h2>容器内的img标签与容器之间存在2px的空隙</h2>
+            <div class="content">
+                <p>
+                    问题：容器中的img标签和容器底部之间会有2px的间距
+                </p>
+                <p>
+                    参考：[2px White Area Underneath Of Images]
+                    (http://stackoverflow.com/questions/21153123/strange-2px-white-area-underneath-of-images-possible-css-error)
+                </p>
+                <p>
+                    解决方法：
+                <pre>
+    #gallery > div > img {
+        display:block;
+    }
+    或者：
+    #gallery > div > img {
+        vertical-align:top;
+    }
+                </pre>
+            </div>
+            <div class="info">frozenwings 发表于 2015年4月14日</div>
+        </div>
+        <div class="article">
+            <span class="date">4.12</span>
+            <span class="tag">CSS</span>
+            <h1>inline-block间距问题</h1>
+            <h2>并排inline-block元素之间存在空隙</h2>
+            <div class="content">
+                <p>
+                    问题：在同一个容器中的并排inline-block元素之间，存在空白间距，和margin,padding无关。
+                </p>
+                <p>
+                    参考：[Fighting the Space Between Inline Block Elements]
+                    (https://css-tricks.com/fighting-the-space-between-inline-block-elements/)
+                </p>
+                <p>
+                原因：inline-block标签之间存在空白字符，在页面上就会表现为空白间隙
+                </p>
+                <p>解决方法：</p>
+                <p>1、使用注释把元素之间的空白处注释掉，或者在要使用inline-block的标签之间不留空格或者换行</p>
+                <p>2、使用负的margin，大概4px的margin可以消除空白</p>
+                <p>
+                    <pre>
+        nav a {
+          display: inline-block;
+          margin-right: -4px;
+        }
+                    </pre>
+                    <p>3、把inline-block的父元素的font-size设置为0，在其子元素中再还原font-size数值：</p>
+                    <pre>
+        nav {
+          font-size: 0;
+        }
+        nav a {
+          font-size: 16px;
+        }
+                    </pre>
+                </p>
+            </div>
+            <div class="info">frozenwings 发表于 2015年4月14日</div>
+        </div>
+        <div class="article">
+            <span class="date">4.12</span>
+            <span class="tag">CSS</span>
+            <h1>并排等高div实现</h1>
+            <h2>使用table-cell实现并排div高度高度撑满容器</h2>
+            <div class="content">
+                <p>问题：实现容器中并排等高div并且自适应文字内容高度</p>
+                <p>解决方法：使用table-cell实现</p>
+                <p>兼容性见[CSS Table display](http://caniuse.com/#search=table-cell)</p>
+                <p>table-cell使用例子：</p>
+                <p>[这里](http://jsfiddle.net/FhQwb/1/)和[这里](http://jsfiddle.net/fm54T/)</p>
+                <p>实现：</p>
+                <pre>
+        .table{
+            display:table;
+            border-collapse:separate;
+            margin:0 -10px 0 -10px;
+            border-spacing:10px;
+        }
+        .cell {
+            display:table-cell;
+        }
+                </pre>
+                <p>
+                    table-cell元素不受margin的影响，详见[Why is a div with “display: table-cell;” not affected by margin?]
+                    (http://stackoverflow.com/questions/16398823/why-is-a-div-with-display-table-cell-not-affected-by-margin)
+                </p>
+                <p>要移除第一列左边和最后一列右边的`border-spacing`，把容器的`margin-left`和`margin-right`属性设置为负值</p>
+                <p>
+                    其中的border-spacing定义了并排div的间距，margin用来消除第一个和最后一个元素的左右边距。
+                </p>
+                <p>参考：</p>
+                <p>[CSS table border spacing inside only](http://jsfiddle.net/marcstober/60dnac4a/1/)</p>
+            </div>
+            <div class="info">frozenwings 发表于 2015年4月14日</div>
+        </div>
+        <div class="pagination">
+            <ul>
+                <li><a href="">第一页</a></li>
+                <li class="disable"><a href="">上一页</a></li>
+                <li class="active"><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">上一页</a></li>
+                <li><a href="">最后页</a></li>
+            </ul>
+        </div>
+    </div><!--左侧文章区域结束-->
+    <!--右侧区域开始-->
+    <div class="aside">
+        <div class="search">
+            <div class="search-wrapper">
+                <span class="search-icon"></span>
+                <input id="searchText" type="text" class="search-input" placeholder="Keywords"/>
+                <a class="search-btn">GO</a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li><a href="">HTML</a></li>
+                <li><a href="">CSS</a></li>
+                <li class="active"><a href="">Javascript</a></li>
+                <li><a href="">其他文章</a></li>
+            </ul>
+        </div>
+        <div class="calendar">
+            <h2>
+                <a class="prev" href="">&lt;</a>
+                <a class="year" href="">2014</a>
+                <span>.</span>
+                <a class="month" href="">04</a>
+                <a class="next" href="">&gt;</a>
+            </h2>
+            <p>
+                <a class="disable" href="">M</a>
+                <a class="disable" href="">T</a>
+                <a class="disable" href="">W</a>
+                <a class="disable" href="">T</a>
+                <a class="disable" class="disable" href="">F</a>
+                <a class="disable" href="">S</a>
+                <a class="disable" href="">S</a>
+            </p>
+            <p>
+                <a class="disable" href="">1</a>
+                <a class="disable" href="">2</a>
+                <a class="disable" href="">3</a>
+                <a class="disable" href="">4</a>
+                <a class="active" href="">5</a>
+                <a href="">6</a>
+                <a href="">7</a>
+            </p>
+            <p>
+                <a href="">8</a>
+                <a href="">9</a>
+                <a href="">10</a>
+                <a href="">11</a>
+                <a href="">12</a>
+                <a href="">13</a>
+                <a href="">14</a>
+            </p>
+            <p>
+                <a href="">15</a>
+                <a href="">16</a>
+                <a href="">17</a>
+                <a href="">18</a>
+                <a href="">19</a>
+                <a href="">20</a>
+                <a href="">21</a>
+            </p>
+            <p>
+                <a href="">22</a>
+                <a href="">23</a>
+                <a href="">24</a>
+                <a href="">25</a>
+                <a href="">26</a>
+                <a href="">27</a>
+                <a href="">28</a>
+            </p>
+        </div>
+        <div class="tags">
+            <h2>Tags</h2>
+            <p><a class="tag-1">Javascript</a><a class="tag-2">CSS</a><a class="tag-4">flex</a></p>
+            <p><a href="" class="tag-4">WebGL</a><a href="" class="tag-1">HTML</a><a href="" class="tag-3">Cavans</a></p>
+            <p><a href="" class="tag-4">prototype</a><a href="" class="tag-2">HTML5</a><a href="" class="tag-4">grid</a>
+            <a href="" class="tag-3">nodeJS</a></p>
+            <p><a href="" class="tag-3">CSS3</a><a href="" class="tag-2">jQuery</a><a href="" class="tag2">ECharts</a></p>
+        </div>
+    </div><!--右侧区域结束-->
+</div>
+<!--footer部分开始-->
+<div class="footer">
+    <div class="nav">
+        <a href="javascript:void(1);">主页</a>
+        <a href="javascript:void(1);">文章</a>
+        <a href="javascript:void(1);">作品</a>
+        <a href="javascript:void(1);">关于</a>
+    </div>
+    <div class="hr"></div>
+    <div class="wrapper">
+        <div class="links">
+            <p>学习资料</p>
+            <ul>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <p>学习资料</p>
+            <ul>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <p>学习资料</p>
+            <ul>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <p>学习资料</p>
+            <ul>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <p>学习资料</p>
+            <ul>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+                <li><a href="javascript:void(1);">LINK</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="copyright">
+        <p><a href="">版权信息</a></p>
+        <a href="http://github.com/frozenwings" target="_blank"><img src="img/icon-github.png" alt=""/></a>
+    </div>
+</div>
+<!--footer部分结束-->
+</body>
+</html>

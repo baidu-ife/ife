@@ -1,0 +1,110 @@
+/*banner部分开始*/
+.banner{
+    position:relative;
+}
+.banner img{
+    display:block;
+    width:100%;
+}
+.banner .mask{
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:120px;
+    width:360px;
+    background-color: #ffffff;
+    filter:alpha(Opacity=70, finishOpacity=50, Style=1, startX=180, startY=0, finishX=180, finishY=30);
+    filter:alpha(Opacity=50, finishOpacity=0, Style=1, startX=180, startY=30, finishX=180, finishY=120);
+    background:-webkit-gradient(linear,left 100%,left 25%, from(rgba(255,255,255,0.7)), to(rgba(255,255,255,0.5)));
+    background:-webkit-gradient(linear,left 25%,left bottom, from(rgba(255,255,255,0.5)), to(rgba(255,255,255,0)));
+    z-index:99;
+}
+.banner .text{
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:120px;
+    width:360px;
+    background:transparent;
+    z-index:100;
+    padding:10px 10px 30px 10px;
+}
+.banner h2{
+    text-align:right;
+    font-size:14px;
+}
+.banner p{
+    text-indent:2em;
+    font-size:12px;
+    line-height: 150%;
+    padding: 12px 0 0 0;
+}
+/*banner部分结束*/
+
+/*首页文章列表开始*/
+.articles{
+    position:relative;
+    margin:0 -10px 0 -10px;
+    border-spacing:10px;
+    color:#000000;
+}
+.article{
+    font-size:14px;
+    line-height: 170%;
+    background-color:#ffffff;
+    width:320px;
+    padding:10px;
+}
+.article p{
+    text-indent: 2em;
+}
+.article img{
+    width:300px;
+    height:180px;
+}
+.article-text{
+    padding:15px 20px 15px 20px;
+}
+/*首页文章列表结束*/
+
+/*首页自我介绍区域开始*/
+.avatar{
+    width:100%;
+    background-color:#ffffff;
+    color:#000000;
+    padding-bottom:185px;
+    margin-top:100px;
+}
+.avatar .img-wrapper{
+    position:relative;
+    width:160px;
+    height:160px;
+    margin:0 auto;
+}
+.avatar img{
+    display:block;
+    position:absolute;
+    top:-50px;
+    height:160px;
+    width:160px;
+    border-radius: 50%;
+}
+.avatar h2{
+    font-size:20px;
+    font-family: "Century Gothi";
+    padding-bottom:50px;
+    text-align: center;;
+}
+.avatar .personal-info{
+    width:42em;
+    margin:0 auto;
+    line-height:170%;
+    font-size: 14px;
+}
+.avatar p{
+    text-indent: 2em;
+}
+/*首页自我介绍区域结束*/
+
+
+

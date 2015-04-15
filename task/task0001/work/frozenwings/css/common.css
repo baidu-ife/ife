@@ -1,0 +1,199 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    color: #eeeeee;
+    font-family: "SimSun";
+    background-color:#eeeeee;
+    font-size:12px;
+}
+.wrapper{
+    width:980px;
+    margin:0 auto;
+    position:relative;
+}
+.wrapper:after{
+    content:"";
+    height:0;
+    clear:both;
+    display:block;
+}
+a{
+    color:#ffffff;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+img{
+    display:block;
+}
+.table{
+    display:table;
+    border-collapse:separate;
+}
+.cell {
+    display:table-cell;
+}
+/*header部分开始*/
+.header{
+    position:relative;
+    width:100%;
+    height:80px;
+    background-color: #000000;
+}
+.header .wrapper{
+    height:100%;
+}
+.logo{
+    position:absolute;
+    left:0;
+    bottom:10px;
+}
+.logo img{
+    height:50px;
+}
+.header ul{
+    float:right;
+    margin-top:58px;
+    font-size: 14px;
+    overflow:hidden;
+}
+.header li{
+    list-style: none;
+    float:left;
+    display:block;
+    height:16px;
+    line-height:16px;
+    margin-left:28px;
+}
+.header .github{
+    position:absolute;
+    display:block;
+    right:10px;
+    height:34px;
+    bottom:0;
+}
+/*header部分结束*/
+
+/*footer部分开始*/
+.footer{
+    position:relative;
+    background-color:#000000;
+    font-size:12px;
+    height:395px;
+}
+.footer .nav{
+    height:35px;
+    line-height:35px;
+    text-align: center;
+}
+.footer .nav a{
+    margin-left:24px;
+}
+.footer .nav a:first-child{
+    margin-left: 0;
+}
+
+.footer .hr{
+    border-top:1px solid #333333;
+}
+.footer .links{
+    float:left;
+    width:20%;
+    padding-top:78px;
+}
+.links p{
+    color:#cccccc;
+}
+.links ul{
+    margin-top:30px;
+}
+.links li{
+    margin-bottom:10px;
+}
+.copyright{
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:50px;
+    left:50%;
+    margin-left:-25px;
+}
+.copyright img{
+    display:block;
+    margin-left:10px;
+}
+.copyright p{
+    text-align: center;
+    margin-bottom:20px;
+}
+.copyright a{
+    color:#ffffff;
+    font-size:12px;
+}
+.clear{
+    clear:both;
+}
+/*footer部分结束*/
+@media screen and (max-width: 980px) {
+    .header .github{
+        display:none;
+    }
+}
+
+/*文章右侧搜索*/
+.search{
+    height:80px;
+    background-color:#ffffff;
+    padding:20px 0;
+}
+.search-wrapper{
+    position:relative;
+    width:220px;
+    margin:0 auto;
+}
+.search-icon{
+    position:absolute;
+    top:1px;
+    left:1px;
+    height:40px;
+    width:40px;
+    background:url("../img/search.png");
+}
+.search-input{
+    display:block;
+    height:42px;
+    line-height:42px;
+    border:1px solid #dddddd;
+    width:100%;
+    /*padding:0 52px 0 40px;*/
+    padding:0 0 0 41px;
+    border-right: 52px solid #dddddd;
+}
+.search-input:focus{
+    border-color:#000000;
+}
+.search-input:focus+a{
+    background-color:#999999;
+    border:solid 1px #000000;
+}
+.search-btn{
+    position:absolute;
+    right:0px;
+    top:0px;
+    height:42px;
+    line-height:42px;
+    width:52px;
+    text-align:center;
+    color:#ffffff;
+    font-size:20px;
+    font-weight: bold;
+    background-color:#dddddd;
+    display:block;
+}
+.search-btn,.search-btn:hover{
+    text-decoration: none;
+    cursor:pointer;
+}
+/*文章右侧搜索结束*/
