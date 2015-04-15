@@ -2,11 +2,11 @@
 body {
     text-align: center;
     background-color: #EDEDED;
-    margin: 0px;
+    margin: 0;
 }
 ul {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     position: relative;
 }
 li {
@@ -25,10 +25,10 @@ a {
 }
 p {
     text-align: left;
-    margin: 0px;
+    margin: 0;
 }
 hr {
-    margin: 0px;
+    margin: 0;
 }
 /*header*/
 header {
@@ -46,7 +46,7 @@ header {
 
 #logo {
     position: absolute;
-    left: 0px;
+    left: 0;
     bottom: 5px;
 }
 #logo span {
@@ -55,7 +55,7 @@ header {
 
 header .menu {
     position: absolute;
-    right: 0px;
+    right: 0;
     bottom: 8px;
 }
 .menu a{
@@ -68,7 +68,7 @@ header .menu {
 #github-icon {
     position: absolute;
     right: 10px;
-    bottom: 0px;
+    bottom: 0;
 }
 
 /*banner*/
@@ -85,15 +85,16 @@ header .menu {
     position: absolute;
     height: 100%;
     width: 980px;
-    bottom:0%;left:50%;
+    bottom:0;
+    left:50%;
     margin-top:-100%;margin-left:-490px;
 }
 #context {
     color: #ffffff;
     position: absolute;
     width: 360px;
-    right: 0px;
-    bottom: 0px;
+    right: 0;
+    bottom: 0;
     padding: 10px 10px 30px 10px;
 }
 #context span {
@@ -220,7 +221,7 @@ img.avatar {
     background-color: purple;
 }
 .blog-content {
-    margin: 0px 10px 10px 10px;
+    margin: 0 10px 10px 10px;
 }
 .blog-tagname {
     background-color: plum;
@@ -359,7 +360,7 @@ div#gallery-tab >div:hover {
     padding: 10px 10px;
 }
 .rank-status>div {
-    margin: 10px 0px;
+    margin: 10px 0;
 }
 
 .rank-status>ul>li {
@@ -370,7 +371,7 @@ div#gallery-tab >div:hover {
     height: 20px;
     line-height: 20px;
     text-align: center;
-    vertical-align: center;
+    vertical-align: middle;
 }
 .rank-type {
     background-color: purple;
@@ -382,7 +383,7 @@ div#gallery-tab >div:hover {
 .rank-status-all {
     width: 180px;
     background-color: white;
-    margin: 0px 10px;
+    margin: 0 10px;
     border: solid black 1px;
 }
 .rank-status-perct {
@@ -414,11 +415,6 @@ div#gallery-tab >div:hover {
     z-index: 2;
 }
 
-.profileContext>div {
-    position: relative;
-    width: 40%;
-    display: inline-block;
-}
 .about-left {
     font-size: 20px;
     float: left;
@@ -436,8 +432,8 @@ div#gallery-tab >div:hover {
 }
 
 .about-right dt>span {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     position: relative;
     left: -50%;
     border-radius: 10px;
@@ -495,7 +491,7 @@ footer .menu a {
 #copyright {
     position: absolute;
     width: 100%;
-    bottom: 0px;
+    bottom: 0;
 }
 #copyright span{
     color: white;
@@ -523,33 +519,24 @@ table#footer-table th {
     background-color: #ddd;
 }
 .search:hover {
-    /*height: 40px;*/
-    /*position: relative;*/
-    /*margin: 20px;*/
     background-color: purple;
-    /*border: 1px solid #ddd;*/
-
 }
 
 div.search>input {
     display: inline-block;
     width: 182px;
-    /*height: 36px;*/
     border: 1px solid #ddd;
     background-color: #fff;
     color: #999;
     height: 40px;
-    /*border: 0px;*/
-    padding: 0px;
+    padding: 0;
 }
 .search-btn {
     border: 1px solid #ddd;
     position: absolute;
-    /*right: 0px;*/
     display: inline-block;
     width: 55px;
     height: 40px;
-    /*background-color: #ddd;*/
     color: black;
     font-size: 18px;
     text-align: center;
