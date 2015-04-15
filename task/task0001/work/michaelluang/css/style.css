@@ -41,12 +41,15 @@ body {
 }
 a {
     text-decoration: none;
-    color: #f3f3f3;
+    color: red;
 }
 ul {
     list-style-type: none;
 }
-
+.main {
+    width: 980px;
+    margin: 0 auto;
+}
 /* Navgation Bar
 -------------------------------------------------- */
 .site-header {
@@ -55,8 +58,12 @@ ul {
     width: 100%;
     height: 80px;
 }
-.main {
+.header-inside {
     max-width: 980px;
+    margin: 0 auto;
+}
+.nav {
+    width: 980px;
     margin: 0 auto;
 }
 .logo img {
@@ -92,7 +99,7 @@ ul {
     height: 34px;
 }
 
-/* Navgation Bar
+/* Homepage cover
 -------------------------------------------------- */
 .cover {
     width: 100%;
@@ -202,6 +209,7 @@ ul {
     background-color: #111;
     color: #f3f3f3;
     width: 100%;
+    clear: both;
 }
 .footer-nav {
     text-align: center;
@@ -234,18 +242,121 @@ ul {
     background: #fff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Articles
+-------------------------------------------------- */
+.articles, .pagination {
+    float: left;
+    width: 735px;  
+    margin-bottom: 200px;  
+}
+article {
+    position: relative;
+    background-color: #f1f1f1;
+    margin: 10px;
+    margin-left: 0;
+}
+.info {
+    position: absolute;
+    left: -40px;
+    top: 5px;
+    width: 40px;
+    border: 1px solid #111;
+    text-align: center;
+}
+.pagination ul {
+    text-align: center;
+}
+.pagination li {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    background-color: #f1f1f1;
+}
+.pagination li a.selected {
+    background-color: red;
+}
+.sidepieces {
+    float: right;
+    width: 245px;
+    margin-top: 10px;
+}
+aside {
+    background-color: #f1f1f1;
+    margin-top: 10px;
+}
+.search {
+    height: 80px;
+    margin-top: 0;
+}
+.search-inner {
+    position: relative;
+    top: 20px;
+    left: 0;
+    height: 40px; 
+}
+.search-inner img {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    left: 4px;
+    width: 32px;
+    height: 32px;
+}
+.search-inner input {
+    height: 40px;
+    vertical-align: top;
+    outline: none;
+}
+.search-inner input:focus + button {
+    background-color: red;
+}
+.search-inner button {
+    height: 40px;
+    width: 40px;
+    margin-left: 1px;
+    font-size: 20px;
+    vertical-align: top;
+}
+.lables li {
+    height: 40px;
+    font-size: 14px;
+    padding-left: 12px;
+    padding-top: 10px;
+    border: 1px solid #fff;
+    border-left: 4px solid #666;
+    border-right: none;
+}
+.lables li.active, .lables li:hover {
+    border-left: 4px solid red;
+}
+.calendar h3 {
+    text-align: center;
+    padding: 10px;
+}
+.calendar span.prev{
+    float: left;
+}
+.calendar span.next {
+    float: right;
+}
+.calendar table {
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.calendar td {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+.calendar .date-today {
+    background-color: red;
+    color: #fff;
+}
+.calendar .active {
+    color: blue;
+}
 
 
 
