@@ -1,340 +1,511 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>blog</title>
-	<link rel="stylesheet" href="./css/style.css">
-	<!--[if lt ie 9]>
-		<script src="./js/html5shiv.js"></script>
-	<![endif]-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>blog</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!--[if lt ie 9]>
+        <script src="./js/html5shiv.js"></script>
+    <![endif]-->
 </head>
 <body>
-	<header class="web-header">
-		<div class="web-inner">
-			<span class="web-logo">YyzYch</span>
-			<nav class="menu list-inline">
-				<li class="inline-item"><a href="./index.html">首页</a></li>
-				<li class="inline-item"><a href="./blog.html">文章</a></li>
-				<li class="inline-item"><a href="./gallery.html">作品</a></li>
-				<li class="inline-item"><a href="./about.html">关于</a></li>
-			</nav>
-		</div>
-		<a href="https://github.com/yyzych" class="github-link">
-			<img src="./img/icon-github.png" alt="">
-		</a>
-	</header>
-	<div class="web-bd blog-bd">
-		<div class="web-inner">
-			<div class="main clearfix g-two-layout">
-				<section class="articles g-main-left">
-					<section class="article-item">
-						<div class="left-topic">
-							<div class="chapter">4.12</div>
-							<div class="name">CSS</div>
-						</div>
-						<article class="article">
-							<h4 class="sup-title">
-								问题总结说明
-							</h4>
-							<h5 class="sub-title">
-								无
-							</h5>
-							<div class="content">
-								<h5>1.首页3列高度相同且自适应内容</h5>
-								<p>
-									好像有有两种方式：1.元素设置display:table-cell; 2.容器overflow:hidden;元素：padding-bottom和负margin来做
-									<br>
-									最后用第一种了
-									<br>
-									第一种方式会添加额外的一些元素去解决中间的间隔，但是啊，如果是第一种的话，如果有多行的话与行之间又会出现问题，而且不好解决。
-									<br>
-									应该要根据实际需求选择
-								</p>
-								<br>
-								<h5>2.瀑布流布局</h5>
-								<p>
-									分了2列，然后2列里面又分2列，跨栏的那张大图做了特殊处理。<br>
-									如果有多张大图的话，就没折了。。<br>
-									没找到简单的方法实现
-								</p>
-								<br>
-								<h5>3.ie8下圆角图片</h5>
-								<p>
-									由于ie8不支持border-radius,所以对ie8做了特殊处理。
-									<br>
-									ie8在声明了doctype下支持伪元素，所以用的是伪元素+中间孔的方式<br>
-									让中间孔覆盖在图片上面（中间孔图片的边角的颜色又是个问题，很难重用），等会，不支持background-size啊！好吧，只有自己把图的宽高定死了！！坑
-								</p>
-								<br>
-								<h5>4.ie9下的背景渐变</h5>
-								<p>
-									直接放弃了。。不想折腾ie的滤镜。。。
-								</p>
-								<br>
-								<h5>5.blog页面中的文章左侧的topic提示在窗口小于980时会被隐藏</h5>
-								<p>
-									没有解决
-								</p>
-								<br>
-								<h5>5.待补...</h5>
-								<p>
-									待补...
-								</p>
-							</div>
-							<div class="footer">
-								<span>yyzych</span>
-								&ensp;发表于&ensp;
-								<span>2015年12月1号</span>
-							</div>
-						</article>
-					</section>
-					<section class="article-item">
-						<div class="left-topic">
-							<div class="chapter">4.12</div>
-							<div class="name">CSS</div>
-						</div>
-						<article class="article">
-							<h4 class="sup-title">
-								大标题
-							</h4>
-							<h5 class="sub-title">
-								子标题
-							</h5>
-							<div class="content">
-								大概是05年开始，我父母开始把从实业中获取的利润投资到商业地产中去。到13年，家里资产接近10个亿，其中八个亿来自商业地产的部分。这个阶段他们一直非常警惕我变成一个只知道挣钱的坏孩子，经常教育我。整个高中时期，我都很乖，至到我考上大学。我唯一的要求的就是：我需要一次性领用一年的生活费。而这几年表现良好，也终于让父母松了口。
-							</div>
-							<div class="footer">
-								<span>yyzych</span>
-								&ensp;发表于&ensp;
-								<span>2015年12月1号</span>
-							</div>
-						</article>
-					</section>
-					<section class="article-item">
-						<div class="left-topic">
-							<div class="chapter">4.12</div>
-							<div class="name">CSS</div>
-						</div>
-						<article class="article">
-							<h4 class="sup-title">
-								大标题
-							</h4>
-							<h5 class="sub-title">
-								子标题
-							</h5>
-							<div class="content">
-								大概是05年开始，我父母开始把从实业中获取的利润投资到商业地产中去。到13年，家里资产接近10个亿，其中八个亿来自商业地产的部分。这个阶段他们一直非常警惕我变成一个只知道挣钱的坏孩子，经常教育我。整个高中时期，我都很乖，至到我考上大学。我唯一的要求的就是：我需要一次性领用一年的生活费。而这几年表现良好，也终于让父母松了口。
-							</div>
-							<div class="footer">
-								<span>yyzych</span>
-								&ensp;发表于&ensp;
-								<span>2015年12月1号</span>
-							</div>
-						</article>
-					</section>
-					<section class="article-item">
-						<div class="left-topic">
-							<div class="chapter">4.12</div>
-							<div class="name">CSS</div>
-						</div>
-						<article class="article">
-							<h4 class="sup-title">
-								大标题
-							</h4>
-							<h5 class="sub-title">
-								子标题
-							</h5>
-							<div class="content">
-								大概是05年开始，我父母开始把从实业中获取的利润投资到商业地产中去。到13年，家里资产接近10个亿，其中八个亿来自商业地产的部分。这个阶段他们一直非常警惕我变成一个只知道挣钱的坏孩子，经常教育我。整个高中时期，我都很乖，至到我考上大学。我唯一的要求的就是：我需要一次性领用一年的生活费。而这几年表现良好，也终于让父母松了口。大概是05年开始，我父母开始把从实业中获取的利润投资到商业地产中去。到13年，家里资产接近10个亿，其中八个亿来自商业地产的部分。这个阶段他们一直非常警惕我变成一个只知道挣钱的坏孩子，经常教育我。整个高中时期，我都很乖，至到我考上大学。我唯一的要求的就是：我需要一次性领用一年的生活费。而这几年表现良好，也终于让父母松了口。
-							</div>
-							<div class="footer">
-								<span>yyzych</span>
-								&ensp;发表于&ensp;
-								<span>2015年12月1号</span>
-							</div>
-						</article>
-					</section>
+    <header class="web-header">
+        <div class="web-inner">
+            <span class="web-logo">YyzYch</span>
+            <nav class="menu list-inline">
+                <li class="inline-item">
+                    <a href="./index.html">首页</a>
+                </li>
+                <li class="inline-item">
+                    <a href="./blog.html">文章</a>
+                </li>
+                <li class="inline-item">
+                    <a href="./gallery.html">作品</a>
+                </li>
+                <li class="inline-item">
+                    <a href="./about.html">关于</a>
+                </li>
+            </nav>
+        </div>
+        <a href="https://github.com/yyzych" class="github-link">
+            <img src="./img/icon-github.png" alt=""></a>
+    </header>
+    <div class="web-bd blog-bd">
+        <div class="web-inner">
+            <div class="main clearfix g-two-layout">
+                <section class="articles g-main-left">
+                    <section class="article-item">
+                        <div class="left-topic">
+                            <div class="chapter">4.12</div>
+                            <div class="name">CSS</div>
+                        </div>
+                        <article class="article">
+                            <h4 class="sup-title">问题总结说明</h4>
+                            <h5 class="sub-title">无</h5>
+                            <div class="content">
+                                <h5>1.首页3列高度相同且自适应内容</h5>
+                                <p>
+                                    好像有有两种方式：1.元素设置display:table-cell; 2.容器overflow:hidden;元素：padding-bottom和负margin来做
+                                    <br>
+                                    最后用第一种了
+                                    <br>
+                                    第一种方式会添加额外的一些元素去解决中间的间隔，但是啊，如果是第一种的话，如果有多行的话与行之间又会出现问题，而且不好解决。
+                                    <br>应该要根据实际需求选择</p>
+                                <br>
+                                <h5>2.瀑布流布局</h5>
+                                <p>
+                                    分了2列，然后2列里面又分2列，跨栏的那张大图做了特殊处理。
+                                    <br>
+                                    如果有多张大图的话，就没折了。。
+                                    <br>没找到简单的方法实现</p>
+                                <br>
+                                <h5>3.ie8下圆角图片</h5>
+                                <p>
+                                    由于ie8不支持border-radius,所以对ie8做了特殊处理。
+                                    <br>
+                                    ie8在声明了doctype下支持伪元素，所以用的是伪元素+中间孔的方式
+                                    <br>
+                                    让中间孔覆盖在图片上面（中间孔图片的边角的颜色又是个问题，很难重用），等会，不支持background-size啊！好吧，只有自己把图的宽高定死了！！坑
+                                </p>
+                                <br>
+                                <h5>4.ie9下的背景渐变</h5>
+                                <p>直接放弃了。。不想折腾ie的滤镜。。。</p>
+                                <br>
+                                <h5>5.blog页面中的文章左侧的topic提示在窗口小于980时会被隐藏</h5>
+                                <p>没有解决</p>
+                                <br>
+                                <h5>5.待补...</h5>
+                                <p>待补...</p>
+                            </div>
+                            <div class="footer">
+                                <span>yyzych</span>
+                                &ensp;发表于&ensp;
+                                <span>2015年12月1号</span>
+                            </div>
+                        </article>
+                    </section>
+                    <section class="article-item">
+                        <div class="left-topic">
+                            <div class="chapter">4.12</div>
+                            <div class="name">CSS</div>
+                        </div>
+                        <article class="article">
+                            <h4 class="sup-title">大标题</h4>
+                            <h5 class="sub-title">子标题</h5>
+                            <div class="content">
+                                大概是05年开始，我父母开始把从实业中获取的利润投资到商业地产中去。到13年，家里资产接近10个亿，其中八个亿来自商业地产的部分。这个阶段他们一直非常警惕我变成一个只知道挣钱的坏孩子，经常教育我。整个高中时期，我都很乖，至到我考上大学。我唯一的要求的就是：我需要一次性领用一年的生活费。而这几年表现良好，也终于让父母松了口。
+                            </div>
+                            <div class="footer">
+                                <span>yyzych</span>
+                                &ensp;发表于&ensp;
+                                <span>2015年12月1号</span>
+                            </div>
+                        </article>
+                    </section>
+                    <section class="article-item">
+                        <div class="left-topic">
+                            <div class="chapter">4.12</div>
+                            <div class="name">CSS</div>
+                        </div>
+                        <article class="article">
+                            <h4 class="sup-title">大标题</h4>
+                            <h5 class="sub-title">子标题</h5>
+                            <div class="content">
+                                大概是05年开始，我父母开始把从实业中获取的利润投资到商业地产中去。到13年，家里资产接近10个亿，其中八个亿来自商业地产的部分。这个阶段他们一直非常警惕我变成一个只知道挣钱的坏孩子，经常教育我。整个高中时期，我都很乖，至到我考上大学。我唯一的要求的就是：我需要一次性领用一年的生活费。而这几年表现良好，也终于让父母松了口。
+                            </div>
+                            <div class="footer">
+                                <span>yyzych</span>
+                                &ensp;发表于&ensp;
+                                <span>2015年12月1号</span>
+                            </div>
+                        </article>
+                    </section>
+                    <section class="article-item">
+                        <div class="left-topic">
+                            <div class="chapter">4.12</div>
+                            <div class="name">CSS</div>
+                        </div>
+                        <article class="article">
+                            <h4 class="sup-title">大标题</h4>
+                            <h5 class="sub-title">子标题</h5>
+                            <div class="content">
+                                大概是05年开始，我父母开始把从实业中获取的利润投资到商业地产中去。到13年，家里资产接近10个亿，其中八个亿来自商业地产的部分。这个阶段他们一直非常警惕我变成一个只知道挣钱的坏孩子，经常教育我。整个高中时期，我都很乖，至到我考上大学。我唯一的要求的就是：我需要一次性领用一年的生活费。而这几年表现良好，也终于让父母松了口。大概是05年开始，我父母开始把从实业中获取的利润投资到商业地产中去。到13年，家里资产接近10个亿，其中八个亿来自商业地产的部分。这个阶段他们一直非常警惕我变成一个只知道挣钱的坏孩子，经常教育我。整个高中时期，我都很乖，至到我考上大学。我唯一的要求的就是：我需要一次性领用一年的生活费。而这几年表现良好，也终于让父母松了口。
+                            </div>
+                            <div class="footer">
+                                <span>yyzych</span>
+                                &ensp;发表于&ensp;
+                                <span>2015年12月1号</span>
+                            </div>
+                        </article>
+                    </section>
 
-					<ul class="page-control">
-						<li class="nli disabled"><a>第一页</a></li>
-						<li class="nli"><a href="">上一页</a></li>
-						<li class="nli"><a href="">1</a></li>
-						<li class="nli active"><a href="">2</a></li>
-						<li class="nli"><a href="">3</a></li>
-						<li class="nli"><a href="">4</a></li>
-						<li class="nli"><a href="">...</a></li>
-						<li class="nli"><a href="">下一页</a></li>
-						<li class="nli"><a href="">最后页</a></li>
-					</ul>
-				</section>
+                    <ul class="page-control">
+                        <li class="nli disabled">
+                            <a>第一页</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">上一页</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">1</a>
+                        </li>
+                        <li class="nli active">
+                            <a href="">2</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">3</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">4</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">...</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">下一页</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">最后页</a>
+                        </li>
+                    </ul>
+                </section>
 
-				<aside class="aside-area g-main-right">
-					<div class="search-area">
-						<div class="field-row">
-							<i class="icon icon-search"></i>
-							<input type="text" class="form-control" name="" placeholder="keywords" id="">
-							<a href="" class="button search-btn">GO</a>
-						</div>
-					</div>
-					<ul class="topic-nav">
-						<li class="nli"><a href="">html</a></li>
-						<li class="nli"><a href="">javascript</a></li>
-						<li class="nli active"><a href="">css</a></li>
-						<li class="nli"><a href="">html</a></li>
-					</ul>
-					<div class="time-select-area">
-						<table class="time-select">
-							<thead>
-								<tr class="title">
-									<th><a href="">&lt;</a></th>
-									<th colspan="5"><a href="">2015.04</a></th>
-									<th><a href="">&gt;</a></th>
-								</tr>
-								<tr>
-									<th><a href="">M</a></th>
-									<th><a href="">T</a></th>
-									<th><a href="">W</a></th>
-									<th><a href="">T</a></th>
-									<th><a href="">F</a></th>
-									<th><a href="">S</a></th>
-									<th><a href="">S</a></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><a href="">1</a></td>
-									<td><a href="">2</a></td>
-									<td><a href="">3</a></td>
-									<td><a class="active" href="">4</a></td>
-									<td><a href="">5</a></td>
-									<td><a href="">6</a></td>
-									<td><a href="">7</a></td>
-								</tr>
-								<tr>
-									<td><a href="">1</a></td>
-									<td><a href="">2</a></td>
-									<td><a href="">3</a></td>
-									<td><a href="">4</a></td>
-									<td><a href="">5</a></td>
-									<td><a href="">6</a></td>
-									<td><a href="">7</a></td>
-								</tr>
-								<tr>
-									<td><a href="">1</a></td>
-									<td><a href="">2</a></td>
-									<td><a href="">3</a></td>
-									<td><a href="">4</a></td>
-									<td><a href="">5</a></td>
-									<td><a href="">6</a></td>
-									<td><a href="">7</a></td>
-								</tr>
-								<tr>
-									<td><a href="">1</a></td>
-									<td><a href="">2</a></td>
-									<td><a href="">3</a></td>
-									<td><a href="">4</a></td>
-									<td><a href="">5</a></td>
-									<td><a href="">6</a></td>
-									<td><a href="">7</a></td>
-								</tr>
-								<tr>
-									<td><a href="">1</a></td>
-									<td><a href="">2</a></td>
-									<td><a href="">3</a></td>
-									<td><a href="">4</a></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="tags-area">
-						<p class="title">Tags</p>
-						<ul class="list-inline tags">
-							<li class="inline-item"><a href="">JavaScript</a></li>
-							<li class="inline-item larger"><a href="">CSS</a></li>
-							<li class="inline-item middle"><a href="">flex</a></li>
-							<li class="inline-item"><a href="">WebGL</a></li>
-							<li class="inline-item large"><a href="">HTML</a></li>
-							<li class="inline-item"><a href="">HTML5</a></li>
-							<li class="inline-item small"><a href="">CSS</a></li>
-							<li class="inline-item middle"><a href="">Canvas</a></li>
-							<li class="inline-item"><a href="">CSS</a></li>
-							<li class="inline-item middle"><a href="">jQuery ECharts</a></li>
-						</ul>
-					</div>
-				</aside>
-			</div>
-		</div>
-	</div>
-	<footer class="web-footer">
-		<section class="footer-nav">
-			 <nav class="menu list-inline">
-			 	<li class="inline-item"><a href="./index.html">首页</a></li>
-				<li class="inline-item"><a href="./blog.html">文章</a></li>
-				<li class="inline-item"><a href="./gallery.html">作品</a></li>
-				<li class="inline-item"><a href="./about.html">关于</a></li>
-			 </nav>
-		</section>
+                <aside class="aside-area g-main-right">
+                    <div class="search-area">
+                        <div class="field-row"> <i class="icon icon-search"></i>
+                            <input type="text" class="form-control" name="" placeholder="keywords" id="">
+                            <a href="" class="button search-btn">GO</a>
+                        </div>
+                    </div>
+                    <ul class="topic-nav">
+                        <li class="nli">
+                            <a href="">html</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">javascript</a>
+                        </li>
+                        <li class="nli active">
+                            <a href="">css</a>
+                        </li>
+                        <li class="nli">
+                            <a href="">html</a>
+                        </li>
+                    </ul>
+                    <div class="time-select-area">
+                        <table class="time-select">
+                            <thead>
+                                <tr class="title">
+                                    <th>
+                                        <a href="">&lt;</a>
+                                    </th>
+                                    <th colspan="5">
+                                        <a href="">2015.04</a>
+                                    </th>
+                                    <th>
+                                        <a href="">&gt;</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <a href="">M</a>
+                                    </th>
+                                    <th>
+                                        <a href="">T</a>
+                                    </th>
+                                    <th>
+                                        <a href="">W</a>
+                                    </th>
+                                    <th>
+                                        <a href="">T</a>
+                                    </th>
+                                    <th>
+                                        <a href="">F</a>
+                                    </th>
+                                    <th>
+                                        <a href="">S</a>
+                                    </th>
+                                    <th>
+                                        <a href="">S</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="">1</a>
+                                    </td>
+                                    <td>
+                                        <a href="">2</a>
+                                    </td>
+                                    <td>
+                                        <a href="">3</a>
+                                    </td>
+                                    <td>
+                                        <a class="active" href="">4</a>
+                                    </td>
+                                    <td>
+                                        <a href="">5</a>
+                                    </td>
+                                    <td>
+                                        <a href="">6</a>
+                                    </td>
+                                    <td>
+                                        <a href="">7</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="">1</a>
+                                    </td>
+                                    <td>
+                                        <a href="">2</a>
+                                    </td>
+                                    <td>
+                                        <a href="">3</a>
+                                    </td>
+                                    <td>
+                                        <a href="">4</a>
+                                    </td>
+                                    <td>
+                                        <a href="">5</a>
+                                    </td>
+                                    <td>
+                                        <a href="">6</a>
+                                    </td>
+                                    <td>
+                                        <a href="">7</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="">1</a>
+                                    </td>
+                                    <td>
+                                        <a href="">2</a>
+                                    </td>
+                                    <td>
+                                        <a href="">3</a>
+                                    </td>
+                                    <td>
+                                        <a href="">4</a>
+                                    </td>
+                                    <td>
+                                        <a href="">5</a>
+                                    </td>
+                                    <td>
+                                        <a href="">6</a>
+                                    </td>
+                                    <td>
+                                        <a href="">7</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="">1</a>
+                                    </td>
+                                    <td>
+                                        <a href="">2</a>
+                                    </td>
+                                    <td>
+                                        <a href="">3</a>
+                                    </td>
+                                    <td>
+                                        <a href="">4</a>
+                                    </td>
+                                    <td>
+                                        <a href="">5</a>
+                                    </td>
+                                    <td>
+                                        <a href="">6</a>
+                                    </td>
+                                    <td>
+                                        <a href="">7</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="">1</a>
+                                    </td>
+                                    <td>
+                                        <a href="">2</a>
+                                    </td>
+                                    <td>
+                                        <a href="">3</a>
+                                    </td>
+                                    <td>
+                                        <a href="">4</a>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tags-area">
+                        <p class="title">Tags</p>
+                        <ul class="list-inline tags">
+                            <li class="inline-item">
+                                <a href="">JavaScript</a>
+                            </li>
+                            <li class="inline-item larger">
+                                <a href="">CSS</a>
+                            </li>
+                            <li class="inline-item middle">
+                                <a href="">flex</a>
+                            </li>
+                            <li class="inline-item">
+                                <a href="">WebGL</a>
+                            </li>
+                            <li class="inline-item large">
+                                <a href="">HTML</a>
+                            </li>
+                            <li class="inline-item">
+                                <a href="">HTML5</a>
+                            </li>
+                            <li class="inline-item small">
+                                <a href="">CSS</a>
+                            </li>
+                            <li class="inline-item middle">
+                                <a href="">Canvas</a>
+                            </li>
+                            <li class="inline-item">
+                                <a href="">CSS</a>
+                            </li>
+                            <li class="inline-item middle">
+                                <a href="">jQuery ECharts</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <footer class="web-footer">
+        <section class="footer-nav">
+            <nav class="menu list-inline">
+                <li class="inline-item">
+                    <a href="./index.html">首页</a>
+                </li>
+                <li class="inline-item">
+                    <a href="./blog.html">文章</a>
+                </li>
+                <li class="inline-item">
+                    <a href="./gallery.html">作品</a>
+                </li>
+                <li class="inline-item">
+                    <a href="./about.html">关于</a>
+                </li>
+            </nav>
+        </section>
 
-		<section class="link-area clearfix">
-			<section class="link-item">
-				<h5 class="link-title">学习资料</h5>
-				<ul class="links">
-					<li><a href="">Link</a></li>
-					<li><a href="">Hover的样式</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-				</ul>
-			</section>
-			<section class="link-item">
-				<h5 class="link-title">学习资料</h5>
-				<ul class="links">
-					<li><a href="">Link</a></li>
-					<li><a href="">Hover的样式</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-				</ul>
-			</section>
-			<section class="link-item">
-				<h5 class="link-title">学习资料</h5>
-				<ul class="links">
-					<li><a href="">Link</a></li>
-					<li><a href="">Hover的样式</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-				</ul>
-			</section>
-			<section class="link-item">
-				<h5 class="link-title">学习资料</h5>
-				<ul class="links">
-					<li><a href="">Link</a></li>
-					<li><a href="">Hover的样式</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-				</ul>
-			</section>
-			<section class="link-item">
-				<h5 class="link-title">学习资料</h5>
-				<ul class="links">
-					<li><a href="">Link</a></li>
-					<li><a href="">Hover的样式</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-					<li><a href="">Link</a></li>
-				</ul>
-			</section>
-		</section>
+        <section class="link-area clearfix">
+            <section class="link-item">
+                <h5 class="link-title">学习资料</h5>
+                <ul class="links">
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Hover的样式</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="link-item">
+                <h5 class="link-title">学习资料</h5>
+                <ul class="links">
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Hover的样式</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="link-item">
+                <h5 class="link-title">学习资料</h5>
+                <ul class="links">
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Hover的样式</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="link-item">
+                <h5 class="link-title">学习资料</h5>
+                <ul class="links">
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Hover的样式</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="link-item">
+                <h5 class="link-title">学习资料</h5>
+                <ul class="links">
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Hover的样式</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                    <li>
+                        <a href="">Link</a>
+                    </li>
+                </ul>
+            </section>
+        </section>
 
-		<p class="copyright">版权信息</p>
-		<a href="https://github.com/yyzych" class="github-link">
-			<img src="./img/icon-github.png" alt="">
-		</a>
-	</footer>
+        <p class="copyright">版权信息</p>
+        <a href="https://github.com/yyzych" class="github-link">
+            <img src="./img/icon-github.png" alt=""></a>
+    </footer>
 </body>
 </html>
