@@ -29,10 +29,12 @@ body{
 }
 .wrap-context li,.footer-head li{
 	float:left;
+	margin-left: 28px;
+}
+.wrap-context a ,.wrap-context a:visited{
+	color: #ffffff;	
 	font-size: 14px;
 	font-family: "宋体";
-	color: #ffffff;
-	margin-left: 28px;
 }
 .header-centre{
 	position: relative;
@@ -63,6 +65,12 @@ height:0;
 margin-top: 10px;
 margin-bottom: 20px;
 }
+.footer a,.footer a:visited{
+	font-size: 16px;
+	font-family: "宋体";
+	color: #DDDDDD;
+	margin-top: 20px;
+}
 .footer-content > .link{
 	text-align: center;
 	width: 20%;
@@ -77,8 +85,8 @@ margin-bottom: 20px;
 .footer-content li:hover{
 	text-decoration:underline;
 }
-.footer-content p{
-	font-size: 14px;
+.footer-content h3{
+	font-size: 19px;
 	font-family: "宋体";
 	color: #DDDDDD;
 	margin-top: 20px;
