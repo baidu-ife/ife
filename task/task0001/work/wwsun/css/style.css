@@ -1,6 +1,7 @@
 body {
     background: #edeff0;
     font-size: 14px;
+    margin: 0;
 }
 
 .wrapper {
@@ -94,6 +95,13 @@ body {
     color: #ffffff;
 }
 
+.copyright {
+    text-align: center;
+}
+
+.copyright p {
+    color: #ffffff;
+}
 
 /*****index.html****/
 .banner {
@@ -169,3 +177,5 @@ body {
 .profile-text h2, p {
     color: #000000;
 }
+
+/*****blog.html****/
