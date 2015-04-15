@@ -1,3 +1,4 @@
+/*common*/
 body {
     text-align: center;
     background-color: #EDEDED;
@@ -96,9 +97,7 @@ header .menu {
     padding: 10px 10px 30px 10px;
 }
 #context span {
-    /*float: right;*/
     text-align: right;
-
     font-size: 14px;
 }
 #context p {
@@ -215,7 +214,7 @@ img.avatar {
     color: #ffffff;
     font-size: 14px;
     text-align: center;
-    font-family: "Microsoft YaHei", "tahoma";
+    font-family: "Microsoft YaHei";
 }
 .blog-date {
     background-color: purple;
@@ -263,114 +262,7 @@ img.avatar {
     background-color: #ffffff;
 
 }
-.search-wrap {
-    background-color: #ffffff;
-    padding: 20px;
 
-}
-.search {
-
-    background-color: #ddd;
-    /*width: 280px;*/
-    /*height: 84px;*/
-}
-.search:hover {
-    /*height: 40px;*/
-    /*position: relative;*/
-    /*margin: 20px;*/
-    background-color: purple;
-    /*border: 1px solid #ddd;*/
-
-}
-
-div.search>input {
-    display: inline-block;
-    width: 182px;
-    /*height: 36px;*/
-    border: 1px solid #ddd;
-    background-color: #fff;
-    color: #999;
-    height: 40px;
-    /*border: 0px;*/
-    padding: 0px;
-}
-.search-btn {
-    border: 1px solid #ddd;
-    position: absolute;
-    /*right: 0px;*/
-    display: inline-block;
-    width: 55px;
-    height: 40px;
-    /*background-color: #ddd;*/
-    color: black;
-    font-size: 18px;
-    text-align: center;
-    line-height: 40px;
-}
-/*.search-btn:hover {
-    border: 1px solid #ddd;
-    position: absolute;
-    right: 28px;
-    display: inline-block;
-    width: 52px;
-    height: 38px;
-    background-color: purple;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    line-height: 40px;
-}*/
-.calendar table {
-    width: 100%;
-    background-color: #ffffff;
-}
-.calendar td,.calendar th{
-    height: 33px;
-    line-height: 33px;
-}
-
-.calendar td a, .calendar th a {
-    display: block;
-    width: 24px;
-    height: 24px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 24px;
-    font-size: 12px;
-    color: plum;
-}
-.calendar th a {
-    font-weight: 700;
-    color: purple;
-}
-.calendar td a:hover {
-    color: purple;
-}
-.tag-cloud {
-    width: 260px;
-    padding: 10px;
-    background-color: #ffffff;
-    font-size: 14px;
-}
-
-.tag-cloud>div>a {
-    display: inline-block;
-    font-weight: 700;
-    color: plum;
-}
-.tag-cloud>div>a.tag-large {
-    font-size: 40px;
-    color: purple;
-}
-.tag-cloud>div>a.tag-middle {
-    font-size: 30px;
-    color: purple;
-}
-.tag-cloud>div>a:hover {
-    display: inline-block;
-    font-weight: 700;
-    color: purple;
-}
 div#blog-guide {
     width: 690px;
 }
@@ -621,10 +513,135 @@ table#footer-table {
 table#footer-table th {
     color: #333;
 }
+/*component*/
+.search-wrap {
+    background-color: #ffffff;
+    padding: 20px;
 
+}
+.search {
+    background-color: #ddd;
+}
+.search:hover {
+    /*height: 40px;*/
+    /*position: relative;*/
+    /*margin: 20px;*/
+    background-color: purple;
+    /*border: 1px solid #ddd;*/
+
+}
+
+div.search>input {
+    display: inline-block;
+    width: 182px;
+    /*height: 36px;*/
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #999;
+    height: 40px;
+    /*border: 0px;*/
+    padding: 0px;
+}
+.search-btn {
+    border: 1px solid #ddd;
+    position: absolute;
+    /*right: 0px;*/
+    display: inline-block;
+    width: 55px;
+    height: 40px;
+    /*background-color: #ddd;*/
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.calendar table {
+    width: 100%;
+    background-color: #ffffff;
+}
+.calendar td,.calendar th{
+    height: 33px;
+    line-height: 33px;
+}
+
+.calendar td a, .calendar th a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 24px;
+    font-size: 12px;
+    color: plum;
+}
+.calendar th a {
+    font-weight: 700;
+    color: purple;
+}
+.calendar td a:hover {
+    color: purple;
+}
+.tag-cloud {
+    width: 260px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+.tag-cloud>div>a {
+    display: inline-block;
+    font-weight: 700;
+    color: plum;
+}
+.tag-cloud>div>a.tag-large {
+    font-size: 40px;
+    color: purple;
+}
+.tag-cloud>div>a.tag-middle {
+    font-size: 30px;
+    color: purple;
+}
+.tag-cloud>div>a:hover {
+    display: inline-block;
+    font-weight: 700;
+    color: purple;
+}
+/*util*/
 .center {
     margin: 0 auto;
 }
+
+.menu {
+    margin-left: 28px;
+}
+
+.shade {
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%);
+}
+.absolute-center {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+/*clearfix*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+/*layout*/
 
 .layout-body {
     position: relative;
@@ -653,32 +670,7 @@ table#footer-table th {
     margin-bottom: 10px;
 }
 
-.Absolute-Center {
-    margin: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-}
-.menu {
-     margin-left: 28px;
- }
 
-.shade {
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%);
-}
-/*clearfix*/
-.clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-.clearfix {
-    display: inline-block;
-}
-* html .clearfix {
-    height: 1%;
-}
-.clearfix {
-    display: block;
-}
+
+
+
