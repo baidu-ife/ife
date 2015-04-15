@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  margin: 50px 0;
+}
+
 h1 {
   color: blue;
 }
@@ -66,4 +75,173 @@ img {
 
 .font-face {
   font-family: robotolight;
+}
+
+.size-color {
+  width: 960px;
+  height: 50px;
+  background: red;
+}
+
+.bg1 {
+  margin: 0 auto 10px;
+}
+
+.bg2 {
+  position: relative;
+  left: 50%;
+  margin-left: -480px;
+}
+
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
+  height: 1px;
+  font-size: 1px;
+}
+
+.rectangle {
+  margin: 10px;
+}
+
+.div1, .div8 {
+  margin: 0 5px;
+}
+
+.div2, .div7 {
+  margin: 0 3px;
+  border-left: 2px solid;
+  border-right: 2px solid;
+}
+
+.div3, .div6 {
+  margin: 0 2px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+.div4, .div5 {
+  margin: 0 1px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  height: 2px;
+}
+
+.content-rectangle {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+.color .div2,
+.color .div3,
+.color .div4,
+.color .div5,
+.color .div6,
+.color .div7,
+.color .content-rectangle {
+  border-color: black;
+}
+
+.color .div1,
+.color .div8 {
+  background: black;
+}
+
+.flex {
+  color: white;
+  display: flex;
+  flex-flow: row;
+}
+
+.left1 {
+  width: 200px;
+  background: red;
+}
+
+.right1 {
+  flex: 2;
+  background: blue;
+}
+
+.row-wrapper {
+  overflow:hidden;
+}
+
+.row {
+  color: white;
+  margin-bottom: -10000px;
+  padding-bottom: 10000px;
+}
+
+.bottom {
+  height: 50px;
+  background: yellow;
+  margin-bottom: 40px;
+}
+
+.left2 {
+  width: 200px;
+  background: red;
+  float: left;
+}
+
+.right2 {
+  overflow: hidden;
+  background: blue;
+}
+
+.content-center {
+  margin: 0 200px;
+}
+
+.content-wrapper {
+  float: left;
+  width: 100%;
+  background: blue;
+}
+
+.sidebar-left {
+  float: left;
+  width: 200px;
+  margin-left: -100%;
+  background: red;
+}
+
+.sidebar-right {
+  float: left;
+  width: 200px;
+  margin-left: -200px;
+  background: red;
+}
+
+.left-flex {
+  width: 200px;
+  background: red;
+}
+
+.content-flex {
+  flex: 2;
+  background: blue;
+}
+
+.right-flex {
+  width: 200px;
+  background: red;
+}
+
+.float-wrapper {
+  margin: 10px 0 0;
+  background: red;
+}
+
+.float-wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.float {
+  margin: 10px;
+  background: blue;
+  float: left;
+  width: 220px;
+  height: 100px;
 }
