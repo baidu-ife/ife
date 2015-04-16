@@ -58,13 +58,19 @@
     width: 100%;
     height: 525px;
     position: absolute;
-    z-index: -9999;
+    /*z-index: -9999;*/
+    z-index: 2;
 }
 .body-top-content {
     width: 980px;
     height: 525px;
     margin: 0 auto;
     position: relative;
+}
+.body-top-content img{
+    width: 100%;
+    height: 525px;
+    z-index: 1;
 }
 .body-top-box {
     width: 340px;
@@ -154,8 +160,9 @@
 }
 .body-bottom-title {
     font-style: 20px;
-    margin: 50px auto;
-    width: 130px;
+    margin: 50px 0;
+    text-align: center;
+    /*width: 130px;*/
     font-family: "Century Gothic";
 }
 .body-bottom-txt {
@@ -290,6 +297,11 @@
     color: #666;
     font-weight: bold;
     margin-bottom: 17px;
+}
+.blog-txt {
+    font-size: 12px;
+    line-height: 170%;
+    font-family: "Arial"
 }
 .sign-name {
     position: absolute;
