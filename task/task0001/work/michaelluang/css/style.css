@@ -277,7 +277,7 @@ article {
 }
 .sidepieces {
     float: right;
-    width: 245px;
+    width: 240px;
     margin-top: 10px;
 }
 aside {
@@ -357,6 +357,154 @@ aside {
 .calendar .active {
     color: blue;
 }
+/* Gallery
+-------------------------------------------------- */
+.tab-menu {
+    width: 730px;
+    margin-top: 20px;
+}
+.tab-menu li {
+    display: inline-block;
+    padding: 10px;
+    padding-top: 15px;
+    border-left: 2px solid #f2f2f2;
+}
+.tab-menu li.tab-menu1 {
+    border-top: 4px solid #e00;
+    border-left: none;
+}
+.tab-menu li.tab-menu1:hover {
+    border-top: 4px solid #f00;
+}
+.tab-menu li.tab-menu2 {
+    border-top: 4px solid #0e0;
+}
+.tab-menu li.tab-menu2:hover {
+    border-top: 4px solid #0f0;    
+}.tab-menu li.tab-menu3 {
+    border-top: 4px solid #00e;
+}
+.tab-menu li.tab-menu3:hover {
+    border-top: 4px solid #00f;
+}.tab-menu li.tab-menu4 {
+    border-top: 4px solid #ee0;
+}
+.tab-menu li.tab-menu4:hover {
+    border-top: 4px solid #ff0;
+}.tab-menu li.tab-menu5 {
+    border-top: 4px solid #0ee;
+}
+.tab-menu li.tab-menu5:hover {
+    border-top: 4px solid #0ff;
+}
+.tab-menu li.active {
+    border-top: 4px solid #000;
+}
+.gallery-show {
+    width: 730px;
+    margin-right: 10px;
+}
+
+.box-left, .box-right {
+    display: inline-block;
+    float: left;
+    width: 360px;
+}
+.box-left {
+    margin-right: 10px;
+}
+.box-wrap-left {
+    display: inline-block;
+    float: left;
+    width: 175px;
+    margin-right: 10px;
+}
+.box-wrap-right {
+    display: inline-block;
+    float: left;
+    width: 175px;
+}
+.box-contents-large {
+    width: 360;
+    margin-bottom: 10px;
+}
+.box-contents {
+    width: 175px;
+}
+.box-contents-large img {
+    width: 360px;
+    height: 180px;
+}
+.box-contents img {
+    width: 175px;
+    height: 175px;
+}
+.gallery-footer {
+    display: inline-block;
+    width: 730px;
+    height: 50px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+.gallery-footer img {
+    display: inline-block;
+}
+
+.ranking h3 {
+    text-align: center;
+    padding-top: 10px;
+}
+.ranking li {
+    margin: 10px;
+}
+.ranking-index {
+    float: left;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    text-align: center;
+    border-radius: 100%;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.ranking-bar {
+    float: left;
+    width: 100px;
+    height: 18px;
+    border: 2px solid #fff;
+    margin-right: 10px;
+}
+.ranking-value {
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
