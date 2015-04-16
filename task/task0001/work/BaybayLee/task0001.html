@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>First task of html css</title>
+    <link rel="stylesheet" href="css/task0001.css"/>
+</head>
+<body>
+<!--<div class="centerBase center1 ">-->
+   <!--方法一： 背景色为红色、宽度为960px的在浏览器中居中-->
+    <!--在设定宽度的时候，使用margin:0 auto;-->
+<!--</div>-->
+<!--<div class="centerBase center2">-->
+   <!--方法二： 背景色为红色、宽度为960px的在浏览器中居中-->
+    <!--使用positon:absolute; left:50%; margin-left:-450px-->
+<!--</div>-->
+<!--<div class="centerBase center3">-->
+    <!--方法三：水平垂直居中-->
+    <!--positon:absolute; left:50%;top: 50%; margin-left: -450px; margin-top: -150px;-->
+<!--</div>-->
+<!--<div class="centerBase center4">-->
+    <!--方法四：margin:auto;position:absolute;top:0;left:0;right:0;bottom:0;-->
+    <!--注意需要防止溢出，coverflow:auto;方法可以用在弹出某个绝对定位的对话框时，使用-->
+<!--</div>-->
+<!--<div class="roundedRectangle">-->
+    <!--<div class="t1"></div>  <div class="t2"></div>  <div class="t3"></div>  <div class="t4"></div><div class="t5"></div>-->
+    <!--<div class="content">-->
+      <!--圆角矩形-->
+    <!--</div>-->
+    <!--<div class="d5"></div><div class="b4"></div><div class="b3"></div><div class="b2"></div><div class="b1"></div>-->
+<!--</div>-->
+
+<div class="main">
+    <div class="main-left float" >
+        方法一这个是左边部分，宽度确定
+    </div>
+    <div class="main-right">
+        方法一这个是右边部分，宽度自动扩展
+        除了用margin-left：300px之外，还可以用overflow:hidden;形成BFC
+    </div>
+    <div class="clear"></div>
+</div>
+<!--<div class="mainTable">-->
+    <!--<div class="tableLeft firstTable" >-->
+        <!--方法二这个是左边部分，宽度确定-->
+    <!--</div>-->
+    <!--<div class="tableRight firstTable">-->
+        <!--方法二这个是右边部分，宽度自动扩展-->
+    <!--</div>-->
+    <!--<div class="clear"></div>-->
+<!--</div>-->
+<!--<div id="wrap">-->
+    <!--<div id="sidebar" style="height:240px;">固定宽度区</div>-->
+    <!--<div id="content" style="height:340px;">自适应区</div>-->
+<!--</div>-->
+<!--<div id="footer">右边固定左边自适应</div>-->
+
+<!--<div class="threeLines">-->
+    <!--<div class="threeLeft firstTable">使用table方法一左边</div>-->
+    <!--<div class="threeContent firstTable">方法一中间</div>-->
+    <!--<div class="threeRight firstTable">方法一右边</div>-->
+<!--</div>-->
+
+<!--<div class="floatLines">-->
+    <!--<div class="floatLeft ">方法一左边</div>-->
+    <!--<div class="floatRight ">方法一右边</div>-->
+    <!--<div class="floatContent ">方法一中间</div>-->
+<!--</div>-->
+
+<div class="wrapper">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div class="special">4</div>
+    <div>5</div>
+    <div>6</div>
+    <div  class="special">7</div>
+</div>
+<div>
+    <div class="negative gray"></div>
+    <div class="negative green"></div>
+    <div class="negative red"></div>
+</div>
+</body>
+</html>

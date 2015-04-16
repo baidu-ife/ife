@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>First task of html css</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <a  class="gitIcon" href="https://github.com/"><img src="img/icon-github.png" alt=""/></a>
+        <div class="containe title nav ">
+            <p class="myIcon">BaybayLee</p>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">文章</a></li>
+                <li><a href="gallery.html">作品</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content containe">
+        <div class="leftBlog">
+            <div class="blog">
+                <div class="tag">
+                    <div class="blogTimer">4.16</div>
+                    <div class="blogClass">杂集</div>
+                </div>
+                <h3>前端感想</h3>
+                <h4>百度培训感想</h4>
+                <div class="blogContent">
+                    <p>在参加百度培训班之前，对前端有个基本的认识，知道前端的东西很杂，而且知识点很多。但是之前只是出于把页面做完就行，好多时候
+                        连为什么这样可以，而另一种方法不可以都不知道，就是懵懵懂懂的抱着一种可以实现的态度，没有刨根问底的想要找到真正原理。
+                        感谢百度能给我们这么一个机会，花费那么多心思帮我们想题目，找资料，还要给我们review.谢谢各位老师。在这次html css中，知道了BFC、
+                        知道了IE的滤镜功能，知道了等高布局等等。我知道自己的页面还有很多需要提高的地方，很多知识点理解的还不那么深入，但是，带着这些知识点
+                        以及疑问在继续学习，我相信，我会做的更好。加油，再次感谢各位老师!!!
+                    </p>
+                </div>
+                <p class="writer">BaybayLee发表于 2015年4月16号</p>
+            </div>
+            <div class="blog">
+                <div class="tag">
+                    <div class="blogTimer">4.16</div>
+                    <div class="blogClass">css</div>
+                </div>
+                <h3>等高布局</h3>
+                <h4>index页面中的三个div同时等高自适应</h4>
+                <div class="blogContent">
+                    <p>首先把列的padding-bottom设为一个足够大的值500000，至于这个数你可以理解成“足够大”，以便于有足够的空间去扩展它的盒子，
+                        这么高应该是巨人症吧，没关系，我们可以用margin-bottom的负值去隐藏它，再把列的margin-bottom设一个与前面的padding-bottom的正值相抵消的负值，
+                        父容器设置超出隐藏，这样父容器的高度就还是它里面的列没有设定padding-bottom时的高度，当它里面的任一列高度增加了，则父容器的高度被撑到它里面
+                        最高那列的高度，其他比这列矮的列则会用它们的padding-bottom来补偿这部分高度差。因为背景是可以用在padding占用的空间里的，
+                        而且边框也是跟随padding变化的，所以就成功的完成了一个障眼法。
+                        <img src="img/equalHeight.jpg" alt=""/></p>
+                </div>
+                <p class="writer">BaybayLee发表于 2015年4月16号</p>
+            </div>
+            <div class="blog">
+                <div class="tag">
+                    <div class="blogTimer">4.16</div>
+                    <div class="blogClass">CSS</div>
+                </div>
+                <h3>css背景半透明渐变</h3>
+                <h4>背景渐变</h4>
+                <div class="blogContent">
+                    <p>
+                    首先针对各个浏览器的内核不同，实现的方法不同，<br>
+                    background: -webkit-linear-gradient(top,rgba(255, 255, 255, .5) 25%, rgba(255, 255, 255, 0) 100%);
+                    background: -moz-linear-gradient(top,rgba(255, 255, 255, .5) 25%, rgba(255, 255, 255, 0) 100%);
+                    <br>然而IE8以下是不支持rgba的，因此对使用了滤镜<br>
+                    filter:alpha(opacity=50 finishopacity=0 style=1 startx=0,starty=25,finishx=0,finishy=100).
+                    写完滤镜后，发现IE6-9有效，IE10无效，于是<br>
+                    background: -ms-linear-gradient(top,rgba(255, 255, 255, .5) 25%, rgba(255, 255, 255, 0) 100%);<br>
+                    终于背景的透明出现了，然而！IE89的字体却不再出现了。。。。
+                    后来发现，子元素继承了父元素的透明属性，所以，把父元素的position设置为static，子元素position设置为relative，终于!全都出现字体了！！！！
+                    但是，原来父级靠absolute控制位置，始终位于祖父元素的底部，文字增多的情况下，就像上增长，底部始终不变的。
+                    现在，就控制不了了。。文字一多，就向下生长了。。。哭。。这个问题还米有解决。
+                    PS，博客好多功能还实现不了，所以只能写见简单的文字博客。页面扔然很多问题，比如:border-radius没有实现IE8，比如刚刚的例子并没有实现渐变2次。。加油！
+                    </p>
+                </div>
+                <p class="writer">BaybayLee发表于 2015年4月16号</p>
+            </div>
+            <div class="pages">
+                <a href="#">第一页</a>
+                <a href="#">上一页</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#" class="current">3</a>
+                <a href="#">4</a>
+                <a href="#">上一页</a>
+                <a href="#">下一页</a>
+                <a href="#">最后页</a>
+            </div>
+        </div>
+        <div class="rightGuide">
+            <div class="search">
+                <input type="text"placeholder="KeyWord"/>
+                <a href="#">Go</a>
+            </div>
+            <div class="classification">
+                <ul>
+                    <li><a href="#" class="title">HTML</a></li>
+                    <li><a href="#" class="title">CSS</a></li>
+                    <li><a href="#" class="title">JavaScript</a></li>
+                    <li><a href="#" class="title">其他文章</a></li>
+                </ul>
+            </div>
+            <div class="calendar">
+                <p class="month"><a href="#"><</a><span>2015.04</span><a href="#">    > </a></p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>M</th> <th>T</th> <th>W</th> <th>T</th> <th>F</th> <th>S</th> <th>S</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="#">1</a></td><td><a href="#">2</a></td><td><a href="#">3</a></td><td><a href="#">4</a></td>
+                        <td><a href="#">5</a></td><td><a href="#">6</a></td><td><a href="#">7</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">8</a></td><td><a href="#">9</a></td><td><a href="#">10</a></td><td><a href="#">11</a></td>
+                        <td><a href="#">12</a></td><td><a href="#">13</a></td><td><a href="#">14</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">15</a></td><td><a href="#">16</a></td><td><a href="#">17</a></td><td><a href="#">18</a></td>
+                        <td><a href="#">19</a></td><td><a href="#">20</a></td><td><a href="#">21</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">22</a></td><td><a href="#">23</a></td><td><a href="#">24</a></td><td><a href="#">25</a></td>
+                        <td><a href="#">26</a></td><td><a href="#">27</a></td><td><a href="#">28</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">29</a></td><td><a href="#">30</a></td><td><a href="#"></a></td><td><a href="#"></a></td>
+                        <td><a href="#"></a></td><td><a href="#"></a></td><td><a href="#"></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tags ">
+                <h4 class="title" >Tags</h4>
+                <a href="#" class="f30">JavaScript</a>
+                <a href="#" class="f15">CSS</a>
+                <a href="#" class="f11">flex</a>
+                <a href="#" class="f11">WebGL</a>
+                <a href="#" class="f30">HTML</a>
+                <a href="#" class="f11">Canvas</a>
+                <a href="#" class="f15">protype</a>
+                <a href="#" class="f23">HTML5</a>
+                <a href="#" class="f10">grid</a>
+                <a href="#" class="f15">nodeJS</a>
+                <a href="#" class="f11">CSS3</a>
+                <a href="#" class="f23">Jquery</a>
+                <a href="#" class="f23">Echarts</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h3>
+            <a href="#">主页</a>
+            <a href="#">文章</a>
+            <a href="#">作品</a>
+            <a href="#">关于</a>
+        </h3>
+        <div class="containe">
+            <div class="footerBlock">
+                <p class="title">学习资料</p>
+                <ul>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link3</a></li>
+                    <li><a href="#">link2222</a></li>
+                    <li><a href="#">link</a></li>
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <p class="title">学习资料</p>
+                <ul>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link3</a></li>
+                    <li><a href="#">link2222</a></li>
+                    <li><a href="#">link</a></li>
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <p class="title">友情链接</p>
+                <ul>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link3</a></li>
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <p class="title">学习资料</p>
+                <ul>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link3</a></li>
+                    <li><a href="#">link2222</a></li>
+                    <li><a href="#">link</a></li>
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <p class="title">友情链接</p>
+                <ul>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link</a></li>
+                    <li><a href="#">link3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyRight">
+            <h4>版权所有</h4>
+            <img src="img/icon-github.png" alt=""/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
