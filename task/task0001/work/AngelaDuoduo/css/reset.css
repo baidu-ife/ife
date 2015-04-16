@@ -1,9 +1,8 @@
 /* A basic reset */
-
-html, body, div, span, applet, object, iframe,
+html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
+del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -32,6 +31,7 @@ body {
 	line-height: 1;
 	color: black;
 	background: white;
+	min-width: 980px;
 }
 ol, ul {
 	list-style: none;
