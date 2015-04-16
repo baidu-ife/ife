@@ -38,6 +38,7 @@ body {
     margin: 0 auto;
     width: 100%;
     position: relative;
+    background-color: ;
 }
 a {
     text-decoration: none;
@@ -481,13 +482,54 @@ aside {
 
 
 
+.about-me {
+    margin-top: 100px;
+    background-color: #f1f1f1;
+}
+.about-pix, .about-pix-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    border: 10px solid #fff;
+}
+.about-pix-large {
+    width: 180px;
+    height: 180px;
+}
+.about{
+    position: relative;
+    top: -50px;
+    padding: 30px 0;
+    border-right: 5px solid #fff;
+    border-left: 5px solid #fff;
+    width: 0;
+    margin: 0 auto;
+}
+.heading {
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    left: -150px;
+}
+.about p {
+    font-size: 14px;
+    position: relative;
+    top: -5px;
+    left: 60px;
+    width: 250px;
+}
 
-
-
-
-
-
-
+.about-dateinfo {
+    position: relative;
+    left: -27px;
+    top: 20px;
+    padding: 0 10px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+}
 
 
 
