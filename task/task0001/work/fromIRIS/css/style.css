@@ -95,8 +95,13 @@
 .body-middle {
     width: 100%;
     background-color: #eee;
-    padding-bottom: 110px;
     padding-top: 10px;
+}
+.body-middle-wrap-wrap {
+    width: 980px;
+    background-color: #eee;
+    padding-bottom: 110px;
+    margin: 0 auto;
 }
 .body-middle-wrap {
     width: 980px;
@@ -142,10 +147,10 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: -50px;
+    position: relative;
+}
+.user-pic img {
     border-radius: 80px;
-    background: url(../img/46.jpg);
-    background-size: 160px 230px;
-    background-position: 5px -20px;
 }
 .body-bottom-title {
     font-style: 20px;
@@ -195,6 +200,7 @@
     height: 34px;
     line-height: 30px;
     margin: 0 auto;
+    padding-left: 70px;
 }
 .footer-header-nav li {
     list-style: none;
@@ -233,9 +239,10 @@
     text-decoration: underline;
 }
 .footer-copyright {
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    margin-top: 115px;
+    position: absolute;
+    bottom: 0;
+    height: 53px;
+    margin-left: 475px;
     text-align: center;
 }
 .footer-copyright p {
