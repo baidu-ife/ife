@@ -1,0 +1,10 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/Qu/Documents/GitHub/ife/task/task0001/design/task0001_3_marked.png">
+  <Marks>
+    <LengthMark direction="3" color="16711680" length="52" x="157" y="99"/>
+    <ColorMark defaultDirection="9" direction="9" color="16711680" targetColor="14665446" offsetX="25" offsetY="10" x="125" y="102"/>
+    <ColorMark defaultDirection="9" direction="9" color="16711680" targetColor="5384796" offsetX="25" offsetY="10" x="237" y="101"/>
+    <ColorMark defaultDirection="9" direction="9" color="16711680" targetColor="5832882" offsetX="25" offsetY="10" x="453" y="101"/>
+    <ColorMark defaultDirection="9" direction="9" color="16711680" targetColor="9184000" offsetX="25" offsetY="10" x="548" y="101"/>
+    <ColorMark defaultDirection="9" direction="9" color="16711680" targetColor="14263040" offsetX="25" offsetY="10" x="665" y="100"/>
+  </Marks>
+</MKM>
