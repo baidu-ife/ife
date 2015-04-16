@@ -52,7 +52,7 @@ body {
 }
 
 .content {
-
+    background: #CCCCCC;
 }
 
 
@@ -179,3 +179,194 @@ body {
 }
 
 /*****blog.html****/
+
+.article-list {
+    float: left;
+    width: 75%;
+}
+
+.sidebar {
+    margin-left: 75%;
+    padding-top: 15px;
+}
+
+.content-clear {
+    clear: both;
+    height: 150px;
+}
+
+.post-mark {
+    width: 60px;
+    float: left;
+    position: relative;
+    left: 30px;
+    margin-top: 20px;
+}
+
+.post-mark-date {
+    color: #ffffff;
+    text-align: center;
+    width: 40px;
+    background: #663366;
+    padding: 10px;
+}
+
+.post-mark-tag {
+    color: #ffffff;
+    text-align: center;
+    width: 40px;
+    background: #996699;
+    padding: 10px;
+}
+
+.post {
+    padding: 20px;
+    margin: 15px 15px 15px 90px;
+    background: #ffffff;
+}
+
+.post h4 {
+    color: #663366;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.post h5 {
+    font-size: 12px;
+    margin: 0;
+}
+
+.post-footer-date {
+    font-size: 12px;
+    text-align: right;
+    font-weight: lighter;
+}
+
+.search {
+    background: #ffffff;
+    padding: 15px;
+    margin-right: 15px;
+}
+
+.search input {
+    line-height: 20px;
+    width: 80%;
+}
+
+.input-group input {
+    width: 80%;
+    float: left;
+}
+
+.input-group span {
+    width: 20%;
+}
+
+.input-group button {
+    display: inline-block;
+    height: 26px;
+    background: #CCCCCC;
+    color: #ffffff;
+}
+
+.category, .calendar, .tags {
+    background: #ffffff;
+    margin-right: 15px;
+}
+
+.category ul {
+    padding: 0;
+}
+
+.category li {
+    color: #000000;
+    list-style-type: none;
+    border-left: solid #FFCCCC;
+    border-bottom: solid thin #CCCCCC;
+    padding: 10px 25px;
+}
+
+.category li.active {
+    border-left-color:#663366;
+}
+
+.calendar {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+table.calendar-gadget {
+    margin-left: 25px;
+    border-collapse: collapse;
+}
+
+table.calendar-gadget .active {
+    color: #ffffff;
+    background: #663366;
+}
+
+table.calendar-gadget th {
+    color: #663366;
+}
+
+table.calendar-gadget td, th {
+    padding: 5px;
+}
+
+table.calendar-gadget tr {
+    border-bottom: solid thin #000000;
+}
+
+.tags {
+    margin-top: 15px;
+}
+
+.tags span {
+    color: #663366;
+}
+
+.tags p {
+    overflow: hidden;
+}
+
+span.larger {
+    font-size: 2em;
+}
+
+span.large {
+    font-size: 1.5em;
+}
+
+span.small {
+    font-size: 0.8em;
+}
+
+.page-group {
+    width: 100%;
+    overflow: auto;
+    margin-left: 22%;
+}
+
+.page-group .page {
+    text-align: center;
+    float: left;
+    background: #ffffff;
+    padding: 6px 10px;
+    margin: 5px;
+}
+
+.page a {
+    color: #000;
+    text-decoration: none;
+}
+
+.page a:hover {
+    color: #ffffff;
+    background: #663366;
+}
+
+.page-group div.active {
+    color:#ffffff;
+    background: #663366;
+}
