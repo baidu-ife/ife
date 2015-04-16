@@ -1,72 +1,33 @@
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-
-/*首页导航开始*/
-.header{
-    height: 80px;
-    width: 100%;
-    background-color: #533474;
-    position: relative;
-}
-.header-main-wrap{
-    width:100%;
-    float:left;
-    height: 80px;
-}
-.header-main{
-    width: 980px;
-    height: 100%;
-    margin:auto;
-    position: relative;
-}
-ul{
-    list-style:none;
-    margin: 0;
-}
-.header-main ul.nav{
-    margin: 0 0 5px 0;
-    position:absolute;
-    right:0;
-    bottom:5px;
-}
-ul.nav{
-    padding-left: 0;
-    font-size: 14px;
-    text-align: center;
-}
-.nav li{
-    display: inline;
-    margin-left: 28px;
-}
-.nav a{
-    text-decoration: none;
-    color:#fff;
-}
-.nav a:hover {
-    color: #eeeeee;
-}
-#github{
-    float:right;
-    margin-left: -40px;
-    bottom: 0px;
-    position: absolute;
-    height:34px;
-}
-/*首页导航结束*/
-
-
 /* 首页内容开始*/
 
-.center{
-    width: 980px;
-    margin: 0 auto;
-    background-color: #eee;
-}
 /*首页banner*/
 .banner{
 }
 .banner > img{
     display: block;
     width: 100%;
+}
+.banner-desc-wrap{
+    position: relative;
+}
+.banner-desc {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    min-height: 120px;
+    background-color: #ffffff;
+    filter:alpha(Opacity=70, finishOpacity=50, Style=1, startX=180, startY=0, finishX=180, finishY=30);
+    filter:alpha(Opacity=50, finishOpacity=0, Style=1, startX=180, startY=30, finishX=180, finishY=120);
+    background:-webkit-gradient(linear,left 100%,left 25%, from(rgba(255,255,255,0.7)), to(rgba(255,255,255,0.5)));
+    background:-webkit-gradient(linear,left 25%,left bottom, from(rgba(255,255,255,0.5)), to(rgba(255,255,255,0)));
+}
+.banner-desc p{
+    color: #fff;
+    word-break: break-all;
+    padding: 10px 10px 30px 10px;
+    font-size: 12px;
+    line-height: 1.5;
 }
 .list-container{
     margin: 10px -10px 110px -10px;
@@ -100,9 +61,7 @@ div.content{
 }
 /*文章列表结束*/
 /*个人介绍开始*/
-.wrap{
-    width: 100%;
-}
+
 .article-wrap{
     background-color: #fff;
     min-height: 530px;
@@ -135,7 +94,3 @@ div.content{
 
 /*个人介绍结束*/
 
-.wrap{
-    width: 980px;
-    margin: 0 auto;
-}

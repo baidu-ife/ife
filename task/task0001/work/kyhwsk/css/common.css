@@ -1,3 +1,7 @@
+body{
+    background-color: #eeeeee;
+}
+/*底色*/
 /*首页导航开始*/
 .header{
     height: 80px;
@@ -21,7 +25,6 @@ ul{
     margin: 0;
 }
 .header-main ul.nav{
-    margin: 0 0 5px 0;
     position:absolute;
     right:0;
     bottom:5px;
@@ -112,4 +115,9 @@ p.copy-right{
 }
 .cf:after {
     clear: both;
+}
+/*980 wrap*/
+.center{
+    width: 980px;
+    margin: 0 auto;
 }
