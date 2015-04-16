@@ -38,11 +38,13 @@ body {
     left: 500px;
 }
 
-.github {
-    float: right;
-    width: 5%;
-    position: relative;
-    top: 25px;
+@media screen and (min-device-width: 980px){
+    .github {
+        float: right;
+        width: 5%;
+        position: relative;
+        top: 25px;
+    }
 }
 
 .nav-list a {
@@ -106,6 +108,7 @@ body {
 /*****index.html****/
 .banner {
     margin: 0 auto;
+    height: 447px;
 }
 
 .banner img {
@@ -114,9 +117,10 @@ body {
 }
 
 .banner-text {
-    position: absolute;
-    right: 500px;
-    bottom: 10px;
+    position: relative;
+    left: 560px;
+    bottom: 90px;
+    width: 400px;
     background: rgb(255,255,255);
     background: rgba(255,255,255,0.2);
 }
