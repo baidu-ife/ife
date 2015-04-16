@@ -93,7 +93,7 @@
 .footer .footer-nav{
 	text-align: center;
 	font-size: 0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	border-bottom: 1px solid rgb(238, 238, 238);
 }
 .footer .footer-nav li{
 	display: inline-block;	
@@ -147,7 +147,9 @@
 	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.7)); 
  	background: -webkit-gradient(linear, bottom, top, rgba(255, 255, 255, 0.7), color-stop(0.75, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0))); 
  	background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.7)); 
- 	background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 1));	
+ 	background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 1));
+ 	background: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 1));
+ 	border: 1px solid #ccc\0;
 }
 #index .banner .banner-image-text h1{
 	font-size: 14px;
@@ -238,7 +240,7 @@
 	margin-top: 30px;
 	text-align: right;
 	font-size: 12px;
-	color: rgba(0, 0, 0, 0.4);
+	color: #777;
 }
 #blog .content .article .blog-info{
 	position: absolute;
@@ -285,7 +287,7 @@
 	width: 100px;
 	height: 34px;
 	padding: 3px 3px 3px 50px;
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	border: 1px solid rgb(238, 238, 238);
 	background: url(../img/icon-search.png) 0px 0px no-repeat;
 	letter-spacing: 1px;
 	vertical-align: middle;
@@ -295,7 +297,7 @@
 	height: 42px;
 	width: 54px;
 	border: none;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgb(238, 238, 238);
 	color: white;
 	font-size: 18px;
 	text-align: center;
@@ -315,7 +317,7 @@
 	border-top: 1px solid #9fd8e6;
 }
 #blog .sidebar #sidebar-nav li a{
-	color: rgba(0, 0, 0, 0.4);
+	color: #777;
 }
 
 #blog .sidebar #calendar{
@@ -343,12 +345,12 @@
 	padding: 5px 0 10px 0;
 	font-size: 14px;
 	line-height: 20px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgb(238, 238, 238);
 }
 #blog .sidebar #calendar li{
 	float: left;
 	width: 30px;	
-	color: rgba(0, 0, 0, 0.4);	
+	color: #777;	
 }
 #blog .sidebar #calendar .days li.active,
 #blog .sidebar #calendar .days li:hover{
@@ -363,7 +365,7 @@
 	line-height: 1.2;
 }
 #blog .sidebar #tags .title{
-	color: rgba(0, 0, 0, 0.4);
+	color: #777;
 	padding-bottom: 10px;
 }
 #blog .sidebar #tags .level-5{
@@ -396,10 +398,10 @@
 	padding: 20px;
 	padding-top: 15px;
 	background-color: white;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgb(238, 238, 238);
 }
 #gallery #main-nav li+li{
-	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	border-left: 1px solid rgb(238, 238, 238);
 }
 #gallery #main-nav li.active{
 	border-bottom-color: transparent;
@@ -464,7 +466,7 @@
 }
 #gallery .waterfall .col .box .pic-info .pic-tag{
 	float: left;
-	border: 1px solid rgba(255, 255, 255, 0.5);
+	border: 1px solid rgb(238, 238, 238);
 	width: 20px;
 	line-height: 20px;
 	border-radius: 50%;
@@ -485,7 +487,7 @@
 	background-color: white;
 	padding: 5px;
 	font-size: 14px;
-	color: rgba(0, 0, 0, 0.5);
+	color: #777;
 	text-align: center;	
 }
 #gallery .main .loader span,
@@ -505,7 +507,7 @@
 #gallery .sidebar #search-form input[type='text']:focus+input[type='submit']{
 	border: 1px solid rgb(82, 42, 92);
 	border-left: none;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: #777;
 }
 
 #gallery .sidebar #ranklist h1{
