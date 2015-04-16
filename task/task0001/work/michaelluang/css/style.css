@@ -1,11 +1,12 @@
 /*
 
-Baidu IFE Task0001 
+    Baidu IFE Task0001 
 
-Author: michaelluang
-URL:    http://github.com/michaelluang
-Email:  michaelluang@gmail.com
+    Author: michaelluang
+    URL:    http://github.com/michaelluang
+    Email:  michaelluang@gmail.com
 
+    Thanks for your review, Mentor!
 */
 
 /* Reset
@@ -23,7 +24,6 @@ Email:  michaelluang@gmail.com
 header, footer, nav, img {
     display: block;
 }
-
 /* Site
 -------------------------------------------------- */
 html {
@@ -37,12 +37,17 @@ html {
 body {
     margin: 0 auto;
     width: 100%;
-    position: relative;
-    background-color: ;
+    background-color: #f2f2f2;
+    line-height: 120%;
 }
 a {
     text-decoration: none;
+    color: #333;
+    transition: color 0.5s;
+}
+a:hover {
     color: red;
+    transition: color .5s;
 }
 ul {
     list-style-type: none;
@@ -51,17 +56,13 @@ ul {
     width: 980px;
     margin: 0 auto;
 }
-/* Navgation Bar
+/* Site header
 -------------------------------------------------- */
 .site-header {
     position: relative;
-    background-color: #ddd;
+    background-color: #0ed991;
     width: 100%;
     height: 80px;
-}
-.header-inside {
-    max-width: 980px;
-    margin: 0 auto;
 }
 .nav {
     width: 980px;
@@ -70,9 +71,8 @@ ul {
 .logo img {
     display: block;
     position: relative;
-    top: 35px;
-    left: 0;
-    padding-bottom: 0;
+    top: 25px;
+    left: 20px;
 }
 .menu {
     float: right;
@@ -87,8 +87,12 @@ ul {
 .menu a {
     font-family: "宋体";
     font-size: 14px;
-    color: red;
+    color: #497f2c;
     margin-left: 28px;
+}
+.menu a:hover {
+    color: red;
+    transition: color .5s;
 }
 .github {
     position: absolute;
@@ -99,17 +103,55 @@ ul {
     width: 30px;
     height: 34px;
 }
-
-/* Homepage cover
+/* Site Footer
+-------------------------------------------------- */
+.site-footer {
+    background-color: #ddd;
+    color: #444;
+    width: 100%;
+    clear: both;
+}
+.footer-nav {
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+.footer-nav li {
+    display: inline-block;
+    margin: 10px;
+}
+.footer-content {
+    width: 980px;
+    margin: 0 auto;
+}
+.column {
+    display: inline-block;
+    vertical-align: top;
+    width: 106px;
+    margin: 20px 0;
+    margin-right: 80px;
+    text-align: center;
+}
+.copyright {
+    text-align: center;
+}
+.copyright img {
+    display: inline-block;
+    width: 30px;
+    height: 34px;
+    margin: 10px;
+    border-radius: 25%;
+}
+/* Home Page  Begin*\
+-------------------------------------------------- */
+/* Cover
 -------------------------------------------------- */
 .cover {
-    width: 100%;
-    height: 525px;
+    position: relative;
     background: url(../img/banner-bg.jpg) no-repeat center;
 }
 .section {
     position: relative;
-    max-width: 980px;
+    width: 980px;
     height: 525px;
     margin: 0 auto;
 }
@@ -134,20 +176,13 @@ ul {
     line-height: 150%;
     text-align: right;
 }
-
 /* Teaser
 -------------------------------------------------- */
 .teaser-main {
-    height: 400px;
+    width: 980px;
     padding-top: 10px;
-    padding-bottom: 200px;
-    background: yellow;
-    overflow: hidden;
-}
-.teaser {
-    max-width: 980px;
     margin: 0 auto;
-    list-style: none;
+    overflow: hidden;
 }
 .teaser li {
     float: left;
@@ -155,7 +190,7 @@ ul {
     margin: 0 5px;
     padding-bottom: 5000px;
     margin-bottom: -5000px;
-    background-color: #e3e3e3;
+    background-color: #fff;
 }
 .teaser li:first-child {
     margin-left: 0;
@@ -174,18 +209,16 @@ ul {
     line-height: 170%;
     margin: 0 30px 25px 30px;
 }
-
-/* Introduction
+/* Self-introduction
 -------------------------------------------------- */
 .intro {
     position: relative;
     text-align: center;
-    clear: left;
-
+    background: #fff;
 }
 .intro img {
     width: 160px;
-    height: 160ox;
+    height: 160px;
     border-radius: 100%;
     display: inline-block;
     margin-top: -50px;
@@ -193,76 +226,55 @@ ul {
 .intro h2 {
     font-family: "Century Gothic";
     font-size: 20px;
-    margin-top: 50px;
-   
+    margin-top: 50px;  
 }
 .intro p {
     font-size: 14px;
     color: #000;
     width: 600px;
     margin: 0 auto;
-    margin-bottom: 200px;
+    padding-bottom: 100px;
 }
-
-/* Footer
+/* Home Page End*\
 -------------------------------------------------- */
-.site-footer {
-    background-color: #111;
-    color: #f3f3f3;
-    width: 100%;
-    clear: both;
-}
-.footer-nav {
-    text-align: center;
-    border-bottom: 2px solid #666;
-}
-.footer-nav li {
-    display: inline-block;
-    margin: 10px;
-}
-.footer-content {
-    width: 980px;
-    margin: 0 auto;
-}
-.column {
-    display: inline-block;
-    vertical-align: top;
-    width: 106px;
-    margin: 20px 0;
-    margin-right: 80px;
-}
-.copyright {
-    text-align: center;
-}
-.copyright img {
-    display: inline-block;
-    width: 30px;
-    height: 34px;
-    margin: 10px;
-    border-radius: 25%;
-    background: #fff;
-}
-
-/* Articles
+/* Blog Page  Begin*\
 -------------------------------------------------- */
 .articles, .pagination {
     float: left;
     width: 735px;  
-    margin-bottom: 200px;  
+    margin-bottom: 80px;  
 }
 article {
     position: relative;
-    background-color: #f1f1f1;
+    background-color: #fff;
     margin: 10px;
     margin-left: 0;
+    padding: 20px;
 }
-.info {
+article h2 {
+    font-size: 16px;
+}
+article h3 {
+    font-size: 12px;
+    color: #666;
+}
+.article-info {
     position: absolute;
-    left: -40px;
+    left: -80px;
     top: 5px;
-    width: 40px;
-    border: 1px solid #111;
+    width: 80px;
     text-align: center;
+}
+.article-date {
+    background-color: red;
+}
+.article-tag {
+    background-color: #0ed991;
+}
+article .pub-date {
+    font-size: 12px;
+    text-align: right;
+    color: #bbb;
 }
 .pagination ul {
     text-align: center;
@@ -271,119 +283,40 @@ article {
     display: inline-block;
     padding: 10px 15px;
     margin: 10px 5px;
-    background-color: #f1f1f1;
+    background-color: #fff;
 }
-.pagination li a.selected {
+li.selected {
     background-color: red;
 }
-.sidepieces {
-    float: right;
-    width: 240px;
-    margin-top: 10px;
-}
-aside {
-    background-color: #f1f1f1;
-    margin-top: 10px;
-}
-.search {
-    height: 80px;
-    margin-top: 0;
-}
-.search-inner {
-    position: relative;
-    top: 20px;
-    left: 0;
-    height: 40px; 
-}
-.search-inner img {
-    display: inline-block;
-    position: relative;
-    top: 4px;
-    left: 4px;
-    width: 32px;
-    height: 32px;
-}
-.search-inner input {
-    height: 40px;
-    vertical-align: top;
-    outline: none;
-}
-.search-inner input:focus + button {
-    background-color: red;
-}
-.search-inner button {
-    height: 40px;
-    width: 40px;
-    margin-left: 1px;
-    font-size: 20px;
-    vertical-align: top;
-}
-.lables li {
-    height: 40px;
-    font-size: 14px;
-    padding-left: 12px;
-    padding-top: 10px;
-    border: 1px solid #fff;
-    border-left: 4px solid #666;
-    border-right: none;
-}
-.lables li.active, .lables li:hover {
-    border-left: 4px solid red;
-}
-.calendar h3 {
-    text-align: center;
-    padding: 10px;
-}
-.calendar span.prev{
-    float: left;
-}
-.calendar span.next {
-    float: right;
-}
-.calendar table {
-    margin: 0 auto;
-    padding-bottom: 10px;
-}
-.calendar td {
-    padding: 5px;
-    text-align: center;
-    border-bottom: 2px solid #fff;
-    border-spacing: 0px;
-    border-collapse: collapse;
-}
-.calendar .date-today {
-    background-color: red;
-    color: #fff;
-}
-.calendar .active {
-    color: blue;
-}
-/* Gallery
+/* Home Page End*\
+-------------------------------------------------- */
+/* Gallery Page Begin *\
 -------------------------------------------------- */
 .tab-menu {
-    width: 730px;
-    margin-top: 20px;
+    width: 650px;
+    margin: 20px 40px 0px 40px; 
+    background-color: #fff;
+    text-align: center;
 }
 .tab-menu li {
     display: inline-block;
     padding: 10px;
-    padding-top: 15px;
-    border-left: 2px solid #f2f2f2;
+    /*background-color: #fff;*/
 }
 .tab-menu li.tab-menu1 {
-    border-top: 4px solid #e00;
+    border-top: 2px solid #e00;
     border-left: none;
 }
 .tab-menu li.tab-menu1:hover {
-    border-top: 4px solid #f00;
+    border-top: 1px solid #f00;
 }
 .tab-menu li.tab-menu2 {
-    border-top: 4px solid #0e0;
+    border-top: 4px solid #0f0;
 }
 .tab-menu li.tab-menu2:hover {
-    border-top: 4px solid #0f0;    
+    border-top: 4px solid #4d7b38;    
 }.tab-menu li.tab-menu3 {
-    border-top: 4px solid #00e;
+    border-top: 4px solid #0af;
 }
 .tab-menu li.tab-menu3:hover {
     border-top: 4px solid #00f;
@@ -391,25 +324,28 @@ aside {
     border-top: 4px solid #ee0;
 }
 .tab-menu li.tab-menu4:hover {
-    border-top: 4px solid #ff0;
+    border-top: 4px solid #ff060a;
 }.tab-menu li.tab-menu5 {
     border-top: 4px solid #0ee;
 }
 .tab-menu li.tab-menu5:hover {
-    border-top: 4px solid #0ff;
+    border-top: 4px solid #a90dec;
 }
 .tab-menu li.active {
-    border-top: 4px solid #000;
+    border-top: 4px solid #f00;
 }
+/* Waterfall Layout
+-------------------------------------------------- */   
 .gallery-show {
     width: 730px;
     margin-right: 10px;
+    background-color: #fff;
 }
-
 .box-left, .box-right {
     display: inline-block;
     float: left;
     width: 360px;
+    margin-bottom: 10px;
 }
 .box-left {
     margin-right: 10px;
@@ -440,17 +376,205 @@ aside {
     width: 175px;
     height: 175px;
 }
+.gallery-show-content1 {
+    position: relative;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 5px;
+    background-color: red;
+}
+.gallery-show-content2 {
+    position: relative;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 5px;
+    background-color: #0ed991;
+}
+.gallery-show-content3 {
+    position: relative;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 5px;
+    background-color: #a90dec;
+}
+.gallery-show-content4 {
+    position: relative;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 5px;
+    background-color: yellow;
+}
 .gallery-footer {
     display: inline-block;
     width: 730px;
     height: 50px;
     text-align: center;
-    background-color: #f1f1f1;
+    background-color: #fff;
 }
 .gallery-footer img {
     display: inline-block;
 }
-
+.gallery-show-content1 span,
+.gallery-show-content2 span,
+.gallery-show-content3 span,
+.gallery-show-content4 span {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    padding: 3px 8px;
+    border: 2px solid #444;
+    border-radius: 60%;
+}
+/* Gallery Page End *\
+-------------------------------------------------- */
+/* About page Begin *\
+-------------------------------------------------- */
+.about-me {
+    margin-top: 100px;
+    background-color: #fff;
+}
+.about-pix, .about-pix-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    border: 5px solid #ccc;
+}
+.about-pix-large {
+    width: 150px;
+    height: 150px;
+}
+.about{
+    position: relative;
+    top: -50px;
+    padding: 40px 0;
+    border-right: 3px solid #ccc;
+    border-left: 3px solid #ccc;
+    width: 0;
+    margin: 0 auto;
+}
+.heading {
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    left: -150px;
+}
+.about p {
+    font-size: 14px;
+    position: relative;
+    top: -5px;
+    left: 60px;
+    width: 250px;
+}
+.about-dateinfo {
+    position: relative;
+    left: -38px;
+    top: 20px;
+    padding: 2px 20px;
+    border: 3px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+}
+/* About Page End *\
+-------------------------------------------------- */
+/* Sidebar Begin*\
+-------------------------------------------------- */
+.sidepieces {
+    float: right;
+    width: 240px;
+    margin-top: 10px;
+}
+/* Search
+-------------------------------------------------- */
+aside {
+    background-color: #fff;
+    margin-top: 10px;
+}
+.search {
+    height: 80px;
+    margin-top: 0;
+}
+.search-inner {
+    position: relative;
+    top: 20px;
+    left: 0;
+    height: 40px; 
+    border: 2px solid #ddd;
+}
+.search-inner img {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    left: 4px;
+    width: 32px;
+    height: 32px;
+}
+.search-inner input {
+    position: relative;
+    top: -10px;
+    height: 30px;
+    outline: none;
+}
+.search-inner input:focus + button {
+    background-color: red;
+}
+.search-inner button {
+    position: relative;
+    right: -30px;
+    height: 36px;
+    width: 40px;
+    font-size: 18px;
+    vertical-align: top;
+    background-color: #eee;
+}
+/* Labels
+-------------------------------------------------- */
+.lables li {
+    height: 40px;
+    font-size: 14px;
+    padding-left: 12px;
+    padding-top: 10px;
+    border: 1px solid #fff;
+    border-left: 2px solid #666;
+    border-right: none;
+}
+.lables li.active, .lables li:hover {
+    border-left: 2px solid red;
+}
+/* Calendar
+-------------------------------------------------- */
+.calendar h3 {
+    text-align: center;
+    padding: 10px;
+}
+.calendar span.prev{
+    float: left;
+}
+.calendar span.next {
+    float: right;
+}
+.calendar table {
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.calendar td {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+.calendar .date-today {
+    background-color: red;
+    color: #fff;
+}
+.calendar .active {
+    color: blue;
+}
+/* Ranking
+-------------------------------------------------- */
 .ranking h3 {
     text-align: center;
     padding-top: 10px;
@@ -468,7 +592,6 @@ aside {
     color: #fff;
     margin-right: 15px;
 }
-
 .ranking-bar {
     float: left;
     width: 100px;
@@ -479,79 +602,48 @@ aside {
 .ranking-value {
     background-color: red;
 }
-
-
-
-.about-me {
-    margin-top: 100px;
-    background-color: #f1f1f1;
+/* Tags
+-------------------------------------------------- */
+.tags-area {
+    padding: 15px;
 }
-.about-pix, .about-pix-large {
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    margin: 0 auto;
-    position: relative;
-    top: -50px;
-    border: 10px solid #fff;
-}
-.about-pix-large {
-    width: 180px;
-    height: 180px;
-}
-.about{
-    position: relative;
-    top: -50px;
-    padding: 30px 0;
-    border-right: 5px solid #fff;
-    border-left: 5px solid #fff;
-    width: 0;
-    margin: 0 auto;
-}
-.heading {
+.tags-area h3 {
     font-size: 20px;
-    position: absolute;
-    top: 30px;
-    left: -150px;
+    color: #aaa;
 }
-.about p {
-    font-size: 14px;
-    position: relative;
-    top: -5px;
-    left: 60px;
-    width: 250px;
+.alpha {
+    font-size: 20px;
+    color: #0ed991;
+    vertical-align: middle;
+}
+.beta {
+    font-size: 10px;
+    color: #e70a70;
+}
+.gamma {
+    font-size: 30px;
+    color: #85f238;
+}
+.delta {
+    font-style: italic;
+    font-size: 25px;
+    color: #c030e6;
+}
+.epsilon {
+    font-weight: bolder;
+    font-size: 17px;
+    color: #ff2bec;
+}
+.zeta {
+    font-size: 20px;
+    color: #f67510;
 }
 
-.about-dateinfo {
-    position: relative;
-    left: -27px;
-    top: 20px;
-    padding: 0 10px;
-    border: 3px solid #fff;
-    border-radius: 10px;
-}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Sidebar End*\
+-------------------------------------------------- */
