@@ -4,12 +4,7 @@
 
 # 最新公告
 
-[任务1已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0001)，初级班Review提交截止时间为**4月23日**，中级班为**4月16日**。
-
-高级班同学会在4月13日晚上8点前邮件大家题目列表供选择。
-
-百度Web前端技术学院正式开学，第一期学员已经确定，见[名单](https://github.com/baidu-ife/ife/blob/master/studentlist/201501.md)。大家可以开始做一些[准备工作](https://github.com/baidu-ife/ife/blob/master/task/preparation.md)
-
+百度Web前端技术学院正式开学，现在开始招收第一期学员，报名方式参考下方[报名说明](#报名方法)，报名截止日期为2015年4月8日，录取名单确定时间为2015年4月10日，4月13日开课。
 
 ## 目录
 
@@ -110,6 +105,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同一个班级的同学完成每个任务的时间段是相同的，即所有人在同一时间开始进行任务，并在截止时间前完成任务，若当前任务未能在规定时间内完成，你也需要放弃当前这个题目，继续和其他同学一起参加下一个任务的挑战。
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们会维护一张所有同学的任务完成的状态表，您可以看见谁做得快，谁做的好，我们鼓励并欢迎学员之间多交流、分享。
+
+#### 任务提交方法
+
+1. fork本项目；
+2. 在要进行的任务目录下（比如任务一对应`task_0001`目录）建立以自己github账号命名的目录，在这个目录下完成代码编写，比如`task_0001/diysimon/xxxx.js`；
+3. pull request你的代码；
+4. 等待我们工程师的Review。
 
 **整个学习周期**
 
