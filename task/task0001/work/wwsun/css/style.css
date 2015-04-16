@@ -165,7 +165,7 @@ body {
     top: -60px;
 }
 
-.avatar img {
+img.img-rounded {
     border-radius: 50%;
     overflow: hidden;
 }
@@ -484,4 +484,72 @@ div.gallery-footer {
     margin-top: 30px;
     background: #FFFFFF;
     text-align: center;
+}
+
+/*****about.html*****/
+
+.resume-avatar {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 80px;
+}
+
+img.border {
+    border: solid thick #FAF0E6;
+}
+
+div.vertical-line {
+    border-left: thick solid #FAF0E6;
+    height: 1200px;
+    position: absolute;
+    left: 50%;
+    top: 330px;
+}
+
+.resume {
+    margin: 0 50px;
+    height: 1200px;
+    background: #FFFFFF;
+}
+
+.empty-50 {
+    height: 50px;
+}
+
+.resume-item {
+    padding-top: 30px;
+}
+
+
+.resume-item .left {
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+div.left h2 {
+    font-size: 1.2em;
+    padding-right: 50px;
+}
+
+.resume-item .right {
+    margin-left: 50%;
+    padding: 0 50px;
+}
+
+.resume-item-img {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    z-index: 100;
+}
+
+.resume-item-img img {
+
+}
+
+.content-footer {
+    height: 90px;
+    background: #FAF0E6;
 }
