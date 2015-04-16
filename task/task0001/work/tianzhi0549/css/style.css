@@ -1,5 +1,424 @@
-
+body{
+    background-color: #EEEEEE;
+}
+header, .banner, .self-introduction, footer{
+    min-width: 980px;
+}
+.container{
+    width: 980px;
+    margin: 0 auto;
+}
 header{
     height: 80px;
+    background-color: #522A5C;
+    position: relative;
+}
 
+header nav{
+    height: 100%;
+    color: white;
+    position: relative;
+}
+.menu{
+    font-family: '宋体';
+    font-size: 14px;
+}
+header nav .menu{
+    position: absolute;
+    list-style: none;
+    zoom: 1;
+    right: 0;
+    bottom: 5px;
+    /**
+        为什么使用overflow: hidden触发BFC，ul会变成100%宽？
+    */
+}
+
+header nav .menu li{
+    float: left;
+    margin: 0 14px;
+}
+
+
+header nav .logo{
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+header .github-icon{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+.logo{
+    font-size: 25px;
+}
+/**
+    max-width设为1030px而不是980px的原因是因为980px会和“关于”菜单重合。
+    所以设为1030px=980px+图标宽度(30px)+距离右侧边框距离(10px)+10px(不希望紧贴在一起).
+*/
+@media all and (max-width: 1030px){
+    header .github-icon{
+        display: none;
+    }
+}
+.banner{
+    background: url("../img/banner-bg.jpg");
+    background-size: cover;
+    height: 400px;
+    position: relative;
+}
+.banner .introduction{
+    bottom: 0;
+    right: 10px;
+    padding: 10px 10px 30px 10px;
+    position: absolute;
+    width: 300px;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0));
+}
+.banner .container{
+    position: relative;
+    height: 100%;
+}
+.banner .introduction h1{
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-align: right;
+}
+.banner .introduction p{
+    font-size: 12px;
+    line-height: 150%;
+}
+.box-container{;
+    /**
+        !!!这个是重点。
+    */
+    overflow: hidden;
+}
+.container .box:first-child{
+    margin-left: 0;
+}
+.container .box:last-child{
+    margin-right: 0;
+}
+.container .box{
+    box-sizing: border-box;
+    padding:10px;
+    background-color: white;
+    float: left;
+    width: 320px;
+    margin: 10px 5px;
+    padding-bottom: 5000px;
+    margin-bottom: -5000px;
+}
+.container .box p{
+    margin-top: 15px;
+    padding: 0 20px 25px 20px;
+    font-size: 12px;
+    line-height: 170%;
+    text-indent: 2em;
+}
+.container .box img{
+    height: 180px;
+    width: 300px;
+}
+.self-introduction{
+    background-color: white;
+    padding-bottom: 100px;
+    margin-top: 100px;
+    text-align: center;
+    font-family: 'Century Gothic';
+}
+.self-introduction .photo{
+    margin-top: -50px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+.self-introduction .title{
+    padding: 50px 0;
+    font-size: 20px;
+}
+.self-introduction .text{
+    margin: 0 auto;
+    text-align: left;
+    width: 600px;
+    text-indent: 2em;
+    font-size: 14px;
+    line-height:170%;
+}
+footer{
+    background-color: black;
+    color: white;
+}
+footer .menu{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #333333;
+}
+footer .menu li{
+    display: inline-block;
+    margin:0 10px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+footer .links.container{
+    margin-top: 40px;
+    zoom: 1;
+    overflow: hidden;
+}
+footer .links-list{
+    font-size: 12px;
+    float: left;
+    list-style: none;
+    width: 196px;
+}
+footer .links-list li:first-child{
+    color: #CCCCCC;
+    margin-bottom: 25px;
+    padding: 0;
+}
+footer .links-list li{
+    padding: 5px 0;
+}
+
+footer .copyright{
+    font-size: 14px;
+    text-align: center;
+    padding: 0;
+}
+footer .copyright p{
+    padding: 10px 0;
+}
+footer .copyright a img{
+    vertical-align: bottom;
+}
+.blog.container{
+    box-sizing: border-box;
+    padding-right: 300px;
+    display: table;
+    margin: 20px auto;
+}
+.main-body{
+    float: left;
+    width: 100%;
+}
+.right-bar{
+    position: relative;
+    left: 300px;
+    width: 290px;
+    float: left;
+    margin-left: -290px;
+}
+.main-body .article{
+    position: relative;
+    background: white;
+    line-height: 1.5;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+}
+.main-body .article .label{
+    position: absolute;
+    width: 50px;
+    text-align: center;
+    left: -50px;
+    top: 50px;
+    color: white;
+}
+.main-body .article h1{
+    font-size: 16px;
+    color: #A660B7;
+}
+.main-body .article h2{
+    font-size: 12px;
+    color: #666;
+}
+.main-body .article p{
+    margin-top: 5px;
+    font-size: 12px;
+    text-indent: 24px;
+}
+.main-body .article .signature{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+.main-body .article .label div{
+    padding: 10px 0;
+}
+.main-body .article .label .up{
+    background-color: #522A5C;
+}
+.main-body .article .label .down{
+    background-color: #A660B7;
+}
+.page-num{
+    margin-top: 20px;
+    text-align: center;
+}
+.page-num span{
+    padding:12px 15px;
+    font-size: 12px;
+    background-color: white;
+}
+.page-num span:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+.page-num span.selected{
+    background-color: #A660B7;
+    cursor: default;
+    color: white;
+}
+.page-num span.disabled{
+    background-color: white;
+    cursor: default;
+    color: #666;
+}
+.right-bar>div, .right-bar>ul{
+    background-color: white;
+    margin-bottom: 10px;
+}
+.search-box{
+    padding: 20px 20px;
+    font-size: 0;
+}
+.search-container{
+
+}
+.search-box span{
+    text-align: center;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    margin-left: -37px;
+    cursor: pointer;
+    background-color: #DDDDDD;
+    font-size: 14px;
+    vertical-align: middle;
+}
+.search-box input{
+    width: 171px;
+    font-size: 14px;
+    outline: none;
+    border: 1px #DDDDDD solid;
+    padding: 10px 37px 10px 40px;
+    background: url("../img/sprites.png");
+}
+.search-box input:focus{
+    border: 1px #343434 solid;
+}
+.category{
+    list-style: none;
+}
+.category li{
+    background-color: white;
+    margin: 1px 0;
+    border-left: 4px solid #A660B7;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.category li.selected, .category li:hover{
+    border-left: 4px solid #522A5C;
+}
+.calendar h1{
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    color:#522A5C;
+    font-size: 14px;
+}
+.calendar h1 span{
+    position: absolute;
+    cursor: pointer;
+}
+.calendar h1 span:first-child{
+    left: 5px;
+}
+.calendar h1 span:last-child{
+    right: 5px;
+}
+.calendar{
+    font-size: 0;
+    padding: 0 10px;
+}
+.calendar div{
+    border-bottom: 1px solid #EEEEEE;
+    padding: 5px 10px;
+}
+.calendar div span{
+    color: #999999;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    width: 35px;
+    padding: 7px 0;
+}
+.calendar div span.selected{
+    color: #522A5C;
+    font-weight: bold;
+}
+.calendar div span.today{
+    background-color: #522A5C;
+    color: white;
+}
+.tags{
+    padding: 10px;
+}
+.tags .caption{
+    color: #666666;
+}
+.tags .tags-container{
+    padding: 20px 0;
+    color: #522A5C;
+}
+.tags .lg{
+    font-size: xx-large;
+    font-weight: bold;
+}
+.tags .sm{
+    font-size: x-small;
+}
+.tab{
+    font-size: 0;
+}
+.tab span{
+    cursor: pointer;
+    border-bottom: 1px #EEEEEE solid;
+    border-top: 4px #DFC6E6 solid;
+    margin-left: 1px;
+    display: inline-block;
+    padding: 15px 20px 20px 20px;
+    font-size: 14px;
+    background-color: white;
+}
+.tab span.selected{
+    border-top: 4px solid #522A5C;
+    border-bottom: 1px white solid;
+}
+.waterfall-fluid-container{
+    background-color: white;
+    overflow: hidden;
+}
+
+.waterfall-fluid-container .item{
+    margin: 5px;
+    height: 200px;
+    width: 200px;
+    float: left;
+    background-color: black;
+}
+
+.waterfall-fluid-container .item:first-child{
+    height: 300px;
 }
