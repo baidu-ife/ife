@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	function Focus(x)
+	{
+		document.getElementById(x).parentNode.style.border="1px solid black";
+		document.getElementById(x).parentNode.children[1].style.borderLeft="1px solid black";
+
+	}
+	function Onblur(x)
+	{
+		document.getElementById(x).parentNode.style.border="";
+		document.getElementById(x).parentNode.children[1].style.borderLeft="";				
+	}	
+	</script>	
+</head>
+<body>
+<!--  page_top	 -->
+<div class="page_top">
+	<div class="nav_wrap">
+		<div class="top_title"><a href="javascript:;">Secret Garden</a></div>
+		<ul class="top_nav">
+			<li><a href="index.html">首页</a></li>
+			<li><a href="blog.html">文章</a></li>
+			<li><a href="gallery.html">作品</a></li>
+			<li><a href="about.html">关于</a></li>
+		</ul>			
+	</div>
+	<a href="https://github.com/"><i class="top_logo"></i></a>
+</div>
+<!-- End -->
+ 
+ <!-- gallery -->
+
+<div class="gallery">
+	<!-- gallery_left -->
+	<div class="gallery_left">
+		<div class="left_nav">
+			<ul>
+				<li>
+					<span class="title1"></span>
+					<div>
+						<a href="#">ALL</a>
+					</div>
+				</li>
+				<li>
+					<span class="title2"></span>			
+					<div>
+						<a href="#">JavaScript Util Functions</a>
+					</div>	
+				</li>
+				<li>
+					<span class="title3"></span>			
+					<div>
+						<a href="#">UI Components</a>
+					</div>
+				</li>
+				<li>
+					<span class="title4"></span>			
+					<div>
+						<a href="#">FrameWork</a>
+					</div>
+				</li>
+				<li class="border-none">
+					<span class="title5"></span>			
+					<div>
+						<a href="#">Applications</a>
+					</div>	
+				</li>
+			</ul>
+		</div>
+		<div class="imgs_wrap">
+			<div class="imgs_box">
+				<div class="img1">
+					<div class="img_titlebox style1">
+						<i class="title_img">A</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>
+				<div class="img2">
+					<div class="img_titlebox style4">
+						<i class="title_img">B</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>
+				<div class="img3">
+					<div class="img_titlebox style3">
+						<i class="title_img">C</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>
+				<div class="img4">
+					<div class="img_titlebox style1">
+						<i class="title_img">D</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>										
+				<div class="img5">
+					<div class="img_titlebox style2">
+						<i class="title_img">E</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>
+				<div class="img6">
+					<div class="img_titlebox style4">
+						<i class="title_img">F</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>										
+				<div class="img7">
+					<div class="img_titlebox style3">
+						<i class="title_img">G</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>		
+				<div class="img8">
+					<div class="img_titlebox style2">
+						<i class="title_img">H</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>	
+				<div class="img9">
+					<div class="img_titlebox style3">
+						<i class="title_img">H</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>		
+				<div class="img10">
+					<div class="img_titlebox style1">
+						<i class="title_img">H</i>
+						<span>这里是标题</span>
+						<p>这里是内容内容内容内容内容内容内容</p>			
+					</div>
+				</div>									
+			</div>
+		</div>	
+		<div class="show_more">
+			<a href="#">点击查看更多</a>
+		</div>
+	</div>
+	<!-- End -->
+
+	<!-- gallery_right -->
+	<div class="gallery_right">
+		<div class="right_search">
+			<div class="search_wrap">
+				<input type="text" placeholder="Keywords" class="text" onfocus="Focus(this.id)" onblur="Onblur(this.id)" id="search" />
+				<button class="btn">Go</button>
+			</div>
+		</div>
+		<div class="right_rank">
+			<p>人气排行榜</p>
+			<ul>
+				<li>
+					<i>1</i>
+					<div>
+						<p class="width1"></p>
+					</div>
+					<span>ui.tree</span>
+				</li>
+				<li>
+					<i>2</i>
+					<div>
+						<p class="width2"></p>
+					</div>
+					<span>ui.tree</span>					
+				</li>
+				<li>
+					<i>3</i>
+					<div>
+						<p class="width3"></p>
+					</div>
+					<span>ui.tree</span>					
+				</li>
+				<li>
+					<i>4</i>
+					<div>
+						<p class="width4"></p>
+					</div>
+					<span>ui.tree</span>					
+				</li>
+				<li>
+					<i>5</i>
+					<div>
+						<p class="width5"></p>
+					</div>
+					<span>ui.tree</span>					
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- End -->
+</div>
+
+<!-- gallery End -->
+<!--  page_foot  -->
+<div class="page_foot">
+	<div class="foot_nav">
+		<ul>
+			<li><a href="index.html">主页</a></li>
+			<li><a href="blog.html">文章</a></li>
+			<li><a href="gallery.html">作品</a></li>
+			<li><a href="about.html">关于</a></li>		
+		</ul>			
+	</div>
+	<div class="foot_infor">
+		<dl>
+			<dt>友情链接</dt>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>		
+		</dl>
+		<dl>
+			<dt>学习资料</dt>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+		</dl>
+		<dl>
+			<dt>友情链接</dt>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+		</dl>
+		<dl>
+			<dt>学习资料</dt>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+		</dl>	
+		<dl>
+			<dt>友情链接</dt>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+			<dd><a href="#">LINK</a></dd>
+		</dl>									
+	</div>
+	<div class="foot_img">
+		<p>版权信息</p>
+		<img src="img/icon-github.png">
+	</div>
+</div>
+<!-- End -->
+</body>
+</html>
