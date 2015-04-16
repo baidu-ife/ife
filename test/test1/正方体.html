@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+
+#experiment{
+	width:800px;
+	height:800px;
+	-webkit-perspective:1500px;
+	-webkit-perspective-origin:50% 50%;
+}
+
+#cube{
+	-webkit-transform-style:preserve-3d;
+	
+	-webkit-transition:all 5s;
+	
+	
+	width:200px; 
+	height:200px;
+	position:relative;
+	margin:100px auto;
+	-webkit-animation:show 10s linear infinite;
+}
+
+
+
+@-webkit-keyframes show {
+	from {
+		-webkit-transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	}
+	to {
+		-webkit-transform:rotateX(1000deg) rotateY(1000deg) rotateZ(1000deg);
+	}
+}
+#cube .page{
+	width:200px;
+	height:200px;
+	position:absolute;
+	color:#fff;
+	line-height:200px; 
+	text-align:center;
+	font-size:50px;
+	-webkit-box-sizing:border-box;
+	border:3px solid #ccc;
+	-webkit-transition:all 2s;
+}
+
+
+/* 向屏幕内（远离观察点的方向）移动150px */
+#experiment:hover #p1{  -webkit-transform:translateZ(100px); background-color:rgba(255,0,0,.5);}
+
+/* 向屏幕外（靠近观察点的方向）移动150px */
+#experiment:hover #p2{ -webkit-transform: rotateY(180deg) rotateZ(180deg) translateZ(100px); background-color:rgba(0,255,0,.5);}
+
+/* x先顺时针翻转90度，再向上移动100px */
+#experiment:hover #p3{ -webkit-transform:rotateX(90deg) translateZ(100px); background-color:rgba(0,0,255,.5);}
+
+/* x先逆时针翻转90度，再向下移动100px*/
+#experiment:hover #p4{ -webkit-transform:rotateX(-90deg) translateZ(100px); background-color:rgba(122,211,5,.5);}
+
+/* 先沿y轴翻转90度，再向左移100px */
+#experiment:hover #p5{ -webkit-transform:rotateY(-90deg) translateZ(100px); background-color:rgba(23,22,5,.5);}
+
+#experiment:hover #p6{ -webkit-transform:rotateY(90deg) translateZ(100px); background-color:rgba(122,1,99,.5);}
+
+</style>
+</head>
+
+<body>
+
+<div id="experiment">
+	<div id="cube">
+		<div class="page" id="p1">1</div>
+		<div class="page" id="p2">2</div>
+		<div class="page" id="p3">3</div>
+		<div class="page" id="p4">4</div>
+		<div class="page" id="p5">5</div>
+		<div class="page" id="p6">6</div>
+	</div>
+</div>
+	
+</body>
+</html>
