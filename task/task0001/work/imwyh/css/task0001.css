@@ -1,0 +1,742 @@
+/*所有的样式*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑", sans-serif;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+dl,
+dt,
+dd,
+ol,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-color: #EEE;
+    font-size: 14px;
+}
+/*头部样式*/
+#header {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    color: #FFF;
+    background-color: #522a5c;
+}
+
+#header:after{
+    clear: both;
+}
+
+#top {
+    position: relative;
+    margin: 0 auto;
+    height: 80px;
+    width: 980px;
+}
+
+#logo {
+    position: absolute;
+    bottom: 5px;
+    width: 70px;
+    height: 40px;
+    background: url(http://cdn.blog.wedc.cc/include/images/logo.png) no-repeat;
+}
+
+#nav{
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+#nav ul {
+    float: right;
+}
+
+#nav ul li {
+    float: left;
+    margin-left: 28px;
+    font: 14px "宋体", sans-serif;
+}
+
+#icon-github {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+@media screen and (max-width: 1100px){
+    #icon-github {
+        display: none;
+    }
+}
+
+
+/*中间的东西*/
+/*index*/
+#index-pic-instruction {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    padding: 10px 10px 30px;
+    background: -moz-linear-gradient(top, rgba(200, 200, 200, .7), rgba(200, 200, 200, .7), rgba(200, 200, 200, .6), rgba(200, 200, 200, .5), rgba(200, 200, 200, 0)); 
+    background: -ms-linear-gradient(top, rgba(200, 200, 200, .7), rgba(200, 200, 200, .7), rgba(200, 200, 200, .6), rgba(200, 200, 200, .5), rgba(200, 200, 200, 0)); 
+    background: -webkit-linear-gradient(top, rgba(200, 200, 200, .7), rgba(200, 200, 200, .7), rgba(200, 200, 200, .6), rgba(200, 200, 200, .5), rgba(200, 200, 200, 0)); 
+    background: -o-linear-gradient(top, rgba(200, 200, 200, .7), rgba(200, 200, 200, .7), rgba(200, 200, 200, .6), rgba(200, 200, 200, .5), rgba(200, 200, 200, 0));
+    color: #FFF;
+}
+
+#index-pic-instruction h1 {
+    text-align: right;
+    font-size: 14px;
+}
+
+#index-pic-instruction p {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 150%;
+    text-indent: 2em;
+}
+
+#index-main-content {
+    padding: 10px 0 90px;
+}
+
+#index-center-main-content {
+    margin: 0 auto;
+    width: 990px;
+    overflow: hidden;
+}
+
+#index-center-main-content div {/*马克马克马克*/
+    float: left;
+    display: inline-block;
+    padding-bottom: 100000px;
+    margin: 0 5px -100000px;
+    width: 320px;
+    height: 100%;
+    background-color: #FFF;
+}
+
+#index-center-main-content div img {
+    margin: 10px;
+    width: 300px;
+    height: 180px;
+}
+
+#index-center-main-content div pre{
+    padding: 5px 30px 25px;
+    font-size: 12px;
+    line-height: 170%;
+    text-indent: 2em;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+#index-img-content {
+    position: relative;
+    margin: 0 auto;
+    width: 160px;
+}
+
+#index-img-content div{
+    top: -40px;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    background: url(../img/rabbit.jpg) no-repeat;
+    background-size:cover;
+}
+
+#index-introduce-content {
+    background-color: #FFF;
+}
+
+#index-main-introduce {
+    margin: 0 auto;
+    padding: 170px 0 0;
+    width: 600px;
+    color: #000;
+    font-family: Century Gothic, "微软雅黑", sans-serif;
+    line-height: 100%;
+}
+
+#index-main-introduce h1 {
+    text-align: center;
+    font-size: 20px;
+}
+
+#index-main-introduce pre {
+    font-size: 14px;
+    text-indent: 2em;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/*blog*/
+#blog-conntent-left {
+    float: left;
+    width: 710px;
+}
+
+.blog-main-box {
+    position: relative;
+    padding: 10px;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    background-color: #FFF;
+}
+
+
+.blog-side {
+    position: absolute;
+    width: 50px;
+    top: 15px;
+    left: -50px;
+    color: #FFF;
+    text-align: center;
+    line-height: 40px;
+}
+
+.blog-data {
+    height: 40px;
+    background-color: #522A5C;
+}
+
+.blog-tag {
+    height: 40px;
+    background-color: #A660B7;
+}
+
+.blog-title h1 {
+    padding: 3px;
+    color: #A660B7;
+    font-size: 16px;
+}
+
+.blog-title h2 {
+    padding: 3px;
+    color: #666;
+    font-size: 12px;
+}
+
+.blog-content {
+    font-size: 12px;
+    text-indent: 2em;
+    color: #555;
+    line-height: 130%;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.blog-content p{
+    padding-top: 5px;
+}
+
+.blog-timestamp {
+    float: right;
+    margin-top: 10px;
+    color: #AAA;
+}
+
+#page {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#page li {
+    display: inline-block;
+    margin: 4px;
+    background-color: #FFF;
+    color: #000;
+    font-size: 14px;
+}
+
+#page li a {
+    display: block;
+    padding: 15px;
+    color: #000;
+    font-size: 14px;
+}
+
+#page li a:hover
+{
+    display: block;
+    background-color: #522a5c;
+    color: #FFF;
+}
+
+#side-label {
+    border-top: 1px solid #CCC;
+}
+
+#side-label a{
+    display: block;
+    padding-left: 30px;
+    border-left: 5px solid #DFC6E6;
+    border-bottom: 1px solid #CCC;
+    height: 40px;
+    line-height: 40px;
+    color: #000;
+}
+
+#side-label a:hover{
+    border-left: 5px solid #522A5C;
+}
+
+
+
+#side-calendar-control {
+    margin: 0 auto;
+    padding-top: 8px;
+    display: table;
+    color: #773C88;
+}
+
+#side-calendar-main {
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 8px;
+    width: 210px;
+}
+
+#side-calendar-main li {
+    float: left;
+    margin: 1px;
+    width: 28px;
+    height: 27px;
+    border-bottom: 1px solid #666;
+    text-align: center;
+    line-height: 27px;
+    font-size: 12px;
+    color: #666;
+}
+
+#side-calendar-main .side-calendar-selected {
+    background-color: #773C88;
+    color: #FFF;
+}
+
+#side-calendar-main .side-calendar-marked {
+    color: #773C88;
+    font-weight: bold;
+}
+
+#side-tags {
+    padding: 10px;
+    line-height: 130%;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+#side-tags h3 {
+    padding:3px 0 8px 0;
+    font-size: 16px;
+}
+
+#side-tags a {
+    display: inline-block;
+    padding: 3px 5px;
+    color: #773C88;
+}
+
+#side-searchbox form{
+    position: relative;
+    height: 40px;
+    border: 1px #CCC solid;
+}
+
+#side-searchbox form img{
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+
+#side-search-input {
+    position: absolute;
+    left: 40px;
+    width: 150px;
+    height: 40px;
+    border: 0;
+    font-size: 20px;
+    color: #AAA;
+}
+
+#side-search-submit{
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    border: 0;
+    background-color: #CCC;
+    text-align: center;
+    font-size: 20px;
+}
+
+#side-searchbox form:hover {
+    border: 1px #333 solid;
+}
+
+#side-searchbox form:hover
+#side-search-submit {
+    background-color: #AAA;
+    color: #FFF;
+}
+
+
+/*gallery*/
+#multi-conntent {
+    position: relative;
+    margin: 100px auto 0;
+    width: 980px;
+}
+
+#multi-conntent-left {
+    float: left;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 680px;
+}
+
+#multi-conntent-right {
+    float: left;
+    margin-left: 10px;
+    width: 240px;
+}
+
+#gallery-nav {
+    position: absolute;
+    top: -51px;
+    left: -1px;
+}
+
+#gallery-nav li{
+    padding: 15px 0;
+    border-right: 1px solid #888;
+    border-bottom: 1px solid #FFF;
+    background-color: #FFF;
+    float: left;
+}
+
+#gallery-nav li:hover{
+    border-bottom: 1px solid #888;
+}
+
+#gallery-nav li a{
+    padding: 18px 20px;
+    color: #333;
+}
+
+#gallery-all {
+    border-top: 4px solid #dfc6e6;
+    border-left: 1px solid #888;
+}
+
+#gallery-all:hover {
+    border-top: 4px solid #522a5c;
+}
+
+#gallery-juf {
+    border-top: 4px solid #dfc6e6;
+}
+
+#gallery-juf:hover{
+    border-top: 4px solid #522a5c;
+}
+
+#gallery-uc {
+    border-top: 4px solid #d2a6ff;
+}
+
+#gallery-uc:hover{
+    border-top: 4px solid #522a5c;
+}
+
+#gallery-rw {
+    border-top: 4px solid #ffa98c;
+}
+
+#gallery-rw:hover{
+    border-top: 4px solid #8c2300;
+}
+
+#gallery-app {
+    border-top: 4px solid #ffe188;
+}
+
+#gallery-app:hover{
+    border-top: 4px solid #d9a300;
+}
+
+.gallery-box {
+    float: left;
+    width: 170px;
+    font-size: 0;
+}
+
+.gallery-box li {
+    padding: 5px;
+}
+
+.gallery-box img{
+    width: 100%;
+}
+
+.gallery-text {
+    width: 100%;
+    overflow: hidden;
+    font-size: 19px;
+    color: #FFf;
+}
+
+.gallery-classify {
+    float: left;
+    margin: 10px;
+    width: 26px;
+    height: 26px;
+    border-radius: 16px;
+    border: 2px solid #FFF;
+    text-align: center;
+}
+
+.gallery-summary {
+    margin: 5px 0 10px;
+}
+
+.gallery-summary h3{
+    font-size: 14px;
+}
+
+.gallery-summary p{
+    padding: 5px;
+    font-size: 12px;
+    text-indent: 2em;
+}
+
+.multi-conntent-right-box {
+    margin-bottom: 10px;
+    background-color: #FFF;
+}
+
+#side-searchbox {
+    padding: 20px;
+}
+
+#among {
+    padding: 15px;
+}
+
+.among-num {
+    position: relative;
+    bottom: 3px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background-color: #522a5c;
+    font-size: 14px;
+    text-align: center;
+    color: #FFF;
+}
+
+
+
+.among-bar {
+    width: 100px;
+    margin: 8px 0 0;
+    border: 1px solid #522a5c;
+    display: inline-block;
+}
+
+.among-bar div {
+    background:#522a5c;
+    height: 15px;
+    line-height: 20px;
+}
+
+.among-name {
+    position: relative;
+    bottom: 3px;
+}
+
+
+
+
+
+
+
+/*about*/
+#about-conntent {
+    position: relative;
+    margin: 100px auto 25px;
+    width: 980px;
+    background-color: #FFF;
+}
+
+#about-centerline {
+    position: absolute;
+    margin-left: -2px; 
+    width: 4px;
+    height: 100%;
+    left: 50%;
+    background-color: #888;
+}
+
+#about-lists {
+    position: relative;
+    top: -60px;
+    z-index: 1;
+}
+
+#about-lists li{
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    padding-bottom:10px;
+    text-align: left;
+    overflow: hidden;
+}
+
+#about-portrait {
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    border:5px solid #888;
+    background: url(../img/rabbit.jpg) no-repeat;
+    background-size:cover;
+}
+
+.about-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border:3px solid #888;
+    background: url(../img/in.png) no-repeat;
+    background-size:cover;
+}
+
+.about-center-pic {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+}
+
+#about-lists li div{
+    min-height: 1px;
+    float: left;
+}
+
+.about-year {
+    display: inline-block;
+    padding: 5px 6px 0;
+    height: 25px;
+    border-radius: 4px;
+    border: 3px solid #888;
+    background-color: #FFF;
+}
+
+.about-item-left {
+    width: 220px;
+    height: 1px;
+    padding-left: 120px; 
+    text-align: center;
+}
+
+.about-item-center {
+    width: 80px;
+    text-align: center;
+}
+
+.about-item-right {
+    width: 320px;
+    padding: 0 10px;
+    font-size: 14px;
+    text-indent: 2em;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/*底部样式*/
+#footer {
+    background-color: #222;
+}
+
+#footer:after{
+    clear: both;
+}
+
+#nav2 {
+    margin: 0 auto;
+    height: 30px;
+}
+
+#nav2 ul {
+    margin: 0 auto;
+    height: 30px;
+    text-align: center;
+}
+
+#nav2 ul li {
+    margin: 5px 5px;
+    display: inline-block;
+    color: #FFF;
+    font: 14px "宋体", sans-serif;
+}
+
+#chnnal {
+    margin: 0 auto;
+    padding: 30px 0;
+    width: 980px;
+    text-align: center;
+}
+
+.items {
+    margin: 0 auto;
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+}
+
+.lists {
+    margin-bottom: 10px;
+}
+
+.lists a {
+    color: #999;
+}
+
+.links li {
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+.links li a:hover {
+    text-decoration: underline;
+}
+
+#copyright {
+    text-align: center;
+}
+
+#copyright p{
+    margin-bottom: 8px;
+    color: #FFF;
+}
