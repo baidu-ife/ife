@@ -39,7 +39,7 @@ body{
 }
 .Container{                                 /*此处自己建立了一个两栏的栅格系统。。有点粗糙，但是思路是对的。。。吧？*/
     width: 100%;
-    height: 1300px;
+    height: 1500px;
 }
 .githubImg{                                 /*这里给图真是坑啊。。下面故意给了3px的空白，本来以为对齐了，结果顶出来一条。。*/
     position: relative;
