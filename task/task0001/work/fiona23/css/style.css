@@ -1,0 +1,960 @@
+*{
+	margin:0;
+	padding: 0;
+	font-size: 12px;
+	font-family: arial;
+}
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+.container{
+	width: 980px;
+	margin: 0 auto;
+}
+.center{
+	text-align: center;
+}
+ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+p{
+	text-indent: 20px;
+}
+
+nav#nav{
+	width: 100%;
+	min-width: 980px;
+	height: 80px;
+	background-color: #522a5c;
+	position: relative;
+}
+nav#nav .container{
+	overflow: hidden;
+}
+	nav#nav #logo{
+		position: absolute;
+		bottom: 0;
+	}
+
+
+	nav#nav ul{
+		float: right;
+		padding: 59px 0 0 0;
+		margin: 0;
+		right: 0;
+	}
+		nav#nav ul li{
+			float: left;
+			margin-left: 20px;
+			padding: 0;
+		}
+
+			nav#nav ul li a:link, a:visited, a:hover{
+				color: #fff;
+			}
+	nav#nav .gitcat{
+		position: absolute;
+		right: 10px;
+		bottom: 0;
+	}
+
+		@media (max-width: 980px) {
+  		nav#nav .gitcat {
+   			 display: none;
+  		}
+	}
+
+header{
+	width: 100%;
+	min-width: 980px;
+	height: 800px;
+	background: url(../img/banner-bg.jpg) no-repeat;
+	position: relative;
+}
+	header .container{
+		position: relative;
+		overflow: hidden;
+		height: 800px;
+	}
+	header .describe{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		overflow: hidden;
+		width: 360px;
+		right: 0;
+		padding: 10px 10px 30px 10px;
+		background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0));
+		background:-webkit-linear-gradient(bottom, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.7));
+		background:linear-gradient(bottom, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.7));
+		filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=#fff,gradientType=1);
+   	   -ms-filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=#fff,gradientType=1);
+	}
+
+		header .describe h1{
+			font-size: 14px;
+			font-weight: normal;
+			float: right;
+			padding: 0 0 12px 0;
+		}
+		header .describe .content{
+			font-size: 12px;
+			line-height: 150%;
+			float: left;
+		}
+
+section#mainbody{
+	width: 100%;
+	min-width: 980px;
+	background-color: #eeeeee;
+	padding-bottom: 100px;
+}
+	section#mainbody #content-wrapper{
+		width: 1000px;
+		overflow: hidden;
+	}
+	section#mainbody #content-wrapper .container{
+		overflow: hidden;
+	}
+
+	section#mainbody #content-wrapper .content{
+		width: 300px;
+		background-color: #fff;
+		float: left;
+		padding: 10px;
+		margin: 10px 10px -5000px 0;
+		padding-bottom:5000px;
+	}
+
+	section#mainbody #content-wrapper .content p{
+		padding: 15px 20px 20px 25px;
+		box-sizing:border-box;
+		width: 300px;
+		font-size: 12px;
+		line-height: 170%;
+	}
+
+#self-intro{
+	position: relative;
+	padding-bottom: 200px;
+}
+
+	#self-intro img{
+		position: relative;
+		top: -50px;
+		border-radius: 50%;
+		margin-left: 50%;
+		left: -80px;
+	}
+
+	#self-intro h1{
+		font-size: 20px;
+		font-family: CenturyGothic;
+		font-size: 20px;
+		padding-bottom: 50px;
+		font-weight: normal;
+	}
+
+	@font-face{
+		font-family: CenturyGothic;
+		src: url('../Century Gothic.ttf')
+	}
+
+	#self-intro p{
+		font-size: 14px;
+		width: 600px;
+		margin: 0 auto;
+		line-height: 150%;
+	}
+
+footer{
+	width: 100%;
+	min-width: 980px;
+	background-color: #000;
+}
+	footer ul#footer-nav{
+	}
+
+	footer ul#footer-nav li{
+		line-height: 38px;
+		display: inline-block;
+		padding-left: 20px;
+	}
+	footer ul#footer-nav a:link, a:visited, a:hover{
+		color: #fff;
+	}
+
+	footer hr{
+		width: 100%;
+		height: 0;
+		color: #333333;
+		border: 1px solid #333333;
+	}
+
+	footer .container{
+		overflow: hidden;
+	}
+
+	footer .footer-list{
+		float: left;
+		box-sizing:border-box;
+		-mox-box-sizing:border-box;
+		width: 20%;
+		line-height: 200%;
+		padding-bottom: 100px;2
+	}
+
+		footer .footer-list .footer-list-head{
+			color: #fff;
+			padding: 100px 0 50px 0;
+		}
+		footer .footer-list a:link, a:visited{
+			color: #fff;
+		}
+		footer .footer-list a:hover{
+			text-decoration: underline;
+		}
+	footer p{
+		text-indent: 0;
+		color: #fff;
+		padding: 10px;
+	}
+div.blog{
+	background-color: #eeeeee;
+	overflow: hidden;
+}
+
+	section.blog-list{
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		width: 710px;
+		float: left;
+	}
+		section.blog-list .blog-content-wrapper{
+			background-color: #fff;
+			font-size: 12px;
+			margin: 10px 10px 10px 0;
+			padding: 15px;
+			padding-bottom: 70px;
+			position: relative;
+		}
+
+		section.blog-list .blog-content-wrapper h1{
+			color: #a660b7;
+			font-size: 16px;
+			line-height: 200%;
+		}
+		section.blog-list .blog-content-wrapper h2{
+			color: #666;
+			font-size: 12px;
+			line-height: 200%;
+			padding-bottom: 10px;
+		}
+
+		section.blog-list .blog-content-wrapper p{
+			line-height: 200%;
+		}
+
+		section.blog-list .blog-content-wrapper p.author{
+			position: absolute;
+			right: 15px;
+			bottom: 15px;
+			color: #999;
+		}
+
+	section.blog-list .label{
+		position: absolute;
+		width: 45px;
+		top: 20px;
+		right: 700px;
+		color: #fff;
+	}
+		section.blog-list .label p{
+			text-indent: 0;
+			text-align: center;
+			line-height: 30px;
+		}
+		section.blog-list .label .time{
+			background-color: #522a5c;
+		}
+
+		section.blog-list .label .category{
+			background-color: #a660b7;
+		}
+	section div.pages {
+		margin: 10px;
+		overflow: hidden;
+	}
+
+	section div.pages a{
+		display: inline-block;
+		padding: 10px 15px 10px 15px;
+		background-color: #fff;
+		margin: 10px;
+	}
+
+		section div.pages a:link, a:visited, a:hover{
+			color: #000;
+		}
+
+		section div.pages a.no-click:link, a.no-click:visited, a.no-click:hover{
+			color: #999;
+			cursor: default;
+		}
+
+	section div.pages a.active{
+		background-color:#a660b7;
+	}
+
+	section div.pages a.active:link, a.active:visited{
+		color: #fff;
+	}
+
+aside.blog-rightside{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	width: 260px;
+	float: left;
+}
+
+	aside.blog-rightside div{
+		background-color: #fff;
+		margin: 10px 0 0 0px;
+	}
+
+	aside .search{
+		overflow: hidden;
+		padding: 20px;
+		position: relative;
+	}
+
+	aside .search img{
+		position: absolute;
+		left: 22px;
+		width: 39px;
+		top: 22px;
+	}
+	aside .search form{
+		width: 220px;
+		float: left;
+		height: 40px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;	
+	}
+	aside .search form input[type="text"]{
+		height: 40px;
+		border: none;
+		width: 158px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		float: left;
+		line-height: 40px;
+		font-size: 14px;
+		padding-left: 50px;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+		border-left: 1px solid #eee;
+	}
+
+	aside .search form input[type="text"]:focus{
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000;
+		border-left: 1px solid #000;
+	}
+
+	aside .search form input[type="submit"]{
+		width: 50px;
+		background:url(../img/go.png);
+		border: none;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		height: 40px;
+		float: left;
+		cursor: pointer;
+	}
+
+	aside.blog-rightside div.category ul li{
+		border-left: 4px solid #dfc6e6;
+		line-height: 48px;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+		padding-left: 10px;
+	}
+
+	aside.blog-rightside div.category ul li.active{
+		border-left: 4px solid #522a5c;
+	}
+	aside.blog-rightside div.category ul li:hover{
+		border-left: 4px solid #522a5c;
+	}
+
+	aside.blog-rightside div.category ul li a:link, a:hover, a:visited{
+		color: #666;
+	}
+	
+	aside.blog-rightside div.calender{
+		padding: 15px;
+	} 
+
+		aside.blog-rightside div.calender table{
+			width: 100%;
+		}
+			aside.blog-rightside div.calender table tr td{
+				border-bottom: 1px solid #eee;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				width: 14%;
+				padding: 5px;
+				color: #999;
+			}
+
+			aside.blog-rightside div.calender table tr td.active{
+				background-color: #522a5c;
+				
+			}
+
+			aside.blog-rightside div.calender table tr td a:link, a:visited{
+				color: #999;
+			}
+
+			aside.blog-rightside div.calender table tr td.active a:link{
+				color: #fff;
+			}
+
+			aside.blog-rightside div.calender p{
+				text-indent: 0;
+				padding: 15px;
+			}
+
+				aside.blog-rightside div.calender p a.left{
+					display: block;
+					float: left;
+				}
+
+				aside.blog-rightside div.calender p a.right{
+					display: block;
+					float: right;
+				}
+	aside.blog-rightside div.tags{
+		padding: 15px;
+	}
+		aside.blog-rightside div.tags h3{
+			font-size: 14px;
+			color: #999;
+			font-weight: normal;
+		}
+
+		aside.blog-rightside div.tags p{
+			font-size: 14px;
+			color: #773c88;
+			text-indent: 0;
+			padding: 15px 0 15px 0;
+			word-spacing: 10px;
+		}
+
+		aside.blog-rightside div.tags p span.level-1{
+			font-size: 20px;
+		}
+
+		aside.blog-rightside div.tags p span.level-2{
+			font-size: 18px;
+		}
+
+/*gallery*/
+div.gallery{
+	background-color: #eee;
+}
+
+div.gallery .container{
+	overflow: hidden;
+	
+}
+	div.gallery div.tab{
+		overflow: hidden;
+		background-color: #fff;
+		margin-top: 30px;
+		display: inline-block;
+		margin-bottom: -4px;
+	}
+	div.gallery div.tab ul li{
+		float: left;
+		padding: 20px;
+		padding-top: 15px;
+		border-left: 1px #eee solid;
+	}
+
+	div.gallery div.tab ul li.all.no-active{
+		border-top:4px solid #dfc6e6;
+		border-bottom: 1px #eee solid;
+	}
+
+		div.gallery div.tab ul li.all{
+			border-top: 4px solid #522a5c;
+		}
+
+		div.gallery div.tab ul li.jsf{
+			border-top: 4px solid #522a5c;
+		}
+		div.gallery div.tab ul li.uic{
+			border-top: 4px solid #5900b2;
+		}
+		div.gallery div.tab ul li.frame{
+			border-top: 4px solid #8c2300;
+		}
+		div.gallery div.tab ul li.app{
+			border-top: 4px solid #d9a300;
+		}
+div.gallery div.more{
+	background-color: #fff;
+	width: 710px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	float: left;
+	margin: 10px 0 50px 0;
+	padding: 20px;
+}
+
+section.waterfall{
+	background-color: #fff;
+	width: 710px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	float: left;
+	margin-right: 10px;
+	padding: 20px;
+}
+	section.waterfall div.row-2{
+		display: inline-block;
+		font-size:0;
+		position: relative;
+		width: 340px;
+	}
+	section.waterfall div.row-2 .row-2-2 .gallery-describe{
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		width: 330px;
+		color: #fff;
+		background-color: #522a5c;
+		position: relative;
+		margin-bottom: 10px;
+		margin-top: -4px;
+	}
+
+	section.waterfall div.row-2 .row-2-2.jsf:before{
+			content: "J";
+			font-size: 25px;
+			width: 30px;
+			height: 30px;
+			border: 1px solid #fff;
+			color: #fff;
+			border-radius: 50%;
+			position: absolute;
+			top: 170px;
+			left: 10px;
+			text-align: center;
+			z-index: 1;
+		}
+	section.waterfall div.row-2 .row-2-2 p{
+		text-indent: 0;
+	}
+	section.waterfall div.row-1{
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 10px;
+	}
+
+	section.waterfall div.row-1.end{
+		margin-right: 0px;
+		margin-right: -10px;
+	}
+
+	section.waterfall div.row-1 div.gallery-describe-wrapper{
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		width: 160px;
+		color: #fff;
+		position: relative;
+		margin-bottom: 10px;
+	}
+	
+	section.waterfall div.row-1 div.gallery-describe-wrapper.jsf{
+		background-color: #522a5c;
+	}
+		section.waterfall div.row-1 div.gallery-describe-wrapper.jsf:before{
+			content: "J";
+			font-size: 25px;
+			width: 30px;
+			height: 30px;
+			border: 1px solid #fff;
+			color: #fff;
+			border-radius: 50%;
+			position: absolute;
+			top: 120px;
+			left: 10px;
+			text-align: center;
+		}
+	section.waterfall div.row-1 div.gallery-describe-wrapper.uic{
+		background-color: #5900b2;
+	}
+		section.waterfall div.row-1 div.gallery-describe-wrapper.uic:before{
+			content: "U";
+			font-size: 25px;
+			width: 30px;
+			height: 30px;
+			border: 1px solid #fff;
+			color: #fff;
+			border-radius: 50%;
+			position: absolute;
+			top: 120px;
+			left: 10px;
+			text-align: center;
+		}
+
+	section.waterfall div.row-1 div.gallery-describe-wrapper.app{
+		background-color: #d9a300;
+	}
+
+		section.waterfall div.row-1 div.gallery-describe-wrapper.app:before{
+			content: "A";
+			font-size: 25px;
+			width: 30px;
+			height: 30px;
+			border: 1px solid #fff;
+			color: #fff;
+			border-radius: 50%;
+			position: absolute;
+			top: 120px;
+			left: 10px;
+			text-align: center;
+		}
+
+	section.waterfall div.row-1 div.gallery-describe-wrapper.frame{
+		background-color: #8c2300;
+	}
+		section.waterfall div.row-1 div.gallery-describe-wrapper.frame:before{
+			content: "F";
+			font-size: 25px;
+			width: 30px;
+			height: 30px;
+			border: 1px solid #fff;
+			color: #fff;
+			border-radius: 50%;
+			position: absolute;
+			top: 120px;
+			left: 10px;
+			text-align: center;
+		}
+	section.waterfall div.gallery-describe{
+		padding: 10px 10px 10px 50px;
+		line-height: 200%;
+
+	}
+	section.waterfall div.row-1 div.gallery-describe-wrapper p{
+		text-indent: 0;
+	}
+
+	section.waterfall div.more{
+		margin-top: 10px;
+
+	}
+
+aside.waterfall-aside{
+	width: 260px;
+	float: left;
+}
+
+aside.waterfall-aside div{
+	background-color: #fff;
+	margin: 0px 0 10px 0px;
+}
+
+div.rank{
+	padding: 10px;
+	background-color: #fff;
+}
+	div.rank h3{
+		color: #999;
+		font-size:20px;
+		font-weight: normal;
+	}
+
+	div.rank ul li{
+		position: relative;
+		text-align: right;
+		margin: 10px;
+	}
+	div.rank ul li:before{
+		display: inline-block;
+		line-height: 18px;
+		color: #fff;
+		text-align: center;
+		width: 18px;
+		height: 18px;
+		background-color: #522a5c;
+		border-radius: 50%;
+		position: absolute;
+		left: 0px;
+	}
+
+		div.rank ul li.rank-1:before{
+		content: "1"
+	}
+
+		div.rank ul li.rank-2:before{
+		content: "2"
+	}
+
+		div.rank ul li.rank-3:before{
+		content: "3"
+	}
+
+	div.rank ul li.rank-4:before{
+		content: "4"
+	}
+	div.rank ul li.rank-5:before{
+		content: "5"
+	}
+
+	div.rank ul li:after{
+		content: "";
+		height: 18px;
+		display: inline-block;
+		background-color: #522a5c;
+		position: absolute;
+		left: 25px;
+	}
+	div.rank ul li.rank-1:after{
+		width: 100px;
+		
+	}
+
+	div.rank ul li.rank-2:after{
+	width: 80px;
+	}
+
+	div.rank ul li.rank-3:after{
+	width: 60px;
+	}
+
+	div.rank ul li.rank-4:after{
+		width: 40px;
+		}
+	div.rank ul li.rank-5:after{
+		width: 10px;
+
+	}
+
+/*about*/
+div.about{
+	background-color: #eee;
+	padding-top: 100px;
+
+}
+
+	div.about img{
+		border: 5px solid #eee;
+		border-radius: 50%;
+	}
+
+	div.about div.container{
+		background-color: #fff;
+		position: relative;
+		height: 1500px;
+	}
+
+	div.about div.container::before{
+		content: "";
+		height: 100%;
+		width: 10px;
+		position: absolute;
+		left: 50%;
+		color: #eee;
+		top:0;
+	}
+	div.about img.fiona{
+		border: 10px solid #eee;
+		border-radius: 50%;
+		position: relative;
+		top: -50px;
+	}
+
+	div.about div.self-intro h2{
+		font-weight: normal;
+		font-size: 20px;
+		position: absolute;
+		right: 560px;
+	}
+	div.about div.self-intro p{
+		width: 320px;
+		position: absolute;
+		left: 550px;
+		padding: 20px;
+		text-align: left;
+		padding-left: 0;
+	}
+
+	div.about div.content{
+		text-align: left;
+	}
+	div.about div.contact h2{
+		font-weight: normal;
+		font-size: 20px;
+		position: absolute;
+		right: 560px;
+		top: 400px;
+	}
+
+	div.about div.contact ul{
+		position: absolute;
+		left: 550px;
+		top: 400px;
+	}
+
+		div.about div.contact ul li{
+			line-height: 200%;
+		}
+
+	div.about div.contact img{
+		position: absolute;
+		top: 300px;
+		left: 430px;
+	}
+
+	div.about div.education h2{
+		font-weight: normal;
+		font-size: 20px;
+		position: absolute;
+		right: 560px;
+		top: 650px;
+		padding-top: 40px;
+	}
+	div.about div.education{
+		text-align: left;
+	}
+	div.about div.education div.education-dur{
+		position: absolute;
+		left: 550px;
+		top: 680px;
+	}
+		div.about div.education div.education-dur div.education-level{
+			padding: 15px 0 15px 0;
+		}
+
+		div.about div.education div.education-dur div.education-level.high{
+			padding-bottom: 40px;
+		}
+
+		div.about div.education div.education-dur div.education-level.high:before{
+			content: "2008";
+			width: 60px;
+			height: 25px;
+			border: 5px solid #eee;
+			border-radius: 10px;
+			position: absolute;
+			left: -100px;
+			text-align: center;
+			line-height: 25px;
+		}
+
+		div.about div.education div.education-dur div.education-level.uni:before{
+			content: "2010";
+			width: 60px;
+			height: 25px;
+			border: 5px solid #eee;
+			border-radius: 10px;
+			position: absolute;
+			left: -100px;
+			text-align: center;
+			line-height: 25px;
+		}
+
+		div.about div.education div.education-dur div.education-level.gra:before{
+			content: "2015";
+			width: 60px;
+			height: 25px;
+			border: 5px solid #eee;
+			border-radius: 10px;
+			position: absolute;
+			left: -100px;
+			text-align: center;
+			line-height: 25px;
+		}
+
+		div.about div.education div.education-dur p{
+			text-indent: 0;
+			line-height: 200%;
+		}
+
+		div.about div.education div.education-dur h3{
+			font-size: 15px;
+			font-weight: normal;
+		}
+
+	div.about div.education img{
+		position: absolute;
+		top: 550px;
+		left: 430px;
+
+	}
+	div.about div.intern{
+		text-align: left;
+	}
+	div.about div.intern h2{
+		font-weight: normal;
+		font-size: 20px;
+		position: absolute;
+		right: 560px;
+		top: 1000px;
+		padding-top: 40px;
+	}
+
+	div.about div.intern div.intern-dur{
+		position: absolute;
+		left: 550px;
+		top: 1000px;
+	}
+		div.about div.intern div.intern-dur p{
+			text-indent: 0;
+			line-height: 200%;
+		}
+	div.about div.intern img{
+		position: absolute;
+		top: 900px;
+		left: 430px;
+	}
+
+		div.about div.intern div{
+			padding: 20px 0 20px 0;
+		}
+
+		div.about div.intern div h3{
+			font-weight: normal;
+			font-size: 16px;
+			
+		}
+
+		div.about div.intern div.intern-1:before{
+			content: "2014";
+			width: 60px;
+			height: 25px;
+			border: 5px solid #eee;
+			border-radius: 10px;
+			position: absolute;
+			left: -100px;
+			text-align: center;
+			line-height: 25px;
+		}
+
+		div.about div.intern div.intern-2:before{
+			content: "2015";
+			width: 60px;
+			height: 25px;
+			border: 5px solid #eee;
+			border-radius: 10px;
+			position: absolute;
+			left: -100px;
+			text-align: center;
+			line-height: 25px;
+		}
