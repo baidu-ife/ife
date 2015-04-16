@@ -1,25 +1,37 @@
 body {
-	width: 980px;
-	margin: 0 auto;
+	margin: 0px;
 	padding: 0px;
-	font-family: sans-serif;
-	font-size: small;
+	font-family: "宋体";
 	font-weight: lighter;
-	line-height: 1.2em;
+	min-width: 980px;
+}
+
+
+/*for nav-bar begin*/
+nav {
+	width: 100%;	
 }
 
 
 nav#nav-top ul {
-	padding: 0;
+	margin: 0;
 }
 
 nav#nav-top {
 	background-color: #5E2D79;
 	color: white;
-	height: 70px;
-	padding: 10px;
+	height: 80px;
+	padding: 10px 0;
 	position: relative;
 	vertical-align: text-bottom;
+}
+
+#nav-wrapper {
+	width: 980px;
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	margin-left: -490px;
 }
 
 .nav-left {
@@ -30,64 +42,71 @@ nav#nav-top {
 #nav-logo {
 	text-decoration: none;
 	font-size: 25px;
+	font-family: sans-serif;
 	color: white;
-	margin-left: 80px;
 }
 
 .nav-right  {
 	margin-left: 200px;
-	margin-right: 80px;
 	text-align: right;
 }
 
-
 .nav-right li {
 	display: inline-block;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-top: 5px;
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+.nav-right li:last-child {
+	padding-right: 0px;
 }
 
 .nav-right a {
 	text-decoration: none;
 	color: white;
+	font-size: 14px;
 }
-
-#nav-wrapper {
-	margin-top: 50px;
-	line-height: 20px;
-}
-
 
 nav img {
 	position: absolute;
 	right: 10px;
-	top: 56px;
+	top: 66px;
 }
 
+/*for nav-bar end*/
 
 
 
+
+/*for banner begin*/
 
 #banner {
 	padding: 0;
-	height: 430px;
 	background-image: url("../img/banner-bg.jpg");
-	background-size: 980px 430px;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	position: relative;
 	width: 100%;
+	/*不给一个固定的height不知道该怎么搞*/
+	height: 612px;
+}
+
+#inner-wrapper {
+	width: 980px;
+	margin: 0 auto;
+	position: absolute;
+	left: 50%;
+	margin-left: -490px;
+	bottom: 0px; 
+	text-align: right;
 }
 
 .inner {
-	position: absolute;
-	width: 300px;
-	padding: 0px 10px 30px 20px;
-	background-color: rgba(255, 255, 255, 0.2);	
-	color: white;
-	font-size: 11px;
-	right: 90px;
-	bottom: 0px;
+	display: inline-block;
+	width: 350px;
+	padding: 10px 10px 30px 10px;
+	color: black;
+	font-size: 12px;
 	background: -webkit-linear-gradient(top, rgba(255,255,255,0.3) , rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
     background: -moz-linear-gradient(bottom, rgba(255,255,255,0.3) , rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom, rgba(255,255,255,0.3) , rgba(255,255,255,0)); /* Standard syntax (must be last) */
@@ -95,34 +114,46 @@ nav img {
 
 .inner h3 {
 	text-align: right;
+	font-size: 14px;
+	margin: 0px;
 }
 
 .inner  p {
 	text-indent: 30px;
+	line-height: 150%;
+	margin-bottom: 0;
+	text-align: justify;
 }
 
 
+/*for banner end*/
 
 
+/*for 3 col begin*/
+
+#three-col-wrapper {
+	background-color: #eee;
+	width: 100%;
+	padding-bottom: 150px;
+	overflow: hidden;
+}
 
 #three-col {
-	/*height: 390px;*/
-	background-color: #eee;
-	padding-top: 10px;
-	padding-bottom: 100px;
-	text-align: center;
+	display: table;
+	border-spacing: 10px 0;
+	margin: 0 auto;
+	margin-top: 10px;
+	min-width: 980px;
 }
 
-/*自适应就用min-height加vertical-align就行了*/
+
+
 #three-col section {
-	min-height: 360px;
-	/*height: 100%;*/
-	background-color: #5E2D79;
-	display: inline-block;
-	margin: 5px;
-	width: 250px;
+	background-color: white;
+	display: table-cell;
+	max-width: 320px;
 	vertical-align: top;
-	padding-bottom: 10px;
+	/*padding-bottom: 10px;*/
 }
 
 #three-col section img {
@@ -130,19 +161,25 @@ nav img {
 }
 
 #three-col section p {
-	color: white;
-	margin: 10px 20px 0 20px;
+	font-size: 12px;
+	line-height: 170%;
+	color: black;
+	font-weight: bolder;
+	margin: 5px 0 0 0;
+	padding: 0 30px 25px 30px;
+	text-align: justify;
 }
 
+/*for 3 col end*/
 
 
 
-
+/*for intro begin*/
 
 #intro {
 	text-align: center;
 	min-height: 300px;
-	margin-bottom: 200px;
+	margin-bottom: 150px;
 }
 
 #intro img#avatar {
@@ -151,27 +188,35 @@ nav img {
 }
 
 #intro p#greeting {
-	font-size: 1.5em;
+	font-family: 'century gothic';
+	font-size: 20px;
+	margin: 0;
 }
 
 #intro p#intro-content {
 	text-indent: 30px;
-	width: 650px; 
-	margin: 10px auto;
+	width: 600px; 
+	margin: 40px auto;
 	text-align: left;
+	font-size: 14px;
 
 }
 
+/*for intro end*/
 
+
+/*for bottom-nav begin*/
 
 #nav-bottom {
 	background-color: black;
 	text-align: center;
 	height: 30px;
+	padding: 5px 0;
 }
 
 #nav-bottom ul {
-	margin: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 #nav-bottom li {
@@ -182,10 +227,64 @@ nav img {
 }
 
 #nav-bottom a {
+	font-size: 14px;
+	font-family: sans-serif;
 	text-decoration: none;
 	color: white;
 }
 
+/*for bottom-nav end*/
 
 
+/*for bottom-table begin*/
+#bottom-table-wrapper {
+	width: 100%;
+	background-color: #151515;
+	color: white;
+	padding-top: 40px;
+}
+
+#bottom-table {
+	width: 980px;
+	margin: 0 auto;
+}
+
+
+#bottom-table section {
+	float: left;
+	vertical-align: top;
+	width: 20%;
+}
+
+#bottom-table section ul {
+	list-style-type: none;
+	padding-left: 0px;
+	margin: 30px 0; 
+}
+
+#bottom-table section p {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+#bottom-table section a {
+	text-decoration: none;
+	color: white;
+	font-family: sans-serif;
+	font-size: 12px;
+}
+
+#bottom-table footer {
+	clear: both;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#bottom-table footer img {
+	position: relative;
+	bottom: -5px;
+}
+
+/*for bottom-table end*/
 
