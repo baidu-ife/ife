@@ -1,0 +1,245 @@
+/*reset css*/
+@media only screen and (max-width: 980px) {
+  body {
+    width: 980px;
+  }
+  .github {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/*reset css end*/
+/*==================================================*/
+
+
+/*frame css*/
+header {
+  background-color: rgba(78, 14, 105, 1);
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+
+.header-wrap {
+  width: 980px;
+  height: 80px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.logo {
+  width: auto;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+}
+
+.header-nav {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+}
+
+.nav {
+  overflow: auto;
+  zoom: 1;
+  list-style-type: none;
+  color: white;
+}
+
+.nav li {
+  float: left;
+  padding-left: 14px;
+}
+
+.github {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+footer {
+  background: black;
+  color: white;
+}
+
+.footer-nav {
+  border-bottom: solid 1px white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-nav  ul {
+  display: inline-block;
+}
+
+.footer-nav ul li {
+  display: inline;
+  
+}
+
+.link {
+  width: 980px;
+  position: relative;
+  margin: 30px auto;
+  overflow: auto;
+  zoom: 1;
+}
+
+.link-content {
+  width: 186px;
+  margin-left:10px; 
+  float: left;
+}
+
+.link-content ul li:hover {
+  text-decoration: underline;
+}
+
+.info {
+  text-align: center;
+}
+/*frame css end
+/*==================================================*/
+
+
+/*index*/
+.banner {
+  width: 100%;
+  background: url(../img/banner-bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.banner-wrap {
+  height: 500px;
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+.banner-content {
+  background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.1) 75%, rgba(255,255,255,0));
+  background: -o-linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.1) 75%, rgba(255,255,255,0));
+  background: -webkit-linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.1) 75%, rgba(255,255,255,0));
+  background: -moz-linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.1) 75%, rgba(255,255,255,0));
+
+  width: 30%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 10px 30px 10px;
+  color: white;
+  text-align: right;
+}
+
+.banner-content h3 {
+  font-size: 14px;
+  margin: 0 0 12px 0;
+}
+
+.banner-content p {
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.introduce {
+  background: rgba(184, 184, 156, 0.5);
+  height: 500px;
+}
+
+.introduce-wrap {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.introduce-content {
+  background-color: white;
+  width: 320px;
+  margin: 10px 5px 0 5px;
+  padding: 5px;
+  
+}
+
+.introduce-content p {
+  margin: 0;
+  padding: 15px 30px 25px 30px;
+  font-size: 12px;
+  line-height: 170%;
+}
+
+.myself {
+  background: white;
+  height: 400px;
+}
+
+.myself-wrap {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  position: relative;
+  top: -50px;
+}
+
+.myself-wrap h3 {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Century Gothic";
+  color: black;
+}
+
+.myself-wrap p {
+  font-size: 14px;
+  color: black;
+  width: 600px;
+  margin: auto;
+  text-align: left;
+  text-indent: 2em;
+}
+
+/*index end*/
+/*==================================================*/
+
+/*blog*/
+.contain {
+  background: rgba(184, 184, 156, 0.5);
+}
+
+.contain-wrap {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  overflow: auto;
+  zoom: 1;
+  padding-top: 10px;
+}
+
+.contain-left {
+  float: left;
+  width: 680px;
+}
+
+.contain-right {
+  margin-left: 680px;
+}
+/*blog end*/
