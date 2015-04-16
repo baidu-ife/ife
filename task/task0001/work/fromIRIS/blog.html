@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>blog</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <img src="img/icon-github.png" height="34" width="30">
+            <div class="header-content">
+                <p>fromIRIS LvDaDa</p>
+                <ul class="nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="gallery.html">作品</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </div>
+        </div>   <!-- header -->
+        <div class="container-wrap">
+            <div class="container">
+                <div class="blog-main-content">
+                    <div class="blog-content-box">
+                    <p class="blog-heading">摘要笔记</p>
+                    <p class="blog-subheading">从大大们给的资料里所记所得的一些小知识</p>
+                    <p class="blog-txt">
+                        1-可以为元素的内边距padding设置百分数，其数值为元素的父元素的width的百分数。内边距的四个属性都是以父元素的width百分数。</br>
+                        2-在鼠标移入时元素时边框出现，但不会改变尺寸，则可以先设置边框并将颜色设置成transparent。</br>
+                        5- box-sizing: border-box; 这是css3的新属性，需要加上前缀，把现在盒模型变成ie6盒模型。</br>
+                        6-在一个div中放一张img，img进行右浮动，此时div不能够撑起，解决办法div { overfollow: hidden; zoom: 1;}</br>
+                        7- 负的margin不会把元素脱离文档流。</br>
+                        8-positin:absolute; 的定位是在父元素的border以内开始。</br>
+                        9-img下经常出现几个像素的下边距，解决办法是将img块级化
+
+                    </p>
+                    <div class="sign-name">
+                        <span>LV dada</span>
+                        发表于
+                        <span>2015年4月16日</span>
+                    </div>
+                    <div class="blog-content-label">
+                        <div class="blog-content-label-time">
+                            <p>4.16</p>
+                        </div>
+                        <div class="blog-content-label-type">
+                            <p>CSS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-content-box">
+                    <p class="blog-heading">关于BFC的一点认识</p>
+                    <p class="blog-subheading">关于BFC的一点认识，以及在什么地方可以使用</p>
+                    <p class="blog-txt">
+                        1-块内框在inline formatting context 里格式化，而块框在BFC中格式化。</br>
+                        2-BFC可以看成一种环境，在BFC环境只对处于其内的元素有影响</br>
+                        3-浮动的元素之间不会发生margin塌陷，浮动元素跟其子元素也不会</br>
+                        4-绝对定位的元素之间之内不会发生margin塌陷，</br>
+                        5-产生了新的BFC的元素与其子元素不会发生margin塌陷，比如父级overflow:hidden</br>
+                        6-inline-block 的元素之间之内不会发生margin塌陷</br>
+                        7-同级的元素之间，产生margin塌陷，只要把两个元素分别放入两个有BFC环境的容器就可。</br>
+                        8-hasLayout 可以看成是IE下的BFC，跟BFC的概念很像，就是自成一体的环境，不受外界影响。</br>
+                        9-产生BFC的元素不会跟浮动的元素重叠，经常用于布局之中。
+                    </p>
+                    <div class="sign-name">
+                        <span>LV dada</span>
+                        发表于
+                        <span>2015年4月16日</span>
+                    </div>
+                    <div class="blog-content-label">
+                        <div class="blog-content-label-time">
+                            <p>4.16</p>
+                        </div>
+                        <div class="blog-content-label-type">
+                            <p>CSS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-content-box">
+                    <p class="blog-heading">等高布局中overflow的作用</p>
+                    <p class="blog-subheading">双飞翼布局与圣杯布局中最外围包含块wrap的作用</p>
+                    <p class="blog-txt">
+                        </br>1-清除中间子元素的浮动，wrap能撑起容器，</br>2-子元素的margin-bottom:-5000px; 把wrap的下边拉回到子元素的内容块底部，此时overflow:hidden 能把wrap下边之外的通过padding-bottom生成的背景色去掉。
+                        <img src="img/height.png" width="680px">
+
+                    </p>
+                    <div class="sign-name">
+                        <span>LV dada</span>
+                        发表于
+                        <span>2015年4月12日</span>
+                    </div>
+                    <div class="blog-content-label">
+                        <div class="blog-content-label-time">
+                            <p>4.12</p>
+                        </div>
+                        <div class="blog-content-label-type">
+                            <p>CSS</p>
+                        </div>
+                    </div>
+                </div>  <!-- blog-box -->
+                    <ul class="blog-pre-next">
+                        <li><a href="#">第一页</a></li>
+                        <li><a href="#">上一页</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a class="blog-pre-next-active" href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">...</a></li>
+                        <li><a href="#">下一页</a></li>
+                        <li><a href="#">最后页</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar">
+                    <div class="blog-sidebar-search">
+                        <div>
+                            <img src="img/search.png">
+                            <input type="text" value="Keywords">
+                            <input type="button" value="GO">
+                        </div>
+                    </div>
+                    <ul class="blog-sidebar-nav">
+                        <li><a href="#">HTML</a></li>
+                        <li class="sidebar-nav-active"><a href="#">CSS</a></li>
+                        <li><a href="#">JAVASCRIPT</a></li>
+                        <li><a href="#">其他文章</a></li>
+                    </ul>
+                    <div class="blog-sidebar-calendar">
+                        <div class="calendar-month">
+                            <a href="#" class="calendar-month-button1"><</a>
+                            <span>2015.04</span>
+                            <a href="#" class="calendar-month-button2">></a>
+                        </div>
+                        <ul class="calendar-week">
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">T</a></li>
+                            <li><a href="#">W</a></li>
+                            <li><a href="#">T</a></li>
+                            <li><a href="#">F</a></li>
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">S</a></li>
+                        </ul>
+                        <ul class="calendar-week">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#">7</a></li>
+                        </ul>
+                        <ul class="calendar-week">
+                            <li><a href="#">8</a></li>
+                            <li><a href="#">9</a></li>
+                            <li><a href="#">10</a></li>
+                            <li><a class="calendar-active" href="#">11</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">13</a></li>
+                            <li><a href="#">4</a></li>
+                        </ul>
+                        <ul class="calendar-week">
+                            <li><a href="#">8</a></li>
+                            <li><a href="#">9</a></li>
+                            <li><a href="#">10</a></li>
+                            <li><a href="#">11</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">13</a></li>
+                            <li><a href="#">4</a></li>
+                        </ul>
+                        <ul class="calendar-week">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                        </ul>
+                    </div>  <!-- calendar -->
+                    <div class="blog-sidebar-tag">
+                        <p>Tags</p>
+                        <div class="blog-sidebar-tag-list">
+                            <a href="#" class="tag-big">Javascript</a>
+                            <a href="#">HTML</a>
+                            <a href="#" class="tag-middle">CSS</a>
+                            <a href="#">eChart</a>
+                            <a href="#" class="tag-middle">JQuery</a>
+                            <a href="#" class="tag-big">CSS3</a>
+                            <a href="#">Canvas</a>
+                            <a href="#">webGL</a>
+                        </div>
+                    </div>
+                </div>  <!-- sidebar -->
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-top">
+                <div class="footer-header">
+                    <ul class="footer-header-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="blog.html">文章</a></li>
+                        <li><a href="gallery.html">作品</a></li>
+                        <li><a href="about.html">关于</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-content">
+                <div class="footer-content-list">
+                    <p>学习资料</p>
+                    <ul>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content-list">
+                    <p>学习资料</p>
+                    <ul>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content-list">
+                    <p>学习资料</p>
+                    <ul>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content-list">
+                    <p>学习资料</p>
+                    <ul>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content-list">
+                    <p>学习资料</p>
+                    <ul>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <div class="footer-copyright">
+                    <p>版权信息</p>
+                    <img src="img/icon-github.png" height="34" width="30">
+                </div>
+            </div>
+        </div>  <!-- footer -->
+    </body>
+</html>
