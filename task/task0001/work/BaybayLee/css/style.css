@@ -1,0 +1,653 @@
+
+/**************************index********************/
+/**************************header********************/
+
+.wrapper {
+    font:12px "宋体";
+    line-height: 1.5;
+    width: 100%;
+    min-width: 980px;
+    background: #eee;
+}
+
+a{
+    text-decoration: none;
+    font-family: "Microsoft YaHei";
+}
+.title {
+    font-size:14px ;
+}
+.header {
+    background-color:#522a5c ;
+    position: relative;
+    color: #ffffff;
+}
+.containe{
+    width: 980px;
+    margin: 0 auto;
+}
+.header .gitIcon{
+    float: right;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+.nav{
+    position: relative;
+    height: 80px;
+}
+.nav .myIcon{
+    float: left;
+    font-size:40px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.nav ul{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.nav li{
+    float: left;
+    list-style:none;
+    margin-left: 28px;
+}
+.nav li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav li a:hover{
+    font-weight: bold;
+}
+.clearFix:after{
+    content:"."; display:block; height:0; visibility:hidden; clear:both;
+}
+/*header end*/
+
+/*banner*/
+.banner{
+    position: relative;
+    width: 100%;
+    height: 525px;
+ }
+.banner .bgImg{
+    width: 100%;
+    height: 525px;
+}
+.banner .news{
+    position: absolute;
+    height: 116px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -490px;
+}
+.nesContent{
+    width: 340px;
+    padding: 10px;
+    float: right;
+    background-color: #fff;
+    color: #fff;
+    background: -webkit-linear-gradient(top,rgba(255, 255, 255, .5) 25%, rgba(255, 255, 255, 0) 100%);
+    background: -moz-linear-gradient(top,rgba(255, 255, 255, .5) 25%, rgba(255, 255, 255, 0) 100%);
+    filter:alpha(opacity=50 finishopacity=0 style=1 startx=0,starty=25,finishx=0,finishy=100);
+    background: -ms-linear-gradient(top,rgba(255, 255, 255, .5) 25%, rgba(255, 255, 255, 0) 100%);
+    position: static;
+    margin-bottom: 30px;
+}
+.nesContent .title{
+    text-align: right;
+    font-weight: bold;
+    position: relative;
+}
+.nesContent p{
+    text-indent: 2em;
+    position: relative;
+}
+/*banner end*/
+
+/*content*/
+.contentTop{
+    margin-top: 10px;
+    overflow: hidden;
+}
+.block{
+    background: #fff;
+    line-height: 1.7;
+    width: 320px;
+    float: left;
+    margin-right: 10px;
+
+    padding-bottom:5000px; margin-bottom:-5000px;
+}
+.block img{
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+}
+.block .blockContent{
+    padding: 5px 30px 25px;
+}
+ .magRight{
+    margin-right: 0;
+}
+ .personalContent{
+     background: #ffffff;
+     margin-top: 100px;
+ }
+ .myPic{
+    width: 160px;
+    height: 160px;
+    position: relative;
+    top: -50px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background: url("../img/mypic.jpg");
+}
+ .personalContent h2{
+     text-align: center;
+     font: 20px "Century Gothic";
+     margin-bottom: 40px;
+ }
+.personalContent p{
+    text-indent: 30px;
+    width: 600px;
+    min-height:300px ;
+    margin: 0 auto;
+    font-size: 14px;
+}
+/*content end*/
+/*footer*/
+.footer{
+    background: #000;
+    height: 394px;
+    color: #fff;
+    position: relative;
+    clear: both;
+}
+.footer a{
+    color: #fff;
+    text-decoration: none;
+    margin-right:25px;
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+.footer h3{
+    width: 100%;
+    border-bottom:1px solid #333333;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+.footerBlock p{
+    color: #fff;
+    margin-top:40px;
+    margin-bottom: 30px;
+}
+.footer .containe{
+    display: table;
+}
+.footerBlock{
+    display: table-cell;
+}
+.copyRight{
+    width: 100px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -50px;
+}
+/*footer end*/
+/**************************index end********************/
+
+/**************************blog*******************************/
+
+.leftBlog{
+    width:710px;;
+    margin-right:10px;
+    float: left;
+    margin-top: 10px;
+}
+.rightGuide{
+    float: left;
+    width:260px ;
+    margin-top: 10px;
+}
+.blog,.search, .classification ,.calendar,.tags{
+    background:#fff;
+    padding: 10px;
+    margin-bottom: 10px ;
+}
+.blog{
+    background: #fff;
+    position: relative;
+}
+.blog h3{
+    font-size: 16px;
+    color: #a660b7;
+}
+.blog h4{
+    color: #666;
+    margin: 10px 0;
+}
+.tag{
+    width: 50px;
+    height: 80px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    left: -50px;
+}
+.blogTimer{
+    background:#522a5c;
+}
+.blogClass{
+    background:#a660b7 ;
+}
+.blogContent{
+    margin-bottom: 20px;
+    padding: 10px 40px;
+}
+.blog .writer{
+    color: #999;
+    text-align: right;
+    letter-spacing:2px ;
+}
+.pages{
+    text-align: center;
+    margin: 30px 0 50px;
+}
+.pages a{
+    padding:10px 16px ;
+    background-color: #fff;
+    text-decoration: none;
+    color: #000;
+    line-height: 30px;
+}
+.search a:hover,.pages a:hover ,.pages a.current{
+    background: #a660b7;
+    color: #fff;
+}
+ .search{
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.search input{
+    width: 156px;
+    line-height: 43px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    height: 43px;
+    padding-left: 50px;
+    font-size:14px;
+    background: url("../img/searchIcon.png") no-repeat 10px center;
+    outline: none;
+}
+.search input:focus{
+    border: 1px solid #343434;
+}
+.search a{
+    bottom: 21px;
+    z-index: 1;
+    position: absolute;
+    right: 27px;
+    text-align: center;
+    display: inline-block;
+    font-size: 26px;
+    width: 54px;
+    height: 43px;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    color: #fff;
+}
+.classification li{
+    list-style: none;
+    height:50px;
+    line-height: 50px;
+    padding:10px ;
+    border-left:4px solid #dfc6e6;
+    border-top:1px solid #ddd ;
+}
+.classification li a{
+    color: #666;
+    font-weight: bold;
+}
+.classification li:hover{
+    cursor: pointer;
+    border-left:4px solid #522a5c;
+}
+.calendar{
+    height:240px;
+}
+.month{
+    font-size:14px ;
+    text-align: center;
+}
+.month span{
+    padding:0 56px;
+    color: #773c88;
+    font-weight: bold;
+}
+.month a{
+    color:#773c88 ;
+}
+.calendar table{
+    margin-top: 10px;
+    text-align: center;
+    border: none;
+    border-collapse: collapse;
+    color: #eee;
+}
+.calendar tr{
+    border-bottom: 1px solid #eee;
+}
+.calendar td,.calendar th{
+    width: 36px;
+    height:32px ;
+    color: #666;font-weight: bold;
+}
+.calendar td a{
+    color: #ccc;
+    font-weight: bold;
+}
+.calendar td:hover{
+    background-color:#773c88 ;
+    cursor: pointer;
+}
+.tags h4{
+    color: #666;
+    text-align: left;
+}
+.tags a{
+    color: #773c88;
+    margin-right: 3px;
+}
+.f30{
+    font-size: 30px;
+}
+.f15{
+    font-size: 15px;
+}
+.f11{
+    font-size: 11px;
+}
+.f23{
+    font-size: 23px;
+}
+.f10{
+    font-size: 10px;
+}
+/***********************************blog end******************************/
+/***********************************gallery ******************************/
+.tabTitle{
+    margin-top: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    width: 515px;
+}
+.tabTitle a {
+    padding: 10px 20px;
+    color: #000;
+    float: left;
+    border-top: 4px solid #dfc6e6;
+    border-right: 1px solid #eee;
+}
+.tabTitle a:hover{
+    border-bottom: 1px solid #eee;
+}
+.tab1:hover{
+    border-top: 4px solid #1782f4;
+}
+.tab2:hover{
+    border-top: 4px solid #522a5c;
+}
+.tab3:hover{
+    border-top: 4px solid #5900b2;
+}
+.tab4:hover{
+    border-top: 4px solid #8c2300;
+}
+.tab5:hover{
+    border-top: 4px solid #d9a300;
+}
+.tabLeft{
+    float: left;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    /*box-sizing: border-box;*/
+    margin-right: 10px;
+}
+.tabLeft a{
+    color: #fff;
+}
+.tabRight{
+    float: right;
+    width: 260px;
+}
+.tabContent .tabCol1,.tabContent .tabCol2,.tabContent .tabCol3{
+    float: left;
+    margin-right: 10px;
+    display: block;
+}
+.tabCol1{
+    width: 330px;
+}
+.tabCol11  {
+    float: left;
+    width: 160px;
+    margin-right: 10px;
+}
+.tabCol12{
+    float: left;
+    width: 160px;
+}
+.tabCol2,.tabCol3 {
+    width: 160px;
+}
+.tabLeft .tabContent .tabCol3{
+    margin-right: 0;
+}
+.tabContent .Tabblock{
+    margin-bottom: 10px;
+    display: block;
+}
+.tabBlock .tabIcon{
+    display: block;
+    float: left;
+    width: 27px;
+    height: 27px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    line-height: 27px;
+    margin:10px;
+    text-align: center;
+    color: #fff;
+}
+.annotator{
+    color: #fff;
+    margin-left: 50px;
+}
+.annotator p{
+    padding-right: 5px;
+    text-indent: 0;
+}
+.annotator .title{
+    font-weight: bold;
+}
+.tabBlock{
+    display: block;
+    margin-top: 10px;
+}
+.tabBlock .text1{
+    background-color:#522a5c ;
+}
+.tabBlock .text2{
+    background-color:#8c2300 ;
+}
+.tabBlock .text3{
+    background-color: #5900b2;
+}
+.tabBlock .text4{
+    background-color: #d9a300;
+}
+.tabBlock img{
+    display: block;
+    width: 100%;
+}
+.tabBlock:hover{
+    cursor: pointer;
+    border:3px  solid #d96030;
+}
+.more{
+    display: block;
+    clear: both;
+    margin: 10px 260px 50px 0;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    color: #666;
+}
+.more .moreIcon{
+    display: inline-block;
+    vertical-align: middle;
+    width:20px;
+    height: 20px;
+    background: url("../img/moreIcon.png") no-repeat;
+}
+.tabRight .popularity{
+    padding: 20px 10px;
+    background:#fff ;
+}
+.popularity h4{
+    color: #666;
+    margin-bottom: 20px;
+}
+.popularity li{
+    margin: 10px 5px;
+}
+.popularity li span{
+    vertical-align: top;
+}
+
+.circle{
+    display: inline-block;
+    width:16px;
+    height: 16px;
+    border-radius: 100%;
+    color: #fff;
+    line-height:16px;
+    text-align: center;
+}
+.puple{
+    background-color: #522a5c;
+}
+.ranking{
+    display: inline-block;
+    width:100px;
+    height: 16px;
+    border: 1px solid #522a5c;
+    margin: 0 10px;
+}
+.ranking span{
+    display: inline-block;
+    height: 16px;
+}
+.ranking .first{
+    width:100%;
+}
+.ranking .second{
+    width: 90%;
+}
+.ranking .third{
+    width: 80%;
+}
+.ranking .fouth{
+    width: 40%;
+}
+.ranking .fifth{
+    width: 30%;
+}
+/**************************************gallery end******************************/
+
+/**************************************about******************************/
+.resume{
+    margin-top: 100px;
+    position: relative;
+    background-color: #fff;
+}
+.borderPic{
+    border:10px solid #eee;
+}
+.line{
+    width: 6px;
+    position: absolute;
+    background:#eee;
+    z-index: 1;
+    left: 50%;
+    margin-left:-3px;
+    top: 0;
+    bottom: 0;
+}
+.resumeContent{
+    position: relative;
+    z-index: 2;
+}
+.resumeBlock{
+    width: 500px;
+    margin-left:340px;
+    margin-bottom: 20px;
+    min-height: 80px;
+    font-family: "微软雅黑";
+    overflow: hidden;
+}
+.resumeTag{
+    font-size: 20px;
+    float: left;
+}
+.tagContent{
+    position: relative;
+    float: right;
+    width: 320px;
+}
+.tagContent p{
+    line-height: 30px;
+    margin-left: 30px;
+}
+.middlePic{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 0 auto;
+    display: block;
+    border: 5px solid #eee;
+}
+.tagContent .year{
+    text-align: center;
+    display: inline-block;
+    width:70px;
+    height:23px;
+    border-radius:10px;
+    border: 5px solid #eee;
+    position: absolute;
+    left: -72px;
+    background-color: #fff;
+    line-height: 23px;
+}
+.tagContent .schedule{
+    height: 80px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+/*****************************************about end******************************/
+@media (max-width: 980px){
+    .header .gitIcon{
+        display: none;
+    }
+}
+
+
