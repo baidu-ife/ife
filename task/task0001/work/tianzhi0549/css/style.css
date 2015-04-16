@@ -29,9 +29,6 @@ header nav .menu{
     zoom: 1;
     right: 0;
     bottom: 5px;
-    /**
-        为什么使用overflow: hidden触发BFC，ul会变成100%宽？
-    */
 }
 
 header nav .menu li{
@@ -92,10 +89,7 @@ header .github-icon{
     font-size: 12px;
     line-height: 150%;
 }
-.box-container{;
-    /**
-        !!!这个是重点。
-    */
+.box-container{
     overflow: hidden;
 }
 .container .box:first-child{
