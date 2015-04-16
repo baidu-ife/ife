@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <header>
+		<div class="nav">
+			<div class="logo"><img src="img/wykay.png"></div>
+			<ul class="menu">
+				<li>
+					<a href="index.html">首页</a>
+				</li>
+				<li>
+					<a href="blog.html">文章</a>
+				</li>
+				<li>
+					<a href="gallery.html">作品</a>
+				</li>
+				<li>
+					<a href="about.html">关于</a>
+				</li>
+			</ul>
+			
+		</div>
+
+		<div class="header-github">
+				<img src="img/icon-github.png">
+		</div>
+
+	</header>
+
+    <div class="blog-content">
+        <div class="left-content">
+            <ul>
+                <li>
+                    <div class="passage-tag">
+                        <div class="passage-tag-time">4.15</div>
+                        <div class="passage-tag-type">HTML</div>
+                    </div>
+                    <h4>布局问题</h4>
+                    <h6>先HTML,后CSS</h6>
+                    <p>做网页时把所以布局先弄好:左浮动右浮动、哪里需要用ul和li、使用位置absolute布局，如果是固定宽度的可以先计算好宽度高度以及间距。各个版块的命名也先考虑好。</p>
+                    
+                    <p>
+                        <span class="passage-author">wykay-z</span>
+                        发表于
+                        <span class="passage-time">2015年4月15日</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="passage-tag">
+                        <div class="passage-tag-time">4.12</div>
+                        <div class="passage-tag-type">CSS</div>
+                    </div>
+                    <h4>做任务中的问题</h4>
+                    <h6>问题列表</h6>
+                    <p>1."span"里面再加"span"可以吗？像这种页底署名用什么标签好？</p>
+					<p>2.一个页面出现两个同类型的东西如何命名，如博文模块中有两个时间，左边绝对定位以及文章末尾的时间，有什么比较常规的方法可以区别开来？</p>
+					<p>3.页数（第一页、上一页、1234、下一页、最后一页）用什么标签会好些，看百度好像用了a里面再加了span，是否是因为还有百度脚掌所以才需要再加span的吗？谷歌则是用了table。 </p>
+					<p>4.ul里的li里还有ul li时，怎么高效地选中第一层级的li，给第一层级的li都加class吗？</p>
+					<p>5.ul中的li中内容量不同，float时如何保证它们高度相同？（即index页面中间的li如何保持高度一致？不用JS只用CSS可以实现吗？）</p>
+					<p>6.浏览器窗口缩小到980px时，如何隐藏掉导航栏右边的GITHUB？不用JS只用CSS可以获取当前浏览器窗口的大小呢？有其他方式可以实现吗？</p>
+					<p>7.右边Tags版块的效果是用float:left实现比较好，还是加display:inline好些？</p>
+					<p>8.不同页面中有类似版块，可是里面内容略有不同，用同一个class好，还是重新再用一个class？如果用同一个class总感觉代码会因此变得很乱，页面一多的话不小心改了一点，所以其他的都会受到影响。</p>
+					<p>9.gallery.html页面的列表实现的正确方法是什么？这种跟Pinterest和花瓣的瀑布流是否一样？可是中间有一篇文章是跨了两个Column的，实现方法可以一样吗？</p>
+					<p>10.渐变的实现是直接用CSS比较高效还是用一张宽1像素的图更高效？感觉渐变的CSS其实挺麻烦的。</p>
+                    
+                    <p>
+                        <span class="blog-author">wykay-z</span>
+                        发表于
+                        <span class="blog-time">2015年4月14日</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="passage-tag">
+                        <div class="passage-tag-time">4.12</div>
+                        <div class="passage-tag-type">CSS</div>
+                    </div>
+                    <h4>博文</h4>
+                    <h6>博文</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        <span class="blog-author">wykay-z</span>
+                        发表于
+                        <span class="blog-time">2015年4月14日</span>
+                    </p>
+                </li>
+            </ul>
+
+            <div class="blog-pages">
+                <a href="#" class="unable">第一页</a>
+                <a href="#" class="unable">上一页</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">...</a>
+                <a href="#">下一页</a>
+                <a href="#">最后页</a>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <div class="blog-search-bar right-content-block">
+                <input type="text" placeholder="keywords">
+				<a href="">GO</a>
+			</div>
+            <div class="blog-category right-content-block">
+                <ul>
+                    <li>
+                        <a href="#">HTML</a>
+                    </li>
+                    <li>
+                        <a href="#">CSS</a>
+                    </li>
+                    <li>
+                        <a href="#">JAVASCRIPT</a>
+                    </li>
+                    <li>
+                        <a href="#">其他文章</a>
+                    </li>
+                </ul>
+            </div>
+			
+            <div class="blog-calendar right-content-block">
+				<div class="calendar-wrapper">
+					<div class="year-month">
+						<a class="prev">&lt;</a><h4>2015.04</h4><a class="next">&gt;</a>
+					</div>
+					<div class="day-content">
+						<div class="day-thead">
+							<div class="calendar-tr">
+								<a>S</a>
+								<a>M</a>
+								<a>T</a>
+								<a>W</a>
+								<a>T</a>
+								<a>F</a>
+								<a>S</a>
+								
+							</div>
+						</div>
+						<div class="day-tbody">
+									<div class="calendar-tr">
+										<a></a>
+										<a></a>
+										<a></a>
+										<a>1</a>
+										<a>2</a>
+										<a>3</a>
+										<a>4</a>
+									</div>
+
+									<div class="calendar-tr">
+										<a>5</a>
+										<a>6</a>
+										<a>7</a>
+										<a>8</a>
+										<a class="day-with-blog">9</a>
+										<a>10</a>
+										<a>11</a>
+									</div>
+
+									<div class="calendar-tr">
+										<a class="day-with-blog">12</a>
+										<a>13</a>
+										<a>14</a>
+										<a>15</a>
+										<a class="active">16</a>
+										<a>17</a>
+										<a>18</a>
+									</div>
+
+									<div class="calendar-tr">
+										<a>19</a>
+										<a>20</a>
+										<a>21</a>
+										<a>22</a>
+										<a>23</a>
+										<a>24</a>
+										<a>25</a>
+									</div>
+									<div class="calendar-tr">
+										<a>26</a>
+										<a>27</a>
+										<a>28</a>
+										<a>29</a>
+										<a>30</a>
+										<a></a>
+										<a></a>
+									</div>
+
+						</div>
+					</div>
+					
+				</div>	
+			</div>
+			
+            <div class="blog-tag right-content-block">
+				<h6>Tags</h6>
+				<a class="big">Javascript</a>
+				<a class="middle">CSS</a>
+				<a class="middle">jQuery</a>
+				<a>Flex</a>
+				<a class="big">HTML</a>
+				<a>WebGL</a>
+				<a class="middle">CSS3</a>
+				<a class="middle">nodeJS</a>
+				<a>Canvas</a>
+				<a>grid</a>
+				<a class="small">Backbone</a>
+				<a>HTML5</a>
+				<a>Sass</a>
+				<div class="clearfloat"></div>
+			</div>
+        </div>
+		<div class="clearfloat"></div>
+    </div>
+
+	<footer>
+		
+		<div class="footer-nav">
+			<div class="footer-nav-wrapper">
+				<ul>
+					<li>
+						<a href="index.html">主页</a>
+					</li>
+					<li>
+						<a href="blog.html">文章</a>
+					</li>
+					<li>
+						<a href="gallery.html">作品</a>
+					</li>
+					<li>
+						<a href="about.html">关于</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-link">
+		<div class="footer-link-wrapper">
+			<ul class="footer-main-link">
+				<li>
+					<h6>学习资料</h6>
+					<ul class="footer-sub-link">
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">Hover</a>
+						</li>
+						<li>
+							<a href="#">Active</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h6>学习资料</h6>
+					<ul class="footer-sub-link">
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">Hover</a>
+						</li>
+						<li>
+							<a href="#">Active</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h6>学习资料</h6>
+					<ul class="footer-sub-link">
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">Hover</a>
+						</li>
+						<li>
+							<a href="#">Active</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h6>学习资料</h6>
+					<ul class="footer-sub-link">
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">Hover</a>
+						</li>
+						<li>
+							<a href="#">Active</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h6>学习资料</h6>
+					<ul class="footer-sub-link">
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">Hover</a>
+						</li>
+						<li>
+							<a href="#">Active</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+						<li>
+							<a href="#">LINK</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="clearfloat"></div>
+		</div>
+			
+		<div class="footer-git">
+			<h6>版权信息</h6>
+			<img src="img/icon-github.png"/>
+		</div>
+		</div>
+	</footer>
+
+</body>
+</html>
