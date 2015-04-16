@@ -1,0 +1,237 @@
+header {
+    margin-bottom: 20px;
+}
+
+article {
+    width: 710px;
+    margin-right: 10px;
+    background: #ffffff;
+    position: relative;
+    margin-bottom: 10px;
+    float: left;
+    display: inline;
+}
+
+.article-content {
+    padding: 20px;
+}
+
+.article-content h1 {
+    color: #a660b7;
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+
+.article-content h2 {
+    color: #666666;
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+
+.article-content p {
+    text-indent: 2em;
+    line-height: 150%;
+}
+
+.article-flag {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    position: absolute;
+    left: -50px;
+}
+
+.article-date {
+    background: #522a5c;
+    top: 20px;
+}
+
+.article-tag {
+    background: #a660b7;
+    top: 60px;
+}
+
+.article-note {
+    float: right;
+    display: inline-block;
+    font-size: 12px;
+    color: #999999;
+    margin-bottom: 15px;
+}
+
+.page-list{
+    width: 710px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    display: inline;
+    text-align: center;
+}
+.page-list a,.page-list span{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding:10px 15px;
+    background: #ffffff;
+    margin-right: 10px;
+}
+.page-list .first-page{
+    background: #a660b7;
+}
+.c-gray{
+    color:#dddddd;
+}
+/*右侧部分*/
+aside {
+    width: 260px;
+    margin-left: 720px;
+}
+
+.aside-list {
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+
+aside .search {
+    width: 220px;
+    height: 40px;
+    padding: 20px;
+}
+
+aside .search-wrapper {
+    width: 218px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #dddddd;
+    position: relative;
+}
+
+aside .search-wrapper s {
+    width: 30px;
+    height: 30px;
+    background: url(img/search-icon.png) no-repeat scroll center center;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+
+}
+
+aside .search-wrapper input {
+    width: 118px;
+    margin-left: 40px;
+    border: 0;
+}
+
+aside .search-wrapper span {
+    display: inline-block;
+    width: 49px;
+    height: 38px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace, serif;
+    background: #dddddd;
+}
+
+aside .title li {
+    height: 50px;
+    line-height: 50px;
+    width: 235px;
+    padding-left: 20px;
+    border-left: 5px solid #dfc6e6;
+    border-bottom: 1px solid #dddddd;
+}
+
+aside .title li a {
+    text-decoration: none;
+    color: #666666;
+}
+
+aside .title .active {
+    border-left: 5px solid #522a5c;
+}
+
+aside .date {
+    width: 220px;
+    padding: 30px 20px;
+}
+
+aside .date table {
+    width: 220px;
+}
+
+aside .date th {
+    color: #773c88;
+}
+
+aside .date tr {
+    color: #999999;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-bottom: 1px solid #eeeeee;
+}
+
+aside .date tr td {
+    width: 70px;
+    text-align: center;
+}
+
+aside .date .line {
+    /*border-bottom: 1px solid #ffffff;*/
+    border: 0;
+}
+
+aside .date span.active {
+    display: inline-block;
+    width: 26px;
+    height: 20px;
+    line-height: 20px;
+    color: #ffffff;
+    background: #773c88;
+}
+
+aside .tags {
+    width: 245px;
+    padding: 10px 0 30px 15px;
+}
+
+.tags h1 {
+    font-size: 18px;
+    color: #666666;
+    font-weight:normal;
+}
+.tags .tag-list{
+    width: 245px;
+    height: 150px;
+    line-height: 30px;
+}
+aside .tags a {
+    text-decoration: none;
+    display: inline-block;
+    color: #773c88;
+    margin-right: 5px;
+    font-weight: normal;
+    font-family: "microsoft yahei", serif;
+}
+
+.tags .tag-l {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.tags .tag-m {
+    font-size: 18px;
+}
+
+.tags-s {
+    font-size: 12px;
+}

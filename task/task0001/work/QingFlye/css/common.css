@@ -1,0 +1,129 @@
+body, html {
+    font-family: simsun, serif;
+    background: #eeeeee;
+}
+
+header {
+    width: 100%;
+    background: #522a5c;
+    position: relative;
+}
+
+.wrapper {             /*所有的header，banner，blog，personal，footer的公有样式*/
+    width: 980px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+header .wrapper {
+    height: 80px;
+    background: #522a5c;
+    position: relative;
+    z-index: 10;
+}
+
+.header-logo {
+    height: 80px;
+    line-height: 120px;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    z-index: 1;
+}
+
+header .wrapper nav {
+    float: right;
+    height: 25px;
+    display: inline;
+    margin-top: 55px;
+}
+
+header .wrapper  nav a {
+    display: inline-block;
+    color: white;
+    margin-left: 28px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+header .git {
+    width: 30px;
+    height: 34px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    background: url(img/icon-github.png) no-repeat scroll;
+}
+
+
+footer, footer .wrapper {
+    background: #000000;
+}
+
+footer .wrapper {
+    padding-bottom: 50px;
+}
+
+footer nav {
+    height: 36px;
+    background: #000000;
+    border-bottom: 1px solid #333333;
+    text-align: center;
+    line-height: 36px;
+}
+
+footer nav .wrapper {
+    height: 36px;
+    padding-bottom: 0;
+    border-bottom: 1px solid #333333;
+}
+
+footer nav a {
+    color: #ffffff;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 28px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+footer .wrapper dl {
+    width: 196px;
+    float: left;
+    display: inline;
+}
+
+footer .wrapper dt {
+    padding-top: 40px;
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+footer .wrapper dd{
+    height: 20px;
+    line-height: 20px;
+}
+footer .wrapper a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer .wrapper a:hover {
+    text-decoration: underline;
+}
+footer .author{
+    text-align: center;
+    position: relative;
+}
+footer .author span{
+    color: #ffffff;
+}
+footer  .author s{
+    width: 30px;
+    height: 34px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    margin-left: -15px;
+    background: url(img/icon-github.png) no-repeat scroll;
+}

@@ -1,0 +1,118 @@
+.banner {
+    width: 100%;
+    height: 525px;
+    background: url(img/banner-bg.jpg) no-repeat scroll center center;
+}
+
+.banner .wrapper {
+    height: 525px;
+    position: relative;
+    background: url(img/banner-bg.jpg) no-repeat scroll center center;
+}
+
+.banner-title {
+    width: 320px;
+    height: 95px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 10px 30px 10px;
+    _background: #ffffff;
+    filter: alpha(opacity=70);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+
+}
+
+.banner-title h1 {
+    font-weight: normal;
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.banner-title p {
+    font-size: 12px;
+    line-height: 150%;
+}
+
+.blog {
+    width: 100%;
+    height: 480px;
+    background: #eeeeee;
+}
+
+.blog .wrapper {
+    height: 480px;
+    background: #eeeeee;
+}
+
+.blog article {
+    width: 320px;
+    background: #ffffff;
+    margin-top: 10px;
+    float: left;
+    display: inline;
+    /*padding-bottom:2000px;*/ /*等高布局高度无限长？？？怎么实现有限高度*/
+    /*margin-bottom:-2000px;*/
+    height: 400px;
+}
+
+.blog-1 {
+    margin-right: 10px;
+}
+
+.blog article img {
+    width: 300px;
+    height: 180px;
+    margin: 10px 10px 15px 10px;
+}
+
+.blog article p {
+    padding: 0 30px;
+    text-indent: 2em;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.personal {
+    height: 520px;
+    background: #ffffff;
+    position: relative;
+}
+
+.personal img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    margin-left: -80px;
+    cursor:pointer;
+}
+
+.personal h1 {
+    font-size: 20px;
+    padding-top: 155px;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace, serif;
+}
+
+.personal .introduce {
+    text-indent: 2em;
+    width: 600px;
+    font-size: 14px;
+    padding-top: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+    line-height: 150%;
+    word-wrap: break-word;
+    word-break: break-all;
+}
