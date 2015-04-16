@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft YaHei, sans-serif;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    min-width: 980px;
+}
+
+/* header */
+.header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background: #47456D;
+}
+
+.nav-wrap {
+    position: relative;
+    width: 980px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.logo {
+    position: absolute;
+    bottom: 5px;
+}
+
+.nav {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+.nav ul {
+    float: right;
+}
+
+.nav li {
+    float: left;
+    font: 14px SimSun, sans-serif;
+    margin-left: 28px;
+}
+
+.icon-github {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+@media (max-width: 980px) {
+    .icon-github {
+        display: none;
+    }
+}
+
+/* index */
+.main {
+    background: #e2e2e2;
+}
+
+.description {
+    font-size: 0;   /* 消除4px的间距 */
+}
+
+.description-text-wrap {
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.description-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    font-size: 12px;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(75%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    padding: 10px 10px 30px;
+}
+
+.description-text h1 {
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.description-text p {
+    line-height: 150%;
+}
+
+.content {
+    width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.post {
+    width: 320px;
+    float: left;
+    margin: 10px 0 -10000px;
+    background: #fff;
+    padding-bottom: 10000px;
+}
+
+.post-left {
+    margin-right: 10px;
+}
+
+.post img {
+    width: 300px;
+    height: 180px;
+    margin: 10px 10px 15px;
+}
+
+.post p {
+    font-size: 12px;
+    text-indent: 2em;
+    line-height: 170%;
+    margin: 0 30px 25px;
+}
+
+.information {
+    height: 500px;
+    margin: 100px 0 0;
+    text-align: center;
+    background: #fff;
+}
+
+.information img {
+    border-radius: 50%;
+    margin: -30px 0 50px;
+}
+
+@font-face {
+    font-family: Century Gothic;
+    src: url(../font/Century%20Gothic.ttf);
+}
+
+.information h1 {
+    font-size: 20px;
+    font-family: Century Gothic;
+    margin-bottom: 40px;
+}
+
+.information p {
+    font-size: 14px;
+    text-indent: 2em;
+    width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 170%;
+}
+
+/* blog */
+
+
+/* footer */
+.footer {
+    font-size: 12px;
+    background: #000;
+}
+
+.footer-nav ul {
+    float: left;
+    position: relative;
+    left: 50%;
+    margin: 10px 0;
+}
+
+.footer-nav li {
+    float: left;
+    position: relative;
+    right: 50%;
+    margin: 0 12px;
+}
+
+.link {
+    clear: left;
+    width: 980px;
+    margin: 0 auto 100px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.link hr {
+    border: none;
+    border-top: 1px solid #e2e2e2;
+}
+
+.link-item {
+    float: left;
+    width: 196px;
+}
+
+.link-title {
+    color: #fff;
+    font-size: 13px;
+    margin: 40px 0 30px;
+}
+
+.link-content {
+    line-height: 170%;
+}
+
+.link-content li :hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.copyright p {
+    color: #fff;
+    margin-bottom: 20px;
+}
