@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8"content="IE=Edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css"></head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div id="nav-wrap">
+				<span>KIKIWU</span>
+				<ul id="topnav">
+					<li>
+						<a href="about.html">关于</a>
+					</li>
+					<li>
+						<a href="gallery.html">作品</a>
+					</li>
+					<li>
+						<a href="blog.html">文章</a>
+					</li>
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+				</ul>
+			</div>
+			<span>
+				<a href="https://github.com/"></a>
+			</span>
+		</div>
+		<div class="blog-gallery">
+			<div class="wrapper">
+				<div class="wrapper-content">
+					<div class="list">
+						<div class="blog-tab">
+							<span>4.12</span>
+							<span>CSS</span>
+						</div>
+						<h2>The First</h2>
+						<h4>收到任务的第一天</h4>
+						<p>
+							看到任务的第一天并没有着急写代码，而是把链接的资料看了看，BFC这个概念之前也只是知道有这么个东西，看过概念单并不明白，于是除了链接的那篇讲BFC和haslayout的文章外，又查了些资料，不说完全理解了BFC也解决了之前的一些疑惑，之后写盒子的时候遇到问题也有意识的想一想是否和BFC有关。
+						</p>
+						<p>关于浮动，之前面试的时候被问到过为什么要清楚浮动，当时只答了防止父级塌陷，现在结合BFC，两厢验证，又有了更深理解。</p>
+						<h5>KIKIWU发表于2015年4月15日</h5>
+					</div>
+					<div class="list">
+						<div class="blog-tab">
+							<span>4.12</span>
+							<span>CSS</span>
+						</div>
+						<h2>Thee Second</h2>
+						<h4>马马虎虎不起眼</h4>
+						<p>
+							做这次的任务的心情可以说是跌宕起伏，由于时间比较短，我只有三天用来做，其中又有一些不得不做的杂事，老师大创要的东西，还有正常的课程，作业，当然，能逃的差不多都逃了，室友一条短信点名了，就从工作室一路狂跑过去，恩……锻炼了身体……嘻嘻，这不是重点。
+						</p>
+						<p>
+							时间的仓促我写的就越来越急还很粗糙，写完了两个页面自己都不想看了，又想着写都写完，再有时间就重构整理一下，然后这个想法也没实现……唉，汗颜。遇到了两个问题让我烦恼了好久结果是乌龙，但是还是要记住的。
+						</p>
+						<p>
+							第一个问题是锚链接问题，我写完之后link,visited都不能用，结果同学一语惊醒梦中人，我的链接都是同一个#，所以所以……
+						</p>
+						<p>
+							第二个问题是我好几处都用了css3
+							的nth-of-type()选择器，做完之后考虑兼容IE8不支持，时间又不多了就只能使用class了.匆忙添加完class之后发现样式不对了，在回头看了css才发现，太着急没注意优先级权重，再次更改完之后还是不对。我就心情烦躁了，站起身接个水转了一圈，回来再看的时候一眼就找出了错误。.class1.class2之间没有空格啊啊啊啊啊……
+						</p>
+						<p>都是一些很小的问题但是有时候不细心就没注意到~~还是很重要的</p>
+						<h5>KIKIWU发表于2015年4月16日</h5>
+					</div>
+					<div class="list">
+						<div class="blog-tab">
+							<span>4.12</span>
+							<span>CSS</span>
+						</div>
+						<h2>The Three</h2>
+						<h4>总结</h4>
+						<p>这次做这个任务的收获分为两部分，一方面是技术，一方面是思想。个人觉得第二个方面的收获更大。</p>
+						<p>技术方面</p>
+						<p>一是学习了BFC和haslayout</p>
+						<p>二是学习了透明度的渐变。</p>
+						<p>三是学习了css3的多栏布局。（IE8不支持）</p>
+						<p>思想方面</p>
+						<p>
+							一是因为不允许使用js，写这次的页面的时候有种回到我刚开始学习前端的时候但是又不一样了，很多东西习惯性的用js。例如瀑布流布局，时间轴效果，tab选项卡。
+						</p>
+						<p>
+							二是思路的变化，做选项卡的时候鼠标移到a的时候要去掉border-bottom，我就想不要js怎么做嘛，然后就想到了可以把border-bottom的颜色变成白色……
+						</p>
+
+						<h5>KIKIWU发表于2015年4月16日</h5>
+					</div>
+					<ul class="list-nav">
+						<li class="special-page">
+							<a href="#1">第一页</a>
+						</li>
+						<li class="special-page">
+							<a href="#2">上一页</a>
+						</li>
+						<li>
+							<a href="#3">1</a>
+						</li>
+						<li>
+							<a href="#4">2</a>
+						</li>
+						<li>
+							<a href="#5">3</a>
+						</li>
+						<li>
+							<a href="#6">4</a>
+						</li>
+						<li>
+							<a href="#7">……</a>
+						</li>
+						<li class="special-page">
+							<a href="#8">下一页</a>
+						</li>
+						<li class="special-page">
+							<a href="#9">最后页</a>
+						</li>
+					</ul>
+				</div>
+				<div class="blog-sidebar">
+					<div class="search-input">
+						<span>
+							<a href="" class="imooc">&#xe604;</a>
+						</span>
+						<p>GO</p>
+					</div>
+					<div class="browseByCategory">
+						<ul>
+							<li>
+								<a href="">HTML</a>
+							</li>
+							<li>
+								<a href="">CSS</a>
+							</li>
+							<li>
+								<a href="">JavaScript</a>
+							</li>
+							<li>
+								<a href="">其他文章</a>
+							</li>
+						</ul>
+					</div>
+					<div class="data">
+						<table  cellspacing="0" class="cal" summary="a calendar  style date">
+							<caption>
+								<a href="#" rel="prev">&lt;</a>
+								2015.04
+								<a href="#" rel="next">&gt;</a>
+							</caption>
+
+							<thead>
+								<tr>
+									<th scope="col">S</th>
+									<th scope="col">M</th>
+									<th scope="col">T</th>
+									<th scope="col">W</th>
+									<th scope="col">T</th>
+									<th scope="col">F</th>
+									<th scope="col">S</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>30</td>
+									<td>31</td>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>5</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>7</td>
+									<td>8</td>
+									<td>9</td>
+									<td>10</td>
+									<td class="data-status">11</td>
+									<td>12</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>14</td>
+									<td>15</td>
+									<td>16</td>
+									<td>17</td>
+									<td>18</td>
+									<td>19</td>
+								</tr>
+								<tr>
+									<td>20</td>
+									<td>21</td>
+									<td>22</td>
+									<td>23</td>
+									<td>24</td>
+									<td>25</td>
+									<td>26</td>
+								</tr>
+								<tr>
+									<td>27</td>
+									<td>28</td>
+									<td>29</td>
+									<td>30</td>
+									<td>31</td>
+									<td>1</td>
+									<td>2</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tags">
+						<h2>Tags</h2>
+						<a href="#" class="tags-special">JavaScript</a>
+						<a href="#" class="tags-special">CSS</a>
+						<a href="#">flex</a>
+						<a href="#">WebGL</a>
+						<a href="#" class="tags-special">HTML</a>
+						<a href="#">Canvas</a>
+						<a href="#">prototype</a>
+						<a href="#" class="tags-special">HTML5</a>
+						<a href="#">node JS</a>
+						<a href="#">css3</a>
+						<a href="#" class="tags-special">jQuery</a>
+						<a href="#" class="tags-special">Echarts</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="sidebar-wrap">
+				<ul class="bottomsidebar">
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="blog.html">文章</a>
+					</li>
+					<li>
+						<a href="gallery.html">作品</a>
+					</li>
+					<li>
+						<a href="about.html">关于</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mainnav-wrap">
+				<ul class="mainnav">
+					<li>
+						<a href="">学习资料</a>
+						<ul class="subnav">
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">Hover时样式</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">友情链接</a>
+						<ul class="subnav">
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">Hover时样式</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">学习资料</a>
+						<ul class="subnav">
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">Hover时样式</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">学习资料</a>
+						<ul class="subnav">
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">Hover时样式</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">友情链接</a>
+						<ul class="subnav">
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">Hover时样式</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+							<li>
+								<a href="">LINK</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebarIcon">
+				<p>版权信息</p>
+				<img src="./img/icon-github.png"></div>
+		</div>
+	</div>
+</body>
+</html>
