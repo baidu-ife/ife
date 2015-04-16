@@ -7,9 +7,6 @@
 	float: left;
 }
 /*选项卡*/
-.tabs-header {
-	/*margin-bottom: 20px;*/
-}
 .tabs-header li {
 	float: left;
 	position: relative;
@@ -28,7 +25,6 @@
 	border-bottom-color: #fff;
 	border-top-color: #522a5c;
 }
-
 .tabs-content {
 	width: 680px;
 	padding: 20px 10px 20px 20px;
@@ -48,7 +44,6 @@
 	padding: 0 10px 10px 0;
 	float: left;
 }
-
 
 .items-content {
 	width: 95px;

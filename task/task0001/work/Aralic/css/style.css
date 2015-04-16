@@ -54,6 +54,7 @@ em,strong {
 	width: 100px;
 	height: 57px;
 }
+/*导航*/
 .nav{
 	position: absolute;
 	right: 0;
@@ -72,6 +73,7 @@ em,strong {
 	color: orange;
 	text-decoration: underline;
 }
+/*右侧图标*/
 .header-right{
 	position: absolute;
 	right: 10px;

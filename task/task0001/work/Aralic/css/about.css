@@ -5,7 +5,7 @@
     margin: 100px auto;
     position: relative;
 }
-
+/*中心线*/
 .time-line {
     width: 5px;
     height: 900px;
@@ -15,8 +15,6 @@
     top: 0;
     margin-left: -2px;
 }
-
-
 .my-pic {
     width: 180px;
     height: 180px;

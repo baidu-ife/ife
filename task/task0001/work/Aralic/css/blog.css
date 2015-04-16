@@ -5,8 +5,8 @@
 .main{
 	width: 710px;
 	float: left;
-	
 }
+/*文章模块*/
 .arcticle{
 	width: 670px;
 	background: #fff;
@@ -91,7 +91,6 @@
 	background: #a660b7;
 	color: #fff;
 }
-
 /* 侧边栏*/
 .sidebar{
 	width: 260px;

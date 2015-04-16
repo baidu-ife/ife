@@ -25,7 +25,6 @@
 	right: 0;
 	bottom: 0;
 	padding: 10px 10px 30px 10px;
-	/*color: #fff;*/
 	background: -webkit-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
 	background: -o-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
 	background: -ms-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
@@ -76,7 +75,6 @@
 	line-height: 14px;
 	text-indent: 2em;
 }
-
 .person-info{
 	width: 100%;
 	height: 520px;
