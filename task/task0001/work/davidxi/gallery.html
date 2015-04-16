@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <title>gallery :: Task - 1</title>
+    <link href="./css/normalize.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/widget.css" rel="stylesheet" />
+    <link href="./css/static-gallery.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="navbar">
+      <div class="container navbar-container white-links-container">
+        <div class="navbar-logo">
+          <a href="index.html">YourLOGO</a>
+        </div>
+        <div class="navbar-menu">
+          <ul class="list-h">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="blog.html">文章</a></li>
+            <li><a href="gallery.html">作品</a></li>
+            <li><a href="about.html">关于</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-github">
+        <a href="//github.com/davidxi/ife/tree/homework-1/task/task0001/work/davidxi">
+          <img src="./img/icon-github.png" />
+        </a>
+      </div>
+    </div>
+
+    <!-- gallery -->
+    <div class="panel panel-dark">
+      <div class="container gallery-container">
+        <div class="row">
+          <!-- sidebar -->
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <!-- widget: search -->
+              <div class="sidebar-widget widget-search">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <i class="icon icon-search icon-gray"></i>
+                      <input type="text" placeholder="Keywords" class="form-control" value="">
+                      <div class="input-group-addon">Go</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- ./ widget: search -->
+              <!-- widget: topic -->
+              <div class="sidebar-widget widget-topic">
+                <h3>人气排行榜</h3>
+                <div class="wiget-topic-item">
+                  <div class="widget-topic-rank">1</div>
+                  <div class="progressbar-outer">
+                    <div class="progressbar-inner" style="width: 100%"></div>
+                  </div>
+                  <div class="widget-topic-text">ui.tree</div>
+                </div>
+                <div class="wiget-topic-item">
+                  <div class="widget-topic-rank">2</div>
+                  <div class="progressbar-outer">
+                    <div class="progressbar-inner" style="width: 80%"></div>
+                  </div>
+                  <div class="widget-topic-text">util.trim</div>
+                </div>
+                <div class="wiget-topic-item">
+                  <div class="widget-topic-rank">3</div>
+                  <div class="progressbar-outer">
+                    <div class="progressbar-inner" style="width: 60%"></div>
+                  </div>
+                  <div class="widget-topic-text">app.todo</div>
+                </div>
+                <div class="wiget-topic-item">
+                  <div class="widget-topic-rank">4</div>
+                  <div class="progressbar-outer">
+                    <div class="progressbar-inner" style="width: 40%"></div>
+                  </div>
+                  <div class="widget-topic-text">ui.tab</div>
+                </div>
+                <div class="wiget-topic-item">
+                  <div class="widget-topic-rank">5</div>
+                  <div class="progressbar-outer">
+                    <div class="progressbar-inner" style="width: 20%"></div>
+                  </div>
+                  <div class="widget-topic-text">util.addClass</div>
+                </div>
+              </div>
+              <!-- ./ widget: topic -->
+            </div>
+          </div>
+          <!-- ./ sidebar -->
+
+          <!-- main  -->
+          <div class="col-lg-8">
+            <div class="main-section gallery-nav-tabs">
+              <ul class="list-h">
+                <li class="color-violet"><a href="#">ALL</a></li>
+                <li class="active color-indigo"><a href="#">JavaScript Util Functions</a></li>
+                <li class="active color-purple"><a href="#">UI Components</a></li>
+                <li class="active color-crimson"><a href="#">Framework</a></li>
+                <li class="active color-gold"><a href="#">Applications</a></li>
+              </ul>
+              <div class="clearfix"></div>
+            </div> <!-- ./ .gallery-nav-tabs -->
+
+            <div class="row main-section gallery-cards-flow">
+              <div class="flow-feature-box">
+                <div class="gallery-card color-indigo">
+                  <div class="gallery-card-pic">
+                    <img src="https://a1.muscache.com/ic/pictures/68953440/c1ef2ba2_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                  </div>
+                  <div class="gallery-card-content">
+                    <div class="gallery-card-content-left"><i>J</i></div>
+                    <div class="gallery-card-content-right">
+                      <div class="gallery-card-title">这里是标题</div>
+                      <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。</div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div> <!-- ./ .flow-box -->
+
+              <div class="flow-box-column" style="padding-top: 180px">
+                <div class="flow-box">
+                  <div class="gallery-card color-gold">
+                    <div class="gallery-card-pic color-crimson">
+                      <img src="https://a1.muscache.com/ic/pictures/59891246/7c4aef98_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>A</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flow-box">
+                  <div class="gallery-card color-indigo">
+                    <div class="gallery-card-pic color-crimson">
+                      <img src="https://a1.muscache.com/ic/pictures/46746807/8367a684_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>A</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>  <!-- ./ .flow-box-column -->
+              <div class="flow-box-column" style="padding-top: 180px">
+                <div class="flow-box">
+                  <div class="gallery-card color-crimson">
+                    <div class="gallery-card-pic">
+                      <img src="https://a1.muscache.com/ic/pictures/29009048/d0c9f591_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>A</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flow-box">
+                  <div class="gallery-card color-purple">
+                    <div class="gallery-card-pic color-crimson">
+                      <img src="https://a1.muscache.com/ic/pictures/62531482/bf693634_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>A</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>  <!-- ./ .flow-box-column -->
+
+              <div class="flow-box-column">
+                <div class="flow-box">
+                  <div class="gallery-card color-purple">
+                    <div class="gallery-card-pic">
+                      <img src="http://a1.muscache.com/ic/pictures/57348068/59401124_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>U</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>  <!-- ./ .flow-box -->
+                <div class="flow-box">
+                  <div class="gallery-card color-indigo">
+                    <div class="gallery-card-pic">
+                      <img src="https://a2.muscache.com/ic/pictures/68643736/380151ed_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>U</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flow-box">
+                  <div class="gallery-card color-gold">
+                    <div class="gallery-card-pic">
+                      <img src="https://a0.muscache.com/ic/pictures/55758173/0f461511_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>U</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>  <!-- ./ .flow-box-column -->
+              <div class="flow-box-column">
+                <div class="flow-box color-gold">
+                  <div class="gallery-card">
+                    <div class="gallery-card-pic">
+                      <img src="https://a2.muscache.com/ic/pictures/53651631/3e63df7d_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>A</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>  <!-- ./ .flow-box -->
+                <div class="flow-box">
+                  <div class="gallery-card color-crimson">
+                    <div class="gallery-card-pic">
+                      <img src="https://a0.muscache.com/ic/pictures/34206824/115237e4_original.jpg?interpolation=lanczos-none&size=x_medium&output-format=jpg&output-quality=70">
+                    </div>
+                    <div class="gallery-card-content">
+                      <div class="gallery-card-content-left"><i>U</i></div>
+                      <div class="gallery-card-content-right">
+                        <div class="gallery-card-title">这里是标题</div>
+                        <div class="gallery-card-text">这里是内容。这里是内容。这里是内容。这里是内容。这里是内容。这里是内容。</div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>  <!-- ./ .flow-box-column -->
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="main-section gallery-loading-button">
+              <a href="#"><i class="icon-carret-down icon-gray"></i><span>点击查看更多</span></a>
+            </div>
+          </div>
+          <!-- ./ main -->
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer" class="white-links-container">
+      <div class="footer-menu white-links">
+        <ul class="list-h">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="blog.html">文章</a></li>
+          <li><a href="gallery.html">作品</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </div> <!-- ./ #footer > .footer-menu -->
+      <div class="footer-content">
+        <div class="container">
+          <div class="row">
+            <div class="grid-5-col">
+              <h3>学习资料</h3>
+              <ul class="list-v">
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+              </ul>
+            </div>
+            <div class="grid-5-col">
+              <h3>友情链接</h3>
+              <ul class="list-v">
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+              </ul>
+            </div>
+            <div class="grid-5-col">
+              <h3>学习资料</h3>
+              <ul class="list-v">
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+              </ul>
+            </div>
+            <div class="grid-5-col">
+              <h3>友情链接</h3>
+              <ul class="list-v">
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+              </ul>
+            </div>
+            <div class="grid-5-col">
+              <h3>学习资料</h3>
+              <ul class="list-v">
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+                <li><a href="#">LINK</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> <!-- ./ #footer > .footer-content -->
+      <div class="footer-copyright">
+        <p>版权信息</p>
+        <div>
+          <a href="//github.com/davidxi/ife/tree/homework-1/task/task0001/work/davidxi">
+            <img src="./img/icon-github.png" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

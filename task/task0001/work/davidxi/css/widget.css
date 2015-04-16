@@ -1,0 +1,177 @@
+.sidebar {
+    padding-left: 10px;
+    float: right;
+    width: 270px;
+}
+.sidebar-widget {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.sidebar-widget h3 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 16px;
+}
+/**
+ * widget: search
+ */
+.widget-search .form-group,
+.widget-search .form-group .input-group {
+    width: 100%;
+}
+.widget-search .input-group .icon-search {
+    position: absolute;
+    top: 4px;
+    left: 9px
+}
+.widget-search .input-group .form-control {
+    height: 40px;
+    padding-left: 30px
+}
+.widget-search .input-group input ~ .input-group-addon {
+    cursor: pointer;
+}
+.widget-search .input-group input:focus ~ .input-group-addon {
+    background: #888;
+}
+/**
+ * widget: category
+ */
+.widget-category {
+    padding: 0;
+}
+.widget-category ul li {
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    border-left: 5px solid #e0c7e6;;
+    line-height: 50px;
+}
+.widget-category ul li.active {
+    border-left: 5px solid #573161;
+}
+.widget-category ul li a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #565a5c;
+    display: block;
+}
+.widget-category ul li a:hover {
+    background: #a660bc;
+    color: #fff;
+}
+/**
+ * widget: tags
+ */
+.widget-tags ul li {
+    margin-left: 10px;
+    line-height: 35px;
+    display: inline-block;
+    vertical-align: bottom;
+    float: none;
+}
+.widget-tags a {
+    color: #522a5c;
+    text-decoration: none;
+}
+.widget-tags a:hover {
+    background: #522a5c;
+    color: #fff;
+}
+/**
+ * widget: calendar
+ */
+.widget-calendar .calendar-month {
+    padding: 0 10px;
+    text-align: center;
+    overflow: hidden;
+}
+.calendar-month a, .calendar-month span {
+    line-height: 25px;
+}
+.calendar-month span {
+    word-spacing: 5px;
+}
+/* 3 columns grid trick */
+.calendar-month-btn-prev,
+.calendar-month-btn-next {
+    float: left;
+    width: 50px;
+    text-align: center;
+}
+.calendar-month-btn-prev {
+    margin-left: -100%;
+}
+.calendar-month-text {
+    float: left;
+    width: 100%;
+}
+.calendar-month-text-wrap {
+    margin: 0 50px;
+}
+.calendar-month-btn-next {
+    margin-left: -50px;
+}
+.widget-calendar table {
+    width: 100%;
+}
+.widget-calendar table tr {
+    border-bottom: 1px solid #ccc;
+}
+.widget-calendar table th,
+.widget-calendar table td {
+    padding: 5px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+}
+.widget-calendar table td span,
+.widget-calendar table td a {
+    display: inline-block;
+}
+.calendar-month span,
+.calendar-month a,
+.widget-calendar table td a {
+    color: #522a5c;
+    /* this padding is to avoid neighbor elements reflow when in hover state */
+    /* so we set its padding value as the same as the ones in hover state */
+    padding: 3px 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.calendar-month a:hover,
+.widget-calendar table td a:hover,
+.widget-calendar table td .active {
+    font-weight: bold;
+    padding: 3px 6px;
+    background: #522a5c;
+    color: #fff;
+}
+/**
+ * wiget: topic ranking
+ */
+.widget-topic .wiget-topic-item {
+    margin-top: 10px;
+}
+.widget-topic .widget-topic-rank {
+    float: left;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: #522a5c;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+}
+.widget-topic .progressbar-outer {
+    width: 100px;
+    height: 20px;
+    float: left;
+    margin-left: 10px;
+}
+.widget-topic .progressbar-inner {
+    height: 20px;
+}
+.widget-topic .widget-topic-text {
+    margin-left: 140px;
+}
