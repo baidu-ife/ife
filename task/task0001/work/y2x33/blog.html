@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>y2x33's blog - blog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header">
+        <!--下面是用class还是用id -->
+        <div class="content-wrap">
+            <div id="logo">Y2X33</div>
+            <div id="menu">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="gallery.html">作品</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="git-logo"><a href="//github.com/y2x33"><img src="img/icon-github.png"/></a></div>
+    </div>
+
+    <div id="blog-content">
+        <div id="article-wrap">
+            <div class="article">
+                <div class="article-date">4.12</div>
+                <div class="article-tag">CSS</div>
+                <div class="article-content">
+                    <div class="article-title">注意事项</div>
+                    <div class="article-vice-title">关于css书写规范</div>
+                    <div class="article-body">
+                        <p>同一 rule set 下的属性在书写时，应按功能进行分组，并以Formatting Model（布局方式、位置）
+                            >Box Model（尺寸） >Typographic（文本相关） >Visual（视觉效果） 的顺序书写，以提高代码的可读性。</p>
+                        <p>Formatting Model 相关属性包括：position / top / right / bottom / left / float / display / overflow 等</p>
+                        <p>Box Model 相关属性包括：border / margin / padding / width / height 等</p>
+                        <p>Typographic 相关属性包括：font / line-height / text-align / word-wrap 等</p>
+                        <p>Visual 相关属性包括：background / color / transition / list-style 等</p>
+                    </div>
+                    <div class="article-tail"><span>y2x33</span> 发表于 <span>2015年4月12日</span></div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-date">4.12</div>
+                <div class="article-tag">CSS</div>
+                <div class="article-content">
+                    <div class="article-title">关于块级元素和内联元素</div>
+                    <div class="article-vice-title">块级元素和内联元素</div>
+                    <div class="article-body">
+                        <p>块级元素：div 、 p、h1、form、ul 和 li </p>
+                        <p>内联元素：span、a、label、input、 img、 strong 和em </p>
+                        <p>内联元素无法设置width和height以及padding、margin等，注意别再被坑了QAQ</p>
+                    </div>
+                    <div class="article-tail"><span>y2x33</span> 发表于 <span>2015年4月12日</span></div>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article-date">4.12</div>
+                <div class="article-tag">CSS</div>
+                <div class="article-content">
+                    <div class="article-title">本次任务的一些tips</div>
+                    <div class="article-vice-title">待解决的问题</div>
+                    <div class="article-body">
+                        <p>【index】<br/>
+                            1.兼容ie（透明度渐变）。<br/>
+                            3.修改.content-wrap。</p>
+                        <p>【blog】<br/>
+                            1.page处的位置有点小问题。<br/>
+                            2.最后没对齐！！<br/>
+                            3.ie在search-box那边有2px的偏差。</p>
+                        <p>【gallery】<br/>
+                            1.nav处有莫名其妙的margin-left乱入了！！<br/>
+                            2.瀑布流！！！没做出来！！QAQ</p>
+                    </div>
+                    <div class="article-tail"><span>y2x33</span> 发表于 <span>2015年4月12日</span></div>
+                </div>
+            </div>
+
+            <div id="page-wrap">
+                <span  id="first-page">第一页</span>
+                <span  id="last-page">上一页</span>
+                <span >1</span>
+                <span >2</span>
+                <span class="current-page">3</span>
+                <span >4</span>
+                <span >...</span>
+                <span  id="next-page">下一页</span>
+                <span  id="end-page">最后页</span>
+            </div>
+        </div>
+        <div class="right-bar">
+            <div id="search-wrap">
+                <div>
+                    <input type="search" id="search-box"/>
+                </div>
+            </div>
+            <div id="tag-nav">
+                <ul>
+                    <li>HTML</li>
+                    <li class="chosen-tag">CSS</li>
+                    <li>JavaScript</li>
+                    <li>其他文章</li>
+                </ul>
+            </div>
+            <div id="calendar">
+                <table>
+                <tr>
+                    <td id="last-month-btn"><</td>
+                    <td colspan="5" id="year-month">2015.04</td>
+                    <td id="next-month-btn">></td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>T</td>
+                    <td>W</td>
+                    <td>T</td>
+                    <td>W</td>
+                    <td>S</td>
+                    <td>S</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td id="today">1</td>
+                    <td>1</td>
+                    <td class="write-blog-day">1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="write-blog-day">1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                </table>
+            </div>
+            <div id="tag-map">
+                Tags
+                <br/>
+                <br/>
+                <span style="font-size:28px;font-weight: 700">JavaScript</span>
+                <span style="font-size:18px;font-weight: 700">CSS</span>
+                <span style="font-size:10px">flex</span>
+                <span style="font-size:10px">WebGL</span>
+                <span style="font-size:28px;font-weight: 700">HTML</span>
+                <span style="font-size:14px">Canvas</span>
+                <span style="font-size:14px">Prototype</span>
+                <span style="font-size:18px;font-weight: 700">HTML5</span>
+                <span style="font-size:10px">grid</span>
+                <span style="font-size:14px">node.js</span>
+                <span style="font-size:14px">CSS3</span>
+                <span style="font-size:18px;font-weight: 700">jQuery</span>
+                <span style="font-size:18px;font-weight: 700">ECharts</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="menu2">
+            <ul>
+                <li><a href="index.html">主页</a> </li>
+                <li><a href="blog">文章</a> </li>
+                <li><a href="gallery.html">作品</a> </li>
+                <li><a href="about.html">关于</a> </li>
+            </ul>
+        </div>
+        <div class="hr"></div>
+        <div id="catalogue">
+            <ul>学习资料
+                <li>LINK</li>
+                <li>hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <ul>友情链接
+                <li>LINK</li>
+                <li>Hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <ul>学习资料
+                <li>LINK</li>
+                <li>hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <ul>学习资料
+                <li>LINK</li>
+                <li>hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <ul>友情链接
+                <li>LINK</li>
+                <li>Hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <div id="copy-right">
+                <div>版权信息</div>
+                <img src="img/icon-github.png"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
