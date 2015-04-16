@@ -84,29 +84,26 @@ em,strong {
 	background: #000;
 	position: relative;
 }
-.footer-top{
+.footer-nav{
 	height: 35px;
 	line-height: 35px;
 	border-bottom: 1px solid  #333;
 	margin-bottom: 42px;
 	text-align: center;
+	font-weight: normal;
+	
 }
-.foo-nav{
-	width: 200px;
-	margin: 0 auto;
-}
-.foo-nav li{
-	float: left;
-}
-.foo-nav a{
+.footer-nav a{
+	display: inline-block;
 	padding: 0 13px;
 	color: #fff;
+	font-size: 12px;
 }
-.foo-nav a:hover {
-	color: orange;
+.footer-nav a:hover {
+	color: #000;
 	text-decoration: underline;
+	background: #ccc;
 }
-
 .foo-content{
 	width: 1000px;
 	margin: 0 auto;

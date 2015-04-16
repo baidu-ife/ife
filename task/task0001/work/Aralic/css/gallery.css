@@ -51,9 +51,13 @@
 
 
 .items-content {
+	width: 95px;
 	background: #522a5c;
 	padding: 12px 15px 15px 50px;
 	position: relative;
+}
+.itmes-large {
+	width: 265px;
 }
 .items-content h6 {
 	font-size: 14px;

@@ -25,11 +25,14 @@
 	right: 0;
 	bottom: 0;
 	padding: 10px 10px 30px 10px;
-	color: #fff;
+	/*color: #fff;*/
 	background: -webkit-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
 	background: -o-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
 	background: -ms-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
 	background: linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff'),
+	alpha(opacity:50);
+	color: #000;
 }
 .banner-text h2{
 	height: 30px;
