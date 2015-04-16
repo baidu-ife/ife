@@ -1,0 +1,65 @@
+#main{
+    width: 100%;
+    min-width: 980px;
+    height: auto;
+    background: #eee;
+    padding: 100px 0 25px;
+}
+#content{
+    width: 980px;
+    margin: 0 auto;
+    height: auto;
+}
+.intro-container{
+    position: relative;
+    background-color: #fff;
+}
+.intro-container:after{
+    content: '\200b';
+    height: 0;
+    display: block;
+    clear: both;
+    zoom: 1;
+}
+.intro-title,.intro-text{
+    float: left;
+    width: 418px;
+    padding: 120px 50px 20px 20px;
+}
+.intro-title{
+    font-size: 20px;
+    text-align: right;
+}
+.intro-text{
+    border-left: 4px solid #eee;
+}
+.intro-container img{
+    width: 100px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border: 5px solid #eee;
+    border-radius: 80px;
+    border\0: none;
+}
+#myself{
+    width: 160px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -50px;
+}
+#education li,#experiences li{
+    position: relative;
+    margin-bottom: 45px;
+}
+#education time,#experiences time{
+    position: absolute;
+    border: 5px solid #eee;
+    border-radius: 12px;
+    padding: 5px 15px;
+    left: -58px;
+    background-color: #fff;
+}

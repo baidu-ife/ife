@@ -7,11 +7,18 @@ a,a:link,a:visited,a:hover,a:active,a:focus{
     text-decoration: none;
     color: #fff;
 }
+p{
+    text-indent: 2em;
+    line-height: 1.5em;
+}
 ul,li{
     list-style: none;
 }
 body{
     font-family: "宋体","arial",sans-serif;
+}
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{
+    display:block
 }
 
 /*---------header & footer---------*/
@@ -42,16 +49,16 @@ header h1{
     position: absolute;
     bottom: 5px;
 }
-#main-nav{
+#menu{
     float: right;
     position: absolute;
     bottom: 5px;
     right: 0;
 }
-#main-nav a:hover{
+#menu a:hover{
     color: #ccc;
 }
-#main-nav li{
+#menu li{
     display: inline-block;
     font-size: 14px;
     margin-left: 28px;
@@ -76,13 +83,13 @@ footer{
     width: 100%;
     background: #000;
     color: #fff;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    clear: both;
 }
 #footer-nav{
     width: 100%;
     padding: 9px 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #333333;
 }
 #footer-nav-ul{
     width: 224px;
@@ -95,7 +102,7 @@ footer{
 }
 #footer-columns{
     width: 980px;
-    margin: 0 auto;
+    margin: 0 auto 50px;
 }
 #footer-columns:after{
     content: "\200B";
@@ -118,6 +125,18 @@ footer{
     margin: 8px 0;
     font-size: 14px;
 }
-#footer-columns .links li a:hover{
-    text-decoration: blink;
+#footer-columns .links li a:hover {
+    text-decoration: underline;
+}
+#copyright{
+    width: 48px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+#copyright-github{
+    width: 30px;
+    height: 34px;
+    display: block;
+    margin: 10px auto 0;
+    background: url("../img/icon-github.png") no-repeat 0 0;
 }
