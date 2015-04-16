@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>index</title>
+    <title>blog</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
   <body>
@@ -24,25 +24,147 @@
 
     <div class="contain">
       <div class="contain-wrap">
+        
         <div class="contain-left">
-          左边
-          <div class="blog">
-            <div>
-              <p>4.12</p>
-              <p>css</p>
+          <section class="blog">
+            <div class="blog-topic">
+              <p class="blog-date">4.12</p>
+              <p class="blog-tag">css</p>
             </div>
-            <section>
-              <h1>主标题</h1>
-              <h2>副标题</h2>
-              <div>
-                正文
-              </div>
-            </section>
-          </div>
+            <h1>遇到的困难</h1>
+            <h2>列等高问题</h2>
+            <article>
+              <p>看到的等高要不然就是就是浮动然后overflow:auto;要不然就是各种嵌套。想找没有overflow:hidden;的方法，最后还是选择了flex box布局。</p>
+              <p>方便快捷，还不用纠结右边超出的部分被隐藏怎么办。</p>
+            </article>
+          </section>
+
+          <section class="blog">
+            <div class="blog-topic">
+              <p class="blog-date">4.12</p>
+              <p class="blog-tag">css</p>
+            </div>
+            <h1>主标题</h1>
+            <h2>副标题</h2>
+            <article>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+            </article>
+          </section>
+
+          <section class="blog">
+            <div class="blog-topic">
+              <p class="blog-date">4.12</p>
+              <p class="blog-tag">css</p>
+            </div>
+            <h1>主标题</h1>
+            <h2>副标题</h2>
+            <article>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+              <p>正文等待补充。</p>
+            </article>
+          </section>
         </div>
+
         <div class="contain-right">
-          右边
+          <div class="search">search</div>
+
+          <ul class="nav-tags">
+            <li>HTML</li>
+            <li>JavaScript</li>
+            <li>CSS</li>
+            <li>html</li>
+          </ul>
+
+          <div class="calendar">
+            <table>
+              <tr>
+                <th> <a href=""><</a> </th>
+                <th colspan="5"><a href="">2015.04</a></th>
+                <th><a href="">></a></th>
+              </tr>
+              <tr>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>S</th>
+              </tr>
+            </table>
+            <table class="time-select">
+              <tr>
+                <th></th>
+                <th></th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+              </tr>
+              <tr>
+                <th>8</th>
+                <th>9</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+              </tr>
+              <tr>
+                <th>18</th>
+                <th>19</th>
+                <th>13</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+              </tr>
+              <tr>
+                <th>8</th>
+                <th>9</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+              </tr>
+              <tr>
+                <th>8</th>
+                <th>9</th>
+                <th>3</th>
+                <th>4</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </table>
+          </div>
+
+          <div class="tags">
+            <p>tags</p>
+            <ul class="tags-content">
+              <li>JavaScript</li>
+              <li class="larger">HTML</li>
+              <li>CSS</li>
+              <li class="larger">jQuery</li>
+              <li class="large">Flex box</li>
+              <li>CSS3</li>
+              <li class="larger">HTML5</li>
+            </ul>
+          </div>
+
         </div>
+
       </div>
     </div>
 
