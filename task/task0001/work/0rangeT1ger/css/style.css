@@ -1,0 +1,770 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+/*CSS 重置*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
+em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,output,
+ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}
+blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+/*
+*全局样式
+*/
+h1,.h1{font-size: 33px;}
+h2,.h2{font-size: 28px;}
+h3,.h3{font-size: 23px;}
+h4,.h4{font-size: 18px;}
+h5,.h5{font-size: 14px;}
+h6,.h6{font-size: 11px;}
+
+.bold{  font-weight: bold;}
+a:link{ text-decoration: none;}
+a:hover{  text-decoration: underline;}
+a:visited{ color: inherit; }                    /*保证链接访问过后颜色不变化*/
+
+body{
+    font-family:"SimSun","Microsoft Yahei", Georgia, "Times New Roman", Times, serif;
+    height: 100%;
+    text-align: center;
+    background-color: #eeeeee;
+}
+.Inner{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Row{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.Container{                                 /*此处自己建立了一个两栏的栅格系统。。有点粗糙，但是思路是对的。。。吧？*/
+    width: 100%;
+    height: 1300px;
+}
+.githubImg{                                 /*这里给图真是坑啊。。下面故意给了3px的空白，本来以为对齐了，结果顶出来一条。。*/
+    position: relative;
+    top: 3px;
+}
+.blackText{ color: black; }
+.whiteText{ color: white; }
+.purpleBackground{  background-color: mediumpurple;  }
+.redBackground{     background-color: darkred;  }
+.greenBackground{    background-color: darkgreen;  }
+.blueBackground{    background-color: cornflowerblue;  }
+.pinkBackground{    background-color: hotpink;  }
+.yellowBackground{    background-color: darkorange;  }
+.grayBackground{    background-color: #eeeeee;  }
+.whiteBackground{
+    background-color: white;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.blackBackground{
+    background-color: black;
+    width: 100%;
+    height: auto;
+    float: left;
+    color: white;                          /*在设置页面类型的时候，总是将这三类在前，其余放在后面，可以将他们的属性覆盖掉。*/
+}                                          /*最初想设置成响应式，然而各个方块都给予了具体的大小，使得对其变得难以实现。所以放弃了。*/
+.ColLeft{
+    position: relative;
+    float: left;
+    width: 735px;
+    height: 300px;
+}
+.ColRight{
+    position: relative;
+    float: left;
+    width: 245px;
+    height: 300px;
+}
+.halfCol{
+    width: 50%;
+    height: 700px;
+    float: left;
+}
+.unavailable{
+    color: gray;
+    z-index: -1;
+}
+.shadow{
+    box-shadow: gray 2px 2px 2px;
+}
+.px70Padding{
+    width: 100%;
+    height: 70px;
+   }
+/*
+*导航栏
+*/
+.navBar{
+    width: 100%;
+    height: 80px;
+    padding-bottom: 5px;
+    background-color: purple;
+    color: white;
+    font-size: larger;
+}
+.logo{
+    width: 300px;
+    height: 78px;
+    float: left;
+    overflow: hidden;
+}
+.navItems{
+    font-size: 14px;
+    line-height: 100%;                      /*此处设置行高是为了保证上下填充的计算方便，由于并没有下一行，所以这么做*/
+    padding-top: 61px;
+}
+.navItems div{
+    float: right;
+    position: relative;
+    padding-left: 28px;
+}
+
+.githubImgNav{
+    padding-top: 48px;
+    padding-right: 10px;
+    float: right;
+}
+.navBar a:link{ color: white;}
+.navBar a:hover{  color: dimgray;}
+/*
+*页脚
+*/
+footer ul{
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 196px;
+    height: 30px;
+    display: block;
+    text-align: center;
+}
+footer li{
+    margin-left: 10px;
+    display: inline;
+    position: relative;
+    list-style: none;
+    font-size: 14px;
+}
+.footerBlockContainer{
+    border-top: solid 1px #333333;         /*是不是设计师都喜欢用这个颜色啊！！*/
+    height: 400px;
+    text-align: left;
+}
+.footerBlock{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    width: 196px;
+    position: relative;
+    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.footerBlockTitle{
+    font-size: 18px;
+    color: gray;
+    padding-bottom: 30px;
+}
+.footerBlockText{
+    font-size: 14px;
+    line-height: 170%;
+    color: white;
+}
+.rights{
+    padding-bottom: 5px;
+}
+.floatLeft{                      /*这个部分是后来加上的，准备重构代码了，所以将大家都会用到的属性单独拎出来*/
+    position: relative;
+    float: left;
+}
+.floatRight{
+    position: relative;
+    float: right;
+}
+/*******************************************************************************************************************
+*********************以上内容其实可以单独建立一个CSS文件以复用到所有页面
+*********************实际上接下来的每一页的单独用到的样式也可以单独建立各自的CSS文件，方便管理
+*********************在文件夹中我建立了一个基本的样式模板，可以运用到所有的页面中,详见Template.html
+********************************************************************************************************************/
+/*
+*首页中部图片容器以及其子类
+*/  
+.bannerContainer{
+    width:100%;
+    background: url("../img/banner-bg.jpg");  /*这张图片在宽度为1366的屏幕上，高度为598或者599*//*这张图片本身宽1980，高868*/
+    height: 599px;
+    overflow: hidden;                         /*我选择将容器内容高度设置为图片原高，让网页能在大屏幕上有一样的体验*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.bannerAside{                                 /*出题者好狡猾哟，根本没有75%这样的设定好嘛！！只能设置四个变化点啦【摊手】*/
+    width: 400px;
+    font-size: 12px;
+    text-align: right;
+    text-indent: 24px;
+    padding:10px 10px 30px 10px;
+    line-height: 150%;
+    color: white;
+    margin-top: 45%;
+    filter: alpha(opacity=0,finishOpacity=100,startX=0,startY=0,finishX=75,finishY=0,style=1);
+    background: -webkit-linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3),rgba(255,255,255,.3),rgba(255,255,255,.5),rgba(255,255,255,0));
+    background: -o-linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3),rgba(255,255,255,.3),rgba(255,255,255,.5),rgba(255,255,255,0));
+    background: -moz-linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3),rgba(255,255,255,.3),rgba(255,255,255,.5),rgba(255,255,255,0));
+    background: linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3),rgba(255,255,255,.3),rgba(255,255,255,.5),rgba(255,255,255,0));
+}
+.bannerAsideTitle{
+    padding-bottom: 12px;
+    font-size: 14px;
+}
+/*
+*首页下方图文块
+*/
+.indexTextBackground{
+    margin-top: -11px;
+}
+.indexText{
+    height: 500px;
+}
+.indexTextContainer{
+    width: 300px;
+    height: 350px;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+    overflow: hidden;
+
+}
+.middle{
+    margin: 10px;
+}
+.indexTextImg{                             /*用img标签来引入图片，限制挺多，所以所有的图片都用div标签包裹*/
+    margin-top: -7px;                      /*可以单独设置宽高，很方便*/
+    background: url("../img/doge.jpg");
+    background-size: 100%;
+    background-position: center;
+    height: 180px;
+    width: 300px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    padding-bottom: 15px;
+}
+.indexTextText{
+    padding: 0px 20px 0px 20px;
+    font-size: 12px;
+    line-height: 170%;
+    text-indent: 24px;
+    text-align: left;
+}
+/*
+*自我介绍片段
+*/
+.selfIntro{
+    text-align: center;
+    color: black;
+    line-height: normal;
+}
+.Avatar{
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../img/avatar.jpg");
+    background-size: 100%;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;             /*doge这张图片有米色的边框。。所以看起来可能是方的，我加入了阴影，可能会看得更清楚点*/
+    margin-top: -50px;
+}
+.AvatarSmaller{
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../img/avatar.jpg");
+    background-size: 100%;
+    width: 120px;
+    height: 120px;
+    border-radius: 80px;
+    margin-top: -50px;
+}
+.selfIntroTitle{
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-family: "Century Gothic", Georgia, "Times New Roman", Times, serif;
+}
+.selfIntroText{
+    font-size: 14px;
+    text-align: left;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-indent: 28px;
+    padding-bottom: 160px;
+}
+/*
+*博客内容                               /*左边栏宽度：735px,右边栏宽度245px
+*/
+/*
+*博客标签
+*/
+.blogDateTag,
+.blogTypeTag{
+    margin-left: -73px;
+    float: left;
+    width: 73px;
+    height: 40px;
+    color: white;
+    line-height: 40px;                    /*为了居中使用*/
+}
+.blogDateTag{
+    margin-top: 60px;
+    background-color: purple;
+}
+.blogTypeTag{
+    background-color: #9370db;
+    clear: left;
+}
+/*
+*博客文章容器
+*/
+.blogArticle{
+    margin-top: 20px;                     /*为了和右边栏对齐，此处特地标注以示注意*/
+    margin-right: 10px;
+    width: 695px;
+    height: auto;
+    padding: 20px 10px 20px 20px;
+    background-color: white;
+}
+.blogArticleTitle {
+    font-size: 16px;
+    color: mediumpurple;
+}
+.blogArticleTitle,.blogArticleTitle-2{
+    line-height: 150%;
+    font-weight: bolder;
+    text-align: left;
+}
+.blogArticleTitle-2{
+    font-size: 12px;
+    color: #666;
+    padding-bottom: 10px;
+}
+.blogArticleText{
+    line-height: 150%;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    text-indent: 24px;
+    color: black;
+}
+.blogArticleFooter{
+    color: #aaaaaa;
+    font-size: 11px;
+    text-align: right;
+    padding-top: 20px;
+}
+/*
+*博客右边栏搜索框
+*/
+.searchBoxContainer{                      /*由于之前没做过JS的项目，不太清楚搜索是怎么实现的。。不过这个框框可以点和输入数字哟~!*/
+    margin-top: 20px;                     /*为了和左边框对齐*/
+    width: 245px;
+    height: 90px;
+    background-color: white;
+}
+.searchBox{
+    float: left;
+    height: 48px;
+    margin-top: 18px;
+    margin-left: 15px;
+    width: 135px;
+}
+.searchBtn{                               /*之前的代码写法上可能有问题？因为每一个要写文字的元素，都单独加入了字的大小等样式*/
+    font-weight: 900;                     /*也许按照文字类型，统一写几个字号的类，然后分别引入不同的div会是比较好的做法*/
+    color: white;                         /*祖明大哥怎么看？*/
+    line-height: 54px;
+    float: left;
+    margin-top: 18px;
+    height: 54px;
+    width: 54px;
+    background-color: #aaaaaa;
+}
+/*
+*博客右边导航栏
+*/
+.asideNavContainer{
+    margin-top: 10px;
+    width: 245px;
+    height: 240px;
+}
+.asideNav{
+    height: 56px;
+    line-height: 56px;
+    background-color: white;
+    border-top: 1px solid #dddddd;
+    border-left: 4px solid mediumpurple;
+}
+.asideNav:hover{  border-left: 4px solid purple;}
+.asideNav>a{ line-height: 56px;}
+.asideNav:active{  border-left: 4px solid mediumpurple;}
+.asideNav:visited{  border-left: 4px solid purple;}
+.active{  border-left: 4px solid purple;}
+/*
+*博客左下方页面导航栏
+*/
+.pageSwitchContainer{
+    width: 80%;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pageSwitchBlockNum,                     /*写代码好累哟。。。*/
+.pageSwitchBlock{                        /*狗的性格较为亲人，依赖性强，而猫通常很独立。*/
+    padding: 10px;                       /*所以许多猫狗混养的情况下，当家作主的都是猫。*/
+    position: relative;                  /*英国华盛顿大学的夏澈·犹布惠斯教授经过研究称*/
+    float: left;                         /*如果你欺负一只狗，他掉头就跑，并不代表他向你*/
+    background-color: white;             /*屈服了，他可能是回家叫猫去了..*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.pageSwitchBlockNum{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.activeBlock{  background-color: mediumpurple;}
+/*
+*博客右下方页面日期栏
+*/
+.dateBoxContainer{
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 225px;
+    height: 245px;
+    color: purple;
+}                                     /*日期栏是利用表格实现的，七列八行的表格，每格的宽度设定好*/
+.dateBox th{                          /*第一行的年份横跨了五列,来达到标题的效果*/
+    width: 32px;
+    padding-top: 20px;
+}
+.dateBoxText{
+    color: darkgrey;
+    font-weight: normal;
+}
+.dateBoxText>th{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: solid #eeeeee 1px;
+}
+.currentWeek{
+    border-bottom: solid #eeeeee 2px;
+}
+.currentDate{
+    background-color: mediumpurple;
+    color: white;
+}
+.planedDate{
+    color: mediumpurple;
+    font-weight: bolder;
+}
+/*
+*博客右下方标签栏
+*/
+.tagBoxContainer{
+    margin-top: 10px;
+    background-color: white;
+    width: 100%;
+    height: 200px;
+}
+.tagBoxTitle{
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: left;
+    padding: 13px;
+}
+.tagBoxText{
+    font-family: "Microsoft Yahei", Georgia, "Times New Roman";
+    color: purple;
+    vertical-align: baseline;
+    float: left;
+    text-align: left;
+}
+/*
+*作品Gallery页面的样式                                 /*左边栏宽度：735px,右边栏宽度245px
+*/
+.galleryTagBox{
+    width: auto;
+    height: 25px;
+    padding: 15px 20px;
+    margin-top: 30px;
+    background-color: white;
+    position: relative;
+    float: left;
+    border-left: solid #eeeeee 1px;
+}
+.galleryTagBoxLink{    border-bottom: solid #eeeeee 1px;  }
+.galleryTagBoxActive{    border-bottom: solid #ffffff 1px;   }
+.pinkTag{    border-top: pink 3px solid;  }
+.purpleTag{  border-top: purple 3px solid;  }
+.blueTag{  border-top: dodgerblue 3px solid;  }
+.redTag{ border-top: darkred 3px solid;  }
+.greenTag{ border-top: darkgreen 3px solid}
+
+.galleryBlockBig{  width: 340px;}
+.galleryBlock{ width: 165px }
+.galleryBlock,
+.galleryBlockBig
+{  position: relative;  float: left; margin-left: 10px; margin-top: 10px}
+.galleryProjectContainer{                        /*这里的设计方式是最简单的用CSS实现的瀑布布局，其中利用了前面设置的栅格系统中的halfCol类*/
+    width: 695px;                                /*先将整个部分分为两栏，左边栏放入一个大块之后，再在后面分两栏，因而总共产生了四栏的效果*/
+    position: relative;
+    float: left;
+    background-color: white;
+    height: 1100px;
+    padding: 10px 20px 10px 10px;
+}
+
+.galleryBlockImgContainer{
+    background: url("../img/doge.jpg");
+    background-size: 100%;
+    background-position: center;
+}
+.galleryBlockBigImgContainer{
+    background: url("../img/doge.jpg");
+    background-size: 100%;
+    background-position: center;
+}
+.galleryBlockImgContainer{height: 100px;}
+.galleryBlockBigImgContainer{  height: 170px;}
+.galleryBlockBigText,
+.galleryBlockText
+{
+    width: 100%;
+    font-weight: normal;
+    font-size: 15px;
+    color: white;
+    text-align: left;
+    padding-top: 8px;
+    overflow: auto;                /*为了解决外层div不被内层div撑开的问题*/
+}
+.galleryBlockBigTextContainer>article,.galleryBlockTextContainer>article{
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-right: 5px;
+}
+.letterSymbol{                     /*此处带圆圈的数字是利用div元素设计的，利用border radius属性使得它变成圆形*/
+    float: left;
+    position: relative;
+    line-height: 30px;
+    text-align: center;
+    color: #dddddd;
+    margin: 8px 8px 0px 8px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    border: solid 1px #dddddd;
+}
+.galleryBlockBigTextContainer{
+    width: 280px;
+    position: relative;
+    float: left;
+}
+.galleryBlockTextContainer{        /*为了使带圆圈的字母独占一栏，对旁边的文字块使用了float属性，然而由此带来的*/
+    width: 105px;                  /*由此带来的外层div不被撑开的问题，在外层div加入了overflow：auto属性解决了*/
+    position: relative;
+    float: left;
+}
+/*
+*热度排行
+*/
+.popularList{
+    margin-top: 10px;
+    width: 100%;
+    height: 270px;
+    background-color: white;
+    overflow: auto;
+}
+.popularListTitle{
+    padding: 20px 10px 20px 10px;
+    text-align: left;
+    color: #aaaaaa;
+}
+.popularListStatusBar,
+.popularListMark,
+.popularListText{
+    margin: 5px 0px 10px 10px;
+    position: relative;
+    float: left;
+    height: 18px;
+    line-height: 18px;
+}
+.popularListStatusBar{
+    width: 100px;;
+    background-color: #eeeeee;
+    border: 1px solid purple;
+}                               /*没用过javascript 所以只能用div元素来做了*/
+.eightyPercent{    width: 80%;  }
+.hundredPercent{    width: 100%; }
+.sixtyPercent{    width: 60%;  }
+.thirtyPercent{    width: 30%;  }
+.twentyPercent{    width: 20%;  }
+.popularListStatusBarInner{
+    background-color: purple;
+    border: 1px solid purple;
+    height: 17px;
+}
+.popularListMark{                /*同样是使用了border radius等于其边长的一半来形成圆形*/
+    clear: left;
+    width: 18px;
+    text-align: center;
+    background-color: purple;
+    border-radius: 10px;
+    color: white;
+}
+.popularListText{
+    font-size: 15px;
+}
+/*
+*最后一页啦！加油~
+*关于页面的样式
+*/
+.aboutCol{
+    width: 485px;                  /*谁出的题啊！中间的缝隙是5px！情何以堪！*/
+    margin: 100px 3px 100px 2px;
+    height: 1100px;
+}
+.textRight{                        /*使文本右对齐*/
+    text-align: right;
+}
+.TextLeft{                        /*使文本左对齐*/
+    text-align: left;
+}
+.grayBorder{
+    border: 6px solid #eeeeee;
+}
+.yearBox{
+    border: 6px solid #eeeeee;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.centered{
+    position: absolute;
+    left: 590px;
+}
+.centered2{
+    position: absolute;
+    left: 610px;
+}
+.centered3{
+    position: absolute;
+    top: 795px;
+    left: 643px;
+    background-color: white;
+}
+.centered4{
+    position: absolute;
+    top: 845px;
+    left: 643px;
+    background-color: white;
+}
+.centered5{
+    position: absolute;
+    top: 895px;
+    left: 643px;
+    background-color: white;
+}
+.centered6{
+    position: absolute;
+    top: 1105px;
+    left: 643px;
+    background-color: white;
+}
+.centered7{
+    position: absolute;
+    top: 1155px;
+    left: 643px;
+    background-color: white;
+}
+.Sink{                         /*从上到下，总共11个模块，分别给予了不同长度的上边距*/
+    position: absolute;        /*实在是下策，不知道有什么更好的办法，来实现这么没有规则的布局*/
+    top: 160px;
+    z-index: 1;                /*这里展现了两种思路，一种是利用absolute 来定位各个模块*/
+    clear: both;               /*然而这样会造成问题，那就是一旦一个模块被定义为absolute 那么它的float属性将被取消*/
+}                              /*为了保存float属性，我选择使用margin-top来定位各个模块。*/
+.Sink2{                        /*而clear：both属性是为了布局方便考虑，因为大家都是浮动元素，但是又每一个占了一行*/
+    margin-top: 120px;
+    z-index: 1;
+    clear: both;
+}
+.Sink3{
+    margin-top: 350px;
+    z-index: 1;
+    clear: both;
+}
+.Sink4{
+    margin-top: 250px;
+    z-index: 1;
+    clear: both;
+}
+.Sink4_2{
+    margin-top: 181px;          /*此处是右边栏的上边距*/
+    z-index: 1;
+    clear: both;
+}
+.Sink5{
+    margin-top: 570px;
+    z-index: 1;
+    clear: both;
+}
+.Sink6{
+     margin-top: 200px;
+     z-index: 1;
+     clear: both;
+ }
+.Sink6_2{
+     margin-top: 160px;
+     z-index: 1;
+     clear: both;
+ }
+.Sink6_3{
+    margin-top: 32px;
+    z-index: 1;
+    clear: both;
+}
+.Sink6_4{
+    margin-top: 32px;
+    z-index: 1;
+    clear: both;
+}
+.Sink7{
+    margin-top: 290px;
+    z-index: 1;
+    clear: both;
+}
+.Sink7_2{
+    margin-top: 185px;
+    z-index: 1;
+    clear: both;
+}
+.Sink7_3{
+    margin-top: 15px;
+    z-index: 1;
+    clear: both;
+}
+.Sink9{
+    margin-top: 870px;
+    z-index: 1;
+    clear: both;
+}
+.aboutTextContainerLeft{
+    margin-right: 70px;
+    font-size: 21px;
+}
+.aboutTextContainerRight{
+    line-height: 130%;
+    text-align: left;
+    width: 300px;
+    margin-left: 70px;
+    font-size: 15px;
+}
