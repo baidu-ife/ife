@@ -1,0 +1,247 @@
+body{padding:0;margin:0;}
+.head{
+    width:100%;
+    height:80px;
+    background-color:purple;
+    margin-top:-20px;
+
+}
+.bar{
+    width:1060px;
+    margin:0 auto;
+}
+.bar h2{
+    float:left;
+    font-size:24px;
+    font-weight:400;
+    font-family:helvetica, arial, sans-serif;
+     color:#fff;
+    padding-top:20px; }
+.bar a{
+    float:right;
+    margin:0 24px;
+    text-decoration:none;
+    font-size:14px;
+    font-family:"宋体";
+    text-decoration:none;
+    color:#fff;
+    padding-top:50px;
+}
+.icon{float:left;margin-left:1240px;margin-top:-40px;}
+/* head end */
+/* photo begain */
+#photo{
+	
+	width:100%;
+	height:586px;
+	background-image:url(../img/back.png);
+	background-size:cover;
+	background-position:0 0;
+	background-repeat:no-repeat;
+	}
+#p_essay{
+	width:360px;
+	height:120px;
+	bottom:0%;
+    position: absolute;
+    margin-top:-200px;
+	background:linear-gradient(#fff,#fff 50%,#fff);
+	background-position:0;
+	margin-left:800px;
+	opacity:0.3;
+	overflow:hidden;
+    z-index: 8;
+    padding-bottom: 160px;
+	}
+
+#p_essay h4{font-size:14px;text-align:right;padding:10px;}
+#p_essay p{font-size:12px;padding:10px;margin-top:-28px;}
+
+
+
+
+.ft{
+    background-color:black;
+    color: #eee;
+    height: 300px;
+    line-height: 8px;
+    margin: 0 auto;
+}
+.ft1{
+    height:300px;
+    width:980px;
+    margin:0 auto;
+}
+.wraper{
+    width: 196px;
+    float: left;
+}
+.ft2{
+    margin:0 auto;
+    padding: 20px;
+}
+.ft2 li{
+    list-style: none;
+    float: left;
+    margin:0 0.5em ;
+}
+.ft3{
+    background-color: black;
+    font-size:10px;
+    margin:0 auto;
+    margin-top:-80px;
+    text-align: center;
+}
+p{
+    text-indent: 2em;
+    font-size:10px;
+}
+.imgbox{
+    width: 100%;
+    position: relative;
+}
+.imgboxtext{
+    width: 100%;
+    background:-webkit-gradient(linear, 0 0, 0 , from(blueviolet), to(white));
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+.container{
+    margin:0 auto;width:980px; overflow: hidden;padding-bottom:100px;
+}
+.container img{
+    display: block;
+    margin: 0;
+    position: relative;
+}
+.left{ float:left; width:320px; background:#fff;
+    padding-bottom:2000px;
+    margin-bottom:-2000px;
+
+    overflow: hidden;
+}
+.middle{ float:left; width:320px; background:white;
+    padding-bottom:2000px;
+    margin-bottom:-2000px;
+    overflow: hidden;
+}
+.right{float:left; width:320px; background:#fff;
+    padding-bottom:2000px;
+    margin-bottom:-2000px;
+    overflow: hidden;
+}
+.containerbottom{
+    margin:0 auto;width:980px; overflow: hidden;padding: 20px;
+}
+.containerbottom img{
+    display: block;
+    margin: 40px auto;
+    position: relative;
+    border-radius: 80px;
+    border: 2px gray solid;
+}
+.containerbottom h1{
+font-size:20px;
+margin:20px auto;
+text-align: center;
+font-family: Century-Gothic;
+}
+.containerbottom p{
+    font-size:10px;
+    margin:20px auto;
+    text-align: center;
+}
+.containerleft{
+    width: 640px;
+}
+.containerright{
+    width: 320px;
+    float: right;
+    margin-right: -300px;
+    margin-top: -313px;
+}
+.containerright2{
+    width: 320px;
+    float: right;
+    margin-right: -50px;
+    margin-top: -480px;
+}
+.background{
+    width: 100%;
+    height: auto;
+    background-color: lightgray;
+}
+.gallery{
+    background-color: white;
+    height: auto;
+    overflow: hidden;
+}
+.search{
+    background-color: white;
+}
+.context{
+    background-color: white;
+
+}
+.context li{list-style: none;}
+.date{
+    background-color: white;
+}
+.tags{
+    background-color: white;
+}
+.tags li{list-style: none;}
+.tab{
+
+}
+.tab li{
+    background-color: white;
+    list-style: none;
+    float:left;
+    margin:0 0.5em ;
+}
+.rank{
+    background-color: white;
+}
+.imgbox2{
+    width:320px;
+    height: auto;
+    background-color: white;
+}
+.photo{
+    width: 320px;
+}
+.imgboxtext2{
+    background-color: green;
+    margin-bottom: 0%;
+}
+.backgroundabout{
+    width: 980px;
+    height: auto;
+    background-color: white ;
+    margin: 0 auto;
+}
+.block{
+    margin:20px auto;
+    background-color: #ffffff;
+    width: 490px;
+    height: auto;
+    overflow: hidden;
+}
+.block img{
+    margin: 10px auto;
+    position: relative;
+    display: table-cell;
+    border-radius: 80px;
+    border: 2px gray solid;
+}
+.title{
+    float:left;
+    font-size: 20px;
+}
+.text{
+    float:right;
+    font-size: 10px;
+}
