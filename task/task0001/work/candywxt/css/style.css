@@ -1,7 +1,7 @@
 @charset "utf-8";
 /*CSS DOUCUMENT*/
 *{
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 body{
@@ -14,35 +14,40 @@ body{
     background-color: #522A5C;
 }
 .icon{
-    float: right;
-    position: relative;
-    right: 10px;
-    top: 46px;
+    display: inline-block;
+    width: 32px;
+    padding: 45px;
+    margin-bottom: -45px;
+    margin-left: 90%;
 }
 .logo{
     width: 980px;
 }
 .ylogo a{
-    float: left;
-    top:auto;
+    display: block;
+    margin-top: -45px;
+    margin-left: 25%;
     font-size: 32px;
     color: #fff;
     font-weight: 700;
     text-decoration: none;
 }
 .nav ul{
-    float: right;
+    margin-top: -18px;
+    margin-left: 70%;
+    overflow: hidden;
     list-style: none;
 }
 .nav li{
-    float: right;
+    float: left;
     margin-left: 28px;
 }
 .nav a{
+    display: block;
     text-decoration: none;
     color: #fff;
     font-family: "Simsun";
-    font-size: 14px;
+    font-size: 18px;
 }
 /*CONTAIN*/
 .banner img{
@@ -73,17 +78,15 @@ body{
     opacity: 0.15;
 }
 .maintext{
+    width: 100%;
     overflow: hidden;
     position: relative;
-    position: relative;
-    left: 50%;
-    margin-left: -26%;
-    margin-top: 10px;
+    top: -130px;
+    left: 130px;
 }
 .box{
-    width: 230px;
-    padding: 0 0 25px 0;
-    overflow: hidden;
+    width:300px;
+    padding: 10px 10px 25px 10px;
     margin-left: 10px;
     float: left;
     display: inline-block;
@@ -111,6 +114,7 @@ body{
 }
 .introducetext{
     width: 600px;
+    margin: 0 auto;
     padding-bottom: 190px;
 }
 .introduce h1{
@@ -125,6 +129,7 @@ body{
 }
 /*FOOT*/
 .foot{
+    clear: both;
     overflow: hidden;
     height: 394px;
     background-color: #000;
@@ -145,15 +150,11 @@ body{
     position: relative;
     list-style: none;
     width: 300px;
-    margin: 0 40%;
+    margin: 0 auto;
 }
 .foot-head li{
     float: left;
     padding-left: 28px;
-}
-.line{
-    position: relative;
-    top: 36px;
 }
 .foot-head:after{
     position: relative;
@@ -167,6 +168,7 @@ body{
 .foot-content{
     clear: both;
     width: 980px;
+    margin: 0 auto;
 }
 .link{
     overflow: hidden;
@@ -183,9 +185,369 @@ body{
     width: 70px;
 }
 .copyright{
+    text-align: center;
     position: relative;
     clear: both;
-    top: 200px;
-    left: 100%;
-    margin-left: -50%;
+    top: 231px;
+}
+.contain {
+    width: 100%;
+}
+/*BLOG*/
+.blog{
+    float: left;
+    position: relative;
+    left: 50%;
+    margin-left: -420px;
+    
+}
+.bcontent{
+    width: 710px;
+    margin: 10px auto;
+    background-color: #fff;
+    padding: 25px;
+    line-height: 170%;
+}
+.bcontent h1{
+    font-size: 16px;
+    color: #a660b7;
+}
+.bcontent h2{
+    font-size: 12px;
+    color: #666;
+}
+.bcontent p{
+    padding: 10px;
+    text-indent: 2em;
+}
+.bname{
+    text-align: right;
+    color: #999;
+}
+.bdate,
+.bclass{
+    position: relative;
+    top: -280px;
+    left: 50%;
+    margin-left: -427px;
+    width: 25px;
+    height: 12px;
+    background-color: #636;
+    color: #fff;
+    padding: 14px 11px;
+}
+.bclass{
+    background-color: #96c;
+}
+.pagenum{
+    margin-top: -50px;
+    margin-bottom: 90px;
+    text-align: center;
+}
+.pagenum a{
+    padding: 15px;
+    background-color: #fff;;
+    text-decoration: none;
+    color: #000;
+}
+.pagenum .actived{
+    background-color: #773c88;
+    color: #fff;
+}
+/*BLOG-SEARCH*/
+.sidebar{
+    float: left;
+    position: relative;
+    left: 50%;
+    margin-left: 30px;
+    
+}
+.search,
+.slist,
+.scalendar,
+.tagcloud,
+.top10{
+    margin-top: 10px;
+    vertical-align: middle;
+    padding: 10px;
+    background-color: #fff;
+}
+.search input{
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 222px;
+    height: 44px;
+    margin: auto;
+}
+.search input[value]{
+    font-size: 18px;
+    color: #999;
+}
+.slist{
+    border:1px solid #696;
+}
+.slist ul{
+    list-style: none;
+    line-height: 200%;
+}
+.slist li{
+    height: 40px;
+    vertical-align: middle;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #696;
+}
+.slist a{
+    color: #666;
+    text-decoration: none;
+}
+.slist a:before{
+    clear: both;
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 2.9em;
+    background: #ccf; 
+    position: relative;
+    left: -.6em;
+}
+/*CALENDAR*/
+.sc-head{
+    text-align: center;
+    color: #639;
+    font-weight: 700;
+}
+.sc-head:before{
+    content: "<";
+    display: inline-block;
+    position: relative;
+    left: -50%;
+    top: 17px;
+    width: 0px;
+    background: #639;
+}
+.sc-head:after{
+    content: ">";
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    top: -17px;
+    width: 0px;
+    background: #639;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.calendar{
+    display: inline-block;
+    padding: .5em;
+}
+.calendar thead{
+    color: #999;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.calendar td{
+    color: #999;
+    padding: .2em .7em;
+    text-align: center;
+}
+.calendar tbody td:hover{
+    background: #639;
+    color: #fff;
+}
+/*tabcloud*/
+.tagcloud p{
+    color: #999;
+}
+.tagcloud ul{
+    list-style: none;
+}
+.tagcloud li:nth-child(1){
+    color: aqua;
+}
+.tagtext{
+    overflow: hidden;
+    width: 280px;
+}
+.tagtext p{
+    float: left;
+}
+.tagtext p:nth-child(5n){
+    color: #773c88;
+    font-size: 32px;
+    font-weight: 700;
+}
+.tagtext p:nth-child(2n+1){
+    color:#773c88;
+    font-size: 21px;
+}
+.tagtext p:nth-child(2n){
+    color:#773c88;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+.tagtext p:nth-child(3n){
+    color:#773c88;
+    font-size: 19px;
+}
+/*gallery*/
+/*noticefall*/
+.con-left{
+    float: left;
+    width: 60%;
+    height: 100%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+.noticefall{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 40px;
+}
+.noticefall a{
+    color: #000;
+    line-height: 140%;
+    text-decoration: none;
+}
+.noticefall ul{
+    float: left;
+    list-style: none;
+    margin-bottom: 20px;
+}
+.noticefall li{
+    float: left;
+    text-align: center;
+    padding: 10px 20px 20px 20px;
+    border-top:3px solid #dfc6e6;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;  
+}
+.noticefall li:nth-child(1){
+     border-top:3px solid #dfc6e6;;
+}
+.noticefall li:nth-child(2){
+     border-top:3px solid #522a5c;
+}
+.noticefall li:nth-child(3){
+     border-top:3px solid #5900b2;
+}
+.noticefall li:nth-child(4){
+     border-top:3px solid #8c2300;
+}
+.noticefall li:nth-child(5){
+     border-top:3px solid #d9a300;
+}
+.imgsay img{
+    width: 200px;
+    height: 100%;
+    border-bottom: 7000px solid #522a5c;
+    margin-bottom: -7000px;
+}
+.imgsay{
+    color: #fff;
+    float: left;
+}
+.imgsay span{
+    padding: 10px 14px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.imgsay h1{
+    font-size: 16px;
+}
+.imgsay p{
+    position: relative;
+    padding: 30px;
+    top: -30px;
+}
+/*lookmore*/
+.lookmore{
+    width: 100%;
+    text-align: center;
+    line-height: 170%;
+    background-color: #fff;
+    margin-top: 40px;
+    padding: 10px 40px;
+    color: #999;
+}
+/*galleryright*/
+.con-right{
+    float: left;
+    height: 100%;
+    width: 30%;
+}
+.top10 p{
+    color: #999;
+}
+.top10 ul{
+    margin-top: 20px;
+    list-style: none;
+    line-height: 120%;
+}
+.top10 li{
+    margin-bottom: 20px;
+}
+.top10 li span{
+    padding: 5px 8px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #522a5c;
+}
+
+.top10 li p{
+    display: inline-block;
+    width: 200px;
+    height: 14px;
+    border: 1px solid #999;
+    padding-bottom: 8px;
+}
+.top10 li:nth-child(1) em{
+    background-color: #522a5c;
+    display: inline-block;
+    width: 100%;
+    height: 160%;
+}
+.top10 li:nth-child(2) em{
+    background-color: #522a5c;
+    display: inline-block;
+    width: 80%;
+    height: 160%;
+}
+.top10 li:nth-child(3) em{
+    background-color: #522a5c;
+    display: inline-block;
+    width: 60%;
+    height: 160%;
+}
+.top10 li:nth-child(4) em{
+    background-color: #522a5c;
+    display: inline-block;
+    width: 40%;
+    height: 160%;
+}
+.top10 li:nth-child(5) em{
+    background-color: #522a5c;
+    display: inline-block;
+    width: 20%;
+    height: 160%;
+}
+/*about*/
+.about{
+    border: 7px solid #eee;
+}
+.about img{
+    display: block;
+}
+.about img:after{
+    content: "";
+    display: block;
+    width: 3px;
+    height: 100%;
+    background-color: red;
+    position: relative;
+    left: 50%;
 }
