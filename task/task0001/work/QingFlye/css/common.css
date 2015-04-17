@@ -1,19 +1,20 @@
-body, html {
+body,html {
     font-family: simsun, serif;
-    background: #eeeeee;
+    background: #eee;
+    font-size: 14px;
+}
+
+.wrapper {
+    width: 980px;
+    margin: 0 auto;
 }
 
 header {
-    width: 100%;
     background: #522a5c;
     position: relative;
+    zoom: 1;
 }
 
-.wrapper {             /*所有的header，banner，blog，personal，footer的公有样式*/
-    width: 980px;
-    font-size: 14px;
-    margin: 0 auto;
-}
 header .wrapper {
     height: 80px;
     background: #522a5c;
@@ -24,39 +25,89 @@ header .wrapper {
 .header-logo {
     height: 80px;
     line-height: 120px;
+    /*overflow: hidden;*/
     font-size: 22px;
-    color: white;
+    color: #fff;
     text-decoration: none;
     z-index: 1;
+    float: left;
 }
 
-header .wrapper nav {
+header nav {
     float: right;
     height: 25px;
     display: inline;
     margin-top: 55px;
 }
 
-header .wrapper  nav a {
+header nav a {
     display: inline-block;
-    color: white;
+    color: #fff;
     margin-left: 28px;
     margin-bottom: 5px;
     text-decoration: none;
 }
 
 header .git {
+    display: block;
     width: 30px;
     height: 34px;
     position: absolute;
     bottom: 0;
     right: 10px;
-    background: url(img/icon-github.png) no-repeat scroll;
+    text-indent: -9999px;/*github图标是链接，添加文字"我的github"，增强语义化*/
+    background: url(img/icon-github.gif) no-repeat;
+    overflow: hidden;
+}
+aside .search {
+    width: 220px;
+    height: 40px;
+    padding: 20px;
 }
 
+aside form {
+    width: 218px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #dddddd;
+    position: relative;
+}
 
-footer, footer .wrapper {
-    background: #000000;
+aside form s {
+    width: 30px;
+    height: 30px;
+    background: url(img/search-icon.png) no-repeat scroll center center;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+
+}
+
+aside form .search-keywords {
+    width: 118px;
+    margin-left: 40px;
+    border: 0;
+}
+
+aside form .search-submit{
+    display: inline-block;
+    width: 49px;
+    height: 38px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace, serif;
+    background: #dddddd;
+    border: 0;
+    cursor: pointer;
+}
+footer,
+footer .wrapper {
+    background: #000;
 }
 
 footer .wrapper {
@@ -65,8 +116,8 @@ footer .wrapper {
 
 footer nav {
     height: 36px;
-    background: #000000;
-    border-bottom: 1px solid #333333;
+    background: #000;
+    border-bottom: 1px solid #333;
     text-align: center;
     line-height: 36px;
 }
@@ -74,56 +125,58 @@ footer nav {
 footer nav .wrapper {
     height: 36px;
     padding-bottom: 0;
-    border-bottom: 1px solid #333333;
+    border-bottom: 1px solid #333;
 }
 
-footer nav a {
-    color: #ffffff;
-    font-size: 14px;
-    display: inline-block;
-    margin-left: 28px;
-    margin-bottom: 5px;
+footer a {
+    color: #fff;
     text-decoration: none;
 }
 
-footer .wrapper dl {
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer nav a {
+    display: inline-block;
+    margin-left: 28px;
+    margin-bottom: 5px;
+}
+
+footer dl {
     width: 196px;
     float: left;
     display: inline;
 }
 
-footer .wrapper dt {
+footer dt {
     padding-top: 40px;
     font-size: 14px;
-    color: #cccccc;
+    color: #ccc;
     margin-bottom: 20px;
 }
-footer .wrapper dd{
+
+footer dd {
     height: 20px;
     line-height: 20px;
 }
-footer .wrapper a {
-    color: #ffffff;
-    text-decoration: none;
-}
 
-footer .wrapper a:hover {
-    text-decoration: underline;
-}
-footer .author{
+footer .author {
     text-align: center;
     position: relative;
 }
-footer .author span{
-    color: #ffffff;
+
+footer .author span {
+    color: #fff;
 }
-footer  .author s{
+
+footer .author s {
     width: 30px;
     height: 34px;
     display: block;
     position: absolute;
     left: 50%;
-    bottom:0;
+    bottom: 0;
     margin-left: -15px;
-    background: url(img/icon-github.png) no-repeat scroll;
+    background: url(img/icon-github.gif) no-repeat scroll;
 }

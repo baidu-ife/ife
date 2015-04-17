@@ -49,7 +49,7 @@ table {
 }
 
 html {
-    font-family: "Microsoft YaHei",SimSun,Arial, Helvetica, sans-serif;
+    font-family: "Microsoft YaHei", SimSun, Arial, Helvetica, sans-serif;
     font-size: 12px/150%;
     overflow: visible;
     *overflow: hidden;
@@ -62,7 +62,7 @@ body {
     width: 100%;
     height: 100%;
     cursor: default;
-    font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+    font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica, STHeiti;
 }
 
 textarea {
@@ -80,7 +80,7 @@ textarea {
 }
 
 .clearfix {
-    zoom:1;
+    zoom: 1;
 }
 
 

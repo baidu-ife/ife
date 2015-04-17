@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
     <head>
         <meta charset="utf-8">
         <title>ife task之我的博客</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <link rel="stylesheet" href="css/reset.css"/>
         <link rel="stylesheet" href="css/common.css"/>
         <link rel="stylesheet" href="css/blog.css"/>
+        <script src="js/html5.js"></script>
     </head>
     <body>
         <header>
             <div class="wrapper">
-                <a class="header-logo" href="index.html">青青flye</a>
                 <nav>
                     <a href="index.html">首页</a><a href="blog.html">文章</a><a href="gallery.html">作品</a><a href="about.html">关于</a>
                 </nav>
+                <a class="header-logo" href="index.html">青青flye</a>
             </div>
-            <a class="git" href="https://github.com/QingFlye"></a>
+            <a class="git" href="https://github.com/QingFlye">我的GitHub</a>
         </header>
         <div class="wrapper clearfix">
             <article>
@@ -83,11 +86,11 @@
             </div>
             <aside>
                 <div class="aside-list search">
-                    <div class="search-wrapper">
+                    <form action="" method="post">
                         <s></s>
-                        <input type="text" placeholder="Keywords">
-                        <span>GO</span>
-                    </div>
+                        <input class="search-keywords" type="text" placeholder="Keywords">
+                        <input class="search-submit" type="submit" value="GO">
+                    </form>
                 </div>
                 <ul class="aside-list title">
                     <li><a href="">Html</a></li>
@@ -101,6 +104,7 @@
                             <th>&lt</th>
                             <th colspan="5">2015.04</th>
                             <th>&gt</th>
+                        </tr>
                         <tr>
                             <td><span>M</span></td>
                             <td><span>T</span></td>
@@ -154,7 +158,7 @@
         <footer>
             <nav>
                 <div class="wrapper">
-                    <a href="">首页</a><a href="">文章</a><a href="">作品</a><a href="">关于</a>
+                    <a href="index.html">首页</a><a href="blog.html">文章</a><a href="gallery.html">作品</a><a href="about.html">关于</a>
                 </div>
             </nav>
             <div class="wrapper clearfix">
@@ -203,10 +207,9 @@
                 </dl>
             </div>
             <div class="wrapper author">
-                <span>版权信息</span>
+                <span>Copyright &copy; 张平 2015</span>
                 <s></s>
             </div>
         </footer>
     </body>
-    <script type="text/javascript" src="js/html5.js"></script>
 </html>

@@ -140,51 +140,6 @@ aside {
     margin-bottom: 10px;
 }
 
-aside .search {
-    width: 220px;
-    height: 40px;
-    padding: 20px;
-}
-
-aside .search-wrapper {
-    width: 218px;
-    height: 38px;
-    line-height: 38px;
-    border: 1px solid #dddddd;
-    position: relative;
-}
-
-aside .search-wrapper s {
-    width: 30px;
-    height: 30px;
-    background: url(img/search-icon.png) no-repeat scroll center center;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-
-}
-
-aside .search-wrapper input {
-    width: 118px;
-    margin-left: 40px;
-    border: 0;
-}
-
-aside .search-wrapper span {
-    display: inline-block;
-    width: 49px;
-    height: 38px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Courier New", Courier, monospace, serif;
-    background: #dddddd;
-}
-
 aside .chart {
     width: 230px;
     height: 210px;
@@ -197,10 +152,10 @@ aside .chart li {
 }
 
 aside .chart h1 {
-color: #666666;
-    font-size:14px;
+    color: #666666;
+    font-size: 14px;
     font-weight: normal;
-   margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 aside .chart s {
@@ -225,18 +180,35 @@ aside .chart .level {
     margin-right: 10px;
     vertical-align: middle;
 }
-.chart .level span{
+
+.chart .level span {
     display: inline-block;
     height: 18px;
     background: #522a5c;
-   text-indent: -9999px;
+    text-indent: -9999px;
 }
- .chart .level .p100{width: 100%;}
- .chart .level .p80{width: 80%;}
- .chart .level .p60{width: 60%;}
- .chart .level .p40{width: 40%;}
- .chart .level .p25{width: 25%;}
- .chart .title {
-font-size: 14px;
-    font-family:arial, "microsoft yahei", serif;
+
+.chart .level .p100 {
+    width: 100%;
+}
+
+.chart .level .p80 {
+    width: 80%;
+}
+
+.chart .level .p60 {
+    width: 60%;
+}
+
+.chart .level .p40 {
+    width: 40%;
+}
+
+.chart .level .p25 {
+    width: 25%;
+}
+
+.chart .title {
+    font-size: 14px;
+    font-family: arial, "microsoft yahei", serif;
 }

@@ -63,7 +63,7 @@ article {
     margin-bottom: 15px;
 }
 
-.page-list{
+.page-list {
     width: 710px;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -71,20 +71,24 @@ article {
     display: inline;
     text-align: center;
 }
-.page-list a,.page-list span{
+
+.page-list a, .page-list span {
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    padding:10px 15px;
+    padding: 10px 15px;
     background: #ffffff;
     margin-right: 10px;
 }
-.page-list .first-page{
+
+.page-list .first-page {
     background: #a660b7;
 }
-.c-gray{
-    color:#dddddd;
+
+.c-gray {
+    color: #dddddd;
 }
+
 /*右侧部分*/
 aside {
     width: 260px;
@@ -96,50 +100,7 @@ aside {
     margin-bottom: 10px;
 }
 
-aside .search {
-    width: 220px;
-    height: 40px;
-    padding: 20px;
-}
 
-aside .search-wrapper {
-    width: 218px;
-    height: 38px;
-    line-height: 38px;
-    border: 1px solid #dddddd;
-    position: relative;
-}
-
-aside .search-wrapper s {
-    width: 30px;
-    height: 30px;
-    background: url(img/search-icon.png) no-repeat scroll center center;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-
-}
-
-aside .search-wrapper input {
-    width: 118px;
-    margin-left: 40px;
-    border: 0;
-}
-
-aside .search-wrapper span {
-    display: inline-block;
-    width: 49px;
-    height: 38px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Courier New", Courier, monospace, serif;
-    background: #dddddd;
-}
 
 aside .title li {
     height: 50px;
@@ -207,13 +168,15 @@ aside .tags {
 .tags h1 {
     font-size: 18px;
     color: #666666;
-    font-weight:normal;
+    font-weight: normal;
 }
-.tags .tag-list{
+
+.tags .tag-list {
     width: 245px;
     height: 150px;
     line-height: 30px;
 }
+
 aside .tags a {
     text-decoration: none;
     display: inline-block;

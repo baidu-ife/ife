@@ -1,12 +1,17 @@
 header {
     margin-bottom: 100px;
 }
-footer{margin-top:30px;}
+
+footer {
+    margin-top: 30px;
+}
+
 main {
     background: url("img/bg-y.png") repeat-y 50% #ffffff;
     padding-bottom: 30px;
     margin-bottom: 30px;
 }
+
 .avatar {
     display: block;
     width: 164px;
@@ -33,16 +38,18 @@ main section h1 {
     font-size: 20px;
 }
 
-main section p, main section ul{
+main section p, main section ul {
     line-height: 150%;
     font-size: 14px;
     word-wrap: break-word;
     word-break: break-all;
     margin: -20px auto 20px 530px;
 }
-.edu-detail p,.job-detail p{
-    margin-left:0;
+
+.edu-detail p, .job-detail p {
+    margin-left: 0;
 }
+
 main section p {
     text-indent: 2em;
     width: 320px;
@@ -50,18 +57,19 @@ main section p {
 
 main section h2 {
     font-weight: normal;
-    margin:-6px auto 40px -75px;
+    margin: -6px auto 40px -75px;
     font-size: 14px;
     width: 60px;
     float: left;
     display: inline;
     text-align: center;
-    height:20px;
-    line-height:20px;
+    height: 20px;
+    line-height: 20px;
     border-radius: 10px;
     background: #ffffff;
     border: 5px solid #eeeeee;
 }
-.edu-detail li,.job-detail li{
+
+.edu-detail li, .job-detail li {
     margin-bottom: 10px;
 }
