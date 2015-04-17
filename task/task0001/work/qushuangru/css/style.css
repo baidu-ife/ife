@@ -378,9 +378,13 @@ footer a:hover {
 }
 
 .blog aside,
-.gallery aside {
+.gallery aside  {
     float: right;
     width: 260px;
+}
+.gallery aside  {
+    padding-top: 55px;
+    
 }
 
 .articlelist,
@@ -584,6 +588,35 @@ aside .tags a {
     line-height: 1.3em;
     color: #773c88;
 }
+
+aside .charts {
+    padding: 20px;
+}
+aside .charts h3 {
+    font-size: 14px;
+}
+aside .charts ul{
+    padding-top: 27px;
+    margin-left: 21px;
+}
+aside .charts li{ height: 16px; margin-bottom: 14px; line-height: 16px; font-size: 14px;}
+aside .charts i {
+    float: left;
+    margin-left: -28px;
+    font-style: normal;
+    font-size: 14px;
+    background: #522a5c;
+    height: 18px;
+    width: 18px;
+    text-align: center;
+    color: #fff;
+    border-radius: 100%;
+}
+aside .charts .progress { display: inline-block; width: 100px; vertical-align: middle; margin-right: 7px;}
+.progress { height: 16px; border:1px solid #532b5d;}
+.progress-bar { height: 100%; background: #522a5c;  }
+
+
 /*gallery*/
 
 .gallery .content {}
