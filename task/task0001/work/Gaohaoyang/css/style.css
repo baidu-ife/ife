@@ -1,0 +1,143 @@
+h1,h2,h3,p,div,input,button{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background-color: #eee;
+}
+
+
+
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+#main {
+    width: 980px;
+    margin: 0 auto;
+    background-color: #aaa;
+}
+#main .right{
+    width: 260px;
+    float: right;
+
+    background-color: red;
+}
+
+#main .left{
+    width: 710px;
+    float: left;
+}
+
+/**
+ * blog
+ */
+#main .blog{
+    margin:0 0px 10px 0;
+    padding: 20px;
+    background-color: #fff; 
+    position: relative;
+   /* position: relative;
+    overflow: auto;
+    zoom:1;*/
+}
+
+#main .blog h2{
+    color: #955EA1;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+#main .blog h3{
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+#main .blog article{
+    font-size: 12px;
+}
+#main .blog article p {
+    text-indent: 2em;
+    line-height:1.8;
+
+}
+#main .blog .author{
+    margin-top: 30px;
+    font-size: 12px;
+    color: #959595;
+    float: right; 
+}
+#main .blog .side-card{
+    width: 50px;
+    height:80px;
+    position: absolute;
+    top:20px;
+    left: -50px;
+    text-align: center;
+    color: #fff;
+}
+#main .blog .side-card .date{
+    height: 40px;
+    line-height: 40px;
+    background-color: #52385B;
+}
+#main .blog .side-card .cate{
+    height: 40px;
+    line-height: 40px;
+    background-color: #955EA1;
+}
+
+/**
+ * right area
+ *
+ * ------------
+ * 
+ * search
+ */
+#search{
+    padding: 20px;
+    background-color: #fff;
+}
+#search .box{
+    width: 220px;
+    height: 40px;
+    border:1px solid #ddd;
+    position: relative;
+}
+#search .box input{
+    width: 130px;
+    height: 40px;
+    border: none;
+    color: #aaa;
+    padding: 0 10px;
+    position: absolute;
+}
+#search .box button{
+    width: 50px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-left: 1px solid #ddd;
+    background-color: #ddd;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
