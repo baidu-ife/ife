@@ -288,3 +288,194 @@ nav img {
 
 /*for bottom-table end*/
 
+
+
+
+/*for blog begin */
+
+.outer-wrapper {
+	width: 100%;
+	background-color: #eee;
+}
+
+.container {
+	width: 980px;
+	margin: 0 auto;
+	padding-top: 20px;
+	/*position: relative;
+	min-height: 800px;*/
+}
+
+/*for 2 col layout begin*/
+.container #main {
+	width: 710px;
+	float: left;
+	/*background-color: #eee;*/
+}
+
+.container aside {
+	margin-left: 720px;
+	color: grey;
+	/*background-color: #eee;*/
+}
+
+.container aside a {
+	color: grey;
+	text-decoration: none;
+}
+
+.container .block {
+	margin-bottom: 10px;
+	background-color: white;
+}
+
+.container h3 {
+	margin: 0;
+}
+
+/*for 2-col layout end*/
+
+/*for sidebar begin*/
+
+#search-bar {
+	text-align: center;
+	position: relative;
+	padding: 20px 0;
+}
+
+
+
+#search-bar input {
+	height: 35px;
+	width: 125px;
+	padding-left: 40px;
+	background-image: url("../img/search-bar.png");
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: 5px;
+	background-attachment: scroll;
+	font-size: 15px;
+	font-family: "宋体";
+}
+
+#search-bar a {
+	display: inline-block;
+	font-size: 25px;
+	font-family: sans-serif;
+	vertical-align: top;
+	background-color: lightgrey;
+	color: white;
+	height: 41px;
+	width: 50px;
+	text-align: center;
+	line-height: 45px;
+}
+/*for sidebar end*/
+
+
+/*for list begin*/
+
+#aside-list ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#aside-list ul li {
+	border-top: 1px solid #ddd;
+}
+
+#aside-list ul li:last-child {
+	border-bottom: 1px solid #ddd;
+}
+
+#aside-list ul li a {
+	display: block;
+	border-left: 5px solid thistle;	
+	height: 50px;
+	padding-left: 15px;
+	line-height: 55px;
+
+}
+
+#aside-list ul li a:hover {
+	border-left: 5px solid #5E2D79;
+}
+
+/*for list end*/
+#calender-wrapper {
+	padding: 30px 0;
+}
+
+
+#calender {
+	margin: 0 auto;
+	width: 220px;
+}
+
+#calender p {
+	margin: 0 auto;
+	padding-bottom: 7.5px;
+	color: #5E2D79;
+	width: 195px;
+	text-align: center;
+}
+
+#calender p span.left {
+	float: left;
+}
+
+#calender p span.right {
+	float: right;
+}
+
+#calender ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#calender ul li {
+	border-bottom: 1px solid #ddd;
+	text-indent: 3.5px;
+}
+
+#calender ul li span {
+	display: inline-block;
+	padding: 2.5px;
+	margin: 5px;
+	width: 15px;
+	/*text-align: center;*/
+}
+
+#calender ul li span.chosen {
+	color: white;
+	background-color: #5E2D79;
+}
+
+/*for calender begin*/
+
+
+
+/*for calender end*/
+
+
+/*for blog end*/
+
+
+
+
+/* CSS Clear Hack: apply this to the containing element.
+	http://css-tricks.com/snippets/css/clear-fix/
+*/
+.group:before,
+.group:after {
+	content:"";
+	display:table;
+}
+.group:after {
+	clear:both;
+}
+.group {
+	zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
