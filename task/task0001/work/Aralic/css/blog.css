@@ -156,14 +156,18 @@
     background: #dfc6e6;
     float: left;
 }
-
 .calendar {
     width: 220px;
     margin-top: 10px;
     padding: 16px 20px;
     background: #fff;
 }
-.calendar-head {
+.calendar table {
+    width: 220px;
+    border-bottom: 1px solid #eeeeee;
+    /*border-collapse:collapse; */
+}
+.calendar caption {
     width: 220px;
     height: 25px;
     line-height: 25px;
@@ -171,60 +175,44 @@
     color: #773c88;
     position: relative;
 }
-.calendar-head strong {
+.calendar caption strong {
     font-weight: normal;
 }
-.calendar-head a.next,
-.calendar-head a.prev {
+.calendar caption a.next,
+.calendar caption a.prev {
     width: 14px;
     height: 25px;
     position: absolute;
     right: 30px;
     top: 0;
-    background: url(../img/canledar_bg.png) no-repeat 0 0;
+    color: #773c88;
 }
-.calendar-head a.prev {
+.calendar caption a.prev {
     left: 30px;
-    background-position: 0 -25px;
 }
 
-.calendar li {
+.calendar tr {
     width: 220px;
     height: 33px;
-    border-bottom: 1px solid #eeeeee;
     line-height: 33px;
     text-align: center;
-    vertical-align: top;
 }
-.calendar li div {
-    width: 30px;
-    height: 33px;
-    line-height: 33px;
-    float: left;
-
+.calendar td,
+.calendar th {
+    border-bottom: 1px solid #eeeeee;
 }
-.calendar .week a {
-    width: 30px;
-    padding: 0;
-}
-.calendar li a {
-    float: left;
-    padding: 0 10px;
-    /*ie6下bug*/
-    _padding: 0 9px;
-    height: 20px;
-    margin-top: 6px;
-    line-height: 20px;
+.calendar th {
     color: #999;
+    font-weight: normal;
 }
-.calendar li a:hover,
-.calendar li a.active {
+.calendar tr a {
+    color: #999;
+    padding: 5px 9px;
+}
+.calendar tr a.active,
+.calendar tr a:hover {
     background: #773c88;
     color: #fff;
-}
-.calendar .week a:hover {
-    background: #fff;
-    color: #999;
 }
 
 
