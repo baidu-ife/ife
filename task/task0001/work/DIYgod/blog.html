@@ -7,98 +7,224 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="header">
-    <div class="nav-wrap">
-        <div class="logo">
-            <img src="img/logo.png" alt="logo" width="200px">
+    <header class="header">
+        <div class="nav-wrap">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo" width="200px">
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="gallery.html">作品</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="nav">
+        <div class="icon-github">
+            <a href="https://github.com/DIYgod" target="_blank"><img src="img/icon-github.png"></a>
+        </div>
+    </header>
+    <div class="blog-center">
+        <div class="blog-content">
+            <article class="blog-post">
+                <div class="tag">
+                    <div class="tag-data">4.17</div>
+                    <div class="tag-type">前端</div>
+                </div>
+                <h1>标题</h1>
+                <h2>副标题</h2>
+                <p>这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。</p>
+                <section>DIYgod 发表于 2015年4月17日</section>
+            </article>
+            <article class="blog-post">
+                <h1>标题</h1>
+                <h2>副标题</h2>
+                <p>这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。</p>
+                <section>DIYgod 发表于 2015年4月17日</section>
+                <div class="tag">
+                    <div class="tag-data">4.17</div>
+                    <div class="tag-type">前端</div>
+                </div>
+            </article>
+            <article class="blog-post">
+                <h1>标题</h1>
+                <h2>副标题</h2>
+                <p>这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。</p>
+                <section>DIYgod 发表于 2015年4月17日</section>
+                <div class="tag">
+                    <div class="tag-data">4.17</div>
+                    <div class="tag-type">前端</div>
+                </div>
+            </article>
+            <div class="number-wrap">
+                <div class="number"><a href="blog.html">第一页</a></div>
+                <div class="number number-invalid">上一页</div>
+                <div class="number number-now"><a href="blog.html">1</a></div>
+                <div class="number number-invalid">2</div>
+                <div class="number number-invalid">3</div>
+                <div class="number number-invalid">4</div>
+                <div class="number number-invalid">...</div>
+                <div class="number number-invalid">下一页</div>
+                <div class="number"><a href="blog.html">最后页</a></div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="side-search sidebar-form">
+                <form class="search">
+                    <img src="img/search.png" height="40px">
+                    <input class="keyword" type="text" name="keywork" placeholder="Keywords"/>
+                    <input class="submit" type="submit" value="GO"/>
+                </form>
+            </div>
+            <div class="side-type sidebar-form">
+                <div class="post-type">前端</div>
+                <div class="post-type">HTML</div>
+                <div class="post-type">CSS</div>
+                <div class="post-type">其他文章</div>
+            </div>
+            <div class="side-calendar sidebar-form">
+                <table class="calendar">
+                    <tr>
+                        <td><</td>
+                        <td></td>
+                        <td colspan="3">2015.04</td>
+                        <td></td>
+                        <td>></td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>W</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="side-tag sidebar-form">
+                <p>Tags</p>
+                <p><span class="tag-more">JavaScript </span><span class="tag-less">CSS </span>flex WebGL <span class="tag-more">HTML </span>Canvas prototype <span class="tag-less">HTML5 </span>grid nodeJS css3 <span class="tag-less">jQuery </span><span class="tag-less">ECharts </span></p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <nav class="footer-nav">
             <ul>
                 <li><a href="index.html">首页</a></li>
                 <li><a href="blog.html">文章</a></li>
                 <li><a href="gallery.html">作品</a></li>
                 <li><a href="about.html">关于</a></li>
             </ul>
+        </nav>
+        <div class="link">
+            <hr>
+            <div class="link-item">
+                <p class="link-title link-left">学习资料</p>
+                <ul class="link-content">
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                </ul>
+            </div>
+            <div class="link-item">
+                <p class="link-title">友情链接</p>
+                <ul class="link-content">
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                </ul>
+            </div>
+            <div class="link-item">
+                <p class="link-title">学习资料</p>
+                <ul class="link-content">
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                </ul>
+            </div>
+            <div class="link-item">
+                <p class="link-title">友情链接</p>
+                <ul class="link-content">
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                </ul>
+            </div>
+            <div class="link-item">
+                <p class="link-title">学习资料</p>
+                <ul class="link-content">
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                    <li><a href="https://www.anotherhome.net">Anotherhome</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="icon-github">
-        <a href="https://github.com/DIYgod" target="_blank"><img src="img/icon-github.png"></a>
-    </div>
-</div>
-<div class="main">
-
-</div>
-<div class="footer">
-    <div class="footer-nav">
-        <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="blog.html">文章</a></li>
-            <li><a href="gallery.html">作品</a></li>
-            <li><a href="about.html">关于</a></li>
-        </ul>
-    </div>
-    <div class="link">
-        <hr>
-        <div class="link-item">
-            <p class="link-title link-left">学习资料</p>
-            <ul class="link-content">
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-            </ul>
+        <div class="copyright">
+            <p>版权信息</p>
+            <a href="https://github.com/DIYgod" target="_blank"><img src="img/icon-github.png"></a>
         </div>
-        <div class="link-item">
-            <p class="link-title">友情链接</p>
-            <ul class="link-content">
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-            </ul>
-        </div>
-        <div class="link-item">
-            <p class="link-title">学习资料</p>
-            <ul class="link-content">
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-            </ul>
-        </div>
-        <div class="link-item">
-            <p class="link-title">友情链接</p>
-            <ul class="link-content">
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-            </ul>
-        </div>
-        <div class="link-item">
-            <p class="link-title">学习资料</p>
-            <ul class="link-content">
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-                <li><a href="index.html">Link</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="copyright">
-        <p>版权信息</p>
-        <a href="https://github.com/DIYgod" target="_blank"><img src="img/icon-github.png"></a>
-    </div>
-</div>
+    </footer>
 </body>
 </html>

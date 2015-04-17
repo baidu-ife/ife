@@ -18,6 +18,7 @@ li {
 
 body {
     min-width: 980px;
+    background: #e2e2e2;
 }
 
 /* header */
@@ -68,11 +69,7 @@ body {
     }
 }
 
-/* index */
-.main {
-    background: #e2e2e2;
-}
-
+/* main-index */
 .description {
     font-size: 0;   /* 消除4px的间距 */
 }
@@ -172,11 +169,159 @@ body {
     line-height: 170%;
 }
 
-/* blog */
+/* main-blog */
+.blog-center {
+    width: 980px;
+    margin: 20px auto 300px;
+}
 
+.blog-content {
+    width: 710px;
+    float: left;
+    margin-right: 10px;
+}
+
+.blog-post {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 20px;
+    background: #fff;
+}
+
+.blog-post h1 {
+    color: #47456D;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.blog-post h2 {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.blog-post p {
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.blog-post section {
+    font-size: 10px;
+    color: #888;
+    text-align: right;
+}
+
+.tag {
+    position: absolute;
+    left: -50px;
+    top: 20px;
+    width: 50px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.tag-data {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #47456D;
+    color: #fff;
+}
+
+.tag-type {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #92C0EF;
+    color: #fff;
+}
+
+.number-wrap {
+    margin: 0 auto 200px;
+    width: 550px;
+}
+
+.number {
+    float: left;
+    text-align: center;
+    padding: 12px 15px;
+    margin: 0 5px;
+    font-size: 12px;
+    background: #fff;
+}
+
+.number a {
+    color: #000;
+}
+
+.number-invalid {
+    color: #888;
+}
+
+.number-now {
+    color: #fff;
+    background: #92C0EF;
+}
+
+.sidebar-form {
+    float: right;
+    width: 260px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.search {
+    position: relative;
+    border: #e2e2e2 1px solid;
+    margin: 20px;
+    font-size: 0;
+}
+
+.search:hover {
+    border: #47456D 1px solid;
+}
+
+.keyword {
+    position: absolute;
+    top: 0;
+    width: 125px;
+    height: 40px;
+    border: none;
+    outline: medium;
+}
+
+.submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    background: #e2e2e2;
+}
+
+.submit:hover {
+    background: #47456D;
+}
+
+.post-type {
+    font-size: 14px;
+    line-height: 50px;
+    padding-left: 20px;
+    border-width: 0 0 1px 5px;
+    border-color: #92C0EF;
+    border-style: solid;
+}
+
+.post-type:hover {
+    border-left-color: #47456D;
+}
 
 /* footer */
 .footer {
+    clear: both;
     font-size: 12px;
     background: #000;
 }
