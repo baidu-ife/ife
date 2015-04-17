@@ -12,6 +12,11 @@ body,p {
   margin: 0;
 }
 
+button {
+  margin: 0;
+  border: none;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -289,12 +294,55 @@ footer {
   background: rgba(132, 67, 203, 0.8);
 }
 
+.page {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page ul {
+
+}
+
+.page ul li {
+  display: inline-block;
+  padding: 10px 15px;
+  background: white;
+  color: black;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.page ul .active {
+  background: rgba(132, 67, 203, 0.8);
+  color: white;
+}
+
 .search,
 .nav-tags,
 .calendar,
 .tags {
   background: white;
   margin: 5px;
+}
+
+.search {
+  padding: 20px;
+}
+
+.search input {
+  margin: 0;
+  padding: 5px 5px 5px 35px;
+  font-size: 15px;
+  height: 25px;
+  background: url(../img/icon-search.png) no-repeat left center ;
+}
+
+.search button {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(134, 149, 168, 0.5);
+  border: 1px solid rgba(0,0,0,0.3);
 }
 
 .nav-tags {
@@ -355,3 +403,144 @@ footer {
   font-size: 1.4em;
 }
 /*blog end*/
+/*==================================================*/
+
+/*gallery*/
+.gallery-tag {
+  margin-top: 10px;
+  display: inline-table;
+}
+.gallery-tag li {
+  display: inline-table;
+  padding: 10px 15px;
+  margin: 0;
+  background: white;
+  border-top: 3px solid rgba(233,123,12,0.7);
+  border-bottom: 1px solid rgba(233,123,12,0.7);
+}
+
+.gallery-tag .active {
+  border-top: 3px solid rgba(233,123,12,0.7);
+  border-bottom: 1px solid white;
+}
+
+.gallery-tag li:hover {
+  background: rgba(233,123,11,0.3);
+}
+
+
+.gallery-tag-content {
+  background: white;
+  margin: 0 5px 10px 0;
+  padding: 15px;
+  overflow: auto;
+  zoom: 1;
+}
+
+.more {
+  background: white;
+  margin: 0 5px 10px 0;
+  padding: 15px;
+  width: 650px;
+}
+
+.gallery-tag-content section {
+  margin-bottom: 10px;
+}
+
+.col-1,
+.col-2 {
+  position: relative;
+  float: left;
+}
+
+.col-2 {
+  width: 48%;
+  margin: 10px 5px 10px 0;
+}
+
+.col-1 {
+  width: 24%;
+  margin: 10px 5px 10px 0;
+}
+
+.gallery-tag-content article {
+  padding: 10px;
+  color: white;
+}
+
+.gallery-tag-content img {
+  width: 100%;
+}
+
+.sytle {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border: solid 1px white; 
+  border-radius: 100%;
+  text-align: center;
+}
+
+.gallery-text {
+  padding-left: 30px;
+}
+
+.gallery-text > p {
+  font-size: 14px;
+  line-height: 130%;
+}
+
+.gallery-title {
+  margin: 0;
+}
+
+.gallery-style-J {
+  background: rgba(234,123,212,0.7);
+}
+
+.gallery-style-A {
+  background: rgba(24,123,212,0.7);
+}
+
+.gallery-style-B {
+  background: rgba(24,3,212,0.7);
+}
+
+.contain-right .empty {
+  height: 45px;
+}
+
+.rank {
+  background: white;
+  padding: 10px;
+  margin: 10px 5px;
+}
+
+.number {
+  display: inline-block;
+  background: rgba(23,23,123,0.6);
+  border-radius: 100%;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.graph {
+  display: inline-block;
+  border: 1px solid rgba(23,23,123,0.6);
+  width: 60%;
+  height: 15px;
+}
+
+.bar {
+  position: relative;
+  text-align: left;
+  display: block;
+  background: rgba(23,23,123,0.6);
+  height: 15px;
+}
+/*gallery end*/
+/*==================================================*/
+
