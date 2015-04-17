@@ -87,7 +87,7 @@ function add(num1, num2) {
 }
 
 function renderResult(result) {
-    $.innerHTML = result;
+    $("result").innerHTML = result;
 }
 
 function addEventHandle() {
