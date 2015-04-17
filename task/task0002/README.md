@@ -1,4 +1,4 @@
- # JavaScript基础
+# JavaScript基础
 
 **任务编号**：`TASK 0002`
 
