@@ -2,9 +2,236 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>task_0001_blog</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<div id="header">
+    <div id="headContent">
+        <div class="left logo">MyLOGO</div>
+        <ul class="right">
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">文章</a></li>
+            <li><a href="javascript:;">作品</a></li>
+            <li><a href="javascript:;">关于</a></li>
+        </ul>
+    </div>
+    <a href="https://github.com/zcp2123"><img id="githubLink" src="img/icon-github.png" alt="link to github"></a>
+</div>
+<div id="blog" class="clearfix">
+    <div id="blogLeft" class="left">
+        <div class="blogArtical">
+            <div class="blogArticalDate">4.12</div>
+            <div class="blogArticalType">CSS</div>
+            <h1>index.html中遇到的问题</h1>
+            <h2>这里是这篇文章的副标题，12px，#666</h2>
+            <p>1. ie9及以下不支持linear-gradient属性来实现背景色渐变，需要使用ie特有的滤镜（filter）功能实现。</p>
+            <pre>
+                background: white\9; /*ie6,7,8,9*/
+                filter: Alpha(opacity=30,finishopacity=0);
+            </pre>
+            <p>但是使用此功能会将字体颜色也变成透明，可以通过position: relative来设置子元素为相对定位，可让子元素不继承Alpha值，从而使文字不透明。</p>
+            <p>2. 解决同一行高度自适应，与最高的相同</p>
+            <p>使用margin-bottom:-1000px，padding-bottom:1000px，这个值够长就行，在父元素设置overflow:hidden就可达到效果</p>
+            <p>3. ie6,7不支持block转inline-block</p>
+            <pre>
+                display: inline-block;
+                *display: inline;
+                *zoom: 1;
+            </pre>
+            <p>使用这个做兼容处理，ie6，7需先转换成inline，然后触发hasLayout，以此来获得和inline-block类似的效果</p>
+            <p>4. border—radius ie8及以下不兼容</p>
+            <p>使用圆形图片，暂未有较好的兼容方法</p>
+            <p>5. 通过Media Queries max-width 实现浏览器宽度小于1080px时隐藏github图标，ie8及以下不兼容</p>
+            <p>使用z-index来隐藏图标，要注意设置上层的背景颜色，否则无法遮盖图片。</p>
+            <div class="blogAuthorInfo">YOUR NAME 发表于 2015年4月12日</div>
+        </div>
+        <div class="blogArtical">
+            <div class="blogArticalDate">4.12</div>
+            <div class="blogArticalType">CSS</div>
+            <h1>gallery.html中遇到的问题</h1>
+            <h2>这里是这篇文章的副标题，12px，#666</h2>
+            <p>1. 给元素设置上边框和左边框（相交的边框），如果边框宽度不一样，相交处会出现斜边，事实上这个斜边是css能实现三角形的原因，但此处不需要。解决方法，将2个边框分开分别放在父子元素。</p>
+            <p>2. vertical-align实现div垂直居中，具体可点击<a style="color: red;" href="http://www.xuehuwang.com/div-vertical-align/">这里</a></p>
+            <p>3. input foucs的时候，后面的button也变色，使用伪类和兄弟选择器，:focus + </p>
+            <div class="blogAuthorInfo">YOUR NAME 发表于 2015年4月12日</div>
+        </div>
+        <div class="blogArtical">
+            <div class="blogArticalDate">4.12</div>
+            <div class="blogArticalType">CSS</div>
+            <h1>这里是这篇文章的标题，16px</h1>
+            <h2>这里是这篇文章的副标题，12px，#666</h2>
+            <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是这里是正文，这里是正文，这里是正文这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，    这里是正文，这里是正文，这里是正文，这里是正文，这里是这里是正文，这里是正文，这里是正文这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+            <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是这里是正文，这里是正文，这里是正文这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，    这里是正文，这里是正文，这里是正文，这里是正文，这里是这里是正文，这里是正文，这里是正文这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+            <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是这里是正文，这里是正文，这里是正文这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，    这里是正文，这里是正文，这里是正文，这里是正文，这里是这里是正文，这里是正文，这里是正文这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+            <div class="blogAuthorInfo">YOUR NAME 发表于 2015年4月12日</div>
+        </div>
+        <div class="blogNavBar">
+            <ul class="clearfix">
+                <li><a href="javascript:;">第一页</a></li>
+                <li><a href="javascript:;">上一页</a></li>
+                <li><a href="javascript:;">1</a></li>
+                <li><a href="javascript:;">2</a></li>
+                <li class="current"><a href="javascript:;">3</a></li>
+                <li><a href="javascript:;">4</a></li>
+                <li><a href="javascript:;">...</a></li>
+                <li><a href="javascript:;">下一页</a></li>
+                <li><a href="javascript:;">最后页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="blogRight" class="right">
+        <div id="blogSearch">
+            <div id="blogSearchInner">
+                <img src="img/search.png" alt="search"/>
+                <input type="text"/>
+                <button>GO</button>
+            </div>
+        </div>
+        <div id="blogType">
+            <ul>
+                <li><a href="javascript:;">HTML</a></li>
+                <li class="current"><a href="javascript:;">CSS</a></li>
+                <li><a href="javascript:;">JavaScript</a></li>
+                <li><a href="javascript:;">其他文章</a></li>
+            </ul>
+        </div>
+        <div id="blogDate">
+            <table>
+                <caption><span class="left"><</span>2015.4<span class="right">></span></caption>
+                <tr>
+                    <th>M</th>
+                    <th>T</th>
+                    <th>W</th>
+                    <th>T</th>
+                    <th>F</th>
+                    <th>S</th>
+                    <th>S</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="select">2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td class="select">8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td class="select">15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                </tr>
+            </table>
+        </div>
+        <div id="blogTag">
+            <dl class="clearfix">
+                <dt>Tags</dt>
+                <dd class="ddFontSuper">JavaScript</dd>
+                <dd class="ddFontBig">CSS</dd>
+                <dd class="ddFontSmall">flex</dd>
+                <dd class="ddFontSmall">WebGL</dd>
+                <dd class="ddFontSuper">HTML</dd>
+                <dd class="ddFontNormal">Canvas</dd>
+                <dd class="ddFontNormal">prototype</dd>
+                <dd class="ddFontBig">HTML5</dd>
+                <dd class="ddFontSmall">grid</dd>
+                <dd class="ddFontNormal">NodeJS</dd>
+                <dd class="ddFontNormal">CSS3</dd>
+                <dd class="ddFontBig">Jquery</dd>
+                <dd class="ddFontBig">Echarts</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <ul class="title clearfix">
+        <li><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">文章</a></li>
+        <li><a href="javascript:;">作品</a></li>
+        <li><a href="javascript:;">关于</a></li>
+    </ul>
+    <div id="footContent" class="clearfix">
+        <div id="footContentList">
+            <div class="footerNav first">
+                <h1>学习资料</h1>
+                <ul>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">HOVER时样式</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                </ul>
+            </div>
+            <div class="footerNav">
+                <h1>学习资料</h1>
+                <ul>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">HOVER时样式</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                </ul>
+            </div>
+            <div class="footerNav">
+                <h1>学习资料</h1>
+                <ul>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">HOVER时样式</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                </ul>
+            </div>
+            <div class="footerNav">
+                <h1>学习资料</h1>
+                <ul>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">HOVER时样式</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                </ul>
+            </div>
+            <div class="footerNav">
+                <h1>学习资料</h1>
+                <ul>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">HOVER时样式</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                    <li><a href="javascript:;">LINK</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <h1>版权信息</h1>
+        <a href="https://github.com/zcp2123"><img src="img/icon-github.png" alt="版权信息链接"/></a>
+    </div>
+</div>
 </body>
 </html>
