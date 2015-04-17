@@ -192,22 +192,23 @@
 }
 /*gallery*/
 .content-center {
+    display:table;
     width:1080px;
-    height:800px;
     margin:auto;
+    padding-bottom:200px;
 }
 .content-center-main {
-    height:100%;
     float:left;
+    margin-right:10px;
 }
 .content-center-aside {
-    width:330px;
-    height:100%;
+    width:270px;
+    height:700px;
     float:right;
-    background-color:yellow;
+    padding-right:50px;
 }
 .blog {
-    height:200px;
+    display:table;
     margin-bottom:10px;
 }
 .blog-tag {
@@ -217,24 +218,217 @@
 }
 .blog-tag-date {
     width:100%;
-    height:30px;;
-    line-height:30px;
+    height:35px;
+    line-height:35px;
     text-align:center;
     background-color:rgb(124, 20, 147);
     color:white;
 }
 .blog-tag-keyword {
     width:100%;
-    height:30px;
-    line-height:30px;
+    height:35px;
+    line-height:35px;
     text-align:center;
     background-color:rgba(106, 61, 161, 0.79);
     color:white;
 }
 .blog-content {
-    width:700px;
-    height:100%;
+    width:660px;
+    min-height:350px;
     background-color:white;
     float:right;
+    text-align:left;
+    padding:20px;
 }
-
+.blog-title {
+    color:purple;
+    font-size:16px;
+    margin-bottom:8px;
+}
+.blog-subtitle {
+    color:black;
+    font-size:12px;
+    margin-bottom:10px;
+}
+.blog-body {
+    color:black;
+    font-size:10px;
+    text-indent:2em;
+}
+.blog-page {
+    height:50px;
+    padding-left:50px;
+}
+.blog-page-ul {
+    list-style-type:none;
+    padding:10px 0px;
+    text-align:center;
+}
+.blog-page-li {
+    display:inline-block;
+    text-align: center;
+    margin: 0 5px;
+    padding: 8px 15px;
+    line-height: 12px;
+    background-color:white;
+    color:black;
+}
+/*TODO 当前页背景色*/
+.blog-page-li:hover {
+    background-color:purple;
+    color:white;
+}
+.blog-page-a {
+    text-decoration:none;
+    font-size:12px;
+    color:inherit;
+}
+#form-search {
+    height: 40px;
+    background-color: white;
+    padding: 20px;
+}
+#input-search {
+    float:left;
+    width:130px;
+    height:36px;
+    color:rgba(134, 123, 134, 0.25);
+    background:url("../img/magnifier.png") no-repeat 3px;
+    padding-left:46px;
+}
+#input-search:focus {
+    outline:none;
+    color:rgba(134, 123, 134, 0.88);
+}
+#input-button {
+    float:right;
+    width:50px;
+    height:40px;
+    border:none;
+    color:white;
+    font-size:18px;
+    background-color:rgba(134, 123, 134, 0.25);
+}
+#input-button:focus {
+    background-color:rgba(45, 37, 45, 0.39);
+    outline:none;
+}
+.blog-category {
+    width:270px;
+    background-color:blue;
+    margin-top:10px;
+    list-style-type:none;
+}
+.blog-category-li {
+    padding:20px;
+    border-bottom:1px solid rgba(134, 123, 134, 0.55);
+    border-left:5px solid rgba(62, 15, 121, 0.28);
+    background-color:white;
+}
+.blog-category-li:hover {
+    border-left-color:rgba(132, 43, 157, 0.77);
+}
+.blog-category-a {
+    color:rgba(134, 123, 134, 0.88);
+    font-size:12px;
+    text-decoration:none;
+}
+#calendar {
+    width:230px;
+    height:200px;
+    padding:20px;
+    background-color:white;
+    margin-top:10px;
+}
+#calendar-head {
+    width:230px;
+    height:20px;
+}
+#calendar-backward {
+    float:left;
+    height:20px;
+    width:35px;
+    text-align:center;
+}
+#calendar-foreward {
+    float:right;
+    height:20px;
+    width:35px;
+    text-align:center;
+}
+.calendar-head-a {
+    color:purple;
+    font-size:12px;
+    text-decoration:none;
+}
+#calendar-head-date {
+    width:160px;
+    height:20px;
+    padding:0 35px;
+    text-align:center;
+}
+.calendar-date-ul {
+    width:210px;
+    padding:8px 10px;
+    height:16px;
+    list-style-type:none;
+    border-bottom:1px solid rgba(134, 123, 134, 0.55);
+}
+.calendar-date-li {
+    width:30px;
+    float:left;
+    padding:2px 0px;
+    text-align:center;
+}
+.calendar-date-li:hover {
+    background-color:purple;
+}
+.calendar-date-a {
+    color:black;
+    font-size:12px;
+    text-decoration:none;
+    color:rgba(134, 123, 134, 0.88);
+}
+.calendar-date-a:hover {
+    color:white;
+}
+.tags {
+    width:230px;
+    height:200px;
+    padding:20px;
+    background-color:white;
+    margin-top:10px;
+}
+.tags-head {
+    width:230px;
+    color:rgba(134, 123, 134, 0.88);
+    font-size:16px;
+}
+.tags-body {
+    width:230px;
+    margin-top:20px;
+}
+.tags-24px {
+    display:inline-block;
+    padding:5px;
+    color:rgb(116, 17, 116);
+    font-size:24px;
+}
+.tags-18px {
+    display:inline-block;
+    padding:5px;
+    color:rgb(153, 104, 158);
+    font-size:18px;
+}
+.tags-10px {
+    display:inline-block;
+    padding:5px;
+    color:rgb(144, 99, 221);
+    font-size:10px;
+}
+.tags-12px {
+    display:inline-block;
+    padding:5px;
+    color:black;
+    font-size:12px;
+}
