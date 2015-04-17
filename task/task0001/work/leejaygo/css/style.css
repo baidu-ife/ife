@@ -1,0 +1,130 @@
+body{padding:0;margin:0;width:100%;height:100%;}
+.header{
+	width:100%;
+	min-width: 980px;
+	height:565px;
+	background:left center url(../img/banner-bg.jpg) no-repeat; 
+	overflow:auto;
+	position:relative;
+	font-family: '宋体';
+}
+.header_title{position:relative;width:100%;min-width:980px;height:80px;background: #522A5C;overflow:hidden;}
+.header_content{position:absolute;width:980px;height:100%;left:50%;margin-left:-490px;}
+ul{list-style: none;margin:0;padding:0;}
+#mylogin{font-family: '宋体';position:absolute;left:0px;bottom:5px;color:#fff;font-weight: bold;font-size: 30px;}
+#navlist{position:absolute;font-family: "宋体";font-size: 14px;color:#fff;right:0px;bottom:5px;margin-right: -28px}
+#navlist li{float:left;margin-right: 28px;}
+#navlist li:hover{cursor:pointer;}
+#giticon{position:absolute;bottom: 5px;right:10px;display: block;}
+.header_textbox{
+	width:280px;
+	height:90px;
+	position:absolute;
+	bottom:0px;
+	right:100px;
+	background: #fff;
+	padding:10px 10px 30px 10px;
+	overflow: hidden;
+     background: -webkit-gradient(linear,center top,center bottom,from(rgba(255, 255, 255, 0.7)),to(rgba(255, 163, 204, 0)));
+    background: -o-linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0));
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0));
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=rgba(255,255,255,0.7),endColorStr=rgba(255,255,255,0));
+}
+#textbox_title{margin-bottom: 12px;text-align: right;font-size: 14px;}
+#textbox_text{line-height: 150%;text-indent: 2em;font-size: 12px;}
+.body{width:100%;height:900px;background: #dcdcdc;position:relative;}
+.bodyabout{width:100%;height:1300px;background: #dcdcdc;position:relative;}
+.bodygallery{width:100%;height:900px;background: #dcdcdc;position:relative;}
+.body_personal{width:100%;height:500px;position:absolute;background: #fff;bottom:0px;}
+#personal_pic{position:absolute;width:160px;height:160px;top:-50px;left:50%;margin-left: -80px;border-radius: 50%;}
+.personal_context{width:600px;top:160px;position:absolute;bottom:0;left:50%;margin-left:-300px;}
+#personal_title{width:100%;text-align: center;font-family: 'Century Gothic';font-size: 20px}
+#personal_introduce{margin-top:50px;width:100%;font-size: 14px;line-height: 150%}
+.body_mylist{width:990px;height:300px;margin: 0 auto;}
+.body_mylist li{float:left;margin-right: 10px;width:320px;height:100%;margin-top: 10px;background:#fff;}
+.body_mylist img{margin: 10px}
+.body_mylist div{margin:5px 30px 0 30px;text-indent: 2em;font-size: 12px;line-height: 170%;}
+.footer{width:100%;background: #000000;height:230px;}
+.footer_wrap{position:relative;width:980px;height:100%;margin: 0 auto;}
+#fengeline{border-bottom:1px solid #333333;width:100%;height:30px;position:absolute;}
+.footer_nav{margin:0 auto;color:#fff;width:240px;height:40px;line-height: 30px}
+.footer_nav li{width:60px;float:left;}
+.first_list{width:100%;position:absolute;bottom:0px;top:40px;}
+.first_list_li{height:100%;float:left;width:196px;color:#fff;}
+.first_list_li a{text-decoration: none;color:#fff;}
+.first_list_li ul{margin-top: 20px;}
+
+.body2_blog{width:980px;height:100%;position:relative;margin: 0 auto;}
+.blog_content{position: absolute;left:0;top:20px;}
+.body_gallery{width:980px;height:100%;position:relative;margin: 0 auto;}
+.header2{width:100%;min-width: 980px;height:80px;background:left center url(../img/banner-bg.jpg) no-repeat; overflow:auto;position:relative;font-family: '宋体';}
+.blog_content_div{box-sizing:border-box;width:650px;height:250px;background: #fff;margin-bottom: 10px;padding:10px;}
+.blog_slider{position:absolute;left:660px;right:0;top:20px;}
+.blog_slider li{margin-bottom: 10px}
+#li1{width:100%;height:100px;background:#fff;}
+#li2{width:100%;height:200px;background:#fff;}
+#li3{width:100%;height:200px;background:#fff;}
+.blog_content_div_title{font-size:16px;}
+.blog_content_div_ftitle{font-size: 12px;color:#666;margin-top: 10px;}
+.blog_content_div_text{font-size: 14px;margin-top: 15px;text-indent: 2em}
+
+.body3_blog{position:absolute;width:980px;left:50%;margin-left: -490px;top:80px;bottom:10px;}
+.aboutbody_left{width:487.5px;background: #fff;height:100%;float:left;position:relative;}
+.aboutbody_right{width:487.5px;background: #fff;float:left;height:100%;margin-left: 5px;position:relative;}
+#personal_pic2{position:absolute;width:160px;height:160px;top:-55px;left:50%;margin-left: -80px;border-radius: 50%;z-index:5;}
+#backimg{position:absolute;width:170px;height:170px;top:-60px;left:50%;margin-left: -85px;border-radius: 50%;z-index:2;background: #dcdcdc}
+
+#personal_pic3{position:absolute;width:100px;height:100px;top:255px;left:50%;margin-left: -50px;border-radius: 50%;z-index:5;}
+#backimg2{position:absolute;width:110px;height:110px;top:250px;left:50%;margin-left: -55px;border-radius: 50%;z-index:2;background: #dcdcdc}
+
+#personal_pic4{position:absolute;width:100px;height:100px;top:485px;left:50%;margin-left: -50px;border-radius: 50%;z-index:5;}
+#backimg3{position:absolute;width:110px;height:110px;top:480px;left:50%;margin-left: -55px;border-radius: 50%;z-index:2;background: #dcdcdc}
+
+#personal_pic5{position:absolute;width:100px;height:100px;top:835px;left:50%;margin-left: -50px;border-radius: 50%;z-index:5;}
+#backimg4{position:absolute;width:110px;height:110px;top:830px;left:50%;margin-left: -55px;border-radius: 50%;z-index:2;background: #dcdcdc}
+#myname{position:absolute;right:80px;top:120px;font-size: 20px;}
+#telphone{position:absolute;right:80px;top:370px;font-size: 20px;}
+#edu{position:absolute;right:80px;top:610px;font-size: 20px;}
+#work{position:absolute;right:80px;top:980px;font-size: 20px;}
+.aboutbody_right_intro{width:220px;position:absolute;left:60px;top:120px;font-size: 14px;text-indent: 2em;line-height: 20px}
+.aboutbody_right_tel{width:220px;position:absolute;left:60px;top:360px;font-size: 14px;line-height: 30px}
+
+.aboutbody_right_edu{position:absolute;left:0;top:610px;}
+.edu_1{position:absolute;width:300px;height:30px;font-size: 14px;line-height: 30px;left:0px;}
+#edu_1{top:0px;}
+#edu_2{top:70px;}
+#edu_3{top:140px;}
+.edu_back{width:80px;height:35px;left:-42.5px;position:absolute;background: #dcdcdc;top:0;border-radius: 8px;}
+.edu_surface{width:70px;height:25px;left:-37.5px;position:absolute;background: #fff;top:5px;text-align: center;line-height: 25px;border-radius: 8px;}
+.edu_text{position:absolute;left:60px;width:200px;}
+
+.aboutbody_right_work{position:absolute;left:0;top:980px;}
+.work_1{position:absolute;width:300px;height:30px;font-size: 14px;line-height: 30px;left:0px;}
+#work_1{top:0px;}
+#work_2{top:70px;}
+.work_back{width:80px;height:35px;left:-42.5px;position:absolute;background: #dcdcdc;top:0;border-radius: 8px;}
+.work_surface{width:70px;height:25px;left:-37.5px;position:absolute;background: #fff;top:5px;text-align: center;line-height: 25px;border-radius: 8px;}
+.work_text{position:absolute;left:60px;width:200px;}
+
+.gallery_title{height:50px;position:absolute;left:0px;top:20px;background: #fff}
+.gallery_title li{box-sizing:border-box;float:left;width:120px;border-right:1px solid #dcdcdc;height:100%;text-align: center;font-size: 14px;line-height: 50px;}
+#gallery_title_1{width:60px;border-bottom:1px solid #dcdcdc;border-top:5px solid #DFC6E6;}
+#gallery_title_2{width:200px;border-top:5px solid #522A5C;}
+#gallery_title_3{border-top:5px solid #5900B2;}
+#gallery_title_4{border-top:5px solid #8C2300;}
+#gallery_title_5{border-top:5px solid #D9A300;}
+
+.gallery_content{width:720px;height:600px;position:absolute;left:0px;top:70px;}
+.gallery_content li{width:720px;height:100%;position:absolute;background: #fff}
+
+.gallery_slider{position:absolute;right:0px;left:730px;top:70px;/* height:800px;background: #fff */}
+#slider_search{width:100%;height:80px;background: #fff;position:relative;}
+#slider_con{width:100%;height:300px;background: #fff;margin-top: 10px}
+#searchbox{position:absolute;left:20px;top:20px;bottom:20px;right:20px;}
+#searchbox_input{float:left;width:150px;height:38px;padding:0;margin: 0px;border:1px solid #dcdcdc;outline: none;}
+#searchbox_go{float:left;width:55px;height:40px;background: #999999;font-size: 17px;line-height: 38px;color:#fff;text-align: center;border:0px solid #999999;padding:0px;}
+.line12{float:left;height:100%;width:350px;margin-left: 10px}
+.line3{float:left;height:100%;width:175px;}
+.gallery_content_img{z-index:100;}
+.gallery_content_img img{float:left;margin-left: 10px;margin-top: 10px;position:relative;}
+
