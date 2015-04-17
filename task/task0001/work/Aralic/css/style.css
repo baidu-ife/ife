@@ -152,6 +152,6 @@ em,strong {
 /*媒体查询 当屏幕小于980px是*/
 @media(max-width: 980px){
     .header-right{
-        display: none;
+        text-indent: -9999px;
     }
 }
