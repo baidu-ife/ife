@@ -1,17 +1,25 @@
-h1,h2,h3,p,div,input,button{
+h1,h2,h3,p,div,input,button,body, header, nav, footer, ul, li{
     margin: 0;
     padding: 0;
 }
 
 
+li {
+    text-decoration: none;
+}
 
-
-
-
-
-
-
-
+/**
+ * header
+ */
+header{
+    background-color: #582153;
+    color: #fff;
+    height: 80px;
+}
+header .center{
+    width: 980px;
+    margin: 0 auto;
+}
 
 
 body{
