@@ -1,0 +1,20 @@
+h1,body, header, nav, footer, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+li {
+    text-decoration: none;
+}
+
+/**
+ * header
+ */
+header{
+    background-color: #582153;
+    color: #fff;
+    height: 80px;
+}
+header .center{
+    width: 980px;
+    margin: 0 auto;
+}
