@@ -1,0 +1,172 @@
+body,h1,h2,h3,h4,h5,h6,ul,ol,li,p,form,input{
+	margin: 0;padding: 0;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+li{list-style: none;}
+a{text-decoration: none;}
+body{font-size: 12px;}
+img{
+	border: 0;
+}
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.clearfix{*zoom:1;}
+/*头部导航区*/
+.header-wrap{
+	width: 100%;
+	background-color: #2b2d3c;
+	height: 80px;
+	text-align: center;
+	position: relative;
+}
+.header{
+	width: 980px;
+	margin: 0 auto;
+	text-align: left;
+	vertical-align: bottom;
+	font-size: 14px;
+	font-family: '宋体',arial,georgia,verdana,helvetica,sans-serif;
+	padding-top: 30px;
+}
+.logo{
+	float: left;
+}
+.logo img{
+	vertical-align: top;
+	border: 0;
+
+}
+.logo span{
+		font-size: 18px;
+		letter-spacing: 2px;
+		font-weight: bold;
+		line-height: 40px;
+		padding-left: 10px;
+}
+.header-nav{
+	float: right;
+	padding-top: 26px;
+
+}
+.header-nav li{
+	float: left;
+	margin-left: 28px;
+}
+.header a{
+	color: #fff;
+}
+.github-logo{
+	position: absolute;
+	right: 10px;
+	bottom: -3px;
+}
+.github-logo img{
+	border: 0;
+}
+
+/*头部导航区end*/
+/*内容区*/
+.content-wrap{
+	width: 100%;
+	background-color: #ddd;
+	text-align: center;
+	padding-top: 10px;
+
+}
+.content{
+	text-align: left;
+	width: 980px;
+	margin: 0 auto;
+}
+.content-left{
+	float: left;
+	width: 710px;
+}
+.content-right{
+	float: right;
+	width: 260px;
+	margin-left: 10px;
+}
+/*内容区end*/
+/*底部*/
+.footer-wrap{
+	background-color: #2b2d3c;
+	width: 100%;
+	text-align: center;
+}
+.footer-nav{
+	border-bottom: 1px solid #333;
+}
+.footer-nav>a{
+	line-height: 36px;
+	color: #fff;
+	width: 52px;
+	display: inline-block;
+}
+.footer-item{
+	width: 980px;
+	margin: 0 auto;
+	text-align: left;
+	padding-top: 30px;
+}
+li.study-link{
+	color: #ccc;
+	float: left;
+	margin-right:145px;
+}
+.study-link ul{
+	padding-top: 20px;
+}
+.study-link a{
+	color: #fff;
+	line-height: 20px;
+} 
+.study-link a:hover{
+	text-decoration: underline;
+}
+.copyright{
+	color: #fff;
+	padding: 60px 0 60px 0;
+	background: url(../img/icon-github.png) no-repeat center bottom;
+}
+/*底部end*/
+.search{
+	background-color: #fff;
+	margin-bottom: 10px;
+	padding: 20px;
+
+}
+.search-text,.search-btn{
+	outline: none;
+	float: left;
+	border: 1px solid #ddd;
+
+}
+.search-text{
+	line-height: 40px;
+	padding-left: 40px;
+	background: url(../img/iconfont-sousuo.png) no-repeat 2px center;
+	
+	width: 130px;
+}
+.search-btn{
+	background-color: #ddd;
+	border-left: 0;
+	line-height: 40px;
+	padding:  0 7px;
+	font-size: 20px;
+	color: #fff;
+}
+.search-text:focus{
+	border-color: #000;
+}
+.search-text:focus+.search-btn{
+	border-color: #000;
+	background-color: #999;
+}
+/*搜索end*/

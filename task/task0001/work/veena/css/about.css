@@ -1,0 +1,128 @@
+.content-wrap{
+	padding-bottom: 50px;
+}
+.content{
+	width: 980px;
+	margin: 0 auto;
+}
+.timeline{
+	background-color: #fff;
+	margin-top: 100px;
+	position: relative;
+	padding-bottom: 1350px;
+
+}
+.timeline:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	width: 6px;
+	margin-left:-3px ;
+	background-color: #eee;
+}
+.timeline li{
+	overflow: hidden;
+}
+
+.timeline-img1{
+	background: url(../img/head-portrait.jpg) no-repeat center center;
+	width: 160px;
+	height: 160px;
+	border-radius: 160px;
+	border: 10px solid #eee;
+	position: absolute;
+	top: -60px;
+	left: 50%;
+	margin-left: -80px;
+}
+
+.timeline-item{
+	position: absolute;
+	top: 160px;
+}
+.timeline-left{
+	text-align: right;
+	width: 400px;
+	float: left;
+	padding-right:80px;
+	font-size: 22px; 
+}
+.timeline-right{
+	width: 300px;
+	float: left;
+	padding: 0 142px 0 38px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.timeline-img2{
+	background: url(../img/phone.png) no-repeat center center;
+	width: 106px;
+	height: 106px;
+	border-radius: 106px;
+	border: 10px solid #eee;
+	position: absolute;
+	top: 300px;
+	left: 50%;
+	margin-left: -53px;
+}
+.timeline-item2{
+	position: absolute;
+	top: 450px;
+}
+.timeline-img3{
+	background: url(../img/school.png) no-repeat -20px center;
+	width: 106px;
+	height: 106px;
+	border-radius: 106px;
+	border: 10px solid #eee;
+	position: absolute;
+	top: 540px;
+	left: 50%;
+	margin-left: -53px;
+	background-color: #fff;
+}
+.timeline-item3{
+	position: absolute;
+	top: 745px;
+}
+.star-year,.end-year{
+	width: 58px;
+	height: 28px;
+	position: absolute;
+	border-radius: 14px;
+	border: 10px solid #eee;
+	background-color: #fff;
+	text-align: center;
+	line-height: 28px;
+	left: 50%;
+	margin-left: -29px;
+}
+.star-year{
+	top: -60px;
+	
+}
+.school-message{
+	font-size: 12px;
+}
+.end-year{
+	top: 50px;
+
+}
+.timeline-img4{
+	background: url(../img/company.png) no-repeat center center;
+	width: 106px;
+	height: 106px;
+	border-radius: 106px;
+	border: 10px solid #eee;
+	position: absolute;
+	top: 880px;
+	left: 50%;
+	margin-left: -60px;
+	background-color: #fff;
+}
+.timeline-item4{
+	position: absolute;
+	top: 1100px;
+}

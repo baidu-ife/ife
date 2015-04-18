@@ -1,0 +1,124 @@
+.content-right{
+	margin-top: 55px;
+}
+.tab{
+	overflow: hidden;
+}
+.tab li{
+	float: left;
+	border-right: 1px solid #eee;
+
+}
+.tab li a{
+	display: inline-block;
+	background-color: #fff;
+	padding: 15px 20px 20px;
+	border-bottom: 1px solid #eee;
+	border-top-width: 5px;
+	border-top-style: solid;
+	color: #000;
+}
+#all{
+	border-top-color:  #cfc;
+}
+#all:active,#all:visited{
+	border-top-color:#28ea89;
+}
+
+/*瀑布流*/
+.waterfall{
+	background-color: #fff;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+.waterfall-left{
+	float: left;
+	width: 330px;
+}
+.waterfall img{
+	margin-bottom: 10px;
+	display: block;
+}
+.waterfall-right{
+	float: right;
+	background-color: #fff;
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	column-count:2;
+
+	-moz-column-gap:10px;
+	-webkit-column-gap:10px;
+	column-gap:10px;
+}
+.waterfall-right>img{
+	width: 160px;
+}
+#bigpic{
+	width: 330px;
+}
+.waterfall-left-left{
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	column-count:2;
+
+	-moz-column-gap:10px;
+	-webkit-column-gap:10px;
+	column-gap:10px;
+}
+.waterfall-left-left>img{
+	width: 160px;
+}
+/*查看更多*/
+.seemore a{
+	display: block;
+	background-color: #fff;
+	color: #666;
+	line-height: 50px;
+	text-align: center;
+	margin-bottom: 150px;
+}
+.seemore i{
+	margin: 0 10px;
+}
+/*查看更多end*/
+/*排行榜*/
+.chart{
+	background-color: #fff;
+	padding: 14px;
+}
+.chart h4{
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 26px;
+}
+.chart ol li{
+	margin-bottom: 14px;
+}
+.ranking{
+	float: left;
+	background-color: #28EA89;
+	width: 18px;
+	height: 18px;
+	border-radius: 9px;
+	text-align: center;
+	line-height:18px;
+	color: #fff;
+
+}
+.progress{
+	float: left;
+	width: 100px;
+	background-color:#F6F6F6;
+	height: 16px;
+	margin: 0 10px;
+	border: 1px solid #28EA89;
+
+}
+.progress-bar{
+	background-color: #28EA89;
+	height: 100%;
+}
+.ranking-name{
+	font-size: 14px;
+	float: left;
+}
