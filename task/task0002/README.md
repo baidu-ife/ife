@@ -155,8 +155,7 @@ var srcObj = {
     b: {
         b1: ["hello", "hi"],
         b2: "JavaScript"
-    },
-    c: 
+    }
 };
 var abObj = srcObj;
 var tarObj = cloneObject(srcObj);
