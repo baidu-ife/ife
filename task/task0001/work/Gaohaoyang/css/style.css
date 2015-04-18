@@ -1,33 +1,30 @@
-h1,h2,h3,p,div,input,button,body, header, nav, footer, ul, li{
+/**
+ * reset
+ * ==============================================
+ */
+h1, h2, h3, p, div, input, button, body, ul, li, img, a {
     margin: 0;
     padding: 0;
 }
-
-
-li {
+li, a {
     text-decoration: none;
 }
 
+/*清除Chrome input 中的focus样式*/
+input, button, select, textarea {
+    outline: none;
+}
+img {
+    border: 0;
+}
+
 /**
- * header
+ * common
+ * ==============================================
  */
-header{
-    background-color: #582153;
-    color: #fff;
-    height: 80px;
-}
-header .center{
-    width: 980px;
-    margin: 0 auto;
-}
-
-
-body{
+body {
     background-color: #eee;
 }
-
-
-
 .clearfix:after {
     content: "\200B";
     display: block;
@@ -37,76 +34,137 @@ body{
 .clearfix {
     *zoom: 1;
 }
-
+#header {
+    background-color: #52385B;
+    color: #fff;
+    height: 80px;
+    position: relative;
+}
+#header .center {
+    width: 980px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+}
+#header .center h1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#header .center .nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+#header .center .nav ul li {
+    display: inline-block;
+    padding-left: 28px;
+}
+#header .center .nav ul li a:link {
+    color: #fff;
+}
+#header .center .nav ul li a:visited {
+    color: #fff;
+}
+#header .center .nav ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+#header .center .nav ul li a:active {
+    color: #fff;
+}
+@media screen and (max-width:980px) {
+    #header .git {
+        display: none;
+    }
+}
+#header .git {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+#header .git img {
+    position: relative;
+    bottom: -4px;
+}
 #main {
     width: 980px;
     margin: 0 auto;
     background-color: #aaa;
 }
-#main .right{
+#main .right {
     width: 260px;
     float: right;
-
     background-color: red;
 }
-
-#main .left{
+#main .left {
     width: 710px;
     float: left;
+}
+#footer {
+    height: 100px;
+    background-color: #333;
+}
+
+/**
+ * index
+ * =======================================================
+ */
+
+#main .pic{
+    background: url(../img/banner-bg.jpg);
 }
 
 /**
  * blog
+ * =======================================================
  */
-#main .blog{
-    margin:0 0px 10px 0;
+#main .blog {
+    margin: 0 0 10px 0;
     padding: 20px;
-    background-color: #fff; 
-    position: relative;
-   /* position: relative;
-    overflow: auto;
-    zoom:1;*/
+    background-color: #fff;
+    position: relative;   /* position: relative;
+                    overflow: auto;
+                    zoom:1;*/
 }
-
-#main .blog h2{
+#main .blog h2 {
     color: #955EA1;
     font-size: 16px;
     margin-bottom: 10px;
 }
-#main .blog h3{
+#main .blog h3 {
     font-size: 12px;
     color: #666;
     margin-bottom: 15px;
 }
-#main .blog article{
+#main .blog .article {
     font-size: 12px;
 }
-#main .blog article p {
+#main .blog .article p {
     text-indent: 2em;
-    line-height:1.8;
-
+    line-height: 1.8;
 }
-#main .blog .author{
+#main .blog .author {
     margin-top: 30px;
     font-size: 12px;
     color: #959595;
-    float: right; 
+    float: right;
 }
-#main .blog .side-card{
+#main .blog .side-card {
     width: 50px;
-    height:80px;
+    height: 80px;
     position: absolute;
-    top:20px;
+    top: 20px;
     left: -50px;
     text-align: center;
     color: #fff;
 }
-#main .blog .side-card .date{
+#main .blog .side-card .date {
     height: 40px;
     line-height: 40px;
     background-color: #52385B;
 }
-#main .blog .side-card .cate{
+#main .blog .side-card .cate {
     height: 40px;
     line-height: 40px;
     background-color: #955EA1;
@@ -119,33 +177,39 @@ body{
  * 
  * search
  */
-#search{
+#search {
     padding: 20px;
     background-color: #fff;
-}
-#search .box{
-    width: 220px;
-    height: 40px;
-    border:1px solid #ddd;
     position: relative;
 }
-#search .box input{
-    width: 130px;
+#search  .text {
+    width: 120px;
     height: 40px;
-    border: none;
+    line-height: 40px;
+    padding: 0 0 0 50px;
+    border: 1px solid #ddd;
+    border-right: 0;
     color: #aaa;
-    padding: 0 10px;
-    position: absolute;
+    background: url(../img/search.png) no-repeat;
 }
-#search .box button{
+#search button {
     width: 50px;
-    height: 40px;
+    height: 42px;
     color: #fff;
     font-size: 20px;
-    border: none;
-    border-left: 1px solid #ddd;
+    border: 1px solid #ddd;
     background-color: #ddd;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+#search input:focus {
+    border: 1px solid #333;
+    border-right: 0;
+    color: #333;
+}
+#search input:focus + button {
+    border: 1px solid #333;
+    background-color: #888;
 }
