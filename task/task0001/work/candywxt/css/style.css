@@ -109,13 +109,15 @@ body{
 .i-icon img{
     width: 160px;
     position: relative;
-    margin: -50px 590px 50px;
+    left: 50%;
+    top: -50px;
+    margin-left: -80px;
     border-radius: 50%;
 }
 .introducetext{
     width: 600px;
     margin: 0 auto;
-    padding-bottom: 190px;
+    padding-bottom: 19px;
 }
 .introduce h1{
     font-size: 20px;
@@ -536,18 +538,59 @@ table{
     height: 160%;
 }
 /*about*/
+.contain{
+    overflow: hidden;
+}
 .about{
     border: 7px solid #eee;
 }
 .about img{
     display: block;
 }
-.about img:after{
-    content: "";
-    display: block;
-    width: 3px;
-    height: 100%;
-    background-color: red;
+.line:after{
     position: relative;
+    left:50%;
+    display: block;  
+    content: "";
+    background: #eee;
+    width: 7px;
+    height: 10000px; 
+    margin-bottom: -10000px;
+}
+.ayy{
+    overflow: hidden;
+    padding-left: 50%;
+    margin-bottom: 30px;
+}
+#abc .right{
+    float: left;
+    padding: 20px;
+    width: 90%;
+}
+#abc .right p,
+#abc .right h1{
+    text-align: left;
+}
+#abc .left h1{
+    text-align: right;
+}
+#abc .left{
+    float: left;
+    position: relative;
+    width: 40%;
     left: 50%;
+    margin-left: -100%;
+    padding: 20px;
+}
+#aaa .i-cion img{
+    width: 2px;
+}
+#abc .center{
+    background-color: #fff;
+    border-radius: 12px;
+    width: 48px;
+    padding: 3px 14px;
+    float: left;
+    position: relative;
+    left: -38px;
 }
