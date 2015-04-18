@@ -155,8 +155,7 @@ var srcObj = {
     b: {
         b1: ["hello", "hi"],
         b2: "JavaScript"
-    },
-    c: 
+    }
 };
 var abObj = srcObj;
 var tarObj = cloneObject(srcObj);
@@ -322,7 +321,7 @@ $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第
 
 ### 4.1 任务描述
 
-我们来继续用封装自己的小jQuery库来时间我们对于JavaScript事件的学习，还是在你的`util.js`，实现以下函数
+我们来继续用封装自己的小jQuery库来实现我们对于JavaScript事件的学习，还是在你的`util.js`，实现以下函数
 
 ```javascript
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
