@@ -1,0 +1,127 @@
+
+.about-wrap {
+  position: relative;
+  text-align: center;
+  overflow: auto;
+  zoom: 1
+}
+
+.about-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 10px solid rgba(219, 219, 205, 1);
+  position: relative;
+  bottom: -50px;
+  overflow: auto;
+  zoom: 1;
+  z-index: 1000;
+}
+
+.about-content {
+  position: relative;
+  overflow: auto;
+  zoom: 1;
+}
+
+.about-left,
+.about-right {
+  float: left;
+  width: 50%;
+  background: white;
+  position: relative;
+}
+
+.about-left:before {
+  content: "";
+  width: 5px;
+  background: rgba(184, 184, 156, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.about-left {
+  text-align: right;
+}
+.name {
+  margin: 50px 10px 10px 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  height: 80px;
+}
+
+.about-right {
+  text-align: left;
+}
+
+.about-title {
+  margin: 10px 15px 0px 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+.detail {
+  margin: 10px 15px 25px 15px;
+}
+
+.detail p {
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  width: 65%;
+}
+
+.about-item {
+  background: white;
+  position: relative;
+}
+
+.about-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 5px solid rgba(219, 219, 205, 1);
+  z-index: 1000;
+  
+}
+
+.time {
+  border: 5px solid rgba(219, 219, 205, 1);
+  z-index: 1000;
+  border-radius: 25%;
+  background: white;
+  position: absolute;
+}
+
+
+.address {
+  height: 80px;
+}
+
+.education {
+  height: 120px;
+}
+
+.high-school {
+  top: 120px;
+  left: 48%;
+}
+.college {
+  top: 170px;
+  left: 48%;
+}
+
+.work {
+  height: 180px;
+}
+.work-1 {
+  top: 140px;
+  left: 48%;
+}
+.work-2 {
+  top: 210px;
+  left: 48%;
+}
+/*about end*/
+
