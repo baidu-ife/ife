@@ -89,7 +89,7 @@ body {
 #main {
     width: 980px;
     margin: 0 auto;
-    background-color: #aaa;
+    background-color: red;
 }
 #main .right {
     width: 260px;
@@ -109,8 +109,8 @@ body {
  * index
  * =======================================================
  */
-.pic{
-    margin-bottom: 8px;
+.pic {
+    margin-bottom: 10px;
 }
 .pic img {
     width: 100%;
@@ -148,16 +148,38 @@ body {
     text-indent: 2em;
 }
 
-#main .block{
+/**
+ * block area
+ */
+#main .wrap{
+    margin-bottom: 110px;
+    overflow: hidden;
+}
+#main .wrap .block {
     width: 320px;
     background: #fff;
     float: left;
+    padding-bottom: 5000px;
+    margin-bottom: -5000px;
 }
-#main .second{
+#main .second {
     margin: 0 10px;
 }
-#main .block img{
+#main .block img {
     margin: 10px 10px 0 10px;
+}
+#main .block p {
+    font-size: 12px;
+    text-indent: 2em;
+    line-height: 1.7;
+    padding: 15px 30px 25px 30px;
+}
+/**
+ * personal
+ */
+#personal{
+    height: 520px;
+    background-color: #fff;
 }
 
 /**
@@ -169,8 +191,8 @@ body {
     padding: 20px;
     background-color: #fff;
     position: relative;   /* position: relative;
-                            overflow: auto;
-                            zoom:1;*/
+                                overflow: auto;
+                                zoom:1;*/
 }
 #main .blog h2 {
     color: #955EA1;
