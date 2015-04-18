@@ -1,0 +1,72 @@
+@media screen and (max-width: 980px){
+		#icon {
+			display: none;
+		}
+	}
+	li{
+		list-style: none;
+	}
+	body{
+		background: rgb(211,211,211);
+	}
+	#part_1{
+		width: 100%;
+		height: 80px;
+		background-color: rgb(65,12,89);
+		position: relative;
+	}
+	#part_1 #header{
+		max-width: 980px;
+		height: 100%;
+		margin: 0 auto;
+		position: relative;
+		
+	}
+	#header .nav{
+		position: absolute;
+		right: 0px;
+		bottom: 5px;
+		font-family: 宋体;
+		font-size: 14px;
+	}
+	#part_1 #icon{
+		position: absolute;
+		right: 10px;
+		bottom: 0px;
+	}
+	#part_5{
+		background: black;
+		color: white;
+	}
+	.nav li{
+		display: inline-block;
+		margin-right: 28px;
+	}
+	.nav a{
+		text-decoration: none;
+		color: white;
+	}
+	#part_5 .nav{
+		padding:5px 0;
+		text-align: center;
+		border-bottom: 1px solid rgba(255,255,255,0.5);
+	}
+	#part_5 #moreinfo{
+		width: 980px;
+		margin: 30px auto;
+		display: -webkit-flex;
+		display: flex;
+	}
+	#part_5 #moreinfo div{
+		-webkit-flex:1;	
+		flex:1;
+	}
+	#part_5 #moreinfo h4{
+		margin-bottom: 30px;
+	}
+	#part_5 #copyright{
+		margin-top: 100px;
+		height: 80px;
+		text-align: center;
+		background: url(../img/icon-github.png)  no-repeat 50% 100% ;
+	}
