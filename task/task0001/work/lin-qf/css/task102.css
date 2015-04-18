@@ -1,0 +1,126 @@
+#part_2{
+		width: 980px;
+		margin: 20px auto 100px;
+		position: relative;
+	}
+	#main{
+		margin-right: 210px;
+	}
+	#main article{
+		margin: 10px 0;
+		background: white;
+		padding: 20px 30px;
+		position: relative;
+		line-height: 150%;
+	}
+	article h3{
+		color: purple;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	article h4{
+		color: #666;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	p[class=detail]{
+		margin-top: 20px;
+		text-align: right;
+		color: rgb(123,122,123);
+	}
+	.date{
+		width:40px;
+		display: block;
+		height: 15px;
+		padding: 10px;
+		background: purple;
+		position: absolute;
+		left: -60px;
+		color: white;
+		font-size: 16px;
+		top: 40px;
+	}
+	.type{
+		width:40px;
+		display: block;
+		height: 15px;
+		padding: 10px;
+		background: rgba(255,0,0,0.4);
+		position: absolute;
+		left: -60px;
+		color: white;
+		font-size: 16px;
+		top: 75px;
+	}
+	#sidebar{
+		width: 200px;
+		float: right; 
+	}
+	#sidebar *{
+		background: white;
+		margin-bottom: 10px;
+	}
+	#sidebar #calendar{
+		height: 200px;
+	}
+	#sidebar #search{
+		height: 80px;
+	}
+	#sidebar #category{
+		height: 200px;
+	}
+	#sidebar #tags{
+		height: 150px;
+	}
+	#catelist li{
+		list-style: none;
+		margin: 0px;
+		height: 50px;
+		padding: 10px 0px 10px 15px;
+		border-bottom:2px solid rgba(0,0,0,0.3);
+		box-sizing:border-box;
+		color: rgba(0,0,0,0.7);
+		border-left: 4px solid rgba(255,0,0,0.2);
+	}
+	#catelist li:hover,#catelist a:visited{
+		color: rgba(0,0,0,0.5);
+		border-left: 4px solid rgba(255,0,0,0.5);
+	}
+	#tags{
+		padding: 10px;
+	}
+	#search{
+		padding: 20px 20px 20px 20px;
+		box-sizing:border-box; 
+	}
+	#form {
+		width: 170px;
+		height: 30px;
+		position: relative;
+	}
+	#search #text{
+		width: 120px;
+		height: 100%;
+	}
+	#search #btn{
+		position: absolute;
+		width: 50px;
+		padding: 4px 0;
+		font-size: 20px;
+		text-align: center;
+		background: rgba(0,0,0,0.3);
+		color: white;
+	}
+	#explore {
+		margin: 20px auto;
+		padding: 0 100px;
+	}
+	#explore a{
+		padding: 10px 15px;
+		background: white;
+
+	}
+	#explore #css{
+		background: rgb(183,40,214);
+		color: white;
+	}

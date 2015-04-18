@@ -1,0 +1,79 @@
+#main{
+		width: 980px;
+		margin: 50px auto 20px;
+		position: relative;
+	}
+	#main>div{
+		display:-webkit-flex;
+		display: flex;	
+	}
+	.left,.right{
+		-webkit-flex:1;
+		flex:1;
+		background: white;
+	}
+	.left{
+		margin-right: 5px;
+		position: relative;
+	}
+	.left h3{
+		font-size: 20px;
+		margin:100px 50px 10px 300px;
+	}
+	 .content{
+		font-size: 14px;
+		margin: 110px 10px 30px 30px;
+	}
+	#self{
+		position: absolute;
+		width: 120px;
+		height: 120px;
+		border-radius: 63px;
+		right: -66px;
+		top: -30px;
+		border:6px solid rgb(211,211,211);
+	}
+	.pic{
+		right: -54px;
+		width: 100px;
+		height: 100px;
+		border-radius: 55px;
+		position: absolute;
+		border:4px solid rgb(211,211,211);
+		top: -20px;
+	}
+	#info,#contact .pic{
+		right: -54px;
+	}
+	#education .pic{
+
+	}
+	 .year{
+		width: 60px;
+		height: 30px;
+		border: 5px solid rgb(197,197,197);
+		background: white;
+		border-radius: 10px;
+		text-align: center;
+		font-size: 14px;
+		padding: 5px 10px;
+	}
+	#education{
+		height: 350px;
+	}
+	.left .content{
+		position: absolute;
+		left: 427px;
+		top: 0px;
+	}
+	.left .content li{
+		width: 300px;
+		height: 70px;
+	}
+	.left .content p{
+		display: inline-block;
+		margin-left: 10px;
+	}	
+	#internship{
+		height: 300px;
+	}
