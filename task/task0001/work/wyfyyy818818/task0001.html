@@ -5,20 +5,9 @@
 	<title>Document</title>
     <link rel="stylesheet" href="task0001.css">
     <style>
+         
+       
 
-          @font-face {
-         font-family: 'hooray';  /*给自定义字体命名*/
-         src: url('hooray.eot');
-         src: url('hooray.eot?#iefix') format('eot'),
-         url('hooray.woff') format('woff'),
-         url('hooray.ttf') format('truetype'),
-         url('hooray.svg#webfontjKg17VrE') format('svg');
-         }
-
-         *{
-         	margin: 0px;
-         	padding: 0px;
-         }
          h1{
          	color: blue;
          }
@@ -27,230 +16,19 @@
 			background-color: black;
 			font-size: 14px;
 		 }
-		 span{
-		 	background-color: pink;
-		 }
 
- 		 .image img{
-         	  height: 250px;
-         	  width: 250px;
-         	   border: red solid 2px;
-           }
-
- 		#test1{
- 			   text-indent: 100px;
- 			   text-transform:uppercase; ;
- 			   text-decoration: line-through;
- 			   text-align: center;
- 			   word-spacing: 25px;
-               white-space: nowrap; 	
-               color: blue;
- 			   line-height: 40px;
- 			   font-family: times;
- 		/*arial times courier serif sans-serif cursive fantasy monospace*/
- 			   font-size: large;
- 	   /*small large medium smaller larger x-small xx-small inherit %*/
- 			   font-weight: bolder;
- 	  /*normal bold bolder lighter inherit 100-900*/
-       
- 				}
-        #test2{
-        	font: hooray bolder;
-        }
-
-	#mid{ 
-		margin:0px 160px; 
-		background:#000; 
-		font-size:20px;
-	    }
-		div.rtop{  background:#fff;}
-		div.rtop div 
-         {  height:1px; 
-  		   overflow:hidden; 
-  		   background:#fff;
-  		   border-right:1px solid black;
-  		   border-left: 1px solid black;
-  		}
-		div.r1{ margin:0 3px; }
-		div.r2{ margin:0 2px;}
-		div.r3{ margin:0 1px;}
-		div.rtop div.r4 { margin:0 1px; height:1px;}
-
-		#content{
-			height: 50px;
-			background-color: white;
-			border-right: 1px solid black;
-			border-left: 1px solid black;
-		}
-        
-
-
-           .div11{
-      				background-color: red;
-      				width: 960px;
-      				height: 30px;
-      				margin:0 auto;
-           }
-		   .div12{
-		   	        position: relative;
-		   	        background-color: blue;
-		   	        width: 960px;
-      				height: 30px;
-					margin-left:50%;
-					left:-480px;
-		   }
-
-           #div-a1{
-           			
-           			position: absolute;
-           			width: 50px;
-           			height: 50px;
-					background-color: red;
-           }
-           #div-a2{
-           	        height:50px;  
-           	        margin-left: 50px;
-           			background-color: blue;
-           }
-           #div-a3{
-           			background-color: yellow;
-           			height: 50px;
-           }
-
-    		#div-b1{
-					float: left;
-					width: 50px;
-					height: 50px;
-					background-color: red;
-    		}
-
-    		#div-b2{
-    				height: 50px;
-    				margin-left: 50px;
-    				background-color: blue;
-    		}
-    		#div-b3{
-    				clear:both;
-    				width: 100%;
-    				height: 30px;
-    				background-color: yellow;
-    		}
-	 		
-	 		.content{
-	 			  width: 100%;
-	 			  height: 190px;
-	 			  background-color: red;
-	 			  /*border: 5px solid black;	*/
-	 		}
-	 		.content .left{ 
-                  position: absolute;
-                  left: 30px;
-                  width: 100px;
-                  height: 150px;
-                  margin: 10px 0px;
-                  /*border: 1px solid black;*/
-	 		}
-	 		.content .left div{
-	 			   width: 100%;
-	 			   height: 50px;
-                   margin-bottom: 10px;
-                   background-color: blue;
-	 		}
-	 		.content .center{
-  				  position: absolute;
-  				  left: 160px;
-  				  right: 160px;
-  				  margin-top: 10px;
-                  height: 170px;
-      			  /*border: 1px solid black;*/
-	 		}
-	 		.content .center div{
-	 			   width: 100%;
-	 			   height: 50px;
-                   margin-bottom: 10px;
-                   background-color: blue;
-	 		}
-	 		.content .right{
-	 			 position: absolute;
-	 			 right: 30px;
-				 width: 100px;
-				 height: 170px;
-                 margin: 10px 0px;
-				 /*border: 1px solid black;*/
-	 		}
-	 		.content .right div{
-	 			   width: 100%;
-	 			   height: 50px;
-                   margin-bottom: 10px;
-                   background-color: blue;
-	 		}
-
-			.content1{
-	 			  width: 100%;
-	 			  height: 190px;
-	 			  background-color: red;
-	 		}
-	 		.content1 .left{ 
-				  float: left;
-                  width: 100px;
-                  height: 150px;
-                  margin: 10px 30px;
-                  /*border: 1px solid black;*/
-	 		}
-	 		.content1 .left div{
-	 			   width: 100%;
-	 			   height: 50px;
-                   margin-bottom: 10px;
-                   background-color: blue;
-	 		}
-	 		.content1 .center{
-                  position: absolute;
-                  left: 160px;
-                  right: 160px;
-  				        margin-top: 10px;
-                  height: 170px;
-      			  /*border: 1px solid black;*/
-	 		}
-	 		.content1 .center div{
-	 			   width: 100%;
-	 			   height: 50px;
-           margin-bottom: 10px;
-           background-color: blue;
-	 		}
-	 		.content1 .right{
-				 float: right;
-				 width: 100px;
-				 height: 170px;
-         margin: 10px 30px;
-				 /*border: 1px solid black;*/
-	 		}
-	 		.content1 .right div{
-	 			   width: 100%;
-	 			   height: 50px;
-           margin-bottom: 10px;
-           background-color: blue;
-           clear: both;
-	 		}
-
-			.foo{
-					background-color: red;
-					width: 100%;
-					height: 700px;
-			}
-			.foo div{
-					float: left;
-					margin: 20px;
-					width: 100px;
-					height: 100px;
-					background-color: blue;
-			}
+ 			 .image img{
+         	 	 height: 250px;
+         	 	 width: 180px;
+         	     border: red solid 2px;
+            }
 
     </style>
 </head>
 <body>
 	   <h1>wyfyyy818818</h1>
 		<ul>
-			<li><a href="/task0001.html">task0001.html</a></li>
+			<li><a href="file:///E:/Web%E5%89%8D%E7%AB%AF/%E5%B7%A5%E4%BD%9C%E5%8C%BA/%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF/task0001.html">task0001.html</a></li>
 			<li><a href="http://weibo.com/3181646571/profile?topnav=1&wvr=6">微博</a></li>
 		</ul>
 		<h2>这是个二级标题</h2>
@@ -258,97 +36,6 @@
 		<div class="image">
 		      <img src="1.jpg">
 		</div>
-         
-
-		<span id="test1"> als kdalskd jf十分累死了lask jdflka sjfl</span>
-  
-        <span id="test2">  asdfsdfasfasdfsdf</span>
-
-
-         <hr>
-         <span>第一种</span>
-		<div class="div11"> aaaaa </div>
-		 <span>第二种</span>
-		<div class="div12"> bbbbb</div>
-		<span>圆角矩形</span>
-		<div id="mid">
-		 <div class="rtop">
-		   <div class="r1" style="border-top: 1px solid black;"></div>
-		   <div class="r2"></div>
-		   <div class="r3"></div>
-		   <div class="r4"></div>
-		 </div>
-		 <div id="content"></div>
-		 <div class="rtop">
-		   <div class="r4"></div>
-		   <div class="r3"></div>
-		   <div class="r2"></div>
-		   <div class="r1" style="border-bottom: 1px solid black;"></div>
-		  </div>
-		</div>
-		<p>..</p>
-		<hr>
-		<span>第一种</span>
-		<hr>
-		<div id="div-a1"></div>
-		<div id="div-a2"></div>
-		<div id="div-a3"></div>
-		<hr>
-        <span>第二种</span>
-		<hr>
-		<div id="div-b1"></div>
-		<div id="div-b2"></div>
-		<div id="div-b3"></div>
-
-		<span>三列布局</span>
-		<span>第一种</span>
-        <div class="content">
-        	<div class="left">
-        		<div></div>
-        		<div></div>
-        		<div></div>
-        	</div>
-        	<div class="center">
-        		<div></div>
-        		<div></div>
-        		<div></div>
-        	</div>
-        	<div class="right">
-        		<div></div>
-        		<div></div>
-        		<div></div>
-        	</div>
-        </div>
-        <span>第二种</span>
-         <div class="content1">
-        	<div class="left">
-        		<div></div>
-        		<div></div>
-        		<div></div>
-        	</div>
-        	<div class="center">
-        		<div></div>
-        		<div></div>
-        		<div></div>
-        	</div>
-        	<div class="right">
-        		<div></div>
-        		<div></div>
-        		<div></div>
-        	</div>
-        </div>
-        <span>浮动布局</span>
-        <div class="foo">
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        </div>
-
+		
 </body>
 </html>
