@@ -173,6 +173,73 @@ function removeEvent(element, eventName, listener) {
         }
     }
 }
+
+function ajax(url, options) {
+    // your implement
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    var type,data;
+    if (options.type) {
+        type = options.type;
+    }else {
+        type = 'GET';
+    }
+
+    if (options.data) {
+        data = options.data;
+        var dataUrl = '?';
+        for (ele in data){
+            dataUrl = dataUrl + ele + '=' + data[ele] + '&';
+        }
+        dataUrl = dataUrl.substring(0,dataUrl.length-1);
+        url = url + dataUrl;
+
+    }else {
+        console.log('no data');
+    }
+    console.log(url);
+
+    var successFun;
+    if (options.onsuccess) {
+        successFun = options.onsuccess;
+    }else {
+        console.log('no success callback')
+    }
+
+    var failFun;
+    if (options.onfail) {
+        failFun = options.onfail;
+    }else {
+        console.log('no fail callback')
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            //console.log(xmlhttp.responseText);
+            if (successFun){
+                successFun(xmlhttp.responseText);
+            }
+        }else {
+            if (failFun) {
+                failFun();
+            }
+        }
+    };
+    xmlhttp.open(type,url,true);
+    xmlhttp.send();
+}
+
+
+
 var $;
 (function() {
     var MyQuery = function(selector) {
