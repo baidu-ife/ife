@@ -1,0 +1,211 @@
+#blog-contain {
+    margin:40px auto 30px;
+    min-height: 750px; 
+}
+main {
+    width: 710px;
+    float: left;
+
+}
+
+.blog {
+    width: 710px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+}
+.blog h2 {
+    color: #a660b7;
+    font-size: 16px;
+    padding: 0px 0 10px 10px;
+}
+.blog h3 {
+    color: #666;
+    font-size: 12px;
+    padding:  0 0 10px 10px;
+}
+.content {
+    padding: 20px 20px 40px 20px;
+}
+.content p {
+    text-indent: 2em;
+    font-size: 14px;
+    line-height: 150%;
+}
+.blog span {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    left: -50px;
+ 
+}
+.time {
+    float: right;
+    color: #666;
+    font-size: 12px; 
+}
+.date {
+    background: #522a5c;
+    top: 20px;
+
+}
+.tag {
+    background: #a660b7;
+    top: 60px;
+}
+.page {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.page li {
+    float: left;
+    list-style-type: none;
+    margin-left: 10px;
+} 
+.items {
+    background: #fff;
+    text-decoration: none;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: #333;
+}
+
+aside {
+    width: 260px;
+    height: 330px;
+    float: right; 
+} 
+.search {
+    width: 260px;
+    height: 80px;
+    background-color: #fff;
+}
+.search img {
+    position: relative;
+    top: 15px;
+    left: 9px;
+    margin-top: 3px;
+}
+.search div {
+    margin-left:15px; 
+}
+input {
+    border:1px solid #eee;
+    width: 130px; 
+    height: 40px;
+    background-color: #fff;
+    margin-top: 3px;
+
+}
+#go {
+    height: 42px;
+    width: 40px;
+    background-color: #666;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 3px;
+
+}
+.select {
+    width: 260px;
+    height: 240px;
+    margin-top: 10px;
+    width: 260px;
+    height: 200px;
+}
+.select li{
+    background-color: #fff;
+    list-style-type: none;
+
+}
+.select li a{
+    display: block;
+    width: 255px;
+    height: 48px;
+    border-bottom: 1px solid #bbb;
+    border-left: 5px solid #dfc6e6;
+    font-size: 16px;
+    color: #666;
+    text-decoration: none; 
+}
+.select li a:hover {
+    border-left: 5px solid #522a5c;
+}
+.select span {
+    display: block;
+    padding: 15px 0 0 15px;
+}
+
+.calendar {
+    width: 260px;
+    height: 240px;
+    background-color: #fff;
+}
+.calendar table {
+    width: 220px;
+    margin-left: 20px;
+}
+.calendar th {
+    color: #773c88;
+}
+.calendar tr {
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: #999; 
+}
+.calendar tr td {
+    width: 70px;
+    text-align:  center;
+}
+.calendar tr td .active{
+    color:#522a5c;
+}
+.current {
+    background: #a660b7;
+    color: #fff;
+}
+.tags {
+    width: 220px;
+    height: 160px;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 20px;
+}
+.tags h2 {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.lans {
+    color: #522a5c;
+    font-weight: 800;
+}
+.tag1 {
+    font-size: 24px;
+}
+.tag5 {
+    font-size: 20px;
+}
+.tag7 {
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

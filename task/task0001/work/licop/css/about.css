@@ -1,0 +1,68 @@
+main {
+    background: url(../img/line.png) 50% repeat-y #fff;
+    width: 980px;
+    margin: 100px auto 25px;
+}
+main section{
+    text-align: center;
+    position: relative;
+    top: -60px;
+    margin-bottom: 30px;
+}
+.radius {
+    border-radius: 100%;
+    border: 6px solid #eee;
+}
+.title {
+    position: relative;
+    top: 25px;
+    font-family: 'Microsoft YaHei'，'Century Gothic';
+    font-size: 20px;
+    font-weight: lighter;
+    width: 100px;
+    margin: 0 0 0 320px;
+    color: #333;
+
+}
+.detail{
+     font-size: 14px;
+     text-align: left;
+     color: #333;
+     width: 320px;
+     word-wrap: break-word;
+     margin: 0 0 0 540px;
+     line-height: 150%;
+     list-style-type: none; 
+}
+
+.edu ul,.job ul{
+    margin: 0 0 0 460px;
+}
+.edu ul li,.job ul li {
+     margin-bottom: 30px;
+}
+.ul-detail li h3 {
+    display: inline-block;
+    _zoom:1;*display:inline;
+    border-radius: 50px;
+    border: 4px solid #eee;
+    text-align: center;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

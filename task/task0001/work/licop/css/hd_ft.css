@@ -1,0 +1,116 @@
+/*header*/
+body{
+    background-color: #eee;
+}
+.clear{
+    clear: both;
+}
+header {
+    width: 100%;
+    height: 80px;
+    background: #522a5c;
+}
+.contain {
+    width: 980px;
+    margin: 0 auto;
+}
+#head {
+    height: 80px;
+}
+.logo {
+    width: 101px;
+    height: 27px;
+    margin-top: 48px;
+    float: left;
+}
+.top-nav {
+    float: right;
+    margin-top: 57px;
+}
+.nav li {
+    float: left;
+    list-style-type: none;
+    margin-left:28px; 
+}
+.nav a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+.nav a:hover {
+    text-decoration: underline;
+}
+.github{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    margin-top: 48px; 
+    
+}
+
+
+/*footer*/
+
+.bottom-nav{
+    background-color: #000;
+    height: 35px;
+    border-bottom: 1px solid #333;
+}
+.bottom-nav ul{
+    margin: 0 auto;
+    width: 252px;
+}
+.bottom-nav li{
+    position: relative;
+    top: 10px;
+}
+
+footer {
+    position: relative;
+    height: 360px;
+    background: #000;
+    font-size: 12px;
+}
+#footer-contain {
+    height: 360px;
+}
+.link {
+
+}
+.links >li {
+    float: left;
+    list-style-type: none;
+    margin-right: 148px;
+}
+.links-item >li {
+    list-style-type: none;
+    margin-top: 10px;
+}
+.links-item >li a {
+    color: #fff;
+    text-decoration: none;
+}
+.links-item >li a:hover {
+    text-decoration: underline;
+}
+.footer-git {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 980px;
+    
+}
+#link-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+.copyright {
+    color: #fff;
+    margin: 0 auto 10px;
+}
+
+
+
+
+
