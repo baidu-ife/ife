@@ -1,0 +1,281 @@
+/**
+ * reset
+ * ==============================================
+ */
+h1, h2, h3, p, div, input, button, body, ul, li, img, a {
+    margin: 0;
+    padding: 0;
+}
+li, a {
+    text-decoration: none;
+}
+
+/*清除Chrome input 中的focus样式*/
+input, button, select, textarea {
+    outline: none;
+}
+img {
+    border: 0;
+}
+
+/**
+ * common
+ * ==============================================
+ */
+body {
+    background-color: #eee;
+}
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+#header {
+    background-color: #52385B;
+    color: #fff;
+    height: 80px;
+    position: relative;
+}
+#header .center {
+    width: 980px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+}
+#header .center h1 {
+    font-family: Arial, 'SimHei', 'STHeiti', sans-serif;
+    font-weight: normal;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#header .center .nav {
+    font-family: 'SimSun', 'STSong', serif;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+#header .center .nav ul li {
+    display: inline-block;
+    padding-left: 28px;
+}
+#header .center .nav ul li a:link {
+    color: #fff;
+}
+#header .center .nav ul li a:visited {
+    color: #fff;
+}
+#header .center .nav ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+#header .center .nav ul li a:active {
+    color: #fff;
+}
+@media screen and (max-width:980px) {
+    #header .git {
+        display: none;
+    }
+}
+#header .git img {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+#main {
+    width: 980px;
+    margin: 0 auto;
+    background-color: red;
+}
+#main .right {
+    width: 260px;
+    float: right;
+    background-color: red;
+}
+#main .left {
+    width: 710px;
+    float: left;
+}
+#footer {
+    height: 100px;
+    background-color: #333;
+}
+
+/**
+ * index
+ * =======================================================
+ */
+.pic {
+    margin-bottom: 10px;
+}
+.pic img {
+    width: 100%;
+}
+.pic .location {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+.pic .location .description {
+    width: 340px;
+    height: 90px;
+    padding: 10px 10px 30px 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.7)), color-stop(75%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3ffffff', endColorstr='#00ffffff', GradientType=0); /* IE6-9 */
+}
+.pic .location .description h1 {
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-align: right;
+}
+.pic .location .description p {
+    font-size: 12px;
+    line-height: 1.5;
+    text-indent: 2em;
+}
+
+/**
+ * block area
+ */
+#main .wrap {
+    margin-bottom: 110px;
+    overflow: hidden;
+}
+#main .wrap .block {
+    width: 320px;
+    background: #fff;
+    float: left;
+    padding-bottom: 5000px;
+    margin-bottom: -5000px;
+}
+#main .second {
+    margin: 0 10px;
+}
+#main .block img {
+    margin: 10px 10px 0 10px;
+}
+#main .block p {
+    font-size: 12px;
+    text-indent: 2em;
+    line-height: 1.7;
+    padding: 15px 30px 25px 30px;
+}
+
+/**
+ * personal
+ */
+#personal {
+    height: 520px;
+    background-color: #fff;
+}
+
+/**
+ * blog
+ * =======================================================
+ */
+#main .blog {
+    margin: 0 0 10px 0;
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+}
+#main .blog h2 {
+    color: #955EA1;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+#main .blog h3 {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+#main .blog .article {
+    font-size: 12px;
+}
+#main .blog .article p {
+    text-indent: 2em;
+    line-height: 1.8;
+}
+#main .blog .author {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #959595;
+    float: right;
+}
+#main .blog .side-card {
+    width: 50px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    left: -50px;
+    text-align: center;
+    color: #fff;
+}
+#main .blog .side-card .date {
+    height: 40px;
+    line-height: 40px;
+    background-color: #52385B;
+}
+#main .blog .side-card .cate {
+    height: 40px;
+    line-height: 40px;
+    background-color: #955EA1;
+}
+
+/**
+ * right area
+ *
+ * ------------
+ * 
+ * search
+ */
+#search {
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+}
+#search  .text {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 0 0 50px;
+    border: 1px solid #ddd;
+    border-right: 0;
+    color: #aaa;
+    background: url(../img/search.png) no-repeat;
+}
+#search button {
+    width: 50px;
+    height: 42px;
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+#search input:focus {
+    border: 1px solid #333;
+    border-right: 0;
+    color: #333;
+}
+#search input:focus + button {
+    border: 1px solid #333;
+    background-color: #888;
+}
