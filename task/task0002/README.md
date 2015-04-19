@@ -427,7 +427,7 @@ function renderList() {
 }
 
 function init() {
-    each($("#list li"), function(i, item) {
+    each($("#list").getElementsByTagName('li'), function(i, item) {
         $.click(item, clickListener);
     });
 
