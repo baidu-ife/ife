@@ -290,7 +290,7 @@ function getPosition(element) {
 // your implement
 ```
 
-接下来挑战一个`mini $`，它和之前的`$`是不兼容的，它应该是`document.querySelector`的功能子集。继续在你的`util.js`中完成以下任务：
+接下来挑战一个`mini $`，它和之前的`$`是不兼容的，它应该是`document.querySelector`的功能子集，在不直接使用`document.querySelector`的情况下，在你的`util.js`中完成以下任务：
 
 ```javascript
 // 实现一个简单的Query
