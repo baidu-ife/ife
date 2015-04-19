@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset = "UTF-8">
+        <title>task0002</title>
+        <style type="text/css">
+            .red {
+                background-color: red;
+                width: 100px;
+                height: 100px;
+            }
+            .blue {
+                width: 500px;
+            }
+            .center {
+                font-size: 30px;
+            }
+            #div1 {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+            #div3 {
+                width: 500px;
+                height: 500px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="number1" type="text">
+        <input id="number2" type="text">
+        <span id="result"></span>
+        <button id="addbtn">xx</button>
+        <div id="div1" class="red">111</div>
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </body>
+    <script type="text/javascript" src="1-1.js"></script>
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            $("div").innerHTML = "red";
+            
+        }
+    </script>
+</html>
