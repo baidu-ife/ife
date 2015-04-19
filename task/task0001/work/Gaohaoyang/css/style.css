@@ -241,7 +241,6 @@ ul li a:active {
 #main-blog .right {
     width: 260px;
     float: right;
-    background-color: red;
 }
 #main-blog .left {
     width: 710px;
@@ -328,6 +327,7 @@ ul li a:active {
  */
 #search {
     padding: 20px;
+    margin-bottom: 10px;
     background-color: #fff;
     position: relative;
 }
@@ -361,4 +361,50 @@ ul li a:active {
 #search input:focus + button {
     border: 1px solid #333;
     background-color: #888;
+}
+
+/**
+ * categoties
+ */
+#main-blog .cate {
+    background: #fff;
+    margin-bottom: 10px;
+}
+#main-blog .cate a{
+    color: #666;
+    font-size: 14px;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    border-left: 4px solid #D8BCE2;
+    border-bottom: 1px solid #ddd;
+}
+#main-blog .cate .first{
+    border-top: 1px solid #ddd;
+}
+#main-blog .cate .active,#main-blog .cate a:hover{
+     border-left: 4px solid #52385B;
+}
+
+/**
+ * calender
+ */
+#main-blog .calender{
+    background-color: #fff;
+    padding: 20px;
+    font-size: 13px;
+}
+#main-blog .calender .year-month{
+    font-weight: bold;
+    text-align: center;
+    color: #52385B;
+}
+#main-blog .calender .year-month a{
+    display: inline-block;
+    color: #52385B;
+}
+#main-blog .calender .year-month .year-month-center{
+    padding: 0 50px;
+    letter-spacing: 3px;
 }
