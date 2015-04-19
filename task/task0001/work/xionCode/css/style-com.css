@@ -4,13 +4,15 @@
 	background:#522a5c;}
 .header-main{
 	display:inline-block;
-	position:relative;
+	position:absolute;
 	height:80px;
 	width:980px;
 	left:50%;
 	margin-left:-490px;
-	background:#522a5c;}
+	background:#522a5c;
+	z-index:2;}
 .menu{
+	display:inline-block;
 	position:absolute;
 	right:0;
 	bottom:0;
@@ -26,12 +28,15 @@
 	color:#fff;}
 .git-link{
 	display:inline-block;
+	position:absolute;
+	right:0;
 	margin-right:10px;
 	margin-top:43px;
-	float:right;}
+	z-index:1;}
 .git-link img{
 	width:30px;
 	height:34px;}
+/*顶部结束*/
 .footer{
 	height:395px;
 	width:100%;

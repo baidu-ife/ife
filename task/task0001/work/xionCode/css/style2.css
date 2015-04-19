@@ -98,8 +98,7 @@
 	float:right;
 	margin-top:20px;
 	height:748px;
-	width:260px;
-	background:#CF9;}
+	width:260px;}
 .search-container{
 	position:absolute;
 	height:80px;
@@ -108,7 +107,6 @@
 .search{
 	height:42px;
 	width:222px;
-	position:relative;
 	margin-left:19px;
 	margin-top:19px;
 	text-align:center;}
@@ -122,4 +120,37 @@
 	width:51px;
 	border:1px solid #dddddd;
 	color:#fff;
-	font-size:20px;}
+	font-size:20px;
+	cursor:pointer;}
+.tab{
+	position:absolute;
+	margin-top:90px;
+	height:201px;
+	width:260px;}	
+.tab div{
+	height:49px;
+	width:256px;
+	border-bottom:1px solid #dddddd;
+	background:#fff;
+	cursor:pointer;
+	border-left:4px solid #dfc6e6;
+	line-height:49px;
+	text-align:center;
+	color:#666666;}
+.tab div:first-child{
+	border-top:1px solid #dddddd;}
+.tab div:hover{
+	border-left:4px solid #522a5c;}
+/*tab结束*/
+.calendar{
+	height:240px;
+	width:260px;
+	position:absolute;
+	margin-top:301px;
+	background:#fff;}
+.tags{
+	position:absolute;
+	margin-top:551px;
+	height:197px;
+	width:260px;
+	background:#fff;}
