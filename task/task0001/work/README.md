@@ -5,4 +5,5 @@
 知识点：http://www.w3cschool.cc/cssref/css3-pr-mediaquery.html
 ##### 图片上的文字背景色白底色，从上到下透明度渐变为70%、50%（75%位置）、0%（css3)
 知识点：http://www.w3cschool.cc/css3/css3-gradients.html
-##### 图片上的文字背景色白底色，从上到下透明度渐变处理好后，子元素样式被清零
+##### content_article一样高，且自适应于文字
+##### 白底黑字为可点状态，白底灰字为不可点状态，紫色底为当前页
