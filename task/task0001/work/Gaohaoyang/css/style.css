@@ -79,8 +79,10 @@ ul li a:active {
     position: absolute;
     right: 0;
     bottom: 0;
+    font-size: 0;
 }
 #header .center .nav ul li {
+    font-size: 14px;
     display: inline-block;
     padding-left: 28px;
 }
@@ -294,15 +296,27 @@ ul li a:active {
 }
 
 #main-blog .page{
-    margin: 0 auto;
+    font-size: 0;/*为了去除inline-block之间的间隙*/
+    text-align: center;
+    margin-bottom: 330px;
 }
 #main-blog .page a{
     background-color: #fff;
-    padding: 15px;
-    margin-right: 10px;
+    color: #000;
+    padding: 10px 15px;
+    margin: 0 5px;
     display: inline-block;
     font-size: 12px;
-
+}
+#main-blog .page .curr{
+    color: #fff;
+    background-color: #955EA1;
+    font-weight: bold;
+    cursor: text;
+}
+#main-blog .page .disable{
+    color: #ccc;
+    cursor: text;
 }
 
 /**
