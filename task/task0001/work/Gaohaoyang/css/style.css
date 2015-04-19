@@ -25,6 +25,9 @@ img {
 body {
     background-color: #eee;
 }
+p {
+    text-indent: 2em;
+}
 .clearfix:after {
     content: "\200B";
     display: block;
@@ -88,8 +91,7 @@ body {
 }
 #main {
     width: 980px;
-    margin: 0 auto;
-    background-color: red;
+    margin: 0 auto;    /*background-color: red;*/
 }
 #main .right {
     width: 260px;
@@ -145,7 +147,6 @@ body {
 .pic .location .description p {
     font-size: 12px;
     line-height: 1.5;
-    text-indent: 2em;
 }
 
 /**
@@ -170,7 +171,6 @@ body {
 }
 #main .block p {
     font-size: 12px;
-    text-indent: 2em;
     line-height: 1.7;
     padding: 15px 30px 25px 30px;
 }
@@ -181,6 +181,28 @@ body {
 #personal {
     height: 520px;
     background-color: #fff;
+}
+#personal img {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    border-radius: 80px;
+}
+#personal h2 {
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    font-family: 'Century Gothic',sans-serif;
+    font-weight: normal;
+}
+#personal p{
+    margin: 0 auto;
+    max-width: 600px;
+    color: #000;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 /**
@@ -207,7 +229,6 @@ body {
     font-size: 12px;
 }
 #main .blog .article p {
-    text-indent: 2em;
     line-height: 1.8;
 }
 #main .blog .author {
