@@ -1,0 +1,175 @@
+/*css reset part starts here*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+:focus {
+    outline: 0;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*css reset part ends here*/
+
+/*public header part's css starts here*/
+body{
+    font-family: "Microsoft Yahei"，sans-serif;
+    font-size: 14px;
+    background-color: #eee;
+}
+h1,h2,h3,h4{
+    font-weight: normal;
+}
+a{
+    text-decoration: none;
+}
+.header,.footer{
+    width: 100%;
+    min-width: 980px;
+    position: relative;
+    z-index: 1;
+}
+.header{
+    background-color: #522a5c;
+    height: 80px;
+}
+.header-inside{
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    background-color: #522a5c;
+}
+.header-inside h1,.header-inside .menu{
+    position: absolute;
+    padding-bottom: 5px;
+    z-index: 3;
+}
+.header-inside h1{
+    color: #fff;
+    font-size: 25px;
+    left: 0;
+    bottom: 0;
+}
+.menu{
+    font-size: 14px;
+    right: 0;
+    bottom: 0;
+}
+.menu li{
+    display: inline-block;
+    padding-left: 28px;
+}
+.menu li a{
+    display: block;
+    color: #fff;
+}
+.header div+a{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    z-index: 2;
+}
+.github-link img{
+    display: block;
+}
+/*public header part's css ends here*/
+
+/*public footer part's css starts here*/
+.footer{
+    background-color: #000;
+    color: #fff;
+}
+.nav{
+    border-bottom: 1px solid #333;
+    background-color: #000;
+}
+.nav ul{
+    width: 980px;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: center;
+
+}
+.nav li{
+    display: inline-block;
+    padding: 0 10px;
+}
+.nav li a{
+    color: #fff;
+}
+.resources{
+    width: 980px;
+    font-size: 0;
+    margin: 0 auto;
+    padding: 50px 0 80px;
+    background-color: #000;
+}
+.resources > li{
+    display: inline-block;
+    width: 196px;
+    font-size: 16px;
+    vertical-align: top;
+}
+.linkslist{
+    padding-top: 20px;
+}
+.linkslist li a{
+    height: 24px;
+    line-height: 28px;
+    color: #fff;
+}
+.linkslist li a:hover{
+    text-decoration: underline;
+}
+.rights{
+    width: 980px;
+    margin: 0 auto;
+    background-color: #000;
+}
+.rights p{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.rights a{
+    display: block;
+    width: 30px;
+    margin: 0 auto;
+}
+/*publice footer part's css ends here*/
