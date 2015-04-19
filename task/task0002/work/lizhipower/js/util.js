@@ -2,6 +2,44 @@
  * Created by Zhi_LI on 2015/4/18.
  */
 
+//Array.forEach implementation for IE support..
+if (!Array.prototype.forEach) {
+    Array.prototype.forEach = function(callback, thisArg) {
+        var T, k;
+        if (this == null) {
+            throw new TypeError(" this is null or not defined");
+        }
+        var O = Object(this);
+        var len = O.length >>> 0; // Hack to convert O.length to a UInt32
+        if ({}.toString.call(callback) != "[object Function]") {
+            throw new TypeError(callback + " is not a function");
+        }
+        if (thisArg) {
+            T = thisArg;
+        }
+        k = 0;
+        while (k < len) {
+            var kValue;
+            if (k in O) {
+                kValue = O[k];
+                callback.call(T, kValue, k, O);
+            }
+            k++;
+        }
+    };
+}
+
+Array.prototype.unique= function () {
+    var obj = {},
+        res = [] ;
+    this.forEach(function(v){
+        if (!obj[v]) {
+            obj[v] = true;
+            res.push(v);
+        }
+    });
+    return res ;
+};
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
 // 先暂时不要简单的用一句正则表达式来实现
 function trim(str) {
@@ -95,44 +133,151 @@ function getPosition(element) {
 
 }
 
-function $(selector) {
-    var elements = [];
-    //console.log('hi');
-    var classReg = /\.\w*/g;
-    var domReg = /\#\w*/g;
-    //var attrReg = /\[.*\]/g;
-    //var tagReg =  /![\.\#]\w/g;
 
-    var selClassList = selector.match(classReg);
-    var selDomList =selector.match(domReg);
-    //var selAttrList =selector.match(attrReg);
-    //var selTagList =selector.match(tagReg);
 
-    if (selDomList!=null && selDomList.length ==1 && selClassList!=null){
-        var classSeletor = selClassList.join('');
-        elements = document.querySelectorAll(classSeletor);
-        var eleNew = [];
-        for (i=0;i<elements.length; i++){
-            if(elements[i].parentNode.hasAttribute('id')){
-                if (elements[i].parentNode.id == selDomList[0].replace('#','')) {
-                    eleNew.push(elements[i]);
-                }
-            }
-
-        }
-        elements = eleNew;
-    }
-    elements = document.querySelectorAll(selector);
-    return elements;
-}
 
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
-function addEvent(element, event, listener) {
+function addEvent(element, eventName, listener) {
     // your implement
+    if (element.addEventListener) {
+        element.addEventListener(eventName, listener, false)
+    }else if (element.attachEvent){
+        element.attachEvent('on' + eventName, listener)
+    }else{
+        element.setAttribute('on' + eventName, listener);
+    }
 
 }
 
 // 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
-function removeEvent(element, event, listener) {
+function removeEvent(element, eventName, listener) {
     // your implement
+    console.log(listener);
+    if (typeof(listener) ==  "undefined"){
+        console.log(listener);
+        //TODO
+        if (element.removeEventListener)
+            element.removeEventListener(eventName, false);
+        else if (element.detachEvent)
+            element.detachEvent("on" + eventName);
+        else{
+            element.setAttribute('on' + eventName, '');
+        }
+    }else{
+        if (element.removeEventListener)
+            element.removeEventListener(eventName, listener, false);
+        else if (element.detachEvent)
+            element.detachEvent("on" + eventName, listener);
+        else{
+            element.setAttribute('on' + eventName, '');
+        }
+    }
 }
+var $;
+(function() {
+    var MyQuery = function(selector) {
+        if ( window == this ) return new $(selector);
+
+        var elements = [];
+        //console.log('hi');
+        var classReg = /\.[\w-]*/g;
+        var domReg = /\#[\w-]*/g;
+        //var attrReg = /\[.*\]/g;
+        //var tagReg =  /![\.\#]\w/g;
+
+        var selClassList = selector.match(classReg);
+        var selDomList =selector.match(domReg);
+        //var selAttrList =selector.match(attrReg);
+        //var selTagList =selector.match(tagReg);
+        var eleNew = [];
+        if (selDomList!=null && selDomList.length ==1 && selClassList!=null){
+            var classSeletor = selClassList.join('');
+            //console.log(classSeletor);
+            elements = document.querySelectorAll(classSeletor);
+            //console.log(elements);
+
+            eleNew = [];
+            for (i=0;i<elements.length; i++){
+                if(elements[i].parentNode.hasAttribute('id')){
+                    if (elements[i].parentNode.id == selDomList[0].replace('#','')) {
+                        eleNew.push(elements[i]);
+                        //console.log(elements[i]);
+                    }
+                }
+
+            }
+            elements = eleNew;
+        }else {
+            eleNew = [];
+            elements = document.querySelectorAll(selector);
+            for (i=0;i<elements.length; i++){
+                eleNew.push(elements[i]);
+            }
+            elements = eleNew;
+        }
+
+        return this.setArray(elements);
+    };
+
+    MyQuery.prototype.setArray = function( arr ) {
+        this.length = 0;
+        [].push.apply( this, arr );
+        return this;
+    };
+
+    MyQuery.fn = MyQuery.prototype;
+
+
+//each
+    MyQuery.fn.each = function(method){
+        for(var i=0,l=this.length; i<l; i++){
+            method.call(this[i],i);
+        }
+    };
+
+
+    MyQuery.fn.on = function(eventName, listener){
+        this.each(function(){
+            addEvent(this, eventName,listener);
+        });
+    };
+
+    MyQuery.fn.un = function(eventName, listener){
+        this.each(function(){
+            removeEvent(this, eventName,listener);
+        });
+    };
+
+    MyQuery.fn.click = function(listener){
+        this.each(function(){
+            addEvent(this, 'click',listener);
+        });
+    };
+
+    MyQuery.fn.enter = function(listener){
+        this.each(function(){
+            addEvent(this, 'enter',listener);
+        });
+    };
+
+    MyQuery.fn.delegate = function(tag, eventName, listener){
+        this.each(function(){
+            addEvent(this, eventName,function(e){
+                if(e.target && e.target.tagName == tag.toUpperCase()) {
+                    listener(e);
+                }
+            });
+        });
+    };
+
+    $ = MyQuery;
+})();
+
+////$().on = addEvent;
+//$.un = removeEvent;
+//$.click = function(element, listener){
+//    addEvent(element,'click',listener);
+//};
+//$.enter = function(element, listener){
+//    addEvent(element,'enter',listener);
+//};
