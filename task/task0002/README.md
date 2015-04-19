@@ -155,8 +155,7 @@ var srcObj = {
     b: {
         b1: ["hello", "hi"],
         b2: "JavaScript"
-    },
-    c: 
+    }
 };
 var abObj = srcObj;
 var tarObj = cloneObject(srcObj);
@@ -200,12 +199,21 @@ function each(arr, fn) {
     // your implement
 }
 
+// 其中fn函数可以接受两个参数：item和index
+
 // 使用示例
 var arr = ['java', 'c', 'php', 'html'];
-function output(item, index) {
+function output(item) {
     console.log(item)
 }
 each(arr, output);  // java, c, php, html
+
+// 使用示例
+var arr = ['java', 'c', 'php', 'html'];
+function output(item, index) {
+    console.log(index + ': ' + item)
+}
+each(arr, output);  // 0:java, 1:c, 2:php, 3:html
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {}
@@ -282,7 +290,7 @@ function getPosition(element) {
 // your implement
 ```
 
-接下来挑战一个`mini $`，它和之前的`$`是不兼容的，它应该是`document.querySelector`的功能子集。继续在你的`util.js`中完成以下任务：
+接下来挑战一个`mini $`，它和之前的`$`是不兼容的，它应该是`document.querySelector`的功能子集，在不直接使用`document.querySelector`的情况下，在你的`util.js`中完成以下任务：
 
 ```javascript
 // 实现一个简单的Query
@@ -428,7 +436,7 @@ function renderList() {
 }
 
 function init() {
-    each($("#list li"), function(i, item) {
+    each($("#list").getElementsByTagName('li'), function(item) {
         $.click(item, clickListener);
     });
 
