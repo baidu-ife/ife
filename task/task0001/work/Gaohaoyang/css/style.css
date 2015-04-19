@@ -94,15 +94,6 @@ ul li a:active {
     right: 10px;
     bottom: 0;
 }
-#main .right {
-    width: 260px;
-    float: right;
-    background-color: red;
-}
-#main .left {
-    width: 710px;
-    float: left;
-}
 #footer {
     background-color: #000;
     font-size: 12px;
@@ -242,35 +233,47 @@ ul li a:active {
  * blog
  * =======================================================
  */
-#main .blog {
+#main-blog{
+    margin-top: 20px;
+}
+#main-blog .right {
+    width: 260px;
+    float: right;
+    background-color: red;
+}
+#main-blog .left {
+    width: 710px;
+    float: left;
+}
+#main-blog .blog {
     margin: 0 0 10px 0;
     padding: 20px;
     background-color: #fff;
     position: relative;
 }
-#main .blog h2 {
+#main-blog .blog h2 {
     color: #955EA1;
     font-size: 16px;
     margin-bottom: 10px;
 }
-#main .blog h3 {
+#main-blog .blog h3 {
     font-size: 12px;
     color: #666;
     margin-bottom: 15px;
 }
-#main .blog .article {
+#main-blog .blog .article {
     font-size: 12px;
 }
-#main .blog .article p {
+#main-blog .blog .article p {
     line-height: 1.8;
 }
-#main .blog .author {
+#main-blog .blog .author {
     margin-top: 30px;
     font-size: 12px;
     color: #959595;
     float: right;
 }
-#main .blog .side-card {
+#main-blog .blog .side-card {
     width: 50px;
     height: 80px;
     position: absolute;
@@ -279,15 +282,27 @@ ul li a:active {
     text-align: center;
     color: #fff;
 }
-#main .blog .side-card .date {
+#main-blog .blog .side-card .date {
     height: 40px;
     line-height: 40px;
     background-color: #52385B;
 }
-#main .blog .side-card .cate {
+#main-blog .blog .side-card .cate {
     height: 40px;
     line-height: 40px;
     background-color: #955EA1;
+}
+
+#main-blog .page{
+    margin: 0 auto;
+}
+#main-blog .page a{
+    background-color: #fff;
+    padding: 15px;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 12px;
+
 }
 
 /**
