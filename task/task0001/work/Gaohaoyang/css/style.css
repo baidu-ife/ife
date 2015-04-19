@@ -6,7 +6,10 @@ h1, h2, h3, p, div, input, button, body, ul, li, img, a {
     margin: 0;
     padding: 0;
 }
-li, a {
+li {
+    list-style-type: none;
+}
+a {
     text-decoration: none;
 }
 
@@ -14,8 +17,8 @@ li, a {
 input, button, select, textarea {
     outline: none;
 }
-img {
-    border: 0;
+a img {
+    border: none;
 }
 
 /**
@@ -27,6 +30,23 @@ body {
 }
 p {
     text-indent: 2em;
+}
+ul li a:link {
+    color: #fff;
+}
+ul li a:visited {
+    color: #fff;
+}
+ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+ul li a:active {
+    color: #fff;
+}
+.main-center {
+    width: 980px;
+    margin: 0 auto;
 }
 .clearfix:after {
     content: "\200B";
@@ -44,9 +64,7 @@ p {
     position: relative;
 }
 #header .center {
-    width: 980px;
     height: 70px;
-    margin: 0 auto;
     position: relative;
 }
 #header .center h1 {
@@ -66,19 +84,6 @@ p {
     display: inline-block;
     padding-left: 28px;
 }
-#header .center .nav ul li a:link {
-    color: #fff;
-}
-#header .center .nav ul li a:visited {
-    color: #fff;
-}
-#header .center .nav ul li a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-#header .center .nav ul li a:active {
-    color: #fff;
-}
 @media screen and (max-width:980px) {
     #header .git {
         display: none;
@@ -88,10 +93,6 @@ p {
     position: absolute;
     right: 10px;
     bottom: 0;
-}
-#main {
-    width: 980px;
-    margin: 0 auto;    /*background-color: red;*/
 }
 #main .right {
     width: 260px;
@@ -103,8 +104,42 @@ p {
     float: left;
 }
 #footer {
-    height: 100px;
-    background-color: #333;
+    background-color: #000;
+    font-size: 12px;
+    color: #fff;
+}
+#footer .footer-nav {
+    border-bottom: 1px solid #333;
+    line-height: 36px;
+    text-align: center;
+}
+#footer .footer-nav ul li {
+    display: inline-block;
+    padding: 0 10px;
+}
+#footer .footer-contact {
+    margin-top: 40px;
+}
+#footer .footer-contact ul {
+    float: left;
+    width: 200px;
+}
+#footer .footer-contact .last {
+    width: auto;
+}
+#footer .footer-contact ul .title {
+    margin-bottom: 25px;
+}
+#footer .copyright {
+    margin-top: 90px;
+    text-align: center;
+}
+#footer .copyright div {
+    margin-bottom: 20px;
+}
+#footer .copyright img {
+    display: block;
+    margin: 0 auto;
 }
 
 /**
@@ -118,8 +153,6 @@ p {
     width: 100%;
 }
 .pic .location {
-    width: 980px;
-    margin: 0 auto;
     position: relative;
 }
 .pic .location .description {
@@ -194,10 +227,10 @@ p {
     font-size: 20px;
     color: #000;
     text-align: center;
-    font-family: 'Century Gothic',sans-serif;
+    font-family: 'Century Gothic', sans-serif;
     font-weight: normal;
 }
-#personal p{
+#personal p {
     margin: 0 auto;
     max-width: 600px;
     color: #000;
