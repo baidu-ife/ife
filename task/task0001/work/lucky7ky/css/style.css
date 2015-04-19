@@ -190,7 +190,7 @@
     margin:40px auto;
     text-align:left;
 }
-/*gallery*/
+/*blog*/
 .content-center {
     display:table;
     width:1080px;
@@ -205,7 +205,7 @@
     width:270px;
     height:700px;
     float:right;
-    padding-right:50px;
+    margin-right:50px;
 }
 .blog {
     display:table;
@@ -431,4 +431,241 @@
     padding:5px;
     color:black;
     font-size:12px;
+}
+/*gallery*/
+.center {
+    width:980px;
+    height:800px;
+    margin:10px auto 0px auto;
+    padding-bottom:100px;
+}
+.main {
+    width:700px;
+    float:left;
+    height:300px;
+    margin-right:10px;
+}
+.aside {
+    width:270px;
+    float:right;
+    height:600px;
+    padding-top:57px;
+}
+#ranking {
+    width:250px;
+    height:250px;
+    background-color:white;
+    padding:10px;
+    margin-top:10px;
+}
+#ranking-head {
+    font-size:16px;
+    color:rgb(107, 102, 102);
+    margin-bottom:30px;
+    margin-top:10px;
+}
+.ranking-ul {
+    list-style-type:none;
+}
+.ranking-li {
+    height:20px;
+    margin-bottom:15px;
+}
+.ranking-number {
+    display:block;
+    float:left;
+    width:20px;
+    line-height:20px;
+    border-radius:100px;
+    font-size:12px;
+    color:white;
+    text-align:center;
+    background-color:purple;
+    margin-right:12px;
+}
+.ranking-bar {
+    display:block;
+    float:left;
+    border:1px solid black;
+    width:100px;
+    height:18px;
+}
+.ranking-bar-1 {
+    display:block;
+    float:left;
+    background-color:purple;
+    height:18px;
+}
+.ranking-bar-2 {
+    display:block;
+    float:left;
+    background-color:white;
+    height:18px;
+}
+.ranking-name {
+    display:block;
+    float:left;
+    font-size:14px;
+    height:14px;
+    padding-top:6px;
+    margin-left:12px;
+    color:black;
+}
+#ranking-1-1 {
+    width:100%;
+}
+#ranking-1-2 {
+    width:0%;
+}
+#ranking-2-1 {
+    width:85%;
+}
+#ranking-2-2 {
+    width:15%；
+}
+#ranking-3-1 {
+    width:70%;
+}
+#ranking-3-2 {
+    width:30%;
+}
+#ranking-4-1 {
+    width:40%;
+}
+#ranking-4-2 {
+    width:60%;
+}
+#ranking-5-1 {
+    width:20%;
+}
+#ranking-5-2 {
+    width:80%;
+}
+.tab-head {
+    display:table;
+    width:100%;
+    list-style-type:none;
+}
+.tab-head-li {
+    float:left;
+    padding:15px 20px 20px 20px;
+    border-top:5px solid;
+    border-bottom:1px solid rgb(224, 223, 224);
+    background-color:white;
+    margin-right:1px;
+    cursor:pointer;
+}
+.tab-head-li:hover {
+    border-bottom-color:white;
+}
+#tab-head-li-1 {
+    border-top-color:rgb(203, 154, 203);
+}
+#tab-head-li-2 {
+    border-top-color:rgb(86, 14, 128);
+}
+#tab-head-li-3 {
+    border-top-color:rgb(80, 19, 157);
+}
+#tab-head-li-4 {
+    border-top-color:rgb(139, 11, 11);
+}
+#tab-head-li-5 {
+    border-top-color:rgb(190, 143, 19);
+}
+.tab-head-a {
+    font-size:13px;
+    color:rgb(137, 132, 132);
+}
+.tab-body {
+    display:table;
+    width:660px;
+    padding:10px 20px 30px 20px;
+    background-color:white;
+}
+.tab-body-part {
+    float:left;
+    width:326px;
+}
+.part-left {
+    padding-right:4px;
+}
+.part-right {
+    padding-left:4px;
+}
+.part-branch {
+    float:left;
+    width:159px;
+}
+.branch-left {
+    padding-right:4px;;
+}
+.branch-right {
+    padding-left:4px;
+}
+    
+.card {
+    margin-top:10px;
+}
+.card-big{
+    width:326px;
+}
+.card-small {
+    width:159px;
+}
+.card-image-big {
+    height:150px;
+}
+.card-image-small {
+    height:100px;
+}
+.card-read {
+    padding:10px;
+}
+.card-read-J {
+    background-color:rgb(113, 49, 139);
+}
+.card-read-U {
+    background-color:rgb(101, 4, 178);
+}
+.card-read-A {
+    background-color:rgb(197, 152, 10);
+}
+.card-read-F {
+    background-color:rgb(139, 56, 49);
+}
+.card-category {
+    float:left;
+    width:26px;
+    height:26px;
+    line-height:26px;
+    border:1px solid white;
+    border-radius:100px;
+    color:white;
+    text-align:center;
+    font-size:16px;
+}
+.card-title {
+    font-size:14px;
+    color:white;
+    margin-left:40px;
+}
+.card-content {
+    font-size:12px;
+    line-height:150%;
+    color:white;
+    margin:8px 0px 10px 40px;
+}
+.click-more {
+    background-color:white;
+    margin-top:10px;
+    text-align:center;
+    padding:10px 290px;
+    cursor:pointer;
+}
+.more {
+    font-size:13px;
+    padding:6px 0px;
+    float:right;
+    color:rgb(152, 147, 147);
 }
