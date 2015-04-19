@@ -199,12 +199,21 @@ function each(arr, fn) {
     // your implement
 }
 
+// 其中fn函数可以接受两个参数：item和index
+
 // 使用示例
 var arr = ['java', 'c', 'php', 'html'];
-function output(item, index) {
+function output(item) {
     console.log(item)
 }
 each(arr, output);  // java, c, php, html
+
+// 使用示例
+var arr = ['java', 'c', 'php', 'html'];
+function output(item, index) {
+    console.log(index + ': ' + item)
+}
+each(arr, output);  // 0:java, 1:c, 2:php, 3:html
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {}
@@ -427,7 +436,7 @@ function renderList() {
 }
 
 function init() {
-    each($("#list").getElementsByTagName('li'), function(i, item) {
+    each($("#list").getElementsByTagName('li'), function(item) {
         $.click(item, clickListener);
     });
 
