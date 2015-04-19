@@ -10,7 +10,8 @@ p {
 	padding: 0;
 }
 ol, 
-ul { 
+ul,
+li { 
 	list-style: none 
 }
 h1,
@@ -34,7 +35,9 @@ h3 {
 .clearfix { 
 	display: block; 
 }
-body { font:12px/1.5 \5b8b\4f53, sans-serif }
+body { 
+	font:12px/1.5 \5b8b\4f53, sans-serif 
+}
 .fl {
 	float: left;
 }
@@ -78,7 +81,7 @@ a {
 .blog-page,
 .gall-page
 {
-	width: 980px;
+	max-width: 980px;
 	margin-left: auto;
 	margin-right: auto; 
 	position: relative;
@@ -411,6 +414,16 @@ a {
 	border: 1px solid #ddd;
 	border-right: 0;
 	background: url(../img/search.png) no-repeat;
+}
+.search input:focus {
+	width: 114px;
+	height: 30px;
+	padding: 5px 0 5px 40px;
+	color: #aaa;
+	border: 1px solid #ddd;
+	border-right: 0;
+	background: url(../img/search.png) no-repeat;
+	outline: none;
 }
 .search a,
 .search a img {
