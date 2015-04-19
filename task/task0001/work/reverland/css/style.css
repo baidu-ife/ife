@@ -1,0 +1,363 @@
+body {
+    margin: 0;
+    font-family: SimSun;
+    background-color: rgb(238,238,238);
+    min-width: 980px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+/*导航*/
+div.nav {
+    width: 100%
+    height: 80px;
+    background-color: #522a5c;
+    position: relative;
+    top: 0;
+    left; 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-center {
+    width: 980px;
+    height: 80px;
+    margin: auto;
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-size: 30px;
+    font-family: "WenQuanYi Micro Hei";
+    padding-bottom: 5px;
+}
+
+
+@media screen and (min-width:980px) {
+    #github img{
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        padding-bottom: 0;
+    }
+}
+@media screen and (max-width:979px) {
+    #github img {
+        display: none;
+    }
+}
+
+#menu {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+#menu li {
+    float: left;
+    margin-left: 28px;
+    padding: 0;
+    display: inline;
+}
+
+#menu a{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+/*导航栏结束*/
+.banner img {
+    width: 100%;
+}
+#intro-bg-wrap {
+    position: relative;
+    margin: auto;
+    width: 980px;
+}
+
+#intro-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 360px;
+    color: white;
+    text-indent: 2em;
+    padding: 10px 10px 30px 10px;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.15) 75%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+} 
+#intro-bg h2 {
+    font-weight: normal;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+#intro-bg p {
+    padding: 0;
+    margin: 0;
+    line-height: 150%;
+    font-size: 12px;
+}
+
+/*banner结束*/
+/*模块开始*/
+.three-column {
+    width: 990px;   /* 大一个边距*/
+    margin: auto;
+    margin-top: 10px;
+    overflow: hidden;
+    height: auto;
+}
+.module {
+    float: left;
+    width: 320px;
+    margin: 0 10px 0 0;
+    background-color: white;
+    padding-bottom: 99999px;
+    margin-bottom: -99999px;
+}
+
+.module p{
+    text-indent: 2em;
+    margin: 15px 30px 25px 30px;
+    line-height: 170%;
+    font-size: 12px;
+}
+
+.module img{
+    margin: 10px;
+}
+/* 三栏end*/
+/*intro begin*/
+.intro {
+    margin-top: 110px;
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height: 520px;
+}
+
+#gravater img{
+    z-index: 99;
+    margin-left: 50%;
+    position: absolute;
+    top: -50px;
+    left: -80px;
+    width: 160px;
+    height: 160px;
+}
+
+.intro h2 {
+    padding-top: 160px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Century Gothic";
+    font-weight: normal;
+    color: black;
+}
+
+.intro-p-wrap {
+    padding: 10px;
+    width: 600px;
+    margin: auto;
+    margin-top: 40px;
+    line-height: 160%;
+}
+
+.intro p {
+    text-indent: 2em;
+    font-size: 14px;
+    color: black;
+}
+
+/* intro finished */
+/*footer start*/
+.footer {
+    background-color: black;
+    font-size: 12px;
+}
+
+.footer .top {
+    text-align: center;
+    height: 36px;
+    border-bottom: #333333 solid 1px;
+}
+.footer .top ul {
+    padding: 12px;
+    list-style: none;
+}
+
+.footer .top ul li{
+    margin-left: 15px;
+    margin-right: 15px;
+    display: inline;
+}
+
+.footer .top ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.links {
+    width: 980px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.linkColumn {
+    font-size: 12px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 196px;
+    float: left;
+}
+
+.ft-header {
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.linkColumn a{
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.linkColumn a:hover{
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 60px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+}
+
+.copyright img {
+    margin-top: 20px;
+}
+
+/*about页面*/
+div.about-wrap {
+    margin-bottom: 25px;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    position: relative;
+}
+
+.about-wrap #gravater img{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    margin-top: -80px;
+    top: 0;
+    z-index: 4;
+}
+
+.about-wrap .frame {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    margin-top: -90px;
+    top: 0;
+    z-index: 2;
+    margin-left: 50%;
+    left: -90px;
+}
+
+div.content-wrap {
+    background-color: white;
+    margin-bottom: 25px;
+    position: relative;
+    padding-top: 1px;
+    overflow: hidden;
+    height: 1200px;
+}
+
+div#timeline {
+    width: 8px;
+    height: 100%;
+    background-color: #eeeeee;
+    position: absolute;
+    left: 50%;
+    margin-left: -4px;
+    z-index: 3
+}
+
+.selfintro, .contact, .education, .internship {
+    overflow: auto;
+    margin-top: 150px;
+}
+
+.title {
+    float: left;
+    width: 370px;
+    text-align: right;
+    margin-right: 120px;
+    font-size: 20px;
+}
+
+.main {
+    line-height: 170%;
+    float: left;
+    text-align: left;
+    margin-left: 60px;
+    width: 300px;
+    font-size: 14px;
+}
+
+div.pic {
+    position: absolute;
+    left: 50%;
+    width: 110px;
+    height: 110px;
+    margin-left: -55px;
+    z-index: 5;
+    margin-top: -135px;
+}
+
+div.item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+div.item img {
+    position: absolute;
+    left: -94px;
+}
+
+p.year {
+    text-align: center;
+    position: absolute;
+    left: -60px;
+    margin-left: -34px;
+    margin-top: 4px;
+    padding-top: 3px;
+    z-index: 7;
+    color: #666666;
+    display: block;
+    width: 69px;
+    height: 33px;
+    background-image: url("/img/year.jpg");
+    background-repeat: no-repeat;
+}
+
+p.position {
+    font-size: 12px;
+}
