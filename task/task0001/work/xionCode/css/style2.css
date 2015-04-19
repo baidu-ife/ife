@@ -1,0 +1,125 @@
+*{
+	margin:0;
+	padding:0;}
+.main{
+	height:1525px;
+	width:100%;
+	background:#eeeeee;}
+.main-body{
+	height:1525px;
+	width:980px;
+	margin:0 auto;}
+.main-left{
+	float:left;
+	margin-top:20px;
+	height:1300px;
+	width:710px;}
+.left-cont{
+	height:330px;
+	width:676px;
+	background:#fff;
+	padding:23px 20px 16px 14px;
+	margin-bottom:10px;}
+.lab{
+	height:80px;
+	width:50px;
+	position:absolute;
+	margin-left:-64px;
+	margin-top:3px;}
+.lab div{
+	width:50px;
+	height:40px;
+	color:#fff;
+	text-align:center;
+	line-height:40px;}
+.lab1{
+	background:#522A5C;}
+.lab2{
+	background:#a660b7;}
+.cont{
+	height:283px;
+	width:676px;
+	position:relative;}
+.cont h3{
+	color:#a660b7;
+	font-size:16px;
+	margin-bottom:11px;}
+.cont h4{
+	color:#666;
+	font-size:12px;
+	margin-bottom:13px;}
+.cont p{
+	font-size:12px;
+	line-height:22px;
+	text-indent:24px;}
+.cont-footer{
+	height:12px;
+	width:170px;
+	color:#999999;
+	font-size:12px;
+	margin-top:30px;
+	float:right;}
+/*正文结束*/
+.jump{
+	height:34px;
+	width:572px;
+	margin:0 auto;}
+.jump div{
+	display:inline-block;
+	float:left;
+	height:35px;
+	margin-left:10px;
+	text-align:center;}
+.jump div:first-child{
+	margin-left:0;}
+.word{
+	width:70px;
+	background:#fff;}
+.jump a{
+	font-size:12px;
+	line-height:34px;
+	text-decoration:none;
+	color:#000;}
+.num{
+	background:#fff;
+	width:40px;}
+.ellipsis{
+	width:52px;
+	background:#fff;}
+.word:hover,.num:hover{
+	background:#a660b7;}
+.page-selected{
+	width:40px;
+	background-color:#a660b7;}
+.page-selected a,.word:hover a,.num:hover a{
+	color:#fff;}
+/*跳页结束*/	
+.main-right{
+	float:right;
+	margin-top:20px;
+	height:748px;
+	width:260px;
+	background:#CF9;}
+.search-container{
+	position:absolute;
+	height:80px;
+	width:260px;
+	background:#fff;}
+.search{
+	height:42px;
+	width:222px;
+	position:relative;
+	margin-left:19px;
+	margin-top:19px;
+	text-align:center;}
+.search-input{
+	float:left;
+	width:169px;
+	height:40px;
+	border:1px solid #dddddd;}
+.btn{
+	height:42px;
+	width:51px;
+	border:1px solid #dddddd;
+	color:#fff;
+	font-size:20px;}

@@ -1,0 +1,101 @@
+.header{
+	width:100%;
+	height:80px;
+	background:#522a5c;}
+.header-main{
+	display:inline-block;
+	position:relative;
+	height:80px;
+	width:980px;
+	left:50%;
+	margin-left:-490px;
+	background:#522a5c;}
+.menu{
+	position:absolute;
+	right:0;
+	bottom:0;
+	margin-bottom:5px;}
+.menu a{
+	display:inline-block;
+	position:relative;
+	float:left;
+	margin-left:28px;
+	text-decoration:none;
+	font-size:14px;
+	font-family:SimSun;
+	color:#fff;}
+.git-link{
+	display:inline-block;
+	margin-right:10px;
+	margin-top:43px;
+	float:right;}
+.git-link img{
+	width:30px;
+	height:34px;}
+.footer{
+	height:395px;
+	width:100%;
+	background:#000;}
+.footer >div:first-child{
+	height:35px;
+	width:100%;
+	border-bottom:1px solid #515151;}
+.footer-menu{
+	height:35px;
+	width:168px;
+	margin:0 auto;}
+.footer-menu a{
+	float:left;
+	color:#fff;
+	font-size:12px;
+	text-decoration:none;
+	line-height:35px;
+	margin-left:24px;/*?为什么不是24px*/}
+.footer-menu a:first-child{
+	margin-left:0;}
+.footer-main{
+	height:293px;
+	width:980px;
+	margin:0 auto;}
+.footer-submenu{
+	float:left;
+	display:inline-block;
+	height:153px;
+	width:178px;
+	margin-top:42px;
+	margin-left:22px;}
+.footer-submenu:first-child{
+	margin-left:0;}
+.footer-submenu h3{
+	font-weight:normal;
+	font-size:12px;
+	color:#cccccc;
+	margin-bottom:24px;}
+.footer-main a{
+	font-weight:normal;
+	line-height:22px;
+	font-size:12px;
+	text-decoration:none;
+	color:#fff;}
+.footer-main a:hover{
+	text-decoration:underline;}
+.footer-info{
+	width:48px;
+	height:66px;
+	position:relative;
+	margin:0 auto;}
+.footer-info a{
+	display:block;
+	width:50px;
+	height:30px;
+	color:#FFF;
+	text-decoration:none;
+	font-size:12px;
+	line-height:22px;
+	width:48px;
+	margin:0 auto;}
+.footer-info img{
+	display:block;
+	width:30px;
+	height:34px;
+	margin:0 auto;}
