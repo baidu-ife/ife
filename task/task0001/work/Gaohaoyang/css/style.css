@@ -151,7 +151,7 @@ body {
 /**
  * block area
  */
-#main .wrap{
+#main .wrap {
     margin-bottom: 110px;
     overflow: hidden;
 }
@@ -174,10 +174,11 @@ body {
     line-height: 1.7;
     padding: 15px 30px 25px 30px;
 }
+
 /**
  * personal
  */
-#personal{
+#personal {
     height: 520px;
     background-color: #fff;
 }
@@ -190,9 +191,7 @@ body {
     margin: 0 0 10px 0;
     padding: 20px;
     background-color: #fff;
-    position: relative;   /* position: relative;
-                                overflow: auto;
-                                zoom:1;*/
+    position: relative;
 }
 #main .blog h2 {
     color: #955EA1;
