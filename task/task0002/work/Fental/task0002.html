@@ -8,7 +8,7 @@
 <ul id="list">
     <li id="item1">Simon</li>
     <li id="item2">Kenner</li>
-    <li id="item3">Erik</li>
+    <li id="item3">Erik<span class="fuck" data-log="2015"></span></li>
 </ul>
 <button id="btn">Change</button>
 <script src="js/util.js"></script>
@@ -55,7 +55,7 @@ function init() {
     $.click("#btn", renderList);
 }
 init();
-alert(isIE());
+    console.log($(".fuck"));
 </script>
 </body>
 </html>

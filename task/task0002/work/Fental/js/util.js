@@ -198,7 +198,10 @@ function isSiblingNode(element, siblingNode) {
 
 //获取dom相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
-    //原理，视口坐标与文档坐标的转换
+    return {
+        x: element.getBoundingClientRect().left,
+        y: element.getBoundingClientRect().top
+    };
 }
 
 //mini $
@@ -209,8 +212,71 @@ function $(selector) {
     }
     var selectors = selector.split(/\s+|\t+/);
     var domObject = document;
-    for(var i = 0; i < selectors.length; i++) {
-        domObject = domObject.querySelector(selectors[i]);
+
+    var scanElement = function(element, oneSelector) {
+        var temp;
+        if (oneSelector.indexOf(".") === 0) {
+            temp = oneSelector.replace(".", "");
+            if (element.nodeType == 1 && element.className !== undefined && element.className.indexOf(temp) !== -1) {
+                return element;
+            }
+        }
+        else if (oneSelector.indexOf("[") === 0) {
+            temp = oneSelector.replace("[", "").replace("]","");
+            if (temp.indexOf("=") === -1) {
+                //console.log(element);
+                //console.log(element.getAttribute(temp));
+                if (element.nodeType == 1 && element.attributes[temp] !== undefined) {
+                    return element;
+                }
+            }
+            else {
+                //console.log("inhere");
+                temp = temp.split("=");
+                //console.log(element.attributes[temp[0]]);
+                if (element.nodeType == 1 && element.attributes[temp[0]] !== undefined && element.attributes[temp[0]].value === temp[1]) {
+                    return element;
+                }
+            }
+        }
+        if (element.childNodes.length === 0) {
+            return null;
+        }
+        else {
+            for (var j = 0; j < element.childNodes.length; j++){
+                //元素节点
+                if (element.childNodes[j].nodeType == 1) {
+                    var result = scanElement(element.childNodes[j], oneSelector);
+                    if(result !== null && result !== undefined) {
+                        return result;
+                    }
+                }
+            }
+        }
+    };
+    for (var i = 0; i < selectors.length; i++) {
+        //domObject = domObject.querySelector(selectors[i]);
+        var temp;
+        if (selectors[i].indexOf("#") === 0) {
+            //id选择器
+            temp = selectors[i].replace("#", "");
+            domObject = domObject.getElementById(temp);
+        }
+        else if ((selectors[i].indexOf(".") !== 0) && (selectors[i].indexOf("[") != 0)) {
+            //标签选择器
+            temp = selectors[i];
+            domObject = domObject.getElementsByTagName(temp)[0];
+        }
+        else {
+            //类选择器及属性选择器，遍历文档树
+            var result = scanElement(domObject, selectors[i]);
+            if (domObject != result) {
+                domObject = result;
+            }
+            else {
+                domObject = undefined;
+            }
+        }
     }
     return domObject;
 }
