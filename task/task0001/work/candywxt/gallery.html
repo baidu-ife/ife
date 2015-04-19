@@ -3,192 +3,242 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <title>博客首页</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>candywxt-gallery</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="head">
-            <div class="icon">
-                <a href="https://github.com/candywxt">
-                    <img src="img/icon-github.png">
-                </a>
-            </div>
-            <div class="logo">
-                <div class="ylogo">
-                    <a href="##">candywxt</a>
+        <div id="header">
+            <div class="wrapper">
+                <div class="logo">
+                    <span>Candy</span>
                 </div>
                 <div class="nav">
-                    <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="blog.html">文章</a></li>
-                        <li><a href="gallery.html">作品</a></li>
-                        <li><a href="about.html">关于</a></li>
-                    </ul>
+                    <a href="index.html">首页</a>
+                    <a href="blog.html">文章</a>
+                    <a href="gallery.html">作品</a>
+                    <a href="about.html">关于</a>
                 </div>
             </div>
-        </div><!--head-->
-        <div class="contain">
-           <div class="con-left">
-              <div class="noticefall">
-                   <ul>
-                       <li><a href="#">ALL</a></li>
-                       <li><a href="#">JavaScript Util Functions</a></li>
-                       <li><a href="#">UI Components</a></li>
-                       <li><a href="#">Framework</a></li>
-                       <li><a href="#">Applications</a></li>
-                   </ul>
-               <div class="tab-con">
-                   <div class="waterfall">
-                      <div class="imgsay">
-                         <img src="img/github.jpg">
-                          <span>J</span>
-                          <h1>这里是标题</h1>
-                          <p>这里是内容</p>
-                      </div>
-                   </div>
-                   <div class="waterfall">
-                      <div class="imgsay">
-                          <img src="img/github.jpg">
-                          <span>J</span>
-                          <h1>这里是标题</h1>
-                          <p>这里是内容容</p>
-                      </div>
-                   </div>
-                   <div class="waterfall">
-                      <div class="imgsay">
-                         <img src="img/github.jpg">
-                          <span>J</span>
-                          <h1>这里是标题</h1>
-                          <p>这里是内容这</p>
-                      </div>
-                   </div>
-                   <div class="waterfall">
-                      <div class="imgsay">
-                         <img src="img/github.jpg">
-                          <span>J</span>
-                          <h1>这里是标题</h1>
-                          <p>这里是内容这里</p>
-                      </div>
-                   </div>
-                   <div class="waterfall">
-                      <div class="imgsay">
-                         <img src="img/github.jpg">
-                          <span>J</span>
-                          <h1>这里是标题</h1>
-                          <p>这里是内容这里</p>
-                      </div>
-                   </div>
-                   <div class="waterfall">
-                      <div class="imgsay">
-                         <img src="img/github.jpg">
-                          <span>J</span>
-                          <h1>这里是标题</h1>
-                          <p>这里是内容这里</p>
-                      </div>
-                   </div>
-               </div>
-              </div>
-              <div class="lookmore">
-                  <span>》</span>
-                  点击查看更多
-              </div>
-           </div>
-           <div class="con-right">
-               <div class="search">
-                   <input alt="search" value="Keywords">
-               </div>
-               <div class="top10">
-                   <p>人气排行榜</p>
-                   <ul>
-                       <li>
-                          <span>1</span>
-                           <p><em></em></p>
-                            ui.tree
-                       </li>
-                       <li>
-                          <span>2</span>
-                          <p><em></em></p>
-                           ui.tree
-                       </li>
-                       <li>
-                          <span>3</span>
-                          <p><em></em></p>
-                           ui.tree
-                       </li>
-                       <li>
-                          <span>4</span>
-                          <p><em></em></p>
-                           ui.tree
-                       </li>
-                       <li>
-                          <span>5</span>
-                          <p><em></em></p>
-                           ui.tree
-                       </li>
-                   </ul>
-               </div>
-           </div>
-        </div><!--contain-->
-        <div class="foot">
-            <div class="foot-head">
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="blog.html">文章</a></li>
-                    <li><a href="gallery.html">作品</a></li>
-                    <li><a href="about.html">关于</a></li>
-                </ul>
-            </div>
-            <div class="foot-content">
-                <div class="link">
-                    <p>学习资料</p>
-                    <ul>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                    </ul>
+            <img class="github" src="img/icon-github.png" alt="github">
+        </div>
+        <div id="container">
+            <div class="main">  
+                <div class="content">
+                    <div class="imgwrapper">
+                        <div class="imgmenu">
+                            <a>ALL</a>
+                            <a>JavaScript Util Functions</a>
+                            <a>UI Components</a>
+                            <a>Framework</a>
+                            <a>Applications</a>
+                        </div>
+                        <div class="imgfall">
+                            <div class="imgbox lie">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                                
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>a</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>内容啊</p>
+                                </div>
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                            </div>
+                            <div class="imgbox">
+                                <div>
+                                    <img src="img/github.jpg">
+                                </div>
+                                <div class="summary">
+                                    <p>J</p>
+                                    <h3>这是标题</h3>
+                                    <p>这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊这是内容啊</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="link">
-                    <p>学习资料</p>
-                    <ul>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                    </ul>
-                </div>
-                <div class="link">
-                    <p>学习资料</p>
-                    <ul>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                    </ul>
-                </div>
-                <div class="link">
-                    <p>学习资料</p>
-                    <ul>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                    </ul>
-                </div>
-                <div class="link">
-                    <p>学习资料</p>
-                    <ul>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
-                    </ul>
-                </div>
-                <div class="copyright">
-                    <p>版权信息</p>
-                    <img src="img/icon-github.png">
+                <div class="sidebar">
+                    <div class="search">
+                        <form id="form" method="post" class="fm">
+                        <span class="bg">
+                            <input id="s" class="s_ipt focus" maxlength="255" autocomplete="off" placeholder="Keywords">
+                        </span>
+                        <span class="bg">
+                            <input type="submit" id="su" class="su_ipt" value="GO">
+                        </span>
+                        </form>
+                    </div>
+                    <div class="hotlist">
+                       <h3>人气排行榜</h3>
+                       <ul>
+                          <li>
+                              <span>1</span>
+                              <p><em></em></p>
+                              <a href="#">ui.tree</a>
+                          </li>
+                          <li>
+                              <span>2</span>
+                              <p><em></em></p>
+                              <a href="#">util.trim</a>
+                          </li>
+                          <li>
+                              <span>3</span>
+                              <p><em></em></p>
+                              <a href="#">app.todo</a>
+                          </li>
+                          <li>
+                              <span>4</span>
+                              <p><em></em></p>
+                              <a href="#">ui.tab</a>
+                          </li>
+                          <li>
+                              <span>5</span>
+                              <p><em></em></p>
+                              <a href="#">util.addClass</a>
+                          </li> 
+                       </ul>
+                    </div>
                 </div>
             </div>
-        </div><!--foot-->
+        </div>
+        <div id="footer">
+            <div class="subnav">
+                <a href="index.html">首页</a>
+                <a href="blog.html">文章</a>
+                <a href="gallery.html">作品</a>
+                <a href="about.html">关于</a>
+            </div>
+            <div class="friendlink">
+                <dl>
+                    <dd><a href="#">学习资料</a></dd>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                </dl>
+                <dl>
+                    <dd><a href="#">友情链接</a></dd>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                </dl>
+                <dl>
+                    <dd><a href="#">友情链接</a></dd>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                </dl>
+                <dl>
+                    <dd><a href="#">友情链接</a></dd>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                </dl>
+                <dl>
+                    <dd><a href="#">友情链接</a></dd>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                    <dt><a href="#">LINK</a></dt>
+                </dl>
+            </div>
+            <div class="copyright">
+                <p>版权信息</p>
+                <img src="img/icon-github.png" alt="版权信息：candy">
+            </div>
+        </div>
     </body>
 </html>
