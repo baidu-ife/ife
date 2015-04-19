@@ -3,18 +3,15 @@
 <head lang="zh-zmn-Hans">
     <meta charset="UTF-8">
     <title>task0002</title>
-    <style>
-        .test {
-            background-color: #000;;
-        }
-    </style>
 </head>
 <body>
-<input id="number1" type="text">
-<input id="number2" type="text">
-<span id="result" class="test fuck" data-log="fuck"></span>
-<button id="addbtn"></button>
-<script src="util.js"></script>
+<ul id="list">
+    <li id="item1">Simon</li>
+    <li id="item2">Kenner</li>
+    <li id="item3">Erik</li>
+</ul>
+<button id="btn">Change</button>
+<script src="js/util.js"></script>
 <script>
 //    之前知道script为什么要放在后面，但是不知道要放在</body>之前。。。
 //    按照html5标准中的html语法规则，如果在</body>后在出现<script>或任何元素的开始标签，都是parse error，浏览器会忽略之前的</body>
@@ -44,9 +41,21 @@
 //    }
 //
 //    initEvent();
+function clickListener(event) {
+    console.log(event);
+}
 
-    console.log(document.getElementById("result"));
-    console.log($("body [data-log=fuck]"));
+function renderList() {
+    $("#list").innerHTML = '<li>new item</li>';
+}
+
+function init() {
+    $.delegate("#list", "li", "click", clickListener);
+
+    $.click("#btn", renderList);
+}
+init();
+alert(isIE());
 </script>
 </body>
 </html>
