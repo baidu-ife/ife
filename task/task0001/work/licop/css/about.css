@@ -3,7 +3,7 @@ main {
     width: 980px;
     margin: 100px auto 25px;
 }
-main section{
+main section {
     text-align: center;
     position: relative;
     top: -60px;
@@ -24,7 +24,7 @@ main section{
     color: #333;
 
 }
-.detail{
+.detail {
      font-size: 14px;
      text-align: left;
      color: #333;
@@ -35,7 +35,7 @@ main section{
      list-style-type: none; 
 }
 
-.edu ul,.job ul{
+.edu ul,.job ul {
     margin: 0 0 0 460px;
 }
 .edu ul li,.job ul li {

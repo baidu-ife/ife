@@ -1,8 +1,8 @@
 /*header*/
-body{
+body {
     background-color: #eee;
 }
-.clear{
+.clear {
     clear: both;
 }
 header {
@@ -40,7 +40,7 @@ header {
 .nav a:hover {
     text-decoration: underline;
 }
-.github{
+.github {
     position: relative;
     float: right;
     margin-right: 10px;
@@ -51,16 +51,16 @@ header {
 
 /*footer*/
 
-.bottom-nav{
+.bottom-nav {
     background-color: #000;
     height: 35px;
     border-bottom: 1px solid #333;
 }
-.bottom-nav ul{
+.bottom-nav ul {
     margin: 0 auto;
     width: 252px;
 }
-.bottom-nav li{
+.bottom-nav li {
     position: relative;
     top: 10px;
 }

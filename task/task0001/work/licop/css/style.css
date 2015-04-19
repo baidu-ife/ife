@@ -8,7 +8,7 @@
     background: url(../img/banner-bg.jpg) no-repeat 0 0;
     background-size: 100% 100%;
 }
-#ban-wp{
+#ban-wp {
     position: relative;
     height: 580px;
 }
@@ -25,28 +25,28 @@
     background-image: linear-gradient(top, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%); 
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#CCFFFFFF', EndColorStr='#00FFFFFF'); 
 }
-.block dl{
+.block dl {
     padding:10px 10px 30px 10px;
 }
-.block dt{
+.block dt {
     font-size: 14px;
     color: #fff;
     margin:0 0 12px 240px;
 }
-.block dd{
+.block dd {
     font-size: 12px;
     color:#fff;
     line-height: 150%;
     text-indent: 2em;
 }
-.main{
+.main {
     margin-top: 10px;
  
 }
-#main-contain{
+#main-contain {
      overflow: hidden;
 }
-.items{
+.items {
     width: 320px;
     float: left;
     background: #fff;
@@ -56,41 +56,41 @@
     text-align: center;
 }
 
-.items img{
+.items img {
     margin: 10px auto;
 }
-#items3{
+#items3 {
     margin-right: 0px;
 
 }
-article{
+article {
     padding: 0 30px 25px 30px; 
 }
-article >p{
+article >p {
     font-size: 12px;
     color: #333;
     text-indent: 2em;
     line-height: 170%;
     text-align: left;
 }
-.introduce{
+.introduce {
     background: #fff;
     margin-top: 116px;
     padding-bottom: 180px;
 }
-.introduce figure{
+.introduce figure {
     position: relative;
     top: -60px;
     margin: 0 auto;
     text-align: center;
 }
-.introduce h2{
+.introduce h2 {
     font-family: 'Century Gothic';
     font-weight: lighter;
     color: #333;
     text-align: center;
 }
-.introduce p{
+.introduce p {
      width: 600px;
      font-size: 14px;
      color: #333; 
