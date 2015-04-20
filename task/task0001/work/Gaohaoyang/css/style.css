@@ -647,3 +647,110 @@ ul li a:active {
     height: 16px;
     /*width: 100%;*/
 }
+
+/**
+ * about
+ */
+.about{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    height: 1300px;
+    background-color: #fff;
+    position: relative;
+    z-index: -2;
+}
+.absolute-left{
+    position: absolute;
+    left: 50%;
+}
+.about .time-line{
+    width: 5px;
+    height: 1320px;
+    position: absolute;
+    top: 0;
+    margin-left: -2px;
+    background-color: #eee;
+    z-index: -1;
+}
+.about img{
+    display: block;
+}
+.about .img-person{
+    width: 160px;
+    height: 160px;
+    border-radius: 90px;
+    border:10px solid #eee;
+    top: -60px;
+    margin-left: -90px;
+}
+.about .img-small{
+    width: 100px;
+    height:100px;
+    border:5px solid #eee;
+    border-radius: 60px;
+    /*margin-left: -55px;*/
+}
+.about .img-tel{
+    margin-top: 260px;
+    margin-bottom: 110px;
+}
+.about .img-edu{
+    margin-bottom: 30px;
+}
+.about .year{
+    margin-bottom: 35px;
+    width: 60px;
+    height: 25px;
+    border:5px solid #eee;
+    text-align: center;
+    line-height: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #666;
+}
+.about .img-intern{
+    margin-bottom: 30px;
+}
+.about .time-left{
+    width: 110px;
+    position: absolute;
+    left: 30%;
+    font-size: 20px;
+    text-align: right;
+}
+.about .name{
+    top: 130px;
+}
+.about .contact{
+    top: 394px;
+}
+.about .edu{
+    top: 628px;
+}
+.about .intern{
+    top: 980px;
+}
+.about .time-right{
+    position: absolute;
+    left: 54%;
+    width: 320px;
+    font-size: 14px;
+}
+.about .name p{
+    line-height: 1.8;
+}
+.about .contact li{
+    margin-bottom: 6px;
+}
+.about .edu-right,.about .intern-right{
+margin-left: 16px;
+}
+.about .time-right ul{
+    margin-bottom: 35px;
+}
+.about .time-right ul li:last-of-type{
+    font-size: 12px;
+    padding-top: 5px;
+}
