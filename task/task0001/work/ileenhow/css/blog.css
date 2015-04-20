@@ -101,6 +101,14 @@
     font-weight: bold;
     font-size: 16px;
 }
+.search input[type="text"]:focus{
+    border: 1px solid #000;
+    border-right: none;
+}
+.search input[type="text"]:focus + input{
+    border: 1px solid #000;
+    border-left: none;
+}
 .side-block li{
     height: 50px;
     border-bottom: 1px solid #ddd
@@ -149,9 +157,9 @@
     color: #fff;
 }
 .tagcloud{
-    padding: 10px 15px 20px 15px;
+    padding: 20px 15px;
 }
-.tagcloud h3{
+.tagcloud h2{
     padding-bottom: 20px; 
     color: #999;
 }

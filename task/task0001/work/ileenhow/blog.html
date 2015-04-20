@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>gallery</title>
+    <title>我的博客</title>
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/blog.css">
 </head>
@@ -23,33 +23,30 @@
     <div class="content">
         <div class="main">
             <div class="article">
-                <h2>这里是这篇文章的标题</h2>
-                <h3>这里是这篇文章的副标题</h3>
+                <h2>缩小浏览器窗口隐藏Github图标的方法</h2>
+                <h3>非响应式解决</h3>
                 <div class="post-tag">
                     <span>4.12</span>
                     <span>CSS</span>
                 </div>
-                <p>　　这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文</p>
-                <div class="post-info">ileenhow 发表于 2015年4月12日</div>
+                <p>　　设计图中页面头部的右侧有一个Github的图标，在任务要求中需要在窗口被缩小至主体宽度之内，也就是980px，这个图标要隐藏，不然会挡住头部里面的导航菜单。开始我和群内的小伙伴想法一样，用响应式去做，不过祖明大大说了不需要用响应式，这一下子让我不知道怎么实现。</p>
+                <p>　　说来也巧，正当我一筹莫展时，无聊便玩弄手中的饭卡，把它放在桌面上推来推去，一使劲插到了鼠标垫的下方。这让我突然想起来页面中不也可以让一个元素盖住另外一个吗，对，就是利用z-index属性！</p>
+                <p>　　我的页面中头部结构是这样的，头部的div内包含着导航栏的div和GitHub图标的div，这样只要以头部div为基准，把导航栏的z-index设置得比图标高，窗口不缩小时看不出什么，但是缩小后导航栏和图标接触，这样z-index较高的导航栏就会盖住图标，完美实现了隐藏图标！</p>
+                <div class="post-info">ileenhow 发表于 2015年4月20日</div>
             </div>
             <div class="article">
-                <h2>这里是这篇文章的标题</h2>
-                <h3>这里是这篇文章的副标题</h3>
+                <h2>写完index页面后发现的一个bug</h2>
+                <h3>缩小窗口后拖动浏览器横向滚条丢失背景色</h3>
                 <div class="post-tag">
                     <span>4.12</span>
                     <span>CSS</span>
                 </div>
-                <p>　　这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文</p>
-                <div class="post-info">ileenhow 发表于 2015年4月12日</div>
-            </div>
-            <div class="article">
-                <h2>这里是这篇文章的标题</h2>
-                <h3>这里是这篇文章的副标题</h3>
-                <div class="post-tag">
-                    <span>4.12</span>
-                    <span>CSS</span>
-                </div>
-                <p>　　这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文</p>
+                <p>　　在index页面大功告成之后，由于解决了隐藏GitHub图标的问题，按耐不住激动的心情反复缩小拉大窗口看了好多遍:p～，心血来潮拖了一下页面底部的滚动条，这一拖吓死我了，页面头部，底部在窗口外面的部分，随着滚动条拖出来，居然没有背景色！</p>
+                <p>　　看到这种情况真是百思不得其解，难道是浏览器的bug？我又分别在FF和IE中打开了一下，居然都是一样的情况，那应该是我的CSS代码有问题，我看了一下html和css，头部和底部的html结构基本都是div中套了个div做wrapper，而我只在外部的div上面设置了背景色，原来如此，于是我在内部的div中也设置了背景色，再一刷新，一缩小，拉滚条，哈哈！背景色回来了！等等，还有不对劲的地方！底部的外部div设置了1px宽度的border，颜色是和背景色区分的，拖动滚动条后背景色是没问题了，可是这border在窗口外面的部分还是丢了！
+                </p>
+                <p>　　这下可愁死我了，总不能内部div也设置个border吧，于是我打开了一些网站，比如图灵社区还有V2EX，他们网站的头部底部结构和我写的类似，结果我那么一折腾，发现他们的页面也有这种问题！我又打开ife的pr，在里面找了几个已提交的代码下载一看，只要html结构和我一样的，都出现了这种问题！我只好上segmentfault提问，网络大神还是多，不到半个小时就有人给出了解决方法，在外部div上设置一个min-width，值为内部div的width大小。</p>
+                <p>　　果然加了min-width后，不用在内部div上设置一样的背景色，也不会出现缩小后丢失背景色的问题。可是这到底是为什么呢？用devtools反复观察后发现了答案：假设内部div的width=980px；因为外部div的width默认是充满浏览器窗口，当窗口缩小到980px内，外部div的宽度是小于980px的，而css中只有外部div设置了背景色，那么超出窗口的部分肯定是没有背景色的，所以需要这个神奇的min-width!</p>
+                <p>　　废话好像略多，如果没看明白的，可以戳这个<a href="http://segmentfault.com/q/1010000002680105/a-1020000002680298" style="text-decoration: underline;">链接</a>查看segmentfault上我提的问题，配了截图什么的看起来更容易懂。</p>
                 <div class="post-info">ileenhow 发表于 2015年4月12日</div>
             </div>
             <div class="page-nav">
@@ -139,7 +136,7 @@
                 </table>
             </div>
             <div class="side-block tagcloud">
-                <h3>Tags</h3>
+                <h2>Tags</h2>
                 <p>
                     <span class="bold maxfs">Javascript</span>
                     <span class="bold middlefs">CSS</span>
