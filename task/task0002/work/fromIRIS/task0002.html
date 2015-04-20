@@ -34,15 +34,26 @@
         <button id="addbtn">xx</button>
         <div id="div1" class="red">111</div>
         <div id="div2">
-            <div id="div3"></div>
+            <div id="div3">123</div>
         </div>
+        <a href="#">a</a>
+        <a href="aaa">aaaaa</a>
+        <input type="button" value="alert" id="btn1">
     </body>
     <script type="text/javascript" src="1-1.js"></script>
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript">
         window.onload = function () {
-            $("div").innerHTML = "red";
-            
+            function alertA() {
+                alert('aaaa');
+            }
+            function alertM() {
+                alert('mmmmm')
+            }
+            var oBtn1 = document.getElementById("btn1");
+            // addClickEvent(oBtn1, alertM);
+            // addEnterEvent(document, alertA);
+            $.enter(document, alertA);
         }
     </script>
 </html>

@@ -173,4 +173,128 @@ function getPosition(element) {
 function $(selector) {
     return document.querySelector(selector);
 }
+//小型query↑
 
+function addEvent(element, event, listener) {
+    if (element.addEventListener) {
+        element.addEventListener(event, listener, false);
+    }else if (element.attachEvent) {
+        element.attachEvent("on" + event, listener);
+    }else {
+        element["on" + event] = listener;
+    }
+}
+// 给一个dom绑定一个针对event事件的响应，响应函数为listener↑
+
+
+function removeEvent(element, event, listener) {
+    if (listener) {
+        if (element.removeEventListener) {
+            element.removeEventListener(event, listener, false);
+        }else if (element.detachEvent) {
+            element.detachEvent("on" + event, listener);
+        }else {
+            element["on" + event] = null;
+        }
+    }else {
+        return; ///?????
+    }
+}
+// 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数↑
+
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    if (element.addEventListener) {
+        element.addEventListener("click", listener, false);
+    }else if (element.attachEvent) {
+        element.attachEvent("onclick", listener);
+    }else {
+        element.onclick = listener;
+    }
+}
+
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+
+            if (element.addEventListener) {
+                element.addEventListener("keydown", function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                }, false);
+            }else if (element.attachEvent) {
+                element.attachEvent("onkeyup", function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                });
+            }else {
+                element.onkeyup = function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                };
+            }
+}
+
+var $ = {
+    on: function addEvent(element, event, listener) {
+            if (element.addEventListener) {
+             element.addEventListener(event, listener, false);
+            }else if (element.attachEvent) {
+             element.attachEvent("on" + event, listener);
+            }else {
+                element["on" + event] = listener;
+            }
+        },
+    un: function removeEvent(element, event, listener) {
+            if (listener) {
+            if (element.removeEventListener) {
+                element.removeEventListener(event, listener, false);
+            }else if (element.detachEvent) {
+                element.detachEvent("on" + event, listener);
+            }else {
+                element["on" + event] = null;
+                }
+            }else {
+                return; ///?????
+            }
+        },
+    click: function addClickEvent(element, listener) {
+            if (element.addEventListener) {
+                element.addEventListener("click", listener, false);
+            }else if (element.attachEvent) {
+                element.attachEvent("onclick", listener);
+            }else {
+                element.onclick = listener;
+            }
+        },
+    enter: function addEnterEvent(element, listener) {
+
+            if (element.addEventListener) {
+                element.addEventListener("keydown", function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                }, false);
+            }else if (element.attachEvent) {
+                element.attachEvent("onkeyup", function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                });
+            }else {
+                element.onkeyup = function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                };
+            }
+        }
+}
