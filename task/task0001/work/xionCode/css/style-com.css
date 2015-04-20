@@ -37,6 +37,31 @@
 	width:30px;
 	height:34px;}
 /*顶部结束*/
+.search-container{
+	position:absolute;
+	height:80px;
+	width:260px;
+	background:#fff;}
+.search{
+	height:42px;
+	width:222px;
+	margin-left:19px;
+	margin-top:19px;
+	text-align:center;}
+.search-input{
+	float:left;
+	width:169px;
+	height:40px;
+	border:1px solid #dddddd;
+	color:#dddddd;}
+.btn{
+	height:42px;
+	width:51px;
+	border:1px solid #dddddd;
+	color:#fff;
+	font-size:20px;
+	cursor:pointer;}
+/*搜索框结束*/
 .footer{
 	height:395px;
 	width:100%;
@@ -104,3 +129,4 @@
 	width:30px;
 	height:34px;
 	margin:0 auto;}
+/*底部结束*/
