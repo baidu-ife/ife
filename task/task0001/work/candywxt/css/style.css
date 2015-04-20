@@ -416,14 +416,16 @@ h3{
 .imgfall{
     height: 1000px;
     overflow: hidden;
+    color: #ddd;
 }
 .imgboxleft{
     position: absolute;
     border: 1px solid #fff;
+    margin-left: 5px;
 }
 .imgboxright{
     position: relative;
-    margin-left:26px;
+    margin-left:30px;
     padding-bottom: 5px;
 }
 .imgboxright h1{
@@ -444,20 +446,21 @@ h3{
 .darkred{
     background-color: #8c2300;
 }
-.totinyright{
+/*对就是这儿，我用了黑魔法……我知道这样是不对的但是但是……该怎么写呢*/
+.to-tiny-right{
     position: relative;
     left: 170px;
-    top: -450px;
+    top: -420px;
 }
-.toright{
+.to-right{
     position: relative;
     left: 340px;
-    top: -1233px;
+    top: -1218px;
 }
-.tomoreright{
+.to-more-right{
     position: relative;
     left: 510px;
-    top: -1826px
+    top: -1795px
 }
 /*about----------------------------------------------*/
 .small{
@@ -514,7 +517,7 @@ h3{
 .right span{
     position: absolute;
     left: 50%;
-    margin-left: -45px;
+    margin-left: -42px;
     margin-top: -10px;
     padding: 2px 15px;
     background: #fff;
