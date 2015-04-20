@@ -10,7 +10,7 @@ function isArray(arr) {
 function isFunction(fn) {
     return fn instanceof Function;
 }
-console.log(isFunction(isArray));
+//console.log(isFunction(isArray));
 
 //了解值类型和引用类型的区别，了解各种对象的读取、遍历方式
 //使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
@@ -56,25 +56,25 @@ function cloneObject(src) {
     return result;
 }
 //测试用例：
-var srcObj = {
-    a: 1,
-    b: {
-        b1: ["hello", "hi"],
-        b2: "JavaScript"
-    },
-    c: 2
-};
-var abObj = srcObj;
-var tarObj = cloneObject(srcObj);
+//var srcObj = {
+//    a: 1,
+//    b: {
+//        b1: ["hello", "hi"],
+//        b2: "JavaScript"
+//    },
+//    c: 2
+//};
+//var abObj = srcObj;
+//var tarObj = cloneObject(srcObj);
+//
+//srcObj.a = 2;
+//srcObj.b.b1[0] = "Hello";
 
-srcObj.a = 2;
-srcObj.b.b1[0] = "Hello";
-
-console.log(abObj.a);
-console.log(abObj.b.b1[0]);
-
-console.log(tarObj.a);
-console.log(tarObj.b.b1[0]);
+//console.log(abObj.a);
+//console.log(abObj.b.b1[0]);
+//
+//console.log(tarObj.a);
+//console.log(tarObj.b.b1[0]);
 
 
 //学习数组、字符串、数字等相关方法
@@ -93,9 +93,9 @@ function uniqArray(arr) {
 }
 
 //example
-var a = [1, 3, 5, 7, 5, 3];
-var b = uniqArray(a);
-console.log(b);
+//var a = [1, 3, 5, 7, 5, 3];
+//var b = uniqArray(a);
+//console.log(b);
 
 //非正则，对字符串头尾进行空格字符串的去除，包括拳脚半角空格、Tab等，返回一个字符串
 function trim(str) {
@@ -116,9 +116,9 @@ function trim(str) {
 }
 
 //example
-var str = '   hi!  ';
-str = trim(str);
-console.log(str); // 'hi!'
+//var str = '   hi!  ';
+//str = trim(str);
+//console.log(str); // 'hi!'
 
 //实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
@@ -130,11 +130,11 @@ function each(arr, fn) {
 }
 
 //example
-var arr = ['java', 'c', 'php', 'html'];
-function output(item, index) {
-    console.log(item)
-}
-each(arr, output);  // java, c, php, html
+//var arr = ['java', 'c', 'php', 'html'];
+//function output(item, index) {
+//    console.log(item)
+//}
+//each(arr, output);  // java, c, php, html
 
 //获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {
@@ -148,15 +148,15 @@ function getObjectLength(obj) {
 }
 
 //example
-var obj = {
-    a: 1,
-    b: 2,
-    c: {
-        c1: 3,
-        c2: 4
-    }
-};
-console.log(getObjectLength(obj)); // 3
+//var obj = {
+//    a: 1,
+//    b: 2,
+//    c: {
+//        c1: 3,
+//        c2: 4
+//    }
+//};
+//console.log(getObjectLength(obj)); // 3
 
 //学习正则表达式
 //判断是否为邮箱地址
@@ -169,10 +169,10 @@ function isMobilePhone(phone) {
     var reg = /^\d{11}$/;
     return phone.search(reg) !== -1;
 }
-var emailStr = "fengeeker@gmail.com";
-console.log(isEmail(emailStr));
-var phone = "15626475795";
-console.log(isMobilePhone(phone));
+//var emailStr = "fengeeker@gmail.com";
+//console.log(isEmail(emailStr));
+//var phone = "15626475795";
+//console.log(isMobilePhone(phone));
 
 //3
 //为dom增加一个样式名为newClassName的样式
