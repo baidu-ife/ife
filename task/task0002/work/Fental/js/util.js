@@ -1,21 +1,21 @@
 /**
  * Created by T on 2015/4/18.
  */
-//ÅĞ¶ÏarrÊÇ·ñÎªÒ»¸öÊı×é£¬·µ»ØÒ»¸öboolÖµ
+//åˆ¤æ–­arræ˜¯å¦ä¸ºä¸€ä¸ªæ•°ç»„ï¼Œè¿”å›ä¸€ä¸ªboolå€¼
 function isArray(arr) {
     return arr instanceof Array;
 }
 
-//ÅĞ¶ÏfnÊÇ·ñÎªÒ»¸öº¯Êı£¬·µ»ØÒ»¸öboolÖµ
+//åˆ¤æ–­fnæ˜¯å¦ä¸ºä¸€ä¸ªå‡½æ•°ï¼Œè¿”å›ä¸€ä¸ªboolå€¼
 function isFunction(fn) {
     return fn instanceof Function;
 }
 console.log(isFunction(isArray));
 
-//ÁË½âÖµÀàĞÍºÍÒıÓÃÀàĞÍµÄÇø±ğ£¬ÁË½â¸÷ÖÖ¶ÔÏóµÄ¶ÁÈ¡¡¢±éÀú·½Ê½
-//Ê¹ÓÃµİ¹éÀ´ÊµÏÖÒ»¸öÉî¶È¿ËÂ¡£¬¿ÉÒÔ¸´ÖÆÒ»¸öÄ¿±ê¶ÔÏó£¬·µ»ØÒ»¸öÍêÕû¿½±´
-//±»¸´ÖÆµÄ¶ÔÏóÀàĞÍ»á±»ÏŞÖÆÎªÊı×Ö¡¢×Ö·û´®¡¢²¼¶û¡¢ÈÕÆÚ¡¢Êı×é¡¢Object
-//¶ÔÏó¡£²»°üº¬º¯Êı¡¢ÕıÔò¶ÔÏóµÈ
+//äº†è§£å€¼ç±»å‹å’Œå¼•ç”¨ç±»å‹çš„åŒºåˆ«ï¼Œäº†è§£å„ç§å¯¹è±¡çš„è¯»å–ã€éå†æ–¹å¼
+//ä½¿ç”¨é€’å½’æ¥å®ç°ä¸€ä¸ªæ·±åº¦å…‹éš†ï¼Œå¯ä»¥å¤åˆ¶ä¸€ä¸ªç›®æ ‡å¯¹è±¡ï¼Œè¿”å›ä¸€ä¸ªå®Œæ•´æ‹·è´
+//è¢«å¤åˆ¶çš„å¯¹è±¡ç±»å‹ä¼šè¢«é™åˆ¶ä¸ºæ•°å­—ã€å­—ç¬¦ä¸²ã€å¸ƒå°”ã€æ—¥æœŸã€æ•°ç»„ã€Object
+//å¯¹è±¡ã€‚ä¸åŒ…å«å‡½æ•°ã€æ­£åˆ™å¯¹è±¡ç­‰
 function cloneObject(src) {
     //my implement
     var result;
@@ -32,7 +32,7 @@ function cloneObject(src) {
             break;
         case "object":
             if (src === null) {
-                //typeof null Îªobject
+                //typeof null ä¸ºobject
                 result = null;
             }
             else if (src instanceof Array) {
@@ -55,7 +55,7 @@ function cloneObject(src) {
     }
     return result;
 }
-//²âÊÔÓÃÀı£º
+//æµ‹è¯•ç”¨ä¾‹ï¼š
 var srcObj = {
     a: 1,
     b: {
@@ -77,14 +77,15 @@ console.log(tarObj.a);
 console.log(tarObj.b.b1[0]);
 
 
-//Ñ§Ï°Êı×é¡¢×Ö·û´®¡¢Êı×ÖµÈÏà¹Ø·½·¨
-//¶ÔÊı×é½øĞĞÈ¥ÖØ²Ù×÷£¬Ö»¿¼ÂÇÊı×éÖĞÔªËØÎªÊı×Ö»ò×Ö·û´®£¬·µ»ØÒ»¸öÈ¥ÖØºóµÄÊı×é
+//å­¦ä¹ æ•°ç»„ã€å­—ç¬¦ä¸²ã€æ•°å­—ç­‰ç›¸å…³æ–¹æ³•
+//å¯¹æ•°ç»„è¿›è¡Œå»é‡æ“ä½œï¼Œåªè€ƒè™‘æ•°ç»„ä¸­å…ƒç´ ä¸ºæ•°å­—æˆ–å­—ç¬¦ä¸²ï¼Œè¿”å›ä¸€ä¸ªå»é‡åçš„æ•°ç»„
 function uniqArray(arr) {
     //my implement
     var result = [];
     for (var i = 0; i < arr.length; i++) {
-        //indexOf() ·½·¨¿É·µ»ØÄ³¸öÖ¸¶¨µÄ×Ö·û´®ÖµÔÚ×Ö·û´®ÖĞÊ×´Î³öÏÖµÄÎ»ÖÃ¡£
-        if (result.indexOf(arr[i]) === -1) {
+        //indexOf() æ–¹æ³•å¯è¿”å›æŸä¸ªæŒ‡å®šçš„å­—ç¬¦ä¸²å€¼åœ¨å­—ç¬¦ä¸²ä¸­é¦–æ¬¡å‡ºç°çš„ä½ç½®ã€‚
+        //è¿‡æ»¤""
+        if (arr[i] !== "" && result.indexOf(arr[i]) === -1) {
             result.push(arr[i]);
         }
     }
@@ -96,15 +97,15 @@ var a = [1, 3, 5, 7, 5, 3];
 var b = uniqArray(a);
 console.log(b);
 
-//·ÇÕıÔò£¬¶Ô×Ö·û´®Í·Î²½øĞĞ¿Õ¸ñ×Ö·û´®µÄÈ¥³ı£¬°üÀ¨È­½Å°ë½Ç¿Õ¸ñ¡¢TabµÈ£¬·µ»ØÒ»¸ö×Ö·û´®
+//éæ­£åˆ™ï¼Œå¯¹å­—ç¬¦ä¸²å¤´å°¾è¿›è¡Œç©ºæ ¼å­—ç¬¦ä¸²çš„å»é™¤ï¼ŒåŒ…æ‹¬æ‹³è„šåŠè§’ç©ºæ ¼ã€Tabç­‰ï¼Œè¿”å›ä¸€ä¸ªå­—ç¬¦ä¸²
 function trim(str) {
     //my implement
     var result = [];
     for (var i = 0; i < str.length; i++) {
-        if (str[i].indexOf("\t") === -1 //ÖÆ±í·û
+        if (str[i].indexOf("\t") === -1 //åˆ¶è¡¨ç¬¦
             && str[i].indexOf("\n") === -1
             && str[i].indexOf(" ") === -1
-            && str[i].indexOf("\s") === -1  //uncion¿Õ°××Ö·û
+            && str[i].indexOf("\s") === -1  //uncionç©ºç™½å­—ç¬¦
             && str[i].indexOf("\r") === -1
             && str[i].indexOf("\f") === -1
             && str[i].indexOf("\v") === -1) {
@@ -119,7 +120,7 @@ var str = '   hi!  ';
 str = trim(str);
 console.log(str); // 'hi!'
 
-//ÊµÏÖÒ»¸ö±éÀúÊı×éµÄ·½·¨£¬Õë¶ÔÊı×éÖĞÃ¿Ò»¸öÔªËØÖ´ĞĞfnº¯Êı£¬²¢½«Êı×éË÷ÒıºÍÔªËØ×÷Îª²ÎÊı´«µİ
+//å®ç°ä¸€ä¸ªéå†æ•°ç»„çš„æ–¹æ³•ï¼Œé’ˆå¯¹æ•°ç»„ä¸­æ¯ä¸€ä¸ªå…ƒç´ æ‰§è¡Œfnå‡½æ•°ï¼Œå¹¶å°†æ•°ç»„ç´¢å¼•å’Œå…ƒç´ ä½œä¸ºå‚æ•°ä¼ é€’
 function each(arr, fn) {
     //my implement
     for (var i = 0;i < arr.length;i++) {
@@ -135,7 +136,7 @@ function output(item, index) {
 }
 each(arr, output);  // java, c, php, html
 
-//»ñÈ¡Ò»¸ö¶ÔÏóÀïÃæµÚÒ»²ãÔªËØµÄÊıÁ¿£¬·µ»ØÒ»¸öÕûÊı
+//è·å–ä¸€ä¸ªå¯¹è±¡é‡Œé¢ç¬¬ä¸€å±‚å…ƒç´ çš„æ•°é‡ï¼Œè¿”å›ä¸€ä¸ªæ•´æ•°
 function getObjectLength(obj) {
     var length = 0;
     for (var i in obj) {
@@ -157,13 +158,13 @@ var obj = {
 };
 console.log(getObjectLength(obj)); // 3
 
-//Ñ§Ï°ÕıÔò±í´ïÊ½
-//ÅĞ¶ÏÊÇ·ñÎªÓÊÏäµØÖ·
+//å­¦ä¹ æ­£åˆ™è¡¨è¾¾å¼
+//åˆ¤æ–­æ˜¯å¦ä¸ºé‚®ç®±åœ°å€
 function isEmail(emailStr) {
     var reg = /^[\da-z]+@[a-z]+.[a-z]+$/i;
     return emailStr.search(reg) !== -1;
 }
-//ÅĞ¶ÏÊÇ·ñÎªÊÖ»úºÅ
+//åˆ¤æ–­æ˜¯å¦ä¸ºæ‰‹æœºå·
 function isMobilePhone(phone) {
     var reg = /^\d{11}$/;
     return phone.search(reg) !== -1;
@@ -174,12 +175,12 @@ var phone = "15626475795";
 console.log(isMobilePhone(phone));
 
 //3
-//ÎªdomÔö¼ÓÒ»¸öÑùÊ½ÃûÎªnewClassNameµÄÑùÊ½
+//ä¸ºdomå¢åŠ ä¸€ä¸ªæ ·å¼åä¸ºnewClassNameçš„æ ·å¼
 function addClass(element, newClassName) {
     element.className += " " + newClassName;
 }
 
-//ÒÆ³ıdomÖĞµÄÑùÊ½oldClassName
+//ç§»é™¤domä¸­çš„æ ·å¼oldClassName
 function removeClass(element, oldClassName) {
     var oldClass = element.className.split(/\s+|\t+/);
     var newClass = [];
@@ -191,12 +192,12 @@ function removeClass(element, oldClassName) {
     element.className = newClass.join(" ");
 }
 
-//ÅĞ¶ÏsiblingNodeºÍdomÊÇ·ñÎªÍ¬Ò»¸¸ÔªËØÏÂµÄÍ¬Ò»¼¶ÔªËØ£¬·µ»ØboolÖµ
+//åˆ¤æ–­siblingNodeå’Œdomæ˜¯å¦ä¸ºåŒä¸€çˆ¶å…ƒç´ ä¸‹çš„åŒä¸€çº§å…ƒç´ ï¼Œè¿”å›boolå€¼
 function isSiblingNode(element, siblingNode) {
     return element.parentNode === siblingNode.parentNode;
 }
 
-//»ñÈ¡domÏà¶ÔÓÚä¯ÀÀÆ÷´°¿ÚµÄÎ»ÖÃ£¬·µ»ØÒ»¸ö¶ÔÏó{x, y}
+//è·å–domç›¸å¯¹äºæµè§ˆå™¨çª—å£çš„ä½ç½®ï¼Œè¿”å›ä¸€ä¸ªå¯¹è±¡{x, y}
 function getPosition(element) {
     return {
         x: element.getBoundingClientRect().left,
@@ -205,7 +206,7 @@ function getPosition(element) {
 }
 
 //mini $
-//ÊµÏÖÒ»¸ö¼òµ¥µÄQuery
+//å®ç°ä¸€ä¸ªç®€å•çš„Query
 function $(selector) {
     if (selector === null || selector === undefined) {
         return document;
@@ -244,7 +245,7 @@ function $(selector) {
         }
         else {
             for (var j = 0; j < element.childNodes.length; j++){
-                //ÔªËØ½Úµã
+                //å…ƒç´ èŠ‚ç‚¹
                 if (element.childNodes[j].nodeType == 1) {
                     var result = scanElement(element.childNodes[j], oneSelector);
                     if(result !== null && result !== undefined) {
@@ -258,17 +259,17 @@ function $(selector) {
         //domObject = domObject.querySelector(selectors[i]);
         var temp;
         if (selectors[i].indexOf("#") === 0) {
-            //idÑ¡ÔñÆ÷
+            //idé€‰æ‹©å™¨
             temp = selectors[i].replace("#", "");
             domObject = domObject.getElementById(temp);
         }
         else if ((selectors[i].indexOf(".") !== 0) && (selectors[i].indexOf("[") != 0)) {
-            //±êÇ©Ñ¡ÔñÆ÷
+            //æ ‡ç­¾é€‰æ‹©å™¨
             temp = selectors[i];
             domObject = domObject.getElementsByTagName(temp)[0];
         }
         else {
-            //ÀàÑ¡ÔñÆ÷¼°ÊôĞÔÑ¡ÔñÆ÷£¬±éÀúÎÄµµÊ÷
+            //ç±»é€‰æ‹©å™¨åŠå±æ€§é€‰æ‹©å™¨ï¼Œéå†æ–‡æ¡£æ ‘
             var result = scanElement(domObject, selectors[i]);
             if (domObject != result) {
                 domObject = result;
@@ -282,7 +283,7 @@ function $(selector) {
 }
 
 //4
-//¸øÒ»¸ödom°ó¶¨Ò»¸öÕë¶ÔeventÊÂ¼şµÄÏìÓ¦£¬ÏìÓ¦º¯ÊıÎªlistener
+//ç»™ä¸€ä¸ªdomç»‘å®šä¸€ä¸ªé’ˆå¯¹eventäº‹ä»¶çš„å“åº”ï¼Œå“åº”å‡½æ•°ä¸ºlistener
 function addEvent(element, event, listener) {
     //console.log(element.addEventListener);
     if (element.addEventListener) {
@@ -299,7 +300,7 @@ function addEvent(element, event, listener) {
 //}
 //addEvent($("#doma"), "click", clicklistener);
 
-//ÒÆ³ıdom¶ÔÏó¶ÔÓÚeventÊÂ¼ş·¢ÉúÊ±Ö´ĞĞlistenerµÄÏàÓ¦£¬µ±listenerÎª¿ÕÊ±£¬ÒÆ³öËùÓĞÏìÓ¦º¯Êı
+//ç§»é™¤domå¯¹è±¡å¯¹äºeventäº‹ä»¶å‘ç”Ÿæ—¶æ‰§è¡Œlistenerçš„ç›¸åº”ï¼Œå½“listenerä¸ºç©ºæ—¶ï¼Œç§»å‡ºæ‰€æœ‰å“åº”å‡½æ•°
 function removeEvent(element, event, listener) {
     if(listener === undefined) {
         element["on" + event] = null;
@@ -312,7 +313,7 @@ function removeEvent(element, event, listener) {
     }
 }
 
-//ÊµÏÖ¶ÔclickÊÂ¼şµÄ°ó¶¨
+//å®ç°å¯¹clickäº‹ä»¶çš„ç»‘å®š
 function addClickEvent(element, listener) {
     if (element.addEventListener) {
         element.addEventListener("click", listener, false);
@@ -322,7 +323,7 @@ function addClickEvent(element, listener) {
     }
 }
 
-//ÊµÏÖ¶ÔÓÚ°´Enter¼üÊ±µÄÊÂ¼ş°ó¶¨
+//å®ç°å¯¹äºæŒ‰Enteré”®æ—¶çš„äº‹ä»¶ç»‘å®š
 function addEnterEvent(element, listener) {
     if(element.addEventListener) {
         element.addEventListener("keydown", function(event) {
@@ -345,7 +346,7 @@ function addEnterEvent(element, listener) {
 //$.click = addClickEvent;
 //$.enter = addEnterEvent;
 
-//ÊÂ¼ş´úÀí http://www.cnblogs.com/rubylouvre/archive/2009/08/09/1542174.html
+//äº‹ä»¶ä»£ç† http://www.cnblogs.com/rubylouvre/archive/2009/08/09/1542174.html
 function delegateEvent(element, tag, eventName, listener) {
     addEvent(element, eventName, function(e){
         var e = e || window.event;
@@ -358,7 +359,7 @@ function delegateEvent(element, tag, eventName, listener) {
 }
 //$.delegate = delegateEvent;
 
-//·â×°´¦Àí
+//å°è£…å¤„ç†
 $.on = function(selector, event, listener) {
     var element = $(selector);
     addEvent(element, event, listener);
@@ -376,21 +377,21 @@ $.delegate = function(selector, tag, event, listener) {
     delegateEvent(element, tag, event, listener);
 };
 //
-//// Ê¹ÓÃÊ¾Àı
-//// »¹ÊÇÉÏÃæÄÇ¶ÎHTML£¬ÊµÏÖ¶ÔlistÕâ¸öulÀïÃæËùÓĞliµÄclickÊÂ¼ş½øĞĞÏìÓ¦
+//// ä½¿ç”¨ç¤ºä¾‹
+//// è¿˜æ˜¯ä¸Šé¢é‚£æ®µHTMLï¼Œå®ç°å¯¹listè¿™ä¸ªulé‡Œé¢æ‰€æœ‰liçš„clickäº‹ä»¶è¿›è¡Œå“åº”
 //$.delegate($("#list"), "li", "click", clickHandle);
 
-//5. BOM:ä¯ÀÀÆ÷¶ÔÏóÄ£ĞÍ browser object model
-//ÅĞ¶ÏÊÇ·ñÎªIEä¯ÀÀÆ÷£¬·µ»Ø-1»òÕß°æ±¾ºÅ
+//5. BOM:æµè§ˆå™¨å¯¹è±¡æ¨¡å‹ browser object model
+//åˆ¤æ–­æ˜¯å¦ä¸ºIEæµè§ˆå™¨ï¼Œè¿”å›-1æˆ–è€…ç‰ˆæœ¬å·
 function isIE() {
-    //navigatorÓĞËÄ¸öÖ÷ÒªµÄÊôĞÔ
-    //appName:webä¯ÀÀÆ÷È«³Æ£¬ieÖĞ£¬Õâ¾ÍÊÇmicrosoft internet explorer£»firefoxºÍÆäËûä¯ÀÀÆ÷Ò²È¡ÖµÎªnetscape
-    //appVersion:´ËÊôĞÔÍ¨³£Êı×Ö¿ªÊ¼£¬°üº¬ä¯ÀÀÆ÷³§ÉÌºÍ°æ±¾ĞÅÏ¢µÄÏêÏ¸×Ö·û´®¡£µ«Ã»ÓĞ±ê×¼¸ñÊ½£¬Ã»·¨Ö±½ÓÓÃÀ´ÅĞ¶Ï
-    //userAgent:ä¯ÀÀÆ÷ÔÚuser-agent httpÍ·²¿ÖĞ·¢ËÍµÄ×Ö·û´®£¬Ã»ÓĞ±ê×¼¸ñÊ½¡£µ«°üº¬¾ø´ó²¿·ÖĞÅÏ¢£¬Òò´Ëä¯ÀÀÆ÷µ¯Ğİ´úÂëÍ¨³£ÓÃËüÀ´ĞáÌ½
-    //platform:×ÔÆÛÉÏÔËĞĞä¯ÀÀÆ÷µÄ²Ù×÷ÏµÍ³£¨²¢ÇÒ¿ÉÄÜÊÇÓ²¼ş£©µÄ×Ö·û´®¡£
+    //navigatoræœ‰å››ä¸ªä¸»è¦çš„å±æ€§
+    //appName:webæµè§ˆå™¨å…¨ç§°ï¼Œieä¸­ï¼Œè¿™å°±æ˜¯microsoft internet explorerï¼›firefoxå’Œå…¶ä»–æµè§ˆå™¨ä¹Ÿå–å€¼ä¸ºnetscape
+    //appVersion:æ­¤å±æ€§é€šå¸¸æ•°å­—å¼€å§‹ï¼ŒåŒ…å«æµè§ˆå™¨å‚å•†å’Œç‰ˆæœ¬ä¿¡æ¯çš„è¯¦ç»†å­—ç¬¦ä¸²ã€‚ä½†æ²¡æœ‰æ ‡å‡†æ ¼å¼ï¼Œæ²¡æ³•ç›´æ¥ç”¨æ¥åˆ¤æ–­
+    //userAgent:æµè§ˆå™¨åœ¨user-agent httpå¤´éƒ¨ä¸­å‘é€çš„å­—ç¬¦ä¸²ï¼Œæ²¡æœ‰æ ‡å‡†æ ¼å¼ã€‚ä½†åŒ…å«ç»å¤§éƒ¨åˆ†ä¿¡æ¯ï¼Œå› æ­¤æµè§ˆå™¨å¼¹ä¼‘ä»£ç é€šå¸¸ç”¨å®ƒæ¥å—…æ¢
+    //platform:è‡ªæ¬ºä¸Šè¿è¡Œæµè§ˆå™¨çš„æ“ä½œç³»ç»Ÿï¼ˆå¹¶ä¸”å¯èƒ½æ˜¯ç¡¬ä»¶ï¼‰çš„å­—ç¬¦ä¸²ã€‚
     var ieVersion = (function() {
         var s = navigator.userAgent.toLowerCase();
-        //ie 10ÒÔÇ°°æ±¾ºÅÔÚmsieºó£¬11ÔòÔÚrvºó
+        //ie 10ä»¥å‰ç‰ˆæœ¬å·åœ¨msieåï¼Œ11åˆ™åœ¨rvå
         var match = /(msie)\s(\d+.\d)/.exec(s) || /(rv):(\d+.\d)/.exec(s);
         if(match) {
             return match[2];
@@ -410,11 +411,11 @@ function ajax(url, options) {
     }
     var request;
     var target = url;
-    //ie7+¼°ÆäËûä¯ÀÀÆ÷Ö§³ÖXMLHttpRequest
+    //ie7+åŠå…¶ä»–æµè§ˆå™¨æ”¯æŒXMLHttpRequest
     if(window.XMLHttpRequest) {
         request = new XMLHttpRequest();
     }
-    //ÀÏie....
+    //è€ie....
     else {
         request = window.ActiveXObject("Microsoft.XMLHTTP");
     }
