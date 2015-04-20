@@ -1,0 +1,46 @@
+*{
+  box-sizing: border-box;
+}
+.part{
+  float:left;
+  width:30%;
+  height:500px;
+  background-color:#eeeeee;
+  border-radius:5px;
+  margin:10px;
+  padding:10px;
+}
+.result{
+  padding:10px 0;
+}
+.part h1{
+  font-size:1.5em;
+}
+.part p{
+  margin:5px 0;
+}
+.tips{
+  color:red;
+  font-size:0.8em;
+}
+.hide{
+  display:none;
+}
+.part label{
+  height:24px;
+  line-height:24px;
+  display:block;
+}
+.part textarea{
+  display:block;
+  padding:5px;
+  margin-bottom:10px;
+  width:100%;
+}
+.part button{
+  line-height:24px;
+}
+#part1 > input{
+  width:300px;
+  line-height:24px;
+}
