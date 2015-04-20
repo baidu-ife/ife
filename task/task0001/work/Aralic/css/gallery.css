@@ -108,16 +108,16 @@
 }
 
 /* 侧边栏*/
-.sidebar{
+.sidebar {
     margin-top: 53px;
     width: 260px;
     float: right;
 }
-.search{
+.search {
     background: #fff;
     padding: 19px;
 }
-.search-text{
+.search-text {
     width: 120px;
     height: 40px;
     line-height: 40px;
@@ -127,10 +127,10 @@
     color: #999999;
     background: url(../img/icon-search.png) no-repeat 8px 6px;
 }
-.search-text:focus + .search-submit{
+.search-text:focus + .search-submit {
     background: #999;
 }
-.search-submit{
+.search-submit {
     width: 51px;
     height: 42px;
     background: #ddd;

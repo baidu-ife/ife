@@ -5,6 +5,7 @@
     margin: 100px auto;
     position: relative;
 }
+
 /*中心线*/
 .time-line {
     width: 5px;
@@ -15,6 +16,7 @@
     top: 0;
     margin-left: -2px;
 }
+
 .my-pic {
     width: 180px;
     height: 180px;
@@ -23,6 +25,7 @@
     left: 50%;
     margin-left: -90px;
 }
+
 .my-phone-pic,
 .my-school-pic,
 .my-high-school,
@@ -34,9 +37,11 @@
     top: 270px;
     margin-left: -55px;
 }
+
 .my-school-pic {
     top: 485px;
 }
+
 .my-high-school,
 .my-collage {
     width: 66px;
@@ -47,6 +52,7 @@
     text-align: center;
     color: #666666;
 }
+
 .my-collage {
     top: 695px;
 }
@@ -60,12 +66,14 @@
     width: 160px;
     margin-left: -160px;
 }
+
 .my-name,
 .my-info{
     height: 260px;
     font-weight: normal;
     font-size: 16px;
 }
+
 .my-phone-info,
 .my-school-info,
 .my-phone-num{
@@ -78,22 +86,27 @@
     width: 310px;
     left: 72%;
 }
+
 .line-r p,
 .line-r span {
     font-size: 14px;
     color: #3f404c;
 }
+
 .my-school-description span{
     display: block;
     height: 65px;
 }
+
 /*滑动门圆角*/
 .time-year {
     background: url(../img/time_bg.png) repeat-x 0 -66px;
 }
+
 .time-year-l {
     background: url(../img/time_bg.png) no-repeat 0 0;
 }
+
 .time-year-r {
     background: url(../img/time_bg.png) no-repeat right -33px;
 }
