@@ -118,6 +118,15 @@ img {
   margin-left: -480px;
 }
 
+@media screen and (max-width:9600px) {
+  .bg2 {
+    position: relative;
+    left: 0;
+    margin-left: 0;
+  }
+}
+
+
 /*有的圆角矩形是复杂图案，无法直接用border-radius，请在不使用border-radius的情况下实现一个可复用的高度和宽*/
 .rectangle {
   margin: 10px;

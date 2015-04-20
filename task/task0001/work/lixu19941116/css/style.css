@@ -21,6 +21,12 @@ hr {
   border-right: none;
 }
 
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 /*宽度固定，居中*/
 .header-wrapper header,
 footer .link,
@@ -38,12 +44,6 @@ footer .center,
   height: 80px;
   width: 100%;
   background: #52285B;
-}
-
-header:after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 header .logo {
@@ -90,12 +90,6 @@ footer hr {
   margin: 10px 0 30px;
 }
 
-footer .link:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 footer .list {
   width: 180px;
   float: left;
@@ -140,12 +134,6 @@ footer img {
   height: 600px;
 }
 
-.banner-wrapper .banner:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .banner .opacity {
   color: #FFF;
   float: right;
@@ -175,12 +163,6 @@ footer img {
 
 .img-wrapper .img {
   overflow:hidden;
-}
-
-.img-wrapper .img:after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .img li {
@@ -248,12 +230,6 @@ footer img {
 .container-wrapper {
   background: #EEE;
   padding: 20px 0;
-}
-
-.container-wrapper .container:after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .container .article-wrapper {
@@ -448,12 +424,6 @@ input:focus + button {
   margin-top: 10px;
 }
 
-.sidebar .tags:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .tags li {
   display: inline;
   margin-right: 10px;
@@ -540,12 +510,6 @@ input:focus + button {
   
 }
 
-.img-falls-wrapper .img-falls:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .img-falls img {
   margin-top: 5px;
   width: 150px;
@@ -559,12 +523,6 @@ input:focus + button {
   width: 310px;
   margin-right: 10px;
   float: left;
-}
-
-.column1 ul:after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .img-falls .column2,
@@ -662,12 +620,6 @@ input:focus + button {
   margin: 10px 0;
 }
 
-.ranking li:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 .ranking .border {
   margin-left: 10px;
   width: 120px;
@@ -755,12 +707,6 @@ input:focus + button {
 .timeline .author-info {
   padding-top: 120px;
   margin-bottom: 20px;
-}
-
-.timeline .author-info:after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .timeline .contact,
