@@ -12,7 +12,7 @@ li {
 a {
     text-decoration: none;
 }
-table{
+table {
     border-spacing: 0;
     border-collapse: collapse;
 }
@@ -61,8 +61,11 @@ ul li a:active {
 .clearfix {
     *zoom: 1;
 }
-.font-hei{
+.font-hei {
     font-family: 'Microsoft YaHei', 'SimHei', 'STHeiti', sans-serif;
+}
+.font-song {
+    font-family: 'SimSun', 'STSong', serif;
 }
 #header {
     background-color: #52385B;
@@ -81,7 +84,6 @@ ul li a:active {
     bottom: 0;
 }
 #header .center .nav {
-    font-family: 'SimSun', 'STSong', serif;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -241,7 +243,7 @@ ul li a:active {
  * blog
  * =======================================================
  */
-#main-blog{
+#main-blog {
     margin-top: 20px;
 }
 #main-blog .right {
@@ -299,13 +301,12 @@ ul li a:active {
     line-height: 40px;
     background-color: #955EA1;
 }
-
-#main-blog .page{
+#main-blog .page {
     font-size: 0;/*为了去除inline-block之间的间隙*/
     text-align: center;
     margin-bottom: 330px;
 }
-#main-blog .page a{
+#main-blog .page a {
     background-color: #fff;
     color: #000;
     padding: 10px 15px;
@@ -313,13 +314,13 @@ ul li a:active {
     display: inline-block;
     font-size: 12px;
 }
-#main-blog .page .curr{
+#main-blog .page .curr {
     color: #fff;
     background-color: #955EA1;
     font-weight: bold;
     cursor: text;
 }
-#main-blog .page .disable{
+#main-blog .page .disable {
     color: #ccc;
     cursor: text;
 }
@@ -376,7 +377,7 @@ ul li a:active {
     background: #fff;
     margin-bottom: 10px;
 }
-#main-blog .cate a{
+#main-blog .cate a {
     color: #666;
     font-size: 14px;
     display: block;
@@ -386,84 +387,263 @@ ul li a:active {
     border-left: 4px solid #D8BCE2;
     border-bottom: 1px solid #ddd;
 }
-#main-blog .cate .first{
+#main-blog .cate .first {
     border-top: 1px solid #ddd;
 }
-#main-blog .cate .active,#main-blog .cate a:hover{
-     border-left: 4px solid #52385B;
+#main-blog .cate .active, #main-blog .cate a:hover {
+    border-left: 4px solid #52385B;
 }
 
 /**
  * calender
  */
-#main-blog .calender{
+#main-blog .calender {
     background-color: #fff;
     padding: 20px;
     font-size: 13px;
     text-align: center;
     margin-bottom: 10px;
 }
-#main-blog .calender .year-month{
+#main-blog .calender .year-month {
     font-weight: bold;
-   margin-bottom: 5px;
+    margin-bottom: 5px;
     color: #52385B;
 }
-#main-blog .calender .year-month a{
+#main-blog .calender .year-month a {
     display: inline-block;
     color: #52385B;
 }
-#main-blog .calender .year-month .year-month-center{
+#main-blog .calender .year-month .year-month-center {
     padding: 0 50px;
     letter-spacing: 3px;
 }
-#main-blog .calender table{
+#main-blog .calender table {
     margin: 0 auto;
     color: #888;
 }
-#main-blog .calender table tr{
+#main-blog .calender table tr {
     padding: 3px;
     border-bottom: 1px solid #e5e5e5;
 }
-#main-blog .calender table th,#main-blog .calender table td{
+#main-blog .calender table th, #main-blog .calender table td {
     padding: 8px;
     font-weight: normal;
 }
-#main-blog .calender table .today{
+#main-blog .calender table .today {
     padding: 4px 3px;
 }
-#main-blog .calender table .today span{
+#main-blog .calender table .today span {
     display: inline-block;
     padding: 4px 5px;
     background-color: #955EA1;
     color: #fff;
 }
-#main-blog .calender table .festival{
+#main-blog .calender table .festival {
     font-weight: bold;
     color: #955EA1;
 }
-#main-blog .tags{
+#main-blog .tags {
     padding: 10px 20px;
     background-color: #fff;
 }
-#main-blog .tags-head{
+#main-blog .tags-head {
     color: #666;
     margin-bottom: 15px;
 }
-#main-blog .tags-body{
+#main-blog .tags-body {
     color: #955EA1;
 }
-#main-blog .lev1{
+#main-blog .lev1 {
     font-size: 28px;
 }
-#main-blog .lev2{
+#main-blog .lev2 {
     font-size: 22px;
 }
-#main-blog .lev3{
+#main-blog .lev3 {
     font-size: 18px;
 }
-#main-blog .lev4{
+#main-blog .lev4 {
     font-size: 14px;
 }
-#main-blog .lev5{
+#main-blog .lev5 {
     font-size: 12px;
+}
+
+/**
+ * gallery
+ * ---------
+ * tab
+ */
+.tab-head {
+    font-size: 0;
+}
+.tab-head a {
+    display: inline-block;
+    font-size: 14px;
+    color: #222;
+    border-top: 4px solid black;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    padding: 15px 20px 20px 20px;
+}
+.tab-head .last {
+    border-right: none;
+}
+.tab-head a[tab-all] {
+    border-top-color: #955EA1;
+}
+.tab-head a[tab-JavaScriptUtilFunctions] {
+    border-top-color: #C6C496;
+}
+.tab-head a[tab-UIComponents] {
+    border-top-color: #8DBF8C;
+}
+.tab-head a[tab-Framework] {
+    border-top-color: #6AAECD;
+}
+.tab-head a[tab-Applications] {
+    border-top-color: #E187A8;
+}
+.tab-head .active {
+    border-bottom-color: #fff;
+}
+.tab-head a[tab-all]:hover, .tab-head .active[tab-all] {
+    border-top-color: #52385B;
+}
+.tab-head a[tab-JavaScriptUtilFunctions]:hover, .tab-head .active[tab-JavaScriptUtilFunctions] {
+    border-top-color: #6E6D54;
+}
+.tab-head a[tab-UIComponents]:hover, .tab-head .active[tab-UIComponents] {
+    border-top-color: #537252;
+}
+.tab-head a[tab-Framework]:hover, .tab-head .active[tab-Framework] {
+    border-top-color: #366A82;
+}
+.tab-head a[tab-Applications]:hover, .tab-head .active[tab-Applications] {
+    border-top-color: #8D455F;
+}
+
+/**
+ * waterfall
+ */
+.tab-body {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 200px;
+}
+.tab-body .waterfall {
+    width: 330px;
+}
+.tab-body .water-left {
+    float: left;
+}
+.tab-body .water-right {
+    float: right;
+}
+.waterfall .card {
+    margin-bottom: 10px;
+}
+.waterfall .card img {
+    display: block;
+    width: 160px;
+}
+.waterfall .big-card img {
+    display: block;
+    width: 330px;
+}
+.card-content {
+    padding: 10px;
+    color: #fff;
+}
+.card-content .letter {
+    float: left;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #fff;
+    border-radius: 27px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 27px;
+}
+.card-content .info {
+    overflow: hidden;
+}
+.card-content .info h3 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+.card-content .info p {
+    font-size: 12px;
+    line-height: 1.7;
+    text-indent: 0;
+}
+.card-content[j] {
+    background-color: #52385B;
+}
+.card-content[a] {
+    background-color: #77572D;
+}
+.card-content[f] {
+    background-color: #3B6A44;
+}
+.card-content[u] {
+    background-color: #772D2D;
+}
+.columns {
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
+}
+
+/**
+ * right
+ * search
+ * rank
+ */
+.search-in-gallery {
+    margin-top: 59px;
+}
+.rank{
+    background-color: #fff;
+    font-size: 14px;
+    padding: 20px 15px;
+    color: #666;
+}
+.rank-title{
+    margin-bottom: 20px;
+}
+.rank-body .item{
+    font-size: 0;
+    margin-bottom: 10px;
+}
+.rank-body .item div{
+    display: inline-block;
+    font-size: 12px;
+}
+.rank-body .item .num{
+    background-color: #52385B;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+}
+.rank-body .rank-wrap{
+    width: 100px;
+    height: 16px;
+    border:1px solid #52385B;
+    margin: 0 15px;
+    position: relative;
+    top: 3px;
+}
+.rank-body .rank-scale{
+    background-color: #52385B;
+    height: 16px;
+    /*width: 100%;*/
 }
