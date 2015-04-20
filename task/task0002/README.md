@@ -194,7 +194,7 @@ var str = '   hi!  ';
 str = trim(str);
 console.log(str); // 'hi!'
 
-// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参赛传递
+// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
     // your implement
 }
@@ -268,22 +268,22 @@ function isMobilePhone(phone) {
 先来一些简单的，在你的`util.js`中完成以下任务：
 
 ```javascript
-// 为dom增加一个样式名为newClassName的新样式
+// 为element增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
     // your implement
 }
 
-// 移除dom中的样式oldClassName
+// 移除element中的样式oldClassName
 function removeClass(element, oldClassName) {
     // your implement
 }
 
-// 判断siblingNode和dom是否为同一个父元素下的同一级的元素，返回bool值
+// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
     // your implement
 }
 
-// 获取dom相对于浏览器窗口的位置，返回一个对象{x, y}
+// 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
     // your implement
 }
@@ -333,7 +333,7 @@ $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第
 我们来继续用封装自己的小jQuery库来实现我们对于JavaScript事件的学习，还是在你的`util.js`，实现以下函数
 
 ```javascript
-// 给一个dom绑定一个针对event事件的响应，响应函数为listener
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
     // your implement
 }
@@ -344,7 +344,7 @@ function clicklistener(event) {
 }
 addEvent($("#doma"), "click", a);
 
-// 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
+// 移除element对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
 function removeEvent(element, event, listener) {
     // your implement
 }
