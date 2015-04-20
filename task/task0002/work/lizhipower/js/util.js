@@ -133,7 +133,14 @@ function getPosition(element) {
 
 }
 
-
+function addClass(element,className){
+    //var element  = document.getElementById(id);
+    if(element.className == ""){
+        element.className = className;
+    }else{
+        element.className += " "+className;
+    }
+}
 
 
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
