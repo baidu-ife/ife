@@ -1,21 +1,43 @@
-body, h1, h2, p, ul {
+body, h1, h2, p, ul, hr {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-size: 12px;
+}
+
+li {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
 }
 
+hr {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+/*宽度固定，居中*/
+.header-wrapper header,
+footer .link,
+footer .center,
+.banner-wrapper .banner,
+.img-wrapper .img,
+.author,
+.container-wrapper .container,
+.timeline-wrapper .timeline{
+  width: 980px;
+  margin: auto;
+}
+
 .header-wrapper {
   height: 80px;
   width: 100%;
   background: #52285B;
-}
-
-header {
-  width: 980px;
-  margin: auto;
 }
 
 header:after {
@@ -32,10 +54,6 @@ header .logo {
   margin: 40px 0 0;
 }
 
-nav {
-  display: block;
-}
-
 header .right {
   float: right;
   margin-top: 45px;
@@ -49,7 +67,6 @@ nav a {
 
 .github {
   float: right;
-  display: block;
   margin-right: 10px;
   position: relative;
   top: -34px;
@@ -64,15 +81,13 @@ footer .center {
   text-align: center;
 }
 
-footer hr {
-  border-color: #333;
-  border-top: none;
-  margin: 10px 0 30px;
+.center a {
+  font-size: 12px;
 }
 
-footer .link {
-  width: 980px;
-  margin: auto;
+footer hr {
+  border-color: #333;
+  margin: 10px 0 30px;
 }
 
 footer .link:after {
@@ -84,7 +99,6 @@ footer .link:after {
 footer .list {
   width: 180px;
   float: left;
-  list-style: none;
   margin-right: 20px;
 }
 
@@ -93,7 +107,6 @@ footer .list:last-child {
 }
 
 .list p {
-  font-size: 14px;
   color: #CCC;
   margin-bottom: 30px;
 }
@@ -111,8 +124,7 @@ footer .list:last-child {
 footer .copyright {
   color: #FFF;
   text-align: center;
-  font-size: 14px;
-  margin: 100px 0 20px;
+  margin: 50px 0 20px;
 }
 
 footer img {
@@ -128,18 +140,14 @@ footer img {
   height: 600px;
 }
 
-.banner {
-  width: 980px;
-  margin: auto;
-}
-
-.banner:after {
+.banner-wrapper .banner:after {
   content: '';
   display: block;
   clear: both;
 }
 
 .banner .opacity {
+  color: #FFF;
   float: right;
   width: 350px;
   padding: 10px 10px 30px;
@@ -156,7 +164,6 @@ footer img {
 }
 
 .opacity p {
-  font-size: 12px;
   text-indent: 24px;
   line-height: 150%;
 }
@@ -167,8 +174,6 @@ footer img {
 }
 
 .img-wrapper .img {
-  width: 980px;
-  margin: auto;
   overflow:hidden;
 }
 
@@ -185,7 +190,6 @@ footer img {
   width: 320px;
   background: #FFF;
   float: left;
-  list-style: none;
   margin-bottom: -10000px;
   padding-bottom: 10000px;
 }
@@ -201,7 +205,6 @@ footer img {
 
 .img p {
   margin: 0 20px;
-  font-size: 12px;
   line-height: 170%;
   text-indent: 24px;
 }
@@ -215,8 +218,7 @@ footer img {
 }
 
 .author {
-  width: 600px;
-  margin: 0 auto 150px;
+  margin-bottom: 100px;
 }
 
 .author .portrait {
@@ -236,19 +238,16 @@ footer img {
 }
 
 .author p {
-  margin-top: 40px;
+  margin: 30px auto 0;
   font-size: 14px;
+  text-indent: 24px;
+  width: 600px;
 }
 
 /*blog.html*/
 .container-wrapper {
   background: #EEE;
   padding: 20px 0;
-}
-
-.container-wrapper .container {
-  width: 980px;
-  margin: auto;
 }
 
 .container-wrapper .container:after {
@@ -263,7 +262,8 @@ footer img {
 }
 
 .article-wrapper article {
-  width: 640px;
+  box-sizing: border-box;
+  width: 680px;
   margin-bottom: 10px;
   padding: 20px;
   background: #FFF;
@@ -276,6 +276,7 @@ article .tag {
   left: -41px;
   color: #FFF;
   padding: 10px;
+  text-indent: 0;
 }
 
 article .date {
@@ -294,13 +295,13 @@ article h1 {
 }
 
 article h2 {
-  font-size: 12px;
   color: #666;
+  font-size: 12px;
   margin: 5px 0 10px;
 }
 
 article p {
-  font-size: 12px;
+  text-indent: 24px;
 }
 
 article .info {
@@ -310,28 +311,24 @@ article .info {
 }
 
 .pages {
-  margin-left: 45px;
+  margin-left: 80px;
 }
 
-.pages li {
+.pages a {
   display: inline-block;
   background: #FFF;
   padding: 10px 15px;
   margin-right: 5px;
+  color: #000;
 }
 
-.pages li:hover {
+.pages a:hover {
   background: #A65DB4;
 }
 
 .pages .number {
-  padding: 12px 15px;
+  padding: 12px 15px 11px;
   position: relative;
-  top: -1px;
-}
-
-.pages a {
-  color: #000;
 }
 
 .pages .active {
@@ -339,12 +336,16 @@ article .info {
   background: #A65DB4;
 }
 
+/*blog.html 右侧sidebar*/
 .sidebar {
   float: left;
   width: 290px;
 }
 
-.sidebar .search {
+.sidebar .search,
+.sidebar .calendar,
+.sidebar .tags,
+.sidebar .ranking {
   background: #FFF;
   padding: 20px;
 }
@@ -355,7 +356,6 @@ article .info {
   width: 200px;
   border: 1px solid #DDD;
   background: url(../img/search.png) no-repeat;
-  font-size: 12px;
   padding-left: 45px;
 }
 
@@ -373,7 +373,7 @@ input:focus + button {
 .search button {
   background: #DDD;
   border: 1px solid #DDD;
-  padding: 10px;
+  padding: 10px 7px;
   color: #FFF;
   font-size: 16px;
   position: relative;
@@ -389,28 +389,24 @@ input:focus + button {
 .kind-list a {
   display: block;
   padding: 15px 20px;
-  border-left: 5px solid #DFC5E5;
+  color: #666;
+  border-left: 3px solid #DFC5E5;
 }
 
 .kind-list a:hover {
-  border-left: 5px solid #52285B;
+  border-left: 3px solid #52285B;
 }
 
 .kind-list .active {
-  border-left: 5px solid #52285B;
+  border-left: 3px solid #52285B;
 }
 
 .kind-list hr {
   border-color: #DDD;
-  border-left: none;
-  border-top: none;
-  margin: 0;
 }
 
 .sidebar .calendar {
   margin-top: 10px;
-  padding: 20px;
-  background: #FFF;
 }
 
 .calendar p {
@@ -423,8 +419,7 @@ input:focus + button {
 }
 
 .calendar hr {
-  border-top: none;
-  border-left: none;
+  margin: 5px 0;
   border-color: #DDD;
 }
 
@@ -432,6 +427,7 @@ input:focus + button {
   color: #999;
   display: inline-block;
   width: 30px;
+  padding: 3px 0;
   text-align: center;
 }
 
@@ -449,8 +445,6 @@ input:focus + button {
 }
 
 .sidebar .tags {
-  padding: 20px;
-  background: #FFF;
   margin-top: 10px;
 }
 
@@ -462,7 +456,6 @@ input:focus + button {
 
 .tags li {
   display: inline;
-  list-style: none;
   margin-right: 10px;
   color: #773986;
 }
@@ -471,24 +464,18 @@ input:focus + button {
   margin-bottom: 20px;
 }
 
-.tags .js {
+.tags .js,
+.tags .ruby {
   font-size: 36px;
 }
 
-.tags .html {
+.tags .html,
+.tags .node {
   font-size: 20px;
 }
 
 .tags .css {
   font-size: 26px;
-}
-
-.tags .ruby {
-  font-size: 36px;
-}
-
-.tags .node {
-  font-size: 20px;
 }
 
 .tags .rails {
@@ -504,6 +491,7 @@ input:focus + button {
 .tab a {
   display: inline-block;
   background: #FFF;
+  color: #000;
   padding: 10px 15px;
   border-bottom: 1px solid #EEE;
 }
@@ -549,7 +537,7 @@ input:focus + button {
   margin-bottom: 10px;
   padding: 15px 25px;
   background: #FFF;
-  list-style: none;
+  
 }
 
 .img-falls-wrapper .img-falls:after {
@@ -573,25 +561,20 @@ input:focus + button {
   float: left;
 }
 
-.column1 ul {
-  list-style: none;
-}
-
 .column1 ul:after {
   content: '';
   display: block;
   clear: both;
 }
 
-.img-falls .column2 {
-  width: 150px;
-  margin-right: 10px;
-  float: left;
-}
-
+.img-falls .column2,
 .img-falls .column3 {
   width: 150px;
   float: left;
+}
+
+.img-falls .column2 {
+  margin-right: 10px;
 }
 
 .img-falls .info {
@@ -630,7 +613,6 @@ input:focus + button {
 }
 
 .info p:last-child {
-  font-size: 12px;
   margin: 10px 0 0 35px ;
 }
 
@@ -640,7 +622,7 @@ input:focus + button {
   background: #FFF;
   text-align: center;
   padding: 10px 0 15px;
-  font-size: 12px;
+  color: #666;
 }
 
 .more img {
@@ -649,9 +631,8 @@ input:focus + button {
   top: 5px;
 }
 
+/*gallery.html 右侧sidebar*/
 .sidebar .ranking {
-  padding: 20px;
-  background: #FFF;
   margin-top: 10px;
 }
 
@@ -662,29 +643,29 @@ input:focus + button {
 
 .ranking h2 {
   float: left;
-  font-size: 16px;
+  font-size: 14px;
   background: #52285B;
   color: #FFF;
   border-radius: 100%;
   padding: 0 5px;
   position: relative;
-  top: 2px;
+  top: 3px;
+}
+
+.ranking p {
+  float: left;
+  font-size: 14px;
+  margin-left: 10px;
 }
 
 .ranking li {
   margin: 10px 0;
-  list-style: none;
 }
 
 .ranking li:after {
   content: '';
   display: block;
   clear: both;
-}
-
-.ranking p {
-  float: left;
-  margin-left: 10px;
 }
 
 .ranking .border {
@@ -727,14 +708,12 @@ input:focus + button {
 }
 
 .timeline-wrapper .timeline {
-  width: 980px;
-  margin: auto;
   background: #FFF;
   position: relative;
 }
 
 .timeline:before{
-  content: "";
+  content: '';
   width: 6px;
   height: 100%;
   background: #EEE;
@@ -773,12 +752,12 @@ input:focus + button {
   top: -60px;
 }
 
-.timeline .info {
+.timeline .author-info {
   padding-top: 120px;
   margin-bottom: 20px;
 }
 
-.timeline .info:after {
+.timeline .author-info:after {
   content: '';
   display: block;
   clear: both;
@@ -808,4 +787,21 @@ input:focus + button {
 
 .timeline .job {
   padding-bottom: 150px;
+}
+
+@media screen and (max-width:1080px) {
+  .github {
+    display: none;
+  }
+}
+
+@media screen and (max-width:980px) {
+  .header-wrapper,
+  .footer-wrapper,
+  .banner-wrapper,
+  .img-wrapper,
+  .container-wrapper,
+  .timeline-wrapper {
+    width: 980px;
+  }
 }
