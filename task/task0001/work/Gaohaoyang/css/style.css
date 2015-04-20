@@ -12,6 +12,10 @@ li {
 a {
     text-decoration: none;
 }
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
 
 /*清除Chrome input 中的focus样式*/
 input, button, select, textarea {
@@ -57,6 +61,9 @@ ul li a:active {
 .clearfix {
     *zoom: 1;
 }
+.font-hei{
+    font-family: 'Microsoft YaHei', 'SimHei', 'STHeiti', sans-serif;
+}
 #header {
     background-color: #52385B;
     color: #fff;
@@ -68,7 +75,6 @@ ul li a:active {
     position: relative;
 }
 #header .center h1 {
-    font-family: Arial, 'SimHei', 'STHeiti', sans-serif;
     font-weight: normal;
     position: absolute;
     left: 0;
@@ -394,10 +400,12 @@ ul li a:active {
     background-color: #fff;
     padding: 20px;
     font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 #main-blog .calender .year-month{
     font-weight: bold;
-    text-align: center;
+   margin-bottom: 5px;
     color: #52385B;
 }
 #main-blog .calender .year-month a{
@@ -407,4 +415,55 @@ ul li a:active {
 #main-blog .calender .year-month .year-month-center{
     padding: 0 50px;
     letter-spacing: 3px;
+}
+#main-blog .calender table{
+    margin: 0 auto;
+    color: #888;
+}
+#main-blog .calender table tr{
+    padding: 3px;
+    border-bottom: 1px solid #e5e5e5;
+}
+#main-blog .calender table th,#main-blog .calender table td{
+    padding: 8px;
+    font-weight: normal;
+}
+#main-blog .calender table .today{
+    padding: 4px 3px;
+}
+#main-blog .calender table .today span{
+    display: inline-block;
+    padding: 4px 5px;
+    background-color: #955EA1;
+    color: #fff;
+}
+#main-blog .calender table .festival{
+    font-weight: bold;
+    color: #955EA1;
+}
+#main-blog .tags{
+    padding: 10px 20px;
+    background-color: #fff;
+}
+#main-blog .tags-head{
+    color: #666;
+    margin-bottom: 15px;
+}
+#main-blog .tags-body{
+    color: #955EA1;
+}
+#main-blog .lev1{
+    font-size: 28px;
+}
+#main-blog .lev2{
+    font-size: 22px;
+}
+#main-blog .lev3{
+    font-size: 18px;
+}
+#main-blog .lev4{
+    font-size: 14px;
+}
+#main-blog .lev5{
+    font-size: 12px;
 }
