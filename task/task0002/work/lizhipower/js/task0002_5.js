@@ -1,21 +1,20 @@
 /**
  * Created by Zhi_LI on 2015/4/19.
  */
-//element.bind("mousedown", selectElement);
-//element.bind("mouseup", deselectElement);
-//element.bind("mousemove", moveElement);
 
 var childDivList = $('.child-div');
 var rightDiv = $('#right-div');
 var divNew;
-console.log(childDivList);
+//console.log(childDivList);
+
 childDivList.on('mousedown',selectElement);
+childDivList.on('mousedown',stopDefault);
 childDivList.on('mouseup',deselectElement);
+childDivList.on('mouseout',deselectElement);
 childDivList.on('mousemove',moveElement);
 
-childDivList.click(function(e){
-    //console.log(e.target);
 
+childDivList.click(function(e){
 
 });
 
@@ -27,9 +26,7 @@ var diffX=0;
 var diffY=0;
 
 
-
 function selectElement(evt) {
-//        alert("hi");
 //    console.log('down');
 
     selectFlag = 1;
@@ -39,9 +36,7 @@ function selectElement(evt) {
 }
 
 function moveElement(evt) {
-//        alert("hi");
 //    console.log('move');
-//    console.log(selectFlag);
     if (selectFlag == 1) {
 
         evt.target.style.position = 'absolute';
@@ -84,6 +79,9 @@ function moveElement(evt) {
             ){
                 console.log('delete');
                 evt.target.parentNode.removeChild(evt.target);
+                divNew.style.backgroundColor = '';
+
+                addClass(divNew,'child-div');
                 deleteFlag = 1;
             }
         }
@@ -93,13 +91,8 @@ function moveElement(evt) {
 
 }
 
-function doMove(eleTarget, eleEvent){
-
-}
-
-
 function doCreate(eleTarget) {
-    console.log('add');
+    //console.log('add');
     var divNew = document.createElement('div');
     addClass(divNew,'child-div');
     eleTarget.appendChild(divNew);
@@ -113,8 +106,4 @@ function deselectElement(evt) {
     deleteFlag = 0;
     diffX=0;
     diffY=0;
-    //console.log(selectFlag);
-
-
-
 }

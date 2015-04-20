@@ -29,6 +29,22 @@ if (!Array.prototype.forEach) {
     };
 }
 
+if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function(val) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] == val) return i;
+        }
+        return -1;
+    };
+}
+
+Array.prototype.remove = function(val) {
+    var index = this.indexOf(val);
+    if (index > -1) {
+        this.splice(index, 1);
+    }
+};
+
 Array.prototype.unique= function () {
     var obj = {},
         res = [] ;
@@ -69,17 +85,30 @@ function trim(str) {
 }
 
 // 为dom增加一个样式名为newClassName的新样式
-function addClass(element, newClassName) {
-    // your implement
-    element.classList.add(newClassName);
+function addClass(element,newClassName){
+    //var element  = document.getElementById(id);
+    if(element.className == ''){
+        element.className = newClassName;
+    }else{
+    //    element.className += " "+className;
+        var classes = element.className.split(' ');
+        classes.push(newClassName);
+        element.className =classes.join(' ');
+    }
 
 }
+
 
 // 移除dom中的样式oldClassName
 function removeClass(element, oldClassName) {
     // your implement
-    element.classList.remove(newClassName);
-
+    if(element.className == ''){
+        element.className = '';
+    }else {
+        var classes = element.className.split(' ');
+        classes.remove(oldClassName);
+        element.className = classes.join(' ');
+    }
 }
 
 // 判断siblingNode和dom是否为同一个父元素下的同一级的元素，返回bool值
@@ -133,15 +162,17 @@ function getPosition(element) {
 
 }
 
-function addClass(element,className){
-    //var element  = document.getElementById(id);
-    if(element.className == ""){
-        element.className = className;
-    }else{
-        element.className += " "+className;
-    }
-}
 
+
+function stopDefault( e ) {
+    //阻止默认浏览器动作(W3C)
+    if ( e && e.preventDefault )
+        e.preventDefault();
+    //IE中阻止函数器默认动作的方式
+    else
+        window.event.returnValue = false;
+    return false;
+}
 
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, eventName, listener) {
@@ -159,10 +190,10 @@ function addEvent(element, eventName, listener) {
 // 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
 function removeEvent(element, eventName, listener) {
     // your implement
-    console.log(listener);
+    //console.log(listener);
     if (typeof(listener) ==  "undefined"){
-        console.log(listener);
-        //TODO
+        //console.log(listener);
+        //TODO:移除所有相应
         if (element.removeEventListener)
             element.removeEventListener(eventName, false);
         else if (element.detachEvent)
@@ -212,7 +243,7 @@ function ajax(url, options) {
     }else {
         console.log('no data');
     }
-    console.log(url);
+    //console.log(url);
 
     var successFun;
     if (options.onsuccess) {
@@ -225,7 +256,7 @@ function ajax(url, options) {
     if (options.onfail) {
         failFun = options.onfail;
     }else {
-        console.log('no fail callback')
+        //console.log('no fail callback')
     }
     xmlhttp.onreadystatechange=function()
     {
