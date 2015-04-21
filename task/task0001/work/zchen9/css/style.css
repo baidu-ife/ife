@@ -42,7 +42,7 @@ header {
     width: 80px;
     height: 80px;
 
-    background-image: url("../img/icon-logo.png");
+    background-image: url(../img/icon-logo.png);
 }
 .nav-logo:hover {
     cursor: pointer;
@@ -81,7 +81,7 @@ li a:visited, a:link {
     width: 30px;
     height: 34px;
     
-    background-image: url("../img/icon-github.png");
+    background-image: url(../img/icon-github.png);
 }
 
 @media (max-width: 1080px) {
@@ -243,11 +243,8 @@ li a:visited, a:link {
 
     background-color: #FFF;
 }
-.a-item:first-child {
+.a-content .first {
     margin-left: 0;
-}
-.a-item:last-child {
-    margin-right: 0;
 }
 .a-item img {
     margin: 10px;
@@ -279,7 +276,7 @@ li a:visited, a:link {
     height: 160px;
 
     border-radius: 160px;
-    background-image: url("../img/icon-zchen9.png");
+    background-image: url(../img/icon-zchen9.png);
 }
 .i-content {
     padding-top: 160px;
@@ -404,7 +401,7 @@ footer hr {
     width: 30px;
     height: 34px;
 
-    background-image: url("../img/icon-github.png");
+    background-image: url(../img/icon-github.png);
 }
 
 /*blog & gallery*/
@@ -625,7 +622,7 @@ footer hr {
     width: 32px;
     height: 32px;
     
-    background-image: url("../img/icon-search.png");
+    background-image: url(../img/icon-search.png);
 }
 
 .m-s-input{
