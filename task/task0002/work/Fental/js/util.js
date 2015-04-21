@@ -406,9 +406,12 @@ function isIE() {
 
 //6. ajax
 function ajax(url, options) {
-    if(options.type === undefined) {
-        options.type = "GET";
-    }
+
+    options.type = options.type || "GET";
+    options.data = options.data || "hello=world&fucn=2";
+    options.onsuccess = options.onsuccess || function(msg) {};
+    options.onfail = options.onsuccess || function(msg) {};
+
     var request;
     var target = url;
     //ie7+及其他浏览器支持XMLHttpRequest
@@ -422,23 +425,23 @@ function ajax(url, options) {
     var encodeFromData = function(data) {
         var pairs = [];
         if(typeof data === "string") {
-            return encodeURIComponent(data);
+            return data;
         }
         else if(typeof data === "object") {
             for (var i in data) {
                 if (data.hasOwnProperty(i)) {
-                    pairs.push(i + "=" + data[i].toString());
+                    pairs.push(encodeURIComponent(i) + "=" + encodeURIComponent(data[i].toString()));
                 }
             }
-            return encodeURIComponent(pairs.join("&"));
+            return pairs.join("&");
         }
     };
     if (options.type === "GET") {
         target = target + "?" + encodeFromData(options.data);
-        request.open(target,options.type);
+        request.open(options.type, target, true);
         request.onreadystatechange = function(){
             if (request.readyState === 4 && request.status === 200) {
-                options.onsuccess();
+                options.onsuccess(request.responseText);
             }
             else if (request.readyState === 4 && request.status !== 200) {
                 options.onfail();
@@ -447,10 +450,10 @@ function ajax(url, options) {
         request.send();
     }
     else if (options.type === "POST") {
-        request.open(url,options.type);
+        request.open(options.type, url, true);
         request.onreadystatechange = function(){
             if (request.readyState === 4 && request.status === 200) {
-                options.onsuccess();
+                options.onsuccess(request.responseText);
             }
             else if (request.readyState === 4 && request.status !== 200) {
                 options.onfail();

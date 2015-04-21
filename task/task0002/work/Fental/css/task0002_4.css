@@ -1,0 +1,21 @@
+#search-box {
+    display: block;
+}
+#result-panel {
+    width: 500px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.active {
+    border: 1px solid #999;
+}
+#result-panel li:hover {
+    background-color: #999;
+    cursor: pointer;
+}
+#result-panel li span {
+    color: #f00;
+}
