@@ -32,8 +32,10 @@
                                 <p>首先非常感谢导师的review，这次ife带给我的不仅仅是一次培训，我看到了更多关于前端的技术，认识了更多喜爱前端并且愿意花大把时间在这上面的人。我很幸运，在初学前端便加入ife，真正开始学前端是在今年寒假2月14日，没错，在情人节那天我开始下定决心就是前端了。在大家都还寻找节日伙伴的时候，我默默的开始刷慕课的课程，没几天就把前端计划一二部分完成了，但是却发现，如果不动手做知识只能是知识，所以到那时候我依旧只是会跟老师一步一步的照抄代码，并没有自己真正的写出过属于自己的东西。task0001,算是我第一次如此完整的自己写代码。那么在导师review之前，我想先自己对自己的作业一个评议。</p>
                                 <p>1、写第一遍的时候，遇到的问题就是html语义化，拿到设计稿之后好开心，看的出来导师们对这次培训的用心。设计稿和任务安排都恰到好处，跑题了……继续说语义化问题，布局的时候仅仅是根据自己的想法运用标签，在class命名的时候参考了网上一些比较常见命名方法，在写瀑布流和最后中轴线的时候，又参杂了以样式的功能给class命名，比如.toright就是向右移一点。（不知道这样对不对）</p>
                                 <p>2、header和footer里面的github图标在窗口缩小的时候会覆盖在其他元素之上……不用绝对定位的话又怎么把他们放在父元素的最底部呢？</p>
-                                <p>3、瀑布流是伪瀑布流，第一次写的时候用的是float,第二次用的column,第三次直接就开始自己算位置写了……如果有js来计算宽度高度的话，这个应该能实现吧？</p>
+                                <p class="linethrough">3、瀑布流是伪瀑布流，第一次写的时候用的是float,第二次用的column,第三次直接就开始自己算位置写了……如果有js来计算宽度高度的话，这个应该能实现吧？</p>
+                                <p>好吧今天又跟堆积木一样把瀑布流写了一下，兼容肯定是没问题了，但是这样嵌套层次太多了！</p>
                                 <p>4、中轴线那一页，第一次写的时候想到的是三列布局，第二次以中轴线为中间，img单独用父元素的text-align:center来固定在中间，h1和p用绝对定位来实现同一行显示，三列中间的年份用p元素嵌套span元素来写的。同学说可以用ul实现，不过我还没做出来……</p>
+                                <p>5、IE8中，input居中对齐有问题…</p>
                                 <p>差不多就是这些……希望导师不要嫌弃0.0。</p>
                                 <p class="sign"><span>Candy</span>发表于<span>2015</span>年<span>4</span>月<span>20</span>日</p>
                            </div>
@@ -96,12 +98,7 @@
                 <div class="sidebar">
                     <div class="search">
                         <form id="form" method="post" class="fm">
-                        <span class="bg">
-                            <input id="s" class="s_ipt" maxlength="255" autocomplete="off" placeholder="Keywords">
-                        </span>
-                        <span class="bg">
-                            <input type="submit" id="su" class="su_ipt" value="GO">
-                        </span>
+                            <input id="s" class="s_ipt" maxlength="255" autocomplete="off" placeholder="Keywords"><input type="submit" id="su" class="su_ipt" value="GO">
                         </form>
                     </div>
                     <div class="sublist">
