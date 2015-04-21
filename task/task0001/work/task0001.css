@@ -1,0 +1,42 @@
+body{
+	font-family: Microsoft Yahei, sans-serif;
+}
+
+h1{
+	color: blue;
+}
+
+h2{
+	font-size: 14px;
+	text-align: center;
+}
+
+p{
+	font-size: 12px;
+	color: yellow;
+	background-color: black;
+	text-indent: 20px;
+	word-spacing: 20px;
+	white-space: pre-wrap; /*自动换行*/
+	line-height: 200%;
+	font-weight: bold;
+}
+
+img{
+	border: 2px solid red;
+	height: 200px;
+}
+
+ul{
+	text-transform: uppercase;
+}
+
+span{
+	text-decoration: underline;
+}
+
+#div1{
+	background-color: red;
+	width: 960px;
+	margin: 0 auto;
+}
