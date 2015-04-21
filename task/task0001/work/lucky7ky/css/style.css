@@ -23,7 +23,6 @@
     float:left;
     width:150px;
     height:50px;
-    background-color:rgba(255, 255, 255, 0.4);
 }
 .nav-ul {
     float:right;
@@ -50,7 +49,7 @@
 .banner {
     height:500px;
     background:url("../img/banner-bg.jpg");
-    background-size:cover;/*TODO  IE兼容问题*/
+    background-size:cover;
 }
 .banner-reading {
     position:relative;
@@ -59,7 +58,6 @@
     left:735px;
     background-color:rgba(255, 255, 255, 0.20);
     padding:10px 10px 30px 10px;
-    /*TODO渐变*/
 }
 .p-title {
     color:white;
@@ -116,6 +114,10 @@
 .footer-link-a {
     color:white;
     font-size:10px;
+    cursor:pointer;
+}
+.footer-link-a:hover {
+    text-decoration:underline;
 }
 .footer-copyright {
     text-align:center;
@@ -180,12 +182,10 @@
     margin-top:50px;
 }
 .author-introduction {
-    color:black;
     font-size:14px;
+    line-height:200%;
     width:600px;
-    text-indent:2em;
     margin:40px auto;
-    text-align:left;
 }
 /*blog*/
 .content-center {
@@ -231,7 +231,6 @@
 }
 .blog-content {
     width:660px;
-    min-height:350px;
     background-color:white;
     float:right;
     text-align:left;
@@ -249,7 +248,8 @@
 }
 .blog-body {
     color:black;
-    font-size:10px;
+    font-size:12px;
+    line-height:200%;
     text-indent:2em;
 }
 .blog-page {
@@ -270,7 +270,6 @@
     background-color:white;
     color:black;
 }
-/*TODO 当前页背景色*/
 .blog-page-li:hover {
     background-color:purple;
     color:white;
@@ -741,14 +740,18 @@
 }
 #detail-aboutme {
     text-indent:2em;
+    height:150px;
+    margin-bottom:90px;
 }
 #detail-contact {
-   margin:150px 0px 168px 0px;
+    height:100px;
+    margin-bottom:114px;
 }
 .detail-year {
-    margin-bottom:28px;
+    height:55px;
+    margin-bottom:5px;
 }
 .detail-work {
-    margin:165px 0px 17px 0px;
+    margin:142px 0px 17px 0px;
 }
 
