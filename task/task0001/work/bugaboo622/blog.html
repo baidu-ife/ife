@@ -67,20 +67,23 @@
 	                <li class="disable"><a href="">上一页</a></li>
 	                <li class="active"><a href="">1</a></li>
 	                <li><a href="">2</a></li>
-	                <li><a href="">3</a></li>
+	                <li class="now"><a href="">3</a></li>
 	                <li><a href="">4</a></li>
-	                <li><a href="">...</a></li>
+	                <li><a href="" class="page-more">...</a></li>
 	                <li><a href="">上一页</a></li>
 	                <li><a href="">最后页</a></li>
 	            </ul>
             </div>
 		</div>
 		<div id="side">
-			<div id="search">
-				<input id="search-box" type="text" placeholder="Keywords" />
-				<a href="" id="search-btn">GO</a>
-			</div>
-			<div id="sidebar">
+			<div class="search sidebox">
+	            <div class="search-wrapper">
+	                <span class="search-icon"></span>
+	                <input id="searchText" type="text" class="search-input" placeholder="Keywords"/>
+	                <a class="search-btn">GO</a>
+	            </div>
+        	</div>
+			<div id="sidebar" class="sidebox">
 				<ul>
 					<li><a href="">HTML</a></li>
 					<li><a href="" class="active">CSS</a></li>
@@ -88,13 +91,13 @@
 					<li><a href="">其他文章</a></li>
 				</ul>
 			</div>
-			<div id="calender">
-					<div class="calendar-tab">
-						<a class="prev-month" href=""></a>
-						<a class="year" href="">2014</a>
+			<div id="calender" class="sidebox">
+					<div class="calender-tab">
+						<a class="prev-month" href=""><</a>
+						<a class="year" href="">2 0 1 4</a>
                 		<span>.</span>
-                		<a class="month" href="">04</a>
-						<a class="next-month" href=""></a>
+                		<a class="month" href="">0 4</a>
+						<a class="next-month" href="">></a>
 					</div>
 					<table>
 						<thead>
@@ -132,7 +135,7 @@
 								<td><a href="">16</a></td>
 								<td><a class="cur" href="">17</a></td>
 								<td><a href="">18</a></td>
-								<td><a href="">19</a></td>
+								<td><a href="" class="today">19</a></td>
 								<td><a href="">20</a></td>
 								<td><a href="">21</a></td>
 							</tr>
@@ -148,20 +151,21 @@
 						</tbody>
 					</table>
 			</div>
-			<div class="tags">
+			<div id="tags" class="sidebox">
 	            <h2>Tags</h2>
-	            <a class="f30" href="">JavaScript</a>
-				<a class="f14" href="">CSS</a>
-				<a class="f16" href="">flex</a>
-				<a class="f14" href="">WebGL</a>
-				<a class="f24" href="">HTML</a>
-				<a class="f28" href="">Canvas</a>
-				<a class="f14"href="">prototype</a>
-				<a href="">HTML5</a>
-				<a class="f24" href="">grid</a>
-				<a class="f18"href="">NodeJS</a>
-				<a href="">CSS3</a>
-				<a class="f16" href="">jQuery</a>
+	            <a class="big-tag" href="">JavaScript</a>
+				<a class="middle-tag" href="">CSS</a>
+				<a class="small-tag" href="">flex</a>
+				<a class="small-tag" href="">WebGL</a>
+				<a class="big-tag" href="">HTML</a>
+				<a class="normal-tag" href="">Canvas</a>
+				<a class="normal-tag"href="">prototype</a>
+				<a class="middle-tag" href="">HTML5</a>
+				<a class="small-tag" href="">grid</a>
+				<a class="normal-tag"href="">NodeJS</a>
+				<a class="mormal-tag" href="">CSS3</a>
+				<a class="middle-tag" href="">jQuery</a>
+				<a class="middle-tag" href="">ECharts</a>
     		</div>
 		</div>
 	</div>
