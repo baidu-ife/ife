@@ -187,6 +187,9 @@ p {
 input{
     box-sizing:content-box;
 }
+body {
+    min-width:980px;
+}
 /* 公用样式*/
 
 .container {
