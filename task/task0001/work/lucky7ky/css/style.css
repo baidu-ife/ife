@@ -4,18 +4,19 @@
     margin:0px;
     color:rgb(92, 91, 91);
 }
+.header {
+    width:1280px;
+}
 .nav {
-    position:fixed;
-    width:100%;
     height:80px;
     background-color:rgba(114, 51, 139, 1);
-    z-index:1;
 }
 .nav-center {
+    position:relative;
     width:980px;
     height:50px;
-    margin:25px auto 5px auto;
-    background-color:inherit;
+    margin:auto;
+    top:25px;
 }
 .mylogo { 
     float:left;
@@ -39,17 +40,13 @@
     text-decoration:none;
 }
 .github {
-    position:relative;
-    float:right;
+    position:absolute;
     width:30px;
     height:34px;
-    margin-top:-34px;
-    margin-right:10px;
+    top:46px;
+    left:1240px;
 }
 .banner {
-    position:relative;
-    top:80px;
-    width:100%;
     height:500px;
     background:url("../img/banner-bg.jpg");
     background-size:cover;/*TODO  IE兼容问题*/
@@ -76,10 +73,9 @@
     text-indent:2em;
 }
 .footer {
-    position:relative;
-    top:80px;
-    width:100%;
+    width:980px;
     background-color:black;
+    padding:0px 150px;
 }
 .footer-nav-ul {
     list-style-type:none;
@@ -99,8 +95,6 @@
 .footer-link {
     height:200px;
     padding: 40px 0;
-    margin: auto;
-    width: 65%;
 }
 .footer-link-part {
     float:left;
@@ -130,9 +124,8 @@
     margin-bottom:15px;
 }
 .content {
+    width:1280px;
     background-color: rgb(224, 223, 224);
-    position:relative;
-    top:80px;
     padding-top:10px;
 }
 /*index*/
@@ -445,6 +438,7 @@
     width:700px;
     float:left;
     margin-right:10px;
+    padding-bottom:300px;
 }
 .aside {
     width:270px;
@@ -512,38 +506,37 @@
     color:black;
 }
 #ranking-1-1 {
-    width:100%;
+    width:100px;
 }
 #ranking-1-2 {
-    width:0%;
+    width:0px;
 }
 #ranking-2-1 {
-    width:85%;
+    width:85px;
 }
 #ranking-2-2 {
-    width:15%;
+    width:15px;
 }
 #ranking-3-1 {
-    width:70%;
+    width:70px;
 }
 #ranking-3-2 {
-    width:30%;
+    width:30px;
 }
 #ranking-4-1 {
-    width:40%;
+    width:40px;
 }
 #ranking-4-2 {
-    width:60%;
+    width:60px;
 }
 #ranking-5-1 {
-    width:20%;
+    width:20px;
 }
 #ranking-5-2 {
-    width:80%;
+    width:80px;
 }
 .tab-head {
     display:table;
-    width:100%;
     list-style-type:none;
 }
 .tab-head-li {
