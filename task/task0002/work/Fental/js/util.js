@@ -177,7 +177,14 @@ function isMobilePhone(phone) {
 //3
 //为dom增加一个样式名为newClassName的样式
 function addClass(element, newClassName) {
-    element.className += " " + newClassName;
+    if (element.className === undefined || element.className === "") {
+        element.className = newClassName;
+    }
+    else {
+        if (element.className.indexOf(newClassName) === -1) {
+            element.className += " " + newClassName;
+        }
+    }
 }
 
 //移除dom中的样式oldClassName

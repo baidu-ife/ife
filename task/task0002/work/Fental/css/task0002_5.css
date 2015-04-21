@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    overflow: hidden;
+}
+.panel {
+    float: left;
+    margin-right: 50px;
+    width: 300px;
+    height: 900px;
+    border: 1px solid #000;
+}
+.box {
+    width: 300px;
+    height: 50px;
+    background-color: #f00;
+    border: 1px solid #000;
+    opacity: 1;
+}
+.box:hover {
+    cursor: move;;
+}
+.box.active {
+    border: 1px solid #fff;
+    opacity: .5;
+}
