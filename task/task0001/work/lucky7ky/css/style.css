@@ -6,6 +6,7 @@
 }
 .header {
     width:1280px;
+    margin:auto;
 }
 .nav {
     height:80px;
@@ -76,6 +77,7 @@
     width:980px;
     background-color:black;
     padding:0px 150px;
+    margin:auto;
 }
 .footer-nav-ul {
     list-style-type:none;
@@ -127,6 +129,7 @@
     width:1280px;
     background-color: rgb(224, 223, 224);
     padding-top:10px;
+    margin:auto;
 }
 /*index*/
 .content-section {
