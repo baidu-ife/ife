@@ -530,7 +530,7 @@ ul li a:active {
 .tab-body {
     background-color: #fff;
     padding: 20px;
-    margin-bottom: 200px;
+    margin-bottom: 10px;
 }
 .tab-body .waterfall {
     width: 330px;
@@ -598,6 +598,21 @@ ul li a:active {
     -webkit-column-gap: 10px;
     column-count: 2;
     column-gap: 10px;
+}
+
+.click-for-more{
+    background-color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    margin-bottom: 50px;
+}
+.click-for-more a{
+    color: #444;
+}
+.click-for-more span{
+    color: #888;
+    padding-right: 10px;
 }
 
 /**
