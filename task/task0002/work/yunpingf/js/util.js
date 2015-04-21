@@ -97,6 +97,70 @@ function getPosition(element) {
     return { x: xPosition, y: yPosition };
 }
 
+// 实现一个简单的Query
+function $(selector) {
+    return document.querySelector(selector);
+};
+//**************task 4*******************
+// 给一个dom绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+    element.addEventListener(event, listener);
+};
+
+// 例如：
+function clickListener(event) {
+    console.log(event);
+};
+
+
+// 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
+function removeEvent(element, event, listener) {
+    element.removeEventListener(event, listener);
+};
+
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    element.addEventListener("click", listener);
+};
+
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+    var enterListener = function(e) {
+        if (e.keyCode == "13")
+            listener();
+    };
+    element.addEventListener("keypress", enterListener);
+};
+
+$.on = function(element, event, listener) {
+    addEvent(element, event, listener);
+};
+
+$.un = function(element, event, listener) {
+    removeEvent(element, event, listener);
+};
+
+$.click = function(element, listener) {
+    addClickEvent(element, listener);
+};
+
+$.enter = function(element, listener) {
+    addEnterEvent(element, listener);
+};
+
+
+function delegateEvent(element, tag, eventName, listener) {
+    element.addEventListener(eventName, function(e){
+        if (e.target && e.target.nodeName == tag) {
+            listener();
+        }
+    });
+};
+
+$.delegate = function(selector, tag, event, listener) {
+    delegateEvent($(selector), tag, event, listener);
+}
+
 //**************task 5*******************
 function isIE() {
 	if(navigator.appName.indexOf("Internet Explorer")!=-1){
@@ -110,7 +174,7 @@ function setCookie(cookieName, cookieValue, expiredays) {
 	var d = new Date();
     d.setTime(d.getTime() + (expiredays*24*60*60*1000));
     document.cookie = cookieName + "=" + cookieValue + "; expires=" + d.toUTCString();
-}
+};
 
 // 获取cookie值
 function getCookie(cookieName) {
@@ -122,4 +186,4 @@ function getCookie(cookieName) {
         	return cookies[i].substring(j + name.length,cookies[i].length);
     }
     return "";
-}
+};
