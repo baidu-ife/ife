@@ -68,7 +68,10 @@ function trim(str) {
  * @param fn
  */
 function each(arr, fn) {
-    arr.forEach(fn);
+    //arr.forEach(fn);
+    for (var i= 0, n = arr.length; i < n; i++) {
+        fn(arr[i]);
+    }
 }
 
 /**
@@ -141,6 +144,11 @@ function getPosition(element) {
 }
 
 // todo: combine multiple selectors, like $('#adom .classa')
+/**
+ * select dom elements by id, class, attribute, attribute=value
+ * @param selector
+ * @returns {*}
+ */
 function $(selector) {
     var root = document.body; // set the body element as the root element
     var childNodes = root.childNodes;
@@ -189,3 +197,82 @@ function $(selector) {
         }
     }
 }
+
+/**
+ * bind the element with a specific event listener/handler
+ * @param element is the dom element you want to bind with the event
+ * @param event 'click', 'scroll' etc.
+ * @param listener is the event handler
+ */
+function addEvent(element, event, listener) {
+
+    if (element.addEventListener) { // Webkit
+        element.addEventListener(event, listener, false);
+    } else if (element.attachEvent) { // IE
+        element.attachEvent("on" + event, listener);
+    } else {
+        element["on"+event] = listener;
+    }
+
+}
+
+/**
+ * remove the event handler which was bound by the addEvent(or addEventListener) function
+ * @param element
+ * @param event
+ * @param listener
+ */
+function removeEvent(element, event, listener) {
+
+    // todo: when listener is null, remove all event listeners
+
+    if (element.removeEventListener) {
+        element.removeEventListener(event, listener, false);
+    } else if (element.detachEvent) {
+        element.detachEvent("on"+event, listener);
+    } else {
+        element["on"+event] = null;
+    }
+
+}
+
+function addClickEvent(element, listener) {
+    addEvent(element, 'click', listener);
+}
+
+function addEnterEvent (element, listener) {
+    addEvent(element, 'keydown', listener);
+}
+
+$.on = function (element, event, listener) {
+    addEvent(element, event, listener);
+};
+
+$.un = function (element, event, listener) {
+    removeEvent(element, event, listener);
+};
+
+$.click = function(element, handler) {
+    addClickEvent(element, handler);
+};
+
+$.enter = function(element, handler) {
+    addEnterEvent(element, handler);
+};
+
+function clickListener(event) {
+    console.log(event);
+}
+
+function enterListener(event) {
+    if (event.keyCode == 13) {
+        console.log("the enter button is pressed!");
+    }
+}
+
+//$.click($('#item1'), clickListener);
+////$.enter()
+
+each($("#list").getElementsByTagName('li'), function(li) {
+    addClickEvent(li, clickListener);
+});
