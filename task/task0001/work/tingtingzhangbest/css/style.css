@@ -30,17 +30,27 @@
 	top:40px;
 	left:0;
 	color:white;
+	font-family: "微软雅黑";
 
 }
+ul,li{
+	list-style: none;
+}
+.menu0 ul{
+	float:right;
+}
+.menu0 li{
+	float:left;
+}
 .menu{
-    font-family: "å®‹ä½“";
+    font-family: "微软雅黑";
     font-size: 16px;
     margin-right: 24px;
     color:white;
     text-decoration: none;
 }
 .menu1{
-    font-family: "å®‹ä½“";
+    font-family: "微软雅黑";
     font-size: 16px;
     margin-right: 0;
     color:white;
@@ -62,13 +72,19 @@
 /*以下是index的布局*/
 #content1{
 	position:relative;
+	min-width: 80%;
 }
 .content_p{
 	width: 400px;
 	height:135px;
-	background-color:#eee;
+	background-color:#fff;
+	background: -webkit-linear-gradient(top,rgba(255,255,255,.3) 75%,rgba(255,255,255,0) 100%);
+	background: -moz-linear-gradient(top,rgba(255,255,255,.3) 75%,rgba(255,255,255,0) 100%);
+	background: -ms-linear-gradient(top,rgba(255,255,255,.3) 75%,rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(top,rgba(255,255,255,.3) 75%,rgba(255,255,255,0) 100%);
+	filter:Alpha(opacity=30);|
+	opacity: 0.3;
 	position:absolute;
-	opacity: 0.5;
 	bottom:4px;
 	right:125px;
 }
@@ -77,7 +93,7 @@
 	 font-size: 18px;
 	 padding:10px 10px 0 10px;
 	 margin-bottom: 12px;
-	 color:black;
+	 color:white;
 }
 #content_p2{
 	 text-indent: 2em;
@@ -85,15 +101,19 @@
 	 padding:0 10px;
 	 padding-bottom: 30px;
 	 line-height: 1.5em;
-	 color:black; 
+	 color:white; 
 }
 #content2{
 	width:100%;
 	height: 450px;
 	background-color:#EEE;
 	margin-bottom: 450px;
-	overflow: hidden;
+	
 
+}
+#content2_m_wrap{
+	min-width: 80%;
+	overflow: hidden;
 }
 .content2_m1{
 	width:320px;
@@ -102,6 +122,8 @@
 	margin-left: 185px;
 	margin-right:10px;
 	background-color:#fff;
+    padding-bottom: 5000px;
+	margin-bottom: -4980px;
 }
 .content2_m2{
 	width:320px;
@@ -109,13 +131,8 @@
 	margin-top: 10px;
 	margin-right:10px;
 	background-color:#fff;
-}
-.content2_m3{
-	width:320px;
-	float:left;
-	margin-top: 10px;
-	margin-right:10px;
-	background-color: #fff;
+	padding-bottom: 5000px;
+	margin-bottom: -4980px;
 }
 .content2_img{
 	width:300px;
@@ -142,6 +159,7 @@
 	right:0;
 	top:-500px;
 }
+
 #content3_p1{
 	font-size:20px;
 	font-family: "宋体";
@@ -394,38 +412,56 @@
 /*以下是右半部分的布局*/
 #rightcontent_top{
 	width:300px;
-	height:100px;
 }
 #rightcontent_top1{
-	width:250px;
-	height: 50px;
+	width: 220px;
+	height: 40px;
 	margin:25px auto;
+	border: 1px solid #e2e2e2;
+	position: relative;
 }
-.rightcontent_top_img{
+#rightcontent_top1:hover{
+	border:  1px solid #474560;
+}
+.keyword{
+	width:170px;
+	height: 40px;
+	border:none;
+	outline:medium;
+	background-image: url(../img/search.png);
+	background-repeat: no-repeat;
+	background-size: 144px;
+}
+.keyword:focus{
+	background-image: none;
+}
+.submit{
 	width:50px;
-	height:50px;
-	float:left;
+	height: 40px;
+	border:none;
+	font-size: 18px;
+	color:#fff;
+	background: #e2e2e2;
+	position: absolute;
+	top:0;
+	right: 0;
 }
-.rightcontent_top_img1{
-	width:50px;
-	height:50px;
-	float:right;
+.submit:hover{
+	background: #47456D;
 }
-#rightcontent_top_input{
-	width:146px;
-	height: 45px;
-	float:left;
-}
+
+
+
 #rightcontent_select{
 	width:300px;
-	margin-top: -10px;
+	margin-top: 40px;
 }
 .rightcontent_select1{
 	width:294px;
-	height:70px;
+	height:60px;
 	background-color: #fff;
-	border-top:2px solid #ddd;
 	border-left:6px solid #DFC6E6;
+	margin-top:2px;
 
 }
 .rightcontent_select1:hover{
@@ -435,41 +471,74 @@
 	font-size: 20px;
 	padding-left: 25px;
 	display: inline-block;
+	font-family: "微软雅黑";
+	font-size: 16px;
 }
 #rightcontent_calendar{
 	width:300px;
 	height:300px;
 	background-color: white;
 	margin-top: 16px;
+	padding-top: 8px;
 }
+.calendar{
+	margin:20px;
+	width:260px;
+	height: 260px;
+	text-align: center;
+	border-collapse: collapse;
+	color: #888;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+.calendar tr{
+	border-bottom: 1px solid #DFC6E6;
+}
+.calendar td{
+	font-size: 16px;
+}
+.calendar_dark{
+	color: #522A5C;
+	font-weight: bold;
+}
+
+
+
+
+
 #rightcontent_bottom{
 	width:300px;
-	height:300px;
+	height:240px;
 	background-color: white;
 	margin-top: 16px;
 }
-#rightcontent_bottom p{
-	font-size: 28px;
+.tag_title{
+	font-size: 20px;
 	color: #666;
 	padding-top: 20px;
 	margin-left: 30px;
-}
-#rightcontent_bottom h3{
-	font-size: 25px;
-	color: #773C88;
-	padding-top: 20px;
-	margin-left: 20px;
-	margin-bottom: 10px;
-	display: inline-block;
-}
-#rightcontent_bottom h3 span{
-	padding-right: 10px;
-}
-#rightcontent_bottom h3 span:hover{
-	font-size: 30px;
-	font-weight: 5em;
+	margin-bottom: 20px;
+	font-family: "微软雅黑";
 }
 
+.tag_item{
+	color: #773C88;
+	font-size: 16px;
+	margin-left: 25px;
+	line-height: 2em;
+	font-family: "微软雅黑";
+}
+.tag_item span{
+	padding-right: 10px;
+}
+.tag_1{
+	font-size: 34px;
+	font-weight: bold;
+}
+.tag_2{
+	font-size: 24px;
+	font-weight: bold;
+}
 /*以下是gallery的布局*/
 
 #gallery_left{
@@ -494,9 +563,9 @@
 	top:1400px;
 }
 #gallery_left_title{
-	width:800px;
-	height:62px;
-	background-color: white;
+	height:55px;
+	background-color:white;
+	font-family: "微软雅黑";
 
 }
 #gallery_left_title li{
@@ -504,7 +573,7 @@
 	padding: 8px 20px;
 	display: inline-block;
 	background-color: white;
-	margin-right: -8px;
+	margin-right: -6px;
 	border-top: 4px solid #DFC6E6;
 	border-right: 2px solid #F6F6F6;
 	border-bottom: 2px solid #F6F6F6;	
@@ -524,33 +593,44 @@
 }
 #gallery_left_contains{
 	width:785px;
-	padding-top: 20px;
-	padding-left: 20px;
-	-webkit-column-width:170px;
-    -moz-column-width:170px;
-    column-width:170px;
-    -moz-column-gap:0; /* Firefox */
-    -webkit-column-gap:0; /* Safari and Chrome */
-    column-gap:0;
-}
-.gallery_left_contains_image{
-	width:170px;
-	margin-bottom: 15px;
-}
-#gallery_left_contains div img{
-	width:170px;
-	display: block;
-}
-
-.gallery_left_contains_p1{
-	width:150px;
-	background-color: #D9A300;
-	padding:10px;
+	height: 1050px;
+	padding-top: 30px;
+	padding-left: 35px;
+	box-sizing:border-box;
 	position: relative;
 }
-.gallery_left_contains_p2{
-	width:150px;
-	background-color: #1CC664;
+.gallery_left_contains_image_first{
+	width:340px;
+	float: left;
+	margin: 0 43px 15px 0;
+}
+.gallery_left_contains_image{
+	width:190px;
+	margin-bottom: 15px;
+	margin-right: 10px;
+	
+}
+#gallery_left_contains div img{
+	display: block;
+}
+#image2_1{
+	position: absolute;
+	top:345px;
+	left:225px;
+}
+#image3_1{
+	position: absolute;
+	top:30px;
+	left:410px;
+}
+#image4_1{
+	position: absolute;
+	top:30px;
+	left:595px;
+}
+.gallery_left_contains_p1{
+	width:340px;
+	background-color: #D9A300;
 	padding:10px;
 	position: relative;
 }
@@ -628,6 +708,11 @@
 	margin-left: 50px;
     width:100px;
 }
+.gallery_left_contains_p_right1{
+	margin-top: 8px;
+	margin-left: 50px;
+    width:200px;
+}
 #gallery_left_contains div h4{
 	font-size: 16px;
 	padding-bottom: 5px;
@@ -644,11 +729,13 @@
 	width:800px;
 	height: 10px;
 	background-color: #eee;
+	clear:both;
 }
 #addmore{
 	width:800px;
 	height: 60px;
 	background-color: white;
+	clear: both;
 }
 #addmore a{
 	font-size: 20px;
@@ -667,50 +754,47 @@
 
 #gallery_right2{
 	width:300px;
-	height: 400px;
+	height: 300px;
 }
 #gallery_right2 p{
-	font-family: "黑体";
-	font-size: 20px;
+	font-family: "微软雅黑";
+	font-size: 16px;
 	padding:20px 0 0 20px;
 	color: #666;
 	margin-bottom: 20px;
 }
-.gallery_right2_p{
-	width:300px;
-	height:50px;
-	margin-top: 5px;
-	position: relative;
+.ranking_all{
+	width:260px;
+	margin:0 auto;
+	margin-bottom: 10px;
 }
-.gallery_right2_p1{
-	width:300px;
-	height:50px;
-	margin-top: 5px;
-	position: relative;
+.ranking_all span{
+	font-family: "微软雅黑";
 }
-.gallery_right2_p span{
-	padding:8px 12px;
-	background-color: #B750D1;
-	border-radius: 20px;
-	font-weight: bold;
-	position: absolute;
-	top:8px;
-	left:25px;
-}
-.gallery_right2_p1{
-	width:120px;
-	height:30px;
-	background-color: #B750D1;
+.ranking_num{
+	width:16px;
+	height: 16px;
+	background-color: #522A5C;
+	color: white;
+	border-radius: 50%;
 	display: inline-block;
-	margin-top: 10px;
-	margin-left: 70px;
+	text-align: center;
+	line-height: 16px;
+	font-size: 12px;
 }
-.gallery_right2_p p{
+.ranking_bar_wrap{
+	width:140px;
+	height: 20px;
+	border:1px solid #522A5C;
+	background-color: #F6F6F6;
 	display: inline-block;
-	width:50px;
-	position: absolute;
-	top:-4px;
-	right:50px;
+	position: relative;
+	top:6px;
+	
+}
+.ranking_bar{
+	height: 20px;
+	background-color:#522A5C; 
 }
 
 /*以下是about的布局*/
