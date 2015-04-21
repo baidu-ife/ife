@@ -42,46 +42,9 @@ function changeImage(options) {
             };
         })(j);
     }
-    if (options.order === "left") {
-        scroll = setInterval(function(){
-            archor[currentIndex].onclick();
-            currentIndex++;
-            if (options.isLoop) {
-                if (currentIndex > images.length - 1) {
-                    currentIndex = 0;
-                }
-            }
-            else {
-                clearInterval(scroll);
-            }
-        }, options.time);
-    }
-    else {
-        scroll = setInterval(function(){
-            archor[currentIndex].onclick();
-            currentIndex--;
-            if (options.isLoop) {
-                if (currentIndex < 0) {
-                    currentIndex = images.length - 1;
-                }
-            }
-            else {
-                clearInterval(scroll);
-            }
-        }, options.time);
-    }
-    panel.onmouseenter  = function(e) {
-        clearInterval(scroll);
-        if (e.stopPropagation) {
-            e.stopPropagation();
-        }
-        else {
-            e.cancelBubble = true;
-        }
-    };
-    panel.onmouseleave  = function(e) {
-        if (options.order === "left") {
-            scroll = setInterval(function(){
+    var startScroll = function(order, currentIndex) {
+        if (order === "left") {
+            return setInterval(function(){
                 archor[currentIndex].onclick();
                 currentIndex++;
                 if (options.isLoop) {
@@ -95,7 +58,7 @@ function changeImage(options) {
             }, options.time);
         }
         else {
-            scroll = setInterval(function(){
+            return setInterval(function(){
                 archor[currentIndex].onclick();
                 currentIndex--;
                 if (options.isLoop) {
@@ -108,6 +71,21 @@ function changeImage(options) {
                 }
             }, options.time);
         }
+    };
+
+    scroll = startScroll(options.order, currentIndex);
+
+    panel.onmouseenter  = function(e) {
+        clearInterval(scroll);
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        }
+        else {
+            e.cancelBubble = true;
+        }
+    };
+    panel.onmouseleave  = function(e) {
+        scroll = startScroll(options.order, currentIndex);
     };
 }
 window.onload = function() {
