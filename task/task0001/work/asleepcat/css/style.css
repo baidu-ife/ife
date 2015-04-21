@@ -1,2 +1,11 @@
-div#top{background: #801c69;height: 80px;margin: 0}
-div#img{float: right;margin-right: 10px;margin-top: 46px}
+div#top{background: #801c69;height: 100px;margin: -10px}
+div#img{float: right;margin-right: 10px;margin-top: 66px}
+#blogname{display:inline;color: white;float: left;font-size: 25px;margin-left: 120px;margin-top: 60px;margin-bottom: 0px}
+#link{color: white;float: right;margin-right: 80px;margin-top: 70px;}
+.dao{padding: 20px;}
+div.p{color: white}
+#box1{position: relative;margin: -10px}
+#box2{background: white;height: 150px;width: 400px;position: absolute;top: 452px;left: 800px;
+    filter:alpha(opacity=50)-moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;}
