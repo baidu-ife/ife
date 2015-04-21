@@ -3,7 +3,7 @@
  */
 //Array.forEach implementation for IE support..
 if (!Array.prototype.forEach) {
-    Array.prototype.forEach = function(callback, thisArg) {
+    Array.prototype.forEach = function (callback, thisArg) {
         var T, k;
         if (this == null) {
             throw new TypeError(" this is null or not defined");
@@ -28,16 +28,16 @@ if (!Array.prototype.forEach) {
     };
 }
 
-Array.prototype.unique= function () {
+Array.prototype.unique = function () {
     var obj = {},
-        res = [] ;
-    this.forEach(function(v){
+        res = [];
+    this.forEach(function (v) {
         if (!obj[v]) {
             obj[v] = true;
             res.push(v);
         }
     });
-    return res ;
+    return res;
 }
 
 

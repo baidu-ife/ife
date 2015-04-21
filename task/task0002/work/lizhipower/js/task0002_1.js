@@ -7,33 +7,33 @@ var hbInput = $('#hobby-input');
 var hbBtn = $('#hobby-btn');
 var hbDiv = $('#hobby-div')[0];
 
-function doHb() {
+function doHbShow() {
     //console.log('HI');
     hbarr = getHb();
     console.log(hbarr)
 
     //console.log(hbarr);
     hbDiv.innerHTML = "<h1>爱好</h1>"
-    for(i=0; i<hbarr.length; i++){
-        hbDiv.innerHTML = hbDiv.innerHTML +"<input type='checkbox' label=" +hbarr[i]+"></input>"+hbarr[i];
+    for (i = 0; i < hbarr.length; i++) {
+        hbDiv.innerHTML = hbDiv.innerHTML + "<input type='checkbox' label=" + hbarr[i] + "></input>" + hbarr[i];
     }
 
 }
 function doHbCheck() {
     //console.log('HI');
     hbarr = getHb();
-    console.log(hbarr)
-    if (hbarr[0] =='' ||hbarr.length>10 ){
+    console.log(hbarr);
+    if (hbarr[0] == '' || hbarr.length > 10) {
         hbBtn[0].innerHTML = 'error';
-        hbBtn[0].setAttribute('disabled','disable');
+        hbBtn[0].setAttribute('disabled', 'disable');
     }
-    else{
+    else {
         hbBtn[0].innerHTML = '整理爱好';
         hbBtn[0].removeAttribute('disabled');
     }
 
-    hbInput.on('keydown',doHbCheck);
-    hbInput.on('keyup',doHbCheck);
+    //hbInput.on('keydown', doHbCheck);
+
 
     //console.log(hbarr);
     //hbDiv.innerHTML = "<h1>爱好</h1>"
@@ -43,22 +43,36 @@ function doHbCheck() {
 
 }
 
-function getHb(){
+function getHb() {
     var hb = hbInput[0].value;
-    console.log(hb);
+    //console.log(hb);
 
     var reg = /[\s,，、\r\n;；]+/g;
     var hbarr = [];
-    hb = hb.replace(reg,' ');
+    hb = hb.replace(reg, ' ');
     //console.log(hb);
     hbarr = hb.split(' ');
     hbarr = hbarr.unique();
     return hbarr;
 }
 
-hbBtn.click(doHb);
+hbBtn.click(doHbShow);
 
-hbInput.on('focus',doHbCheck);
+hbInput.on('focus', doHbCheck);
+hbInput.on('keyup', function(){
+
+    if (document.activeElement.id == 'hobby-input'){
+        doHbCheck();
+    }
+});
+
+hbBtn.on('keydown', function(evt){
+    var keynum;
+    keynum = window.event ? evt.keyCode : evt.which;
+    if (keynum == 13) {
+        stopDefault(evt);}
+});
+
 
 
 
