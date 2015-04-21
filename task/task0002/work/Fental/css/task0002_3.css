@@ -1,0 +1,44 @@
+#panel {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 500px;
+    height: 300px;
+    background-color: #000;
+}
+#panel > img {
+    width: 500px;
+    height: 300px;
+    border: none;
+}
+#container {
+    position: relative;
+    left: 0;
+    width: 5000px;
+    transition: .6s ease left;
+    font-size: 0;
+}
+#controller {
+    position: absolute;
+    bottom: 0;
+    width: 500px;
+    /*height: 20px;*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#controller li {
+    display: inline-block;
+    margin: auto 5px;
+}
+#controller span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+.active {
+    background-color: #fff;
+}
