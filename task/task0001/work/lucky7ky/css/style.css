@@ -2,6 +2,7 @@
 * {
     padding:0px;
     margin:0px;
+    color:rgb(92, 91, 91);
 }
 .nav {
     position:fixed;
@@ -434,21 +435,20 @@
 }
 /*gallery*/
 .center {
+    display:table;
+    position:relative;
     width:980px;
-    height:800px;
     margin:10px auto 0px auto;
-    padding-bottom:100px;
+    padding-bottom:50px;
 }
 .main {
     width:700px;
     float:left;
-    height:300px;
     margin-right:10px;
 }
 .aside {
     width:270px;
     float:right;
-    height:600px;
     padding-top:57px;
 }
 #ranking {
@@ -588,20 +588,20 @@
     width:326px;
 }
 .part-left {
-    padding-right:4px;
+    margin-right:4px;
 }
 .part-right {
-    padding-left:4px;
+    margin-left:4px;
 }
 .part-branch {
     float:left;
     width:159px;
 }
 .branch-left {
-    padding-right:4px;;
+    margin-right:4px;;
 }
 .branch-right {
-    padding-left:4px;
+    margin-left:4px;
 }
     
 .card {
@@ -669,3 +669,90 @@
     float:right;
     color:rgb(152, 147, 147);
 }
+/*about*/
+.center-part {
+    float:left;
+    height:1200px;
+    background-color:white;
+    margin-top:60px;
+}
+.center-left {
+    width:150px;
+    margin-right:2px;
+    padding: 120px 88px 0px 250px;
+}
+.center-right {
+    width:300px;
+    padding:120px 148px 0px 40px;
+    margin-left:2px;
+}
+.timeline {
+    position:absolute;
+    left:415px;
+    width:150px;
+    height:600px;
+    margin:auto;
+}
+#photo-me {
+    position:relative;
+    overflow:hidden;
+    border-radius:100px;
+    width:150px;
+    height:150px;
+    border: 6px solid rgb(224, 223, 224);
+}
+.timeline-photo {
+    position:relative;
+    overflow:hidden;
+    border-radius:100px;
+    width:100px;
+    height:100px;
+    border: 4px solid rgb(224, 223, 224);
+}
+#photo-contact {
+    margin:130px auto 100px auto;
+}
+#photo-study {
+    margin:0px  auto 23px auto;
+}
+#photo-work {
+    margin: 50px auto 25px auto;
+}
+.timeline-year {
+    width:50px;
+    height:20px;
+    line-height:20px;
+    font-size:12px;
+    text-align:center;
+    border-radius:10px;
+    background-color:white;
+    border: 4px solid rgb(224, 223, 224);
+    margin:0px auto 30px auto;
+}
+.timeline-title {
+    text-align:right;
+    font-size:20px;
+}
+#title-name {
+    margin-bottom:220px;
+}
+#title-education {
+    margin:190px 0px 310px 0px;
+}
+.timeline-detail {
+    font-size:14px;
+    line-height:150%;
+}
+#detail-aboutme {
+    text-indent:2em;
+}
+#detail-contact {
+   margin:150px 0px 168px 0px;
+}
+.detail-year {
+    margin-bottom:28px;
+}
+.detail-work {
+    margin:165px 0px 17px 0px;
+}
+
