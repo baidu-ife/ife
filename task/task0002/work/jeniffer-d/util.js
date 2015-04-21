@@ -213,30 +213,103 @@ function getPosition(element) {
     return obj;
 }
 
-// 实现一个简单的Query
-function $(selector) {
+// 实现一个简单的Query,!!!getElementByClassName的兼容性问题
+function $(selector) {          
     var arr = selector.split(" ");
+    var parentNode = null;
     var ele = null;
+    var idExp = /^#[\w-]+$/;
+    var attrExp = /^\[[\w\-=]+\]$/;
+    var classExp = /^\.[\w\-]+$/;
+
     for (var i = 0; i < arr.length; i++) {
-        if (arr[i].search() != -1)
+        if (arr[i].search(idExp) != -1) {
+            var id = arr[i].slice(1);
+            ele = parentNode ? parentNode.getElementById(id) : document.getElementById(id);
+        } else if (arr[i].search(classExp) != -1) {
+            var classname = arr[i].slice(1);
+            ele = parentNode ? parentNode.getElementsByClassName(classname)[0] : document.getElementsByClassName(classname)[0];
+        } else if (arr[i].search(attrExp) != -1) {
+            var index = arr[i].indexOf("=");
+            if (index != -1) {
+                var val = arr[i].slice(index+1, -1);
+                var attr = arr[i].slice(1, index);
+                ele = parentNode ? getElementByAttributeValue (parentNode, attr, val) : getElementByAttributeValue (null, attr, val);
+            } else {
+                var attr = arr[i].slice(1, -1);
+                ele = parentNode ? getElementByAttributeValue (parentNode, attr,null) : getElementByAttributeValue (null, attr, null);
+            } 
+        } else {
+            ele = parentNode ? parentNode.getElementsByTagName(arr[i])[0] : document.getElementsByTagName(arr[i])[0];
+        }
+        parentNode = ele;
     }
     return ele;
 }
 
+//根据属性选择元素
+function getElementByAttributeValue (parent, attribute, value) {
+    if (parent) {
+        var allElements = parent.getElementsByTagName("*");
+    } else {
+        var allElements = document.getElementsByTagName('*');
+    }
+    if (value) {
+        for (var i = 0; i < allElements.length; i++) {
+            if (allElements[i].getAttribute(attribute) == value) {
+                return allElements[i];
+            }
+        }
+    } else {
+        for (var i = 0; i < allElements.length; i++) {
+            if (allElements[i].getAttribute(attribute)) {
+                return allElements[i];
+            }
+        }      
+    }
+}
 
-// 可以通过id获取DOM对象，通过#标示，例如
-$("#adom"); // 返回id为adom的DOM对象
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+    if (element.addEventListener) {
+        element.addEventListener(event, listener, false);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + event, listener);
+    } else {
+        element["on" + event] = listener;
+    }
+}
 
-// 可以通过tagName获取DOM对象，例如
-$("a"); // 返回第一个<a>对象
+// 移除element对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
+function removeEvent(element, event, listener) {
+    if (element.removeEventListener) {
+        element.removeEventListener(event, listener, false);
+    } else if (element.detachEvent) {
+        element.detachEvent("on" + event, listener);
+    } else {
+        element["on" + event] = null;
+    }
+}
 
-// 可以通过样式名称获取DOM对象，例如
-$(".classa"); // 返回第一个样式定义包含classa的对象
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    addEvent(element,"click", listener);
+}
 
-// 可以通过attribute匹配获取DOM对象，例如
-$("[data-log]"); // 返回第一个包含属性data-log的对象
+// 实现对于按Enter键时的事件绑定                 //先绑定keyup事件,才能有事件对象e, 判断e.keyCode???
+function addEnterEvent(element, listener) {
+    
+    if (e.keyCode == 13) {
+        addEvent(element, "keyup", function(e){
+            var e = e || window.event;
+            listener.call(this);
+        });
+    }
+}
 
-$("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
 
-// 可以通过简单的组合提高查询便利性，例如
-$("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
+$.prototype.on = function (ele,e,listener) {
+        console.log("3");
+    };
+
+$.on($("#item1"),"click",function(){alert("dd");});
