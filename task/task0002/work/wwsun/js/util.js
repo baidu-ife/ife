@@ -244,21 +244,21 @@ function addEnterEvent (element, listener) {
     addEvent(element, 'keydown', listener);
 }
 
-$.on = function (element, event, listener) {
-    addEvent(element, event, listener);
-};
-
-$.un = function (element, event, listener) {
-    removeEvent(element, event, listener);
-};
-
-$.click = function(element, handler) {
-    addClickEvent(element, handler);
-};
-
-$.enter = function(element, handler) {
-    addEnterEvent(element, handler);
-};
+//$.on = function (element, event, listener) {
+//    addEvent(element, event, listener);
+//};
+//
+//$.un = function (element, event, listener) {
+//    removeEvent(element, event, listener);
+//};
+//
+//$.click = function(element, handler) {
+//    addClickEvent(element, handler);
+//};
+//
+//$.enter = function(element, handler) {
+//    addEnterEvent(element, handler);
+//};
 
 function clickListener(event) {
     console.log(event);
@@ -270,9 +270,60 @@ function enterListener(event) {
     }
 }
 
-//$.click($('#item1'), clickListener);
-////$.enter()
+//function delegateEvent(element, tag, event, listener) {
+//    var items = element.getElementsByTagName(tag);
+//    each(items, function(li) {
+//        addEvent(li, event, listener);
+//    });
+//}
 
-each($("#list").getElementsByTagName('li'), function(li) {
-    addClickEvent(li, clickListener);
-});
+$.on = function (selector, event, listener) {
+    addEvent($(selector), event, listener);
+};
+
+$.un = function (selector, event, listener) {
+    removeEvent($(selector), event, listener);
+};
+
+$.click = function(selector, handler) {
+    addClickEvent($(selector), handler);
+};
+
+$.enter = function(selector, handler) {
+    addEnterEvent($(selector), handler);
+};
+
+$.delegate = function (selector, tag, event, listener) {
+    var items = $(selector).getElementsByTagName(tag);
+    each(items, function(li) {
+        addEvent(li, event, listener);
+    });
+};
+
+//$.delegate('#list', "li", "click", clickListener); // test case
+
+/**
+ * judge if the browser is MS-IE
+ */
+function isIE() {
+    return false || !!document.documentMode;
+}
+
+/**
+ * set a cookie name/value pair
+ * @param name
+ * @param value
+ * @param expire
+ */
+function setCookie(name, value, expire) {
+
+}
+
+/**
+ * get the cookie value by name
+ * @param name
+ */
+function getCookie(name) {
+
+}
+
