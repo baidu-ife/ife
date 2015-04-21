@@ -40,6 +40,15 @@ footer .center,
   margin: auto;
 }
 
+.header-wrapper,
+.footer-wrapper,
+.banner-wrapper,
+.img-wrapper,
+.container-wrapper,
+.timeline-wrapper {
+  min-width: 980px;
+}
+
 .header-wrapper {
   height: 80px;
   width: 100%;
@@ -513,6 +522,7 @@ input:focus + button {
 .img-falls img {
   margin-top: 5px;
   width: 150px;
+  display: block;
 }
 
 .img-falls .big {
@@ -538,8 +548,6 @@ input:focus + button {
 .img-falls .info {
   color: #FFF;
   padding: 10px;
-  position: relative;
-  top: -5px;
 }
 
 .img-falls .purple {
@@ -738,16 +746,5 @@ input:focus + button {
 @media screen and (max-width:1080px) {
   .github {
     display: none;
-  }
-}
-
-@media screen and (max-width:980px) {
-  .header-wrapper,
-  .footer-wrapper,
-  .banner-wrapper,
-  .img-wrapper,
-  .container-wrapper,
-  .timeline-wrapper {
-    width: 980px;
   }
 }
