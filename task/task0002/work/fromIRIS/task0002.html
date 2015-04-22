@@ -39,6 +39,14 @@
         <a href="#">a</a>
         <a href="aaa">aaaaa</a>
         <input type="button" value="alert" id="btn1">
+        <div id="wrap">
+            <ul id="list">
+                <li>Simon</li>
+                <li>Kenner</li>
+                <li>Erik</li>
+            </ul>
+        </div>
+        <button id="btn2">change</button>
     </body>
     <script type="text/javascript" src="1-1.js"></script>
     <script type="text/javascript" src="utils.js"></script>
@@ -50,10 +58,44 @@
             function alertM() {
                 alert('mmmmm')
             }
-            var oBtn1 = document.getElementById("btn1");
+            
+            // var oBtn1 = document.getElementById("btn1");
             // addClickEvent(oBtn1, alertM);
             // addEnterEvent(document, alertA);
-            $.enter(document, alertA);
+            // $.enter(document, alertA);
+            // $.click($("#btn1"),alertA);
+
+
+            function renderList() {
+                $("#list").innerHTML = '<li>new item</li>';
+            }
+            function clickListener(event) {
+                console.log(event);
+            }
+            function init() {
+                /*each($("#list").getElementstagName('li'), function(item) {
+                    $.click(item, clickListener);
+                })*/
+                delegateEvent($("#list"), "li", "click", clickListener);
+
+                $.click($("#btn2"), renderList);
+            }
+            init();
+            // $.click($("#list"), clickListener);
+            /*function clickListener(ev) {
+                var oEvent = ev || event;
+                var target = oEvent.srcElement ? oEvent.srcElement : oEvent.target;
+                alert(target.innerHTML);
+                return false;
+                oEvent.stopPropagation();
+                oEvent.cancelBubble = true;
+            }
+            $.click($("#wrap"), out);
+            function out() {
+                alert('我是冒泡');
+            }*/
+            
+            
         }
     </script>
 </html>

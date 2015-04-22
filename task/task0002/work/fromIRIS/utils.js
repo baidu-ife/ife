@@ -239,9 +239,8 @@ function addEnterEvent(element, listener) {
                 };
             }
 }
-
-var $ = {
-    on: function addEvent(element, event, listener) {
+// 把上面几个函数和$做一下结合，把他们变成$对象的一些方法
+    $.on = function addEvent(element, event, listener) {
             if (element.addEventListener) {
              element.addEventListener(event, listener, false);
             }else if (element.attachEvent) {
@@ -249,8 +248,8 @@ var $ = {
             }else {
                 element["on" + event] = listener;
             }
-        },
-    un: function removeEvent(element, event, listener) {
+        }
+    $.un = function removeEvent(element, event, listener) {
             if (listener) {
             if (element.removeEventListener) {
                 element.removeEventListener(event, listener, false);
@@ -262,17 +261,19 @@ var $ = {
             }else {
                 return; ///?????
             }
-        },
-    click: function addClickEvent(element, listener) {
+        }
+    $.click = function addClickEvent(element, listener) {
             if (element.addEventListener) {
-                element.addEventListener("click", listener, false);
+                element.addEventListener("click",  function () {
+                    listener(element);
+                }, false);
             }else if (element.attachEvent) {
                 element.attachEvent("onclick", listener);
             }else {
                 element.onclick = listener;
             }
-        },
-    enter: function addEnterEvent(element, listener) {
+        }
+    $.enter = function addEnterEvent(element, listener) {
 
             if (element.addEventListener) {
                 element.addEventListener("keydown", function (ev) {
@@ -297,4 +298,58 @@ var $ = {
                 };
             }
         }
+    $.delegate = function delegateEvent(element, tag, eventName, listener) {
+                if (element.addEventListener) {
+                    element.addEventListener(eventName, function (ev) {
+                        var ev = ev || event;
+                        var target = ev.target || ev.srcElement;
+                        if (target.nodeName.toLowerCase() == tag) {
+                            listener(target);//传参数给listener函数
+                        }
+                    },false)
+                } else if (element.attachEvent) {
+                        element.attachEvent( "on" + eventName, function (ev) {
+                        var ev = ev || event;
+                        var target = ev.target || ev.srcElement;
+                        if (target.nodeName.toLowerCase() == tag) {
+                            listener(target);//传参数给listener函数
+                        }
+                    })
+                }else {
+                    element["on" + eventName] = function (ev) {
+                        var oEvent = ev || event;
+                        if (oEvent.keyCode == 13) {
+                            listener(target);
+                        }
+                    };
+                }
+    }
+
+// 事件代理  //console.log(event) show the undefined
+function delegateEvent(element, tag, eventName, listener) {
+    if (element.addEventListener) {
+        element.addEventListener(eventName, function (ev) {
+            var ev = ev || event;
+            var target = ev.target || ev.srcElement;
+            if (target.nodeName.toLowerCase() == tag) {
+                listener(target);//传参数给listener函数
+            }
+        },false)
+    } else if (element.attachEvent) {
+                element.attachEvent( "on" + eventName, function (ev) {
+                    var ev = ev || event;
+                    var target = ev.target || ev.srcElement;
+                    if (target.nodeName.toLowerCase() == tag) {
+                        listener(target);//传参数给listener函数
+                    }
+                })
+            }else {
+                element["on" + eventName] = function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener(target);
+                    }
+                };
+            }
 }
+
