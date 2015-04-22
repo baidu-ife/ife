@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>about_page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="css_file/about.css">
+
+</head>
+<body>
+<!--第一部分-->
+<div class="top">
+
+    <div class="top_text">
+        <div class="my_logo"><img src="img/my_logo.jpg ">
+        </div>
+        <div class="tag">
+            <span>首页</span>
+            <span>文章</span>
+            <span>作品</span>
+            <span>关于</span>
+        </div>
+        <span class="logo"><a href="https://github.com"><img src="img/logo.png "></a></span>
+    </div>
+
+    <!--   <div class="div4 " >    </div>-->
+</div>
+<!--第二部分-->
+<div class="second " >
+    <div class="gradient">
+<h1>标题一</h1>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文。</span>
+    </div>
+</div>
+<!--第三部分-->
+<div class="third">
+    <ul  class="faceul">
+        <li><img src="img/sanlitun.jpg"><br>
+           <div class="s1" >
+     <font class="font1"> 这里是正文文文文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</font>
+            </div>
+        </li>
+        <li id="edge"><img src="img/tiananmen.jpg "><br>
+            <div class="s1" >
+                <font class="font1"> 这里是正文文文文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</font>
+            </div>
+        </li>
+        <li id="edge"><img src="img/tiantan.jpg "><br>
+            <div class="s1" >
+                <font class="font1"> 这里是正文文文文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</font>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--第四部分-->
+<div class="round_photo">
+<img src="img/Beijing.jpg ">
+</div>
+  <div class="forth">
+    <div class="intro">
+        <h1 >Hi,i'm Weilai</h1>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，
+            这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文文文文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，
+            这里是正文，这里是正文，这里是正文，这里是正文文文文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，
+            这里是正文，这里是正文。
+        </span>
+    </div>
+  </div>
+<!--第五部分-->
+<div class="last1">
+<div class="div1" >主页   &nbsp;文章    &nbsp;作品    &nbsp;关于</div>
+</div>
+<div class="last2">
+<ul class="faceul1">
+    <li>
+     <div>
+         <h1 class="div2">学习资料</h1>
+         <span>LINK</span><br>
+         <span><a href="#">Hover时样式</a></span><br>
+         <span>LINK</span><br>
+         <span>LINK</span><br>
+         <span>LINK</span><br>
+         <span>LINK</span><br>
+     </div>
+    </li>
+    <li>
+        <div>
+            <h1 class="div2">友情链接</h1>
+            <span>LINK</span><br>
+            <span><a href="#">Hover时样式</a></span><br>
+            <span>LINK</span><br>
+            <span>LINK</span><br>
+
+        </div>
+    </li>
+    <li>
+        <div>
+            <h1 class="div2">学习资料</h1>
+            <span>LINK</span><br>
+            <span><a href="#">Hover时样式</a></span><br>
+            <span>LINK</span><br>
+            <span>LINK</span><br>
+            <span>LINK</span><br>
+
+        </div>
+    </li>
+    <li>
+        <div>
+            <h1 class="div2">友情链接</h1>
+            <span>LINK</span><br>
+            <span><a href="#">Hover时样式</a></span><br>
+            <span>LINK</span><br>
+            <span>LINK</span><br>
+
+        </div>
+    </li>
+    <li>
+        <div>
+            <h1 class="div2">学习资料</h1>
+            <span>LINK</span><br>
+            <span><a href="#">Hover时样式</a></span><br>
+            <span>LINK</span><br>
+            <span>LINK</span><br>
+            <span>LINK</span><br>
+            <span>LINK</span><br>
+        </div>
+    </li>
+</ul>
+</div>
+<div class="last3">
+<div class="div3 " >
+    <h1 class="div2">版权信息</h1>
+    <img src="img/logo.png" >
+</div>
+</div>
+</body>
+</html>
