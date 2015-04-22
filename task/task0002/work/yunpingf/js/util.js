@@ -187,3 +187,46 @@ function getCookie(cookieName) {
     }
     return "";
 };
+//**************task 6*******************
+function ajax(url, options) {
+    var xmlhttp=new XMLHttpRequest();
+    var data = "";
+    var method = "GET";
+    if (options != null) {
+        if (options.type != null)
+            method = options.type;
+        if (options.data != null) {
+            if (typeof options.data == "string") {
+                data = options.data;
+            }
+            else {
+                var keys = Object.keys(options.data);
+                data = keys[0]+"="+options.data[keys[0]];
+            }
+        }
+    }
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            options.onsucess();
+        }
+    };
+
+    if (method == "GET") {
+        if (data == "")
+            xmlhttp.open(method, url, true);
+        else
+            xmlhttp.open(method, url+"?"+data, true);
+        xmlhttp.send();
+    }
+    else if (method == "POST") {
+        xmlhttp.open(method,url,true);
+        if (data != "") {
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send(data);
+        }
+        else {
+            xmlhttp.send();
+        }
+    }
+}
