@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+<body>
+    <div id="header-wrap" class="clearfix">
+        <div class="header clearfix">
+            <div class="logo">
+                <img src="img/logo.PNG" align="middle">
+                <span>HansJiang</span>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="gallery.html">作品</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </div>
+            <div class="ico-github">
+                <img src="img/icon-github.png">
+            </div>
+        </div>
+    </div>
+    <div id="content-wrap">
+        <div class="blogcontent clearfix">
+            <div class="blogarticle">
+                <div class="blogarticle-top">
+                     <div class="blogtab-top">
+                         <div class="blogtab-top1"><span>4.12</span></div>
+                         <div class="blogtab-top2"><span>CSS</span></div>
+                     </div>
+                    <h1>兼容性问题解决与未解决</h1>
+                    <h2>考虑到IE8/9，chrome</h2>
+                    <p>未解决的问题：1、在IE中index里面的渐进透明无法实现。2、整体布局上，当屏幕缩小时，右边部分留白呢。3、gallery里面的整体布局用的是绝对定位，
+                    不知道还有什么更好的办法没有。</p>
+                    <p>解决的问题：1、输入框（text）和按钮（button）在其他浏览器或高版本表现正常，在iE8中，出现上下错位的现象。解决的方法是：直接使用了绝对定位。
+                    2、IE8里面border-radius不起效，出现的是正方形框。解决方法：第一页的头像直接可以抠图然后使用透明背景，最后一页思考半天，基于html和css想出的小办法是
+                    直接把边框加上了在截图，然后放在去稍稍微调位置，然后删除border-radius属性即可。</p>
+                    <P>做得不好的地方： 1、个人对命名原则不是很熟悉，有些实在不知道怎么取名字，希望导师指导下。2、代码书写感觉也不是特别规范。
+                    <div class="dateofpublish-top">
+                        <span>Hans 发表于 2015年4月20日</span>
+                    </div>
+                </div>
+                <div class="blogarticle-center">
+                    <div class="blogtab-center">
+                        <div class="blogtab-center1"><span>4.13</span></div>
+                        <div class="blogtab-center2"><span>CSS</span></div>
+                    </div>
+                    <h1>收获到的知识</h1>
+                    <h2>各方面的</h2>
+                    <p>CSS让Div布局居中的方法：1、当然是设置宽度后，设置 margin：0 auto即可。2、百度到的一种好方法：负外边距解决方案;即是首先，创建一个包含居中元素的容器，
+                        然后将其绝对定位于相对页面左边边缘50%的位置。这样，该容器的左外边距将从页面50%宽度的位置开始算起。然后，将容器的左外边距值设置为负的容器宽度的一半。这样即可将该容器固定在页面水平方向的中点。
+                    3、不定宽时，可以改变块级元素的 dispaly 为 inline 类型，然后使用 text-align:center 来实现居中效果。</p>
+                    <p>去除inline-block元素间间距的N种方法： 详情可见：http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/个人使用觉得使用margin负值最简单粗暴。</p>
+                    <p>还有一些，当时文本忘了保存了。</p>
+                    <div class="dateofpublish-center">
+                        <span>Hans 发表于 2015年4月20日</span>
+                    </div>
+                </div>
+                <div class="blogarticle-bottom">
+                    <div class="blogtab-bottom">
+                        <div class="blogtab-bottom1"><span>4.13</span></div>
+                        <div class="blogtab-bottom2"><span>CSS</span></div>
+                    </div>
+                    <h1>个人总结</h1>
+                    <h2>简单几句</h2>
+                    <p>这几张网页总体上画了3到4天才完成了吧，之前一直都在学习，从这几天才开始忙活着制作，发现制作过程中能发现很多自己疏忽的问题，然后自己在回去查查看看，
+                    有些东西也不知道怎么实现，就用了火狐的firebug来研究别的一些网站类似的制作代码，然后学着一点一点的做了出来。</p>
+                    <p>前端要学的东西挺多的，好在热爱计算机，喜欢学东西，所以朝着前端攻城狮奋斗！！！</p>
+                    <p>最后，谢谢各位大大们抽空批阅的我代码，非常感激。</p>
+                    <div class="dateofpublish-bottom">
+                        <span>Hans 发表于 2015年4月20日</span>
+                    </div>
+                </div>
+                <div class="blog-pages">
+                    <a href="blog.html" >第一页</a>
+                    <a href="javascript:void(0);" id="forbidden">上一页</a>
+                    <a href="blog.html" id="thispage">1</a>
+                    <a href="blog.html">2</a>
+                    <a href="blog.html">3</a>
+                    <a href="blog.html">4</a>
+                    <a href="blog.html">...</a>
+                    <a href="blog.html">下一页</a>
+                    <a href="blog.html">最后页</a>
+                </div>
+            </div>
+            <div class="blogsidebar">
+                <div class="blogsearch">
+                    <div class="search-combination">
+                        <form>
+                            <input type="text" value="Keywords" class="inputintext">
+                            <input type="button" value="GO" class="confirmsearch">
+                        </form>
+                    </div>
+                </div>
+                <div class="rightsidebar">
+                    <a href="blog.html" class="rightsidebar-first">HTML</a>
+                    <a href="blog.html">CSS</a>
+                    <a href="blog.html">Javascript</a>
+                    <a href="blog.html">其他文章</a>
+                </div>
+                <div class="calendar">
+                    <pre>  &lt;          2015.04        &gt;</pre>
+                    <table class="calendar-table" border="0" cellpadding="0" cellspacing="0" >
+                        <tr>
+                            <th>M</th>
+                            <th>T</th>
+                            <th>W</th>
+                            <th>T</th>
+                            <th>F</th>
+                            <th>S</th>
+                            <th>S</th>
+                        </tr>
+                        <tr>
+                            <td><a href="blog.html">1</a></td>
+                            <td><a href="blog.html">2</a></td>
+                            <td><a href="blog.html">3</a></td>
+                            <td><a href="blog.html">4</a></td>
+                            <td><a href="blog.html">5</a></td>
+                            <td><a href="blog.html">6</a></td>
+                            <td><a href="blog.html">7</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="blog.html">1</a></td>
+                            <td><a href="blog.html">2</a></td>
+                            <td><a href="blog.html">3</a></td>
+                            <td><a href="blog.html">4</a></td>
+                            <td><a href="blog.html">5</a></td>
+                            <td><a href="blog.html">6</a></td>
+                            <td><a href="blog.html">7</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="blog.html">8</a></td>
+                            <td><a href="blog.html">9</a></td>
+                            <td><a href="blog.html" class="calendar-bold">1</a></td>
+                            <td><a href="blog.html">2</a></td>
+                            <td><a href="blog.html">3</a></td>
+                            <td><a href="blog.html">4</a></td>
+                            <td><a href="blog.html">5</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="blog.html">6</a></td>
+                            <td><a href="blog.html">7</a></td>
+                            <td><a href="blog.html" class="calendar-bold">8</a></td>
+                            <td><a href="blog.html">9</a></td>
+                            <td><a href="blog.html">1</a></td>
+                            <td><a href="blog.html">2</a></td>
+                            <td><a href="blog.html">3</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tags">
+                <h1>Tags</h1>
+                    <P><span>JavaScript CSS</span> flex<br > webGL  <span>HTML</span>   Canvas <br >prototype <span>HTML5</span> grid nodeJS
+                    CSS3 <span>JQUERY Echarts</span></P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer-nav clearfix">
+            <ul class="juzhong clearfix">
+                <li id="end"><a href="index.html">首页</a></li>
+                <li><a href="blog.html">文章</a></li>
+                <li><a href="gallery.html">作品</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+        <div class="link clearfix">
+            <ul class="link-topic">
+                <li><a href="index.html">学习资料</a></li>
+                <li><a href="index.html">友情链接</a></li>
+                <li><a href="index.html">学习资料</a></li>
+                <li><a href="index.html">学习资料</a></li>
+                <li id="end1"><a href="index.html">友情链接</a></li>
+            </ul>
+            <ul class="link-row">
+                <li><a href="index.html">LINK</a></li>
+                <li class="link-hover"><a href="index.html">HOVER时样式</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+            </ul>
+            <ul class="link-row">
+                <li><a href="index.html">LINK</a></li>
+                <li class="link-hover"><a href="index.html" >HOVER时样式</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+            </ul>
+            <ul class="link-row">
+                <li><a href="index.html">LINK</a></li>
+                <li class="link-hover"><a href="index.html">HOVER时样式</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+            </ul>
+            <ul class="link-row">
+                <li><a href="index.html">LINK</a></li>
+                <li class="link-hover"><a href="index.html" >HOVER时样式</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+            </ul>
+            <ul class="link-row end1">
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">HOVER</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+                <li><a href="index.html">LINK</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <span>版权信息</span>
+            <div class="copyright-ico">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
