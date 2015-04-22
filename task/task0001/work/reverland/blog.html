@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <title>blog</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-wrap">
+            <div id="logo">YourLOGO</div>
+            <div id="menu">
+                <ul>
+                    <li><a href="/index.html">首页</a></li>
+                    <li><a href="/blog.html">文章</a></li>
+                    <li><a href="/gallery.html">作品</a></li>
+                    <li><a href="/about.html">关于</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="github">
+            <a href="http://github.com"><img src="img/icon-github.png" alt=""></a>
+        </div>
+    </div>
+    <!--navbar finished -->
+    <div class="body-wrap">
+        <div class="content-wrap">
+            <div class="blog-item">
+                <div class="blog-title">缠绕的内容和样式</div>
+                <div class="blog-subtitle">样式和内容的分离实践</div>
+                <div class="blog-content">
+                    <p>
+                        还有半个小时下班，让我喝口水平复下被前端技术虐哭的心情。
+                    </p>
+                    <p>
+                    先说说html吧。常用标签自然不用细说，可是什么时候该用什么标签却经常迟疑。唉？我应该用div呢还是直接img呢？应该把a标签的display属性变成block呢还是inline-block呢，应该把这些部分归为整体呢还是应该把这部分归为整体呢等等等等。
+                    </p>
+                    <p>
+                        开始写html文件的时候经常会把布局考虑进去，比如about页面中，看上去似乎分为左右两部分的简介。实现了之后怎么都觉得不对劲，为什么我把语义上是一个整体的东西因为形式而分离开了？这样做是不是有违样式和内容的分离初衷？
+                    </p>
+                    <p>
+                        我想我获得的一个重要原则就是:
+                    </p>
+
+                    <block>
+                    <p>
+                    <em>尽量不因为样式而影响HTML文件结构</em>
+                    </p>
+                    </block>
+                    <p>
+                    如果恨不得每个元素都要单独设定样式的时候，就该想想是不是哪地方不对劲了。
+                    </p>
+
+                    <p>
+                    ps1:永远也不要在行内元素中放置块状元素，这大概就是inline-block的意义吧。
+                    </p>
+
+                    <p>
+                    PS2:另外提醒下自己要继续研究的问题：html5的那些标签还没用过啊。。。我什么时候该用，浏览器支持如何。大量的div是合适的吗？如何养成规范命名class或者id的习惯？
+                    </p>
+                </div>
+                <div class="blog-inf">Reverland 发表于 2015年4月21日</div>
+                <div class="blog-date">4.12</div>
+                <div class="blog-tag">CSS</div>
+            </div>
+            <div class="blog-item">
+                <div class="blog-title">CSS虐我千百遍</div>
+                <div class="blog-subtitle">我待CSS如初恋</div>
+                <div class="blog-content">
+                    <p>
+                    手刷样式的日子，想起了当年痴心LaTeX排版的神奇体验。在那些日子里打下的一些本以为今后再也不会用到的概念再次从土里爬了出来= =
+                    </p>
+                    <p>
+                    看，是很轻松的一件事。实践才发现自己很容易犯下不该犯下的错误。
+                    </p>
+                    <p>
+                    一个简单的例子：当你想让元素距离其父元素上边一定距离时，你是应该怎么做呢？
+                    </p>
+                    <ol>
+                        <li>使用父元素padding</li>
+                        <li>使用子元素padding</li>
+                        <li>使用子元素margin</li>
+                        <li>使用子元素行高</li>
+                        <li>混在一起做</li>
+                    </ol>
+                    <p>
+                    我听见Larry Paul的声音从天上来，清晰而含糊
+                    </p>
+                    <block>
+                    <p>做一种事情不只一种方法，也不应该只用一种方法</p>
+                    </block>
+
+                    <p>
+                    如果你接手一个选择方案5的项目，你该如何想呢？WTF
+                    </p>
+
+                    <p>
+                    还有其它超乎意料的东西：
+                    </p>
+
+                    <ul>
+                        <li>意外被css的选择优先级坑了</li>
+                        <li>inline-block的元素间竟然有空格间隙</li>
+                        <li>text-align: justify不是像我想的这么简单就能用</li>
+                        <li>究竟应该利用浮动还是绝对定位还是正常的文档流呢</li>
+                        <li>爱上了数学计算，特别是跟字体行高混合边距打交道时</li>
+                        <li>input[type="submit"]标签在火狐中默认不是box-sizing:content-box属性。。。</li>
+                        <li>什么时候合并垂直的margin</li>
+                        <li>因为class名称问题一不小心样式相互影响了</li>
+                        <li>浏览器默认样式不一样</li>
+                        <li>当我写这篇文章时发现list的标号超出div了。。。</li>
+                        <li>...</li>
+                    </ul>
+
+                    <p>
+                    真想说珍爱生命，远离前端。但它美的让人心碎。
+                    </p>
+
+                </div>
+                <div class="blog-inf">Reverland 发表于 2015年4月21日</div>
+                <div class="blog-date">4.12</div>
+                <div class="blog-tag">CSS</div>
+            </div>
+            <div class="blog-item">
+                <div class="blog-title">参考资料</div>
+                <div class="blog-subtitle">一些我觉得有用不在课程参考资料中的资料</div>
+                <div class="blog-content">
+                    <ul>
+                        <li><a href="http://ued.taobao.org/blog/2011/09/waterfall/
+">来自淘宝UED的瀑布流详解</a></li>
+                        <li><a href="http://blog.vjeux.com/2011/css/css-one-line-justify.html">css单行justify</a></li>
+                        <li><a href="http://www.zhangxinxu.com/wordpress/2010/04/css%E5%AE%9E%E7%8E%B0%E5%85%BC%E5%AE%B9%E6%80%A7%E7%9A%84%E6%B8%90%E5%8F%98%E8%83%8C%E6%99%AFgradient%E6%95%88%E6%9E%9C/">CSS实现兼容性的渐变背景(gradient)效果</a></li>
+                        <li><a href="http://www.ituring.com.cn/minibook/1024">margin的详细介绍</a></li>
+                        <li><a href="http://www.csszengarden.com/">CSS Zen Garden</a></li>
+                        <li><a href="#">...</a></li>
+                    </ul>
+                    <p>当看到Css禅意花园里的示例时震惊了，回想自己铺天盖地的div标签，遮天蔽日的class命名。一句古诗浮上心头：</p>
+                    <block>
+                    <p>
+                    路漫漫其修远兮，吾将上下而求索。
+                    </p>
+                    </block>
+                </div>
+                <div class="blog-inf">Reverland 发表于 2015年4月21日</div>
+                <div class="blog-date">
+                    4.12
+                </div>
+                <div class="blog-tag">
+                    CSS
+                </div>
+            </div>
+            <div class="pagination">
+                <a href="#">第一页</a>
+                <a href="#">上一页</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a class="current-page" href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">...</a>
+                <a href="#">下一页</a>
+                <a href="#">最后页</a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="search-box-widget">
+                <div class="search-box">
+                    <input type="search" name="q" id="sb_form_q" value="Keyword">
+                    <input type="submit" name="go" id="sb_form_go" value="GO">
+                </div>
+            </div>
+            <div class="tab-widget">
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">Javascript</a></li>
+                    <li><a href="#">其它文章</a></li>
+                </ul>
+            </div>
+            <div class="calender-widget">
+                <p class="calender-header">
+                    <a href="#">&lt</a>
+                    <a href="#">2015.04</a>
+                    <a href="#">&gt</a>
+                </p>
+                <div class="calender-main">
+                    <table>
+                        <tr>
+                            <th>M</th>
+                            <th>T</th>
+                            <th>W</th>
+                            <th>T</th>
+                            <th>F</th>
+                            <th>S</th>
+                            <th>S</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td><a class="thisday" href="">5</a></td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><a href="">9</a></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td><a href="">4</a></td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tagcloud-widget">
+                <div class="tagcloud-header">Tags</div>
+                <div class="tagcloud-main">
+                    <p>
+                    <span style="font-size: 2em">JavaScipt</span> <span style="font-size: 1.8em">CSS</span> <span style="font-size: 0.8em">flex</span> <span style="font-size: 1em">WebGL</span> <span style="font-size: 2em">HTML</span> <span style="font-size: 1.5em">Canvas</span> <span style="font-size: 1.5em">prototype</span> <span style="font-size: 1.8em">HTML5</span> <span style="font-size: 0.5em">grid</span> <span style="font-size: 1em">nodeJS</span> <span style="font-size: 1em">CSS3</span> <span style="font-size: 1.2em">JQuery</span> <span style="font-size: 1.2em">ECharts</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="footer">
+        <div class="top-footer">
+            <ul>
+                <li><a href="">主页</a></li>
+                <li><a href="">文章</a></li>
+                <li><a href="">作品</a></li>
+                <li><a href="">关于</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <div class="linkColumn">
+                <div class="ft-header">学习资料</div>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+            </div>
+            <div class="linkColumn">
+                <div class="ft-header">友情链接</div>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+            </div>
+            <div class="linkColumn">
+                <div class="ft-header">学习资料</div>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+            </div>
+            <div class="linkColumn">
+                <div class="ft-header">学习资料</div>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+            </div>
+            <div class="linkColumn">
+                <div class="ft-header">友情链接</div>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+                <a href="">Link</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>版权信息</p>
+            <img src="img/icon-github.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
