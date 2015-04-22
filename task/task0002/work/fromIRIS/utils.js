@@ -413,3 +413,30 @@ $.delegate = function delegateEvent(selector, tag, eventName, listener) {
                     };
                 }
             }
+
+// 判断是否为IE浏览器，返回-1或者版本号
+function isIE() {
+    var sTr = window.navigator.userAgent;
+    return sTr.toLowerCase().indexOf("ie") != -1;
+}
+// 设置cookie
+function setCookie(cookieName, cookieValue, expiredays) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + expiredays);
+    document.cookie = cookieName + "=" + escape(cookieValue) + ((expiredays == null) ? "" : ";expires=" + exdate.toUTCString());
+}
+// 获取cookie值
+function getCookie(cookieName) {
+    if (document.cookie.length > 0) {
+        var c_start = document.cookie.indexOf(cookieName + "=");
+        if (c_start != -1) {
+            c_start = c_start + cookieName.length + 1;
+            var c_end = document.cookie.indexOf(";", c_start);
+            if (c_end ==-1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+        return "";
+    }
+}
