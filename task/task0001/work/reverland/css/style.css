@@ -37,14 +37,13 @@ body {
     color: white;
 }
 
-
 @media screen and (min-width:980px) {
     #github img{
         position: absolute;
         right: 10px;
         bottom: 0;
         padding-bottom: 0;
-        border: none;   /* 告诉我IE为啥会有个蓝色的框 */
+        border: 0 none;   /* 告诉我IE为啥会有个蓝色的框 */
     }
 }
 @media screen and (max-width:979px) {
@@ -574,6 +573,8 @@ p.position {
     background-image: url(../img/search.jpg);
     background-repeat: no-repeat;
     color: #999999;
+    display:block;
+    line-height:1px;
     box-sizing: content-box;
 }
 
