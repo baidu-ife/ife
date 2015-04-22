@@ -452,8 +452,7 @@ var createAjax = function() {
     }
     return xhr;
 };
-// ajax
-/*var ajax = function(conf) {
+var ajax = function(conf) {
     // 初始化
     //type参数,可选
     var type = conf.type;
@@ -511,4 +510,4 @@ var createAjax = function() {
         xhr.send(data);
 
     }
-};*/
+};

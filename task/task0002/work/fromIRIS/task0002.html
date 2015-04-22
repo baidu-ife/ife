@@ -2,6 +2,7 @@
 <html>
     <head lang="en">
         <meta charset = "UTF-8">
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
         <title>task0002</title>
         <style type="text/css">
             .red {
@@ -92,11 +93,19 @@
             }
             $.click($("#wrap"), out);
             function out() {
-                alert('鎴戞槸鍐掓场');
+                alert('鎴戞槸鍐掓场才多少如果');
             }*/
-            console.log('a');
+            // console.log('a');
             console.log(isIE())
-            
+            ajax({
+                type:"get",
+                url:"http://localhost:8080/test.txt",
+                // data:"name=dipoo&info=good",
+                dataType:"text",
+                success:function(data){
+                    console.log(data);
+                }
+            });
         }
     </script>
 </html>
