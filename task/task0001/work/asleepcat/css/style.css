@@ -1,11 +1,25 @@
-div#top{background: #801c69;height: 100px;margin: -10px}
-div#img{float: right;margin-right: 10px;margin-top: 66px}
+
+
+
+body{margin: 0;padding: 0}/*Õ®”√body…Ë÷√*/
+div#top{background: #801c69;height: 100px;}
+#top img{float: right;margin-right: 10px;margin-top: 66px;}
 #blogname{display:inline;color: white;float: left;font-size: 25px;margin-left: 120px;margin-top: 60px;margin-bottom: 0px}
 #link{color: white;float: right;margin-right: 80px;margin-top: 70px;}
-.dao{padding: 20px;}
-div.p{color: white}
-#box1{position: relative;margin: -10px}
-#box2{background: white;height: 150px;width: 400px;position: absolute;top: 452px;left: 800px;
-    filter:alpha(opacity=50)-moz-opacity:0.5;
-    -khtml-opacity: 0.5;
-    opacity: 0.5;}
+.dao{padding: 20px;color: white;}
+div.p{color: white;}
+#box1{position: relative;}
+#box1 img{width: 100%}
+#box2{background:linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);height: 200px;width: 400px;position: absolute;top: 452px;left: 800px;}
+#container{height: 550px;width: 1050px;margin: 10px auto;}
+.display{width: 340px;height: 400px;background-color:white;float:left;margin: 10px 5px;}
+.display img{width: 320px;height: 200px;padding: 10px;}
+.display p{padding: 15px 30px;font-size: 15px;text-indent: 2em;margin-top: -5px;}
+#in{background-color: white;height: 400px;margin: 0px;padding: 10px;}
+#in img{width: 100px;padding: 0 600px;margin-top: -50px}
+#in p{text-align: left;padding: 0 400px;text-indent: 2em;}
+#buttom{background-color: black;height: 300px;}
+#buttom div{padding: 10px;text-align: center;}
+#buttom div ul{color: white;text-align:left;list-style: none;float: left;margin: 30px 100px;}
+#buttom div ul li{padding: 5px}
+

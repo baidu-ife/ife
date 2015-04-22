@@ -1,0 +1,91 @@
+body,h1,h2,h3,h4,h5,h6,ul,ol,p,li{margin: 0;padding: 0;}
+body{background-color: #eaeaea}
+h1{font-size: 16px;padding:20px 0px 10px 15px;color: #6b22b4
+}
+h2{font-size: 12px;color: #666;padding:0px 0px 10px 15px }
+p{font-size: 12px;color: #666;padding: 0px 15px 0px 15px;text-indent: 2em}
+a{color: white;text-decoration: none;}
+#header{
+    background-color: #461774;
+    width: 100%;
+    height: 80px;
+        }
+#header-top{
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 35px;
+}
+#header-top span{
+    font-family: cursive;
+    color: white;
+    font-size: 30px;
+}
+#link{
+    font-family: "宋体";
+    color: white;
+    float: right;
+    padding-top:19px;
+}
+#link ul li{
+    float: left;
+    list-style: none;
+    margin-left: 28px;
+}
+#githubicon{
+    float: right;
+    margin-top: 46px;
+    padding-right: 10px;
+}
+/*主体的内容*/
+#container{
+    width: 980px;
+    margin: 10px auto auto auto;
+    background-color: aquamarine;
+    margin-top: 10px;
+    height: 1500px;
+}
+#articlelist{/*左侧*/
+    width: 70%;
+    background-color: antiquewhite;
+    height: 100%;
+    float: left;
+}
+#menu{/*右侧*/
+    width: 30%;
+    background-color: burlywood;
+    height: 100%;
+    float: left;
+}
+.article{
+    background-color: white;
+    width: 98%;
+    margin: 10px auto;
+    height: 350px;
+}
+
+.time{
+    text-align: right;
+    width: 650px;
+    margin-top: 180px;
+    color: #c1c1c1;
+    font-size: 14px;
+}
+.lableleft{
+    width: 50px;
+    height:60px;
+    background-color: #461774;
+    float: left;
+    margin-left: -50px;
+    margin-top: 20px;
+}
+.up{
+    width: 100%;
+    height: 50%;
+    float: left;
+}
+.down{
+    width: 100%;
+    background-color: #6b22b4;
+    height: 50%;
+    float: left;
+}
