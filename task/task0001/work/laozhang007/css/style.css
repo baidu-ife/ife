@@ -6,6 +6,9 @@ a {
     color: #fff;
     text-decoration: none;
 }
+ul,li{
+    list-style-type: none;
+}
 body {
     min-width: 980px;
     background: #e2e2e2;
@@ -128,6 +131,7 @@ body {
     width: 100%;
     background-color: #ffffff;
     text-align: center;
+    padding-bottom: 100px;
 }
 .self-intro img{
     border-radius: 50%;
@@ -549,6 +553,67 @@ body {
     width: 980px;
     margin: 80px auto 0;
 }
+.gallery-content{
+    width: 710px;
+    float: left;
+    margin: auto 10px 100px auto;
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.gallery-content-main{
+    width: 670px;
+}
+.gallery-content-main img{
+    width: 160px;
+    display: block;
+}
+.gallery-content-main ul{
+    float: left;
+}
+.gallery-content-main li{
+    width: 160px;
+    margin: 0px 10px 10px 0;
+}
+.gallery-description-wrap{
+    position: relative;
+    padding: 10px 10px 10px 48px;
+}
+/*各种背景颜色*/
+.description-bg-j{
+    background-color: #8a3697;
+}
+.description-bg-u{
+    background-color: #dfe08a;
+}
+.description-bg-a{
+    background-color: #d92a27;
+}
+.description-bg-f{
+    background-color: #4359cc;
+}
+.gallery-description-type{
+    position: absolute;
+    top:10px;
+    left:10px;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    border:1px solid #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    color: #ffffff;
+}
+.gallery-description-wrap h1{
+    font-size: 16px;
+    color: #ffffff;
+}
+.gallery-description-wrap p{
+    font-size: 12px;
+    color: #ffffff;
+}
 .gallery-tab {
     position: absolute;
     top: -51px;
@@ -589,11 +654,11 @@ body {
     border-top: 4px solid #5900b2;
 }
 
-.gallery-tab-framwork {
+.gallery-tab-framework {
     border-top: 4px solid #ffa98c;
 }
 
-.gallery-tab-framwork:hover {
+.gallery-tab-framework:hover {
     border-top: 4px solid #8c2300;
 }
 
@@ -604,6 +669,9 @@ body {
 .gallery-tab-app:hover {
     border-top: 4px solid #d9a300;
 }
+.gallery-item ul{
+    float: left;
+}
 .gallery-bottom {
     position: absolute;
     bottom: -50px;
@@ -613,5 +681,12 @@ body {
     text-align: center;
     line-height: 40px;
     font-size: 12px;
-    background: #fff;
+    background-color: #fff;
+}
+.gallery-bottom img{
+    margin: 15px 10px auto -90px;
+}
+.gallery-bottom span{
+    position: absolute;
+    top:3px;
 }
