@@ -9,30 +9,28 @@
     <body>
         <div class="header">
             <div class="nav">
-                <div class="nav-center">
-                    <div class="mylogo">
-                        <img src="img/logo.png" width="150px" height="50px" alter="Lucky7ky">
-                    </div>
-                    <ul class="nav-ul">
-                        <li class="nav-li">
-                        <a class="nav-a" href="index.html">首页</a>
-                        </li>
-                        <li class="nav-li">
-                        <a class="nav-a" href="blog.html">文章</a>
-                        </li>
-                        <li class="nav-li">
-                        <a class="nav-a" href="gallery.html">作品</a>
-                        </li>
-                        <li class="nav-li">
-                        <a class="nav-a" href="about.html">关于</a>
-                        </li>
-                    </ul>
+                <div id="mylogo">
+                    <img src="img/logo.png" width="150px" height="50px" alt="Lucky7ky">
                 </div>
-                <div class="github">
-                    <a href="https://github.com/lucky7ky" target="_blank"><img src="img/icon-github.png" width="30px" height="34px"></a>
-                </div>
+                <ul class="nav-ul">
+                    <li class="nav-li">
+                    <a class="nav-a" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-li">
+                    <a class="nav-a" href="blog.html">文章</a>
+                    </li>
+                    <li class="nav-li">
+                    <a class="nav-a" href="gallery.html">作品</a>
+                    </li>
+                    <li class="nav-li">
+                    <a class="nav-a" href="about.html">关于</a>
+                    </li>
+                </ul>
             </div>
-            <div class="banner">
+            <a id="github" href="https://github.com/lucky7ky" target="_blank" alt="GitHub"><img src="img/icon-github.png" width="30px" height="34px"></a>
+        </div>
+        <div class="banner">
+            <div class="banner-center">
                 <div class=" banner-reading">
                     <p class="p-title">
                     明天的自己
@@ -50,9 +48,9 @@
                 </div>
             </div>
         </div>
-        <div class="content">
-            <div class="content-section">
-                <div class="content-section-part">
+        <div class="container">
+            <div class="container-section">
+                <div class="container-section-part">
                     <div class="section-part-pic">
                         <img src="img/index-pic.jpg" width="300px" height="180px">
                     </div>
@@ -63,7 +61,7 @@
                     窄窄的长长的过道两边，老房子依然升起了炊烟。
                     </p>
                 </div>
-                <div class="content-section-part" id="section-middle-part">
+                <div class="container-section-part" id="section-middle-part">
                     <div class="section-part-pic">
                         <img src="img/index-pic.jpg" width="300px" height="180px">
                     </div>
@@ -75,7 +73,7 @@
                     从此在时光里尘埃落定
                     </p>
                 </div>
-                <div class="content-section-part">
+                <div class="container-section-part">
                     <div class="section-part-pic">
                         <img src="img/index-pic.jpg" width="300px" height="180px">
                     </div>
@@ -86,22 +84,22 @@
                     </p>
                 </div>
             </div>
-            <div class="content-author">
-                <div class="author-photo">
-                    <img src="img/me.jpg" width="160px" height="160px" >
-                </div>
-                <p class="author-name">
-                lucky7ky
-                </p>
-                <p class="author-introduction">
-                对Web设计及开发有浓厚兴趣</br>
-                接触前端时间不长，现在正每天努力学习中</br>
-               -------- 希望未来能往Web前端方向发展--------
-                </p>
+        </div>
+        <div class="author">
+            <div class="author-photo">
+                <img src="img/me.jpg" width="160px" height="160px" >
             </div>
+            <p class="author-name">
+            lucky7ky
+            </p>
+            <p class="author-introduction">
+            对Web设计及开发有浓厚兴趣</br>
+            接触前端时间不长，现在正每天努力学习中</br>
+            -------- 希望未来能往Web前端方向发展--------
+            </p>
         </div>
         <div class="footer">
-            <ul class="footer-nav-ul">
+            <ul class="footer-nav">
                 <li class="footer-nav-li">
                 <a class="footer-nav-a" href="index.html">首页</a>
                 </li>

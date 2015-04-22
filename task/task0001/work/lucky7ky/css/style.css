@@ -4,29 +4,31 @@
     margin:0px;
     color:rgb(92, 91, 91);
 }
+body {
+    background-color: rgb(224, 223, 224);
+}
 .header {
-    width:1280px;
-    margin:auto;
+    position:relative;
+    background-color:rgba(114, 51, 139, 1);
+    height:80px;
 }
 .nav {
-    height:80px;
-    background-color:rgba(114, 51, 139, 1);
-}
-.nav-center {
     position:relative;
     width:980px;
-    height:50px;
-    margin:auto;
-    top:25px;
+    height:75px;
+    margin:0px auto;
 }
-.mylogo { 
-    float:left;
+#mylogo { 
+    position:absolute;
     width:150px;
     height:50px;
+    left:0px;
+    bottom:0px;
 }
 .nav-ul {
-    float:right;
-    margin-top:33px;
+    position:absolute;
+    right:0px;
+    bottom:0px;
     list-style-type:none;
 }
 .nav-li {
@@ -39,23 +41,35 @@
     font-family:SimSun;
     text-decoration:none;
 }
-.github {
+#github {
     position:absolute;
-    width:30px;
+    right:10px;
+    bottom:0px;
     height:34px;
-    top:46px;
-    left:1240px;
+}
+
+@media screen and (max-width:980px) {
+    #github {
+        display:none;
+    }
 }
 .banner {
     height:500px;
     background:url("../img/banner-bg.jpg");
     background-size:cover;
+    margin-bottom:10px;
+}
+.banner-center {
+    position:relative;
+    width:980px;
+    height:500px;
+    margin:0 auto;
 }
 .banner-reading {
-    position:relative;
+    position:absolute;
     width:400px;
-    top:380px;
-    left:735px;
+    right:0px;
+    bottom:0px;
     background-color:rgba(255, 255, 255, 0.20);
     padding:10px 10px 30px 10px;
 }
@@ -72,12 +86,9 @@
     text-indent:2em;
 }
 .footer {
-    width:980px;
     background-color:black;
-    padding:0px 150px;
-    margin:auto;
 }
-.footer-nav-ul {
+.footer-nav {
     list-style-type:none;
     padding:10px;
     border-bottom:1px solid rgba(255, 255, 255, 0.18);
@@ -88,22 +99,24 @@
     display:inline;
 }
 .footer-nav-a {
-    color:white;
     font-size:12px;
     text-decoration:none;
+    color:white;
 }
 .footer-link {
+    width:980px;
     height:200px;
-    padding: 40px 0;
+    margin:0 auto;
+    padding:40px 0;
 }
 .footer-link-part {
     float:left;
     width:20%;
 }
 .footer-link-title {
-    color:white;
     margin-bottom:20px;
     font-size:10px;
+    color:white;
 }
 .footer-link-ul {
     list-style-type:none;
@@ -112,8 +125,8 @@
     padding:5px 0px;
 }
 .footer-link-a {
-    color:white;
     font-size:10px;
+    color:white;
     cursor:pointer;
 }
 .footer-link-a:hover {
@@ -123,24 +136,19 @@
     text-align:center;
 }
 .copyright {
-    color:white;
     font-size:12px;
+    color:white;
     margin-bottom:15px;
 }
-.content {
-    width:1280px;
-    background-color: rgb(224, 223, 224);
-    padding-top:10px;
-    margin:auto;
-}
 /*index*/
-.content-section {
-    display:-webkit-box;
-    margin: auto;
-    padding-bottom:100px;
+.container {
     width:980px;
+    margin:0px auto 100px auto;
 }
-.content-section-part {
+.container-section {
+    display:-webkit-box;
+}
+.container-section-part {
     width:320px;
     background-color:white;
 }
@@ -160,7 +168,7 @@
     line-height:170%;
     padding:0px 30px 25px 30px;
 }
-.content-author {
+.author {
     height:400px;
     background-color:white;
     padding-bottom:100px;
@@ -169,72 +177,64 @@
 .author-photo {
     width:160px;
     height:160px;
-    background-color:blue;
     display:inline-block;
     margin-top:-50px;
     border-radius:100px;
     overflow:hidden;
 }
 .author-name {
-    color:black;
     font-size:20px;
     font-family:Century Gothic;
     margin-top:50px;
+    color:black;
 }
 .author-introduction {
     font-size:14px;
     line-height:200%;
     width:600px;
     margin:40px auto;
+    color:black;
 }
 /*blog*/
-.content-center {
+.content {
     display:table;
-    width:1080px;
-    margin:auto;
-    padding-bottom:200px;
+    position:relative;
+    width:980px;
+    margin:20px auto 0px auto;
 }
-.content-center-main {
+.content-main {
     float:left;
-    margin-right:10px;
+    width:700px;
 }
-.content-center-aside {
+.content-aside {
     width:270px;
-    height:700px;
     float:right;
-    margin-right:50px;
 }
 .blog {
-    display:table;
+    position:relative;
+    padding:20px;
     margin-bottom:10px;
+    background-color:white;
 }
 .blog-tag {
+    position:absolute;
     width:50px;
-    float:left;
-    padding-top:20px;
+    height:80px;
+    top:20px;
+    left:-50px;
+    text-align:center;
 }
 .blog-tag-date {
-    width:100%;
-    height:35px;
-    line-height:35px;
-    text-align:center;
-    background-color:rgb(124, 20, 147);
+    height:40px;
+    line-height:40px;
     color:white;
+    background-color:rgb(124, 20, 147);
 }
 .blog-tag-keyword {
-    width:100%;
-    height:35px;
-    line-height:35px;
-    text-align:center;
-    background-color:rgba(106, 61, 161, 0.79);
+    height:40px;
+    line-height:40px;
     color:white;
-}
-.blog-content {
-    width:660px;
-    background-color:white;
-    float:right;
-    text-align:left;
-    padding:20px;
+    background-color:rgba(106, 61, 161, 0.79);
 }
 .blog-title {
     color:purple;
@@ -247,14 +247,19 @@
     margin-bottom:10px;
 }
 .blog-body {
-    color:black;
     font-size:12px;
     line-height:200%;
     text-indent:2em;
 }
+.blog-publish {
+    text-align:right;
+    margin-top:30px;
+    font-size:12px;
+    color:#938C8C;
+}
 .blog-page {
     height:50px;
-    padding-left:50px;
+    margin-bottom:200px;
 }
 .blog-page-ul {
     list-style-type:none;
@@ -263,7 +268,6 @@
 }
 .blog-page-li {
     display:inline-block;
-    text-align: center;
     margin: 0 5px;
     padding: 8px 15px;
     line-height: 12px;
@@ -429,22 +433,7 @@
     font-size:12px;
 }
 /*gallery*/
-.center {
-    display:table;
-    position:relative;
-    width:980px;
-    margin:10px auto 0px auto;
-    padding-bottom:50px;
-}
-.main {
-    width:700px;
-    float:left;
-    margin-right:10px;
-    padding-bottom:300px;
-}
-.aside {
-    width:270px;
-    float:right;
+#aside-gallery {
     padding-top:57px;
 }
 #ranking {
@@ -598,7 +587,6 @@
 .branch-right {
     margin-left:4px;
 }
-    
 .card {
     margin-top:10px;
 }
@@ -653,7 +641,7 @@
 }
 .click-more {
     background-color:white;
-    margin-top:10px;
+    margin:10px 0px 200px 0px;
     text-align:center;
     padding:10px 290px;
     cursor:pointer;
@@ -669,7 +657,7 @@
     float:left;
     height:1200px;
     background-color:white;
-    margin-top:60px;
+    margin:60px 0px 10px 0px;
 }
 .center-left {
     width:150px;

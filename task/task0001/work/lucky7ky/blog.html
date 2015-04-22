@@ -9,349 +9,345 @@
     <body>
         <div class="header">
             <div class="nav">
-                <div class="nav-center">
-                    <div class="mylogo">
-                        <img src="img/logo.png" width="150px" height="50px" alter="Lucky7ky">
-                    </div>
-                    <ul class="nav-ul">
-                        <li class="nav-li">
-                        <a class="nav-a" href="index.html">首页</a>
-                        </li>
-                        <li class="nav-li">
-                        <a class="nav-a" href="blog.html">文章</a>
-                        </li>
-                        <li class="nav-li">
-                        <a class="nav-a" href="gallery.html">作品</a>
-                        </li>
-                        <li class="nav-li">
-                        <a class="nav-a" href="about.html">关于</a>
-                        </li>
-                    </ul>
+                <div id="mylogo">
+                    <img src="img/logo.png" width="150px" height="50px" alt="Lucky7ky">
                 </div>
-                <div class="github">
-                    <a href="https://github.com/lucky7ky" target="_blank"><img src="img/icon-github.png" width="30px" height="34px"></a>
-                </div>
+                <ul class="nav-ul">
+                    <li class="nav-li">
+                    <a class="nav-a" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-li">
+                    <a class="nav-a" href="blog.html">文章</a>
+                    </li>
+                    <li class="nav-li">
+                    <a class="nav-a" href="gallery.html">作品</a>
+                    </li>
+                    <li class="nav-li">
+                    <a class="nav-a" href="about.html">关于</a>
+                    </li>
+                </ul>
             </div>
+            <a id="github" href="https://github.com/lucky7ky" target="_blank" alt="GitHub"><img src="img/icon-github.png" width="30px" height="34px"></a>
         </div>
         <div class="content">
-            <div class="content-center">
-                <div class="content-center-main">
-                    <div class="blog">
-                        <div class="blog-tag">
-                            <p class="blog-tag-date">
-                            4.12
-                            </p>
-                            <p class="blog-tag-keyword">
-                            CSS
-                            </p>
-                        </div>
-                        <div class="blog-content">
-                            <p class="blog-title">
-                            第一篇博客
-                            </p>
-                            <p class="blog-subtitle">
-                            CSS命名规范学习笔记
-                            </p>
-                            <p class="blog-body">
-                            在写代码的过程中，一个比较深的感触就是CSS选择器命名并没那么简单， 
-                            大框架的header、content、footer等等命名时还可以不假思索，
-                            但是当页面结构变得复杂，嵌套变多的时候，就会偶尔纠结于怎么使命名更加具有可读性。
-                            对于个人网站来说，命名问题可能影响不大，但是在团队当中，成员的个人习惯不同，
-                            这样写出的CSS选择器命名各式各样，对项目维护运营、内部技术沟通都会产生不利影响。</br>
-
-                            以下记录一下网上整理的一些CSS命名常用规则，方便平时学习参考😄：</br>
-
-                            头 ：header 内容：content/container 尾：footer</br>
-
-                            导航：nav 侧栏：sidebar 栏目：column</br>
-
-                            页面外围控制整体布局宽度：wrapper 页面主体：main</br>
-
-                            登录条：loginbar 标志：logo 广告：banner</br>
-
-                            热点：hot 新闻：news 下载：download</br>
-
-                            子导航：subnav 菜单：menu 子菜单：submenu</br>
-
-                            搜索：search 友情链接：friendlink 页脚：footer</br>
-
-                            版权：copyright 滚动：scroll 内容：content</br>
-
-                            标签页：tab 文章列表：list 提示信息：msg</br>
-
-                            小技巧：tips 栏目标题：title 加入：joinus</br>
-
-                            </p>
-                        </div>
+            <div class="content-main">
+                <div class="blog">
+                    <div class="blog-tag">
+                        <p class="blog-tag-date">
+                        4.12
+                        </p>
+                        <p class="blog-tag-keyword">
+                        CSS
+                        </p>
                     </div>
-                    <div class="blog">
-                        <div class="blog-tag">
-                            <p class="blog-tag-date">
-                            4.15
-                            </p>
-                            <p class="blog-tag-keyword">
-                            CSS
-                            </p>
-                        </div>
-                        <div class="blog-content">
-                            <p class="blog-title">
-                            第二篇博客
-                            </p>
-                            <p class="blog-subtitle">
-                            关于设置banner背景图像问题
-                            </p>
-                            <p class="blog-body">
-                            在处理首页的banner背景图像时一开始不是很顺利，
-                            图像的位置比例总是不符合预期，后来查阅w3school上的相关内容，
-                            知道了background-size这个属性可以用来规定背景图像的尺寸,
-                            试了cover这个值正好可以实现想要的效果，不过由于浏览器支持问题这应该不是最好的方法，
-                            （IE9+、Firefox 4+、Opera、Chrome 以及 Safari 5+ 支持 background-size 属性。）
-                            但是还是值得记录一下，觉得每次发现一个想要的属性，有种相识恨晚的感觉，还是会惊喜一下。
-                            </br>
-                            background-size的几个值 </br>
-                            1. length 设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。
-                            如果只设置一个值，则第二个值会被设置为 "auto"。</br>
-                            2.percentage    以父元素的百分比来设置背景图像的宽度和高度。
-                            第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto。</br>
-                            3. cover    背景图像缩放,保留图像原有的比例/长宽比,
-                            不管背景图像大于还是小于背景区域，都会覆盖背景区域,
-                            图像的宽度或高度等于或超过背景区域,背景图像的某些部分可能不在背景区域内。</br>
-                            4.contain   背景图像缩放,同时保留图像原有的比例/长宽比,以尽可能大的覆盖背景区域。
-                            因此,根据背景图像的比例是否匹配背景区域,可能会有一些背景图像覆盖不到背景地区。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <div class="blog-tag">
-                            <p class="blog-tag-date">
-                            4.21
-                            </p>
-                            <p class="blog-tag-keyword">
-                            CSS
-                            </p>
-                        </div>
-                        <div class="blog-content">
-                            <p class="blog-title">
-                            第三篇博客
-                            </p>
-                            <p class="blog-subtitle">
-                            几点感触
-                            </p>
-                            <p class="blog-body">
-                            简单写一下几点感触吧：</br>
+                    <p class="blog-title">
+                    第一篇博客
+                    </p>
+                    <p class="blog-subtitle">
+                    CSS命名规范学习笔记
+                    </p>
+                    <p class="blog-body">
+                    在写代码的过程中，一个比较深的感触就是CSS选择器命名并没那么简单， 
+                    大框架的header、content、footer等等命名时还可以不假思索，
+                    但是当页面结构变得复杂，嵌套变多的时候，就会偶尔纠结于怎么使命名更加具有可读性。
+                    对于个人网站来说，命名问题可能影响不大，但是在团队当中，成员的个人习惯不同，
+                    这样写出的CSS选择器命名各式各样，对项目维护运营、内部技术沟通都会产生不利影响。</br>
 
-                            1.关于兼容性问题。在做任务的过程中，其实没有考虑太多兼容性的问题，
-                            看到电脑chrome上呈现的效果已经越来越接近效果图的时候内心是欣喜的，
-                            但是今天偶然间看到手机上显示的效果，内心几乎是崩溃的。。
-                            虽然现在用了比较笨的方法让手机上显示看着还凑合，但是在外接显示器上面还是不是想要的效果，
-                            兼容性问题确实需要好好学习。</br>
-                            2.“先完成，再完善”，舍友经常说的这句话，我觉得是对的，每次在一个细节处纠结的时候就用来提醒自己。
-                            毕竟要完善的空间其实是无限的，但是前提需要保证按照正常的进度完成。</br>
-                            3.就这样吧，虽然还没踩到deadline，但是默默地看群里大家的聊天，感觉群里话题离任务一渐远了，
-                            大家基本都在讨论任务二，我得赶紧交作业然后move on 了。。</br>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog-page">
-                        <ul class="blog-page-ul">
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">第一页</a>
-                            </li>
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">上一页</a>
-                            </li>
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">1</a>
-                            </li>
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">2</a>
-                            </li>
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">3</a>
-                            </li>
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">4</a>
-                            </li>
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">...</a>
-                            </li>
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">下一页</a>
-                            </li>
-                            <li class="blog-page-li">
-                            <a class="blog-page-a" href="#">最后页</a>
-                            </li>
-                        </ul>
-                    </div>
+                    以下记录一下网上整理的一些CSS命名常用规则，方便平时学习参考😄：</br>
+
+                    头 ：header 内容：content/container 尾：footer</br>
+
+                    导航：nav 侧栏：sidebar 栏目：column</br>
+
+                    页面外围控制整体布局宽度：wrapper 页面主体：main</br>
+
+                    登录条：loginbar 标志：logo 广告：banner</br>
+
+                    热点：hot 新闻：news 下载：download</br>
+
+                    子导航：subnav 菜单：menu 子菜单：submenu</br>
+
+                    搜索：search 友情链接：friendlink 页脚：footer</br>
+
+                    版权：copyright 滚动：scroll 内容：content</br>
+
+                    标签页：tab 文章列表：list 提示信息：msg</br>
+
+                    小技巧：tips 栏目标题：title 加入：joinus</br>
+                    </p>
+                    <p class="blog-publish">
+                    Lucky7ky发表于2015年4月12日
+                    </p>
                 </div>
-                <div class="content-center-aside">
-                    <form id="form-search">
-                        <input id="input-search" type="text"  value="Keywords">
-                        <input id="input-button" type="button" value="GO">
-                    </form>
-                    <ul class="blog-category">
-                        <li class="blog-category-li">
-                        <a class="blog-category-a" href="#">HTML</a>
+                <div class="blog">
+                    <div class="blog-tag">
+                        <p class="blog-tag-date">
+                        4.15
+                        </p>
+                        <p class="blog-tag-keyword">
+                        CSS
+                        </p>
+                    </div>
+                    <p class="blog-title">
+                    第二篇博客
+                    </p>
+                    <p class="blog-subtitle">
+                    关于设置banner背景图像问题
+                    </p>
+                    <p class="blog-body">
+                    在处理首页的banner背景图像时一开始不是很顺利，
+                    图像的位置比例总是不符合预期，后来查阅w3school上的相关内容，
+                    知道了background-size这个属性可以用来规定背景图像的尺寸,
+                    试了cover这个值正好可以实现想要的效果，不过由于浏览器支持问题这应该不是最好的方法，
+                    （IE9+、Firefox 4+、Opera、Chrome 以及 Safari 5+ 支持 background-size 属性。）
+                    但是还是值得记录一下，觉得每次发现一个想要的属性，有种相识恨晚的感觉，还是会惊喜一下。
+                    </br>
+                    background-size的几个值 </br>
+                    1. length 设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。
+                    如果只设置一个值，则第二个值会被设置为 "auto"。</br>
+                    2.percentage    以父元素的百分比来设置背景图像的宽度和高度。
+                    第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto。</br>
+                    3. cover    背景图像缩放,保留图像原有的比例/长宽比,
+                    不管背景图像大于还是小于背景区域，都会覆盖背景区域,
+                    图像的宽度或高度等于或超过背景区域,背景图像的某些部分可能不在背景区域内。</br>
+                    4.contain   背景图像缩放,同时保留图像原有的比例/长宽比,以尽可能大的覆盖背景区域。
+                    因此,根据背景图像的比例是否匹配背景区域,可能会有一些背景图像覆盖不到背景地区。
+                    </p>
+                    <p class="blog-publish">
+                    Lucky7ky发表于2015年4月15日
+                    </p>
+                </div>
+                <div class="blog">
+                    <div class="blog-tag">
+                        <p class="blog-tag-date">
+                        4.21
+                        </p>
+                        <p class="blog-tag-keyword">
+                        CSS
+                        </p>
+                    </div>
+                    <p class="blog-title">
+                    第三篇博客
+                    </p>
+                    <p class="blog-subtitle">
+                    几点感触
+                    </p>
+                    <p class="blog-body">
+                    简单写一下几点感触吧：</br>
+
+                    1.关于兼容性问题。在做任务的过程中，其实没有考虑太多兼容性的问题，
+                    看到电脑chrome上呈现的效果已经越来越接近效果图的时候内心是欣喜的，
+                    但是今天偶然间看到手机上显示的效果，内心几乎是崩溃的。。
+                    虽然现在用了比较笨的方法让手机上显示看着还凑合，但是在外接显示器上面还是不是想要的效果，
+                    兼容性问题确实需要好好学习。</br>
+                    2.“先完成，再完善”，舍友经常说的这句话，我觉得是对的，每次在一个细节处纠结的时候就用来提醒自己。
+                    毕竟要完善的空间其实是无限的，但是前提需要保证按照正常的进度完成。</br>
+                    3.就这样吧，虽然还没踩到deadline，但是默默地看群里大家的聊天，感觉群里话题离任务一渐远了，
+                    大家基本都在讨论任务二，我得赶紧交作业然后move on 了。。</br>
+                    </p>
+                    <p class="blog-publish">
+                    Lucky7ky发表于2015年4月21日
+                    </p>
+                </div>
+                <div class="blog-page">
+                    <ul class="blog-page-ul">
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">第一页</a>
                         </li>
-                        <li class="blog-category-li">
-                        <a class="blog-category-a" href="#">CSS</a>
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">上一页</a>
                         </li>
-                        <li class="blog-category-li">
-                        <a class="blog-category-a" href="#">JavaScript</a>
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">1</a>
                         </li>
-                        <li class="blog-category-li">
-                        <a class="blog-category-a" href="#">其他文章</a>
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">2</a>
+                        </li>
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">3</a>
+                        </li>
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">4</a>
+                        </li>
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">...</a>
+                        </li>
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">下一页</a>
+                        </li>
+                        <li class="blog-page-li">
+                        <a class="blog-page-a" href="#">最后页</a>
                         </li>
                     </ul>
-                    <div id="calendar">
-                        <div id="calendar-head">
-                            <div id="calendar-backward">
-                                <a class="calendar-head-a" href="#">&#60</a> 
-                            </div>
-                            <div id="calendar-foreward">
-                                <a class="calendar-head-a" href="#">&#62</a> 
-                            </div>
-                            <div id="calendar-head-date">
-                                <a class="calendar-head-a" href="#">2015.04</a> 
-                            </div>
+                </div>
+            </div>
+            <div class="content-aside">
+                <form id="form-search">
+                    <input id="input-search" type="text"  value="Keywords">
+                    <input id="input-button" type="button" value="GO">
+                </form>
+                <ul class="blog-category">
+                    <li class="blog-category-li">
+                    <a class="blog-category-a" href="#">HTML</a>
+                    </li>
+                    <li class="blog-category-li">
+                    <a class="blog-category-a" href="#">CSS</a>
+                    </li>
+                    <li class="blog-category-li">
+                    <a class="blog-category-a" href="#">JavaScript</a>
+                    </li>
+                    <li class="blog-category-li">
+                    <a class="blog-category-a" href="#">其他文章</a>
+                    </li>
+                </ul>
+                <div id="calendar">
+                    <div id="calendar-head">
+                        <div id="calendar-backward">
+                            <a class="calendar-head-a" href="#">&#60</a> 
                         </div>
-                        <ul class="calendar-date-ul">
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">M</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">T</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">W</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">T</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">F</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">S</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">S</a>
-                            </li>
-                        </ul>
-                        <ul class="calendar-date-ul">
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">1</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">2</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">3</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">4</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">5</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">6</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">7</a>
-                            </li>
-                        </ul>
-                        <ul class="calendar-date-ul">
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">8</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">9</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">10</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">11</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">12</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">13</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">14</a>
-                            </li>
-                        </ul>
-                        <ul class="calendar-date-ul">
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">15</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">16</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">17</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">18</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">19</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">20</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">21</a>
-                            </li>
-                        </ul>
-                        <ul class="calendar-date-ul">
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">22</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">23</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">24</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">25</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">26</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">27</a>
-                            </li>
-                            <li class="calendar-date-li">
-                            <a class="calendar-date-a" href="#">28</a>
-                            </li>
-                        </ul>
+                        <div id="calendar-foreward">
+                            <a class="calendar-head-a" href="#">&#62</a> 
+                        </div>
+                        <div id="calendar-head-date">
+                            <a class="calendar-head-a" href="#">2015.04</a> 
+                        </div>
                     </div>
-                    <div class="tags">
-                        <p class="tags-head">
-                        Tags
-                        </p>
-                        <p class="tags-body">
-                        <a class="tags-24px">JavaScript</a>
-                        <a class="tags-18px">CSS</a>
-                        <a class="tags-10px">flex</a>
-                        <a class="tags-10px">WebGL</a>
-                        <a class="tags-24px">HTML</a>
-                        <a class="tags-12px">Canvas</a>
-                        <a class="tags-12px">prototype</a>
-                        <a class="tags-18px">HTML5</a>
-                        <a class="tags-10px">grid</a>
-                        </p>
-                    </div>
+                    <ul class="calendar-date-ul">
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">M</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">T</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">W</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">T</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">F</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">S</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">S</a>
+                        </li>
+                    </ul>
+                    <ul class="calendar-date-ul">
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">1</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">2</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">3</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">4</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">5</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">6</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">7</a>
+                        </li>
+                    </ul>
+                    <ul class="calendar-date-ul">
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">8</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">9</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">10</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">11</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">12</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">13</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">14</a>
+                        </li>
+                    </ul>
+                    <ul class="calendar-date-ul">
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">15</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">16</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">17</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">18</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">19</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">20</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">21</a>
+                        </li>
+                    </ul>
+                    <ul class="calendar-date-ul">
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">22</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">23</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">24</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">25</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">26</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">27</a>
+                        </li>
+                        <li class="calendar-date-li">
+                        <a class="calendar-date-a" href="#">28</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <p class="tags-head">
+                    Tags
+                    </p>
+                    <p class="tags-body">
+                    <a class="tags-24px">JavaScript</a>
+                    <a class="tags-18px">CSS</a>
+                    <a class="tags-10px">flex</a>
+                    <a class="tags-10px">WebGL</a>
+                    <a class="tags-24px">HTML</a>
+                    <a class="tags-12px">Canvas</a>
+                    <a class="tags-12px">prototype</a>
+                    <a class="tags-18px">HTML5</a>
+                    <a class="tags-10px">grid</a>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="footer">
-            <ul class="footer-nav-ul">
+            <ul class="footer-nav">
                 <li class="footer-nav-li">
                 <a class="footer-nav-a" href="index.html">首页</a>
                 </li>
