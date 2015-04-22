@@ -39,33 +39,35 @@ ul {
 .header-inner {
     position: relative;
     width: 980px;
-    height: 80px;
     margin: 0 auto;
+    bottom: 0;
+    background-color: #522a5c;
+    z-index: 2;
 }
 
 .header-logo {
     position: absolute;
     left: 0;
     bottom: 0;
-    color: #ffffff;
+    color: white;
     font-size: 25px;
-    margin-bottom: 5px;
 }
 
 .header-nav {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 5px;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 5px;
+    height: 25px;
+
 }
 
 .header-nav li {
-    display: inline;
-    float: right;
     font-family: sans-serif;
     color: white;
-    font-size: 14px;
-    margin: 0 0 0 28px;
+    width: 60px;
+    text-align: center;
+    float: right;
+    line-height: 25px;
 }
 
 .header-nav li a {
@@ -76,6 +78,7 @@ ul {
     position: absolute;
     right: 10px;
     bottom: 0;
+    z-index: 1;
 }
 
 /*banner*/
@@ -840,5 +843,11 @@ div.about-item-time-last {
 }
 p.about-item-info-detail {
     font-size: 12px;
+}
+
+.blog-main-item li {
+    font-size: 12px;
+    list-style-type: circle;
+    margin-left: 40px;
 }
 

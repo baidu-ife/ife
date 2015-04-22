@@ -24,21 +24,39 @@
 <div class="blog-main clearFix">
     <div class="blog-main-left">
         <div class="blog-main-item">
-            <h2>这里是这篇文章的标题</h2>
-            <h3>这里是这篇文章的副标题</h3>
+            <h2>技术总结收获1</h2>
+            <h3>第一次写页面!</h3>
             <div class="blog-main-item-time">4.12</div>
             <div class="blog-main-item-tag">CSS</div>
-            <span class="blog-main-item-sign">YOUR NAME 发表于 2015年4月12日</span>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正这里是正文这里是正文这里是正文这里是正文文这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
+            <span class="blog-main-item-sign">Eiszitrone 发表于 2015年4月20日</span>
+            <p>在本次任务中， 我认真学习了html, css的基本知识， 并真正意义上的第一次将这些知识用于实现了较为复杂的页面， 在整个过程中， 不断学到新知识和解决一个个问题的过程让我感到兴奋， 并使我对创建简洁美观的页面产生了极大的兴趣。</p>
+            <p>同时我认识到， 还有许多知识点我掌握的不够扎实， 我会在以后的练习中进一步去巩固自己的基础知识。</p>
+            <p>本次任务学到的技术有: </p>
+            <ul>
+            <li>基本页面布局知识: header, main body, footer划分， main body左右两栏划分， 瀑布流实现方法(gallery.html)，中轴线居中实现方法(about.html) </li>
+            <li>盒模型的应用， position属性的应用(absolute, relative属性的灵活应用)， float属性的应用， line-height属性的应用， box-sizing: border-box属性的应用， z-index属性的应用等。
+            <li>熟练使用了chrome调试工具， 并对浏览器兼容性有了初步的认识。</li>
+            </ul>
+            
+        </div>
+
+        <div class="blog-main-item">
+            <h2>技术总结收获2</h2>
+            <h3>纪录一些tricks</h3>
+            <div class="blog-main-item-time">4.12</div>
+            <div class="blog-main-item-tag">CSS</div>
+            <span class="blog-main-item-sign">Eiszitrone 发表于 2015年4月20日</span>
+            <p>在这里我记录了一些学习到的常用小技巧：</p>
+            <ul>
+            <li>多列等高：使用外部 div: overflow:hidden与内部div使用很大的paddding-bottom， 与很大的负margin-bottom实现</li>
+            <li>解决内部div margin-top合并问题: 外部div使用 overflow: hidden属性
+            <li>inline-block空白间隔问题: 由换行符产生， 解决办法是使用font-size:0属性</li>
+            <li>解决当下层div 浮动时，上层 div无法撑开的问题： 解决办法1. 使用clearFix:after,.clearFix:before{ display: table; content: ''}
+            .clearFix:after {clear: both;} 解决办法2 外层div使用overflow: hidden</li>
+            <li>使文字垂直居中: 使line-height等于font-size</li>
+            <li>inline元素的padding和margin只会在水平方向上推开两边元素， 垂直方向上不会</li>
+            <li>水平居中div的两种方法: 1. 使用margin-left:auto, margin-right: auto. 2.使用position: absolute； left: 50%; margin-left: -width/2;</li>
+            </ul>
         </div>
 
         <div class="blog-main-item">
@@ -46,25 +64,7 @@
             <h3>这里是这篇文章的副标题</h3>
             <div class="blog-main-item-time">4.12</div>
             <div class="blog-main-item-tag">CSS</div>
-            <span class="blog-main-item-sign">YOUR NAME 发表于 2015年4月12日</span>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-            <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
-                这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正这里是正文这里是正文这里是正文这里是正文文这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
-        </div>
-
-        <div class="blog-main-item">
-            <h2>这里是这篇文章的标题</h2>
-            <h3>这里是这篇文章的副标题</h3>
-            <div class="blog-main-item-time">4.12</div>
-            <div class="blog-main-item-tag">CSS</div>
-            <span class="blog-main-item-sign">YOUR NAME 发表于 2015年4月12日</span>
+            <span class="blog-main-item-sign">Eiszitrone 发表于 2015年4月20日</span>
             <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
                 这里是正文这里是正文这里是正文这里是正文，这里是正文，这里是正文。</p>
             <p>这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文，这里是正文
@@ -109,7 +109,7 @@
         </ul>
 
         <div class="blog-cal-wrap">
-            <h3 class="clearFix blog-cal-date"><span class="blog-cal-date-left"><</span>2015.04<span class="blog-cal-date-right">></span></h3>
+            <h3 class=" blog-cal-date"><span class="blog-cal-date-left"><</span>2015.04<span class="blog-cal-date-right">></span></h3>
             <table class="blog-cal-table">
                 <tbody>
                 <tr>
