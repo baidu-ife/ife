@@ -70,7 +70,7 @@ hbBtn.on('keydown', function(evt){
     var keynum;
     keynum = window.event ? evt.keyCode : evt.which;
     if (keynum == 13) {
-        stopDefault(evt);}
+        $.stopDefault(evt);}
 });
 
 

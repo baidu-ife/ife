@@ -8,7 +8,7 @@ var divNew;
 //console.log(childDivList);
 
 childDivList.on('mousedown', selectElement);
-childDivList.on('mousedown', stopDefault);
+childDivList.on('mousedown', $.stopDefault);
 childDivList.on('mouseup', deselectElement);
 childDivList.on('mouseout', deselectElement);
 childDivList.on('mousemove', moveElement);
@@ -27,11 +27,12 @@ var diffY = 0;
 
 
 function selectElement(evt) {
-//    console.log('down');
+    console.log('down');
     var targetPstObj;
     var targetLeft, targetTop;
     var mouseLeft, mouseTop;
-    var target = evt.target;
+    var target = window.event? evt.srcElement:  evt.target;
+    console.log(target);
 
     targetPstObj = getPosition(target);
 
@@ -49,8 +50,9 @@ function selectElement(evt) {
 
 
 function moveElement(evt) {
-//    console.log('move');
-    var target = evt.target;
+    //console.log('move');
+    var target = window.event? evt.srcElement:  evt.target;
+    //console.log(target);
 
     var targetPstObj;
     var targetLeft, targetTop;
@@ -71,7 +73,7 @@ function moveElement(evt) {
     mouseLeft = evt.clientX;
     mouseTop = evt.clientY;
 
-    if (selectFlag == 1) {
+    if (selectFlag == 1 && deleteFlag == 0) {
 
         target.style.position = 'absolute';
         target.style.left = (mouseLeft - diffX) + 'px';
@@ -124,12 +126,17 @@ function moveElement(evt) {
                 console.log('delete');
                 target.parentNode.removeChild(target);
                 divNew.style.backgroundColor = '';
+                //selectFlag = 0;
 
                 addClass(divNew, 'child-div');
                 deleteFlag = 1;
             }
         }
 
+    }
+
+    if (deleteFlag == 1 && selectFlag == 1){
+        deselectElement();
     }
 
 
@@ -143,9 +150,11 @@ function doCreate(eleTarget) {
     return divNew;
 }
 
-function deselectElement(evt) {
-    //console.log('up');
+function deselectElement() {
+    console.log('up');
+
     selectFlag = 0;
+    console.log(selectFlag)
     createFlag = 1;
     deleteFlag = 0;
     diffX = 0;

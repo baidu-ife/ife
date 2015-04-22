@@ -6,7 +6,7 @@ var highlightFlag = -1;
 var liDateList = [];
 sgInput.on('keyup', inputChanged);
 sgInput.on('keydown', doHighlight);
-//sgInput.on('keydown',stopDefault);
+//sgInput.on('keydown',$.stopDefault);
 function inputChanged(evt) {
     var keynum;
     keynum = window.event ? evt.keyCode : evt.which;
@@ -24,7 +24,7 @@ function doHighlight(evt) {
     //keychar = String.fromCharCode(keynum);
     //alert(keynum+':'+keychar);
     if (keynum == 40) {
-        stopDefault(evt);
+        $.stopDefault(evt);
 
         sgInput.un('keyup', inputChanged);
 
@@ -45,7 +45,7 @@ function doHighlight(evt) {
         addClass(sgList[highlightFlag], 'sg-li-highlight');
 
     } else if (keynum == 38) {
-        stopDefault(evt);
+        $.stopDefault(evt);
 
         sgInput.un('keyup', inputChanged);
 
@@ -64,7 +64,7 @@ function doHighlight(evt) {
         addClass(sgList[highlightFlag], 'sg-li-highlight');
 
     } else if (keynum == 13) {
-        stopDefault(evt);
+        $.stopDefault(evt);
         console.log(liDateList[highlightFlag]);
         if (liDateList[highlightFlag]) {
             sgInput[0].value = liDateList[highlightFlag];
