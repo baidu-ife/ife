@@ -44,78 +44,146 @@ slideGuides.click(
         timeoutId = setTimeout(autoFlow, 1000*1);
 
     });
-
+//
 leftBtn.click(function(){
-    if (timeoutId) {
-        clearTimeout(timeoutId);
-    }
 
-    //leftBtn[0].disabled = '';
+    startTime = new Date();
+
+    timerId = setInterval(function () {
+        doSlide(slideId, 'left');
+
+    }, frameTime);
     slideId = slideId + 1;
     if (slideId == slideNum){
         slideId = 0;
-        //leftBtn[0].disabled = 'disabled';
 
     }
-    for (i = 0; i < slideNum; i++) {
-        if (i < slideId) {
-            slideLists[i].style.left = 100 + '%';
-        } else if (i > slideId) {
-            slideLists[i].style.left = -100 + '%';
-
-        } else {
-            slideLists[i].style.left = 0 + '%';
-        }
-    }
-    timeoutId = setTimeout(autoFlow, 1000*1);
 
 });
 rightBtn.click(function(){
-    if (timeoutId) {
-        clearTimeout(timeoutId);
-    }
-    //rightBtn[0].disabled = '';
+    startTime = new Date();
 
-    slideId = slideId - 1;
+    timerId = setInterval(function () {
+        doSlide(slideId, 'right');
+
+    }, frameTime);
+    slideId = slideId -1;
     if (slideId == -1){
-        slideId = slideNum - 1;
-        //rightBtn[0].disabled = 'disabled';
+        slideId = 4;
 
     }
-    for (i = 0; i < slideNum; i++) {
-        if (i < slideId) {
-            slideLists[i].style.left = 100 + '%';
-        } else if (i > slideId) {
-            slideLists[i].style.left = -100 + '%';
-
-        } else {
-            slideLists[i].style.left = 0 + '%';
-        }
-    }
-    timeoutId = setTimeout(autoFlow, 1000*1);
 });
 
 
-function autoFlow () {
-
-    var target = slideLists[slideId];
-    timeoutId = setTimeout(autoFlow, 1000*1);
-
-    start(target);
-
-    if (modeGlobal == 'left'){
-        slideId = slideId + 1;
-
-    } else if (modeGlobal == 'right'){
-        slideId = slideId - 1;
+function doSlide(slideId , mode) {
+    var per = Math.min(1.0, (new Date() - startTime) / dur);
+    var str,carouselNum;
+    var t = slideLists[slideId];
+    var tNext;
+    if (mode == 'left'){
+        tNext = slideLists[slideId + 1];
+    }else if(mode == 'right'){
+        tNext = slideLists[slideId - 1];
 
     }
-    if (slideId == slideNum) {
-        modeGlobal = 'right';
-        slideId = slideId - 2;
-    }else if (slideId == -1) {
-        modeGlobal = 'left';
-        slideId = slideId + 2;
+    //console.log(t);
+    //console.log(tNext);
+    if (per >= 1) {
+        clearTimeout(timerId);
+        //t.style.visibility = 'hidden';
+        if (tNext) {
+            if(mode == 'left'){
+                t.style.left = 100 + "%";
+
+                tNext.style.left = 0 + "%";
+            }else if (mode == 'right'){
+                t.style.left = -100 + "%";
+
+                tNext.style.left = 0 + "%";
+            }
+
+            //console.log(t.nextSibling.nextSibling.id + 'b1');
+            str = tNext.id;
+            carouselNum = parseInt(str.charAt(str.length - 1));
+            slideGuides.each(function () {
+                this.style.backgroundColor = '';
+            });
+            slideGuides[carouselNum - 1].style.backgroundColor = 'black';
+
+        } else {
+
+            if (mode == 'left'){
+                slideLists.each(function(){
+                    this.style.left = -100 + '%'
+                });
+                slideLists[0].style.left = 0 + "%";
+
+            }else if (mode == 'right'){
+                slideLists.each(function(){
+                    this.style.left = 100 + '%'
+                });
+                slideLists[4].style.left = 0 + "%";
+
+            }
+            //slideRight();
+        }
+
+    } else {
+        //var tLStart =
+        var spd = Math.round(per * 100);
+        //console.log(spd);
+
+        if (tNext) {
+            if (mode == 'left'){
+                t.style.left = spd + 0 + "%";
+
+                tNext.style.left = spd + -100 + "%";
+            }else if (mode == 'right'){
+                t.style.left = -spd + 0 + "%";
+
+                tNext.style.left = -spd + 100 + "%";
+            }
+
+            //console.log(t.nextSibling.nextSibling.id + 'a1');
+            str = tNext.id;
+            carouselNum = parseInt(str.charAt(str.length - 1));
+            slideGuides.each(function () {
+                this.style.backgroundColor = '';
+            });
+            slideGuides[carouselNum - 1].style.backgroundColor = 'black';
+
+        } else {
+            console.log('right');
+            console.log(slideLists[0]);
+            if (mode == 'left'){
+                t.style.left = spd + tLStart + "%";
+
+                slideLists[0].style.left = spd + tpLStart + "%";
+            }else if (mode == 'right'){
+                t.style.left = -spd + 0 + "%";
+
+                slideLists[4].style.left = -spd + 100 + "%";
+            }
+
+            //slideRight();
+            //modeGlobal = 'right';
+        }
+    }
+}
+
+function autoFlow () {
+
+    timeoutId = setTimeout(autoFlow, 1000*1);
+
+    startTime = new Date();
+
+    timerId = setInterval(function () {
+        doSlide(slideId, 'left');
+
+    }, frameTime);
+    slideId = slideId + 1;
+    if (slideId == slideNum){
+        slideId = 0;
 
     }
 }
