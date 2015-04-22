@@ -1,0 +1,743 @@
+.header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background: purple;
+}
+
+.image{
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    right: 10px;
+    bottom: 0px;
+}
+
+.header-inner{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+    height:80px;
+}
+
+.header-h1{
+    position: absolute;
+    color: white;
+}
+
+.menu{
+    position: absolute;
+    right: 0;
+    bottom:10px;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu li{
+    float: left;
+    margin-left: 25px;
+    color: white;
+    font-family: "SimSun", serif;
+    font-size: 14px;
+}
+
+.banner{
+    position: relative;
+    background-image:url("../img/banner-bg.jpg");
+    width: 100%;
+    height: 868px;
+}
+
+.banner-textbox{
+    position: absolute;
+    width:25%;
+    height: 10%;
+    right: 12%;
+    bottom:0;
+    background:linear-gradient(to bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.5) 75%,rgba(255,255,255,0));
+    padding-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+}
+
+.banner-h1{
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: white;
+    text-align: right;
+}
+
+.banner-p{
+    font-size:12px;
+    color:white;
+    line-height: 150%;
+}
+
+.three-culumn-container{
+    display: flex;
+    justify-content: center;
+
+}
+.three-culumn{
+    display: inline-block;
+    flex: initial;
+    text-align: center;
+    min-height: 180%;
+    width: 320px;
+    margin: 10px;
+    background: white;
+}
+
+.three-culumn-img{
+    width: 300px;
+    height: 180px;
+    padding-top: 10px;
+}
+
+.three-culumn-p{
+    font-size: 12px;
+    line-height: 170%;
+    margin-top: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 25px;
+}
+
+.portrait-container{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+.portrait{
+    position: relative;
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 1;
+}
+
+.introduction{
+    position: absolute;
+    width: 100%;
+    top:50px;
+
+    background: white;
+}
+
+.introduction-h1{
+    padding-top: 80px;
+    margin: 0;
+    font-size: 20px;
+    font-family: "Century Gothic", serif;
+    text-align: center;
+}
+
+.introduction-p{
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    width: 600px;
+    background: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer{
+    clear: both;
+
+    position: relative;
+    width: 100%;
+    background: black;
+}
+
+.footer-header{
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+.footer-column{
+    display: inline-block;
+    flex: initial;
+    text-align: center;
+    min-height: 180%;
+    width: 195px;
+    margin: 10px;
+}
+
+.footer-title{
+    margin: 20px;
+    color: gainsboro;
+}
+
+.footer-link{
+    color: white;
+}
+
+.footer-link-hover{
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.footer-copyright{
+    padding-top: 50px;
+
+    text-align: center;
+}
+
+
+.container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: gainsboro;
+}
+
+
+.wrapper{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    height:980px;
+    width: 980px;
+}
+
+.app-bar{
+    float: right;
+    width: 300px;
+    height: 100%;
+
+}
+
+.app-bar-box{
+    position: relative;
+    width: 300px;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.search{
+    position: relative;
+    width: 250px;
+    height: 53px;
+    border: solid;
+    border-color: gainsboro;
+    margin: auto;
+}
+
+.search input{
+    border: none;
+    outline: none;
+    width: 100px;
+    color: grey;
+}
+
+.search button{
+    float: right;
+    height: 53px;
+    width: 53px;
+    background: gainsboro;
+    border-left: solid;
+    color: white;
+}
+.search input:focus{
+    color: black;
+}
+
+.search button:focus {
+    background: grey;
+}
+
+
+.app-bar-box a:link,a:visited{
+    display:block;
+    font-size:20px;
+    color: black;
+    background-color:white;
+    width:287px;
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-top-color: gainsboro;
+    border-left: solid violet;
+    padding: 5px;
+    margin: 0;
+    text-decoration:none;
+}
+
+.app-bar-box a:hover,a:active{
+    border-left-color: purple;
+}
+
+.app-bar-buttons{
+    width: 300px;
+    height: 70px;
+    background: white;
+    border-left-color: violet
+}
+
+.app-bar-box h1{
+    text-align: center;
+    color: purple;
+}
+
+.app-bar-box table{
+    padding: 10px;
+}
+.app-bar-box th{
+    border: solid grey;
+    height: 40px;
+}
+.app-bar-box td{
+    border-bottom: 1px solid gainsboro;
+    text-align:center;
+    width: 40px;
+}
+
+.app-bar-box-h1{
+    color: purple;
+    font-size: 30px;
+}
+.app-bar-box-h2{
+    color: purple;
+    font-size: 25px;
+}
+.app-bar-box-h3{
+    color: purple;
+    font-size: 20px;
+}
+
+.app-bar-box-p{
+    color: purple;
+}
+
+.app-bar-box-inner{
+    padding:20px
+}
+
+.blog-text{
+    width: 650px;
+}
+
+.blog-text-box{
+    width: 640px;
+    background: white;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+.blog-text-box h1{
+    font-size: 16px;
+    color: purple;
+}
+
+.blog-text-box h2{
+    font-size: 12px;
+}
+.blog-text-box p{
+    font-size: 12px;
+    text-indent: 10px;
+}
+.blog-text-box-note{
+    color: grey;
+    text-align: right;
+}
+
+.blog-text-box-sidediv{
+    position: absolute;
+    left: -50px;
+    width: 50px;
+    height: 80px;
+    text-align: center;
+}
+
+.blog-text-box-sidediv-inner1{
+    width: 50px;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background: purple;
+}
+.blog-text-box-sidediv-inner2{
+    width: 50px;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background: violet;
+}
+
+.white16font{
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.grey12font{
+
+    font-size: 12px;
+    color: grey;
+    text-align: center;
+    vertical-align: middle;
+}
+.white12font{
+
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+.black12font{
+
+    font-size: 12px;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+.page-container{
+    margin: 15px;
+    text-align: center;
+}
+
+.page-normal{
+    display: inline-block;
+    padding-left:15px;
+    padding-right: 15px;
+    background: white;
+}
+
+.page-current{
+    display: inline-block;
+    padding-left:15px;
+    padding-right: 15px;
+    background: violet;
+}
+
+.tabmenu{
+    position: relative;
+    height: 40px;
+    background: white;
+}
+
+.tabmenu ul{
+    list-style-type: none;
+    display: block;
+}
+
+.tabmenu li{
+    display: block;
+    float: left;
+    margin-left: 5px;
+    padding: 15px 10px 10px 10px;
+    font-size: 14px;
+     border-top-style: solid;;
+}
+
+.tabmenu li a{
+    text-decoration: none;
+}
+
+
+.tabmenu li a:hover{
+    border-top-style: groove;
+}
+
+.tabmenu li.All{
+    border-top-color: purple;
+}
+
+.tabmenu li.allactive{
+    border-top-color: violet;
+}
+
+.tabmenu li.JavaScript{
+    border-top-color: purple;
+}
+
+.tabmenu li.UI{
+    border-top-color: blue;
+}
+.tabmenu li.Framework{
+    border-top-color: darkred;
+}
+.tabmenu li.Application{
+    border-top-color: yellow;
+}
+
+/*瀑布流css 多列浮动法，大块单独处理*/
+.fall-column-container{
+    float: left;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+.fall-column{
+    float: right;
+    width: 190px;
+    margin:10px
+}
+
+.fall-common{
+    float: left;
+    width: 190px;
+}
+
+.fall-common-purple{
+    float: left;
+    margin-top: 10px;
+    background: purple;
+    width: 190px;
+}
+
+.fall-common-blue{
+    float: left;
+    margin-top: 10px;
+    width: 190px;
+    background: blue;
+}
+
+.fall-common-yellow{
+    float: left;
+    margin-top: 10px;
+    width: 190px;
+    background: yellow;
+}
+
+.fall-common-darkred{
+    float: left;
+    margin-top: 10px;
+    width: 190px;
+    background: darkred;
+}
+
+.fall-special{
+    float: left;
+    width:390px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 10px;
+    background: purple;
+}
+
+.fall-common-img{
+    width:190px
+}
+
+.fall-special-img{
+    width:390px
+}
+
+.fall-letter{
+    float: left;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+}
+
+.fall-floatdiv{
+    float:right;
+    width: 130px;
+}
+
+.fall-column h1{
+    color: white;
+    font-size: 16px;
+}
+
+.fall-column p{
+    color: white;
+    font-size: 12px;
+}
+.fall-special  h1{
+    color: white;
+    font-size: 16px;
+}
+
+.fall-special p{
+    color: white;
+    font-size: 12px;
+}
+
+.bottom{
+    clear: left;
+    width: 630px;
+    height: 60px;
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.bottom-inner{
+    width: 650px;
+    height: 40px;
+    background: white;
+}
+
+.chart-img{
+    width: 150px;
+    height: 30px;
+}
+
+.chart-table{
+    padding:10px;
+}
+.chart-table th{
+    border-bottom:none;
+    height: 40px;
+}
+.chart-table td{
+    border-bottom:none;
+    text-align:left;
+    width: 40px;
+}
+
+.about-wrapper{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    height: 1300px;
+
+    width: 980px;
+    text-align: center;
+}
+
+.about-portrait{
+    position: relative;
+    width:120px;
+    height: 120px;
+    border-style: solid;
+    border-width: thick;
+    border-color: gainsboro;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 1;
+}
+
+.about-img{
+    position: relative;
+    width:80px;
+    height: 80px;
+    left: -50px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: gainsboro;
+    border-radius: 50%;
+    z-index: 1;
+
+  }
+
+.about-colunm-container{
+    position: absolute;
+    width: 980px;
+    top: 50px;
+}
+.about-colunm-left{
+    float: left;
+    width: 487px;
+    height: 1250px;
+    background: white;
+}
+
+.about-colunm-right{
+    float: right;
+    height: 1250px;
+    width: 487px;
+    background: white;
+    text-align: left;
+}
+
+.about-column-content{
+    position: relative;
+    width: 350px;
+    padding:15px 30px 15px 30px;
+
+}
+
+.about-column-intro{
+    position: relative;
+    width: 350px;
+    padding:90px 30px 15px 30px;
+
+}
+
+.about-colunm-right p{
+    font-size: 14px;
+
+}
+
+.about-experience{
+    position: relative;
+    width: 400px;
+    left: -50px;
+    z-index: 1;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.about-year{
+    float: left;
+    width: 50px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: gainsboro;
+    border-radius: 20%;
+    z-index: 1;
+    text-align: center;
+    background: white;
+}
+
+.about-place{
+    position: relative;
+    width: 300px;
+    padding-left: 90px;
+}
+
+.about-name{
+    position: relative;
+    top: 90px;
+    right: 70px;
+    text-align: right;
+}
+
+.about-name{
+    position: relative;
+    top: 90px;
+    right: 70px;
+    text-align: right;
+}
+.about-contact{
+    position: relative;
+    top: 240px;
+    right: 70px;
+    text-align: right;
+}
+
+.about-education{
+    position: relative;
+    top: 430px;
+    right: 70px;
+    text-align: right;
+}
+
+.about-employ{
+    position: relative;
+    top: 830px;
+    right: 70px;
+    text-align: right;
+}
+
+.about-colunm-left h1{
+    font-size: 20px;
+}
