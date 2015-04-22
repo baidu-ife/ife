@@ -1,0 +1,110 @@
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1423px;
+}
+.container {
+    min-height: 100%;
+    height: auto;
+    /*height: 100%;*/
+    width: 100%;
+    margin-bottom: 0 auto -200px;
+    background-color: #ddd;
+}
+.push,
+.footer {
+    height: 400px;
+    clear: both;
+}
+* a {
+    text-decoration: none;
+}
+.header ul a {
+    color: #fff;
+}
+.footer a {
+    color: #fff;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    background-color: #6B8E23;
+    height: 80px;
+}
+a.logo {
+    float: right;
+    padding-top: 46px;
+    padding-right: 10px;
+}
+.navbar_top {
+    width: 980px;
+    margin: 0 auto;
+}
+.navbar_top ul {
+    float: right;
+    font: 14px SimSun;
+    margin: 0;
+    padding-top: 61px;
+}
+.navbar_top li {
+    list-style-type:none;
+    margin: 0 14px;
+    float: left;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+}
+.navbar_bottom {
+    border-bottom: gray solid 1px;
+    height: 40px;
+    position: relative;
+}
+.navbar_bottom ul {
+    position:absolute;
+    left:50%;
+    margin: 0;
+    padding: 0;
+}
+.navbar_bottom li {
+    list-style-type: none;
+    margin: 10px 14px;
+    float: left;
+    position: relative;
+    right: 50%;
+    font-weight: bold;
+}
+.references {
+    clear: left;
+    height: 275px;
+    width: 980px;
+    margin: 0 auto;
+}
+.references ul {
+    list-style-type: none;
+    width: 196px;
+    display: block;
+    float: left;
+}
+.references ul>li:first-child {
+    margin: 30px 0;
+    text-align: left;
+}
+.copyright {
+    text-align: center;
+    height:80px;
+    clear:left;
+}
+
+/*以上是所有页面都可以共用的部分*/
+

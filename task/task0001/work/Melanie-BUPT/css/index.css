@@ -1,0 +1,182 @@
+.push {
+    height: 0;
+    clear: both;
+}
+.banner {
+    margin: 0;
+    width: 100%;
+    height: 623px;        /*浏览器宽度为1423px,图片原本分辨率为1980*868px*/
+    background-image: url(../img/banner-bg.jpg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.banner-container {
+    width: 980px;
+    margin: 0 auto;
+}
+.banner-box {
+    color: #fff;
+    width: 350px;
+    height: 150px;
+    margin-top: 470px;
+    padding: 10px 10px 30px;
+    float: right;
+    overflow: auto;
+    clear:both;
+    
+    background-image: -webkit-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.7) 0%,
+        rgba(255,255,255,0.5) 75%,
+        rgba(255,255,255,0) 100%);
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.7) 0%,
+        rgba(255,255,255,0.5) 75%,
+        rgba(255,255,255,0) 100%);
+}
+.title {
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 12px;   
+}
+.intro {
+    text-align: left;
+    text-indent: 2em;
+    font-size: 12px;
+    line-height: 150%;
+    margin-top: 12px;
+}
+
+.mainbody {
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+#mainbody3 {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #ddd;
+}
+#mainbody2 {
+    float: left;
+    width: 100%;
+    position: relative;
+    right: 320px;
+    background-color: #ddd;
+}
+#mainbody1 {
+    float: left;
+    width: 100%;
+    position: relative;
+    right: 320px;
+    background-color: #ddd;
+}
+#para-one {
+    width: 320px;
+    height: auto;
+    background-color: #fff;
+    float: left;
+    position: relative;
+    left: 660px;
+    overflow: hidden;
+    padding-top: 10px;
+    margin: 10px 5px 0 0;
+}
+#para-two {
+    width: 320px;
+    height: auto;
+    background-color: #fff;
+    float: left;
+    position: relative;
+    left: 660px;
+    overflow: hidden;
+    padding-top: 10px;
+    margin: 10px 5px 0;
+}
+#para-three {
+    width: 320px;
+    height: auto;
+    background-color: #fff;
+    float: left;
+    position: relative;
+    left: 660px;
+    overflow: hidden;
+    padding-top: 10px;
+    margin: 10px 0 0 5px;
+}
+.body-img {
+    text-align: center;
+}
+.body-text {
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    line-height: 170%;
+    padding: 15px 30px 25px;
+    text-indent: 2em;
+}
+
+.self-intro {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+
+    clear: left;
+    
+    /*margin-top: 50px;
+    padding-top: 50px;*/
+}
+.selfin {
+    width: 100%;
+    height: 210px;
+    padding-top: 50px;
+    background-color: #ddd;
+    margin-bottom: 50px;
+}
+#selfin-bg1 {
+    width: 100%;
+    height: 50px;
+    float: left;
+}
+#selfin {
+    width: 160px;
+    height: 160px;
+    float: left;
+    left: 44.5%;
+    margin: 0 auto;
+    position: absolute;
+}
+#selfin-bg2 {
+    width: 100%;
+    height: 110px;
+    background-color: #fff;
+    float: left;
+    top: 50px;
+}
+#self-content {
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+}
+#self-title {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Century Gothic";
+    color: #000;
+}
+#self-text {
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #000;
+    width: 600px;
+    margin: 0 auto;
+    text-indent: 2em;
+    line-height: 150%;
+    padding: 0 30px 25px;
+}
+#self-text span {
+    font-weight: bold;
+}
