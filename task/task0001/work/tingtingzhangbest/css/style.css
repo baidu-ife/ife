@@ -1,14 +1,19 @@
 *{margin: 0;padding:0;}
+html{
+	min-width: 980px;
+	
+}
 .bodycolor{background-color: #eee}
 #header{
 	background-color: #522A5C;
 	width:100%;
 	height:80px;
 	position:relative;
+	min-width: 1200px;
 }
 #header_a{
 	margin:0 auto;
-	width:960px;
+	width:980px;
 	height:80px;
 	position:relative;
 
@@ -71,8 +76,9 @@ ul,li{
 
 /*以下是index的布局*/
 #content1{
+	width:100%;
 	position:relative;
-	min-width: 80%;
+	min-width: 1200px;
 }
 .content_p{
 	width: 400px;
@@ -108,11 +114,11 @@ ul,li{
 	height: 450px;
 	background-color:#EEE;
 	margin-bottom: 450px;
-	
+	min-width: 1200px;
 
 }
 #content2_m_wrap{
-	min-width: 80%;
+    width: 1200px;
 	overflow: hidden;
 }
 .content2_m1{
@@ -124,6 +130,7 @@ ul,li{
 	background-color:#fff;
     padding-bottom: 5000px;
 	margin-bottom: -4980px;
+
 }
 .content2_m2{
 	width:320px;
@@ -149,6 +156,10 @@ ul,li{
 	width:100%;
 	position: relative;
 	background-color:#fff;
+}
+#content3_wrap{
+	width:800px;
+	min-width: 800px;
 }
 #content3_img{
 	width:160px;
@@ -193,8 +204,10 @@ ul,li{
 	border:1px solid #333;
 	border-color:#eee black #333 black; 
 	position: relative;
+	min-width: 1200px;
 }
 #content4_m{
+
 	position: absolute;
 	top:10px;
 	left:550px;
@@ -204,6 +217,12 @@ ul,li{
 	height:490px;
 	background-color: black;
 	position: relative;
+	min-width: 1200px;
+}
+#content5_wrap{
+	width:1200px;
+	min-width:1200px;
+	overflow: hidden;
 }
 .content5_m{
 	width:80px;
@@ -269,9 +288,13 @@ ul,li{
 	background-color: #eee;
 	padding-top: 20px;
 }
+#bigcontent_wrap{
+	width: 1250px;
+	margin:0 auto;
+}
 /*以下是左半部分的布局*/
 #leftcontent{
-	width:800px;
+	width:700px;
 	height:1000px;
 	margin-left: 120px;
 	float: left;
@@ -284,7 +307,7 @@ ul,li{
 	float: left;
 }
 .leftcontent_p{
-	width:800px;
+	width:700px;
 	background-color: white;
 	margin-bottom: 10px;
 	position: relative;
@@ -356,7 +379,7 @@ ul,li{
 #leftcontent_bottom{
 	width:650px;
 	height:50px;
-	margin-left: 100px;
+	margin-left: 50px;
 	margin-bottom: 50px;
 }
 .leftcontent_bottom1{
@@ -414,7 +437,7 @@ ul,li{
 	width:300px;
 }
 #rightcontent_top1{
-	width: 220px;
+	width: 260px;
 	height: 40px;
 	margin:25px auto;
 	border: 1px solid #e2e2e2;
@@ -540,9 +563,12 @@ ul,li{
 	font-weight: bold;
 }
 /*以下是gallery的布局*/
-
+#gallery_big_wrap{
+	width:1300px;
+	
+}
 #gallery_left{
-	width:800px;
+	width:762px;
 	margin-top: 20px;
 	margin-left: 120px;
 	float: left;
@@ -570,7 +596,7 @@ ul,li{
 }
 #gallery_left_title li{
 	height:40px;
-	padding: 8px 20px;
+	padding: 8px 17px;
 	display: inline-block;
 	background-color: white;
 	margin-right: -6px;
@@ -595,7 +621,7 @@ ul,li{
 	width:785px;
 	height: 1050px;
 	padding-top: 30px;
-	padding-left: 35px;
+	padding-left: 15px;
 	box-sizing:border-box;
 	position: relative;
 }
@@ -616,17 +642,17 @@ ul,li{
 #image2_1{
 	position: absolute;
 	top:345px;
-	left:225px;
+	left:205px;
 }
 #image3_1{
 	position: absolute;
 	top:30px;
-	left:410px;
+	left:390px;
 }
 #image4_1{
 	position: absolute;
 	top:30px;
-	left:595px;
+	left:575px;
 }
 .gallery_left_contains_p1{
 	width:340px;
@@ -732,7 +758,7 @@ ul,li{
 	clear:both;
 }
 #addmore{
-	width:800px;
+	width:755px;
 	height: 60px;
 	background-color: white;
 	clear: both;
