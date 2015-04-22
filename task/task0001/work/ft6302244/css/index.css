@@ -1,0 +1,116 @@
+.banner {
+    background: url("../img/banner-bg.jpg");
+    background-size: cover;
+    height: 525px;
+    /*width: 100%;*/
+    min-width: 980px;
+}
+
+.banner .content {
+    position: relative;
+    /*border: 1px solid black;*/
+    width: 980px;
+    height: 525px;
+    margin: 0 auto;
+}
+
+.banner .content .info {
+    padding: 10px 10px 30px 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 25%,
+    rgba(255, 255, 255, 0) 100%);
+}
+
+.banner .content .info h6 {
+    text-align: right;
+    font-size: 14px;
+}
+
+.banner .content .info p {
+    margin-top: 12px;
+    width: 300px;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+.content-wrap {
+    background: #eee;
+    padding-bottom: 180px;
+}
+
+.photo-wrap {
+
+    padding: 10px 0;
+    margin: 0 auto;
+    width: 980px;
+}
+
+.photo-wrap ul {
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    margin-right: -20px;
+}
+
+.photo-wrap ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.photo-wrap ul li {
+    background: #fff;
+    margin-right: 10px;
+    float: left;
+    width: 320px;
+    margin-bottom: -1000px;
+    padding-bottom: 1000px;
+}
+
+.photo-wrap ul li img {
+    margin-top: 10px;
+    width: 300px;
+    height: 180px;
+}
+
+.photo-wrap ul li p {
+    font-size: 12px;
+    line-height: 170%;
+    margin-top: 15px;
+    text-align: left;
+    padding: 0 30px 25px;
+}
+
+.self-wrap {
+    text-align: center;
+}
+
+.self-wrap .head-img {
+}
+
+.self-wrap .head-img img {
+    position: relative;
+    top: -50px;
+    height: 160px;
+    width: 160px;
+    border-radius: 80px;
+}
+
+.self-wrap .info h1 {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 20px;
+}
+
+.self-wrap .info p {
+    text-align: left;
+    text-indent: 2em;
+    font-size: 14px;
+    width: 600px;
+    margin: 20px auto;
+    line-height: 150%;
+}
