@@ -49,7 +49,6 @@ function uniqueArray(arr) {
             result.push(arr[i]);
         }
     }
-
     return result;
 }
 
@@ -313,10 +312,16 @@ function isIE() {
  * set a cookie name/value pair
  * @param name
  * @param value
- * @param expire
+ * @param expires e.g. new Date("April 24, 2015")
  */
-function setCookie(name, value, expire) {
+function setCookie(name, value, expires) {
+    var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value) ;
 
+    if (expires instanceof Date) {
+        cookieText += "; expires=" + expires.toUTCString();
+    }
+
+    document.cookie = cookieText;
 }
 
 /**
@@ -324,6 +329,65 @@ function setCookie(name, value, expire) {
  * @param name
  */
 function getCookie(name) {
+    var cookieName = encodeURIComponent(name) + "=",
+        cookieStart = document.cookie.indexOf(cookieName),
+        cookieValue = null;
 
+    if (cookieStart > -1) {
+        var cookieEnd = document.cookie.indexOf(";", cookieStart);
+        if (cookieEnd == -1) {
+            cookieEnd = document.cookie.length;
+        }
+        cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+    }
+
+    return cookieValue;
 }
 
+function ajax(url, options) {
+    var xhr = createXHR();
+    if (options.onsuccess) {
+        xhr.onload = options.onsuccess;
+    }
+
+    if (options.onfail) {
+        xhr.onerror = options.onfail;
+    }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                console.log(xhr.responseText);
+            } else {
+                console.error("Request was unsuccessful: " + xhr.status);
+            }
+        }
+    };
+    xhr.open(options.type, url, true);
+    xhr.send(options.data);
+}
+
+function createXHR() {
+    if (typeof XMLHttpRequest != 'undefined') {
+        return new XMLHttpRequest();
+    } else if (typeof ActiveXObject != 'undefined') {
+        if (typeof arguments.callee.activeXString != 'string') {
+            var versions = ['MSXML2.XMLHttp.6.0','MSXML2.XMLHttp.3.0','MSXML2.XMLHttp'],
+                i,
+                len;
+
+            for (i=0, len=versions.length; i<len; i++) {
+                try {
+                    new ActiveXObject(versions[i]);
+                    arguments.callee.activeXString = versions[i];
+                    break;
+                } catch (ex) {
+                    // skip
+                }
+            }
+        }
+
+        return new ActiveXObject(arguments.callee.activeXString);
+    } else {
+        throw new Error("No XHR object available!");
+    }
+}
