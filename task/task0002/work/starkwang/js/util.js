@@ -189,7 +189,6 @@ function searchParent(ele,selector){
 function fliterByParent(ele_array,selector){
 	var temparr = toArray(ele_array);
 	for(var i = 0 ; i < temparr.length ; i++){
-		console.log(!searchParent(temparr[i],selector));
 		if(!searchParent(temparr[i],selector)){
 			temparr.splice(i,1);
 			i = i - 1;
@@ -204,20 +203,16 @@ function $(selector){
 	}
 
 	//多层
-	console.log(trim(selector).split(" ").length > 1);
 	if(trim(selector).split(" ").length > 1){
 		var all = trim(selector).split(" ");
 		var root = $(all[all.length-1]);
-		console.log(root);
 		if(!root.length){
 			return root;
 		}
 		if(!isArray(root)){
 			root = toArray(root);
 		}
-		console.log(root);
 		for(var i = 2 ; i < all.length+2 && all.length-i >=0 ; i++){
-			console.log(all[all.length-i]);
 			root = fliterByParent(root,all[all.length-i]);
 		}
 		return root;
@@ -226,14 +221,12 @@ function $(selector){
 
 	//ID选择器
 	if(/#((?:[\w\u00c0-\uFFFF\-]|\\.)+)/.test(selector)){
-		console.log("id");
 		return document.getElementById(selector.slice(1,selector.length));
 	}
 
 
 	//tag选择器，只返回第一个
 	if(/^((?:[\w\u00c0-\uFFFF\-]|\\.)+)/.test(selector)){
-		console.log("tag");
 		return document.getElementsByTagName(selector)[0];
 	}
 
@@ -243,7 +236,6 @@ function $(selector){
 	class选择器，返回全部匹配项，复合选择器的实现需要匹配全部，所以只能暂时用这个
 	*/
 	if(/\.((?:[\w\u00c0-\uFFFF\-]|\\.)+)/.test(selector)){
-		console.log("class");
 		if(document.getElementsByClassName){
 			return document.getElementsByClassName(selector.slice(1,selector.length));
 		}
@@ -261,7 +253,6 @@ function $(selector){
 	/*
 	下面是符合任务要求的class选择器，只返回第一个匹配项。
 	if(/\.((?:[\w\u00c0-\uFFFF\-]|\\.)+)/.test(selector)){
-		console.log("class");
 		if(document.getElementsByClassName){
 			return document.getElementsByClassName(selector.slice(1,selector.length))[0];
 		}

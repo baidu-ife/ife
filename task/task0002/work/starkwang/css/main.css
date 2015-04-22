@@ -1,0 +1,25 @@
+#error{
+	color: red;
+	display: none;
+}
+#text{
+	width: 200px;
+	height: 100px;
+	font-size: 20px;
+}
+
+#checkbox{
+	margin-top: 20px;
+}
+
+#checkbox  p{
+	float: left;
+	margin: 0;
+}
+#checkbox input{
+	float: left;
+	margin: 4px;
+}
+#checkbox > div{
+	overflow: hidden;
+}
