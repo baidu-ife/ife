@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>task0002_3</title>
     <style type="text/css">
-        .slider-ele {
+        .slide-ele {
             width: 100%;
             height: 300px;
             background-color: blue;
@@ -17,7 +17,7 @@
             visibility: visible;
             left: -100%;
         }
-        #slider-wrap {
+        #slide-wrap {
             height: 300px;
         }
         .on {
@@ -26,7 +26,7 @@
         a {
             text-decoration: none;
         }
-        #slider-main{
+        #slide-main {
             position: relative;
             background-color: red;
         }
@@ -53,16 +53,20 @@
     </style>
 </head>
 <body>
-<div id="slider-wrap">
-    <ul id="slider-main">
-        <li class="slider-ele on" id="slider-ele1"><a href="">1</a></li>
-        <li class="slider-ele" id="slider-ele2"><a href="">2</a></li>
-        <li class="slider-ele" id="slider-ele3"><a href="">3</a></li>
-        <li class="slider-ele" id="slider-ele4"><a href="">4</a></li>
-        <li class="slider-ele " id="slider-ele5"><a href="">5</a></li>
+<div id="slide-wrap">
+    <ul id="slide-main">
+        <li class="slide-ele on" id="slide-ele1"><a href="">1</a></li>
+        <li class="slide-ele" id="slide-ele2"><a href="">2</a></li>
+        <li class="slide-ele" id="slide-ele3"><a href="">3</a></li>
+        <li class="slide-ele" id="slide-ele4"><a href="">4</a></li>
+        <li class="slide-ele " id="slide-ele5"><a href="">5</a></li>
     </ul>
 </div>
 <div id="slider-guide"></div>
+<button id="right-btn"> < </button>
+<button id="left-btn"> > </button>
+
+
 <script src="js/util.js"></script>
 <script src="js/task0002_3.js"></script>
 </body>
