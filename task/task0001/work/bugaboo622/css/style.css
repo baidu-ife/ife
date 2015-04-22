@@ -1,4 +1,4 @@
-/*reset*/
+/*=====reset=====*/
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
 input,textarea,p,th,td { 
 margin:0; 
@@ -8,27 +8,15 @@ table {
 border-collapse:collapse; 
 border-spacing:0; 
 } 
-fieldset,img { 
+img { 
 border:0; 
-} 
-address,caption,cite,code,dfn,em,strong,th,var { 
-font-style:normal; 
-font-weight:normal; 
 } 
 ol,ul { 
 list-style:none; 
 } 
-caption,th { 
-text-align:left; 
-} 
 h1,h2,h3,h4,h5,h6 { 
 font-size:100%; 
 font-weight:normal; 
-} 
-q:before,q:after { 
-content:”; 
-} 
-abbr,acronym { border:0; 
 } 
 a{
 	text-decoration: none;
@@ -36,13 +24,14 @@ a{
 img{
 	display: block;
 }
+
+/*=====common=====*/
 p{
 	font-size: 12px;
 }
 body{
 	background: #eeeeee;
 }
-/*header*/
 #header{
 	height: 80px;
 	width: 100%;
@@ -91,8 +80,65 @@ body{
 	display: none;
 	}
 }
-/*header end*/
-/* index banner*/
+/*footer*/
+#bottom{
+    clear: both;
+    background:black;
+    height: 35px;
+    border-bottom: 1px solid #333333;
+}
+#bottom-navbar{
+    width: 208px;
+    margin: auto;
+}
+.bottom-nav a{
+    margin:0 14px;
+    float:left;
+    font-family: 宋体;
+    font-size: 12px;
+    line-height: 35px;
+    color: white;
+}
+#information{
+    background: black;
+    overflow: hidden;
+}
+#row{
+    overflow: hidden;
+    margin: 16px auto 0;
+    width: 980px;
+}
+.link{
+    float: left;
+    width: 20%;
+    color: white;
+}
+.link dt{
+    line-height: 64px;
+    font-size: 12px;
+    color: #cccccc;
+}
+.link a{
+    display: block;
+    line-height: 18px;
+    font-size: 12px;
+    font-family: 宋体;
+    color: white;
+}
+.link a:hover{
+    text-decoration: underline;
+}
+#copyright{
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 98px;
+}
+#copyright img{
+    margin: 20px auto 0;
+}
+
+/*=====index=====*/
 #banner{
 	min-width: 980px;
 	position: relative;
@@ -108,9 +154,11 @@ body{
 	bottom: 0;
 	right: 110px;
 	color: white;
-	background-color: #ffffff;
-    background:-webkit-gradient(linear,left 100%,left 25%, from(rgba(255,255,255,0.7)), to(rgba(255,255,255,0.5)));
-    background:-webkit-gradient(linear,left 25%,left bottom, from(rgba(255,255,255,0.5)), to(rgba(255,255,255,0)));
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(75%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
 .banner-titel{
 	float: right;
@@ -184,7 +232,7 @@ body{
 	text-indent: 2em;
 }
 /* index self-introduction end*/
-/*blog*/
+/*=====blog=====*/
 #wrapper{
 	width: 980px;
 	margin: 20px auto 0;
@@ -383,13 +431,18 @@ body{
 	width: 26px;
 	color: #999999;
 }
-#calender td a:hover{
-	background: #773c88;
-	color: white;
-}
 #calender td .today{
-	color: #773c88;
-	font-weight: bold;
+	background: #773c88;
+    color: white;
+}
+#calender td .past,
+#calender td .then{
+    color: #c9c9c9;
+    cursor: text;
+}
+#calender td .holiday{
+    color: #773c88;
+    font-weight: bold;
 }
 /*calender end*/
 /*tags cloud*/
@@ -423,7 +476,7 @@ body{
 /*tags cloud*/
 /*blog side end*/
 /*blog end*/
-/*gallery*/
+/*======gallery======*/
 /*nav-bar*/
 #nav-bar{
     font-family: Arial, sans-serif;
@@ -539,7 +592,6 @@ body{
     height: 24px;
     width: 100px; 
     overflow:hidden; 
-    text-overflow:ellipsis; 
     white-space:nowrap; 
     font-size: 14px; 
     line-height: 1.5; 
@@ -668,15 +720,14 @@ body{
     cursor: pointer;
 }
 /*rank end*/
-/*gallery end*/
-/*about*/
+/*=====gallery end=====*/
+/*======about======*/
 .about{ 
     position: relative; 
     background-color: #fff; 
     margin-top: 100px; 
     margin-bottom: 20px; 
     text-align: center; 
-    border-radius: 30px 30px 0 0; 
 }
 .center-line { 
     position: absolute; 
@@ -691,24 +742,30 @@ body{
 .about-list { 
     position: relative; 
     z-index: 2; 
-    padding-bottom: 200px; 
+    padding-bottom: 200px;
+    padding-top: 126px; 
 }
-.about-photo,
+.about-photo{ 
+    width: 160px;
+    height: 160px;
+    border: 5px solid #eee;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    border-radius: 100%;
+    z-index: 10;
+}
 .photo-small { 
     margin: 0 auto; 
-    width: 160px; 
-    height: 160px; 
-    margin-top: -60px;
-    margin-bottom: 20px; 
-    border-radius: 100%; 
-    border: 10px solid #eee; 
-}
-.photo-small { 
     display: block; 
     width: 100px; 
     height: 100px; 
     margin-top: 0; 
-    border: 5px solid #eee; 
+    border: 5px solid #eee;
+    margin-bottom: 20px; 
+    border-radius: 100%; 
 }
 .about-list li { 
     position: relative; 
@@ -760,62 +817,4 @@ body{
     width: 200px;
 }
 
-/*about end*/
-/*footer*/
-#bottom{
-	clear: both;
-	background:black;
-	height: 35px;
-	border-bottom: 1px solid #333333;
-}
-#bottom-navbar{
-	width: 208px;
-	margin: auto;
-}
-.bottom-nav a{
-	margin:0 14px;
-	float:left;
-	font-family: 宋体;
-	font-size: 12px;
-	line-height: 35px;
-	color: white;
-}
-#information{
-	background: black;
-	overflow: hidden;
-}
-#row{
-	overflow: hidden;
-	margin: 16px auto 0;
-	width: 980px;
-}
-.link{
-	float: left;
-	width: 20%;
-	color: white;
-}
-.link dt{
-	line-height: 64px;
-	font-size: 12px;
-	color: #cccccc;
-}
-.link a{
-	display: block;
-	line-height: 18px;
-	font-size: 12px;
-	font-family: 宋体;
-	color: white;
-}
-.link a:hover{
-	text-decoration: underline;
-}
-#copyright{
-	color: white;
-	text-align: center;
-	font-size: 12px;
-	margin-top: 98px;
-}
-#copyright img{
-	margin: 20px auto 0;
-}
-/*footer end*/
+/*======about end======*/
