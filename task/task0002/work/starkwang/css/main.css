@@ -23,3 +23,15 @@
 #checkbox > div{
 	overflow: hidden;
 }
+
+#gallery{
+	overflow: hidden;
+	position: relative;
+}
+.gallery-picture{
+	transition:all 1s;
+	width: inherit;
+	height: inherit;
+	background-size: cover;
+	position: absolute;
+}
