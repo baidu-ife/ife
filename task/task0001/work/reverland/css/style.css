@@ -44,6 +44,7 @@ body {
         right: 10px;
         bottom: 0;
         padding-bottom: 0;
+        border: none;   /* 告诉我IE为啥会有个蓝色的框 */
     }
 }
 @media screen and (max-width:979px) {
@@ -95,7 +96,7 @@ body {
     padding: 10px 10px 30px 10px;
     background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.15) 75%, rgba(255,255,255,0) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0)), color-stop(0.75, rgba(255,255,255,0.15))); /* webkit */
-    ms-filter:alpha(opacity=30 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=200) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);/* IE8 */
+    -ms-filter:alpha(opacity=30 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=200) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);/* IE8 */
 } 
 #intro-bg h2 {
     font-weight: normal;
@@ -580,6 +581,7 @@ p.position {
     float: left;
     width: 48px;
     height: 38px;
+    text-indent: 3em;
     border: 1px solid #dddddd;
     background-color: #dddddd;
     color: white;
