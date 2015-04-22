@@ -592,8 +592,8 @@ p.position {
 
 #sb_form_q:focus + #sb_form_go{
     border: 1px solid #343434;
-    text-indent: 3em;
 }
+
 #sb_form_q:focus {
     border: 1px solid #343434;
     border-right: none;
