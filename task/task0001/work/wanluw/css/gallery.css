@@ -1,0 +1,232 @@
+body {
+    font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, simsun, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.wrapper {
+    background-color: #EEE;
+}
+.inner {
+    width: 980px;
+    margin: 0 auto;
+}
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.header {
+    margin-bottom: 20px;
+}
+.content {
+    float: left;
+    width: 710px;
+}
+.tabmenu-item {
+    float: left;
+}
+.tabmenu-link {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #000;
+    background-color: #FFF;
+    border-right: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+}
+.tabmenu-all {
+    border-top: 4px solid #E1C6E4;
+}
+.tabmenu-all:hover,
+.tabmenu-this {
+    border-top: 4px solid #542A59;
+    border-bottom: 1px solid #FFF;
+}
+.tabmenu-js {
+    border-top: 4px solid #E1C6E4;
+}
+.tabmenu-js:hover {
+    border-top: 4px solid #542A59;
+    border-bottom: 1px solid #FFF;
+}
+.tabmenu-ui {
+    border-top: 4px solid #D5A7F9;
+}
+.tabmenu-ui:hover {
+    border-top: 4px solid #5E0BAB;
+    border-bottom: 1px solid #FFF;
+}
+.tabmenu-framework {
+    border-top: 4px solid #FFA890;
+}
+.tabmenu-framework:hover {
+    border-top: 4px solid #8F210B;
+    border-bottom: 1px solid #FFF;
+}
+.tabmenu-applications {
+    border-top: 4px solid #FFE093;
+}
+ .tabmenu-applications:hover {
+    border-top: 4px solid #DBA234;
+    border-bottom: 1px solid #FFF;
+}
+.pictures {
+    width: 670px;
+    padding: 20px;
+    float: left;
+    background-color: #FFF;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.pic-left {
+    width: 330px;
+    float: left;
+    overflow: hidden;
+}
+.pic-left-left,
+.pic-right-left {
+    width: 160px;
+    margin-right: 10px;
+    float: left;
+}
+.pic-left-right,
+.pic-right-right {
+    width: 160px;
+    float: left;
+}
+.pic-right {
+    width: 330px;
+    float: right;
+}
+.pic-img {
+    display: block;
+}
+.pic{
+    float: left;
+    width: 160px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.pic-first {
+    width: 330px;
+}
+.pic-content-num {
+    float: left;
+    width: 27px;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFF;
+    border-radius: 50%;
+    border: 1px solid #B8B2B9;
+    margin-right: 10px;
+}
+.pic-content-main {
+    overflow: hidden;
+}
+.pic-content {
+    background-color:#542A59;
+    padding: 10px 10px 20px;
+    color: #FFF;
+}
+.pic-title {
+    font-size: 14px;
+}
+.pic-color1 {
+    background-color: #DBA234;
+}
+.pic-color2 {
+    background-color: #8F210B;
+}
+.pic-color3 {
+    background-color: #5E0BAB;
+}
+.more {
+    clear: both;
+    text-align: center;
+    background-color: #FFF;
+    margin-bottom: 200px;
+}
+.more-link {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #666;
+}
+.more-img {
+    display: inline-block;
+    height: 16px;
+    width: 18px;
+    margin-bottom: -7px;
+    margin-right: 13px;
+    background: url(../img/more.png) no-repeat center center;
+}
+.sidebar {
+    float: right;
+    width: 260px;
+}
+.ranking {
+    padding-top: 20px;
+    padding-left: 13px;
+    padding-bottom: 32px;
+    background-color: #FFF;
+    margin-top: 10px;
+}
+.ranking-title {
+    padding-left: 2px;
+    padding-bottom: 26px;
+    font-size: 14px;
+    color: #666;
+}
+.ranking-item {
+    margin-bottom: 10px;
+}
+.ranking-num {
+    display: inline-block;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    color: #FFF;
+    border-radius: 50%;
+    margin-right: 12px;
+    font-size: 8px;
+    background-color: #542A59;
+    vertical-align: middle;
+}
+.rangking-bar {
+    display: inline-block;
+    height: 16px;
+    width: 100px;
+    border: 1px solid #542A59;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.ranking-inner {
+    float: left;
+    height: 100%;
+    background-color: #542A59;
+}
+.ranking-first {
+    width: 100%;
+}
+.ranking-second {
+    width: 86%;
+}
+.ranking-third {
+    width: 67%;
+}
+.ranking-forth {
+    width: 41%;
+}
+.ranking-fifth {
+    width: 26%;
+}
