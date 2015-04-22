@@ -27,13 +27,13 @@
     
     background-image: -webkit-linear-gradient(
         to bottom,
-        rgba(255,255,255,0.7) 0%,
-        rgba(255,255,255,0.5) 75%,
+        rgba(255,255,255,0.3) 0%,
+        rgba(255,255,255,0.2) 75%,
         rgba(255,255,255,0) 100%);
     background-image: linear-gradient(
         to bottom,
-        rgba(255,255,255,0.7) 0%,
-        rgba(255,255,255,0.5) 75%,
+        rgba(255,255,255,0.3) 0%,
+        rgba(255,255,255,0.2) 75%,
         rgba(255,255,255,0) 100%);
 }
 .title {
