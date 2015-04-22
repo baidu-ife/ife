@@ -63,7 +63,7 @@
             // addClickEvent(oBtn1, alertM);
             // addEnterEvent(document, alertA);
             // $.enter(document, alertA);
-            // $.click($("#btn1"),alertA);
+            // $.click("#btn2",alertA);
 
 
             function renderList() {
@@ -73,12 +73,12 @@
                 console.log(event);
             }
             function init() {
-                /*each($("#list").getElementstagName('li'), function(item) {
-                    $.click(item, clickListener);
-                })*/
-                delegateEvent($("#list"), "li", "click", clickListener);
+                // each($("#list").getElementstagName('li'), function(item) {
+                //     $.click(item, clickListener);
+                // })
+                $.delegate("#list", "li", "click", clickListener);
 
-                $.click($("#btn2"), renderList);
+                $.click("#btn2", renderList);
             }
             init();
             // $.click($("#list"), clickListener);

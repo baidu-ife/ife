@@ -240,11 +240,11 @@ function addEnterEvent(element, listener) {
             }
 }
 // 把上面几个函数和$做一下结合，把他们变成$对象的一些方法
-    $.on = function addEvent(element, event, listener) {
+    /*$.on = function addEvent(element, event, listener) {
             if (element.addEventListener) {
-             element.addEventListener(event, listener, false);
+                element.addEventListener(event, listener, false);
             }else if (element.attachEvent) {
-             element.attachEvent("on" + event, listener);
+                element.attachEvent("on" + event, listener);
             }else {
                 element["on" + event] = listener;
             }
@@ -264,9 +264,7 @@ function addEnterEvent(element, listener) {
         }
     $.click = function addClickEvent(element, listener) {
             if (element.addEventListener) {
-                element.addEventListener("click",  function () {
-                    listener(element);
-                }, false);
+                element.addEventListener("click", listener, false);
             }else if (element.attachEvent) {
                 element.attachEvent("onclick", listener);
             }else {
@@ -323,9 +321,9 @@ function addEnterEvent(element, listener) {
                         }
                     };
                 }
-    }
+    }*/
 
-// 事件代理  //console.log(event) show the undefined
+// 事件代理
 function delegateEvent(element, tag, eventName, listener) {
     if (element.addEventListener) {
         element.addEventListener(eventName, function (ev) {
@@ -353,3 +351,65 @@ function delegateEvent(element, tag, eventName, listener) {
             }
 }
 
+// 函数里面一堆$看着晕啊，那么接下来把我们的事件函数做如下封装改变
+$.on = function addEvent(selector, event, listener) {
+            var element = $(selector);
+            if (element.addEventListener) {
+                element.addEventListener(event, listener, false);
+            }else if (element.attachEvent) {
+                element.attachEvent("on" + event, listener);
+            }else {
+                element["on" + event] = listener;
+            }
+        }
+$.un = function removeEvent(selector, event, listener) {
+            if (listener) {
+                var element = $(selector);
+            if (element.removeEventListener) {
+                element.removeEventListener(event, listener, false);
+            }else if (element.detachEvent) {
+                element.detachEvent("on" + event, listener);
+            }else {
+                element["on" + event] = null;
+                }
+            }else {
+                return; ///?????
+            }
+        }
+$.click = function addClickEvent(selector, listener) {
+            var element = $(selector);
+            if (element.addEventListener) {
+                element.addEventListener("click", listener, false);
+            }else if (element.attachEvent) {
+                element.attachEvent("onclick", listener);
+            }else {
+                element.onclick = listener;
+            }
+        }
+$.delegate = function delegateEvent(selector, tag, eventName, listener) {
+                var element = $(selector);
+                if (element.addEventListener) {
+                    element.addEventListener(eventName, function (ev) {
+                        var ev = ev || event;
+                        var target = ev.target || ev.srcElement;
+                        if (target.nodeName.toLowerCase() == tag) {
+                            listener(target);//传参数给listener函数
+                        }
+                    },false)
+                } else if (element.attachEvent) {
+                        element.attachEvent( "on" + eventName, function (ev) {
+                        var ev = ev || event;
+                        var target = ev.target || ev.srcElement;
+                        if (target.nodeName.toLowerCase() == tag) {
+                            listener(target);//传参数给listener函数
+                        }
+                    })
+                }else {
+                    element["on" + eventName] = function (ev) {
+                        var oEvent = ev || event;
+                        if (oEvent.keyCode == 13) {
+                            listener(target);
+                        }
+                    };
+                }
+            }
