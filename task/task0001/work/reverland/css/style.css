@@ -90,13 +90,12 @@ body {
     bottom: 0;
     right: 0;
     width: 360px;
-    height: 590px;
     color: white;
     text-indent: 2em;
     padding: 10px 10px 30px 10px;
     background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.15) 75%, rgba(255,255,255,0) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, top, bottom, from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0)), color-stop(rgba(255,255,255,0.15), 75%)); /* webkit */
-    ms-filter:alpha(opacity=30 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=590) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);/* IE8 */
+    ms-filter:alpha(opacity=30 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=200) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);/* IE8 */
 } 
 #intro-bg h2 {
     font-weight: normal;
