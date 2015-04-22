@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>blog文章</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="wrap">
+            <h3 class="logo">YourLOGO</h3>
+            <ul class="nav">
+                <li><a href="about.html">关于</a>
+                </li>
+                <li><a href="gallery.html">作品</a>
+                </li>
+                <li><a href="blog.html">文章</a>
+                </li>
+                <li><a href="index.html">首页</a>
+                </li>
+            </ul>
+        </div>
+        <a href="https://github.com/julytian" class="icon" target="_blank">
+            <img src="img/icon-github.png" alt="github">
+        </a>
+    </header>
+
+    <div class="blog_wrapper">
+        <div class="blog_main">
+            <section>
+                <span class="date">4.21</span>
+                <span class="tag">CSS</span>
+                <header>
+                    <h1>学习心得总结 </h1>
+                    <h3>遇到的问题</h3>
+                </header>
+                <article>
+                    <p>1. 在首页中窗口缩小到980px时，出现横向滚动条，拉动滚动条时，右边会显示空白。即是背景已经设置了宽度100%，网上查阅资料，更多的给定一个具体的宽度，这里我选择了min-width=980px,这样虽然可以在窗口缩小时banner宽度保持宽度100%，但感觉有时是否还有更好的解决方法兼容IE低版本？</p>
+                    <p>2. 有几个地方处理很不好。例如：gallery作品页瀑布流布局那里，我采用了定位方法布局，有个严重问题就是如果子内容无法撑开父级的高度，查阅资料说是我浮动脱离文档流，父级需要清除浮动就可以解决了。实际中我也尝试这样的写法，问题还是无法解决，最后我采用了死方法给定具体的高度，我知道这是不好的方法，期待有解决的方法！</p>
+                    <p>3. 首页那个三列等高，一开始不知怎么适应相同高度，后来在Q群里面了解到可以用padding margin 还有overflow三个属性来解决</p>
+                </article>
+                <footer>
+                    <p>julytian 发表于 2015年4月21日</p>
+                </footer>
+            </section>
+            <section>
+                <span class="date">4.21</span>
+                <span class="tag">CSS</span>
+                <header>
+                    <h1>box-sizing的使用</h1>
+                    <h3>css3新属性</h3>
+                </header>
+                <article>
+                    <p> box-sizing CSS3的box属性之一，遵循CSS的Box model原理。CSS中Box model是分为两种，第一种是W3C的标准模型，另一种是IE的传统模型，他们相同之处都是对元素计算尺寸的模型，具体说就是对元素的width,height,padding,border以及元素实际尺寸的计算关系。 </p>
+                    <p>1、W3C的标准Box Model:</p>
+                    <p>
+                        <pre>
+  /*外盒尺寸计算（元素空间尺寸）*/
+  Element空间高度 = content height + padding + border + margin
+  Element 空间宽度 = content width + padding + border + margin
+  /*内盒尺寸计算（元素大小）*/
+  Element Height = content height + padding + border （Height为内容高度）
+  Element Width = content width + padding + border （Width为内容宽度）
+                       </pre>
+                    </p>
+                    <p>2、IE)传统下Box Model</p>
+                    <p>
+                        <pre>
+   /*外盒尺寸计算（元素空间尺寸）*/
+  Element空间高度 = content Height + margin (Height包含了元素内容宽度，边框宽度，内距宽度)
+  Element空间宽度 = content Width + margin (Width包含了元素内容宽度、边框宽度、内距宽度)
+  /*内盒尺寸计算（元素大小）*/
+  Element Height = content Height(Height包含了元素内容宽度，边框宽度，内距宽度)
+  Element Width = content Width(Width包含了元素内容宽度、边框宽度、内距宽度)
+                        </pre>
+                    </p>
+                    <p>
+                        在这次的about页面布局中，圆角头像处理中为了不让border撑开box的width，height，采用了box-sizing: border-box 处理，感觉这个新属性非常有用，但是可惜的是IE8以下不支持。
+                    </p>
+                </article>
+                <footer>
+                    <p>julytian 发表于 2015年4月21日</p>
+                </footer>
+            </section>
+            <section>
+                <span class="date">4.21</span>
+                <span class="tag">CSS</span>
+                <header>
+                    <h1>属性书写顺序</h1>
+                    <h3>属性书写顺序</h3>
+                </header>
+                <article>
+                    <p>同一 rule set 下的属性在书写时，应按功能进行分组，并以 Formatting Model（布局方式、位置） > Box Model（尺寸） > Typographic（文本相关） > Visual（视觉效果） 的顺序书写，以提高代码的可读性。</p>
+                    <p>
+                        Formatting Model 相关属性包括：position / top / right / bottom / left / float / display / overflow 等 </p>
+                    <p>Box Model 相关属性包括：border / margin / padding / width / height 等 </p>
+                    <p>Typographic 相关属性包括：font / line-height / text-align / word-wrap 等 </p>
+                    <p> Visual 相关属性包括：background / color / transition / list-style 等
+                    </p>
+                    <p>祖明老师给出了一系列的css编写规范，以前的时候都是随意写出css属性，没有按照一定的规范。这次的布局编写代码，我安装规范编写属性，一开始还是有点难按照规范习惯书写，特别是简写属性的时候，有些记不住，css编写属性，定位，负边距等高等等知识面掌握还是有待提高。</p>
+                    <p>代码布局的时候，我们很多时候都是可以布局出来就可以，没有多想这样的布局是否对SEO友好，后期维护等等问题。我觉得多练习多写代码多看些大公司的页面布局才行。</p>
+                </article>
+                <footer>
+                    <p>julytian 发表于 2015年4月21日</p>
+                </footer>
+            </section>
+            <div class="pagination">
+                <ul>
+                    <li><a href="">第一页</a>
+                    </li>
+                    <li class="disabled"><a href="">上一页</a>
+                    </li>
+                    <li><a href="">1</a>
+                    </li>
+                    <li><a href="">2</a>
+                    </li>
+                    <li class="active"><a href="">3</a>
+                    </li>
+                    <li><a href="">4</a>
+                    </li>
+                    <li><a href="">...</a>
+                    </li>
+                    <li><a href="">下一页</a>
+                    </li>
+                    <li><a href="">最后页</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="blog_aside">
+
+            <div class="search_wrap">
+                <div class="search_inner">
+                    <img src="img/search.png" alt="search" />
+                    <input type="text" placeholder="Keywords" />
+                    <button>GO</button>
+                </div>
+            </div>
+
+            <div class="classify">
+                <ul>
+                    <li><a href="">HTML</a>
+                    </li>
+                    <li class="active"><a href="">CSS</a>
+                    </li>
+                    <li><a href="">Javascript</a>
+                    </li>
+                    <li><a href="">其他文章</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="calendar">
+                <h3>
+                    <a href="" class="prev"> &lt;</a>
+                    <a href="" class="year">2015.</a>
+                    <a href="" class="month">04</a>
+                    <a href="" class="next">&gt;</a>
+                </h3>
+                <p>
+                    <a class="disabled" href="">M</a><a class="disabled" href="">T</a><a class="disabled" href="">W</a>
+                    <a class="disabled" href="">T</a>
+                    <a class="disabled" href="">F</a>
+                    <a class="disabled" href="">S</a>
+                    <a class="disabled" href="">S</a>
+                </p>
+                <P>
+                    <a class="disabled" href="">1</a>
+                    <a class="disabled" href="">2</a>
+                    <a class="disabled" href="">3</a>
+                    <a class="disabled" href="">4</a>
+                    <a class="active" href="">5</a>
+                    <a href="">6</a>
+                    <a href="">7</a>
+                </P>
+                <p>
+                    <a href="">8</a>
+                    <a href="">9</a>
+                    <a href="">10</a>
+                    <a href="">11</a>
+                    <a href="">12</a>
+                    <a href="">13</a>
+                    <a href="">14</a>
+                </p>
+                <p>
+                    <a href="">15</a>
+                    <a href="">16</a>
+                    <a href="">17</a>
+                    <a href="">18</a>
+                    <a href="">19</a>
+                    <a href="">20</a>
+                    <a href="">21</a>
+                </p>
+                <p>
+                    <a href="">22</a>
+                    <a href="">23</a>
+                    <a href="">24</a>
+                    <a href="">25</a>
+                    <a href="">26</a>
+                    <a href="">27</a>
+                    <a href="">28</a>
+                </p>
+            </div>
+            <div class="tags">
+                <h3>Tags</h3>
+                <p>
+                    <a class="tag_1" href="">Javascript</a>
+                    <a class="tag_2" href="">css</a>
+                    <a class="tag_3" href="">flex</a>
+                </p>
+                <p>
+                    <a class="tag_3" href="">WebGL</a>
+                    <a class="tag_1" href="">HTML</a>
+                    <a class="tag_4" href="">Canvas</a>
+                </p>
+                <p>
+                    <a class="tag_3" href="">prototype</a>
+                    <a class="tag_1" href="">HTML5</a>
+                    <a class="tag_5" href="">grid</a>
+                    <a class="tag_3" href="">nodeJS</a>
+                </p>
+                <p>
+                    <a class="tag_3" href="">CSS3</a>
+                    <a class="tag_1" href="">jQuery</a>
+                    <a class="tag_3" href="">ECharts</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <nav class="navbar">
+            <ul class="nav_menu">
+                <li><a href="index.html">主页</a>
+                </li>
+                <li><a href="blog.html">文章</a>
+                </li>
+                <li><a href="gallery.html">作品</a>
+                </li>
+                <li><a href="about.html">关于</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="link_lists clearfix">
+            <div class="item">
+                <p>学习资料</p>
+                <ul>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">Hover时样式</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item">
+                <p>友情链接</p>
+                <ul>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">Hover时样式</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item">
+                <p>学习资料</p>
+                <ul>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">Hover时样式</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item">
+                <p>学习资料</p>
+                <ul>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">Hover时样式</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item">
+                <p>友情链接</p>
+                <ul>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">Hover时样式</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                    <li><a href="">LINK</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>版权信息</p>
+            <img src="img/icon-github.png" alt="github">
+        </div>
+    </footer>
+</body>
+
+</html>
