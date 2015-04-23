@@ -516,10 +516,10 @@ table {
 }
 
 /*galllery styles*/
-main nav{
+main>nav{
 	margin-top: 0;
 }
-main nav,.panel-content,.more{
+main > nav,.panel-content,.more{
 	margin-right:10px;
 }
 .panel > li{
