@@ -28,7 +28,7 @@ function cloneObject(src) {
         var temp = src.constructor();
 
         for (var key in src) {
-            if(src.hasOwnProperty(key)) {
+            if (src.hasOwnProperty(key)) {
                 temp[key] = cloneObject(src[key]);
             }
         }
@@ -44,8 +44,8 @@ function cloneObject(src) {
 function uniqueArray(arr) {
     var result = [];
 
-    for (var i=0; i<arr.length; i++) {
-        if(result.indexOf(arr[i]) < 0) {
+    for (var i = 0; i < arr.length; i++) {
+        if (result.indexOf(arr[i]) < 0) {
             result.push(arr[i]);
         }
     }
@@ -68,7 +68,7 @@ function trim(str) {
  */
 function each(arr, fn) {
     //arr.forEach(fn);
-    for (var i= 0, n = arr.length; i < n; i++) {
+    for (var i = 0, n = arr.length; i < n; i++) {
         fn(arr[i]);
     }
 }
@@ -92,7 +92,7 @@ function getObjectLength(obj) {
  * check a string if a valid email address or not
  * @param email
  */
-function isEmail (email) {
+function isEmail(email) {
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     return re.test(email);
 }
@@ -101,7 +101,7 @@ function isEmail (email) {
  * check a number sequence if a valid mobile phone number or not
  * @param phone
  */
-function isPhoneNumber (phone) {
+function isPhoneNumber(phone) {
     var re = /^1[358]\d{9}$/;
     return re.test(phone);
 }
@@ -154,7 +154,7 @@ function $(selector) {
 
     if (childNodes.length > 0) {
 
-        switch(selector.substr(0,1)) {
+        switch (selector.substr(0, 1)) {
             case '.':
                 // class selector
                 return document.getElementsByClassName(selector.substr(1));
@@ -164,9 +164,9 @@ function $(selector) {
 
             case '[':
                 // attribute selector
-                if(selector.slice(-1)===']') {
+                if (selector.slice(-1) === ']') {
 
-                    var attrString = selector.substr(1, selector.length-2);
+                    var attrString = selector.substr(1, selector.length - 2);
                     var attrArr = attrString.split('=');
                     //console.log(attrArr);
 
@@ -174,14 +174,14 @@ function $(selector) {
 
                     if (attrArr.length === 1) { // only attribute name
 
-                        for (var i= 0, n=allElements.length; i<n; i++) {
+                        for (var i = 0, n = allElements.length; i < n; i++) {
                             if (allElements[i].getAttribute(attrString) !== null) {
                                 return allElements[i]; // return the first element that matched
                             }
                         }
 
                     } else if (attrArr.length === 2) { // attribute name with value
-                        for (var j= 0, m=allElements.length; j<m; j++) {
+                        for (var j = 0, m = allElements.length; j < m; j++) {
                             if (allElements[j].getAttribute(attrArr[0]) === attrArr[1]) {
                                 return allElements[j]; // return the first element that matched
                             }
@@ -210,7 +210,7 @@ function addEvent(element, event, listener) {
     } else if (element.attachEvent) { // IE
         element.attachEvent("on" + event, listener);
     } else {
-        element["on"+event] = listener;
+        element["on" + event] = listener;
     }
 
 }
@@ -228,9 +228,9 @@ function removeEvent(element, event, listener) {
     if (element.removeEventListener) {
         element.removeEventListener(event, listener, false);
     } else if (element.detachEvent) {
-        element.detachEvent("on"+event, listener);
+        element.detachEvent("on" + event, listener);
     } else {
-        element["on"+event] = null;
+        element["on" + event] = null;
     }
 
 }
@@ -239,7 +239,7 @@ function addClickEvent(element, listener) {
     addEvent(element, 'click', listener);
 }
 
-function addEnterEvent (element, listener) {
+function addEnterEvent(element, listener) {
     addEvent(element, 'keydown', listener);
 }
 
@@ -284,17 +284,17 @@ $.un = function (selector, event, listener) {
     removeEvent($(selector), event, listener);
 };
 
-$.click = function(selector, handler) {
+$.click = function (selector, handler) {
     addClickEvent($(selector), handler);
 };
 
-$.enter = function(selector, handler) {
+$.enter = function (selector, handler) {
     addEnterEvent($(selector), handler);
 };
 
 $.delegate = function (selector, tag, event, listener) {
     var items = $(selector).getElementsByTagName(tag);
-    each(items, function(li) {
+    each(items, function (li) {
         addEvent(li, event, listener);
     });
 };
@@ -315,7 +315,7 @@ function isIE() {
  * @param expires e.g. new Date("April 24, 2015")
  */
 function setCookie(name, value, expires) {
-    var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value) ;
+    var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
 
     if (expires instanceof Date) {
         cookieText += "; expires=" + expires.toUTCString();
@@ -344,50 +344,90 @@ function getCookie(name) {
     return cookieValue;
 }
 
+
+//// test
+//ajax('http://localhost:5500/products/', {
+//    type: 'get',
+//    onsuccess: function (data) {
+//        console.log(data);
+//    },
+//    onfail: function (error) {
+//        console.error(error)
+//    }
+//});
+
+/**
+ * todo finish the encapsulation of ajax method
+ *
+ * @param url
+ * @param options {type, data, onsuccess, onfail}
+ */
 function ajax(url, options) {
     var xhr = createXHR();
-    if (options.onsuccess) {
-        xhr.onload = options.onsuccess;
+
+    var type,
+        data,
+        successFn,
+        failFn;
+
+    if (typeof options == 'object') {
+        type = options.type.toUpperCase();
+        data = options.data || null;
+        successFn = options.onsuccess || 'undefined';
+        failFn = options.onfail || 'undefined';
     }
 
-    if (options.onfail) {
-        xhr.onerror = options.onfail;
+
+    if (typeof data == 'object') {
+        var str = '';
+        for (var key in data) {
+            str += key + "=" + data[key] + "&";
+        }
+        data = str.replace(/&$/, '');
+        str = null;
     }
+
+
     xhr.onreadystatechange = function () {
+
         if (xhr.readyState == 4) {
             if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-                console.log(xhr.responseText);
+                //console.log(xhr.responseText)
+                successFn(xhr.responseText);
             } else {
-                console.error("Request was unsuccessful: " + xhr.status);
-            }
-        }
-    };
-    xhr.open(options.type, url, true);
-    xhr.send(options.data);
-}
-
-function createXHR() {
-    if (typeof XMLHttpRequest != 'undefined') {
-        return new XMLHttpRequest();
-    } else if (typeof ActiveXObject != 'undefined') {
-        if (typeof arguments.callee.activeXString != 'string') {
-            var versions = ['MSXML2.XMLHttp.6.0','MSXML2.XMLHttp.3.0','MSXML2.XMLHttp'],
-                i,
-                len;
-
-            for (i=0, len=versions.length; i<len; i++) {
-                try {
-                    new ActiveXObject(versions[i]);
-                    arguments.callee.activeXString = versions[i];
-                    break;
-                } catch (ex) {
-                    // skip
+                if (failFn) {
+                    failFn(xhr.status);
+                } else {
+                    console.error("Unsuccessful:\t" + xhr.status);
                 }
             }
         }
 
-        return new ActiveXObject(arguments.callee.activeXString);
-    } else {
-        throw new Error("No XHR object available!");
+    };
+
+    switch (type) {
+        case "GET":
+            if (data) {
+                xhr.open('GET', url + '?' + data, true);
+            } else {
+                xhr.open('GET', url, true);
+            }
+            break;
+        case "POST":
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send(data);
     }
+
+    xhr.send(null);
+}
+
+function createXHR() {
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return xhr;
 }
