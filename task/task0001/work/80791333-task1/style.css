@@ -1,1144 +1,1144 @@
 @charset "utf-8";
 /* CSS Document */
 *{
-	margin:0px;
-	padding:0px;
+    margin:0px;
+    padding:0px;
 }
 /********index begin********/
 body{
-	background:#EEEEEE;
-	min-width:980px;
+    background:#EEEEEE;
+    min-width:980px;
 }
 img{
-	border:none;
+    border:none;
 }
 .header{
-	width:100%;
-	height:80px;
-	background:#522a5c;
-	position:relative;
+    width:100%;
+    height:80px;
+    background:#522a5c;
+    position:relative;
 }
 .header-content{
-	width:980px;
-	height:80px;
-	margin: 0 auto;
-	position: relative;
+    width:980px;
+    height:80px;
+    margin: 0 auto;
+    position: relative;
 }
 .logo{
-	height:60px;
-	width:330px;
+    height:60px;
+    width:330px;
 }
 .navlist{
-	margin-bottom: 5px;
-	position: absolute;
-	top: 43px;
-	left: 740px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 43px;
+    left: 740px;
 }
 .navlist li{
-	float:left;
-	font-family:"宋体";
-	font-size:14px;
-	color:white;
-	margin-left:28px;
-	list-style: none;
+    float:left;
+    font-family:"宋体";
+    font-size:14px;
+    color:white;
+    margin-left:28px;
+    list-style: none;
 }
 .navlist li a{
-	color:white;
-	text-decoration:none;
+    color:white;
+    text-decoration:none;
 }
 .github1{
-	position:absolute;
-	top:45px;
-	right:10px;
-	margin-right:10px;
+    position:absolute;
+    top:45px;
+    right:10px;
+    margin-right:10px;
 }
 .content{
-	position:relative;
+    position:relative;
 }
 .bb{
-	width:100%;
+    width:100%;
 }
 .top{
-	margin-bottom:20px;
+    margin-bottom:20px;
 }
 /*.top h3{
-	font-size:14px;
-	margin-left:280px;
+    font-size:14px;
+    margin-left:280px;
 }*/
 .texts{
-	width:350px;
-	height:120px;
-	background:white;
-	position:absolute;
-	font-size:12px;
-	top:430px;
-	right:120px;
-	padding:10px 10px 30px 10px;
-	line-height:180%;
-	background: -moz-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0.5) 70%,rgba(255,255,255,0)); 
-	background: -webkit-gradient(linear, center top, center bottom,from(rgba(255,255,255,0.7)),color-stop(0.75,rgba(255,255,255,0.5)),to(rgba(255,255,255,0)));
- 	background: -webkit-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0.5) 70%,rgba(255,255,255,0));/* Saf4 , Chrome */
-	background: -o-linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.5) 70%,rgba(255,255,255,0));
-	filter:alpha(opacity=70 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=350) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);
-	-ms-filter:alpha(opacity=70 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=350) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);/*IE8*/
+    width:350px;
+    height:120px;
+    background:white;
+    position:absolute;
+    font-size:12px;
+    top:430px;
+    right:120px;
+    padding:10px 10px 30px 10px;
+    line-height:180%;
+    background: -moz-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0.5) 70%,rgba(255,255,255,0)); 
+    background: -webkit-gradient(linear, center top, center bottom,from(rgba(255,255,255,0.7)),color-stop(0.75,rgba(255,255,255,0.5)),to(rgba(255,255,255,0)));
+     background: -webkit-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0.5) 70%,rgba(255,255,255,0));/* Saf4 , Chrome */
+    background: -o-linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.5) 70%,rgba(255,255,255,0));
+    filter:alpha(opacity=70 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=350) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);
+    -ms-filter:alpha(opacity=70 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=350) progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);/*IE8*/
 }
 .texts h3{
-	margin-bottom:12px;
-	font-size:14px;
-	margin-left:280px;
-	color:white;
+    margin-bottom:12px;
+    font-size:14px;
+    margin-left:280px;
+    color:white;
 }
 .texts p{
-	text-indent: 2em;
-	width: 310px;
-	color:white;
+    text-indent: 2em;
+    width: 310px;
+    color:white;
 }
 .bottom{
-	margin-top:15px;
-	width:980px;
-	margin:0 auto;
-	overflow:hidden;
+    margin-top:15px;
+    width:980px;
+    margin:0 auto;
+    overflow:hidden;
 }
 .div1,.div2,.div3{
-	float:left;
-	width:320px;
-	background:white;
-	margin-bottom:-10000px;
+    float:left;
+    width:320px;
+    background:white;
+    margin-bottom:-10000px;
     padding-bottom:10000px;
 }
 .div1,.div2{
-	margin-right:10px;
+    margin-right:10px;
 }
 .bottom img{
-	width: 300px;
-	height: 180px;
-	margin: 10px 10px 15px 10px; 
+    width: 300px;
+    height: 180px;
+    margin: 10px 10px 15px 10px; 
 }
 .bottom p{
-	width:260px;
-	font-size:12px;
-	line-height:170%;
-	padding:0px 30px 25px;
-	text-indent:2em;
+    width:260px;
+    font-size:12px;
+    line-height:170%;
+    padding:0px 30px 25px;
+    text-indent:2em;
 }
 .myself{
-	float:left;
-	width:100%;
-	background:white;
-	margin-top:80px;
-	position:relative;
-	height:522px;
+    float:left;
+    width:100%;
+    background:white;
+    margin-top:80px;
+    position:relative;
+    height:522px;
 }
 .myself img{
-	width: 160px;
-	height: 160px;
-	border-radius: 100%;
-	position: absolute;
-	top: -50px;
-	left: 50%;
-	margin-left: -80px;
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    margin-left: -80px;
 }
 .myself span{
-	position: absolute;
-	font-size: 20px;
-	width: 200px;
-	text-align: center;
-	font-family: 'Cantury Gothic';
-	color: black;
-	left: 50%;
-	margin-left:-100px;
-	top:150px;
+    position: absolute;
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+    font-family: 'Cantury Gothic';
+    color: black;
+    left: 50%;
+    margin-left:-100px;
+    top:150px;
 }
 .myself p{
-	position:absolute;
-	font-size:18px;
-	width:600px;
-	color:black;
-	left:50%;
-	margin-left:-300px;
-	top:220px;
-	text-indent:2em;
-	line-height:150%;
+    position:absolute;
+    font-size:18px;
+    width:600px;
+    color:black;
+    left:50%;
+    margin-left:-300px;
+    top:220px;
+    text-indent:2em;
+    line-height:150%;
 }
 .footer{
-	float:left;
-	background:black;
-	width:100%;
-	height:390px;
-	position:relative;
+    float:left;
+    background:black;
+    width:100%;
+    height:390px;
+    position:relative;
 }
 .footer-top{
-	width: 100%;
-	height: 36px;
-	border-bottom: 1px solid #eeeeee;
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px solid #eeeeee;
 }
 .footer .list{
-	width: 260px;
-	height: 36px;
-	position: absolute;
-	left: 50%;
-	margin-left:-130px;
+    width: 260px;
+    height: 36px;
+    position: absolute;
+    left: 50%;
+    margin-left:-130px;
 }
 .footer .list li{
-	float: left;
-	font-family: "宋体";
-	font-size: 12px;
-	margin-left:28px;
-	height: 36px;
-	line-height: 36px;
-	color: white;
-	list-style: none;
+    float: left;
+    font-family: "宋体";
+    font-size: 12px;
+    margin-left:28px;
+    height: 36px;
+    line-height: 36px;
+    color: white;
+    list-style: none;
 }
 .footer .list li a{
-	color: white;
-	text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 .footer-bottom{
-	width:1000px;
-	position: absolute;
-	left: 50%;
-	margin-left:-450px;
+    width:1000px;
+    position: absolute;
+    left: 50%;
+    margin-left:-450px;
 }
 .footer-bottom ul{
-	float: left;
-	margin-right: 114px;
-	margin-top: 50px;
+    float: left;
+    margin-right: 114px;
+    margin-top: 50px;
 }
 .footer-bottom ul li{
-	width: 86px;
-	height: 18px;
-	font-size: 10px;
-	line-height: 18px;
-	text-align: center;
-	margin-bottom: 5px;
-	list-style: none;
+    width: 86px;
+    height: 18px;
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 5px;
+    list-style: none;
 }
 .footer-bottom ul .first{
-	margin-bottom: 25px;
-	color: #eeeeee;
-}	
+    margin-bottom: 25px;
+    color: #eeeeee;
+}    
 .footer-bottom.footer-link li .hover{
-	text-decoration: underline;
+    text-decoration: underline;
 }
 .footer-bottom  span{
- 	width:100px;
- 	text-align: center;
- 	height: 20px;
- 	position: absolute;
- 	left: 45%;
- 	margin-left: -50px;
- 	top: 270px; 
-	color:white;
+     width:100px;
+     text-align: center;
+     height: 20px;
+     position: absolute;
+     left: 45%;
+     margin-left: -50px;
+     top: 270px; 
+    color:white;
 }
 .footer-bottom li a{
-	color: white;
+    color: white;
 }
 .github2 img{
-	width: 32px;
-	height: 37px;
+    width: 32px;
+    height: 37px;
 }
 .github2{
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	left: 45%;
-	margin-left: -20px;
-	bottom: -120px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 45%;
+    margin-left: -20px;
+    bottom: -120px;
 }
 /********index end********/
 
 /********blog begin********/
 .b-content{
-	width: 980px;
-	margin: 0 auto;	
-	background: #eeeeee;
-	margin-top: 20px;
-}	
+    width: 980px;
+    margin: 0 auto;    
+    background: #eeeeee;
+    margin-top: 20px;
+}    
 .b-left{
-	width: 710px;
-	background: #eeeeee;
-	float: left;
+    width: 710px;
+    background: #eeeeee;
+    float: left;
 }
 .b-right{
-	width: 260px;
-	background: #eeeeee;
-	float: right;
-	background:#eeeeee;
+    width: 260px;
+    background: #eeeeee;
+    float: right;
+    background:#eeeeee;
 }
 .b-left .article{
-	position: relative;
-	width: 710px;
-	height: 410px;
-	margin-bottom: 10px;
-	background: white;
+    position: relative;
+    width: 710px;
+    height: 410px;
+    margin-bottom: 10px;
+    background: white;
 }
 .b-left .article ul{
-	position: absolute;
-	left: -50px;
-	top: 30px;
+    position: absolute;
+    left: -50px;
+    top: 30px;
 }
 .b-left .article ul li{
-	width: 50px;
-	height: 40px;
-	list-style: none;
-	text-align: center;
-	line-height: 40px;
-	color: white;
-	cursor: pointer;
+    width: 50px;
+    height: 40px;
+    list-style: none;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    cursor: pointer;
 }
 .b-left .article h2{
-	padding-top: 30px;
-	padding-left:30px;
-	padding-bottom: 20px;
-	color:#a660b7;
+    padding-top: 30px;
+    padding-left:30px;
+    padding-bottom: 20px;
+    color:#a660b7;
 }
 .b-left .article h4{
-	margin-left: 40px;
-	color:#666;
+    margin-left: 40px;
+    color:#666;
 }
 .b-left .article p{
-	width: 600px;
-	text-indent: 2em;
-	line-height:150%;
-	font-size: 16px;
-	margin: 0 auto;
-	margin-top: 30px;
+    width: 600px;
+    text-indent: 2em;
+    line-height:150%;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 .time{
-	position: absolute;
-	bottom: 15px;
-	right: 10px;
-	color: #999999;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    color: #999999;
 }
 .page{
-	width: 100%;
-	background: #eeeeee;
-	margin-left:60px;
-	margin-bottom: 332px;
+    width: 100%;
+    background: #eeeeee;
+    margin-left:60px;
+    margin-bottom: 332px;
 }
 .page li{
-	float: left;
-	/*width: 13px;*/
-	height: 6px;
-	font-size: 14px;
-	background: white;
-	list-style: none;
-	margin-right: 10px;
-	text-align: center;
-	line-height: 6px;
-	padding: 15px;
+    float: left;
+    /*width: 13px;*/
+    height: 6px;
+    font-size: 14px;
+    background: white;
+    list-style: none;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 6px;
+    padding: 15px;
 }
 .b-left .page .selected{
-	background:#a660b7;
+    background:#a660b7;
 }
 .b-left .page .selected a{
-	color: white;
+    color: white;
 }
 .page .long{
-	width: 42px;
+    width: 42px;
 }
 .page li a{
-	text-decoration: none;
-	color: black;
-	font-size: 11px;
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
 }
 .page .point{
-	width: 35px;
+    width: 35px;
 }
 .ipt{
-	float: left;
-	width: 260px;
-	height: 82px;
-	background: white;
-	margin-bottom: 20px;
+    float: left;
+    width: 260px;
+    height: 82px;
+    background: white;
+    margin-bottom: 20px;
 }
 .search{
-	float: left;
-	color: #dddddd;
-	width: 170px;
-	height: 40px;
-	line-height: 40px;
-	border: 1px solid #cccccc;
-	margin: 20px 0px 20px 20px;
+    float: left;
+    color: #dddddd;
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #cccccc;
+    margin: 20px 0px 20px 20px;
 }
 .search div{
-	float: left;
-	width: 40px;
-	height: 40px;
+    float: left;
+    width: 40px;
+    height: 40px;
 }
 .search div img{
-	width: 40px;
-	height: 40px;
+    width: 40px;
+    height: 40px;
 }
 .search span{
-	float: left;
+    float: left;
 }
 .click{
-	float: left;
-	width: 50px;
-	height: 42px;
-	line-height: 40px;
-	text-align: center;
-	color: white;
-	background: #dddddd;
-	cursor: pointer;
-	font-size: 26px;
-	margin-top:20px; 
+    float: left;
+    width: 50px;
+    height: 42px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    background: #dddddd;
+    cursor: pointer;
+    font-size: 26px;
+    margin-top:20px; 
 }
 .b-list{
-	float: left;
-	background: #eeeeee;
-	margin-bottom:20px;
+    float: left;
+    background: #eeeeee;
+    margin-bottom:20px;
 }
 .b-list li{
-	width: 260px;
-	height: 49px;
-	margin-bottom: 1px;
-	list-style: none;
-	background:white;
-	cursor: pointer;
-	color:#666;
+    width: 260px;
+    height: 49px;
+    margin-bottom: 1px;
+    list-style: none;
+    background:white;
+    cursor: pointer;
+    color:#666;
 }
 .b-list li span{
-	float: left;
-	width: 260px;
-	height: 49px;
-	margin-bottom: 1px;
-	margin-top: 1px;
-	background:#dfc6e6;
-	border-bottom: 1px solid #CCC;
+    float: left;
+    width: 260px;
+    height: 49px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    background:#dfc6e6;
+    border-bottom: 1px solid #CCC;
 }
 .b-list li div{
-	float: right;
-	background: white;
-	width: 235px;
-	height: 49px;
-	margin-bottom: 1px;
-	line-height: 49px;
-	font-size: 20px;
-	padding-left: 20px;
+    float: right;
+    background: white;
+    width: 235px;
+    height: 49px;
+    margin-bottom: 1px;
+    line-height: 49px;
+    font-size: 20px;
+    padding-left: 20px;
 }
 .b-list span:hover{
-	background: #522a5c;
+    background: #522a5c;
 }
 .calendar{
-	float: left;
-	width: 260px;
-	height: 260px;
-	margin-bottom: 20px;
-	background: white;
+    float: left;
+    width: 260px;
+    height: 260px;
+    margin-bottom: 20px;
+    background: white;
 }
 .calendar table{
-	width: 240px;
-	height: 240px;
-	margin: 0 auto;
-	text-align: center;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    text-align: center;
 }
 .calendar table td{
-	cursor: pointer;
-	border-bottom: 1px solid #CCC;/*行分割线 这里有问题*/
+    cursor: pointer;
+    border-bottom: 1px solid #CCC;/*行分割线 这里有问题*/
 }
 .tags{
-	width: 260px;
-	height: 250px;
-	background: white;
-	float: left;
+    width: 260px;
+    height: 250px;
+    background: white;
+    float: left;
 }
 .tags a{
-	float:left;
-	text-decoration: none;
-	color:#773C88;
-	margin: 5px;
-	height: 28px;
-	line-height: 28px;
+    float:left;
+    text-decoration: none;
+    color:#773C88;
+    margin: 5px;
+    height: 28px;
+    line-height: 28px;
 }
 .js{
-	font-size: 30px;
+    font-size: 30px;
 }
 .css{
-	font-size: 20px;
+    font-size: 20px;
 }
 .flex{
-	font-size: 10px;
+    font-size: 10px;
 }
 .html{
-	font-size: 30px;
+    font-size: 30px;
 }
 .canvas{
-	font-size: 20px;
+    font-size: 20px;
 }
 .html5{
-	font-size: 24px;
+    font-size: 24px;
 }
 .nj{
-	font-size: 18px;
+    font-size: 18px;
 }
 .JQ{
-	font-size: 30px;
+    font-size: 30px;
 }
 .EC{
-	font-size: 30px;
+    font-size: 30px;
 }
 /********blog end********/
 
 /********gallery begin********/
 .g-content{
-	width: 980px;
-	margin: 0 auto;
-	background: #eeeeee;
-	margin-top: 85px;
+    width: 980px;
+    margin: 0 auto;
+    background: #eeeeee;
+    margin-top: 85px;
 }
 .g-left{
-	width: 710px;
-	height: 760px;
-	background: white;
-	float: left;
-	position: relative;
-	float: left;
-	margin-bottom: 30px;
+    width: 710px;
+    height: 760px;
+    background: white;
+    float: left;
+    position: relative;
+    float: left;
+    margin-bottom: 30px;
 }
 .g-right{
-	width: 260px;
-	background: #eeeeee;
-	float: right;
+    width: 260px;
+    background: #eeeeee;
+    float: right;
 }
 .g-left ul{
-	position: absolute;
-	top: -63px;
-	left: 0px;
+    position: absolute;
+    top: -63px;
+    left: 0px;
 }
 .g-list li{
-	float: left;
-	height: 50px;
-	list-style: none;
-	background:red;
-	cursor: pointer;
-	margin-right: 2px;
+    float: left;
+    height: 50px;
+    list-style: none;
+    background:red;
+    cursor: pointer;
+    margin-right: 2px;
 }
 .g-list li span{
-	float: left;
-	height: 50px;
-	background:#dfc6e6;
+    float: left;
+    height: 50px;
+    background:#dfc6e6;
 }
 .g-list li div{
-	margin-top: 4px;
-	background: white;
-	height: 46px;
-	line-height: 46px;
-	font-size: 14px;
-	padding: 15px 20px 20px 20px;
+    margin-top: 4px;
+    background: white;
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    padding: 15px 20px 20px 20px;
 }
 .g-list span:hover{
-	background: orange;
+    background: orange;
 }
 .g-right p{
-	margin: 14px;
-	color:#666;
+    margin: 14px;
+    color:#666;
 }
 .g-right ul{
-	width: 200px;
-	margin: 0 auto;
-	margin-top: 20px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 .g-right ul li{
-	color: white;
-	list-style: none;
-	width: 200px;
-	height: 20px;
-	margin-bottom: 15px;
+    color: white;
+    list-style: none;
+    width: 200px;
+    height: 20px;
+    margin-bottom: 15px;
 }
 .g-right .num{
-	float: left;
-	width: 20px;
-	height: 20px;
-	border-radius:100%;
-	background: #522a5c;
-	text-align: center;
-	line-height: 20px; 
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius:100%;
+    background: #522a5c;
+    text-align: center;
+    line-height: 20px; 
 }
 .g-right .name{
-	color: black;
-	float: right;
-	width: 70px;
-	text-align: left;
-	height: 20px;
-	left:10px;
-	margin-right:-10px;
+    color: black;
+    float: right;
+    width: 70px;
+    text-align: left;
+    height: 20px;
+    left:10px;
+    margin-right:-10px;
 }
 .g-right .level1{
-	float: left;
-	width:106px;
-	margin-left: 2px;
-	border: 1px solid black;
-	height: 20px;
-	background: white;
+    float: left;
+    width:106px;
+    margin-left: 2px;
+    border: 1px solid black;
+    height: 20px;
+    background: white;
 
 }
 #level2-1{
-	float: left;
-	width: 106px;
-	height:20px;
-	background:#522a5c;/*效果没出来*/
+    float: left;
+    width: 106px;
+    height:20px;
+    background:#522a5c;/*效果没出来*/
 }
 #level2-2{
-	float: left;
-	width: 80px;
-	height:20px;
-	background:#522a5c;
+    float: left;
+    width: 80px;
+    height:20px;
+    background:#522a5c;
 }
 #level2-3{
-	float: left;
-	width: 50px;
-	height:20px;
-	background:#522a5c;
+    float: left;
+    width: 50px;
+    height:20px;
+    background:#522a5c;
 }
 #level2-4{
-	float: left;
-	width: 30px;
-	height:20px;
-	background:#522a5c;
+    float: left;
+    width: 30px;
+    height:20px;
+    background:#522a5c;
 }
 #level2-5{
-	float: left;
-	width: 30px;
-	height:20px;
-	background:#522a5c;
+    float: left;
+    width: 30px;
+    height:20px;
+    background:#522a5c;
 }
 .more{
-	float: left;
-	width: 710px;
-	height: 40px;
-	background: white;
-	margin-bottom: 40px;
-	text-align: center;
-	line-height: 40px;
-	cursor: pointer;
+    float: left;
+    width: 710px;
+    height: 40px;
+    background: white;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
 }
 /********瀑布流 start********/
 .g1{
-	position: absolute;
-	width:330px;
-	height:220px;
-	top:20px;
-	left:20px;
+    position: absolute;
+    width:330px;
+    height:220px;
+    top:20px;
+    left:20px;
 }
 .g1 img{
-	width:330px;
-	height:220px;
+    width:330px;
+    height:220px;
 }
 .g1 span{
-	position: absolute;
-	top: 148px;
-	left: -67px;
-	width: 330px;
-	height: 70px;
-	color: white;
+    position: absolute;
+    top: 148px;
+    left: -67px;
+    width: 330px;
+    height: 70px;
+    color: white;
 }
 .g1 h3{
-	margin-top: 20px;
-	margin-left: 80px;
+    margin-top: 20px;
+    margin-left: 80px;
 }
 .g1 p{
-	width: 240px;
-	height: 30px;
-	margin-left: 80px;
+    width: 240px;
+    height: 30px;
+    margin-left: 80px;
 }
 .g2{
-	position: absolute;
-	width:160px;
-	height:186px;
-	top:20px;
-	left:360px;
+    position: absolute;
+    width:160px;
+    height:186px;
+    top:20px;
+    left:360px;
 }
 .g2 img{
-	width:160px;
-	height:186px;
+    width:160px;
+    height:186px;
 }
 .g2 span{
-	position: absolute;
-	top: 97px;
+    position: absolute;
+    top: 97px;
 
 
 
 
 
-	left:-50px；
-	width: 160px;
-	height: 100px;
-	left: -33px;
-	color: white;
-	width: 279px;
+    left:-50px；
+    width: 160px;
+    height: 100px;
+    left: -33px;
+    color: white;
+    width: 279px;
 }
 .g2 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g2 p{
-	width: 100px;
-	height: 20px;
-	margin-left: 40px;
+    width: 100px;
+    height: 20px;
+    margin-left: 40px;
 }
 .g3{
-	position: absolute;
-	width:160px;
-	height:206px;
-	top:20px;
-	left:530px;
+    position: absolute;
+    width:160px;
+    height:206px;
+    top:20px;
+    left:530px;
 }
 .g3 img{
-	width:160px;
-	height:206px;
+    width:160px;
+    height:206px;
 }
 .g3 span{
-	position: absolute;
-	top: 131px;
-	left: -35px;
-	width: 160px;
-	height: 106px;
-	color: white;
+    position: absolute;
+    top: 131px;
+    left: -35px;
+    width: 160px;
+    height: 106px;
+    color: white;
 }
 .g3 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g3 p{
-	width: 120px;
-	height: 60px;
-	margin-left: 40px;
+    width: 120px;
+    height: 60px;
+    margin-left: 40px;
 }
 .g4{
-	position: absolute;
-	width:160px;
-	height:206px;
-	top:250px;
-	left:20px;
+    position: absolute;
+    width:160px;
+    height:206px;
+    top:250px;
+    left:20px;
 }
 .g4 img{
-	width:160px;
-	height:206px;
+    width:160px;
+    height:206px;
 }
 .g4 span{
-	position: absolute;
-	top: 138px;
-	left: -33px;
-	width: 190px;
-	height: 106px;
-	color: white;
+    position: absolute;
+    top: 138px;
+    left: -33px;
+    width: 190px;
+    height: 106px;
+    color: white;
 }
 .g4 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g4 p{
-	width: 120px;
-	height: 60px;
-	margin-left: 40px;
+    width: 120px;
+    height: 60px;
+    margin-left: 40px;
 }
 .g5{
-	position: absolute;
-	width:160px;
-	height:184px;
-	top:250px;
-	left:190px;
+    position: absolute;
+    width:160px;
+    height:184px;
+    top:250px;
+    left:190px;
 }
 .g5 img{
-	width:160px;
-	height:184px;
+    width:160px;
+    height:184px;
 }
 .g5 span{
-	position: absolute;
-	top: 116px;
-	left: -28px;
-	width: 160px;
-	height: 65px;
-	color: white;
+    position: absolute;
+    top: 116px;
+    left: -28px;
+    width: 160px;
+    height: 65px;
+    color: white;
 }
 .g5 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g5 p{
-	width: 100px;
-	height: 20px;
-	margin-left: 40px;
+    width: 100px;
+    height: 20px;
+    margin-left: 40px;
 }
 .g6{
-	position: absolute;
-	width:160px;
-	height:206px;
-	top:219px;
-	left:360px;
+    position: absolute;
+    width:160px;
+    height:206px;
+    top:219px;
+    left:360px;
 }
 .g6 img{
-	width:160px;
-	height:206px;
+    width:160px;
+    height:206px;
 }
 .g6 span{
-	position: absolute;
-	top: 132px;
-	left: -20px;
-	width: 160px;
-	height: 106px;
-	color: white;
+    position: absolute;
+    top: 132px;
+    left: -20px;
+    width: 160px;
+    height: 106px;
+    color: white;
 }
 .g6 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g6 p{
-	width: 120px;
-	height: 60px;
-	margin-left: 40px;
+    width: 120px;
+    height: 60px;
+    margin-left: 40px;
 }
 .g7{
-	position: absolute;
-	width:160px;
-	height:256px;
-	top:246px;
-	left:530px;
+    position: absolute;
+    width:160px;
+    height:256px;
+    top:246px;
+    left:530px;
 }
 .g7 img{
-		width:160px;
-	height:256px;
+        width:160px;
+    height:256px;
 }
 .g7 span{
-	position: absolute;
-	top: 171px;
-	left: -29px;
-	width: 160px;
-	height: 136px;
-	color: white;
+    position: absolute;
+    top: 171px;
+    left: -29px;
+    width: 160px;
+    height: 136px;
+    color: white;
 }
 .g7 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g7 p{
-	width: 120px;
-	height: 60px;
-	margin-left: 40px;
+    width: 120px;
+    height: 60px;
+    margin-left: 40px;
 }
 .g8{
-	position: absolute;
-	width:160px;
-	height:160px;
-	top:466px;
-	left:20px;
+    position: absolute;
+    width:160px;
+    height:160px;
+    top:466px;
+    left:20px;
 }
 .g8 img{
-	width:160px;
-	height:170px;
+    width:160px;
+    height:170px;
 }
 .g8 span{
-	position: absolute;
-	top: 98px;
-	left: -29px;
-	width: 160px;
-	height: 69px;
-	color: white;
+    position: absolute;
+    top: 98px;
+    left: -29px;
+    width: 160px;
+    height: 69px;
+    color: white;
 }
 .g8 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g8 p{
-	width: 120px;
-	height: 60px;
-	margin-left: 40px;
+    width: 120px;
+    height: 60px;
+    margin-left: 40px;
 }
 .g9{
-	position: absolute;
-	width:160px;
-	height:206px;
-	top:444px;
-	left:190px;
+    position: absolute;
+    width:160px;
+    height:206px;
+    top:444px;
+    left:190px;
 }
 .g9 img{
-	width:160px;
-	height:206px;
+    width:160px;
+    height:206px;
 }
 .g9 span{
-	position: absolute;
-	top: 117px;
-	left: -24px;
-	width: 160px;
-	height: 106px;
-	color: white;
+    position: absolute;
+    top: 117px;
+    left: -24px;
+    width: 160px;
+    height: 106px;
+    color: white;
 }
 .g9 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g9 p{
-	width: 120px;
-	height: 60px;
-	margin-left: 40px;
+    width: 120px;
+    height: 60px;
+    margin-left: 40px;
 }
 .g10{
-	position: absolute;
-	width:160px;
-	height:186px;
-	top:440px;
-	left:360px;
+    position: absolute;
+    width:160px;
+    height:186px;
+    top:440px;
+    left:360px;
 }
 .g10 img{
-	width:160px;
-	height:186px;
+    width:160px;
+    height:186px;
 }
 .g10 span{
-	position: absolute;
-	top: 102px;
-	left: -32px;
-	width: 183px;
-	height: 65px;
-	color: white;
+    position: absolute;
+    top: 102px;
+    left: -32px;
+    width: 183px;
+    height: 65px;
+    color: white;
 }
 .g10 h3{
-	margin-top: 20px;
-	margin-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 .g10 p{
-	width: 100px;
-	height: 20px;
-	margin-left: 40px;
+    width: 100px;
+    height: 20px;
+    margin-left: 40px;
 }
 /********瀑布流 end********/
 /********gallery end********/
 
 /********about start********/
 .all{
-	width: 980px;
-	height: 1398px;
-	margin: 0 auto;
-	margin-top: 102px;
-	margin-bottom: 50px;
-	position: relative;
+    width: 980px;
+    height: 1398px;
+    margin: 0 auto;
+    margin-top: 102px;
+    margin-bottom: 50px;
+    position: relative;
 }
 .left{
-	float: left;
-	background: white;
-	width: 485px;
-	height: 1398px;
-	margin-right: 5px;
-	margin-left: 5px;
+    float: left;
+    background: white;
+    width: 485px;
+    height: 1398px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 .right{
-	float: left;
-	background: white;
-	width: 485px;
-	height: 1398px;
+    float: left;
+    background: white;
+    width: 485px;
+    height: 1398px;
 }
 .myphoto{
-	position: absolute;
-	top: 110px;
-	left: 50%;
-	margin-left: -75px;
-	/*width: 180px;
-	height: 180px;*/
-	border-radius: 100%;
-	background: white;
-	z-index: 100;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    margin-left: -75px;
+    /*width: 180px;
+    height: 180px;*/
+    border-radius: 100%;
+    background: white;
+    z-index: 100;
 }
 .myphoto img{
-	float: left;
-	width: 160px;
-	height: 160px;
-	border-radius: 100%;	
+    float: left;
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;    
 }
 .mobile{
-	position: absolute;
-	top: 450px;
-	left: 50%;
-	margin-left: -58px;
-	width: 116px;
-	height: 116px;
-	border-radius: 100%;
-	background: white;
-	z-index: 100;
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    margin-left: -58px;
+    width: 116px;
+    height: 116px;
+    border-radius: 100%;
+    background: white;
+    z-index: 100;
 }
 .mobile img{
-	float: left;
-	width: 104px;
-	height: 104px;
-	border-radius: 100%;
-	margin: 6px;
+    float: left;
+    width: 104px;
+    height: 104px;
+    border-radius: 100%;
+    margin: 6px;
 }
 .study{
-	position: absolute;
-	top: 750px;
-	left: 50%;
-	margin-left: -58px;
-	width: 116px;
-	height: 116px;
-	border-radius: 100%;
-	background: white;
-	z-index: 100;
+    position: absolute;
+    top: 750px;
+    left: 50%;
+    margin-left: -58px;
+    width: 116px;
+    height: 116px;
+    border-radius: 100%;
+    background: white;
+    z-index: 100;
 }
 .study img{
-	float: left;
-	width: 104px;
-	height: 104px;
-	border-radius: 100%;
-	margin: 6px;
+    float: left;
+    width: 104px;
+    height: 104px;
+    border-radius: 100%;
+    margin: 6px;
 }
 .practice{
-	position: absolute;
-	top: 1100px;
-	left: 50%;
-	margin-left: -58px;
-	width: 116px;
-	height: 116px;
-	border-radius: 100%;
-	background: white;
-	z-index: 100;
+    position: absolute;
+    top: 1100px;
+    left: 50%;
+    margin-left: -58px;
+    width: 116px;
+    height: 116px;
+    border-radius: 100%;
+    background: white;
+    z-index: 100;
 }
 .practice img{
-	float: left;
-	width: 104px;
-	height: 104px;
-	border-radius: 100%;
-	margin: 6px;
+    float: left;
+    width: 104px;
+    height: 104px;
+    border-radius: 100%;
+    margin: 6px;
 }
 .left span{
-	position: absolute;
-	right:0px;
-	color: black;
-	font-size: 20px;
+    position: absolute;
+    right:0px;
+    color: black;
+    font-size: 20px;
 }
 .name{
-	top: 110px;
-	left: 300px;
+    top: 110px;
+    left: 300px;
 }
 .way{
-	top: 390px;
-	left: 300px;
+    top: 390px;
+    left: 300px;
 }
 .edu{
-	top: 725px;
-	left: 300px;
+    top: 725px;
+    left: 300px;
 }
 .sx{
-	top: 1068px;
-	left: 300px;
+    top: 1068px;
+    left: 300px;
 }
 .right p{
-	width: 300px;
-	height: 150px;
-	position: absolute;
-	top: 110px;
-	right: 80px;
-	font-size:14px;
-	text-indent:2em;
-	line-height:150%;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 110px;
+    right: 80px;
+    font-size:14px;
+    text-indent:2em;
+    line-height:150%;
 }
 .number{
-	width: 300px;
-	height: 150px;
-	position: absolute;
-	top: 380px;
-	right: 80px 
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 380px;
+    right: 80px 
 }
 .number li{
-	list-style: none;
-	height: 30px;
-	line-height: 30px;
-	font-size: 14px;
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
 }
 .a-content .date{
-	width: 80px;
-	height: 40px;
-	background: url(../img/datebg.png) no-repeat;
-	/*background: #eeeeee;*/
-	border-radius: 15px;
-	z-index: 100;
+    width: 80px;
+    height: 40px;
+    background: url(../img/datebg.png) no-repeat;
+    /*background: #eeeeee;*/
+    border-radius: 15px;
+    z-index: 100;
 }
 .a-content .date div{
-	width: 70px;
-	height: 30px;
-	margin: 5px 5px 5px 5px;
-	text-align: center;
-	line-height: 30px;
-	border-radius: 10px;
+    width: 70px;
+    height: 30px;
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 10px;
 }
 #date1{
-	background: white;
-	position: absolute;
-	top: 900px;
-	left: 50%;
-	margin-left: -40px;
-	border: 5px solid #eeeeee;
+    background: white;
+    position: absolute;
+    top: 900px;
+    left: 50%;
+    margin-left: -40px;
+    border: 5px solid #eeeeee;
 }
 #date2{
-	background: white;
-	position: absolute;
-	top: 970px;
-	left: 50%;
-	margin-left: -40px;
-	border: 5px solid #eeeeee;
+    background: white;
+    position: absolute;
+    top: 970px;
+    left: 50%;
+    margin-left: -40px;
+    border: 5px solid #eeeeee;
 }
 #date3{
-	background: white;
-	position: absolute;
-	top: 1040px;
-	left: 50%;
-	margin-left: -40px;
-	border: 5px solid #eeeeee;
+    background: white;
+    position: absolute;
+    top: 1040px;
+    left: 50%;
+    margin-left: -40px;
+    border: 5px solid #eeeeee;
 }
 #date4{
-	background: white;
-	position: absolute;
-	top: 1250px;
-	left: 50%;
-	margin-left: -40px;
-	border: 5px solid #eeeeee;
+    background: white;
+    position: absolute;
+    top: 1250px;
+    left: 50%;
+    margin-left: -40px;
+    border: 5px solid #eeeeee;
 }
 #date5{
-	background: white;
-	position: absolute;
-	top: 1370px;
-	left: 50%;
-	margin-left: -40px;
-	border: 5px solid #eeeeee;
+    background: white;
+    position: absolute;
+    top: 1370px;
+    left: 50%;
+    margin-left: -40px;
+    border: 5px solid #eeeeee;
 }
 .college1{
-	font-size: 14px;
-	position: absolute;
-	top: 718px;
-	left:608px;
-	height: 30px;
-	line-height: 30px;
+    font-size: 14px;
+    position: absolute;
+    top: 718px;
+    left:608px;
+    height: 30px;
+    line-height: 30px;
 }
 .college2{
-	font-size: 14px;
-	position: absolute;
-	top: 780px;
-	left:608px;
-	height: 30px;
-	line-height: 30px;
+    font-size: 14px;
+    position: absolute;
+    top: 780px;
+    left:608px;
+    height: 30px;
+    line-height: 30px;
 }
 .college3{
-	font-size: 14px;
-	position: absolute;
-	top: 856px;
-	left:608px;
-	height: 30px;
-	line-height: 30px;
+    font-size: 14px;
+    position: absolute;
+    top: 856px;
+    left:608px;
+    height: 30px;
+    line-height: 30px;
 }
 .company1{
-	width: 250px;
-	font-size: 14px;
-	position: absolute;
-	top: 1060px;
-	left:608px;
-	height: 30px;
-	line-height: 30px;
+    width: 250px;
+    font-size: 14px;
+    position: absolute;
+    top: 1060px;
+    left:608px;
+    height: 30px;
+    line-height: 30px;
 }
 .company2{
-	font-size: 14px;
-	position: absolute;
-	top: 1177px;
-	left:608px;
-	height: 30px;
-	line-height: 30px;
+    font-size: 14px;
+    position: absolute;
+    top: 1177px;
+    left:608px;
+    height: 30px;
+    line-height: 30px;
 }
 /**************about end****************/
