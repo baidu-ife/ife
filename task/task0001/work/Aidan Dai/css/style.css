@@ -45,7 +45,7 @@ header>div>img{
     right:10px;
     bottom:0;
     width:30px;
-    /*Èç¹ûÈ¥µôÔòÓëheaderÏÂ±ßÓÐ¾àÀë*/
+    /*ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½headerï¿½Â±ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½*/
     height:34px;
 }
 @media screen and (max-width:980px){
@@ -376,25 +376,25 @@ a{
 }
 #menu{
     width:270px;
-    height:220px;
+    height:270px;
     margin-top:10px;
     background-color:#fff;
 }
 .article_nav{
-    height:55px;
+    height:30px;
     width:244px;
     border-left:6px solid #ddd;
-    font-size:20px;
-    line-height:54px;
+    font-size:18px;
+    line-height:30px;
     color:#666;
 }
 .article_nav>a{
     display:block;
-    height:54px;
+    height:29px;
     width:244px;
     border-bottom:1px solid #ddd;
-    font-size:20px;
-    line-height:54px;
+    font-size:18px;
+    line-height:29px;
     padding-left:20px;
     color:#666;
 }
@@ -404,4 +404,116 @@ a{
 .article_nav:hover{
     border-left:6px solid #522A5C;
 }
+#time{
+    width:210px;
+    height:auto;
+    margin-top:10px;
+    background-color:#fff;
+}
+#time{
+    padding:10px 30px 30px 30px;
+}
+.show{
+    color:#773C88;
+    font-size:16px;
+    font-weight:bold;
+    display:inline-block;
+}
+.next{
+    float:right;
+}
+.center{
+    width:182px;
+    text-align:center;
+}
+table{
+    border-collapse:collapse;
+}
+tr{
+    height:30px;
+    border-bottom:1px solid #ddd;
+}
+th,td{
+    display:inline-block;
+    padding:0;
+    width:30px;
+    height:30px;
+    color:#A8A8A8;
+    font-size:8px;
+    text-align:center;
+    line-height:30px;
+    border:none;
+}
+td>a{
+    display:block;
+    width:24px;
+    height:24px;
+    margin:3px;
+    text-align:center;
+    line-height:24px;
+    color:#A8A8A8;
+    font-size:8px;
+}
+.time-on{
+    background-color:#773C88;
+}
+.hover:hover{
+    color:#fff;
+    font-weight:bolder;
+}
+td>a:hover{
+    cursor:pointer;
+    color:#773C88;
+    font-weight:bolder;
+}
+/*sidebar*/
+#sidebar {
+    width: 230px;
+    margin-top: 10px;
+    padding: 20px 20px 30px 20px;
+    background-color: #fff;
+}
+#sidebar > div{
+    margin-bottom:10px;
+}
+.sidebar-title {
+    display: block;
+    color: #787878;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.tag{
+    color: #773C88;
+}
+.bold{
+    font-weight: 700;
+}
+.normal{
+    font-weight: 400;
+}
+.lighter{
+    font-weight: 200;
+}
+.css{
+    font-size: 20px;
+}
+.javascript{
+    font-size: 20px;
+}
+.html{
+    font-size: 20px;
+}
+.thinkphp{
+    font-size: 20px;
+}
+.css3{
+    font-size: 24px;
+}
+.jquery{
+    font-size: 24px;
+}
+.html5{
+    font-size: 14px;
+}
+/*End sidabar*/
 
