@@ -513,7 +513,7 @@ ul li {
 }
 
 #input-search { 
-    background-image:url(search.png); 
+    background-image:url(../img/search.png); 
     background-repeat:no-repeat; 
     width: 175px;
     height: 40px;
@@ -728,7 +728,7 @@ ul li {
 }
 
 #input-search { 
-	background-image:url(search.png); 
+	background-image:url(../img/search.png); 
 	background-repeat:no-repeat; 
 	width: 175px;
 	height: 40px;
@@ -745,7 +745,7 @@ ul li {
 #submit{
 	background-color: #BEBEBE;
 	color: #fff;
-	width: 40px;
+	width: 35px;
 	height: 40px;
 	margin: 0;
 	padding: 0;
