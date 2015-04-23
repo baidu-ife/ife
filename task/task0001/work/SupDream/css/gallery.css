@@ -1,0 +1,148 @@
+.gallery-section{
+    position: relative;
+    width: 100%;
+    margin-bottom: 100px;
+}
+.gallery-section .wrapper{
+    margin-top: 80px;
+}
+.main{
+    width: 710px;
+    margin-bottom: 200px;
+    margin-top: -130px;
+    position: relative;
+}
+.main .tab{
+    position: absolute;
+    top: -54px;
+}
+.tab a{
+    float: left;
+    border-top-width: 5px;
+    border-top-style: solid;
+    padding: 15px 20px 20px 20px;
+    margin-right: 1px;
+    display: inline;
+    text-decoration: none;
+    color: #000;
+    background: white;
+}
+.all,.ui,.ap{
+    border-top-color: lightblue;
+}
+.js,.fw {
+    border-top-color: lightseagreen;
+}
+.tab a:hover{
+    border-top-color:#191970;
+}
+.gallery-list {
+    width: 670px;
+    height: 610px;
+    padding: 20px 20px 30px 20px;
+    background: #ffffff;
+    position: relative;
+}
+
+.gallery-list article {
+    display: block;
+    position: absolute;
+}
+
+.bg-1 {
+    background: #d9a300;
+}
+
+.bg-2 {
+    background: #8c2300;;
+}
+
+.bg-3 {
+    background: #5900b2;;
+}
+
+.gallery-list article s {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-decoration: none;
+    display: block;
+    border-radius: 13px;
+    margin: 12px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    float: left;
+    text-align: center;
+}
+
+.gallery-list article h1 {
+    font-size: 16px;
+    padding: 10px 10px 5px 50px;
+    color: #ffffff;
+    text-overflow: ellipsis;
+}
+
+.gallery-list article p {
+    font-size: 12px;
+    color: #ffffff;
+    padding: 0 10px 20px 50px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.gallery-more {
+    margin-top: 10px;
+    width: 710px;
+    height: 50px;
+    line-height: 50px;
+    background: #ffffff;
+}
+
+.gallery-more a {
+    margin-left:300px ;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    color: #666666;
+}
+aside{
+    position: relative;
+    width:260px;
+    margin-left: 720px;
+    margin-top: 70px;
+}
+
+.search{
+
+    padding:20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background: white;
+}
+.search-1{
+    position: relative;
+    width: 218px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #dddddd;
+
+}
+.search-1 img{
+    position: relative;
+    left: 0;
+    height: 38px;
+}
+.search-1 input{
+    position: absolute;
+    left: 44px;
+    bottom: 0;
+    height: 32px;
+    width: 127px;
+}
+.search-1 button{
+    position: absolute;
+    right: 0;
+    width: 43px;
+    height: 38px;
+    background: #eeeeee;
+}
