@@ -1,1 +1,254 @@
+body{margin:0;
+	font-family:"宋体";
+	}
+
+div.nav{
+		width:100%;
+		height:80px;
+		background-color:#632572;
+		}
+div.row{
+		color:#ffffff;
+		margin-left:auto;
+		margin-right:auto;
+		width:980px;
+		height:80px;
+		}
+div.logo{
+		font-size:30px;
+		width:400px;
+         float:left;
+     	margin-top:30px;
+     	}
+div.main{
+		font-size:14px;
+	     width:196px;
+	     float:right;
+	     margin-top:51px; 
+		}
+div.main table
+		{
+		text-align:left;
+		width:224px;
+		}
+div.icon{
+		width:30px;
+		height:34px;
+		position:absolute;
+		right:10px;
+		top:46px;
+		}
+
+/*头*/
+
+.bg {background:url(../image/banner-bg.png) no-repeat;
+	height:470px;
+		background-size:100%;
+		}
+.kong{width:980px;
+	 margin:auto;
+	 position:relative;
+	top:310px;
+
+	}
+div.cont{ 
+		color:#ffffff;
+		 background:-webkit-gradient(linear, 0 0, 0.1 bottom, from(#f8eef2), to(rgba(255, 255, 255, 0)));
+		
+		padding:10px 10px 30px 10px;
+		width:320px;
+		height:120px;
+		float:right;
+			}
+div.cont>h1{
+			font-size:14px;
+			text-align:right;
+			margin-bottom:12px;
+			}
+div.cont>p{ text-indent:2em;
+			font-size:12px;
+			line-height:150%;
+			}	
+/*第二部分*/
+.con-bg{
+		background-color:#dcd9dd;
+		width:100%;
+		
+		}
+.box{
+	width:1000px;
+	margin:auto;
+	height:520px;
+	
+}
+.box1{
+		width:320px;
+		margin-left:10px;
+		margin-top:10px;
+		background-color:#ffffff;
+		float:left;
+	}
+.box1 img{
+		width:300px;
+		height:180px;
+		margin-bottom:15px;
+		margin-top:10px;
+		margin-right:10px;
+		margin-left:10px;
+		}
+.box1 p{
+	font-size:12px;
+	line-height:170%;
+	padding-right:30px;
+	padding-left:30px;
+	padding-bottom:25px;
+	text-indent:2em;
+	}
+/*名字*/
+.sub{
+	height:400px;
+	width:100%;
+	color:black;
+	text-align:center;
+    }
+.sub img{
+	position:relative;
+	top:-50px;
+	}
+.sub h1{
+	font-size:20px;
+	font-family:"Century Gothic";
+	margin-top:-10px;
+}
+.in{
+	font:14px "Century Gothic";
+	width:600px;
+	text-align:left;
+	text-indent:2em;
+	margin:auto;
+	}
+
+
+/*底部*/
+.foot-line{
+	color:#ffffff;
+	background-color:#000000;
+	font-size:12px;
+	border-bottom-color:#ffffff;
+	border-bottom:1px solid;
+	height:30px;
+	}
+.foot-line table{
+	margin:auto;
+	
+	}
+.foot-line table tr td{
+	padding-right:1em;
+	padding-top:.5em;
+	}
+.footer{
+	width:100%;
+	color:#ffffff;
+	background-color:#000000;
+	height:300px;
+	text-align:center;
+	}
+.footer table{
+	margin:auto;
+	
+	font-size:12px;
+	padding-bottom:60px;
+	
+	}
+.footer table th,
+.footer table td{
+	text-align: left;
+  padding-right: 15em;
+}
+.footer table th{
+	padding-top:2em;
+	padding-bottom:2em;
+	font-size:12px;
+	}
+.footer p{
+	text-align:center;
+	font-size:10px;
+	margin-top:15px;
+}
+a.lin{
+	color:#ffffff;
+	text-decoration:line;
+}
+
+
+/*gallery*/
+.bg-ga{
+	background-color:#d6cdd1;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	height:1000px;
+	padding-top:50px;
+	}
+.bg-gal{
+	background-color:#ffffff;
+	width:980px;
+	margin-right:auto;
+	margin-left:auto;
+	height:950px;
+
+	}
+.left{
+	background-color:red;
+	float:left;
+	width:326px;
+	
+	}
+.middle{
+	background-color:blue;
+	float:left;
+	width:326px;
+	
+	
+	}
+.right{
+	background-color:yellow;
+	float:left;
+	width:326px;}
+	
+.yuana{
+	text-align:center;
+	position:relative;
+	top:-50px;
+	width: 160px;
+	height: 160px;
+	background-color: #efefef; /* Can be set to transparent */
+	border: 3px #d6cdd1 solid;
+	-webkit-border-radius: 100px;
+	margin:auto; 
+}
+.yuanb{
+	text-align:center;
+	position:relative;
+	top:-50px;
+	width: 100px;
+	height: 100px;
+	background-color: #efefef; /* Can be set to transparent */
+	border: 3px #d6cdd1 solid;
+	-webkit-border-radius: 100px;
+	margin:auto; 
+}
+.all{
+	margin:auto;
+	width:50px;
+}
+.tuo1{
+	background-color:#fff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border:3px solid #d6cdd1;
+	padding:2px;" 
+	width:20px;height:15px;
+	text-align:center;
+}
 
