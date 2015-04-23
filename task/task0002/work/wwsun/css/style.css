@@ -1,3 +1,12 @@
 p#errorTip {
     color: red;
 }
+
+ul.slide-show {
+    list-style-type: none;
+    margin-left: -2em;
+}
+
+.hideable {
+    display: none;
+}
