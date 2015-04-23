@@ -105,44 +105,4 @@
     font-size: 12px;
     color: #666666;
 }
-aside{
-    position: relative;
-    width:260px;
-    margin-left: 720px;
-    margin-top: 70px;
-}
 
-.search{
-
-    padding:20px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    background: white;
-}
-.search-1{
-    position: relative;
-    width: 218px;
-    height: 38px;
-    line-height: 38px;
-    border: 1px solid #dddddd;
-
-}
-.search-1 img{
-    position: relative;
-    left: 0;
-    height: 38px;
-}
-.search-1 input{
-    position: absolute;
-    left: 44px;
-    bottom: 0;
-    height: 32px;
-    width: 127px;
-}
-.search-1 button{
-    position: absolute;
-    right: 0;
-    width: 43px;
-    height: 38px;
-    background: #eeeeee;
-}
