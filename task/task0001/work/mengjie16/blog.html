@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>blog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <div id="github-icon">
+        <a href="https://github.com/">
+            <img src="img/icon-github.png">
+        </a>
+    </div>
+    <div id="head">
+        <div class="logo">
+            <img src="img/logo.png" title="YOURLOGO">
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li class="column"><a href="blog.html">文章</a></li>
+                <li class="column"><a href="gallery.html">作品</a></li>
+                <li class="column"><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div id="blog-main">
+    <div class="blog-container">
+        <div class="blog-multi">
+            <div class="blog-content">
+                <div class="blog-bar">
+                    <div>
+                        4.12
+                    </div>
+                    <div>
+                        CSS
+                    </div>
+                </div>
+                <div class="blog-text">
+                    <div>
+                        <h2>垂直居中</h2>
+                        <h3>一个容器中只有一行文字</h3>
+                        <p>如果一个容器中只有一行文字，对它实现居中相对比较简单，我们只需要设置它的实际高度height和所在行的高度line-height相等即可</p>
+                        <p>wenzi</p>
+                    </div>
+                    <div class="blog-sign">
+                        <span>孟&nbsp;洁&nbsp;发表于&nbsp;2015年4月12日</span>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-content">
+                <div class="blog-bar">
+                    <div>
+                        4.12
+                    </div>
+                    <div>
+                        CSS
+                    </div>
+                </div>
+                <div class="blog-text">
+                    <div>
+                        <h2>Relative与Absolute组合使用</h2>
+                        <h3>父元素内绝对定位</h3>
+                        <p>父元素设成relative，子元素a需要绝对定位，可以设成absolute;子元素b单设margin不会按照设想的位置排布；需要设成absolute</p>
+                        <p>对于子元素b内还有子元素A,需要定位到b中某个位置，虽然b是abosolute,但是A设成abosolute 再用right等即可定位</p>
+                        <p>wenzi</p>
+                        <p>wenzi</p>
+                    </div>
+                    <div class="blog-sign">
+                        <span>孟&nbsp;洁&nbsp;发表于&nbsp;2015年4月12日</span>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-content">
+                <div class="blog-bar">
+                    <div>
+                        4.12
+                    </div>
+                    <div>
+                        CSS
+                    </div>
+                </div>
+                <div class="blog-text">
+                    <div>
+                        <h2>这里是标题</h2>
+                        <h3>这里是副标题</h3>
+                        <p>wenzi</p>
+                        <p>wenzi</p>
+                        <p>wenzi</p>
+                        <p>wenzi</p>
+                    </div>
+                    <div class="blog-sign">
+                        <span>孟&nbsp;洁&nbsp;发表于&nbsp;2015年4月12日</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blog-page">
+            <ul class="page-list">
+                <li class="page-text"><a href="#">第一页</a></li>
+                <li class="page-text"><a href="#">上一页</a></li>
+                <li class="page-num" id="page-now"><a href="#">1</a></li>
+                <li class="page-num"><a href="#">2</a></li>
+                <li class="page-num"><a href="#">3</a></li>
+                <li class="page-num"><a href="#">4</a></li>
+                <li class="page-rest"><a href="#">...</a></li>
+                <li class="page-text"><a href="#">下一页</a></li>
+                <li class="page-text"><a href="#">最后页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="blog-rightside">
+        <div class="search">
+            <div class="search-button">
+                <input type="text" placeholder="keywords">
+                <a href="#" class="go-btn">G&nbsp;O</a>
+            </div>
+        </div>
+        <table class="blog-category">
+            <tr><td><a href="#">HTML</a></td></tr>
+            <tr><td><a href="#">CSS</a></td></tr>
+            <tr><td><a href="#">JavaScript</a></td></tr>
+            <tr><td><a href="#">其他文章</a></td></tr>
+        </table>
+        <div class="blog-calender">
+            <div class="calender-context">
+                    <ul class="title-cal">
+                        <li class="last-month"><a href="#"><</a></li><!--
+                      --><li><a href="#">2015.04</a></li><!--
+                      --><li class="next-month"><a href="#">></a></li>
+                    </ul>
+                <table class="date">
+                    <thead><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td><td>S</td></thead>
+                    <tbody>
+                        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+                        <tr><td>8</td><td>9</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                        <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>1</td><td>2</td><td>3</td></tr>
+                        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="blog-tag">
+            <h4>Tags</h4>
+            <div class="tags">
+                <span class="large-size">JavaScript</span>&nbsp;<span class="middle-size">CSS</span>&nbsp;<span class="small-size">flex</span><br><span>WebGl</span>
+                &nbsp;<span class="large-size">HTML</span>&nbsp;<span>Canvas</span><br><span>prototype</span>&nbsp;<span class="middle-size">HTML5</span>
+                &nbsp;<span class="small-size">grid</span>&nbsp;<span>nodeJS</span><br><span>CSS3</span>&nbsp;<span class="middle-size">jQuery</span>&nbsp;<span class="middle-size">ECharts</span>
+            </div>
+
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<footer>
+    <ul class="foot-nav">
+        <li><a href="index.html">主页</a></li>
+        <li class="column-foot"><a href="blog.html">文章</a></li>
+        <li class="column-foot"><a href="gallery.html">作品</a></li>
+        <li class="column-foot"><a href="about.html">关于</a></li>
+    </ul>
+    <hr>
+    <div class="foot-link">
+        <div>
+            <h4>友情链接</h4>
+            <ul>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>学习资料</h4>
+            <ul>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>友情链接</h4>
+            <ul>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>学习资料</h4>
+            <ul>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>友情链接</h4>
+            <ul>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+                <li><a>link</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>版权信息</p>
+    <div class="foot-icon">
+        <img src="img/icon-github.png">
+    </div>
+</footer>
+</body>
+</html>
