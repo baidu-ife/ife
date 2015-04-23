@@ -1,0 +1,134 @@
+body, ul, ol, li, div, p, img, td, h4, h3, h2, h1, input, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: 400;
+    text-decoration: none;
+    list-style-type: none;
+    /*Formatting Model*/
+    /*Box Model*/
+    /*Typographic*/
+    /*Visual*/
+}
+a {
+    color: #000000;
+}
+
+.nav {   
+    width: 100%;
+    min-width: 980px;
+    height: 80px;
+    background-color: #522a5c;
+}
+
+.container {
+    width: 980px;
+    /*overflow: hidden;*/
+    margin: auto;
+    position: relative;
+}
+.nav .container {
+    height: 80px;
+    color: #522a5c;
+}
+
+.nav li,
+.nav-2 li {
+  display: inline; 
+  padding-left: 28px; 
+  color: #fff;
+  line-height: 24px;
+}
+
+.nav-2 {   
+    width: 100%;
+    min-width: 980px;
+    height: 25px;
+    border-bottom: 1px solid #333333;
+    text-align: center;
+    padding: 5px 0;
+}
+.nav a,
+.footer a {   
+    text-decoration: none;
+    font-size:14px;
+    font-family: "SimSun";
+    color:#fff;
+}
+
+.right-list {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 5px;
+    padding-top:57px;
+    background-color: #522a5c;
+    z-index: 2;
+}
+
+.logo {
+    float:left;
+    margin-top: 40px;
+    font-size: 25px;
+    font-family: cursive, serif;
+    color: #fff;
+}
+
+.github {
+    float:right;
+    display: block;
+    position: relative;
+    top: 46px;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+.footer {
+    width: 100%;
+    min-width: 980px;
+    height: 395px;
+    background-color: #000000;
+}
+.footer .container {
+    height: 360px;
+    background-color: #000000;
+}
+.footer h4 {
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 20px; 
+}
+
+.footer .container div {
+    display: inline-block;
+    width: 180px;
+    margin-right: 20px;
+    vertical-align: top;
+}
+.footer .container .nth-child-5 {
+    margin-right: 0;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer p {
+    position: relative;
+    top: 100px;
+    text-align: center;
+    color: #fff;
+}
+.footer img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: :hidden;
+  visibility: hidden;
+}

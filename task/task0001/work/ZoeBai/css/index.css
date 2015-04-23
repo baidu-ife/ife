@@ -1,0 +1,97 @@
+
+.jumbotron {
+    width:100%;
+    min-width:980px;
+    height: 430px;  
+    background: url(../img/banner-bg.jpg) 50% 0px no-repeat;
+    background-size: cover;
+}
+
+.jumbotron .container {
+    position: relative;
+    height:430px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.text-window {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 340px;
+    padding: 10px 10px 30px 10px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);/*chrome*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#b2ffffff, endColorstr=#00ffffff);/*IE*/
+}
+.text-window h3 {
+    float: right;
+    font-size: 14px;
+    color: #fff;
+}
+.text-window p {
+    clear: right;
+    padding-top: 12px;
+    line-height: 150%;
+    text-indent: 2em;
+    font-size: 12px;
+    color: #fff;
+}
+.content-wrap {
+    width: 100%;
+    min-width: 980px;
+    height: 480px;
+    background-color: #eeeeee;
+}
+.content-wrap .container {
+    overflow: hidden;
+    height: auto;
+    padding-top: 10px;
+    background-color:  #eeeeee;
+}
+.content-wrap .container div {
+    width: 300px;
+    padding: 10px;
+    padding-bottom: 1000px;
+    margin-bottom: -1000px;
+    background-color:#fff;
+}
+.middle-card {
+    margin-right: 330px;
+    margin-left:  330px;
+}
+.right-card {
+    float:right;
+}
+.left-card {
+    float:left;
+}
+.content-wrap p {
+    font-size: 12px;
+    line-height: 170%;
+    margin: 15px 20px 25px 20px;
+}
+.self-introduction {
+    width: 100%;
+    min-width: 980px;
+    height: 520px;
+    background-color: #fff;
+}
+.self-introduction h3 {
+    padding-bottom: 45px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Century Gothic", serif;
+    color: #000;
+}
+.avatar {
+    text-align: center;
+    position: relative;
+    bottom:  50px;
+}
+.self-introduction p {
+    margin: auto;
+    width:600px;
+    font-size: 14px;
+    text-indent: 2em;
+    line-height: 24px;
+    color: #000;
+}

@@ -1,0 +1,236 @@
+.content-wrapper {
+    width: 100%;
+    min-width: 980px;
+    padding-top: 70px;
+    background-color: #eee;
+}
+.content {
+    width: 710px;
+}
+.color-1 {
+    background-color: #522a5c;
+}
+.color-2 {
+    background-color: #5900b2;
+}
+.color-3 {
+    background-color: #d9a300;
+}
+.color-4 {
+    background-color:  #8c2300;
+}
+.gallery-flow {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height:680px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+.gallery-flow p {
+    padding: 0px 10px 20px 50px;
+    font: 12px/150% simsun, serif;
+    color: #fff;
+}
+.gallery-flow h2 {
+    padding: 5px 10px 2px 50px;
+    font: 16px/150% simsun, serif;
+    color: #fff;
+}
+.gallery-flow span {
+    float: left;
+    margin: 10px;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    font: 12px/24px arial,sans-serif;
+    text-align: center;
+    color: #fff;
+}
+.content ul {
+    position: absolute;
+    top: -52px;
+}
+.content li {
+    display: inline-block;
+    height: 12px;
+    padding: 15px 20px 20px;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    font: 12px/12px arial, sans-serif; 
+    background-color: #fff;
+}
+.content li:nth-child(1) {
+    border-top: 4px solid #dfc6e6;
+    border-left: 0px; 
+}
+.content li:nth-child(2) {
+    border-top: 4px solid #dfc6e6;
+}
+.content li:nth-child(3) {
+    border-top: 4px solid #d2a6ff;
+}
+.content li:nth-child(4) {
+    border-top: 4px solid #ffa98c;
+}
+.content li:nth-child(5) {
+    border-top: 4px solid #ffe188;
+}
+.content li:hover {
+    border-bottom: 1px solid #fff;
+}
+.content li:nth-child(1):hover {
+    border-top: 4px solid #522a5c;
+}
+.content li:nth-child(2):hover {
+    border-top: 4px solid #522a5c;
+}
+.content li:nth-child(3):hover {
+    border-top: 4px solid #5900b2;
+}
+.content li:nth-child(4):hover {
+    border-top: 4px solid #8c2300;
+}
+.content li:nth-child(5):hover {
+    border-top: 4px solid #d9a300;
+}
+.large-pic, 
+.small-pic {
+    position: absolute;
+}
+.large-pic {
+    width: 330px;
+}
+.small-pic {
+    width: 160px;
+}
+.load-more {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 50px;
+    padding: 10px 0px;
+    background-color: #fff;
+    text-align: center;
+    font: 12px/50px  simsun, serif;
+}
+.load-more p {
+    background: url(../img/task0001_10.jpg) no-repeat 0 0;
+    font: 12px/30px simsun, serif;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    /*vertical-align: middle;*/
+    text-indent: 3em;
+    color: #333;
+}
+.aside {
+    float: right;
+    width: 260px;
+}
+.search {
+    width: 220px;
+    height: 40px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+form {
+    height: 100%;
+}
+input[type="text"] {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    position: relative;/*这里好奇怪，为什么不用relative调位置的话这个input会比form低一个px呢？*/
+    top: -1px;
+    border: 1px solid #ddd;
+    background: url(../img/task0001_4.jpg) no-repeat -1px 0 transparent;
+    text-indent: 45px;
+    vertical-align: middle;
+    line-height: 40px;
+}
+input[type="submit"] {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 50px;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    color: #fff;
+    font-size: 18px;
+}
+input[type="text"]:focus {
+    outline: none;
+    border: 1px solid #000;
+}
+input[type="text"]:focus + input[type="submit"] {
+    outline: none;
+    border: 1px solid #000;
+    border-left: 0px;
+    background-color: #999;
+} 
+.ranklist {
+    box-sizing: border-box;
+    width: 100%;
+    height: 240px;
+    padding: 12px;
+    background-color: #fff;
+}
+.ranklist h1 {
+    width: 100%;
+    font: 16px/28px simsun, serif;
+}
+.ranklist ol {
+    padding-top: 8px;
+}
+.ranklist li {
+    padding-top: 10px;
+}
+.ranklist li * {
+    display: inline-block;
+    font-family: arial;
+}
+.rank {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background-color: #522a5c;
+    font: 12px/1.5 arial, sans-serif;
+    text-align: center;
+    color: #fff;
+}
+.bar {
+    width: 100px;
+    height: 16px;
+    border: 1px solid #522a5c;
+    font: 12px/1.5 arial, sans-serif;
+    vertical-align: middle;
+}
+#first {
+    width: 100%;
+    height: 17px;
+    background-color: #522a5c;
+}
+#second {
+    width: 80%;
+    height: 17px;
+    background-color: #522a5c;
+}
+#third {
+    width: 60%;
+    height: 17px;
+    background-color: #522a5c;
+}
+#forth {
+    width: 40%;
+    height: 17px;
+    background-color: #522a5c;
+}
+#fifth {
+    width: 20%;
+    height: 17px;
+    background-color: #522a5c;
+}

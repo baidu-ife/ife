@@ -1,0 +1,235 @@
+.content-wrapper {
+    width: 100%;
+    min-width: 980px;
+    padding-top: 20px;
+    background-color: #eee;
+    overflow: auto;
+}
+.aside {
+    float: right;
+    width: 260px;
+}
+.search {
+    width: 220px;
+    height: 40px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+form {
+    height: 100%;
+}
+input[type="text"] {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    position: relative;/*这里好奇怪，为什么在chrome里不用relative调位置的话这个input会比form低一个px呢？*/
+    top: -1px;          /*在IE8里要差3个像素，IE9里差2个像素，原因是什么呢？*/
+    border: 1px solid #ddd;
+    background: url(../img/task0001_4.jpg) no-repeat -1px 0 transparent;
+    text-indent: 45px;
+    vertical-align: middle;/*这两句来消除IE8里的输入框错位*/
+    line-height: 40px;
+}
+input[type="submit"] {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 50px;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    color: #fff;
+    font-size: 18px;
+}
+input[type="text"]:focus {
+    outline: none;
+    border: 1px solid #000;
+}
+input[type="text"]:focus + input[type="submit"] {
+    outline: none;
+    border: 1px solid #000;
+    border-left: 0px;
+    background-color: #999;
+} 
+.category {
+    width:100%;
+    margin-bottom: 10px;
+    border-top: 1px solid #ddd;
+}
+.category .active1, 
+.category li:hover {
+    border-left: 4px solid #522a5c;
+}
+.category li {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+    border-left: 4px solid #dfc6e6;
+    padding-left: 16px; 
+    list-style-type: none;
+    background-color: #fff;
+}
+.calendar {
+    padding: 20px 20px 25px;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 10px;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    /*border-spacing: 0;   */
+}
+tr {
+    height: 35px;
+    border-bottom: 1px solid #eee;
+}
+td, th {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 26px;
+    font-size: 14px;
+    color: #999;
+}
+th {
+    font-weight: 400;
+    font-family: arial;
+}
+td:hover {
+    color: #773c88;
+    font-weight: 700;
+}
+.today {
+    margin: 4px 2px;
+    background-color: #773c88;
+    color: #fff;
+}
+.pre, .next, .month {
+    color: #773c88;
+    font-weight: 700;
+    font-family: "Arial", sans-serif;
+    word-spacing: 2px;
+}
+.pre {
+    float: left;
+}
+.next {
+    float: right;
+}
+.month {
+    text-align: center;
+}
+.tags {
+    width: 232px;
+    padding: 10px 14px 20px;
+    background-color: #fff;
+}
+.tags h4 {
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: #666;
+    font-family: "Arial";
+}
+.tags p {
+    color: #773c88;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Arial";
+}
+.tags .large {
+    font-size: 32px;
+}
+.tags .tiny {
+    font-size: 12px;  
+}
+.tags strong {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.content {
+    width: 710px;
+    
+}
+.article {
+    position: relative;
+    width: 680px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    font-family: Microsoft YaHei, sans-serif;
+}
+.article h1 {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 700;
+    color: #a660b7;
+}
+.article h2 {
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: 700;
+    color: #666;
+}
+.article h3 {
+    position: absolute;
+    left: -50px;
+    top: 20px;
+    width: 50px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+    background-color: #522a5c;
+}
+.article h4 {
+    position: absolute;
+    width: 50px;
+    height:40px;
+    left: -50px;
+    top: 60px;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+    background-color: #a660b7;
+}
+.section p {
+    font-size: 14px;
+    line-height: 150%;
+    text-indent: 2em;
+    color: #000;
+}
+.article > p {
+    padding-top: 30px;
+    color: #666;
+    font-size: 12px;
+    text-align: right;
+}
+ol {
+    text-align: center;
+    margin-bottom: 100px;
+}
+ol li {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font: 12px Microsoft YaHei, sans-serif;
+    list-style-type: none;
+    background-color: #fff;
+}
+.can-not-click a {
+    color: #eee;
+}
+.the-page {  
+    background-color: #a660b7;
+}
+.the-page a {
+    color: #fff;
+}
