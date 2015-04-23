@@ -643,4 +643,43 @@ span.number{
 }
 
 /*about me style*/
+.main-content{
+	height: 1200px;
+	margin-top: 30px;
+	position: relative;
+	background: url(../img/bg.png)no-repeat;
+	margin-bottom: 160px;
+}
 
+.myname,.contactme,.education,.work{
+	position: absolute;
+	left: 400px;
+	font-size: 20px;
+}
+.myname,.mydescription{
+	top: 200px;
+}
+.mydescription,.mycontact,.secondary,.university,.mywork{
+	position: absolute;
+	right: 130px;
+	width: 320px;
+}
+
+.contactme,.mycontact{
+	top: 450px;
+}
+.education,.secondary{
+	top:675px;
+}
+.education,.work{
+	left: 360px;
+}
+.secondary,.university,.mywork{
+	right: 100px;
+}
+.university{
+	top: 727px;
+}
+.work,.mywork{
+	top:1030px;
+}
