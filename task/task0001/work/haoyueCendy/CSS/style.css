@@ -1,0 +1,192 @@
+body{
+	margin:0px;
+}
+div.top{
+	width:100%;
+	height:80px;
+	background:#5f246d;
+}
+div.content{
+	width:100%;
+	height:1500px;
+	background-color:#ecd6f2;
+}
+div.contentbody{
+	height:1200px;
+	margin-left:auto;
+	margin-right:auto;
+	width:1050px;
+}
+div.left{
+	float:left;
+	width:720px;
+}
+div.contain{
+	margin-bottom:10px;
+	margin-top:20px;
+	height:300px;
+}
+div.purple{
+	float:left;
+	width:70px;
+	height:100px;
+	color:#ffffff;
+	font-size:25px;
+	text-align:center;
+	margin-top:30px;
+}
+div.purplea{
+	float:right;
+	height:50px;
+	width:70px;
+	background-color:#6e297f;
+}
+div.purpleb{
+	float:right;
+	height:50px;
+	width:70px;
+	background-color:#b685c1;
+}
+div.passage{
+	float:right;
+	width:650px;
+	background-color: #ffffff;
+	height:300px;
+}
+div.page{
+	width:610px;
+	height:50px;
+	margin-left:95px;
+    margin-top:10px;
+    text-align:center;
+}
+div.first{
+	float:left;
+	width:70px;
+	height:50px;
+	margin-right:10px;
+	background-color:#ffffff;
+}
+div.next{
+	float:left;
+	width:60px;
+	height:50px;
+	margin-right:10px;
+	background-color:#ffffff;
+}
+div.pagea{
+	float:left;
+	width:45px;
+	height:50px;
+	margin-right:10px;
+	background-color:#ffffff;
+}
+div.right{
+	margin-top:20px;
+	float:right;
+	width:320px;
+	margin-left:10px;
+}
+div.keyword{
+	height:80px;
+	background-color:#ffffff;
+	margin-bottom:10px;
+}
+div.language{
+	height:160px;
+	background-color:#ecd6f2;
+	margin-bottom:10px;
+}
+div.languagea{
+	float:left;
+	height:39px;
+	width:318px;
+	background-color:#ffffff;
+	margin-bottom:1px;
+	text-align:center;
+}
+div.languagea p{
+	margin-top:10px;
+}
+div.canlendar{
+	height:200px;
+	background-color:#ffffff;
+	margin-bottom:10px;
+}
+div.tag{
+	height:150px;
+	background-color:#ffffff;
+}
+div.bottom{
+	width:100%;
+	height:530px;
+	background:#000000;
+}
+div.main{
+	margin-left:auto;
+	margin-right:auto;
+	height:80px;
+	width:980px;
+	color:#ffffff;
+}
+div.logo{
+	font-size:30px;
+	width:400px;
+	float:left;
+	margin-top:30px;
+}
+div.choose{
+	font-size:14px;
+	float:right;
+	margin-top:51px;
+}
+div.choose table{
+	text-align:left;
+	width:224px;
+}
+div.icon{
+	position:absolute;
+	height:34px;
+	width:30px;
+	right:10px;
+	top:46px;
+}
+div.menu{
+	margin-left:auto;
+	margin-right:auto;
+	color:#ffffff;
+	font-size:14px;
+	width:224px;
+}
+div.menu table{
+	width:224px;
+	padding-top:10px;
+}
+div.sheet{
+	width:1200px;
+	height:400px;
+	margin-left:auto;
+	margin-right:auto;
+}
+div.seperate{
+	margin-top:50px;
+	float:left;
+	width:200px;
+	margin-left:40px;
+	color:#ffffff;
+	font-size:14px;
+}
+div.seperate a:link{
+	color:#ffffff;
+	text-decoration:none;
+}
+div.seperate a:hover{
+	text-decoration:underline;
+}
+
+div.copyright{
+	color:#ffffff;
+	font-size:14px;
+	text-align:center;
+}
+
