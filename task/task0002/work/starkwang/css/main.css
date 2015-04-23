@@ -29,9 +29,43 @@
 	position: relative;
 }
 .gallery-picture{
-	transition:all 1s;
+	transition:all 0.5s;
 	width: inherit;
 	height: inherit;
-	background-size: cover;
 	position: absolute;
+	background-size: cover !important;
+}
+
+#gallery-buttonbox{
+	width: 300px;
+	height: 25px;
+	background: rgba(0,0,0,0.5);
+	z-index: 9999;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -150px;
+}
+
+.gallery-button{
+	width: 10px;
+	height: 10px;
+	background: #ffffff;
+	float: left;
+	position: absolute;
+	left: 50%;
+	border-radius: 10px;
+	margin-left: -5px;
+}
+
+.gallery-button:hover{
+	background: #aaaaaa;
+}
+
+table{
+	width: 100%;
+	border: 1px;
+}
+table th {
+	position: relative;
 }
