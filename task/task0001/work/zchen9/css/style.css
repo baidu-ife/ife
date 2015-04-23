@@ -314,7 +314,7 @@ footer hr {
 
     background-color: #CCC;
 }
-.ft-menu{
+.ft-menu {
     width: 250px;
     height: 25px;
     padding-top: 10px;
@@ -471,7 +471,7 @@ footer hr {
     color: #333;
     cursor: pointer;
 }
-.b-text{
+.b-text {
     overflow: hidden;
 
     padding: 15px 0;
@@ -561,7 +561,7 @@ footer hr {
 
 
 /*文章块分页*/
-.b-page ul{
+.b-page ul {
     display: inline-block;
 
     list-style: none;
@@ -607,14 +607,14 @@ footer hr {
 
     background-color: #FFF;
 }
-.m-s-form{
+.m-s-form {
     position: relative;
     width: 245px;
     
     border: none;
 }
 
-.m-s-icon{
+.m-s-icon {
     position: absolute;
     left: 4px;
     top: 4px;
@@ -625,7 +625,7 @@ footer hr {
     background-image: url(../img/icon-search.png);
 }
 
-.m-s-input{
+.m-s-input {
     position: absolute;
     left: 0;
     float: left;
@@ -641,7 +641,7 @@ footer hr {
     background-color: #FFF;
     border: 1px solid #CCC;
 }
-.m-s-btn{
+.m-s-btn {
     float: right;
 
     width: 50px;
@@ -654,13 +654,13 @@ footer hr {
     border: none;
     background-color: #CCC;
 }
-.m-s-btn:hover{
+.m-s-btn:hover {
     background-color: #666;
 }
-.m-s-input:focus{
+.m-s-input:focus {
     border: 1px solid #666;
 }
-.m-s-input:focus + .m-s-btn{
+.m-s-input:focus + .m-s-btn {
     background-color: #666;
 }
 
