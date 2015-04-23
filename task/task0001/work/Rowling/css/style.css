@@ -1,0 +1,20 @@
+h1 {color:blue;}
+h2 {font-size: 14px;}
+p  {color: yellow;font-size:14px;background-color: black;}
+img{border-style:solid;border-width: 2px;border-color:red}
+
+p {text-indent: 20%}
+h2 {text-transform: uppercase}
+h2 {text-transform: blink}
+p {text-align: justify}
+p {word-spacing: 20px}
+p {white-space: normal}
+h2 {color: green}
+h2 {line-height: 80%}
+h2 {font:font: italic arial,sans-serif}
+h1 {font-family: Cursive}
+h1 {font-size: 70px}
+h1 {font-weight: bold}
+
+@font-face {font-family: Vacaciones;src: url(Vacaciones.ttf)}
+h2 {font-family: Vacaciones }
