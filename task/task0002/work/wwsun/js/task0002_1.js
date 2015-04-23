@@ -36,7 +36,7 @@ function checkUserInput() {
 
 function splitUserInput(inputString) {
 
-    var re = /[\s,，]/,  // todo 允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔
+    var re = /[\n \u3000,\uff0c;\u3001]+/g,
         arr = inputString.split(re),
         i,
         n = arr.length,
