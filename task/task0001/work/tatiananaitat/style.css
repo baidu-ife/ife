@@ -1,0 +1,7 @@
+h1 {color:blue}
+h2 {font-size:14px}
+p  {font-size:12px; color:yellow; background-color:black; 
+		text-indent: 5em; text-transform: uppercase; text-decoration: underline;
+		text-align:left;word-spacing: 10px; width: 500px;}
+img {border-style: solid; border-color:red; border-width: 2px;
+		 max-width:500px;_width:expression(this.width > 500 ? "500px" : this.width);}
