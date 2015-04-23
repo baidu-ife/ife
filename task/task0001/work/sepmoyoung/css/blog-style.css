@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif, "SimSun";
+}
+body {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+}
+.header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+}
+.nav {
+    position: relative;
+    height: 80px;
+    width: 980px;
+    margin: 0 auto;
+}
+.user-avatar {
+    float: left;
+    height: 80px;
+    width: 80px;
+}
+.user-avatar img {
+    height: 80px;
+    width: 80px;
+}
+.nav-meau {
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+}
+ul {
+    list-style: none;
+}
+.nav-content li {
+    float: left;
+    font-size: 14px;
+    font-family: "simsun";
+    color: #fff;
+    margin-left: 28px;
+}
+#github-logo {
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    width: 30px;
+    height: 34px;
+    background: url(../img/icon-github.png) no-repeat 0 0;
+}
+@media all and (max-width: 980px) {
+    #github-logo {
+        display: none;
+    }
+}
+.main {
+    position: relative;
+    background-color: #eee;
+    width: 100%;
+    height: 1350px;
+}
+.blog-frame {
+    position: relative;
+    width: 980px;
+    margin: auto;
+}
+.blog-content {
+    float: left;
+    width: 710px;
+}
+.blog-item {
+    position: relative;
+    width: 670px;
+    padding: 20px 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.blog-tag {
+    position: absolute;
+    top: 20px;
+    left: -50px;
+    width: 50px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    color: #fff;
+}
+.blog-date {
+    height: 40px;
+    background-color: #522a5c;
+}
+.blog-type {
+    height: 40px;
+    background-color: #a660b7;
+}
+.blog-text {
+    width: 100%;
+    overflow: hidden;
+}
+.blog-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #a660b7;
+}
+.blog-subtitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin-top: 10px;
+}
+.blog-content {
+    margin-top: 20px;
+    margin-bottom: 45px;
+    width: 100%;
+    font-size: 12px;
+}
+.blog-content p {
+    text-indent: 24px;
+    line-height: 1.5em;
+}
+.blog-info {
+    position: absolute;
+    right: 26px;
+    bottom: 20px;
+    color: #999;
+    text-align: right;
+    font-size: 12px;
+}
+.blog-page {
+    margin-left: 60px;
+    height: 35px;
+    width: 570px;
+}
+.blog-page div {
+    float: left;
+    color: #000;
+    background-color: #fff;
+    font-size: 12px;
+    margin-left: 10px;   
+    padding: 10px 15px;
+}
+.blog-page div:hover {
+    color: #fff;
+    background-color: #a660b7;
+    cursor: pointer;
+}
+.blog-side {
+    position: absolute;
+    float: right;
+    width: 260px;
+    height: 790px;
+    top: 20px;
+    right: 0px;
+}
+.blog-search {
+    position: relative;
+    margin: 0 auto;
+    width: 220px;
+    height: 40px;
+    padding: 20px;
+    background-color: #fff;
+}
+.search-text {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 118px;
+    height: 38px;
+    padding-left: 50px;
+    border: 1px solid #dddddd;
+    line-height: 38px;
+    font-size: 14px;
+    outline: none;
+    background: url(../img/search.png) no-repeat 0 0;
+}
+.search-text:focus {
+    width: 163px;
+    padding-left: 5px;
+    background: none;
+}
+.search-begin {
+    position: absolute;
+    left: 190px;
+    top: 20px;
+    width: 46px;
+    height: 40px;
+    border: 1px solid #dddddd;
+    line-height: 40px;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #dddddd;
+    cursor: pointer;
+}
+.blog-menu {
+    position: relative;
+    width: 260px;
+    height: 200px;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #ddd; 
+}
+.menu-list {
+    height: 50px;
+    margin-bottom: 1px;
+    line-height: 50px;
+    padding-left: 20px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.menu-other {
+    border-left: 4px solid #dfc6e6;
+}
+.menu-now {
+    border-left:4px solid #522a5c;
+}
+.menu-list:hover {
+    border-left:4px solid #522a5c;
+}
+
+.blog-calender {
+    margin-top: 10px;
+    padding: 20px 25px;
+    color: #999;
+    background-color: #fff;
+}
+.calender-info {
+    position: relative;
+    height: 20px;
+    margin-bottom: 20px;
+    color: #a660b7;
+    text-align: center;
+}
+.last-month {
+    position: absolute;
+    left: 0px;
+    cursor: pointer;
+}
+.next-month {
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+}
+.calender-content div {
+    margin: auto;
+    width: 210px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #eee;
+}
+.week span {
+    float: left;
+    width: 30px;
+    text-align: center;
+}
+
+.day span {
+    float: left;
+    width: 30px;
+    text-align: center;
+}
+.today {
+    color: #fff;
+    background-color: #a660b7;
+}
+.calender-content span:hover {
+    color: #fff;
+    background-color: #a660b7;
+    cursor: pointer;
+}
+
+.cloud-tags {
+    margin-top: 10px;
+    padding: 20px 25px;
+    color: #999;
+    background-color: #fff;
+}
+.tag-content span {
+    color: #a660b7;
+    font-size: 14px;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    margin: 0 auto;
+    bottom: 0px;
+}
+.footer-nav {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+}
+.footer-nav span {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 20px;
+    line-height: 35px;
+    text-decoration: none;
+}
+.footer-link {
+    margin: 0 auto;
+    width: 1000px;
+    margin-top: 45px;
+    overflow: hidden;
+}
+.link-item {
+    float: left;
+    width: 200px;
+}
+.link-name {
+    color: #c6c6c6;
+}
+.link-list {
+    color: #fff;
+    margin-top: 30px;
+}
+.link-list li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.copyright {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin-bottom: 45px;
+    color: #fff;
+    text-align: center;
+}
+.footer-logo {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    height: 34px;
+    width: 30px;
+    margin-left: -15px;
+}
+

@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif, "SimSun";
+}
+body {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+}
+.header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+}
+.nav {
+    position: relative;
+    height: 80px;
+    width: 980px;
+    margin: 0 auto;
+}
+.user-avatar {
+    float: left;
+    height: 80px;
+    width: 80px;
+}
+.user-avatar img {
+    height: 80px;
+    width: 80px;
+}
+.nav-meau {
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+}
+ul {
+    list-style: none;
+}
+.nav-content li {
+    float: left;
+    font-size: 14px;
+    font-family: "simsun";
+    color: #fff;
+    margin-left: 28px;
+}
+#github-logo {
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    width: 30px;
+    height: 34px;
+    background: url(../img/icon-github.png) no-repeat 0 0;
+}
+@media all and (max-width: 980px) {
+    #github-logo {
+        display: none;
+    }
+}
+.main {
+    background-color: #eee;
+    width: 100%;
+    height: 1450px;
+}
+.about-page {
+    width: 980px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+.about-content {
+    position: relative;
+    background-color: #fff;
+    height: 1300px;
+
+}
+.middle-line {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    height: 100%;
+    width: 6px;
+    margin-left: -3px;
+    background-color: #eee;
+    z-index: 1;
+}
+.user-pic {
+    position: relative;
+    top: -60px;
+    margin: auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 85px 85px;
+    border:10px solid #eee;
+    z-index: 2;
+}
+.about-user {
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 150px;
+    line-height: 30px;
+    font-size: 14px;
+    z-index: 2;
+    overflow: hidden;
+}
+.user-left {
+    float: left;
+    font-size: 20px;
+}
+.user-right {
+    position: absolute;
+    right: 10px;
+    width: 160px;
+}
+.user-phone {
+    position: relative;
+    margin: auto;
+    width: 114px;
+    height: 110px;
+    margin-bottom: 20px;
+    background-size: 114px 110px;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+.about-phone {
+    position: relative;
+    margin: auto;
+    margin-bottom: 0px;
+    width: 500px;
+    height: 110px;
+    line-height: 30px;
+    font-size: 14px;
+    z-index: 2;
+    overflow: hidden;
+}
+.phone-left {
+    float: left;
+    font-size: 20px;
+}
+.phone-right {
+    position: absolute;
+    right: 10px;
+    width: 160px;
+}
+.user-edu {
+    position: relative;
+    margin: auto;
+    width: 114px;
+    height: 110px;
+    margin-bottom: 20px;
+    background-size: 114px 110px;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+.about-edu {
+    position: relative;
+    margin: auto;
+    margin-bottom: 40px;
+    width: 500px;
+    height: 40px;
+    line-height: 30px;
+    font-size: 14px;
+    z-index: 2;
+    overflow: hidden;
+}
+.edu-left {
+    float: left;
+    font-size: 20px;
+}
+.edu-middle {
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    width: 60px;
+    text-align: center;
+    border: 5px solid #eeeeee;
+    border-radius: 14px 14px;
+}
+.edu-right {
+    position: absolute;
+    right: 10px;
+    width: 160px;
+}
+.user-work {
+    position: relative;
+    margin: auto;
+    width: 114px;
+    height: 115px;
+    margin-bottom: 40px;
+    background-size: 114px 115px;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+.about-work {
+    position: relative;
+    margin: auto;
+    margin-bottom: 40px;
+    width: 500px;
+    height: 60px;
+    line-height: 30px;
+    font-size: 14px;
+    z-index: 2;
+    overflow: hidden;
+}
+.work-left {
+    float: left;
+    font-size: 20px;
+}
+.work-middle {
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    width: 60px;
+    text-align: center;
+    border: 5px solid #eeeeee;
+    border-radius: 14px 14px;
+}
+.work-right {
+    position: absolute;
+    right: 10px;
+    width: 160px;
+}
+.footer {
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    margin: 0 auto;
+    bottom: 0px;
+}
+.footer-nav {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+}
+.footer-nav span {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 20px;
+    line-height: 35px;
+    text-decoration: none;
+}
+.footer-link {
+    margin: 0 auto;
+    width: 1000px;
+    margin-top: 45px;
+    overflow: hidden;
+}
+.link-item {
+    float: left;
+    width: 200px;
+}
+.link-name {
+    color: #c6c6c6;
+}
+.link-list {
+    color: #fff;
+    margin-top: 30px;
+}
+.link-list li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.copyright {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin-bottom: 45px;
+    color: #fff;
+    text-align: center;
+}
+.footer-logo {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    height: 34px;
+    width: 30px;
+    margin-left: -15px;
+}
+
