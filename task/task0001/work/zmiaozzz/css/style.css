@@ -121,6 +121,9 @@ body {
 .content-wrap:nth-last-child(1) {
     margin-right: 0;
 }
+.right {
+    margin-right: 0;
+}
 .content-wrap img {
     display: block;
     width: 300px;
