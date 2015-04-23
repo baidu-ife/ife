@@ -177,7 +177,7 @@ function isMobilePhone(phone) {
 //3
 //为dom增加一个样式名为newClassName的样式
 function addClass(element, newClassName) {
-    if (element.className === undefined || element.className === "") {
+    if (element.className === null || element.className === "") {
         element.className = newClassName;
     }
     else {
@@ -212,7 +212,7 @@ function getPosition(element) {
     };
 }
 
-
+//IE8不支持根据class进行搜索
 function getElementsByClassName(targetClass) {
     var documentArray = [];
     var parent = document.body;
@@ -386,7 +386,7 @@ function addEnterEvent(element, listener) {
 //事件代理 http://www.cnblogs.com/rubylouvre/archive/2009/08/09/1542174.html
 function delegateEvent(element, tag, eventName, listener) {
     addEvent(element, eventName, function(e){
-        var e = e || window.event;
+        e = e || window.event;
         var target = e.srcElement ? e.srcElement : e.target;
         var targetName = target.nodeName.toLowerCase();
         if (targetName === tag) {
@@ -430,7 +430,7 @@ function isIE() {
     //appVersion:此属性通常数字开始，包含浏览器厂商和版本信息的详细字符串。但没有标准格式，没法直接用来判断
     //userAgent:浏览器在user-agent http头部中发送的字符串，没有标准格式。但包含绝大部分信息，因此浏览器弹休代码通常用它来嗅探
     //platform:自欺上运行浏览器的操作系统（并且可能是硬件）的字符串。
-    var ieVersion = (function() {
+    return (function() {
         var s = navigator.userAgent.toLowerCase();
         //ie 10以前版本号在msie后，11则在rv后
         var match = /(msie)\s(\d+.\d)/.exec(s) || /(rv):(\d+.\d)/.exec(s);
@@ -441,7 +441,6 @@ function isIE() {
             return -1;
         }
     })();
-    return ieVersion;
 }
 
 
