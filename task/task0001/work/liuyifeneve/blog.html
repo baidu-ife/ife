@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="headstyle">
+<div id="middlepart">
+<div id="logo">YourLOGO</div>
+<div id="index"><a href="index.html">首页</a><a href="blog.html">文章</a><a href="gallery.html">作品</a><a href="about.html">关于</a></div>
+</div>
+<div id="giticon"><a href="https://github.com/" target＝_blank><img src = "img/icon-github.png" alt = "My Image" title = "Github" /></a></div>
+<div style="clear:both"></div>
+</div>
+<div id="mainback"  style="float:middle;">
+
+<div style="margin:0px auto;width:1080px;overflow:hidden;">
+<div id="article-left" style="margin-left:50px;">
+
+<div class="text1"><h3>心得1</h3><div class="texttag"><div class="texttag1">4.12</div>
+<div class="texttag2">CSS</div></div><h4>总述</h4><p>作为一个菜鸟级的选手，第一次的任务对于我而言真是相当艰巨，但是收获也很多。我之前基本上学完了慕课网上的HTML和CSS的基础课程，而初级班的这次作业与其相比有过之而不不及。这次的任务我是按照1-2-4-3的顺序完成的，当时做的时候觉得第三页最难，不过完成后还是觉得前两页比较难。这次虽然基本上全部完成了，但是还是有一些问题。首先就是在处理类选择器和ID选择器上我是以ID选择器为主，只有当HTML需要多次调用的时候才会使用类选择器，这一点虽然目前没出什么问题，但总是觉得思路不够清晰，以后编写大型复杂网站的时候就会出问题。第二是编写CSS的语言不够规范、简洁，总是有一种很冗余的感觉，很多时候可以利用交集或者并集选择器的地方我为了调试方便全部分开写了。第三是在排版上语言不够好。我用了大量的浮动进行排版，而很多时候需要对浮动清除的地方我都不是很清楚（现在还是不清楚），所以会导致一些兼容的问题。第四目前所有的圆形边框我都使用的是border-radius语句，而IE8等浏览器是不支持这个表达的，但是吧其他的方法我还没有时间研究，所以暂时先这样吧。第四是很多边距、字体、颜色等等设置的时候是粗略的估算的，所以可能跟模板不太一样。</p><div class="note1">Evelyn发表于2012年4月17日</div>
+</div>
+<div class="text1"><h3>心得1</h3><div class="texttag"><div class="texttag1">4.12</div>
+<div class="texttag2">CSS</div></div><h4>index的问题</h4><p>自我感觉index这一页算是完成的比较好的，基本上所有的要求都实现了。其中最为纠结的是三个自适应高度、但是又要高度一致的白色模块了。最后采用了div套div，再绝对定位的方法实现了。光这一部分就调了一整天（我真是太慢了），其它的部分都还比较顺利。</p><div class="note1">Evelyn发表于2012年4月17日</div>
+</div>
+<div class="text1"><h3>心得1</h3><div class="texttag"><div class="texttag1">4.12</div>
+<div class="texttag2">CSS</div></div><h4>blog问题</h4><p>blog的问题主要集中在每篇blog左边的标签上。为了保证每个标签都跟着博客调整，就需要把博客作为标签的父模块然后再用绝对定位移到左边。为了保证980px的内容居中显示，我之前定义了一个宽为980px的区域用放置内容。问题是该标签是放置在980px内容之外的，因此将标签定位到正确的位置的时候就会被遮挡。我尝试了很多方法都没有解决遮挡的问题，最后只好将页面宽度设为1080px。因此现在这个页面会比其他的宽一点。另一个问题是搜索框和模板的要求不太一样，好吧我已经尽力了。。。模板要求是获取焦点和失去焦点的时候包括图标在内的整个框发生变化，我只能让搜索框自己和字体变化，而且图标还是我自己画的。</p><div class="note1">Evelyn发表于2012年4月17日</div>
+</div>
+<div class="text1"><h3>心得1</h3><div class="texttag"><div class="texttag1">4.12</div>
+<div class="texttag2">CSS</div></div><h4>其余问题</h4><p>gallery最开始感觉是最难的，做完觉得还好，也不知道我的这个瀑布流代码会不会太冗余了。about实现的方式略微残暴，而且在IE中显示正常，在Chrome中会出现文本对不齐的情况。最后我发现任务要求是写总结和收获，而我写的基本都是还在纠结的问题。</p><div class="note1">Evelyn发表于2012年4月17日</div>
+</div>
+<div id="subpage1">
+<ul>
+<li><a herf="#">第一页</a></li>
+<li><a herf="#">上一页</a></li>
+<li><a herf="#">1</a></li>
+<li><a herf="#">2</a></li>
+<li><span style="background-color:purple;color:white">3</span></li>
+<li><a herf="#">4</a></li>
+<li><span style="background-color:white;">...</span></li>
+<li><span style="background-color:white;color:grey">下一页</span></li>
+<li><a herf="#">最后页</a></li>
+</ul>
+</div>
+
+</div>
+
+
+<div id="other-right" style="margin-top:20px;margin-right:50px;">
+
+<div id="search1">
+<form>
+<input type="image" src = "img/search.jpg" style="width:40px; height:40px; float:left;"/>
+<input type="text" name="search" value="Keywords" style="font-size:16px;height:39px;width:138px;float:left;"/>
+<input type="image" src = "img/GO.png" style="width:40px; height:40px; float:left;"/>
+</form>
+</div>
+
+<div id="page1">
+<ul>
+<li><a herf="#">HTML</a></li>
+<li><a herf="#">CSS</a></li>
+<li><a herf="#">JavaScript</a></li>
+<li><a herf="#">Other</a></li>
+</ul>
+</div>
+
+<div id="calendar1">
+<table style="border-spacing:0px">
+<caption style="margin-bottom:10px;color:purple; font-family:黑体"><a herf="#" style="margin-right:56px;">&lt;</a>2014年4月<a herf="#" style="margin-left:56px;">&gt;</a></caption>
+<tr><th><div class="date">M</div></th><th><div class="date">T</div></th><th><div class="date">W</div></th><th><div class="date">T</div></th><th><div class="date">F</div></th><th><div class="date">S</div></th><th><div class="date">S</div></th></tr>
+<tr><td><div class="date">1</div></td><td><div class="date">2</div></td><td><div class="date">3</div></td><td><div class="date">4</div></td><td><div class="date" style="background-color:purple; color:white;">5</div></td><td><div class="date">6</div></td><td><div class="date">7</div></td></tr>
+<tr><td><div class="date">8</div></td><td><div class="date" style="color:purple;">9</div></td><td><div class="date">1</div></td><td><div class="date">2</div></td><td><div class="date">3</div></td><td><div class="date" style=" color:purple;">4</div></td><td><div class="date">5</div></td></tr>
+<tr><td><div class="date">6</div></td><td><div class="date">7</div></td><td><div class="date">8</div></td><td><div class="date">9</div></td><td><div class="date">1</div></td><td><div class="date">2</div></td><td><div class="date">3</div></td></tr>
+<tr><td><div class="date">4</div></td><td><div class="date">5</div></td><td><div class="date">6</div></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</div>
+
+<div id="tag1">
+<h3>Tags</h3>
+<ul>
+<li style="font-size:28px">JavaScript</li><li style="font-size:18px">CSS</li><li style="font-size:12px">flex</li><li style="font-size:12px">WebGl</li><li style="font-size:24px">HTML</li><li style="font-size:18px">Canvas</li><li style="font-size:20px">Prototype</li>
+<li style="font-size:22px">HTML5</li><li style="font-size:12px">grid</li><li style="font-size:16px">nodeJS</li><li style="font-size:16px"></li><li style="font-size:20px">jQuery</li><li style="font-size:20px">ECharts</li>
+</ul>
+</div>
+
+</div>
+
+
+
+</div>
+</div>
+<div id="frame1"><span class="indexstyle">
+<a href="index.html">首页</a><a href="blog.html">文章</a><a href="gallery.html">作品</a><a href="about.html">关于</a></span></div>
+
+<div id="frame2">
+<div id="framepart">
+<div class="frameindex"><h3>学习资料</h3><ul><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li>
+</ul>
+</div>
+
+<div class="frameindex"><h3>友情链接</h3><ul><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li>
+</ul>
+</div>
+
+<div class="frameindex"><h3>学习资料</h3><ul><li><a href="index.html">LINK</a></li><li><a href="index.html">Hover样式</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li>
+</ul>
+</div>
+
+<div class="frameindex"><h3>学习资料</h3><ul><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li>
+</ul>
+</div>
+
+<div class="frameindex"><h3>学习资料</h3><ul><ul><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li><li><a href="index.html">LINK</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div id="frame3">版权信息</div>
+<div id="frame3"><img src = "img/icon-github.png" alt = "My Image" /></div>
+
+</body>
+</html>
