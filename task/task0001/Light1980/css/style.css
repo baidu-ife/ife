@@ -1,0 +1,1234 @@
+/* index */
+#header {
+    height: 80px;
+    position: relative;
+
+    background-color: #747;
+}
+
+#head1 {
+    position:absolute;
+    bottom: 5px;
+    left: 100px;
+    margin: 0;
+    padding:0;
+
+    font-family: "浪漫雅圆", serif;
+    color: #fff;
+    }
+
+#nav-bar {
+    width: 980px;
+    height: 80px;
+    position: relative;
+    margin: 0 auto;
+}
+.nav  {
+    position: absolute;
+    bottom: 5px;
+    right:0;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;	
+    ;
+}
+
+ul a {
+    font-family: "宋体", serif;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    }
+
+ul li {
+    display: inline;
+    
+    margin: 14px;}
+
+#icon{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    
+}
+
+
+#banner {
+    background-image: url(banner-bg.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+}
+
+#banner-box {
+    width: 980px;
+    height: 868px;
+    margin: 0 auto;
+    position: relative;
+}
+#in-pic-box {
+    width: 300px;
+    height: 200px;
+    max-width: 350px;
+    max-height: 300px;
+    position:absolute;
+    bottom: 5px;
+    right: 0;
+
+    /*box-sizing: border-box;
+    border:1px solid black;*/
+    
+    background-image: background-image: -moz-linear-gradient(top, #fff, #3757fa); /* Firefox */
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, rgba(255,255,255,0.5)), color-stop(0.75, rgba(255,255,255,0.3)),color-stop(1,rgba(255,255,255,0))); /* Saf4+, Chrome */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255,255,255,0.7)', endColorstr='rgba(255,255,255,0)', GradientType='0'); /* IE*/
+}
+
+#in-pic-box h1 {
+    margin:0 0 12px 0;
+    padding:10px 10px 30px 10px;
+    
+    text-align: right;
+    font-size: 14px;
+}
+
+#in-pic-box p {
+    padding: 10px 10px 30px 10px;
+    margin: 0;
+   
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.5em;
+}
+
+#container-picture {
+    width: 100%;
+    max-width: 1980px;
+    height: 500px;
+
+    text-align:center;
+    padding: 5px 0;
+    margin: 0;
+    background-color: #c8c8c8;
+}
+
+.total-white-box{
+    width: 980px;
+    overflow: auto;
+    
+    margin: 0 auto;
+}
+.white-box {
+    float:left;
+    width: 320px;
+    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    vertical-align:top;
+    
+    padding: 5px ;
+    margin: 10px 0px;
+    
+    background-color:#fff;
+}
+#box2{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.white-box img{
+    width: 300px;
+    height: 180px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.white-box p{
+    margin: 15px 30px 25px 30px;
+    text-align: left;
+    }
+
+#container-introduction {
+    position: relative;
+    width: 100%;
+    max-width: 1980px;
+    height: 600px;
+    text-align: center;
+
+    background-color: #eee;
+}
+
+#my-icon {
+    display:inline-block;
+    position: relative;
+    top: -30px;
+
+    margin: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 160px;
+
+    text-align: center;
+}
+
+#introduction {
+    width: 500px;
+    height: 300px;
+    
+    margin: 50px auto 0 auto;
+    padding: 0;
+}
+
+#introduction h1 {
+    margin: 0 0 50px 0;
+    padding: 0;
+
+    font-size: 20 px;
+    font-family: Century Gothic;
+    color: black;
+}
+
+#introduction p {
+    font-size: 14px;
+    color: black;
+    line-height: 1.7em;
+    text-align: left;
+}
+
+#bottom-nav {
+    width: 100%;
+    max-width: 1980px;
+    position:relative;
+    height: 50px;
+    float:left;
+    margin:0;
+    padding:0;
+    
+    border-bottom: 2px solid white;
+    
+    background-color: black;
+}
+
+#bottom-nav-container {
+    position:relative;
+    max-width: 300px;
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px auto;
+}
+
+.nav1  {
+    position: relative;
+    bottom: 5px;
+    right:0;
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;	
+}
+    
+#bottom-container {
+    width: 100%;
+    max-width: 1980px;
+    height: 400px;
+    max-height: 400px;
+    overflow: auto;
+    position:relative;
+    
+    background-color: black;
+}
+
+#bottom-container ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+#bottom-container a {
+    display: block;
+
+    font-family: "宋体", serif;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+
+#bottom-container a:hover {
+    color: yellow;
+    margin: 2px;
+    border: 2px solid red;
+    border-radius: 5px;
+}
+#bottom-container ul > li {
+    display:block;
+    width:100px;
+
+    margin: 5px;
+
+    text-align:center;
+    font-size: 18px;
+
+    color: #fff;
+}
+
+.bottom-link-container {
+    float:left;
+    width: 150px;
+
+    margin: 20px;
+}
+
+#bottom-icon{
+    width:100px;
+    position: absolute;
+    bottom: 0;
+    right: 30%;
+    
+    font-family: "Microsoft Yahei", serif;
+    text-align: center;
+    
+    color: #fff;
+}
+/* index */
+
+/* gallery */
+#gallery-background {
+    
+    height: 850px;
+    
+    margin: 0;
+    padding: 10px;
+    
+    background-color: #eee;
+    
+}
+
+#gallery-main {
+    
+    width: 1080px;
+    height: 800px;
+    margin: 0 auto;
+    padding: 0;
+    
+}
+
+#waterfall-nav {
+    position: relative;
+    float: left;
+    width: 657px;
+    background-color: #fff;
+    
+}
+
+#waterfall-nav-content {
+    list-style-type:none;
+    margin:10px;
+    padding:0;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+
+#waterfall-nav-content a {
+    margin: 0;
+    padding: 0;
+    
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    background-color: #fff;
+    text-align:center;
+    padding:6px;
+    text-decoration:none;
+}
+
+#waterfall-nav-content li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#waterfall-nav-border-1 {
+    border-top: 5px solid rgba(0,128,255,1);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+
+#waterfall-nav-border-2 {
+    border-top: 5px solid rgba(0,28,55,0.3);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        box-sizing: border-box
+}
+
+#waterfall-nav-border-2:hover {
+    border-top: 5px solid rgba(0,28,55,1);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+#waterfall-nav-border-3 {
+    border-top: 5px solid rgba(0,18,25,0.3);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+#waterfall-nav-border-3:hover {
+    border-top: 5px solid rgba(0,18,25,1);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+#waterfall-nav-border-4 {
+    border-top: 5px solid rgba(0,81,52,0.3);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+#waterfall-nav-border-4:hover {
+    border-top: 5px solid rgba(0,81,52,1);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+
+#waterfall-nav-border-5 {
+    border-top: 5px solid rgba(105,18,255,0.3);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+#waterfall-nav-border-5:hover {
+    border-top: 5px solid rgba(105,128,255,1);
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box
+}
+
+#waterfall-main {
+    float:left;
+    width: 720px;
+    padding: 15px 0 100px 10px;
+    -webkit-column-width: 170px;
+       -moz-column-width: 170px;
+            column-width: 170px;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
+    
+    background-color: #fff;
+}
+
+.waterfall-box {
+    width: 160px;
+    
+    padding: 10px 0 0 0;
+    margin: 0;
+    
+    
+}
+
+.waterfall-box img {
+    display: block;
+    /*这一步居然离奇地消除了图像和文字之间的空隙*/
+    /*为什么高度会被固定啊*/
+    width: 160px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.waterfall-description {
+    width: 160px;
+    bottom: 0;
+    margin: 0;
+    
+    font-size: 14px;
+    color: #fff;
+    font-family: "浪漫雅圆", serif;
+    
+    background-color: #747;
+}
+.waterfall-description-input h2 {
+    font-size: 18px;
+    color: #fff;
+    font-family: "宋体", serif;
+}
+
+.waterfall-description-input {
+    margin: 0 0 0 32px;
+    padding: 3px;
+    
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.waterfall-description-category {
+    float:left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    margin: 15px 0 0 0;
+    
+    text-align: center;
+    font-size: 20px;
+    color: #fff
+}
+
+/*侧边栏*/
+#searching-bar{
+    position:relative;
+    float:right;
+    width: 300px;
+    height: 80px;
+
+    margin: 10px;
+    padding: 0px;
+
+    background-color: #fff;
+}
+
+#search-box{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    
+    height: 40px;
+    width: 220px;
+    
+    margin-left: -110px;
+    margin-top: -20px;
+}
+
+#input-search { 
+    background-image:url(../img/search.png); 
+    background-repeat:no-repeat; 
+    width: 175px;
+    height: 40px;
+	
+}
+
+#input-search:focus { 
+    background-image:none;
+    width:175px;
+    height:40px;
+    outline:none;
+}
+
+#submit{
+    background-color: #BEBEBE;
+    color: #fff;
+    font-size: 14px;
+    width: 35px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+#submit:hover {
+    background-color: #747;
+    color: #fff;
+    width: 35px;
+    height: 40px;
+}
+
+#hot-nav-bar {
+    position:relative;
+    float:right;
+    width: 300px;
+    height: 250px;
+
+    margin: 40px 10px 0 0;
+    padding: 0px;
+
+    background-color: #fff;
+}
+
+#hot-nav-bar h2 {
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+    color: #bebebe;
+    font-family: "Microsoft Yahei", serif;
+}
+
+#hot-nav-bar ol{
+    padding: 0 50px;
+    
+}
+#hot-nav-bar ol li{
+    padding: 5px 10px;
+    margin: 0px;
+    
+    font-size: 16px;
+    color: #000;
+}
+
+#check-more-button-box {
+    float: left;
+    width: 720px;
+    height: 40px;
+    line-height: 40px;
+    padding: 5px;
+    margin: 10px 0 0 0;
+    
+    background-color: #fff;
+    
+    font-size: 20px;
+    text-align: center;
+}
+
+#check-more-button-box a {
+    text-decoration: none;
+    color: #bebebe;
+}
+/* gallery */
+
+/* blog */
+#blog-background {
+		position:relative;
+	width: 100%;
+	margin:0;
+	overflow:auto;
+	
+	background-color: #D4D4D4;
+}
+
+
+.article {
+	
+	position: relative;
+	width:800px;
+	margin: 10px 10px 10px 100px;
+	padding: 0;
+    
+	background-color: transparent;
+
+}
+
+.tag-top {
+	float:left;
+	position: relative;
+	top: 35px;
+	left: 0;
+	width: 30px;
+	height: 25px;
+	line-height: 25px;
+	padding: 0;
+	margin: 0;
+	
+	background-color: #0080C0;
+	
+	text-align: center;
+	
+	font-size: 12px;
+	font-family: "浪漫雅圆", serif;
+	color:white;
+}
+
+.tag-bottom {
+	position: absolute;
+	top: 55px;
+	left: 0;
+	width: 30px;
+	height: 25px;
+	line-height: 25px;
+
+	padding: 0;
+	margin: 0;
+
+	background-color: #80FFFF;
+
+	text-align: center;
+
+	font-size: 12px;
+	font-family: "浪漫雅圆", serif;
+	color:black;
+}
+	
+.article-content{
+	top:0;
+	margin-left: 30px;
+	margin-top: 0;
+	width: 770px;
+	background-color: white;
+}
+
+.article-content h2{
+	text-align: left;
+	font-size: 16px;
+	padding: 10px;
+	
+	color: #747;
+}
+
+.article-content p{
+	text-align: left;
+	font-size: 14px;
+	padding: 10px;
+	text-indent: 2em;
+	line-height:150%;
+	word-break: break-all;
+}
+
+.article-content span {
+	display:block;
+	padding:5px;
+	text-align: right;
+	font-style: italic;
+	font-size: 20px;
+	color: #BEBEBE;
+}
+
+#sidebar{
+	float:left;
+	position: absolute;
+	top:10px;
+	right:0;
+	margin-left: 100px;
+	width:400px;
+	max-width:400px;
+	overflow:auto;
+}
+
+#searching-bar{
+	position:relative;
+	float:left;
+	width: 300px;
+	height: 80px;
+
+	margin: 10px;
+	padding: 0px;
+
+	background-color: #fff;
+}
+
+#search-box{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	
+	height: 40px;
+	width: 220px;
+	
+	margin-left: -110px;
+	margin-top: -20px;
+}
+
+#input-search { 
+	background-image:url(../img/search.png); 
+	background-repeat:no-repeat; 
+	width: 175px;
+	height: 40px;
+	
+}
+
+#input-search:focus { 
+	background-image:none;
+	width:175px;
+	height:40px;
+	outline:none;
+}
+
+#submit{
+	background-color: #BEBEBE;
+	color: #fff;
+	width: 35px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+}
+
+#submit:hover {
+	background-color: #747;
+	color: #fff;
+	width: 40px;
+	height: 40px;
+}
+
+#category-bar{
+	position:relative;
+	float:left;
+	width: 300px;
+	
+	margin: 10px;
+	padding: 0;
+	
+	background-color: white;
+}
+
+#category-bar ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+#category-bar ul a {
+	position:relative;
+	float:left;
+	/*给自己备注，这样做的目的是让上下A标签合拢的同时不影响结构。如果没有relative而单纯float，A标签行框
+	就没了，所以我用relative来占位；发现了一个问题，当调整A标签的宽度适应于div后，上面有一小段空白，不
+	明白是什么原因造成的。*/
+	display: block;
+	padding-left:5px;
+	
+	font-family: "浪漫雅圆", serif;
+	font-size: 25px;
+	color: black;
+	text-decoration: none;
+	width: 220px;
+	height: 80px;
+	line-height:80px;
+}
+
+
+#cate-border1 {
+	border-left: 6px solid rgba(0,128,255,0.3);
+	border-bottom: 2px solid #bebebe;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box
+}
+
+#cate-border1:hover {
+	border-left: 6px solid rgba(0,128,255,1);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box
+}
+
+#cate-border2 {
+	border-left: 6px solid rgba(128,0,255,0.3);
+	border-bottom: 2px solid #bebebe;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box
+}
+
+#cate-border2:hover {
+	border-left: 6px solid rgba(128,0,255,1);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box
+}
+
+#cate-border3 {
+	border-left: 6px solid rgba(0,0,64,0.3);
+	border-bottom: 2px solid #bebebe;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box
+}
+
+#cate-border3:hover {
+	border-left: 6px solid rgba(0,0,64,1);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box
+}
+
+#cate-border4 {
+	border-left: 6px solid rgba(0,0,0,0.3);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box
+}
+
+#cate-border4:hover {
+	border-left: 6px solid rgba(0,0,0,1);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box
+}
+
+
+.page {
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 800px;
+	margin: 30px 10px 30px 100px;
+	padding: 0;
+    
+	background-color: transparent;
+	text-align: center;
+}
+
+.page ul a{
+	padding: 3px;
+	font-family: "浪漫雅圆", serif;
+	font-size: 20px;
+	text-decoration: none;
+	
+	background-color: #fff;
+	color: black;
+	}
+	
+.page ul li {
+	display: inline;
+	margin: 14px;
+	padding: 3px;
+	
+	font-family: "浪漫雅圆", serif;
+	font-size: 20px;
+	
+	color: #7c7c7c;
+	background-color: #fff;
+}
+
+#current-page {
+	background-color: #747;
+}
+
+
+#timetable {
+	position:relative;
+	float:left;
+	width: 300px;
+	
+	margin: 10px;
+	padding: 0;
+	
+	background-color: white;
+	}
+
+.timetable-1 {
+	width: 300px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.timetable-1 {
+    border-collapse:collapse;
+}
+.timetable-1  tr {
+    border-bottom:1px solid #474;
+}
+.timetable-1  td {
+	margin: 0;
+	padding: 3px;
+	
+	font-size: 18px;
+}
+
+.timetable-1 th {
+	color: #747;
+	padding: 5px;
+}
+
+
+
+#keyword {
+    position: relative;
+	float: left;
+	width: 300px;
+	margin: 10px;
+	padding: 0px;
+	
+	
+	background-color: #fff;
+}
+  
+#keyword h2 {
+	text-align: left;
+	margin: 0;
+	padding: 5px;
+	color: #3c3c3c;
+	
+	font-size: 20px;
+}
+
+#keyword p {
+	text-align: left;
+	margin: 0;
+	padding: 10px;
+	color: #747;
+	
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 200%;
+}
+/* blog */
+
+/* About Background */
+
+#about-background {
+	position: relative;
+	margin: 0;
+	padding: 50px 10px 30px 10px;
+	background-color: #d2d2d2; 
+}
+
+#about-main{
+	position:relative;
+	width: 980px;
+	height: 1280px;
+	max-width: 980px;
+	max-height: 1280px;
+	
+	margin: 0 auto;
+	padding: 0;
+	
+	background-color: transparent;
+}
+
+#left-main {
+	position:relative;
+	float: left;
+	
+	width: 485px;
+	height: 1280px;
+	max-width: 980px;
+	max-height: 1280px;
+	
+	background-color: #fff;
+}
+
+#right-main {
+	position:relative;
+	float: right;
+	
+	width: 485px;
+	height: 1280px;
+	max-width: 980px;
+	max-height: 1280px;
+	
+	background-color: #fff;
+}
+
+#my-icon {
+	position: absolute;
+	top: -30px;
+	left: 410px;
+	
+	
+	width: 160px;
+	height: 160px;
+	border-radius: 160px;
+	
+	border: 5px solid #c8c8c8;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+#icon-contact {
+	position: absolute;
+	top: 330px;
+	left: 430px;
+	
+	width: 120px;
+	height: 120px;
+	border-radius: 120px;
+	
+	border: 5px solid #c8c8c8;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+#icon-edu {
+	position: absolute;
+	top: 600px;
+	left: 430px;
+	
+	margin: 0 auto;
+	width: 120px;
+	height: 120px;
+	border-radius: 120px;
+	
+	border: 5px solid #c8c8c8;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+#icon-volunteer{
+	position: absolute;
+	top: 970px;
+	left: 430px;
+	
+	margin: 0 auto;
+	width: 120px;
+	height: 120px;
+	border-radius: 120px;
+	
+	border: 5px solid #c8c8c8;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+#time-icon-box-1 {
+	position: absolute;
+	top: 770px;
+	left: 450px;
+	
+	width: 80px;
+	height: 40px;
+	border-radius: 20px;
+	
+	border: 5px solid #c8c8c8;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+#time-icon-box-2 {
+	position: absolute;
+	top: 870px;
+	left: 450px;
+	
+	width: 80px;
+	height: 40px;
+	border-radius: 20px;
+	
+	border: 5px solid #c8c8c8;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+#time-icon-box-3 {
+	position: absolute;
+	top: 1135px;
+	left: 450px;
+	
+	width: 80px;
+	height: 40px;
+	border-radius: 20px;
+	
+	border: 5px solid #c8c8c8;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+.time-icon {
+	width: 60px;
+	height: 20px;
+	border-radius: 20px;
+	line-height: 20px;
+	padding: 5px;
+	
+	font-family: "浪漫雅圆", "Microsoft Yahei", serif;
+	text-align: center;
+	font-size: 16px;
+	color: black;
+	background-color:white;
+}
+
+.info {
+	width: 250px;
+	height: 200px;
+	line-height: 150%;
+	padding: 0px;
+	
+	text-align:left;
+	font-family: "浪漫雅圆", "Microsoft Yahei", serif;
+	text-align: center;
+	font-size: 14px;
+	color: black;
+}
+
+.info span {
+	padding: 5px;
+	
+	font-size: 20px;
+	color: #474;
+	font
+}
+#info-box-1 {
+	position: absolute;
+	top: 150px;
+	right: 450px;
+	
+	width: 250px;
+	height: 200px;
+}
+
+#info-box-2 {
+	position: absolute;
+	top: 175px;
+	right: 200px;
+	
+	width: 250px;
+	height: 200px;
+}
+
+
+#info-box-3 {
+	position: absolute;
+	top: 470px;
+	right: 450px;
+	
+	width: 250px;
+	height: 200px;
+}
+
+#info-box-4 {
+	position: absolute;
+	top: 485px;
+	right: 220px;
+	
+	width: 250px;
+	height: 200px;
+}
+
+#info-box-5 {
+	position: absolute;
+	top: 740px;
+	right: 450px;
+	
+	width: 250px;
+	height: 200px;
+}
+
+#info-box-6 {
+	position: absolute;
+	top: 777px;
+	right: 270px;
+	
+	width: 250px;
+	height: 200px;
+}
+
+#info-box-7 {
+	position: absolute;
+	top: 1100px;
+	right: 450px;
+	
+	width: 250px;
+	height: 200px;
+}
+
+#info-box-8 {
+	position: absolute;
+	top: 877px;
+	right: 250px;
+	
+	width: 250px;
+	height: 200px;
+}
+
+
+#info-box-9 {
+	position: absolute;
+	top: 1145px;
+	right: 190px;
+	
+	width: 250px;
+	height: 200px;
+}
+/* about */
