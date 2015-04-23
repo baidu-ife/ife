@@ -74,3 +74,6 @@ table th {
 	width: 100px;
 	height: auto;
 }
+.suggest:hover{
+	background: #a0a0a0;
+}
