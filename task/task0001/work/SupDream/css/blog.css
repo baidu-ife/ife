@@ -1,0 +1,181 @@
+.section{
+    height: 800px;
+}
+.blog{
+    position: relative;
+    width: 710px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    display: inline;
+    background: #ffffff;
+}
+.blog .blog-time{
+    position: absolute;
+    left: -50px;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    background: midnightblue;
+}
+.blog .blog-mark{
+    position: absolute;
+    left: -50px;
+    top: 30px;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    background:paleturquoise;
+}
+.blog h1{
+    color: red;
+    font-size: 16px;
+}
+.blog h2{
+    font-size: 14px;
+}
+#blog_note{
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: gray;
+    font-size: small;
+}
+
+.page-list{
+    float: left;
+    width: 700px;
+    text-align: center;
+    margin: 10px auto;
+
+}
+
+.page-list a{
+    font-family: "Courier New", Courier, monospace, serif;
+    font-size: 16px;
+    height: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+.page-control{
+    color:black;
+    background: white;
+    width: 50px;
+}
+.page{
+    color:black;
+    background: white;
+    width: 25px;
+}
+.first-page{
+    width: 25px;
+    background: blueviolet;
+    color:white;
+}
+aside{
+    position: relative;
+    width:260px;
+    margin-left: 720px;
+}
+.search{
+
+    padding:20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background: white;
+}
+.search-1{
+    position: relative;
+    width: 218px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #dddddd;
+
+}
+.search-1 img{
+    position: relative;
+    left: 0;
+    height: 38px;
+}
+.search-1 input{
+    position: absolute;
+    left: 44px;
+    bottom: 0;
+    height: 32px;
+    width: 127px;
+}
+.search-1 button{
+    position: absolute;
+    right: 0;
+    width: 43px;
+    height: 38px;
+    background: #eeeeee;
+}
+.aside-nav{
+    padding: 0;
+    background: white;
+}
+.aside-nav li{
+
+    height: 44px;
+    width: 98%;
+    border-bottom: 1px solid slateblue;
+    margin-left: 0;
+    margin-top: 2px;
+    list-style-type: none;
+}
+.aside-nav .link{
+    border-left: 5px solid lightskyblue;
+ }
+.aside-nav .hover{
+    border-left: 5px solid midnightblue;
+}
+.aside-nav li a{
+    line-height: 40px;
+    margin-left: 10px;
+    color: #000;
+    text-decoration: none;
+}
+.aside-date{
+    padding: 10px 10px;
+    margin-top: 10px;
+    background: white;
+}
+.aside-date table{
+    width: 240px;
+}
+.aside-date .line{
+    color: slateblue;
+}
+.aside-date span{
+    display: block;
+    text-align: center;
+    color: lightslategrey;
+}
+.aside-date .hover{
+    background: slateblue;
+}
+
+.aside-tags{
+    padding: 10px;
+    margin-top: 10px;
+    background: white;
+}
+.tags a{
+    color: slateblue;
+    text-decoration: none;
+}
+.tag-1{
+    font-size: 30px;
+}
+.tag-2{
+    font-size: 20px;
+}
+.tag-3{
+    font-size: 15px;
+}
