@@ -38,7 +38,8 @@
     height: 10px;
     border: 1px solid #000;
     border-radius: 50%;
+    background-color: #333;
 }
-.active {
+#controller .active {
     background-color: #fff;
 }

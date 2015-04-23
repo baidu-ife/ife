@@ -212,6 +212,36 @@ function getPosition(element) {
     };
 }
 
+
+function getElementsByClassName(targetClass) {
+    var documentArray = [];
+    var parent = document.body;
+    var result;
+    var scanClass = function (element, targetClass) {
+        if (element.nodeType == 1 && element.className != undefined && element.className.indexOf(targetClass) !== -1) {
+            return element;
+        }
+        else if (element.childNodes.length === 0) {
+            return null;
+        }
+        else if (element.childNodes.length !== 0) {
+            for (var i = 0; i < element.childNodes.length; i++) {
+                if (element.childNodes[i].nodeType == 1) {
+                    result = scanClass(element.childNodes[i], targetClass);
+                    if (result !== null && result!== undefined) {
+                        documentArray.push(result);
+                    }
+                }
+            }
+        }
+        else {
+            return null;
+        }
+    };
+    scanClass(parent, targetClass);
+    return documentArray;
+}
+
 //mini $
 //实现一个简单的Query
 function $(selector) {
@@ -370,18 +400,22 @@ function delegateEvent(element, tag, eventName, listener) {
 $.on = function(selector, event, listener) {
     var element = $(selector);
     addEvent(element, event, listener);
+    return this;
 };
 $.click = function(selector, listener) {
     var element = $(selector);
     addClickEvent(element, listener);
+    return this;
 };
 $.un = function(selector, event, listener) {
     var element = $(selector);
     removeEvent(element, event, listener);
+    return this;
 };
 $.delegate = function(selector, tag, event, listener) {
     var element = $(selector);
     delegateEvent(element, tag, event, listener);
+    return this;
 };
 //
 //// 使用示例
@@ -429,6 +463,8 @@ function ajax(url, options) {
     else {
         request = window.ActiveXObject("Microsoft.XMLHTTP");
     }
+
+    //编码数据
     var encodeFromData = function(data) {
         var pairs = [];
         if(typeof data === "string") {

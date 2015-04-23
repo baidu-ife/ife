@@ -1,7 +1,7 @@
 /**
  * Created by T on 2015/4/21.
  */
-window.onload = (function() {
+window.onload = function() {
     var options = {
         type: "GET",
         data: "content=text",
@@ -20,6 +20,7 @@ window.onload = (function() {
             console.log(msg);
         }
     };
+
     $.on("#search-box", "keyup", function() {
         var panel = $("#result-panel");
         var value = $("#search-box").value;
@@ -33,6 +34,7 @@ window.onload = (function() {
         }
     });
 
+    //search-box 失去焦点
     $.on("#search-box", "blur", function() {
         var panel = $("#result-panel");
         var value = $("#search-box").value;
@@ -42,6 +44,8 @@ window.onload = (function() {
             removeClass(panel, "active");
         }
     });
+
+    //事件代理
     $.delegate("#result-panel", "li", "click", function(e) {
         var panel = $("#result-panel");
         var target = e.srcElement ? e.srcElement : e.target;
@@ -49,4 +53,4 @@ window.onload = (function() {
         panel.innerHTML = "";
         removeClass(panel, "active");
     });
-})();
+};
