@@ -355,12 +355,12 @@ function ajax(url, options) {
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange=function()
 	{
-		if(xmlhttp.readyState==4 && xmlhttp.status==200 && options.hasOwnProperty("onsuccess"))
+		if(xhr.readyState==4 && xhr.status==200 && options.hasOwnProperty("onsuccess"))
 		{
-			options.onsuccess(xhr.reponseText,xhr);
+			options.onsuccess(xhr.responseText,xhr);
 		}
-		if(xmlhttp.status==404 && options.hasOwnProperty("onfail")){
-			options.onfail(xhr.reponseText,xhr);
+		if(xhr.status==404 && options.hasOwnProperty("onfail")){
+			options.onfail(xhr.responseText,xhr);
 		}
 	}
 
@@ -370,6 +370,7 @@ function ajax(url, options) {
 			data= data + attr + "=" + options.data[attr] +"&"
 		}
 		data = data.slice(0,data.length-1);
+		console.log(data);
 	}
 
 	if(options.hasOwnProperty("type")){	
@@ -380,8 +381,9 @@ function ajax(url, options) {
 				xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xhr.send(data);
 			}else{
+				console.log("get");
 				var method = "GET";
-				var ajaxurl = url + data;
+				var ajaxurl = url +"?" + data;
 				xhr.open(method,ajaxurl,true);
 				xhr.send();
 			}

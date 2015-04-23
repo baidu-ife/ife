@@ -69,3 +69,8 @@ table{
 table th {
 	position: relative;
 }
+.suggest{
+	border: 1px solid #000000;
+	width: 100px;
+	height: auto;
+}
