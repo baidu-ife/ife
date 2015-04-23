@@ -77,3 +77,32 @@ table th {
 .suggest:hover{
 	background: #a0a0a0;
 }
+
+.box{
+	width: 200px;
+	height: 600px;
+	border: 1px solid #000000;
+	float: left;
+}
+
+#box_right{
+	margin-left: 200px;
+}
+
+.box > .item{
+	width: 198px;
+	height: 100px;
+	background: red;
+	border: 1px solid #ffffff;
+	position: absolute;
+	z-index: 9999;
+}
+#item2,#item5{
+	top:102px;
+}
+#item3{
+	top:204px;
+}
+#item4{
+	top:306px;
+}
