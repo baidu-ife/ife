@@ -1,1 +1,178 @@
+body, html {
+    margin: 0;
+    font-family: simsun, serif;
+    background: #eeeeee;
+}
+/*header*/
+.header{
+    position:relative;
+    margin: 0;
+    width: 100%;
+    height: 80px;
+    background:#191970 ;
+}
+
+.wrapper{
+    position:relative;
+    margin:0 auto ;
+    width: 980px;
+}
+
+.logo{
+    float: left;
+    font-size: 32px;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+header nav{
+    float: right;
+    height: 25px;
+    margin-top: 55px;
+}
+nav>a{
+    margin-left:28px;
+    color: white;
+    text-decoration:none;
+    margin-bottom: 5px;
+}
+
+.github{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+/*footer*/
+.footer{
+    background: black;
+
+}
+.footer nav{
+    height:24px;
+    text-align: center;
+    margin: 0;
+    border-bottom: 1px solid white;
+}
+.footer nav a {
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 28px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+.footer .wrapper{
+    background:black;
+    height: 200px;
+}
+.footer .link ul{
+    color: white;
+    list-style-type:none;
+    float: left;
+    margin-right: 80px;
+}
+.footer .link ul a{
+    text-decoration: none;
+    color: white;
+}
+.footer .link ul a:hover{
+    color: royalblue;
+}
+.bottom img{
+    position: relative;
+    left: 49%;
+}
+.bottom p{
+    text-align: center;
+    color: white;
+}
+/*index.html*/
+.banner{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 525px;
+    background: url(../img/banner-bg.jpg) no-repeat scroll center center;
+}
+.banner .wrapper{
+    height: 525px;
+}
+.wrapper .article {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    height: 120px;
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+}
+.article h1{
+    font-size: 14px;
+    color: black;
+    margin: 12px;
+}
+.article p{
+    font-size: 12px;
+    color: black;
+    padding: 10px 10px 20px;
+    line-height: 150%;
+}
+.context{
+    position: relative;
+    width: 100%;
+    height: 480px;
+    background: #eeeeee;
+}
+
+.context .wrapper {
+    height: 480px;
+    background: #eeeeee;
+}
+
+.context article {
+    width: 320px;
+    background: #ffffff;
+    margin-top: 10px;
+    float: left;
+    display: inline;
+    height: 400px;
+}
+
+.blog-1 {
+    margin-right: 10px;
+}
+
+.context article img {
+    width: 300px;
+    height: 180px;
+    margin: 10px 10px 15px 10px;
+}
+/*introduce*/
+.introduce{
+    position: relative;
+    background: white;
+    height:400px;
+}
+.head-portrait img{
+    position:relative;
+    top: -50px;
+    left: 44%;
+
+    width: 160px;
+    height: 160px;
+    border-radius:80px;
+}
+.introduce-1{
+    position: relative;
+    top: 10px;
+    margin: 0 auto;
+    width: 600px;
+    height:160px;
+}
+.introduce-1 h1{
+    text-align: center;
+    font-size: 20px;
+    font-family: "Courier New", Courier, monospace, serif;
+}
 
