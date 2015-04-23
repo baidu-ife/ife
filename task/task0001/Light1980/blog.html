@@ -1,0 +1,234 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Blog</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!-- 做这一页也差不多花了6小时，感触最深的还是有关DOM与盒模型的知识；布局真是不容易，
+直到现在也不能说掌握了三四成，勉强糊口…… Ver.0.1 2015/4/22 23:40 -->
+<div id="header">
+		    <div id="nav-bar">
+			    <ul class="nav">
+			        <li><a href="#">首页</a></li>
+				    <li><a href="#">文章</a></li>
+				    <li><a href="#">作品</a></li>
+				    <li><a href="#">关于</a></li>
+		        <ul>
+			</div>
+		<h1 id="head1">Light1980<h1>
+		<a href="https://github.com/Light1980"><img style="border: none;" id="icon" src="img/icon-github.png" alt="窝的Github" title="访问我的Github"></a> 
+    </div>		
+	
+
+	<!--文章区-->
+	<div id="blog-background">
+		<div class="article">
+		    <div class="tag-top">前端</div>
+			<div class="article-content">
+			    <h2><a style="text-decoration:none;" href="http://xuanchao1980.com">这几天的学习经历</a></h2>
+				<p>把想说的都发表在我的<a href="http://xuanchao1980.com" style="text-decoration:none;font-size: 20px; font-family:浪漫雅圆; color: #474;">个人主页</a>了，所以这里就只用来当Demo演示页。<br><br><br><br><br><br><br></p>
+				<span>Light1980 发表于2015年4月22日</span>
+			</div>
+			<div class="tag-bottom">4.22</div>
+		</div>
+		<div class="article">
+		    <div class="tag-top">前端</div>
+			<div class="article-content">
+			    <h2><a style="text-decoration:none;" href="http://xuanchao1980.com">这几天的学习经历</a></h2>
+				<p>我也不知道说些啥……<br><br><br><br><br><br><br><br><br><br></p>
+				<span>Light1980 发表于2015年4月22日</span>
+			</div>
+			<div class="tag-bottom">4.22</div>
+		</div>
+		<div class="article">
+			<div class="tag-top">前端</div>
+			<div class="article-content">
+				<h2><a style="text-decoration:none;" href="http://cousera.org">好久没去Coursera了</a></h2>
+				<p>我特别怀念那些可爱的老师们。<br><br><br><br><br><br><br><br><br><br><br></p>
+				<span>Light1980 发表于2015年4月22日</span>
+			</div>
+			<div class="tag-bottom">4.22</div>
+		</div>
+		<!--侧边栏-->
+		<div id="sidebar">
+			<div id="searching-bar-blog">
+				<div id="search-box">
+				<form method="post">
+					<label><input id="input-search" type="text" value="" name="searching-content"></label>
+					<label><input id="submit" type="submit" value="Go" name="search"></label>
+				</form>
+				</div>
+			</div>
+			<div id="category-bar">
+				<ul>
+					<li><a id="cate-border1" href="#">HTML</a><li>
+					<li><a id="cate-border2" href="#">CSS</a><li>
+					<li><a id="cate-border3" href="#">JavaSript</a><li>
+					<li><a id="cate-border4" href="#">HTML</a><li>
+				<ul>
+			</div>
+			<div id="timetable">
+			    <table class="timetable-1">
+				<tr>
+					<th colspan="2">&lt;</th>
+					<th colspan="3">2015-4</th>
+					<th colspan="2">&gt;</th>
+				</tr>
+				<tr>
+					<td>M</td>
+					<td>T</td>
+					<td>W</td>
+					<td>T</td>
+					<td>F</td>
+					<td>S</td>
+					<td>S</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>9</td>
+					<td>10</td>
+					<td>11</td>
+					<td>12</td>
+					<td>13</td>
+					<td>14</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>16</td>
+					<td>17</td>
+					<td>18</td>
+					<td>19</td>
+					<td>20</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>22</td>
+					<td>23</td>
+					<td>24</td>
+					<td>25</td>
+					<td>26</td>
+					<td>27</td>
+				</tr>
+				<tr>
+					<td>28</td>
+					<td>29</td>
+					<td>30</td>
+					<td>  </td>
+					<td>  </td>
+					<td>  </td>
+					<td>  </td>
+				</tr>
+				</table>
+		</div>
+		<div id="keyword">
+		<h2>Tags<h2>
+		<p><span style="font-size:25px;">JavaSript</span> <span style="font-size:25px;">CSS</span> Flex webGL 
+		<span style="font-size:25px;">HTML</span> <span style="font-size:20">Canvas</span> prototypes HTML5 grid nodeJS CSS3 JQUERY <span style="font-size:25px;">ECharts</span></p>
+		</div>
+	</div>
+		<div class="page">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a id="current-page" href="#">1</a></li>
+				<li>2</li>
+				<li>3</li>
+				<li><a href="#">尾页</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- bottom-bar -->
+	<div id="bottom-nav">
+		<div id="bottom-nav-container">
+		<ul class="nav1">
+			<li><a href="#">首页</a></li>
+			<li><a href="#">文章</a></li>
+			<li><a href="#">作品</a></li>
+			<li><a href="#">关于</a></li>
+		<ul>
+		</div>
+	</div>
+	<!-- 友情链接 -->
+    <div id="bottom-container">
+		<div class="bottom-link-container">
+			<ul>
+				<li>数据可视化</li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+			<ul>
+		</div>
+		<div class="bottom-link-container">
+			<ul>
+				<li>数据科学</li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+			<ul>
+		</div>
+		<div class="bottom-link-container">
+			<ul>
+			    <li>经济学</li>
+			<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+			<ul>
+		</div>
+		<div class="bottom-link-container">
+			<ul>
+			    <li>神经科学</li>
+			<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+			<ul>
+		</div>
+		<div class="bottom-link-container">
+			<ul>
+				<li>演化论相关</li>
+			<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+			<ul>
+		</div>
+		<div class="bottom-link-container">
+			<ul>
+				<li>诗词在线</li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+			<ul>
+		</div>
+		<div class="bottom-link-container">
+			<ul>
+				<li>DOTA2</li>
+			<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+				<li><a href="#">学习链接</a></li>
+			<ul>
+		</div>
+		<div id="bottom-icon">
+		<p>版权信息</p>
+		<a href="https://github.com/Light1980"><img style="border: none;" src="img/icon-github.png" alt="窝的Github" title="访问我的Github"></a> 
+		</div>
+        </div>
+	</body>
+</html>
