@@ -1,0 +1,3 @@
+一、function $(id){return document.getElementById(id)}说明：
+定义一个函数，函数名叫$。 接收一个参数id ， 调用时返回id为此id的元素对象。
+return直接返回一个对象。函数没有声明对象类型。个人理解就是element或object吧。呵呵。
