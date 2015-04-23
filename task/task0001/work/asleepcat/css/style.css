@@ -6,6 +6,7 @@ div#top{background: #801c69;height: 100px;}
 #top img{float: right;margin-right: 10px;margin-top: 66px;}
 #blogname{display:inline;color: white;float: left;font-size: 25px;margin-left: 120px;margin-top: 60px;margin-bottom: 0px}
 #link{color: white;float: right;margin-right: 80px;margin-top: 70px;}
+#link a{text-decoration: none}
 .dao{padding: 20px;color: white;}
 div.p{color: white;}
 #box1{position: relative;}
