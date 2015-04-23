@@ -1,0 +1,65 @@
+
+webstrom快捷键
+
+工程文件快捷键说明
+
+ctrl + shift + n                打开工程中的文件，目的是打开当前工程下任意目录的文件
+ctrl + F12                      可以显示当前文件的结构
+
+查找/代替快捷键说明
+
+ctrl + shift + N	            通过文件名快速查找工程内的文件（必记）
+ctrl + shift + alt + N	        通过一个字符快速查找位置（必记）
+ctrl + F	                    在文件内快速查找代码
+ctrl + shift + F	            指定目录内代码批量查找
+F3	                            查找下一个
+shift + F3	                    查找上一个
+ctrl + r	                    文件内代码替换
+ctrl + shift + r	            指定目录内代码批量替换
+
+代码编辑快捷键说明
+
+alt + Insert	                新建一个文件或其他
+
+ctrl + alt + l	                格式化代码
+
+ctrl + w	                    选中单词
+ctrl + []                       匹配{}[]
+alt + left/right                标签切换
+
+ctrl + j                        输出模板
+ctrl + d	                    复制并粘贴前行
+ctrl + c	                    复制选定内容
+ctrl + v	                    粘贴
+ctrl + y                        删除当前行
+ctrl + x                        剪切(删除)行，不选中，直接剪切整个行，如果选中部分内容则剪切选中的内容
+ctrl + shift + up               行移动
+
+ctrl + /                        单行注释
+ctrl + shift + /                块注释
+
+shift + tab/tab	                减少/扩大缩进（可以在代码中减少行缩进）
+
+ctrl + -/+                      可以折叠项目中的任何代码块，它不是选中折叠，而是自动识别折叠。
+ctrl + shift + ]/[              选中块代码
+ctrl + .                        折叠选中的代码的代码。
+
+ctrl + b                        跳到变量申明处
+alt + 7                         显示当前的函数结构。
+shift + alt + up                块移动(if(){},while(){}语句块的移动)
+ctrl + shift + i                显示当前CSS选择器或者JS函数的详细信息
+
+导航快捷键说明
+
+esc	                            进入代码编辑区域
+alt + F1	                    查找代码在其他界面模块的位置，颇为有用
+ctrl + G	                    到指定行的代码
+ctrl + ]/[	                    光标到代码块的前面或后面
+alt + up/down	                上一个/下一个方法
+
+协同开发快捷键说明
+
+ctrl+C	                提交代码
+ctrl+p	                向远程版本库推送更新
+
+注：如果是*.html页面，则在文件名下的导航栏某DOM结构上右键，可以全选当前DOM结构。
