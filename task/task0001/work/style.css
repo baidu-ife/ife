@@ -1,0 +1,170 @@
+body {
+    background-color: #eeeeee;
+    font-size: 16px;
+    margin: 0;
+}
+
+.nav_top_wrapper {
+    width: 100%;
+    height: 80px;
+    background-color: #522a5c;
+    margin: 0;
+}
+
+.nav_top_inner {
+    width: 980px;
+    height: 20px;
+    margin:  0 auto;
+    padding-top: 50px;
+}
+
+.nav_top_logo {
+    float: left;
+    margin-left: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.nav_top_bar {
+    float: right;
+}
+
+.nav_top_bar_list {
+    float: right;
+    font-size: 14px;
+    color: white;
+    margin-left: 28PX;
+}
+
+.nav_top_git {
+    top: 46px;
+    right: 0px;
+    width: 30px;
+    height: 34px;
+    position: absolute;
+}
+
+.head {
+    width: 100%;
+    height: 868px;
+    background: url("../design/banner-bg.jpg") no-repeat;
+}
+
+.head_inner_text {
+    width: 360px;
+    height: 120px;
+    padding-top: 62%;
+    padding-left: 60%;
+    color: white;                           
+}
+
+.column_wrapper {
+    width: 980px;
+    height: 400px;
+    margin: 10px auto;
+}
+
+.column_inner {
+    width: 320px;
+    float: left;
+    height: 360px;
+    background-color: white;
+}
+
+.column_inner_center {
+    width: 320px;
+    float: left;
+    height: 360px;
+    margin: 0 10px;
+    background-color: white;
+}
+
+.self-profile-wrapper {
+    width: 100%;
+    height: 700px;
+    background-color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.self-profile-name {
+    color: black;
+    font-size: 20px;
+    padding-top: 150px;
+}
+
+.self-profile-content {
+    color: black;
+    font-size: 14px;
+    padding-top: 40px;
+    width: 600px;
+    margin: 40px auto;
+}
+
+.nav-bottom-wrapper {
+    background-color: black;
+    width: 100%;
+    height: 35px;
+    margin: 0;
+    border-bottom: solid 1px #333333;
+}
+
+.nav-bottom-link {
+    margin: 0 auto;
+    width: 185px;
+    height: 14px;
+    padding-top: 8px;
+    
+}
+
+.nav-bottom-link-list {
+    color: white;
+    font-size: 14px;
+    float: left;
+    margin-right: 10px;
+}
+
+.footer-wrapper {
+    width: 100%;
+    background-color: black;
+    height: 360px;
+}
+
+.footer-inner {
+    width: 980px;
+    height: 220px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+}
+
+table > thead > tr > th{
+    color: #cccccc;
+    width: 190px;
+    padding-bottom: 10px;
+    text-align: left;
+
+}
+
+table > tbody > tr > td {
+    color: #ffffff;
+    width: 190px;
+    text-decoration: underline;
+}
+
+table > tfoot  >tr >td{
+    color: #ffffff;
+    width: 190px;
+}
+
+.footer-job {
+    padding-top: 39px;
+    color: #ffffff;
+    text-align: center;
+}
+
+div p {
+    margin-top: 0px;
+}
+
