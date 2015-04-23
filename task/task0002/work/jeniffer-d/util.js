@@ -306,10 +306,3 @@ function addEnterEvent(element, listener) {
         });
     }
 }
-
-
-$.prototype.on = function (ele,e,listener) {
-        console.log("3");
-    };
-
-$.on($("#item1"),"click",function(){alert("dd");});
