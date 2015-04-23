@@ -28,6 +28,11 @@ ul {
     margin-right: 10px;
 }
 
+a img {
+    border:0 none;
+}
+
+
 /*header*/
 .header {
     position: relative;
@@ -201,6 +206,7 @@ ul {
 
 .footer-nav-wrap {
     width: 100%;
+    height: 35px;
     border-bottom: 1px solid #eeeeee;
 }
 

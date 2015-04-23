@@ -5,11 +5,18 @@
     <title>index</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--[if gte IE 8]>
+    <style>
+    .index-banner-text {
+        -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#00ffffff)";/* IE8 */
+    }
+    </style>
+    <!--[!endif]-->
 </head>
 
 <body>
-<header class="header">
-    <div class="header-inner">
+<div class="header">
+    <div class="header-inner">  
         <h3 class="header-logo">Eiszitrone</h3>
         <ul class="header-nav">
             <li><a href="about.html">关于</a></li>
@@ -19,7 +26,7 @@
         </ul>
     </div>
     <a href="https://github.com/eiszitrone"><img src="img/icon-github.png" alt="" class="header-github-icon"></a>
-</header>
+</div>
 
 <div class="index-banner">
     <img src="img/index-banner-bg.jpg" alt="" class="index-banner-image">
@@ -74,7 +81,7 @@
     </p>
 </div>
 
-<footer class="footer">
+<div class="footer">
     <div class="footer-nav-wrap">
         <ul class="footer-nav-ul clearFix">
             <li><a href="">主页</a></li>
@@ -142,6 +149,6 @@
     </div>
     <p class="footer-copy-info">版权信息</p>
     <img src="img/icon-github.png " alt="" class="footer-github-icon">
-</footer>
+</div>
 </body>
 </html>
