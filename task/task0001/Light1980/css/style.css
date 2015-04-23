@@ -527,7 +527,7 @@ ul li {
     outline:none;
 }
 
-#submit{
+#submit-gallery{
     background-color: #BEBEBE;
     color: #fff;
     font-size: 14px;
@@ -537,7 +537,7 @@ ul li {
     padding: 0;
 }
 
-#submit:hover {
+#submit-gallery:hover {
     background-color: #747;
     color: #fff;
     width: 35px;
@@ -745,7 +745,7 @@ ul li {
 #submit{
 	background-color: #BEBEBE;
 	color: #fff;
-	width: 35px;
+	width: 40px;
 	height: 40px;
 	margin: 0;
 	padding: 0;
