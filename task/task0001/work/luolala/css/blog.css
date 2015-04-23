@@ -1,0 +1,208 @@
+
+.content-wrap {
+    width: 980px;
+    margin:10px auto 100px;
+    /*overflow:hidden;若用此方法闭合浮动，则leftside left:-50px;正好
+   不会出现*/
+}
+.content-wrap:after{
+    display:block;
+    visibility:hidden;
+    font-size:0;
+    line-height:0;
+    clear:both;
+    content:"";
+}
+.mainBox{
+    float:left;
+    width:700px;
+}
+.content{
+    background-color: #ffffff;
+    margin:10px 10px 10px 0;
+    position:relative;
+}
+.leftSide{
+    width:50px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    position:absolute;
+    left:-50px;
+    top:30px;
+
+}
+.time{
+    background: #7709e2;
+}
+.type{
+    background: #ba6be2;
+}
+.content h1 {
+    font-size: 16px;
+    padding-top:10px;
+    margin-left:15px;
+}
+.content h2{
+    font-size:12px;
+    color:#666666;
+    margin:10px 15px;
+}
+.content p{
+    text-indent:2em;
+    /*wo;
+    word-break:break-all;*/
+    font-size:14px;
+    padding:5px 10px;
+    line-height:200%;
+
+}
+/*.page-choose span{
+    display:inline-block;
+    background-color:#ffffff;
+    padding:15px;/*为什么对下面的padding没有影响？？？*内联元素的原因？？？*/
+    /*margin-top:5px;
+
+
+/*margin-top对内联元素不起作用
+}*/
+
+
+.page-choose a{
+    color:#000000;
+    display:inline-block;
+    background-color:#ffffff;
+    padding:15px;
+    margin-top:5px;
+}
+.page-choose a:hover{
+    background-color: #6e1180;
+    color:white;
+}
+.sideBox{
+    float:right;
+    width:250px;
+    margin-top:10px;
+    color:#cccccc;
+}
+/*.search{
+    padding:20px;
+    position:relative;
+    background-color:#ffffff;
+}
+
+.search-text{
+    height:30px;
+    background:url("imag/放大镜2.png")5px center no-repeat;
+    text-align:center;
+    border:1px solid #cccccc;
+}
+.search-text:focus{
+    border:solid 1px #000000;
+}/*焦点到搜索框时的状态，但是Go块没有改变？此处点击复选框后会有跳动，为什么？？
+.search .go{
+    position:absolute;
+    left:182px;
+    width:30px;
+    height:34px;
+    line-height:34px;
+    text-align:center;
+    color:#ffffff;
+    background:#cccccc;
+}*/
+.category{
+    /*border-left:solid 2px #d1a0e2;*/
+
+    border-bottom:solid 2px #acaab1;
+    margin-top:10px;
+    background-color:#ffffff;
+}
+/*.category li{
+    height:25px;
+    border-top:solid 2px #a3b1a7;
+    /*padding:10px 0;
+
+   border-left:solid 2px #d1a0e2;
+}*/
+.category a:hover{
+    border-left:solid 2px #6a11cd;
+}
+/*.category a:focus{
+    border-left:solid 2px #6a11cd;
+
+}*/
+.category a{
+    color:#000000;
+    display:block;
+    height:25px;
+    padding:10px;
+    border-top:solid 2px #acaab1;
+    /*border:solid 2px transparent;*/
+    border-left:solid 2px #d1a0e2;
+}
+.calendar{
+
+    margin-top:10px;
+    text-align:center;
+
+  background-color:#ffffff;
+}
+.calendar a{
+    color:#8a2be2;
+}
+.calendar table{
+   padding:10px;
+}
+.calendar-head{
+    margin:0 auto;
+    color:#8a2be2;
+
+}
+.calendar-head th{
+    padding:5px 25px
+}
+.calendar-content{
+    margin:0 auto;
+    border:none;
+}
+/*.calendar tr{
+    border-bottom:solid 2px #666666;
+}/*为什么不起作用。。。*/
+.calendar-content td{
+    padding:5px;
+}/*设置th不可以*/
+.calendar-content th:hover{
+    background-color:#8a2be2;
+    color:#ffffff;
+}
+.calendar-content td:hover{
+    background-color:#8a2be2;
+    color:#ffffff;
+}
+.tag{
+    margin-top:10px;
+    background-color:#ffffff;
+    padding:10px;
+    font-family:'times new roman';
+}
+.tag h1{
+    font-size:20px;
+}
+.tag a{
+    color: #8a2be2;;
+}
+.tag .b30{
+    font-size:30px;
+    font-weight:600;
+}
+.tag .b25{
+    font-size:25px;
+    font-weight:500;
+}
+.tag .b20{
+    font-size:20px;
+
+}
+.tag .b15{
+    font-size:15px;
+}
