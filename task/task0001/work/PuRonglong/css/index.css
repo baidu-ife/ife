@@ -1,0 +1,107 @@
+.index_banner{
+	width: 100%;
+	height: 525px;
+	background: url("../img/banner-bg.jpg") no-repeat center;
+	margin-bottom: 10px;
+}
+
+.banner_wrapper{
+	width: 980px;
+	height: 525px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.banner_article{
+	width: 300px;
+	height: 80px;
+	display: inline-block;
+	float: right;
+	padding: 10px 10px 30px 10px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+}
+
+.banner_article h1{
+	font-size: 14px;
+	color: #fff;
+	margin-bottom: 12px;
+	text-align: right;
+}
+
+.banner_article p{
+	color: #fff;
+	font-size: 12px;
+	line-height: 150%;
+	text-indent: 2em;
+}
+
+.content{
+	width: 980px;
+	margin: 0 auto;
+	background: #eee;
+}
+
+.box{
+	display: inline-block;
+	width: 320px;
+	background: #fff;
+}
+
+.box img{
+	width: 300px;
+	height: 180px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.box_text{
+	margin: 15px 30px 25px 30px; 
+}
+
+.box_text p{
+	text-indent: 2em;
+	font-size: 12px;
+	line-height: 170%;
+}
+
+.introduce{
+	width: 100%;
+	background: #fff;
+	margin-top: 100px;
+}
+
+
+.introduce_content{
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+	padding-bottom: 200px;
+}
+
+.introduce_content h1{
+	font-size: 20px;
+	text-align: center;
+	font-family: Gentury Gothic,monospace,serif;/*字体的回退*/
+	padding-top: 160px;
+	color: black;
+}
+
+.introduce_text{
+	width: 600px;
+	padding-top: 30px;
+	margin: 0 auto;
+}
+
+.introduce_text p{
+	text-indent: 2em;
+	font-size: 14px;
+	color: black;
+}
+

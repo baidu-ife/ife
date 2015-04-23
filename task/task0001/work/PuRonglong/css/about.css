@@ -1,0 +1,106 @@
+header{
+	margin-bottom: 100px;
+}
+.about_author{
+	display: block;
+	width: 164px;
+	height: 164px;
+	border: 8px solid #eeeeee;
+	border-radius: 90px;
+    margin: 0 auto -90px;
+    position: relative;
+	top: -90px;
+	cursor: pointer;
+}
+
+.about_name{
+	font-size: 20px;
+	margin-left: 360px;
+	display: inline-block;
+}
+
+.about_author_detail{
+	text-indent: 2em;
+	font-size: 14px;
+	display: inline-block;
+	margin-left: 70px;
+}
+
+.author{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.about_content{
+	background: url(../img/background-y.png) repeat-y 50% #ffffff;
+}
+
+.about_contact{
+	background: url(../img/author.jpg);
+	display: block;
+	width: 100px;
+	height: 100px;
+	border: 5px solid #eeeeee;
+	border-radius: 55px;
+	margin: 0 auto 20px;
+}
+
+.contact_way p:first-child{
+	margin-left: 360px;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.contact_way p:nth-child(2){
+	margin-left: 110px;
+	font-size: 14px;
+	display: inline-block;
+}
+
+.contact_way{
+	padding-bottom: 20px;
+}
+
+.about_education{
+	background: url(../img/author.jpg);
+	display: block;
+	width: 100px;
+	height: 100px;
+	border: 5px solid #eeeeee;
+	border-radius: 55px;
+	margin: 0 auto 20px;
+}
+
+.about_education_experience{
+	margin-left: 360px;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.about_education_university{
+	margin: -20px auto 20px 530px;
+}
+
+.about_education_university li{
+	margin-bottom: 25px;
+}
+
+.school_date{
+	width: 60px;
+	text-align: center;
+	border: 5px solid #eeeeee;
+	border-radius: 10px;
+	display: inline-block;
+	background: #fff;
+	margin: -6px auto 0px -75px;
+}
+
+.school_name{
+	display: inline-block;
+	padding-left: 30px;
+}
+
+.job{
+	padding-bottom: 40px;
+	margin-bottom: 30px;
+}
