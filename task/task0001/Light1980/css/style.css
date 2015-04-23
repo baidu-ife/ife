@@ -55,7 +55,7 @@ ul li {
 
 
 #banner {
-    background-image: url(banner-bg.jpg);
+    background-image: url(../img/banner-bg.jpg);
     background-repeat: no-repeat;
     position: relative;
     height: 100%;
@@ -160,7 +160,7 @@ ul li {
     background-color: #eee;
 }
 
-#my-icon {
+#my-icon-1 {
     display:inline-block;
     position: relative;
     top: -30px;
@@ -703,7 +703,7 @@ ul li {
 	overflow:auto;
 }
 
-#searching-bar{
+#searching-bar-blog{
 	position:relative;
 	float:left;
 	width: 300px;
@@ -1007,7 +1007,7 @@ ul li {
 	background-color: #fff;
 }
 
-#my-icon {
+#my-icon-2 {
 	position: absolute;
 	top: -30px;
 	left: 410px;
