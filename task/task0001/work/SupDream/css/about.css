@@ -1,0 +1,53 @@
+.resume{
+    width: 100%;
+    position: relative;
+    margin-top: 130px;
+}
+.about.wrapper{
+    background: white;
+}
+.picture1{
+    display: block;
+    width: 160px;
+    height: 160px;
+    position: relative;
+    top: -80px;
+    margin: 0 auto ;
+    border: 5px solid #eeeeee;
+    border-radius: 90px;
+    
+}
+.picture2{
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto ;
+    border: 5px solid #eeeeee;
+    border-radius: 90px;
+}
+.resume h1{
+    margin-left: 360px;
+    font-size: 20px;
+}
+.resume p{
+    width: 230px;
+    margin: -20px auto 20px 530px;
+}
+.resume h2{
+    margin: 1px auto 40px 430px;
+    font-size: 18px;
+    width: 60px;
+    display: inline;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    background: #ffffff;
+}
+.resume ul{
+    list-style-type: none;
+}
+.resume-practice{
+    padding-bottom:50px;
+    margin-bottom: 50px;
+}
