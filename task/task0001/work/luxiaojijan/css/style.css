@@ -83,6 +83,18 @@ p{
 .lu-col-2-2{
 	width: 100%;
 }
+.lu-col-5-1{
+	width: 20%;
+}
+.lu-col-5-1,
+.lu-col-5-2,
+.lu-col-5-3,
+.lu-col-5-4,
+.lu-col-5-5{
+	display: inline-block;
+	margin-left: -4px;
+	text-align: center;
+}
 .container{
 	width: 980px;
 	margin:0 auto;
@@ -629,3 +641,6 @@ span.number{
 .ap-item{
 	margin-bottom: 15px;
 }
+
+/*about me style*/
+
