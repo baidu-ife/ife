@@ -1,12 +1,15 @@
 (function() {
+    //几个html元素的模板，后面会用Reg.replace()来替换其中的特定数据
     var picture_template = "<div class=\"gallery-picture\" order=\"{{order}}\" style=\"background:url({{url}});\"></div>";
     var buttonbox = "<div id=\"gallery-buttonbox\"><table><tbody><tr></tr></tbody></table></div>"; 
     var button_template = "<th><div class=\"gallery-button\" button-order=\"{{order}}\"></div></th>";
-    //var all_picture = [];
-    var _options = {};
-    var _width,_height,total;
-    var now_picture = 0;
+    
+    var _options = {};//保存options，提升查找性能
+    var _width,_height,total;//记录gallery的宽度、高度、图片总数
+    var now_picture = 0;//当前显示的图片序列
+    
     function init(options) {
+        //初始化
         _options = options; 
         _width = parseInt(options.width.replace(/px/,""));
         _height = parseInt(options.height.replace(/px/,""));
@@ -17,18 +20,10 @@
         for(var i = 0; i < total ; i++){
             $("#gallery").innerHTML = $("#gallery").innerHTML + picture_template.replace(/{{url}}/,options.picture[i]).replace(/{{order}}/,i.toString());
             $("[order=" + i.toString() +"]").style.left = (i*_width).toString() + "px";
-            //all_picture.push($("[order=" + i.toString() +"]"));
         }
         $("#gallery").innerHTML = $("#gallery").innerHTML + buttonbox;
         for(var i = 0; i < total ; i++){
             $("#gallery-buttonbox tr").innerHTML = $("#gallery-buttonbox tr").innerHTML + button_template.replace(/{{order}}/,i.toString());
-            //all_picture.push($("[order=" + i.toString() +"]"));
-            // console.log($("[button-order=" + i.toString() +"]"));
-            // addEvent($("[button-order=" + i.toString() +"]"),"click",function(){
-            //     var od = parseInt(this.getAttribute("button-order"));
-            //     console.log(od);
-            //     gallery.go(od);
-            // })
         }
 
          for(var i = 0 ; i < $(".gallery-button").length ; i++){
@@ -41,6 +36,7 @@
     }
 
     function gotoFirst(){
+        //前往第一张图
         for(var i = 0; i <total ; i++){
                 $("[order=" + i.toString() +"]").style.left = (i*_width).toString() + "px";
         }
@@ -49,6 +45,7 @@
     }
 
     function gotoLast(){
+        //前往最后一张图
         for(var i = 0; i <total ; i++){
                 $("[order=" + i.toString() +"]").style.left = ((i-total+1)*_width).toString() + "px";
         }
@@ -59,6 +56,7 @@
 
 
     function turnLeft(){
+        //左移
         now_picture++;
         if(now_picture<total){
             for(var i = 0; i <total ; i++){
@@ -69,13 +67,10 @@
             gotoFirst();
         }
         flashButton();
-        //all_picture[0].style.display = "none";
-        // each(all_picture,function(item,index){
-        //     item.style.left = (parseInt(item.style.left.replace(/px/,"")) - parseInt(_options.width.replace(/px/,""))).toString() + "px";
-        // })
     }
 
     function turnRight(){
+        //右移
         now_picture--;
         if(now_picture>=0){
             for(var i = 0; i < _options.picture.length ; i++){
@@ -90,6 +85,7 @@
 
 
     function go(x){
+        //前往第X张图片
         var step = now_picture - x;
         console.log(step);
         if(step<0){
@@ -105,6 +101,7 @@
     }
 
     function flashButton(){
+        //刷新按钮状态
         for(var i = 0 ; i < $(".gallery-button").length ; i++){
             $(".gallery-button")[i].style.background = "#ffffff";
         }
@@ -112,6 +109,7 @@
     }
 
     function auto(){
+        //设置自动播放
         if(_options.backwards){
             setInterval(function(){
                 turnRight();

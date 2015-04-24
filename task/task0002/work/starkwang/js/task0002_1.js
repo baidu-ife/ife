@@ -4,10 +4,12 @@
     var interests = [];
     var checkbox_template = "<div><input type=\"checkbox\" name=\"{{name}}\"><p>\{\{name\}\}<\/p><\/div>";
     function splitText(text){
+        //分割词组
         textArray = text.split(/[,，；;、\s\r\n\u3000]/);
     }
 
     function outputCheckbox(checkbox){
+        //输出到checkbox
         interests = uniqArray(textArray);
         $("#checkbox").innerHTML = "";
         each(interests,function(item,index) {
@@ -16,6 +18,7 @@
     }
 
     function checkText(ele){
+        //核对词组长度
         splitText(ele.value);
         console.log(textArray);
         if(textArray.length != 10){

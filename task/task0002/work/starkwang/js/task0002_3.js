@@ -1,3 +1,4 @@
+//引用了gallery.js（自己写的，不是现成的=_=），所以这里直接初始化就行了
 gallery.init({
     width:"800px",
     height:"500px",
