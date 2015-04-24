@@ -1,0 +1,66 @@
+ body, div, h1, h2, h3, h4, h5, h6, p, ul, li { margin: 0; padding: 0;}
+ body { font: 12px/1.33 "Microsoft Yahei",tahoma,"ËÎÌå",sans-serif;}
+
+.hd{width:100%;height:80px;background:purple;position:relative;min-width:1300px;}
+.hd .inner{width:980px;height:80px;background:purple;min-width:980px;margin:0 auto;}
+.hd .inner a img{float:left;width:50px;height:50%;margin-top:40px;}
+.hd p{float:right;margin:55px 0px 5px 0px;}
+.hd p a{float:right;margin:0 28px;margin:0px;font-family:"ËÎÌå";font-size:14px;color:white;margin-left:28px;}
+.hd .github a img{display:block;position:relative; margin-right:80px;float:right;margin-top:46px;}
+.hd ul{float:right;margin:55px 0px 5px 0px;font-size:14px;color:white;list-style:none;} 
+.hd ul  li{float:right;margin:0 14px;}
+.hd ul li a{color:white;font-family:"ËÎÌå";font-size:14px;}
+
+
+
+
+
+
+.bdtop{border:0px;height:600px; background-image:url(../img/tuboshu04.jpg);background-repeat:no;background-size:100% 
+            100%;min-width:1300px;position:relative;overflow:hidden;}
+.bdtop .xiaotu{position:absolute;width:400px;height:300px;left:900px;top:400px;background:white;opacity:0.2;padding-top:10px;}
+
+
+
+.bdtop  .xiaotu p{color:black;font-weight:bold;font-size:19px;text-indent:2em;}
+
+
+
+
+
+.bdmid{width:100%;height:600px;background: #dcdcdc ;min-width:1300px;position:relative;}
+
+.bdmid ul{margin-left:80px;list-style:none;}
+.bdmid ul li{float:left;width:350px;margin:20px;}
+.bdmid ul li .cangku{width:320px;height:400px;
+      background:white;padding-left:15px;padding-top:13px;padding-bottom:10px;}
+
+.bdmid ul li .cangku  p{font-size:12px;line-height:170%;padding-right:10px;text-indent:3em;}
+.bdmid .picture{position:absolute; top:500px; left:620px;z-index:1;width:160px; height:160px;
+                       border-radius:50%; overflow:hidden;border:3px solid gray;}   
+.bdmid .picture img{margin-left:-10px;margin-top:-10px;}
+.bdmid .myname{position:absolute;top:730px;left:620px;width:150px;height:30px;font-size:15px;font-weight:bold;z-index:1;}
+	        
+.bdbottom{width:100%;height:600px;background:white;position:relative;}
+.bdbottom .intruduction{width:400px;height:400px;background:white;position:absolute;left:500px;top:200px;}
+.bdbottom .intruduction h1{text-align:center;font-size:18px/170%;}
+.bdbottom .intruduction p{text-indent:2em;font-family:"ËÎÌå";font-size:13px;padding:10px 15px 0 
+          15px;display:block;}
+
+.fttop{width:100%;height:50px;background:#dcdcdc;border:2px solid white;min-width:1300px;}
+.fttop p{text-align:center;margin-top:30px;}
+.fttop p a{font-family:"Î¢ÈíÑÅºÚ";font-size:15px;padding-right:12px;margin-right:4px;}
+
+
+.foot{width:100%;height:400px;background:black;min-width:1300px;float:top;position:relative;}
+.foot .part1{width:100%;height:50px;background:black;border-bottom:1px solid white;min-width:1300px;margin-top:0px;}
+.foot .part1  p{padding:30px;text-align:center;margin-top:0px;}
+.foot .part1 p a{font-family:"Î¢ÈíÑÅºÚ";font-size:15px;padding-right:12px;margin-right:4px;color:white;}
+.foot .part2 ul { position: absolute; left: 0; height: 349px; padding-top: 48px; list-style-type: none;}
+.foot .part2 ul li{float:left;width:190px;margin-left:60px;}
+.foot .part2 ul li .p1{font-family:"ËÎÌå";font-weight:bold;color:white;}
+.foot .part2 ul li .p2{font-family:"Î¢ÈíÑÅºÚ";padding:10px;}
+.foot .part2 ul li p{float:top;text-align:center;font-size:12px;margin-top:15px;}
+.foot .part2 ul li #p1{float:top;text-align:center;font-size:12px;margin-top:15px;}
+.foot .part2 ul li p a{color:white;}
+.foot .part2 ul li #p1 a:hover {color:purple}
