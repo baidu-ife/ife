@@ -213,10 +213,27 @@ function getPosition(element) {
         h: element.getBoundingClientRect().height
     };
 }
-function getScrollBar() {
+function getScrollBar(w) {
+    w = w|| window;
+    if (w.pageXOffset !== null && w.pageXOffset !== undefined) {
+        return {
+            x: w.pageXOffset,
+            y: w.pageYOffset
+        };
+    }
+    var d = w.document;
+    if(document.compatMode=="CSS1Compat")
+    {
+        return {
+            x: d.documentElement.scrollLeft,
+            y: d.documentElement.scrollTop
+        };
+    }
+
+//        对怪异模式下的浏览器
     return {
-        x: window.scrollX,
-        y: window.scrollY
+        x: d.body.scrollLeft,
+        y: d.body.scrollTop
     };
 }
 

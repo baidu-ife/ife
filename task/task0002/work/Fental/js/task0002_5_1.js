@@ -55,6 +55,7 @@ window.onload = function() {
         var offsetX = e.clientX - position.x;
         var offsetY = e.clientY - position.y;
         //浏览器滚动条
+        //console.log(getScrollBar());
         target.style.left = (e.clientX - offsetX + getScrollBar().x) + "px";
         target.style.top = (e.clientY - offsetY + getScrollBar().y) + "px";
 
@@ -84,6 +85,7 @@ window.onload = function() {
             };
         })(target,preParent, targetSibling, tips);
 
+        var lastChild = document.body;  //该变量用于记录移出panel时的从哪个child移出，方便后面清楚active类
         //鼠标点击后，注册鼠标移动事件
         function moveHandle(e) {
 //            var panelFirst = $("#panel-1");
@@ -92,6 +94,7 @@ window.onload = function() {
             var panel;  //用于记录当前移至哪个区域
             var children;
             var child;
+            var result;
             var isInChild = false;
             e = e || window.event;
 
@@ -135,11 +138,14 @@ window.onload = function() {
                 tips.innerHTML = "放置到容器末尾";
 
                 for (var i = 0; i < children.length; i++) {
-                    child = isInScope(children[i], e.clientX, e.clientY);
-                    if (child) {
+                    removeClass(children[i], "active");
+                    result = isInScope(children[i], e.clientX, e.clientY);
+                    if (result) {
+                        child = result;
+                        lastChild = child;
                         isInChild = true;
+                        addClass(child, "active");
                         tips.innerHTML = "放置到该模块前";
-                        break;
                     }
                 }
 
@@ -162,10 +168,11 @@ window.onload = function() {
 //                        console.log(target);
                     document.body.onmouseup = function() {
                         child.parentNode.insertBefore(target, child);
-
                         resetMouseMove(target);
 
                         removeClass(target, "dragged");
+                        removeClass(child, "active");
+                        //for (var i = 0; )
                         tips.style.display = "none";
                         document.body.onmouseup = null;
                     };
@@ -173,7 +180,7 @@ window.onload = function() {
             }
             //不在panel内
             else if (isInChild === false) {
-
+                removeClass(lastChild, "active");
                 tips.style.display = "none";
 
                 document.body.onmouseup = function() {
