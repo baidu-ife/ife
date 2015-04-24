@@ -33,9 +33,9 @@ function cloneObject(src) {
                     temp.push(src[i][j]);
                 }
                 newObj[i] = temp;
-            } else if(isDate(src[i])){
-                newObj[i] =  new Date(src[i]);
-            }else if (isObject(src[i])) {
+            } else if (isDate(src[i])) {
+                newObj[i] = new Date(src[i]);
+            } else if (isObject(src[i])) {
                 newObj[i] = cloneObject(src[i]);
             } else {
                 newObj[i] = src[i];
@@ -49,9 +49,9 @@ function cloneObject(src) {
 function uniqArray(arr) {
     var result = [];
     var obj = {};
-    for(var i = 0; i<arr.length; i++){
+    for (var i = 0; i < arr.length; i++) {
         //判断obj中 该属性值是否存在
-        if(!obj[arr[i]]){
+        if (!obj[arr[i]]) {
             result.push(arr[i]);
             obj[arr[i]] = 1;
         }
@@ -67,7 +67,7 @@ function trim(str) {
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
-    for(var i = 0; i < arr.length; i++){
+    for (var i = 0; i < arr.length; i++) {
         fn(arr[i], i);
     }
 }
@@ -75,8 +75,8 @@ function each(arr, fn) {
 // 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {
     var count = 0;
-    for(var name in obj){
-        if(obj.hasOwnProperty(name)){
+    for (var name in obj) {
+        if (obj.hasOwnProperty(name)) {
             count++;
         }
     }
@@ -85,7 +85,7 @@ function getObjectLength(obj) {
 
 // 判断是否为邮箱地址
 function isEmail(emailStr) {
-    var regx =/^\w+?@/;
+    var regx = /^\w+?@/;
     return regx.test(emailStr);
 }
 
@@ -98,7 +98,7 @@ function isMobilePhone(phone) {
 
 // 为element增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
-    return element.className.concat(" ",newClassName);
+    return element.className.concat(" ", newClassName);
 }
 
 
@@ -107,3 +107,30 @@ function removeClass(element, oldClassName) {
     return element.className.replace(oldClassName, '');
 }
 
+// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
+function isSiblingNode(element, siblingNode) {
+    return (element.parentNode === siblingNode.parentNode);
+}
+
+// element相对于浏览器窗口的位置，返回一个对象{x, y}
+function getPosition(element) {
+
+
+    // TODO  mark一下
+    var actualTop = element.offsetTop;
+    var current = element.offsetParent;
+    while (current !== null) {
+        actualTop += current.offsetTop;
+        current = current.offsetParent;
+    }
+    return {
+        y: element.getBoundingClientRect().top,
+        x: element.getBoundingClientRect().left
+    }
+}
+getPosition(document.querySelector("#id2"));
+
+function $(selector) {
+    var idRep = /^#\w+?/;
+    var classRep = /^\.\w+?/;
+}
