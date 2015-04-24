@@ -144,12 +144,14 @@
 	vertical-align: bottom;
 	padding: 10px 10px 30px 10px;
 	color: white;
-	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.7)); 
+	background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.7)); 
  	background: -webkit-gradient(linear, bottom, top, rgba(255, 255, 255, 0.7), color-stop(0.75, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0))); 
  	background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.7)); 
  	background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 1));
  	background: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 1));
  	border: 1px solid #ccc\0;
+ 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#00ffffff);    
+
 }
 #index .banner .banner-image-text h1{
 	font-size: 14px;
