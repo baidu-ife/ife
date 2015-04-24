@@ -1,7 +1,7 @@
 /**
  * Created by T on 2015/4/22.
  */
-
+//html drag api
 window.onload = function() {
     var boxes;
     //IE 8
@@ -83,19 +83,26 @@ window.onload = function() {
         }
         tips.innerHTML = "";
         tips.style.display = "none";
+    }
+
+    function dropEnd(e) {
         for (var i = 0; i < boxes.length; i++) {
+            removeClass(boxes[i], "dragged");
             removeClass(boxes[i], "active");
         }
+        console.log("fuck");
     }
 
     $.on("#panel-1", "dragover",dragOver)
         .on("#panel-1", "dragenter",dragEnter)
         .on("#panel-1", "dragleave",dragLeave)
-        .on("#panel-1", "drop",drop);
+        .on("#panel-1", "drop",drop)
+        .on("#panel-1", "dragend",dropEnd);
 
     $.on("#panel-2", "dragover",dragOver)
         .on("#panel-2", "dragenter",dragEnter)
         .on("#panel-2", "dragleave",dragLeave)
-        .on("#panel-2", "drop",drop);
+        .on("#panel-2", "drop",drop)
+        .on("#panel-2", "dragend",dropEnd);
 
 };

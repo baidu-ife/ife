@@ -208,14 +208,22 @@ function isSiblingNode(element, siblingNode) {
 function getPosition(element) {
     return {
         x: element.getBoundingClientRect().left,
-        y: element.getBoundingClientRect().top
+        y: element.getBoundingClientRect().top,
+        w: element.getBoundingClientRect().width,
+        h: element.getBoundingClientRect().height
+    };
+}
+function getScrollBar() {
+    return {
+        x: window.scrollX,
+        y: window.scrollY
     };
 }
 
 //IE8不支持根据class进行搜索
-function getElementsByClassName(targetClass) {
+function getElementsByClassName(targetClass, element) {
     var documentArray = [];
-    var parent = document.body;
+    var parent = element || document.body;
     var result;
     var scanClass = function (element, targetClass) {
         if (element.nodeType == 1 && element.className != undefined && element.className.indexOf(targetClass) !== -1) {
@@ -388,9 +396,20 @@ function delegateEvent(element, tag, eventName, listener) {
     addEvent(element, eventName, function(e){
         e = e || window.event;
         var target = e.srcElement ? e.srcElement : e.target;
-        var targetName = target.nodeName.toLowerCase();
-        if (targetName === tag) {
-            listener(e);
+        //对标签进行代理
+        if (tag.indexOf(".") === -1) {
+            var targetName = target.nodeName.toLowerCase();
+            if (targetName === tag) {
+                listener(e);
+            }
+        }
+        //对类进行代理
+        else {
+            var targetClassName = target.className;
+            var className = tag.replace(".", "");
+            if (targetClassName.indexOf(className) !== -1) {
+                listener(e);
+            }
         }
     });
 }
