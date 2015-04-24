@@ -308,3 +308,80 @@ function addEnterEvent(element, listener) {
 }
 
 /////testtest
+
+// 判断是否为IE浏览器，返回-1或者版本号
+function isIE () {
+    if (window.ActiveXObject === undefined) return -1;
+    if (!document.querySelector) return 7;
+    if (!document.addEventListener) return 8;
+    if (!window.atob) return 9;
+    if (!document.__proto__) return 10;
+    return 11;
+}
+
+
+//chrome的cookie无法设置
+function setCookie(cookieName, cookieValue, expiredays) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + expiredays);
+    document.cookie = cookieName + "=" +  encodeURIComponent(cookieValue) + 
+    ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+}
+
+
+function getCookie(cookieName) { 
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)"); //正则表达式看不懂（）和|的区别
+    if (arr = document.cookie.match(reg))
+        return decodeURIComponent(arr[2]); 
+    else 
+        return null; 
+} 
+
+
+
+function ajax (url, option) {  //样例中的xhr是啥
+    var realUrl = "", realData, xmlhttp, isUrlData = false, type = "GET";
+    if (option.type) {
+        type = option.type;
+    } 
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    if (option.data) {
+        isUrlData = typeof option.data == Object ? false : true;
+    }
+
+    if (isUrlData) {
+        realUrl = url + option.data;
+        realData = "";
+    } else {
+        realUrl = url;
+        realData = option.data;
+    }
+
+    if(xmlhttp != null) {
+        xmlhttp.open(type,realUrl,true);
+        xmlhttp.send(realData);        
+        xmlhttp.onreadystatechange = function (){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                this.call(onsuccess,xmlhttp.responseText,xmlhttp);
+            } 
+        };   
+    }
+    
+
+    return xmlhttp;
+}
+
+
+$.on = addEvent;
+
+// addEvent(element, event, listener) -> $.on(element, event, listener);
+// removeEvent(element, event, listener) -> $.un(element, event, listener);
+// addClickEvent(element, listener) -> $.click(element, listener);
+// addEnterEvent(element, listener) -> $.enter(element, listener);
+
