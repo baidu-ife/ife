@@ -1,9 +1,9 @@
 gallery.init({
-	width:"800px",
-	height:"500px",
-	picture:["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"],
-	loop:true,
-	timeout:4000,
-	backwards:false
+    width:"800px",
+    height:"500px",
+    picture:["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"],
+    loop:true,
+    timeout:4000,
+    backwards:false
 })
 gallery.auto();
