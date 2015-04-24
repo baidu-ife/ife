@@ -1,0 +1,10 @@
+//引用了gallery.js（自己写的，不是现成的=_=），所以这里直接初始化就行了
+gallery.init({
+    width:"800px",
+    height:"500px",
+    picture:["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"],
+    loop:true,
+    timeout:4000,
+    backwards:false
+})
+gallery.auto();

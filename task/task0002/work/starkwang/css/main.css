@@ -1,0 +1,108 @@
+#error{
+	color: red;
+	display: none;
+}
+#text{
+	width: 200px;
+	height: 100px;
+	font-size: 20px;
+}
+
+#checkbox{
+	margin-top: 20px;
+}
+
+#checkbox  p{
+	float: left;
+	margin: 0;
+}
+#checkbox input{
+	float: left;
+	margin: 4px;
+}
+#checkbox > div{
+	overflow: hidden;
+}
+
+#gallery{
+	overflow: hidden;
+	position: relative;
+}
+.gallery-picture{
+	transition:all 0.5s;
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	background-size: cover !important;
+}
+
+#gallery-buttonbox{
+	width: 300px;
+	height: 25px;
+	background: rgba(0,0,0,0.5);
+	z-index: 9999;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -150px;
+}
+
+.gallery-button{
+	width: 10px;
+	height: 10px;
+	background: #ffffff;
+	float: left;
+	position: absolute;
+	left: 50%;
+	border-radius: 10px;
+	margin-left: -5px;
+}
+
+.gallery-button:hover{
+	background: #aaaaaa;
+}
+
+table{
+	width: 100%;
+	border: 1px;
+}
+table th {
+	position: relative;
+}
+.suggest{
+	border: 1px solid #000000;
+	width: 100px;
+	height: auto;
+}
+.suggest:hover{
+	background: #a0a0a0;
+}
+
+.box{
+	width: 200px;
+	height: 600px;
+	border: 1px solid #000000;
+	float: left;
+}
+
+#box_right{
+	margin-left: 200px;
+}
+
+.box > .item{
+	width: 198px;
+	height: 100px;
+	background: red;
+	border: 1px solid #ffffff;
+	position: absolute;
+	z-index: 9999;
+}
+#item2,#item5{
+	top:102px;
+}
+#item3{
+	top:204px;
+}
+#item4{
+	top:306px;
+}
