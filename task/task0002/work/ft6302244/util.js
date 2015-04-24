@@ -115,7 +115,6 @@ function isSiblingNode(element, siblingNode) {
 // element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
 
-
     // TODO  mark一下
     var actualTop = element.offsetTop;
     var current = element.offsetParent;
