@@ -353,7 +353,7 @@ function clicklistener(event) {
 }
 addEvent($("#doma"), "click", a);
 
-// 移除element对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
+// 移除element对象对于event事件发生时执行listener的响应
 function removeEvent(element, event, listener) {
     // your implement
 }
