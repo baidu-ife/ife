@@ -1,3 +1,4 @@
+// 判断arr是否为一个数组，返回一个bool值
 function isArray (arr) {
     if(arr && typeof arr == 'object' && typeof arr.length == 'number' && isFinite(arr.length)){
         var origin_length = arr.length;
@@ -8,12 +9,19 @@ function isArray (arr) {
     }
     return false;
 }
+
+// 判断fn是否为一个函数，返回一个bool值
 function isFunction (fn){
     return Object.prototype.toString.call(fn) ==="[object Function]";
 }
+
+// 判断date是否为一个日期对象，返回一个bool值
 function isDate(date){
     return Object.prototype.toString.call(date) ==="[object Date]";
 }
+
+// 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
+// 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
 function cloneObject(obj){
 
     //数组
@@ -37,6 +45,7 @@ function cloneObject(obj){
     }
 
     //object
+    //这里对象的复制考虑到了constructor的问题
     if (typeof obj === "object") {
         var Constructor = obj.constructor;
         var newobj = new Constructor();
@@ -56,6 +65,7 @@ function cloneObject(obj){
     };
 }
 
+// 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr){
     if(!isArray(arr)){
         return arr;
@@ -69,6 +79,8 @@ function uniqArray(arr){
     return new_array;
 }
 
+// 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
+// 先暂时不要简单的用一句正则表达式来实现
 function trim(str){
     if(!typeof str === "string"){
         return str;
@@ -82,6 +94,7 @@ function trim(str){
     return str;
 }
 
+// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr,fn){
     if(!isArray(arr)){
         return false;
@@ -94,6 +107,7 @@ function each(arr,fn){
     }
 }
 
+// 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj){
     if(!typeof obj === "string"){
         return false;
@@ -105,26 +119,30 @@ function getObjectLength(obj){
     return counter;
 }
 
+// 判断是否为邮箱地址
 function isEmail(str){
     var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
     return reg.test(str);
 }
 
+// 判断是否为手机号
 function isMobilePhone(phone){
     var reg = /^1[3458][0-9]\d{8}$/;
     return reg.test(phone);
 }
 
+// 为element增加一个样式名为newClassName的新样式
 function addClass(ele,classname){
     ele.className = ele.className + " " + classname;
 }
 
+// 移除element中的样式oldClassName
 function removeClass(ele,classname){
     var reg = new RegExp('(\\s|^)' + classname + '(\\s|$)');
     ele.className = ele.className.replace(reg, ' ');
 }
 
-//后面的类选择器会用到这个函数
+//后面的类选择器会用到这个函数，不是作业要求的
 function hasClass(ele,classname){    
     var cNames=ele.className.split(/\s+/);   
     for(var i=0;i<cNames.length;i++){    
@@ -134,6 +152,7 @@ function hasClass(ele,classname){
     return false;    
 }
 
+// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(ele1,ele2){
     for(var i = 0 ; i < ele1.parentNode.childNodes.length ; i++){
         if(ele2 === ele1.parentNode.childNodes[i]){
@@ -143,6 +162,7 @@ function isSiblingNode(ele1,ele2){
     return false;
 }
 
+// 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(){
     var x = document.body.scrollTop;
     var y = document.body.scrollLeft;
@@ -152,6 +172,7 @@ function getPosition(){
     };
 }
 
+//把类数组对象变成真正的数组，后面复合选择器会用到，不是作业要求的
 function toArray(obj){
     var arr = [];
     for( var i = 0 ; i < obj.length ; i++){
@@ -160,6 +181,7 @@ function toArray(obj){
     return arr;
 }
 
+//判断数组中是否存在某个元素，后面复合选择器会用到，不是作业要求的
 function isElementInArray(arr,ele){
     for(var i = 0 ; i < arr.length ; i++){
         if(arr[i] == ele){
@@ -169,6 +191,7 @@ function isElementInArray(arr,ele){
     return false;
 }
 
+//在ele的父元素集合中，搜索是否存在符合selector的元素，后面复合选择器会用到，不是作业要求的
 function searchParent(ele,selector){
     var all = $(selector);
     if(!isArray(all)){
@@ -186,6 +209,7 @@ function searchParent(ele,selector){
     }
 }
 
+//根据searchParent的结果过滤集合
 function fliterByParent(ele_array,selector){
     var temparr = toArray(ele_array);
     for(var i = 0 ; i < temparr.length ; i++){
@@ -197,12 +221,14 @@ function fliterByParent(ele_array,selector){
     return temparr;
 }
 
+
+// 实现一个简单的Query
 function $(selector){
     if(!typeof selector === "string"){
         return false;
     }
 
-    //多层
+    //复合选择器
     if(trim(selector).split(" ").length > 1){
         var all = trim(selector).split(" ");
         var root = $(all[all.length-1]);
@@ -290,18 +316,27 @@ function $(selector){
     }
 }
 
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(ele,event,listener){
     ele.addEventListener(event,listener,false);
 }
 
 function removeEvent(ele,event,listener){
-    ele.removeEventListener(event,listener,false);
+    if(listener){
+        ele.removeEventListener(event,listener,false);
+    }else{
+        var html = ele.outerHTML;
+        var parentNode = html.parentNode;
+        parentNode.innerHTML = html;
+    }
 }
 
+// 实现对click事件的绑定
 function addClickEvent(ele, listener) {
     addEvent(ele,"click",listener);
 }
 
+// 实现对于按Enter键时的事件绑定
 function addEnterEvent(ele, listener) {
     ele.onkeydown=function(event){
         var e = event || window.event || arguments.callee.caller.arguments[0];
@@ -317,6 +352,7 @@ $.click = addClickEvent;
 $.enter = addEnterEvent;
 $.delegate = delegateEvent;
 
+// 事件代理
 function delegateEvent(ele, tag, eventName, listener) {
     $.on(ele,eventName,function(){
         var e = arguments[0] || window.event,
@@ -327,6 +363,7 @@ function delegateEvent(ele, tag, eventName, listener) {
     })
 }
 
+// 判断是否为IE浏览器，返回-1或者版本号
 function isIE(){
     //只有IE支持ActiveX控件
     if(window.ActiveXObject){
@@ -336,10 +373,12 @@ function isIE(){
     }
 }
 
+// 设置cookie
 function setCookie(name,value,expire) {
     document.cookie = name + "=" + value + ";expires=" + expire;
 }
 
+// 获取cookie值
 function getCookie(name) {
     var cookie = document.cookie.split(";");
     var value;
