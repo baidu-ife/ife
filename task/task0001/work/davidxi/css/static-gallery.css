@@ -15,7 +15,7 @@
 .gallery-nav-tabs ul li {
     border: 1px solid #ddd;
     background: #fff;
-    margin: 0;
+    margin: 0 -1px 0 0;
 }
 .gallery-nav-tabs ul li.color-violet {
     border-top: 5px solid #DFC7E6;
@@ -85,6 +85,11 @@
 }
 .gallery-card-content {
     padding: 10px;
+}
+.gallery-card-content:before,
+.gallery-card-content:before {
+    content: "";
+    display: table;
 }
 .color-violet .gallery-card-content {
     background: #DFC7E6;

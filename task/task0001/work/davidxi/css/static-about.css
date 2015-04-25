@@ -14,7 +14,7 @@ body.page-about .panel {
     position: absolute;
     top: 0;
     left: 50%;
-    margin-left: -2px;
+    margin-left: -5px; /* width / 2 */
     height: 100%;
     width: 10px;
     background: #eee;
@@ -59,15 +59,23 @@ body.page-about .panel {
 .timeline-section-left {
     width: 50%;
     float: left;
+    margin: 18px 0;
     padding-right: 75px;
     text-align: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 31px;
 }
 .timeline-section-right {
     width: 50%;
     float: left;
+    margin: 0;
     padding-left: 75px;
     padding-right: 100px;
     text-align: left;
+}
+.timeline-section-right ul {
+    margin: 0;
 }
 .timeline-section-right .timeline-event-story {
     position: relative;

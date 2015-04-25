@@ -40,6 +40,13 @@ font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","华文细黑",
     clear: both;
 }
 
+/* http://www.iyunlu.com/view/css-xhtml/55.html */
+.clearFloat:before,
+.clearFloat:after {
+    content: "";
+    display: table;
+}
+
 .pull-left {
     float: left;
 }
@@ -95,6 +102,11 @@ font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","华文细黑",
 }
 
 .media-round, .img-round {
+    /**
+     * https://css-tricks.com/almanac/properties/b/border-radius/
+     */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
     border-radius: 50%;
     border: 2px solid #fff;
 }
@@ -107,7 +119,7 @@ font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","华文细黑",
     margin-right: -12.5px
 }
 
-.row:before,.row:after {
+.row:before, .row:after {
     content: " ";
     display: table
 }
@@ -131,8 +143,7 @@ font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","华文细黑",
 .container {
     padding-right: 15px;
     padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
     width:980px;
 }
 
@@ -176,7 +187,6 @@ ol.list-h:after {
 
 .panel {
     background-color: #fff;
-    border-radius: 0;
 }
 .panel-dark {
     background-color: #edefed;
@@ -195,6 +205,7 @@ ol.list-h:after {
  * navigation bar
  */
 .navbar {
+    min-width: 980px;
     background: #522a5c;
     height: 80px;
     position: relative;
@@ -209,20 +220,25 @@ ol.list-h:after {
 .navbar .navbar-github {
     position: absolute;
     right: 10px;
-    bottom: -5px;
+    bottom: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('../img/icon-github.png');
 }
 .navbar .navbar-logo {
     position: absolute;
     left: 0;
+    display: block;
     bottom: 5px;
     font-size: 30px;
 }
-.navbar .navbar-menu ul {
+.navbar .list-h  {
     position: absolute;
     right: 0;
     bottom: 5px;
     margin: 0; /* overwrite normalize.css */
-    font-family: 宋体, tahoma, arial,sans-serif;
+    font-family: 'SimSun', tahoma, arial,sans-serif;
     font-size: 14px;
 }
 
@@ -261,6 +277,13 @@ ol.list-h:after {
 }
 .footer-copyright img {
     margin-bottom: -5px;
+}
+.footer-copyright a {
+    display: block;
+    width: 30px;
+    height: 34px;
+    margin: 0 auto;
+    background: url('../img/icon-github.png');
 }
 
 /**
