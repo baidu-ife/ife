@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <title>task0002 小练习-5</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/task0002_5.css">
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/task0002_5.js"></script>
+  </head>
+  <body>
+    <div class="drawer">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="drawer">
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="clearfix"></div>
+    </div>
+    <script type="text/javascript">
+      var mgr = new DragBoxControls();
+      var lists = _.dom.query('.drawer');
+      _.each(lists, function(list) {
+        mgr.addList(list, '.box');
+      });
+    </script>
+  </body>
+</html>

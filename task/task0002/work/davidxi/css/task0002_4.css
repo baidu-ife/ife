@@ -1,0 +1,26 @@
+#input {
+  width: 400px;
+  height: 30px;
+}
+#output {
+  position: absolute;
+  top: 29;
+  width: 400px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0;
+}
+#output li {
+  list-style: none;
+}
+#output li a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+}
+#output li a.active {
+  background: #f8f8f8;
+  text-decoration: none;
+}
