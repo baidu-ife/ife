@@ -10,3 +10,18 @@ ul.slide-show {
 .hideable {
     display: none;
 }
+
+ul#suggestions {
+    color: black;
+    width: 200px;
+    text-align: left;
+}
+
+ul#suggestions li {
+    list-style-type: none;
+}
+
+ul#suggestions li:hover {
+    color: red;
+    background: black;
+}
