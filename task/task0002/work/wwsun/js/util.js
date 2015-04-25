@@ -293,10 +293,12 @@ $.enter = function (selector, handler) {
 };
 
 $.delegate = function (selector, tag, event, listener) {
-    var items = $(selector).getElementsByTagName(tag);
-    each(items, function (li) {
-        addEvent(li, event, listener);
-    });
+    $.on(selector, event, function (e) {
+        var target = e.target || e.srcElement;
+        if (target.nodeName.toLowerCase() == tag ) {
+            listener(e);
+        }
+    })
 };
 
 //$.delegate('#list', "li", "click", clickListener); // test case
