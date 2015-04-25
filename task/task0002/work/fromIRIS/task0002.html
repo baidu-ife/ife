@@ -72,12 +72,15 @@
             }
             function clickListener(event) {
                 console.log(event);
+                var e = event || window.event;
+                var target = e.target || e.srcElement;
+                console.log(target)
             }
             function init() {
                 // each($("#list").getElementstagName('li'), function(item) {
                 //     $.click(item, clickListener);
                 // })
-                $.delegate("#list", "li", "click", clickListener);
+                $.delegate("#list", "li", "mousedown", clickListener);
 
                 $.click("#btn2", renderList);
             }

@@ -37,9 +37,9 @@
 	margin-left: 10px;
 	cursor: pointer;
 }
-/*#circle-box li:first-child {
+.showCircle {
 	background-color: #fff;
-}*/
+}
 
 /*小练习5*/
 .container {
@@ -54,4 +54,8 @@
 	height: 50px;
 	border: 1px solid #000;
 	background-color: red;
+}
+.filter {
+	opacity: 0.5;
+	filter:alpha(opacity:0.5);
 }

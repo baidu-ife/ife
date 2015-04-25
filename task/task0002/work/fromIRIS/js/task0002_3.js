@@ -1,5 +1,5 @@
-function Slide (options) {
-    var oDirection = options.dirce
+(function () {
+    var _options = {};
     var oContainer = $("#task2-3-container");
     var oUl = $("#task2-3-box");
     var aLi = oUl.getElementsByTagName("li");
@@ -8,68 +8,82 @@ function Slide (options) {
     var Num = 0;
     var timer = null;
 
-    oUl.innerHTML += oUl.innerHTML;
-    oUl.style.width = aLi.length * aLi[0].offsetWidth + "px";
-    if (oDirection == "left") {
-        timer = setInterval(function () {
+    function slide (options) {
+        _options = options;//将options里的保存到_options全局变量
+        oUl.innerHTML += oUl.innerHTML;
+        oUl.style.width = aLi.length * aLi[0].offsetWidth + "px";
+
+
+    for (var i = 0; i < aCircle.length; i++) {
+        aCircle[i].index = i;
+        aCircle[i].onclick = function () {
+            Num = this.index;
+            tab();
+            // clearInterval(timer);
+        /*timer = setInterval(function () {
             Num++;
             if (oUl.offsetLeft < -oUl.offsetWidth * 3/8) {
                 oUl.style.left = -0 + "px";
                 Num = 1;
             }
             tab();
-        },1500)
-        function tab() {
-            startMove(oUl, "left", -(Num) * 1000);
-            for( var j = 0; j < aCircle.length; j++) {
-                aCircle[j].style.background = "";
-            }
-            aCircle[Num].style.background = "#fff";
+        },1500)*/
         }
     }
-    for (var i = 0; i < aCircle.length; i++) {
-        aCircle[i].index = i;
-        aCircle[i].onclick = function () {
-
-            clearInterval(timer);
-            if(this.index == Num) return;
-            Num = this.index;
-            tab();
-            //加个延迟定时器内包含定时器，
-            setTimeout(function(){
-
-                timer = setInterval(function () {
-                    Num++;
-                    if (oUl.offsetLeft == -oUl.offsetWidth/2) {
-                        oUl.style.left = -0 + "px";
-                        Num = 1;
-                    }
-                    tab();
-                },1500)
-
-            },1000)
+    }
+    function turnRight() {
+        Num--;
+        if (Num == -1 && _options.loop) {
+            oUl.style.left = -oUl.offsetWidth / 2 + "px";
+            Num = 3;
+        }
+        startMove(oUl, "left", -(Num) * 1000);
+        clearCircle();
+    }
+    function turnLeft() {
+        Num++;
+        if (Num == 5 && _options.loop) {
+            oUl.style.left = 0 + "px";
+            Num = 1;
+        }
+        startMove(oUl, "left", -(Num) * 1000);
+        clearCircle();
+    }
+    function direct() {
+        if (_options.back) {
+            setInterval(function() {
+                turnRight();
+            },2000)
+        } else {
+            setInterval(function() {
+                turnLeft();
+            },2000)
         }
     }
-    /*else if (oDirection == "right"){
-        timer = setInterval(function () {
-            Num++;
-            if (oUl.offsetLeft == 0) {
-                oUl.style.left = -oUl.offsetWidth/2 + "px";
-                Num = 1;
-            }
-            tab();
-        },2000)
-        function tab() {
-            startMove(oUl, "left", Num * 1000 - 4000);
+    function tab() {
+        startMove(oUl, "left", -(Num) * 1000);
+        clearCircle();
+    }
+    //点击小圆圈时
+    function clearCircle() {
+        for (var i= 0; i < aCircle.length; i++) {
+            removeClass(aCircle[i], "showCircle");
         }
-    }*/
+        addClass(aCircle[Num], "showCircle");
+    }
+
+
+
+gallery = {
+    slide: slide,
+    direct: direct
 }
 
-
+window.gallery = gallery;
 
 
 function getStyle(obj, attr){
-    // console.log(obj)
+
     if(obj.currentStyle){
         return obj.currentStyle[attr]; //要用中括号去代替点
     }
@@ -77,7 +91,7 @@ function getStyle(obj, attr){
         return getComputedStyle(obj,false)[attr];
     }
 }
-// console(getStyle())
+
 function startMove (obj, attr, iTarget){
 
     clearInterval(obj.timer);
@@ -104,3 +118,9 @@ function startMove (obj, attr, iTarget){
         }
     },30)
 }
+})()
+gallery.slide({
+    back: false,
+    loop: true
+})
+gallery.direct();
