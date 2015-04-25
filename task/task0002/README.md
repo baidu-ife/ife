@@ -183,8 +183,17 @@ var a = [1, 3, 5, 7, 5, 3];
 var b = uniqArray(a);
 console.log(b); // [1, 3, 5, 7]
 
+// 中级班同学跳过此题
+// 实现一个简单的trim函数，用于去除一个字符串，头部和尾部的空白字符
+// 假定空白字符只有半角空格、Tab
+// 练习通过循环，以及字符串的一些基本方法，分别扫描字符串str头部和尾部是否有连续的空白字符，并且删掉他们，最后返回一个完成去除的字符串
+function simpleTrim(str) {
+    // your implement
+}
+
+// 很多同学肯定对于上面的代码看不下去，接下来，我们真正实现一个trim
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
-// 先暂时不要简单的用一句正则表达式来实现
+// 尝试使用一行简洁的正则表达式完成该题目
 function trim(str) {
     // your implement
 }
@@ -344,7 +353,7 @@ function clicklistener(event) {
 }
 addEvent($("#doma"), "click", a);
 
-// 移除element对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
+// 移除element对象对于event事件发生时执行listener的响应
 function removeEvent(element, event, listener) {
     // your implement
 }
