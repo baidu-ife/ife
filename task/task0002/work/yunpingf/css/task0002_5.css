@@ -1,0 +1,15 @@
+div.column {
+	display: inline-block;
+	width: 400px;
+	height:700px;
+	border-width: 2px;
+	border-style: solid;
+}
+
+div.item {
+	height:50px;
+	background-color: red;
+	border-width: 1px;
+	border-style: solid;
+	border-color: white;
+}

@@ -99,7 +99,7 @@ function getPosition(element) {
 
 // 实现一个简单的Query
 function $(selector) {
-    return document.querySelector(selector);
+    return document.querySelectorAll(selector);
 };
 //**************task 4*******************
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
