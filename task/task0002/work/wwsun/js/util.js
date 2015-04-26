@@ -1,16 +1,22 @@
 /**
+ * task 2.1
  * check the target is an array or not
- * @param arr
- * @returns {boolean}
+ * @param arr is the target object you want to test
+ * @returns {boolean} true if arr is an array, otherwise return false
  */
 function isArray(arr) {
-    return Array.isArray(arr);
+    if (Array.isArray) {
+        return Array.isArray(arr);
+    } else {
+        return arr instanceof Array;
+    }
 }
 
 /**
+ * task 2.1
  * check the target is an function or not
  * @param fn
- * @returns {boolean}
+ * @returns {boolean} true if fn is a function, otherwise return false
  */
 function isFunction(fn) {
     return typeof fn === 'function';
@@ -41,7 +47,7 @@ function cloneObject(src) {
  * @param arr
  * @returns {Array} without duplicate items
  */
-function uniqueArray(arr) {
+function uniqArray(arr) {
     var result = [];
 
     for (var i = 0; i < arr.length; i++) {
@@ -67,9 +73,10 @@ function trim(str) {
  * @param fn
  */
 function each(arr, fn) {
-    //arr.forEach(fn);
-    for (var i = 0, n = arr.length; i < n; i++) {
-        fn(arr[i]);
+    if (isArray(arr)) {
+        for (var i = 0, n = arr.length; i < n; i++) {
+            fn(arr[i]);
+        }
     }
 }
 
@@ -79,12 +86,6 @@ function each(arr, fn) {
  * @returns {Number}
  */
 function getObjectLength(obj) {
-    //var length = 0;
-    //for (var key in obj) {
-    //    if (obj.hasOwnProperty(key)) {
-    //        length++;
-    //    }
-    //}
     return Object.keys(obj).length; // a better solution, since ES5
 }
 
@@ -101,12 +102,13 @@ function isEmail(email) {
  * check a number sequence if a valid mobile phone number or not
  * @param phone
  */
-function isPhoneNumber(phone) {
+function isMobilePhone(phone) {
     var re = /^1[358]\d{9}$/;
     return re.test(phone);
 }
 
 /**
+ * test 3.1
  * add a new css class for a specific dom element
  * @param element
  * @param newClassName
@@ -124,9 +126,21 @@ function removeClass(element, oldClassName) {
     element.classList.remove(oldClassName);
 }
 
+/**
+ * test it the `element` node is the sibling of `siblingNode` node
+ * @param element
+ * @param siblingNode
+ * @returns {boolean}
+ */
 function isSiblingNode(element, siblingNode) {
-    // todo
-
+    var nodes = element.parent.childNodes;
+    var i, n;
+    for (i=0, n=nodes.length; i<n; i++) {
+        if(nodes[i] == siblingNode) {
+            return true;
+        }
+    }
+    return false;
 }
 
 /**
@@ -148,7 +162,7 @@ function getPosition(element) {
  * @param selector
  * @returns {*}
  */
-function $(selector) {
+var $ = function(selector) {
     var root = document.body; // set the body element as the root element
     var childNodes = root.childNodes;
 
@@ -217,64 +231,26 @@ function addEvent(element, event, listener) {
 
 /**
  * remove the event handler which was bound by the addEvent(or addEventListener) function
+ *
  * @param element
  * @param event
- * @param listener
+ * @param listener is the specific listener you want to remove, if null, remove all listeners
  */
 function removeEvent(element, event, listener) {
 
-    // todo: when listener is null, remove all event listeners
-
-    if (element.removeEventListener) {
-        element.removeEventListener(event, listener, false);
-    } else if (element.detachEvent) {
-        element.detachEvent("on" + event, listener);
+    if(listener) {
+        if (element.removeEventListener) {
+            element.removeEventListener(event, listener, false);
+        } else if (element.detachEvent) {
+            element.detachEvent("on" + event, listener);
+        } else {
+            element["on" + event] = null;
+        }
     } else {
-        element["on" + event] = null;
-    }
-
-}
-
-function addClickEvent(element, listener) {
-    addEvent(element, 'click', listener);
-}
-
-function addEnterEvent(element, listener) {
-    addEvent(element, 'keydown', listener);
-}
-
-//$.on = function (element, event, listener) {
-//    addEvent(element, event, listener);
-//};
-//
-//$.un = function (element, event, listener) {
-//    removeEvent(element, event, listener);
-//};
-//
-//$.click = function(element, handler) {
-//    addClickEvent(element, handler);
-//};
-//
-//$.enter = function(element, handler) {
-//    addEnterEvent(element, handler);
-//};
-
-function clickListener(event) {
-    console.log(event);
-}
-
-function enterListener(event) {
-    if (event.keyCode == 13) {
-        console.log("the enter button is pressed!");
+        element.parentNode.replaceChild(element.cloneNode(true), element);
     }
 }
 
-//function delegateEvent(element, tag, event, listener) {
-//    var items = element.getElementsByTagName(tag);
-//    each(items, function(li) {
-//        addEvent(li, event, listener);
-//    });
-//}
 
 $.on = function (selector, event, listener) {
     addEvent($(selector), event, listener);
@@ -285,25 +261,30 @@ $.un = function (selector, event, listener) {
 };
 
 $.click = function (selector, handler) {
-    addClickEvent($(selector), handler);
+    $.on(selector, 'click', handler);
 };
 
-$.enter = function (selector, handler) {
-    addEnterEvent($(selector), handler);
+$.enter = function (element, handler) {
+    element.addEventListener('keydown', function (e) {
+        var theEvent = e || window.event;
+        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+        if (code == 13) {
+            handler();
+        }
+    }, false);
 };
 
 $.delegate = function (selector, tag, event, listener) {
     $.on(selector, event, function (e) {
         var target = e.target || e.srcElement;
-        if (target.nodeName.toLowerCase() == tag ) {
+        if (target.nodeName.toLowerCase() == tag) {
             listener(e);
         }
     })
 };
 
-//$.delegate('#list', "li", "click", clickListener); // test case
-
 /**
+ * test 5.1
  * judge if the browser is MS-IE
  */
 function isIE() {
@@ -347,20 +328,8 @@ function getCookie(name) {
 }
 
 
-//// test
-//ajax('http://localhost:5500/products/', {
-//    type: 'get',
-//    onsuccess: function (data) {
-//        console.log(data);
-//    },
-//    onfail: function (error) {
-//        console.error(error)
-//    }
-//});
-
 /**
- * todo finish the encapsulation of ajax method
- *
+ * ajax method
  * @param url
  * @param options {type, data, onsuccess, onfail}
  */
