@@ -117,9 +117,9 @@ function getPosition(element) {
 }
 // 获取dom相对于浏览器窗口的位置，返回一个对象{x, y}↑
 
-function $(selector) {
+/*function $(selector) {
     return document.querySelector(selector);
-}
+}*/
 function getClass(oParent, oClassName) {
     var elems = oParent.getElementsByTagName("*");
     var arrT = [];
@@ -130,29 +130,95 @@ function getClass(oParent, oClassName) {
     }
     return arrT;
 }
-/*function $(selector) {
-    console.log(selector)
+function getAttr(oParent, oAttrName) {
+    var elem = oParent.getElementsByTagName("*");
+    var arrT = [];
+    for (var i=0; i<elem.length; i++) {
+        // console.log(elem.length)
+        if (elem[i].attributes.length > 0) {
+            // console.log(elem[i].attributes[0].name)
+            for (var j=0; j<elem[i].attributes.length; j++) {
+                if (elem[i].attributes[j].name == oAttrName) {
+                    arrT.push(elem[i]);
+                }
+            }
+        }
+    }
+    return arrT;
+}
+function getAttrValue(oParent, oAttrName, oAttrValue) {
+    var elem = oParent.getElementsByTagName("*");
+    var arrT = [];
+    for (var i=0; i<elem.length; i++) {
+        if (elem[i].attributes.length > 0) {
+            // console.log(elem[i].getAttribute(oAttrName))
+            for (var j=0; j<elem[i].attributes.length; j++) {
+                if (elem[i].attributes[j].name == oAttrName) {
+                    if (elem[i].getAttribute(oAttrName) == oAttrValue) {
+                        arrT.push(elem[i]);
+                    }
+                }
+            }
+        }
+    }
+    return arrT;
+}
+function $(selector) {
     var sTr = selector;
     if (sTr.search(/\s+/g) == -1) {
         var firstChart = sTr.charAt(0);
-        console.log(firstChart)
-        swich (firstChart) 
+        switch (firstChart)
         {
             case "#":
                 var newStr = sTr.replace(firstChart, "");
                 return document.getElementById(newStr);
             break;
-        
+
             case ".":
                 var newStr = sTr.replace(firstChart, "");
-                return getClass("document", newStr)[0];
+                return getClass(document, newStr)[0];
+            break;
+
+            case "[":
+                console.log(sTr.search(/=/g))
+                if (sTr.search(/=/g) == -1) {
+                    var reg = /^\[|\]$/g;//开头结尾的符号[];
+                    var newStr = sTr.replace(reg, "");
+                    return getAttr(document, newStr)[0];
+                } else {
+                    var reg = /^\[|\]$/g;//开头结尾的符号[];
+                    var newStr = sTr.replace(reg, "");
+                    console.log(newStr)
+                    var arrStr = newStr.split("=");
+                    console.log(arrStr)
+                    var oAttrName = arrStr[0];
+                    var oAttrValue = arrStr[1];
+                    return getAttrValue(document, oAttrName, oAttrValue)[0];
+                }
             break;
 
             default:
-                return document.getElementsByTagName(firstChart)[0];
-        
+                return document.getElementsByTagName(sTr)[0];
         }
-}*/
+    } else {
+        var partArr = sTr.split(" ");
+        console.log(partArr)
+        var sParent = partArr[0].replace(partArr[0].charAt(0), "");
+        if (partArr[1].charAt(0) == ".") {
+            var sSon = partArr[1].replace(partArr[1].charAt(0), "");
+        } else {
+            var sSon = partArr[1];
+        }
+        
+        console.log(sSon)
+        var oParent = document.getElementById(sParent);
+        if (partArr[1].charAt(0) == ".") {
+            return getClass(oParent, sSon)[0];
+        } else {
+            return oParent.getElementsByTagName(sSon)[0];
+        }
+    }
+}
 //小型query↑
 
 function addEvent(element, event, listener) {

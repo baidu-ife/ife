@@ -29,10 +29,11 @@
         </style>
     </head>
     <body>
+    <button id="addbtn">xx</button>
         <input id="number1" type="text">
         <input id="number2" type="text">
         <span id="result"></span>
-        <button id="addbtn">xx</button>
+        
         <div id="div1" class="red">111</div>
         <div id="div2">
             <div id="div3">123</div>
@@ -40,7 +41,7 @@
         <a href="#">a</a>
         <a href="aaa">aaaaa</a>
         <input type="button" value="alert" id="btn1">
-        <div id="wrap">
+        <div class="wrap">
             <ul id="list">
                 <li>Simon</li>
                 <li>Kenner</li>
@@ -49,7 +50,7 @@
         </div>
         <button id="btn2">change</button>
     </body>
-    <script type="text/javascript" src="1-1.js"></script>
+    <!-- <script type="text/javascript" src="1-1.js"></script> -->
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript">
         window.onload = function () {
@@ -67,7 +68,7 @@
             // $.click("#btn2",alertA);
 
 
-            function renderList() {
+            /*function renderList() {
                 $("#list").innerHTML = '<li>new item</li>';
             }
             function clickListener(event) {
@@ -84,7 +85,7 @@
 
                 $.click("#btn2", renderList);
             }
-            init();
+            init();*/
             // $.click($("#list"), clickListener);
             /*function clickListener(ev) {
                 var oEvent = ev || event;
@@ -109,6 +110,12 @@
                     console.log(data);
                 }
             });*/
+            var oBtn1 = document.getElementById("wrap");
+            addClickEvent($("#list li"), out) ;
+            // oBtn1.onclick = out;
+            function out() {
+                console.log("aaa");
+            }
         }
     </script>
 </html>
