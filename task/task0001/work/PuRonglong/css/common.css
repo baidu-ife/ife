@@ -1,0 +1,130 @@
+.clearFix:after,.clearFix:before{
+	display: table;
+	content: ''
+}
+.clearFix:after{
+	clear: both;
+}
+
+header{
+	width: 100%;
+	height: 80px;
+	background: #522a5c;
+}
+
+header nav ul li a{
+	color: #fff;
+}
+
+header nav ul li{
+	font-family: sans-serif;
+	float: right;
+	width: 56px;
+	font-size: 14px;
+	text-align: right;
+}
+
+.header_wrapper{
+	width: 980px;
+	height: 80px;
+	margin: 0 auto;
+}
+
+.header_mylogo{
+	color: #fff;
+	padding-top: 46px;
+	font-size: 25px;
+	display: inline-block;
+}
+
+.header_github{
+	width: 30px;
+	height: 34px;
+	right: 10px;
+	top: 46px;
+	position: absolute;
+	background: url(../img/icon-github.png) no-repeat;
+	text-indent: -999999px;
+}
+
+.header_nav{
+	padding-top: 59px;
+	float: right;
+}
+
+.header_nav ul{
+	float: right;
+}
+
+.wrapper{
+	width: 980px;
+	margin: 0 auto;
+}
+
+.introduce_img{
+	width: 160px;
+	height: 160px;
+	border-radius: 80px;
+	top: -50px;
+	left: 50%;
+	position: absolute;
+	margin-left: -80px;
+	cursor: pointer;
+}
+
+footer{
+	background: #000;
+	width: 100%;
+}
+
+.footer_wrapper{
+	width: 980px;
+	margin: 0 auto;
+}
+
+.footer_nav{
+	text-align: center;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	border-bottom: 1px solid #333;
+}
+
+.footer_nav a{
+	color: #fff;
+	width: 60px;
+	display: inline-block;
+}
+
+.footer_wrapper dl{
+	padding-top: 40px;
+	padding-bottom: 50px;
+	width: 196px;
+	display: inline-block;
+}
+
+.footer_wrapper dl dt{
+	color: #ccc;
+	margin-bottom: 20px;
+}
+
+.footer_wrapper dl dd{
+	color: #fff;
+}
+
+.footer_bottom{
+	color: #fff;
+	text-align: center;
+}
+
+.footer_img{
+	width: 30px;
+	height: 34px;
+	background: url(../img/icon-github.png) no-repeat;
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+.footer_bottom p{
+	padding-bottom: 16px;
+}
