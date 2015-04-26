@@ -7,7 +7,7 @@ p,pre{font-size: 12px;color: #666;padding: 0px 15px 0px 15px;text-indent: 2em;fo
 pre{text-indent: 0;}
 a{color: white;text-decoration: none;}
 #header{
-    background-color: #461774;
+    background-color: #3f6978;
     width: 100%;
     height: 80px;
         }
@@ -123,12 +123,16 @@ a{color: white;text-decoration: none;}
 .searchbuttom{
     width: 50px;
     height: 51px;
-    background-color: #461774;
+    background-color: #416974;
     border-style:none;
     margin-left: -4px;
     vertical-align: bottom;
     color: #eaeaea;
     font-size: 25px;
+}
+
+.searchbuttom:active,.searchbuttom:hover{
+background-color: #399685;
 }
 
 #selector ul li{
@@ -186,10 +190,12 @@ a{color: white;text-decoration: none;}
     background-color: #5d1e9e;
 }
 .buttom{
+    font-size: 15px;
     width: 100%;
-    height: 300px;
+    height: 310px;
     background-color: #232323;
     vertical-align:bottom;
+    position: relative;
 }
 .buttomtitle{
     height: 35px;
@@ -208,15 +214,24 @@ a{color: white;text-decoration: none;}
     /*background-color: transparent;*/
     width: 80%;
     margin: 0 auto;
-    height: 250px;
+    height: 200px;
 }
 .friendlylink ul{
     color: white;
     list-style: none;
     float: left;
     padding-left:160px;
-    padding-top: 50px;
+    padding-top: 40px;
 }
-.friendlylink ul li{
-
+.rightinfo{
+    height: 30px;
+    color:white;
+    text-align: center;
+    /*background: url("/asleepcat/img/icon-github.png") no-repeat;*/
+}
+.buttom img{
+    /*margin: 0 auto;*/
+    position: absolute;
+    bottom: 0;
+    left: 49%;
 }
