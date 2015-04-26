@@ -1,0 +1,184 @@
+/* reset */
+html,body,h1,h2,h3,h6,div,dl,dt,dd,ul,ol,li,p,form,input{margin:0;padding:0}
+body {
+    font: 12px/1.5 '宋体',arial;
+    width: 100%;
+    background: #eee;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: top;
+    border: 0;
+}
+
+em,strong {
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*fix clear*/
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+    content: "";
+}
+
+/*header*/
+#header {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    background: #522a5c;
+}
+
+.header-content {
+    width: 980px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header-content h1 {
+    width: 100px;
+    height: 57px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.logo img {
+    width: 100px;
+    height: 57px;
+}
+
+/*导航*/
+.nav {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+
+.nav li {
+    float: left;
+    padding-left: 28px;
+    line-height: 1.8;
+}
+
+.nav a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.nav a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+/*右侧图标*/
+.header-right {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+/*footer*/
+#footer {
+    width: 100%;
+    height: 395px;
+    background: #000;
+    position: relative;
+}
+
+.footer-nav {
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid  #333;
+    margin-bottom: 42px;
+    text-align: center;
+    font-weight: normal;
+    
+}
+
+.footer-nav a {
+    display: inline-block;
+    padding: 0 13px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.footer-nav a:hover {
+    color: #000;
+    text-decoration: underline;
+    background: #ccc;
+}
+
+.foo-content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.foo-content dl {
+    width: 200px;
+    float: left;
+}
+
+.foo-content dt {
+    color: #ccc;
+    height: 12px;
+    padding-bottom: 24px;
+}
+
+.foo-content dd {
+    line-height: 20px;
+    height: 20px;
+}
+.foo-content a {
+    color: #fff;
+}
+
+.foo-content a:hover {
+    text-decoration: underline;
+}
+
+.copy-right {
+    width: 50px;
+    height: 66px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    text-align: center;
+}
+
+.copy-right span {
+    color: #fff;
+}
+
+.copy-right img {
+    width: 30px;
+    height: 34px;
+    display: block;
+    padding-top: 18px;
+    margin: 0 auto;
+}
+
+/*媒体查询 当屏幕小于980px是*/
+@media(max-width: 980px) {
+    .header-right{
+        text-indent: -9999px;
+    }
+}

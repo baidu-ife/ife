@@ -1,0 +1,107 @@
+.banner {
+    width: 100%;
+    height: 525px;
+    position: relative;
+}
+.banner-pic {
+    width: 100%;
+    height: 525px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.banner-content{
+    width: 980px;
+    height: 525px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.banner-text {
+    width: 360px;
+    height: 120px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 10px 30px 10px;
+    background: -webkit-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
+    background: -o-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
+    background: -ms-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
+    background: linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff'),
+    alpha(opacity:50);
+    color: #000;
+}
+.banner-text h2 {
+    height: 30px;
+    font-size: 14px;
+    font-weight: normal;
+    float: right;
+}
+.banner-text p {
+    font-size: 12px;
+    line-height: 150%;
+    padding-left: 4px;
+    text-indent: 2em;
+    clear: both;
+}
+/*信息列表*/
+.info-list{
+    width: 980px;
+    margin: 10px auto 0;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.info-list li {
+    width: 300px;
+    height: auto;
+    float: left;
+    padding: 10px 10px 1000px 10px;
+    margin: 0 10px -1000px 0;
+    background: #fff;
+}
+.info-list li.naMargin {
+    margin-right: 0;
+}
+.info-list img {
+    width: 300px;
+    height: 180px;
+    margin-bottom: 13px;
+}
+.info-list p {
+    padding: 0 14px 14px;
+    width: 260px;
+    line-height: 14px;
+    text-indent: 2em;
+}
+.person-info {
+    width: 100%;
+    height: 520px;
+    position: relative;
+    margin-top: 110px;
+    background: #fff;
+}
+.person-info img {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    left: 50%;
+    margin-left: -80px;
+    top: -50px;
+}
+.person-info h3 {
+    height: 14px;
+    font-size: 20px;
+    font-family: 'Century Gothic';
+    font-weight: normal;
+    padding: 154px 0 43px 0;
+    text-align: center;
+}
+.person-info p { 
+    font-size: 14px;
+    line-height: 25px;
+    width: 600px;
+    margin: 0 auto;
+    text-indent: 2em;
+}
