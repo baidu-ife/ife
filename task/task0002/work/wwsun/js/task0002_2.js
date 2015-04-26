@@ -1,36 +1,48 @@
-//var target_date = new Date("Aug 15, 2019").getTime();
+(function() {
 
-var target_date;
-var days, hours, minutes, seconds;
-var countdown = $('#countdown');
+    //var target_date = new Date("Aug 15, 2019").getTime();
 
-addEvent($('#countBtn'), 'click', clickHandler);
+    var target_date;
+    var years, days, hours, minutes, seconds;
+    var countdown = $('#countdown');
 
-function clickHandler() {
-    var date = $('#targetDate').value;
-    target_date = new Date(date).getTime();
-    setInterval(getCountDown, 1000);
-}
+    addEvent($('#countBtn'), 'click', clickHandler);
 
-// todo: bug fix, when the date due display all zeros
-function getCountDown() {
-    var current_date = new Date().getTime();
-    var seconds_left = (target_date - current_date) / 1000;
+    function clickHandler() {
+        var date = $('#targetDate').value;
+        target_date = new Date(date).getTime();
+        setInterval(getCountDown, 1000);
+    }
 
-    console.log('hello');
+    function getCountDown() {
+        var current_date = new Date().getTime();
+        var seconds_left = (target_date - current_date) / 1000;
 
-    // do some time calculations
-    years = parseInt(seconds_left / (86400 * 365));
-    days = parseInt(seconds_left / 86400 - years * 365);
-    seconds_left = seconds_left % 86400;
+        if (seconds_left > 0) {
+            // do some time calculations
+            if (seconds_left > 86400 * 365) {
+                years = parseInt(seconds_left / (86400 * 365));
+            } else {
+                years = 0;
+            }
 
-    hours = parseInt(seconds_left / 3600);
-    seconds_left = seconds_left % 3600;
+            days = parseInt(seconds_left / 86400 - years * 365);
+            seconds_left = seconds_left % 86400;
 
-    minutes = parseInt(seconds_left / 60);
-    seconds = parseInt(seconds_left % 60);
+            hours = parseInt(seconds_left / 3600);
+            seconds_left = seconds_left % 3600;
 
-    // format countdown string + set tag value
-    countdown.innerHTML = years + "\tyear(s), " + days + "\tday(s), " + hours + "\thour(s), "
-        + minutes + "\tmin, " + seconds + "\tseconds";
-}
+            minutes = parseInt(seconds_left / 60);
+            seconds = parseInt(seconds_left % 60);
+        } else {
+            days = 0;
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+        }
+
+        // format countdown string + set tag value
+        countdown.innerHTML = years + "\tyear(s), " + days + "\tday(s), " + hours + "\thour(s), "
+            + minutes + "\tmin, " + seconds + "\tseconds";
+    }
+})();
