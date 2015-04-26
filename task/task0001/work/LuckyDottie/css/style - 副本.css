@@ -1,0 +1,284 @@
+/*-----------------------------------------------布局所用样式开始------------------------------*/
+body {
+	margin: 0;
+	padding: 0;
+	min-width: 980px;
+	}
+
+#header {
+	width:100%;
+	height: 80px;
+	background-color: #505;
+	overflow: hidden;
+	min-width: 980px;
+	}
+	
+/*#container {
+	width: 100%;
+	height: auto;
+	min-height: 500px;
+	}
+	
+#footer {
+	width:100%;
+	background-color:#000;
+	height: 400px;
+	}*/
+/*-----------------------------------------------布局所用样式结束------------------------------*/
+
+
+	
+	#nav {
+		width: 980px;
+		height: 80px;
+		/*background-color:#0F5;*/
+		margin: 0 auto;/*0和auto之间没有逗号*/
+		position: relative;
+		}
+		
+		#logo {
+			width:200px;
+			float: left;
+			position:absolute;
+			bottom: 0px;
+			padding-bottom: 5px;
+			/*margin-top: 29px;*/
+			color: #FFF;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-size: 36px;
+			font-weight: 700;/*
+			line-height: 46px;*/
+			}
+	
+		#menu {
+			/*margin-left: 200px;*/
+			/*background-color: #FF0;*/
+			height: 100%;
+			overflow: hidden;
+			float: right;
+			position: relative;
+		    
+			}
+			
+			#menu-content{
+				float: right;
+				border-bottom: 0;
+				}
+			
+			ul {
+				    margin:0;
+					padding: 0;
+				}
+			
+			.m-item{
+			    list-style: none;
+				margin-top: 46px;
+				
+				}
+				.m-item li {
+					display: inline;
+					width:auto; 
+					margin-top: 46px;
+					margin-left:28px;
+					<!--background-color:#2A1F00;-->
+					}
+				
+				 a {
+					color: #FFF;
+					font-family: "宋体", "Arial Black", Gadget, sans-serif;
+					font-size: 14px;
+					text-decoration:none;
+					
+					}
+	
+	#icon {
+		margin-left:0;
+	     position: relative;
+		 top: -34px;
+		 right: 10px;
+		 height:34px;
+		 width:30px;
+		 float: right;
+		/* background-color: #3FF;
+		border: 1 #FF1FFF solid;
+		width: 30px;
+		margin-right: 10px;
+		float: left;*/
+		}
+#container {
+	width: 100%;
+	height: auto;
+	min-height: 500px;
+	}
+	
+	.content {
+		margin: 0 auto;
+		width: 980px;
+		padding-top: 10px;
+		overflow: hidden;
+		height: auto;
+		}
+		
+		.content-box {
+			font-size: 12px;
+			line-height: 170%;
+			width: 320px;
+			background-color: #FFF;
+			float: left;
+			margin-right:10px;
+			margin-bottom:-25px;
+			padding-bottom: 25px;
+			}
+		.last-box {
+			margin: 0;
+			}
+			.con-img {
+				margin: 10px;
+				}
+				
+				.con-img img {
+					height: 180px;
+					width: 300px;
+					}
+			
+			.con-txt {
+				padding: 5px 30px 10px 30px;
+				}
+				
+			p {
+				text-indent: 2em;
+				}
+	
+	.row1 {
+		height: 868px;
+		background-image: url(../img/banner-bg.jpg);
+		}
+		.row1-content {
+			height: 868px;
+			width: 980px;
+			margin: 0 auto;
+		position:relative;
+			}
+		.first-content {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 400px;
+			padding: 10px 10px 30px 10px;
+			color: #FFF;
+			background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); 
+			background: -webkit-gradient(linear, top, bottom, color-stop(0%, rgba(255, 255, 255, 0.1)), color-stop(75%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0))); 
+			background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7) 0%,  rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); 
+			background: -o-linear-gradient(top, rgba(255, 255, 255, 0.7) 0%,  rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); 
+			filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FFF', EndColorStr='#FFF'); 
+			background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%,  rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%); 
+			}
+		.row1-title{
+			font-size: 14px;
+			text-align: right;
+			}
+		.row1-main{
+			font-size: 12px;
+			line-height: 150%;
+			}
+	
+	.row2 {
+		padding-bottom: 100px;
+		background-color: #CCC;
+		}
+	.row3 {
+		width: 600px;
+		margin: 0 auto;
+		/*margin-top: 160px;*/
+		}
+		.portrait {
+			margin: 0 auto;
+			}
+			.portrait img {
+				height: 160px;
+				width: 160px;
+				position: relative;
+				top: -50px;
+				border-radius: 50%;
+				}
+		#txt-title{
+			font-size: 20px;
+			font-family: "Century Gothic", Georgia, "Times New Roman", Times, serif;
+			color: #000;
+			margin-top: 0;
+		    text-align: center;
+			
+			}
+		#txt-main {
+			font-size: 14px;
+			color: #000;
+			line-height: 170%;
+			}
+	
+	
+#footer {
+	width:100%;
+	background-color:#000;
+	height: 400px;
+	}
+	
+	#bars {
+	    height: 39px;
+		line-height: 39px;
+		width: 100%;
+		border-bottom: 1px solid #333;
+		}
+	
+	#links {
+		width: 980px;
+		margin: 0 auto;
+		display: table;
+		}
+		
+		.links-categroy {
+			width: 196px;
+			float: left;
+			margin: 0;
+			padding: 0;
+			}
+			
+			.links-categroy li{
+				height: 30px;
+				}
+				
+			.links-categroy a:hover {
+				text-decoration: underline;}	
+		
+		h5 {
+			color: #FFF;
+			font-size: 16px;
+			font-weight:100;
+			}
+	
+	#copyright {
+		height: 100px;
+		margin: 0 auto;
+		background-color:#000;
+		width: auto;
+		text-align: center;
+		}
+	    
+		#copyright h5{
+			padding-top: 33px;
+			margin: 0;
+			}
+		
+		.b-img {
+			margin: 0 auto;
+			padding-top: 15px;
+			}
+
+/*.test{
+    height:80px;
+	bottom: 5px;
+}
+ ul{list-style:none; padding-bottom: 0;}
+ li{float:right;width:auto; margin-right:28px;line-height:30px; padding-bottom: 0; font-family: "宋体", "Arial Black", Gadget, sans-serif; font-size:14px; color: #FFFBF0}
+    .edge {
+		margin-right:0;}*/
+
