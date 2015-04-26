@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LuckyDottie-Task</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div id="nav">
+            <div id="logo">Dottie</div> 
+            <div id="menu">
+                <div id="menu-content">
+                    <ul class="m-item">
+                         <li><a href="1">首页</a></li>
+                         <li><a href="2">文章</a></li>
+                         <li><a href="3">作品</a></li>
+                         <li><a href="4">关于</a></li>
+                    </ul>
+                </div>
+            </div> <!--menu end-->
+        </div><!--nav end-->
+        <div id="icon">
+            <img src="img/icon-github.png" >
+        </div>
+    </div><!--header end-->
+    <div id="container" class="blog-container">
+        <div id="content">
+            <div id="main-content">
+                <div id="blog-list">
+                
+                    <div class="blog first">
+                        <div class="chapter">
+                            <div class="number">4.12</div>
+                            <div class="c-title">CSS</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2 class="blog-title">实现并列div自适应登高的纯css方法</h2>
+                            <p class="blog-context">设置父div隐藏内容溢出，并为两个子div设置相等的正内边距和父外边距</p>
+                            <p class="blog-context">但是这种方法存在问题：边距值取值过小的时候，并不能实现登高，但是取值太大又会影响div的高度，使得其比我们所需要的高度要大，所以我们必须估计到div大致可能会有的最大高度</p>
+                        </div>
+                        <div class="info">
+                            <p>LuckyDottie 发表于 2015年发表于2015年4月26日</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="blog fellow">
+                        <div class="chapter">
+                            <div class="number">4.12</div>
+                            <div class="c-title">CSS</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2 class="blog-title">嵌套div，如何使父div中的子div居下对齐</h2>
+                            <p class="blog-context">子div采用absolute定位，设置bottom只为0</p>
+                            <p class="blog-context">注意：此处父div应采用absolute定位或是relative定位，这样它才具有定位意义</p>
+                        </div>
+                        <div class="info">
+                            <p>LuckyDottie 发表于 2015年发表于2015年4月26日</p>
+                        </div>
+                    </div>
+                    
+                    
+                     <div class="blog fellow">
+                        <div class="chapter">
+                            <div class="number">4.12</div>
+                            <div class="c-title">CSS</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2 class="blog-title">关于div宽度设置无效的问题解决</h2>
+                            <p class="blog-context">如果将div的display属性设置为了inline，那么就不能再为它设置宽度属性；</p>
+                            <p class="blog-context">所以对于宽度需求不是自适应的div并列显示问题，我们不能使用修改属性来实现，只能通过float来实现</p>
+                        </div>
+                        <div class="info">
+                            <p>LuckyDottie 发表于 2015年发表于2015年4月26日</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="pagination">
+                        <div class="page-item">第一页</div>
+                        <div class="page-item">上一页</div>
+                        <div class="page-item">1</div>
+                        <div class="page-item">2</div>
+                        <div class="page-item current">3</div>
+                        <div class="page-item noclick">4</div>
+                        <div class="page-item noclick">...</div>
+                        <div class="page-item">下一页</div>
+                        <div class="page-item">最后页</div>
+                    </div>
+                </div>
+            </div><!--main-content end-->
+            <div id="right-side">
+                <div class="row first-row">
+                    <div class="search-bars">
+                        <div>
+                            <img src="img/search.png" class="search-img">
+                        </div>
+                        <div>
+                            <input type="search" class="search-input" placeholder="Keywords">
+                        </div>
+                        <div  class="go-button"></div>
+                    </div>
+                </div>
+                <div class="row no-padding">
+                    <div class="chapter-nav first-nav">
+                        <div class="chapter-title">HTML</div>
+                    </div>
+                    <div class="chapter-nav current-chapter">
+                        <div class="chapter-title">CSS</div>
+                    </div>
+                    <div class="chapter-nav">
+                        <div class="chapter-title">JavaScript</div>
+                    </div>
+                    <div class="chapter-nav">
+                        <div class="chapter-title">其它文章</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="calendar">
+                       <div class="months">
+                           <div class="previous">&lt;</div>
+                           <div class="month">2015.04</div>
+                           <div class="next">&gt;</div>
+                       </div>
+                       <div class="days">
+                           <div class="week">
+                               <div>
+                                   <div class="day">M</div>
+                                   <div class="day">T</div>
+                                   <div class="day">W</div>
+                                   <div class="day">T</div>
+                                   <div class="day">F</div>
+                                   <div class="day">S</div>
+                                   <div class="day">S</div>
+                               </div>
+                           </div>
+                           <div class="day-list">
+                           
+                               <div class="days-row">
+                                   <div class="day">1</div>
+                                   <div class="day">2</div>
+                                   <div class="day">3</div>
+                                   <div class="day">4</div>
+                                   <div class="day today">5</div>
+                                   <div class="day">6</div>
+                                   <div class="day">7</div>
+                               </div>
+                               <div class="days-row">
+                                   <div class="day">8</div>
+                                   <div class="day special">9</div>
+                                   <div class="day">1</div>
+                                   <div class="day">2</div>
+                                   <div class="day">3</div>
+                                   <div class="day special">4</div>
+                                   <div class="day">5</div>
+                               </div>
+                               <div class="days-row">
+                                   <div class="day">6</div>
+                                   <div class="day">7</div>
+                                   <div class="day">8</div>
+                                   <div class="day">9</div>
+                                   <div class="day">1</div>
+                                   <div class="day">2</div>
+                                   <div class="day">3</div>
+                               </div>
+                               <div class="days-row">
+                                   <div class="day">4</div>
+                                   <div class="day">5</div>
+                                   <div class="day">6</div>
+                                   <div class="day"> </div>
+                                   <div class="day"> </div>
+                                   <div class="day"> </div>
+                                   <div class="day"> </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="tags">
+                        <div class="row-title">
+                            Tags
+                        </div>
+                        <div class="row-content">
+                            <p><span class="prominent"><strong>JavaScript </strong>CSS </span><span class="peddling">flex</span></p>
+                            <p>WebGL <span class="prominent"><strong>HTML </strong></span>Canvas</p>
+                            <p>propotype <span class="prominent">HTML5 </span><span class="peddling">grid </span>NodeJS</p>
+                            <p>CSS3 <span class="prominent">jQuery ECharts</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+    </div><!--container end-->
+    <div id="footer">
+        <div id="bars" align="center">
+            <ul class="m-item">
+                 <li><a href="1">主页</a></li>
+                 <li><a href="2">文章</a></li>
+                 <li><a href="3">作品</a></li>
+                 <li><a href="4">关于</a></li>
+            </ul>
+        </div>
+        
+        <div id="links">
+            <div class="links-categroy"> 
+                <h5>学习资料</h5>
+                <ul>
+                     <li><a href="1">主页</a></li>
+                     <li><a href="2">文章</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                </ul>
+            </div>     
+            
+            <div class="links-categroy"> 
+                <h5>友情链接</h5>
+                <ul>
+                     <li><a href="1">主页</a></li>
+                     <li><a href="2">文章</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                </ul>
+            </div>  
+            
+            <div class="links-categroy"> 
+                <h5>学习资料</h5>
+                <ul>
+                     <li><a href="1">主页</a></li>
+                     <li><a href="2">文章</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                </ul>
+            </div>  
+            
+            <div class="links-categroy"> 
+                <h5>友情链接</h5>
+                <ul>
+                     <li><a href="1">主页</a></li>
+                     <li><a href="2">文章</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                </ul>
+            </div>  
+            
+            <div class="links-categroy"> 
+                <h5>学习资料</h5>
+                <ul>
+                     <li><a href="1">主页</a></li>
+                     <li><a href="2">文章</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                     <li><a href="3">作品</a></li>
+                     <li><a href="4">关于</a></li>
+                </ul>
+            </div>
+        </div><!--links end-->
+        
+        <div id="copyright">
+            <h5>版权信息</h5>
+            <img src="img/icon-github.png" class="b-img">
+        </div>
+    </div><!--footer end-->
+    
+</body>
+</html>
