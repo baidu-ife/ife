@@ -120,6 +120,39 @@ function getPosition(element) {
 function $(selector) {
     return document.querySelector(selector);
 }
+function getClass(oParent, oClassName) {
+    var elems = oParent.getElementsByTagName("*");
+    var arrT = [];
+    for(var i=0; i<elems.length;i++){
+        if(elems[i].className == oClassName ) {
+            arrT.push(elems[i]);
+        }
+    }
+    return arrT;
+}
+/*function $(selector) {
+    console.log(selector)
+    var sTr = selector;
+    if (sTr.search(/\s+/g) == -1) {
+        var firstChart = sTr.charAt(0);
+        console.log(firstChart)
+        swich (firstChart) 
+        {
+            case "#":
+                var newStr = sTr.replace(firstChart, "");
+                return document.getElementById(newStr);
+            break;
+        
+            case ".":
+                var newStr = sTr.replace(firstChart, "");
+                return getClass("document", newStr)[0];
+            break;
+
+            default:
+                return document.getElementsByTagName(firstChart)[0];
+        
+        }
+}*/
 //小型query↑
 
 function addEvent(element, event, listener) {
@@ -271,7 +304,7 @@ function addEnterEvent(element, listener) {
     }*/
 
 // 事件代理
-/*function delegateEvent(element, tag, eventName, listener) {
+function delegateEvent(element, tag, eventName, listener) {
     if (element.addEventListener) {
         element.addEventListener(eventName, function (ev) {
             var ev = ev || event;
@@ -296,7 +329,7 @@ function addEnterEvent(element, listener) {
                     }
                 };
             }
-}*/
+}
 
 // 函数里面一堆$看着晕啊，那么接下来把我们的事件函数做如下封装改变
 $.on = function (selector, event, listener) {
@@ -387,6 +420,8 @@ function getCookie(cookieName) {
         return "";
     }
 }
+
+//ajax参考网络，暂没接触过跟后端 相关的内容。。。
 var createAjax = function() {
     var xhr = null;
     try {
@@ -403,26 +438,26 @@ var createAjax = function() {
     return xhr;
 };
 // ajax
-/*var ajax = function(conf) {
+var ajax = function(options) {
     // 初始化
     //type参数,可选
-    var type = conf.type;
+    var type = options.type;                 //type
     if (type == null){
         //type参数可选，默认为get
         type = "get";
     }
-    //data参数可选，只有在post请求时需要
-    var data = conf.data;
+    //data参数可选
+    var data = options.data;                   //data
 
     //url参数，必填 
-    var url = conf.url;
-    if (type = "get") {
+    var url = options.url;                    //url
+    if (type == "get") {
         url = url + "?" + data;
     }
     //datatype参数可选    
-    var dataType = conf.dataType;
-    //回调函数可选
-    var success = conf.success;
+    var dataType = options.dataType;             //dataType
+    //回调函数
+    var success = options.success;
     if (dataType == null){
         //dataType参数可选，默认为text
         dataType = "text";
@@ -432,7 +467,7 @@ var createAjax = function() {
     // 打开
     xhr.open(type, url, true);
     // 发送
-    
+
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             if(dataType == "text"||dataType=="TEXT") {
@@ -461,4 +496,5 @@ var createAjax = function() {
         xhr.send(data);
 
     }
-};*/
+};
+    
