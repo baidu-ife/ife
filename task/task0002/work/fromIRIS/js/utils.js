@@ -251,31 +251,6 @@ function addEnterEvent(element, listener) {
                 element.onclick = listener;
             }
         }
-    $.enter = function addEnterEvent(element, listener) {
-
-            if (element.addEventListener) {
-                element.addEventListener("keydown", function (ev) {
-                    var oEvent = ev || event;
-                    if (oEvent.keyCode == 13) {
-                        listener();
-                    }
-                }, false);
-            }else if (element.attachEvent) {
-                element.attachEvent("onkeyup", function (ev) {
-                    var oEvent = ev || event;
-                    if (oEvent.keyCode == 13) {
-                        listener();
-                    }
-                });
-            }else {
-                element.onkeyup = function (ev) {
-                    var oEvent = ev || event;
-                    if (oEvent.keyCode == 13) {
-                        listener();
-                    }
-                };
-            }
-        }
     $.delegate = function delegateEvent(element, tag, eventName, listener) {
                 if (element.addEventListener) {
                     element.addEventListener(eventName, function (ev) {
@@ -302,6 +277,31 @@ function addEnterEvent(element, listener) {
                     };
                 }
     }*/
+    $.enter = function addEnterEvent(element, listener) {
+
+            if (element.addEventListener) {
+                element.addEventListener("keydown", function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                }, false);
+            }else if (element.attachEvent) {
+                element.attachEvent("onkeyup", function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                });
+            }else {
+                element.onkeyup = function (ev) {
+                    var oEvent = ev || event;
+                    if (oEvent.keyCode == 13) {
+                        listener();
+                    }
+                };
+            }
+        }
 
 // 事件代理
 function delegateEvent(element, tag, eventName, listener) {

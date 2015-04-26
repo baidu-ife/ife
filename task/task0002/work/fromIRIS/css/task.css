@@ -70,9 +70,9 @@
     border: 1px solid #000;
     display: none;
 }
+.task4-ul li {
+    padding: 10px;
+}
 .task4-li-over {
     background-color: #eee;
-}
-.task4-li-out {
-    background-color: none;
 }
