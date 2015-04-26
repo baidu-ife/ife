@@ -1,0 +1,87 @@
+body{
+    font-family: Microsoft YaHei;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: #522A5C;
+    position: relative;
+}
+
+.header-wrap{
+    width: 900px;
+    background-color: lightblue;
+    margin: 0 auto;
+    position: relative;
+    bottom: -80px;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+}
+
+.menu{
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+.menu-item{
+    color: white;
+    font-family: SimSun;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 28px;
+}
+
+.icon-github{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+@media screen and (max-width:900px){
+    .icon-github{
+        display: none;
+    }
+}
+
+h1{
+    font-size: 14px;
+
+}
+
+p{
+    text-indent: 2em;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+#heading1{
+    width: 300px;
+    height: 80px;
+    background-color: lightgrey;
+    position: absolute;
+    right: 0;
+    top:-125px;
+    /*padding: 10px 10px 30px 10px;*/
+}
+
+.realbody{
+    width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: yellow;
+    position: relative;
+}
+
+
+
+
+
+.footer{
+
+}
