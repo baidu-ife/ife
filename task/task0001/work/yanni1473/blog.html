@@ -1,0 +1,275 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>blog</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!--[if lte IE 8]>
+	<style>
+		#git{
+			display:none;
+		}
+	<style>
+
+	<![endif]-->
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div id="header-content">
+				<img src="img/myLogo.png" id='myLogo'>
+				<ul id='menu'>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">文章</a></li>
+					<li><a href="#">作品</a></li>
+					<li><a href="#">关于</a></li>
+				</ul>
+			</div>
+			<a href="http://github.com"><img src="img/icon-github.png" id='git'></a>
+		</div>
+		<div id="b-content">
+			<div id="b-left">
+				<div class='article'>
+					<ul>
+						<li style='background:purple;'>4.12</li>
+						<li style='background:#a660b7;'>css</li>
+					</ul>
+					<h2>HTML的基本介绍</h2>
+					<h4>--简单介绍一下html里的基本标签</h4>
+					<p>position 属性
+通过使用 position 属性，我们可以选择 4 种不同类型的定位，这会影响元素框生成的方式。
+position 属性值的含义：
+static 
+元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，行内元素则会创建一个或多个行框，置于其父元素中。 
+relative 
+元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。 
+absolute 
+元素框从文档流完全删除，并相对于其包含块定位。包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。 
+fixed 
+元素框的表现类似于将 position 设置为 absolute，不过其包含块是视窗本身。 </p>
+				<span class='time'>闫霓发表于2015年4月12日</span>
+				</div>
+				<div class='article'>
+					<ul>
+						<li style='background:purple;'>4.12</li>
+						<li style='background:#a660b7;'>css</li>
+					</ul>
+					<h2>PHP的基本介绍</h2>
+					<h4>--简单介绍一下PHP的用法</h4>
+					<p>
+						1、php的预定义常量
+_FILE_    php程序文件名
+_LINE_    php程序行数
+E_ERROR   这个常量指到最近的错误处
+<br/>
+2、define（）定义常量函数 
+constant（）动态获取常量
+defined（）判断一个常量是否已经定义  一旦定义就不能改变或取消
+get_defined_constants()获取当前已定义的所有常量
+ bool define(string name,mixed value[,bool case_insensitive])
+string name 常量名字 
+mixed value 常量的值
+bool case_insensitive 可选参数 指定大小写敏感 true为不敏感
+<br/>
+3、strtotime() 将时间转换为UNIX时间戳
+int strtotime(string time[,int now]);如果参数TIME的格式是绝对时间，则NOW不起作用；如果参数TIME的格式是相对的，其对应时间有NOW提供
+ceil()返回不小于VALUE的下一个整数
+float ceil(float value);
+<br/>
+4、<<向左移位
+   >>向右移位
+   ~按位取反
+   <br/>
+5、date(string format,int timestamp);
+format 指定日期和时间输出的格式
+timestamp 可选参数，是定时间戳，如果没有时间戳可用time（）
+					</p>
+					<span class='time'>闫霓发表于2015年4月12日</span>
+				</div>
+				<div class='article'>
+					<ul>
+						<li style='background:purple;'>4.12</li>
+						<li style='background:#a660b7;'>css</li>
+					</ul>
+					<h2>AJAX的基本介绍</h2>
+					<h4>--简单介绍一下js里的内容</h4>
+					<p>
+					当Ajax请求开始发送时显示一个信息Ajax请求即将发送前显示一个信息。
+					</p>
+					<span class='time'>闫霓发表于2015年4月12日</span>
+				</div>
+				<ul id='page'>
+					<li class='long'><a href="#">第一页</a></li>
+					<li class='long'><a href="#">上一页</a></li>
+					<li><a href="#">1</a></li>
+					<li class='select'><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li id='point'><a href="#">...</a></li>
+					<li class='long'><a href="#">下一页</a></li>
+					<li class='long'><a href="#">最后页</a></li>
+				</ul>
+			</div>
+			<div id="b-right">
+				<div id='ipt'>
+					<div class='search'>
+						<div><img src="img/big.png"></div>
+						<span>keyword</span>
+					</div>
+					<div id='click'>GO</div>
+				</div>
+				<ul id="b-list"> 
+					<li>
+						<span><div>HTML</div></span>
+					</li>
+					<li>
+						<span><div>CSS</div></span>
+						
+					</li>
+					<li>
+						<span><div>JavaScript</div></span>
+						
+					</li>
+					<li>
+						<span><div>其他文章</div></span>
+					</li>
+				</ul>
+				<div class="calendar">
+					<table>
+						<tr> 
+							<th colspan="1"><</th>
+							<th colspan="5">    2015 04  </th>
+							<th colspan="1">></th>
+						</tr>
+						<tr>
+							<td>M</td>
+  							<td>T</td>
+ 						 	<td>W</td>
+ 						 	<td>T</td>
+  							<td>F</td>
+ 						 	<td>S</td>
+ 						 	<td>S</td>
+						</tr>
+						<tr>
+							<td>1</td>
+  							<td>2</td>
+ 						 	<td>3</td>
+ 						 	<td>4</td>
+  							<td>5</td>
+ 						 	<td>6</td>
+ 						 	<td>7</td>
+						</tr>
+						<tr>
+							<td>9</td>
+  							<td>2</td>
+ 						 	<td style='background:purple;color:white;'>3</td>
+ 						 	<td>4</td>
+  							<td>5</td>
+ 						 	<td>6</td>
+ 						 	<td>7</td>
+						</tr>
+						<tr>
+							<td>8</td>
+  							<td>2</td>
+ 						 	<td>3</td>
+ 						 	<td>4</td>
+  							<td>5</td>
+ 						 	<td>6</td>
+ 						 	<td>7</td>
+						</tr>
+						<tr>
+							<td>7</td>
+  							<td>2</td>
+ 						 	<td>3</td>
+ 						 	<td>4</td>
+  							<td>5</td>
+ 						 	<td>6</td>
+ 						 	<td>7</td>
+						</tr>
+						<tr>
+							<td>1</td>
+  							<td>2</td>
+ 						 	<td>3</td>
+
+						</tr>
+					</table>
+				</div>
+				<div id="tags">
+					<a href="#">Tags</a>
+					<br />
+					<br/>
+					<br/>
+					<a href="#" class='js'><strong>JavaScript</strong></a>
+					<a href="#" class='css'><strong>CSS</strong></a>
+					<a href="#" class='flex'>flex</a>
+					<a href="#" class='webgl'>webGL</a>
+					<a href="#" class='html'>HTML</a>
+					<a href="#" class='canvas'>Canvas</a>
+					<a href="#" class='proto'>prototype</a>
+					<a href="#" class='html5'>HTML5</a>
+					<a href="#" class='grid'>grid</a>
+					<a href="#" class='nj'>nodeJs</a>
+					<a href="#">css3</a>
+					<a href="#" class='JQ'>JQ</a>
+					<a href="#" class='EC'>Echarts</a>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div id='footer-top'>
+				<ul id='list'>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">文章</a></li>
+					<li><a href="#">作品</a></li>
+					<li><a href="#">关于</a></li>
+				</ul>
+			</div>
+			<div id="footer-bottom">
+				<ul class='footer-link'>
+					<li class='first'><a href="#">学习资料</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+				</ul>
+				<ul class='footer-link'>
+					<li class='first'><a href="#">友情链接</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+				</ul>
+				<ul class='footer-link'>
+					<li class='first'><a href="#">学习资料</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+				</ul>
+				<ul class='footer-link'>
+					<li class='first'><a href="#">学习资料</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+				</ul>
+				<ul class='footer-link'>
+					<li class='first'><a href="#">友情链接</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+					<li><a href="#">LINK</a></li>
+				</ul>
+				<span>版权信息</span>
+				<a href="http://github.com" id='f-git'><img src="img/icon-github.png"></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

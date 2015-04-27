@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#task2-3-container {
+    width: 1000px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+#task2-3-box {
+    height: 400px;
+    position: absolute;
+    left: 0;
+}
+#task2-3-box li {
+    width: 1000px;
+    height: 400px;
+    list-style: none;
+    float: left;
+}
+#circle-box {
+    width: 100px;
+    height: 12px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 25px;
+    left: 450px;
+}
+#circle-box li {
+    list-style: none;
+    float: left;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.showCircle {
+    background-color: #fff;
+}
+
+/*小练习5*/
+.container {
+    width: 198px;
+    height: 500px;
+    border: 1px solid #000;
+    float: left;
+    margin: 100px 200px;
+}
+.container div {
+    width: 196px;
+    height: 50px;
+    border: 1px solid #000;
+    background-color: red;
+}
+.filter {
+    opacity: 0.5;
+    filter:alpha(opacity:0.5);
+}
+/*小练习4*/
+#task4-txt {
+    width: 150px;
+    height: 40px;
+}
+#task4-ul {
+    width: 200px;
+    overflow: hidden;
+    border: 1px solid #000;
+    display: none;
+}
+.task4-ul li {
+    padding: 10px;
+}
+.task4-li-over {
+    background-color: #eee;
+}

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <meta charset="UTF-8">
+    <title>index</title>
+
+    <script src="modernizr.js"></script>
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/blog.css"/>
+</head>
+<body>
+<header>
+    <section id="head-wrapper">
+        <h1>Tiramisusie</h1>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">文章</a></li>
+                <li><a href="gallery.html">作品</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </nav>
+    </section>
+    <a href="https://github.com" target="_blank"  id="github"></a>
+</header>
+<div id="main">
+    <div id="content">
+        <div id="articles-wrap">
+            <article>
+                <hgroup>
+                    <h2>技术总结</h2>
+                    <h3>关于布局的一些思考</h3>
+                </hgroup>
+                <div class="post-content">
+                    <p>在编码的过程中，遇到了一些比较典型的布局方式，例如圣杯布局，双飞翼布局，瀑布流布局。</p>
+                    <p>我不想在这里叙述这些布局的实现方法，因为网上有一大堆的相关文章。我只想在这里说一些自己的思想总结</p>
+                    <p>像这样的布局方式看上去虽然实现的方式有很多，但我觉得核心都是元素的定位（这里的定位包括position、float、边距），
+                        以及元素的嵌套组合。当要实现某一种布局的时候，第一件事不应该是查资料，而是自己思考。想想用怎样的元素搭配和定位方式，
+                        有一个自己的思路以后用自己的方法实现布局。这时候也可以结合其他资料上的方法，尽量寻找一种最好的方案。
+                    </p>
+                    <p>
+                        总之，遇到问题时先自己思考。
+                    </p>
+                </div>
+                <aside class="post-info">
+                    <span class="author">Tiramisusie</span>
+                    发表于
+                    <time>2015-4-12</time>
+                </aside>
+                <aside class="post-tag">
+                    <span class="date">4.12</span>
+                    <span class="tag">CSS</span>
+                </aside>
+            </article>
+            <article>
+                <hgroup>
+                    <h2>技术心得总结</h2>
+                    <h3>负外边距</h3>
+                </hgroup>
+                <div class="post-content">
+                    <p>之前一直没怎么注意负外边距的用法，但这几天的学习发现其实负外边距确实是一个强大的功能</p>
+                    <p>最直观的认识是负外边距可以用来定位。最典型的例子是神马圣杯布局、双飞翼布局。立面就是对浮动元素的外边距使用负值来实现的
+                    另外，也可以相同的原理来实现元素的居中。</p>
+                    <p>此外，还可以用负外边距搭配内边距来实现等高布局。</p>
+                    <p>负外边距还有的一个功能是我之前不知道的，或者说没留意。通常我们会为列表中的每个li都设置一个border或边距。但是最后一个
+                    li的这些样式往往会与父元素的border重合或者破坏了布局，这时候如果为父元素设置合适的负外边距就可以解决问题。</p>
+                    <p>其实，很多属性都有一些“隐藏技”，平时多多折腾就会发现很多有趣的用法</p>
+                </div>
+                <aside class="post-info">
+                    <span class="author">Tiramisusie</span>
+                    发表于
+                    <time>2015-4-12</time>
+                </aside>
+                <aside class="post-tag">
+                    <span class="date">4.12</span>
+                    <span class="tag">CSS</span>
+                </aside>
+            </article>
+            <section id="foot-index">
+                <ul>
+                    <li><a href="#">第一页</a></li>
+                    <li><a href="#">上一页</a></li>
+                    <li><a href="#" class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">下一页</a></li>
+                    <li><a href="#">最后一页</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="pendant">
+            <section id="search">
+                <form action="#">
+                    <img src="img/search.png" alt="搜索"/>
+                    <input type="search" id="keyword" placeholder="keyword"/>
+                    <input type="button" id="search-btn" value="GO"/>
+                </form>
+            </section>
+            <section id="classify">
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">其他文章</a></li>
+                </ul>
+            </section>
+            <section id="calendar">
+                <table>
+                    <thead>
+                        <tr>
+                            <td><a><img src="img/left-arrow.png" alt="上一个"/></a></td>
+                            <td colspan="5">2015.04</td>
+                            <td><a><img src="img/right-arrow.png" alt="下一个"/></a></td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>T</td>
+                            <td>W</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>S</td>
+                            <td>S</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>30</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="tags">
+                <h4>Tags</h4>
+                <div id="tags-container">
+                    <span class="big">JavaScript</span>
+                    <span class="middle">CSS</span>
+                    <span class="normal">flex</span>
+                    <span class="normal">WebGL</span>
+                    <span class="middle">HTML</span>
+                    <span class="normal">Canvas</span>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<footer>
+    <nav id="footer-nav">
+        <ul id="footer-nav-ul">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="blog.html">文章</a></li>
+            <li><a href="gallery.html">作品</a></li>
+            <li><a href="about.html">关于</a></li>
+        </ul>
+    </nav>
+    <div id="footer-columns">
+        <section class="links">
+            <h5>学习资料</h5>
+            <ul>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+            </ul>
+        </section>
+        <section class="links">
+            <h5>学习资料</h5>
+            <ul>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+            </ul>
+        </section>
+        <section class="links">
+            <h5>学习资料</h5>
+            <ul>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+            </ul>
+        </section>
+        <section class="links">
+            <h5>学习资料</h5>
+            <ul>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+            </ul>
+        </section>
+        <section class="links">
+            <h5>学习资料</h5>
+            <ul>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+            </ul>
+        </section>
+    </div>
+    <aside id="copyright">
+        <span>版权信息</span>
+        <a href="https://github.com" id="copyright-github"></a>
+    </aside>
+</footer>
+</body>
+</html>

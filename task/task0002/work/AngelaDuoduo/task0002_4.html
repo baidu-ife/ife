@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Input Tip | AngelaDuoduo</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<style>
+	div{
+		position: relative;
+	}
+	.tip-hide{
+		display: none;
+	}
+	ul{
+		position: absolute;
+		top: 100%;
+		left: 0;
+
+		width: 200px;
+		border: 1px solid #ccc;
+	}
+	li.active{
+		background-color: #ccc;
+	}
+	.keyword{
+		color: #f00;
+	}
+	</style>
+	<script src="js/util.js"></script>
+	<script src="js/task0002_4.js"></script>
+</head>
+<body>
+	<div>
+		<input type="text" />
+		<ul class="tip-hide">
+			<li><span class="keyword"></span><span class="rest"></span></li>
+			<li><span class="keyword"></span><span class="rest"></span></li>
+			<li><span class="keyword"></span><span class="rest"></span></li>
+			<li><span class="keyword"></span><span class="rest"></span></li>
+		</ul>
+	</div>
+</body>
+</html>

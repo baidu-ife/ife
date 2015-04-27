@@ -1,0 +1,142 @@
+/*-------css reset-------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+a,a:link,a:visited,a:hover,a:active,a:focus{
+    text-decoration: none;
+    color: #fff;
+}
+p{
+    text-indent: 2em;
+    line-height: 1.5em;
+}
+ul,li{
+    list-style: none;
+}
+body{
+    font-family: "宋体","arial",sans-serif;
+}
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{
+    display:block
+}
+
+/*---------header & footer---------*/
+header{
+    min-width: 980px;
+    height: 80px;
+    background: #522a5c;
+    color: #fff;
+    position: relative;
+}
+#head-wrapper{
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+    background-color: inherit;
+    height: inherit;
+}
+#head-wrapper:after{
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+    *zoom: 1;
+}
+header h1{
+    font-family: sans-serif;
+    float: left;
+    position: absolute;
+    bottom: 5px;
+}
+#menu{
+    float: right;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+#menu a:hover{
+    color: #ccc;
+}
+#menu li{
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 28px;
+}
+#github{
+    background: url("../img/icon-github.png");
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 30px;
+    height: 34px;
+}
+@media (max-width: 980px) {
+    #github{
+        visibility: hidden;
+    }
+}
+
+/*-------footer-------*/
+footer{
+    min-width: 980px;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    position: relative;
+    clear: both;
+}
+#footer-nav{
+    width: 100%;
+    padding: 9px 0;
+    border-bottom: 1px solid #333333;
+}
+#footer-nav-ul{
+    width: 224px;
+    margin: 0 auto;
+}
+#footer-nav-ul li{
+    display: inline-block;
+    margin: 0 13px;
+    font-size: 12px;
+}
+#footer-columns{
+    width: 980px;
+    margin: 0 auto 50px;
+}
+#footer-columns:after{
+    content: "\200B";
+    height: 0;
+    display: block;
+    clear: both;
+    zoom: 1;
+}
+#footer-columns .links{
+    float: left;
+    width: 196px;
+}
+#footer-columns .links h5{
+    font-weight: normal;
+    font-size: 12px;
+    color: #ccc;
+    margin: 44px 0 20px;
+}
+#footer-columns .links li{
+    margin: 8px 0;
+    font-size: 14px;
+}
+#footer-columns .links li a:hover {
+    text-decoration: underline;
+}
+#copyright{
+    width: 48px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+#copyright-github{
+    width: 30px;
+    height: 34px;
+    display: block;
+    margin: 10px auto 0;
+    background: url("../img/icon-github.png") no-repeat 0 0;
+}
