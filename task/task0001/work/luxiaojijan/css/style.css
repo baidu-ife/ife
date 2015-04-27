@@ -60,6 +60,7 @@ p{
 	width: 100%;
 }
 
+<<<<<<< HEAD
 
 .lu-col-4-1{
 	width: 25%;
@@ -83,6 +84,8 @@ p{
 .lu-col-2-2{
 	width: 100%;
 }
+=======
+>>>>>>> gh-pages
 .lu-col-5-1{
 	width: 20%;
 }
@@ -544,7 +547,10 @@ main > nav,.panel-content,.more{
 }
 .panel-content{
 	padding: 15px;
+<<<<<<< HEAD
 	padding-right: 10px;
+=======
+>>>>>>> gh-pages
 }
 .panel-item{
 	position: relative;
@@ -588,8 +594,20 @@ span.circle{
 }
 .panel-col{
 	float: left;
+<<<<<<< HEAD
 	padding-right: 10px;
 	box-sizing: border-box;
+=======
+}
+.panel-col-2{
+	width: 300px;
+}
+.panel-col-1{
+	width: 145px;
+}
+.panel-content .panel-col+.panel-col{
+	padding-left: 10px;
+>>>>>>> gh-pages
 }
 .more{
 	padding: 6px 12px;
@@ -644,6 +662,7 @@ span.number{
 
 /*about me style*/
 .main-content{
+<<<<<<< HEAD
 	height: 1200px;
 	margin-top: 30px;
 	position: relative;
@@ -682,4 +701,71 @@ span.number{
 }
 .work,.mywork{
 	top:1030px;
+=======
+	padding: 20px 0 100px 0;
+}
+.main-content .container{
+	padding-top: 60px;
+}
+.article{
+	width: 49.5%;
+	padding-bottom: 1300px;
+	margin-bottom: -1300px;
+	background-color: #fff;
+}
+.blank{
+	width: 680px;
+	margin: 0 auto;
+	position: relative;
+	top: -50px;
+}
+.info{
+	margin-bottom: 30px;
+	text-align: center;
+}
+.info-img{
+	margin-bottom: 50px;
+}
+.info-img img{
+	border: 6px solid #e2e2e2;
+	border-radius: 50%;
+}
+.info-title{
+	width: 300px;
+	float: left;
+	text-align: right;
+	font-size: 23px;
+}
+.info-content{
+	width: 300px;
+	text-align: left;
+	float: right;
+}
+.phone{
+	width: 120px;
+	border-radius: 50%;
+}
+.education,.work{
+	width: 340px;
+	margin-right: 34px;
+	margin-bottom: 20px;
+}
+.info-year{
+	width: 60px;
+	height: 24px;
+	line-height: 24px;
+	float: left;
+	text-align: center;
+	border-radius: 5px;
+	border: 4px solid #e2e2e2;
+	background-color: #fff;
+}
+.info-school,.info-work{
+	float: left;
+	margin-left: 10px;
+	line-height: 30px;
+}
+.info-work{
+	width: 200px;
+>>>>>>> gh-pages
 }
