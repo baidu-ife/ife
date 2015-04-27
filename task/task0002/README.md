@@ -136,16 +136,16 @@ initEvent();
 
 - 创建一个JavaScript文件，比如`util.js`；
 - 实践判断各种数据类型的方法，并在`util.js`中实现以下方法：
-
+资料：http://www.cnblogs.com/flyjs/archive/2012/02/20/2360504.html
 ```javascript
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr) {
-    // your implement
+    return arr instanceof Array;
 }
 
 // 判断fn是否为一个函数，返回一个bool值
 function isFunction(fn) {
-    // your implement
+    return fn instanceof Function;
 }
 ```
 
@@ -154,8 +154,24 @@ function isFunction(fn) {
 ```javascript
 // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
 // 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
-function cloneObject(src) {
-    // your implement
+function cloneObject(srcObj) {
+    if(srcObj instanceof Object) {
+        var buf={};
+        for(var k in srcObj) {
+            buf[k]=cloneObject(srcObj[k]);
+        }
+        return buf;
+    }
+    else if(srcObj instanceof Array) {
+        var buf=[];
+        for(var i=0;i<buf.length;i++) {
+            buf[i]=cloneObject(srcObj[i]);
+        }
+        return buf;
+    }
+    else {
+        return srcObj;
+    }
 }
 
 // 测试用例：
@@ -184,7 +200,17 @@ console.log(tarObj.b.b1[0]);    // "hello"
 ```javascript
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr) {
-    // your implement
+    function uniqArray(arr) {
+        for(var i=0;i<arr.length;i++) {
+            for(var j=i+1;j<arr.length;j++) {
+                if(arr[j]===arr[i]) {
+                    arr.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        return arr;
+    }
 }
 
 // 使用示例
@@ -195,7 +221,17 @@ console.log(b); // [1, 3, 5, 7]
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
 // 先暂时不要简单的用一句正则表达式来实现
 function trim(str) {
-    // your implement
+    function trim(str) {
+        if(str.charAt(0)==' ') {
+            return trim(str.substr(1));
+        }
+        else if(str.charAt(str.length-1)==' ') {
+            return trim(str.substr(0,str.length-2));
+        }
+        else {
+            return str;
+        }
+    }
 }
 
 // 使用示例
@@ -225,7 +261,13 @@ function output(item, index) {
 each(arr, output);  // 0:java, 1:c, 2:php, 3:html
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
-function getObjectLength(obj) {}
+function getObjectLength(obj) {
+    var count=0;
+    for(x in obj) {
+        count++;
+    }
+    return count;
+}
 
 // 使用示例
 var obj = {
