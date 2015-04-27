@@ -42,8 +42,8 @@
         getSuggestions(inputValue, 'http://localhost:8080/api/');
     });
 
-    $.delegate('#suggestions', 'li', 'click', function (e) {
-        var target = e.target || e.srcElement;
+    $.delegate('#suggestions', 'li', 'click', function (event) {
+        var target = getTarget(event);
         $('#search-input').value = target.innerText;
         $('#suggestions').innerHTML = '';
     });
