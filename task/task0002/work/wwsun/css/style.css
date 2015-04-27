@@ -1,0 +1,102 @@
+p#errorTip {
+    color: red;
+}
+
+/*test3*/
+
+ul.slide-show {
+    list-style-type: none;
+    margin-left: -2em;
+}
+
+ul.slide-footer {
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 230px;
+}
+
+ul.slide-footer li {
+    cursor: pointer;
+    float: left;
+    margin: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: solid 2px red;
+    font-size: 0;
+}
+
+ul.slide-footer li:hover {
+    border: dashed 2px cornflowerblue;
+}
+
+.hideable {
+    display: none;
+}
+
+/*test4*/
+
+ul#suggestions {
+    color: black;
+    width: 200px;
+    text-align: left;
+}
+
+ul#suggestions li {
+    list-style-type: none;
+}
+
+ul#suggestions li:hover {
+    color: red;
+    background: black;
+}
+
+/*test5*/
+
+div.container {
+
+}
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    /*require to make elements draggable in old Webkit*/
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}
+
+ul.left-ul, ul.right-ul {
+    float: left;
+    width: 200px;
+    height: 300px;
+    list-style: none;
+    border: solid 1px black;
+    padding: 0;
+    margin-left: 200px;
+}
+
+ul.left-ul li, ul.right-ul li {
+    height: 30px;
+    width: 200px;
+    background: red;
+    border: solid 1px black;
+    cursor: move;
+}
+
+.item.over {
+    border: 2px dashed #000000;
+}
+
+.item {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+div.drag-tip {
+    clear: both;
+    margin-left: 200px;
+}
