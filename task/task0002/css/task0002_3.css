@@ -1,0 +1,36 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carousel-point {
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    text-align: center;
+    z-index: 100000;
+    bottom: 0;
+}
+
+.carousel-point span {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    margin: 0 10px;
+}
+
+.carousel-point span.current {
+    background-color: #ffffff;
+}
