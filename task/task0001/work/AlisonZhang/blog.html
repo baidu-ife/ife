@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AlisonZhang-task01-blog</title>
+    <meta http-equiv="x-ua-compatible" content="IE=Edge;chrome=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <div id="header-inner">
+        <h3 calss="herder-logo" style="color:#ffffff;width:150px;bottom:0;margin:40px
+         25px 5px 0px;font-size:30px;font-family:microsoft yahei;position:absolute">MyARC</h3>
+        <ul class="header-text">
+            <li><a href="https://github.com/baidu-ife">首页</a></li>
+            <li><a href="http://blog.sina.com.cn/u/1653339817">文章</a></li>
+            <li><a href="http://blog.sina.com.cn/u/1653339817">作品</a></li>
+            <li><a href="http://ics.cuc.edu.cn/" style="text-decoration:none">关于</a></li>
+        </ul>
+    </div>
+    <div class="github-ico">
+        <a href="https://github.com/AlisonZhang"><img src="img/icon-github.png" class="github-pic">
+        </a>
+    </div>
+</div>
+<!--Header 结束-->
+<!--Blogcontent开始-->
+<div class="blog-container clearfix ">
+    <div class="blog-content clearfix">
+       <ul class="blog-article clearfix">
+           <li>
+               <div class="blog-date-sort clearfix" >
+                   <span class="blog-date">4.12</span>
+                   <span class="blog-sort">CSS</span>
+               </div>
+               <h1>双飞翼布局介绍-始于淘宝UED</h1>
+               <h3>分析各种布局的技术实现</h3>
+               <div class="blog-text">
+                   <p>仔细分析各种布局的技术实现，可以发现下面三种技术被经常使用：浮动 float、负边距 negative margin、相
+                       对定位 relative position、这是实现布局的三个最基本的原子技术。只要巧妙组合，并加以灵活运用，就能
+                       “拼”出各种布局的实现方案。</p><br>
+                   <p>在不增加任何额外标签的假设上，我尝试了各种想法，但始终都没找到完美的布局实现（圣杯布局是我觉得所有
+                       想法中最接近完美的）。既然不添加额外标签时，完美布局的实现如此困难，那如果允许添加一个额外标签呢？
+                       在淘宝UED内部的探讨中，给main增加了一层包裹。</p><br>
+                   <p>里层main-content的作用就是将main定位到合适的位置，并方便设置padding等属性。想到此处，就像牛顿被苹
+                       果砸傻了一样，原来的main定位问题迎刃而解。</p><br>
+                   <p>一切如此简单！除了添加了一个额外标签，其它各方面，表现都很完美（试了下IE5.5, 也没任何问题）。目前
+                       只用到了浮动和负边距，如果再引入相对定位，还可以实现三栏布局的各种组合</p><br>
+                   <p>仔细查看example5和example4的源代码，可以发现DOM结构是完全一样的，仅仅CSS稍有不同。这意味着HTML结构
+                       和CSS布局在一定程度上解耦了，我们开发HTML代码时，从内容出发即可，无需过多的考虑布局。</p>
+               </div>
+               <div class="blog-name">慕课小组 发表于2015年4月15日</div>
+           </li>
+           <li>
+               <div class="blog-date-sort clearfix" >
+                   <span class="blog-date">4.13</span>
+                   <span class="blog-sort">CSS</span>
+               </div>
+               <h1>那些年我们一起清除过的浮动 </h1>
+               <h3>清除浮动还是闭合浮动</h3>
+               <div class="blog-text">
+                   <p> 浮动(float)，一个我们即爱又恨的属性。爱，因为通过浮动，我们能很方便地布局； 恨，浮动之后遗留下来
+                       太多的问题需要解决，特别是IE6-7（以下无特殊说明均指 windows 平台的 IE浏览器）。也许很多人都有这样
+                       的疑问，浮动从何而来？我们为何要清除浮动？清除浮动的原理是什么？</p><br>
+                   <p>普通流：很多人或者文章称之为文档流或者普通文档流，其实标准里根本就没有这个词。如果把文档流直译为
+                       英文就是 document flow ，但标准里只有另一个词，叫做 普通流 （normal flow)，或者称之为常规流。但
+                       似乎大家更习惯文档流的称呼，因为很多中文翻译的书就是这么来的。</p><br>
+                   <p>浮动：浮动的框可以左右移动，直至它的外边缘遇到包含框或者另一个浮动框的边缘。浮动框不属于文档中的
+                       普通流，当一个元素浮动之后，不会影响到块级框的布局而只会影响内联框（通常是文本）的排列，文档中的
+                       普通流就会表现得和浮动框不存在一样，当浮动框高度超出包含框的时候，也就会出现包含框不会自动伸高来
+                       闭合浮动元素。</p><br>
+                   <p>其一，通过在浮动元素的末尾添加一个空元素，设置 clear：both属性，after伪元素其实也是通过 content 在
+                       元素的后面生成了内容为一个点的块级元素；</p><br>
+                   <p>其二，通过设置父元素 overflow 或者display：table 属性来闭合浮动，我们来探讨一下这里面的原理。</p>
+               </div>
+               <div class="blog-name">一丝冰凉 发表于2015年4月5日</div>
+           </li>
+           <li>
+               <div class="blog-date-sort clearfix" >
+                   <span class="blog-date">4.14</span>
+                   <span class="blog-sort">CSS</span>
+               </div>
+               <h1>那些年我们一起清除过的浮动 </h1>
+               <h3>清除浮动还是闭合浮动</h3>
+               <div class="blog-text">
+                   <p> 浮动(float)，一个我们即爱又恨的属性。爱，因为通过浮动，我们能很方便地布局； 恨，浮动之后遗留下来
+                       太多的问题需要解决，特别是IE6-7（以下无特殊说明均指 windows 平台的 IE浏览器）。</p><br>
+                   <p>普通流：很多人或者文章称之为文档流或者普通文档流，其实标准里根本就没有这个词。如果把文档流直译为
+                       英文就是 document flow ，但标准里只有另一个词，叫做 普通流 （normal flow)。</p><br>
+                   <p>浮动：浮动的框可以左右移动，直至它的外边缘遇到包含框或者另一个浮动框的边缘。浮动框不属于文档中的
+                       普通流，当一个元素浮动之后，不会影响到块级框的布局而只会影响内联框（通常是文本）的排列，文档中的
+                       普通流就会表现得和浮动框不存在一样。</p><br>
+                   <p>其一，通过在浮动元素的末尾添加一个空元素，设置 clear：both属性，after伪元素其实也是通过 content 在
+                       元素的后面生成了内容为一个点的块级元素；</p><br>
+                   <p>其二，通过设置父元素 overflow 或者display：table 属性来闭合浮动，我们来探讨一下这里面的原理。</p>
+               </div>
+               <div class="blog-name">一丝冰凉 发表于2015年4月5日</div>
+           </li>
+       </ul>
+        <div class="blog-pageskip">
+            <a href="">第一页</a>
+            <a href="">上一页</a>
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="" class="blog-hover">3</a>
+            <a href="">4</a>
+            <a href="">...</a>
+            <a href="">下一页</a>
+            <a href="">最后页</a>
+        </div>
+    </div>
+    <div class="blog-sidebar clearfix">
+        <form class="blog-search" method="get" action="">
+            <input class="fo1"   type="text" name="keyword" value="Keyword">
+            <a href="">
+                <img src="img/gobanner.png">
+            </a>
+        </form>
+        <ul class="blog-articlelink">
+            <li><a href="" ></a>HTML</li>
+            <li class="blog-arti-hover"><a href="" ></a>CSS</li>
+            <li><a href="" ></a>JavaScript</li>
+            <li><a href="" ></a>其他文章</li>
+        </ul>
+        <div class="blog-calendar" style="background:#FFFFFF;margin-bottom:10px">
+            <div class="calen-header">
+                <a class="calen-left" href="">&lt;</a>
+                <p class="calen-year">2015.04</p>
+                <a class="calen-right" href="">&gt;</a>
+            </div>
+            <table class="blog-calen-content">
+                <thead>
+                <tr>
+                    <th>M</th>
+                    <th>T</th>
+                    <th>W</th>
+                    <th>T</th>
+                    <th>F</th>
+                    <th>S</th>
+                    <th>S</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="">1</a></td>
+                    <td><a href="">2</a></td>
+                    <td><a href="">3</a></td>
+                    <td><a href="">4</a></td>
+                    <td><a class="calen-click" href="">5</a></td>
+                    <td><a href="">6</a></td>
+                    <td><a href="">7</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">8</a></td>
+                    <td><a href="">9</a></td>
+                    <td><a href="">10</a></td>
+                    <td><a href="" class="claen-hover">11</a></td>
+                    <td><a class="calen-click" href="">12</a></td>
+                    <td><a href="">13</a></td>
+                    <td><a href="">14</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">15</a></td>
+                    <td><a href="">16</a></td>
+                    <td><a href="">17</a></td>
+                    <td><a href="">18</a></td>
+                    <td><a href="">19</a></td>
+                    <td><a href="">20</a></td>
+                    <td><a href="">21</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">22</a></td>
+                    <td><a href="">23</a></td>
+                    <td><a href="">24</a></td>
+                    <td><a href="">25</a></td>
+                    <td><a href="">26</a></td>
+                    <td><a href="">27</a></td>
+                    <td><a href="">28</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">29</a></td>
+                    <td><a href="">30</a></td>
+                    <td><a href="">31</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="blog-tags">
+            <h3>Tags</h3>
+            <a class="tg1" alt="" href="">JavaScript</a>
+            <a class="tg2" alt="" href="">CSS</a>
+            <a class="tg3" alt="" href="">flex</a>
+            <a class="tg4" alt="" href="">webGL</a>
+            <a class="tg5" alt="" href="">HTML</a>
+            <a class="tg6" alt="" href="">Canvas</a>
+            <a class="tg7" alt="" href="">prototype</a>
+            <a class="tg8" alt="" href="">HTML5</a>
+            <a class="tg9" alt="" href="">grid</a>
+            <a class="tg10" alt="" href="">nodeJS</a>
+            <a class="tg11" alt="" href="">CSS3</a>
+            <a class="tg12" alt="" href="">jQuery</a>
+            <a class="tg13" alt="" href="">ECharts</a>
+        </div>
+    </div>
+</div>
+<!--Blogcontent版块结束-->
+<!--Footer版块开始-->
+<div class="footer">
+    <div class="footer-head">
+        <ul clsss="footer-head-li">
+            <li><a href="https://github.com/baidu-ife">首页</a></li>
+            <li><a href="http://blog.sina.com.cn/u/1653339817">文章</a></li>
+            <li><a href="http://blog.sina.com.cn/u/1653339817">作品</a></li>
+            <li><a href="http://ics.cuc.edu.cn/">关于</a></li>
+        </ul>
+    </div>
+    <hr/>
+    <div class="footer-inner">
+        <div class="footer-item">
+            <h2>学习资料</h2>
+            <ul>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+            </ul>
+        </div>
+        <div class="footer-item">
+            <h2>友情链接</h2>
+            <ul>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+            </ul>
+        </div>
+        <div class="footer-item">
+            <h2>学习资料</h2>
+            <ul>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+            </ul>
+        </div>
+        <div class="footer-item">
+            <h2>友情链接</h2>
+            <ul>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+            </ul>
+        </div>
+        <div class="footer-item">
+            <h2>学习资料</h2>
+            <ul>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+                <li><a href="https://github.com/baidu-ife">LINK</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="copyright">版权信息</p>
+    <img class="copyright-pic" src="img/icon-github.png">
+</div>
+<!--Footer版块结束-->
+</body>
+</html>
