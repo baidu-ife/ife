@@ -65,11 +65,17 @@ function carousel(element){
             span=document.createElement("SPAN");
             addClass(span, "dot");
             (function (i){
-                span.onclick=function (){
+                var click=function (){
+                    alert("Hi!");
                     if(autoPlay) stop();
                     myCarousel.switchTo(i, 1, function (){
                         if(autoPlay) start();
                     });
+                }
+                if(span.addEventListener){
+                    span.addEventListener("click", click);
+                }else{
+                    span.attachEvent("onclick", click);
                 }
             }(i));
             $(".dots-container", element).appendChild(span);

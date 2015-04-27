@@ -21,15 +21,34 @@
     width: 100%;
 }
 .carousel .dot{
-    border-radius: 50%;
+    cursor: pointer;
     width: 12px;
     height: 12px;
     border: white solid 1px;
     display: inline-block;
     margin: 0 2px;
-    cursor: pointer;
+    border-radius: 50%;
 }
 .carousel .dot.selected{
     background-color: white;
     border: white solid 1px;
+}
+.list{
+    width: 100px;
+    list-style: none;
+    border: solid lightgray 1px;
+    padding-left: 0;
+    margin: 0;
+}
+.list:empty{
+    display: none;
+}
+.list .item{
+    padding: 2px 4px;
+}
+.list .item.selected{
+    background-color: lightgray;
+}
+.list .item .highlight{
+    color: red;
 }

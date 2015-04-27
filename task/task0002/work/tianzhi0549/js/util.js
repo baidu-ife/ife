@@ -89,8 +89,13 @@ function hasClass(element, className){
 
 // 为element增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
+    var oldClass=getAttr(element, "className");
     if(!hasClass(element, newClassName)){
-        setAttr(element, "className", getAttr(element, "className")+" "+newClassName);
+        if(oldClass!==""){
+            setAttr(element, "className", oldClass+" "+newClassName);
+        }else{
+            setAttr(element, "className", newClassName);
+        }
     }
 }
 
