@@ -29,7 +29,7 @@
 
 *面向零基础学员*
 
-在`task/task0002/work`目录下创建一个以自己GitHub账号命名的目录，然后在`task/task0002/work/yourGitHubAccount/`目录下首先创建一个没有内容的页面： `task0002.html`，这个页面需要包含最基本的HTML结构，它将用于我们后面的任务。
+在自己的Github中创建一个新的目录，比如`task0002`，在该目录下首先创建一个没有内容的页面： `task0002.html`，这个页面需要包含最基本的HTML结构，它将用于我们后面的任务。
 
 ```html
 <!DOCTYPE html>
@@ -583,7 +583,7 @@ options是一个对象，里面可以包括的参数为：
 
 ### 任务描述
 
-在`task/task0002/work/yourGitHubAccount/`目录下创建一个`task0002_1.html`文件，以及一个`js`目录和`css`目录，在`js`目录中创建`task0002_1.js`，并将之前写的`util.js`也拷贝到`js`目录下。然后完成以下需求。
+在`task0002`目录下创建一个`task0002_1.html`文件，以及一个`js`目录和`css`目录，在`js`目录中创建`task0002_1.js`，并将之前写的`util.js`也拷贝到`js`目录下。然后完成以下需求。
 
 **第一阶段**
 
@@ -665,3 +665,7 @@ var suggestData = ['Simon', 'Erik', 'Kener'];
 
 ![示例](img/task0002_drag.png)
 
+## 任务提交方式
+
+- 初级班同学请在[这里](https://github.com/baidu-ife/ife/issues/766)，按要求回复您的task0002的Github地址。
+- 中级班同学请在[这里](https://github.com/baidu-ife/ife/issues/765)，按要求回复您的task0002的Github地址。
