@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset = "UTF-8">
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <title>task0002</title>
+        <style type="text/css">
+            .red {
+                background-color: red;
+                width: 100px;
+                height: 100px;
+            }
+            .blue {
+                width: 500px;
+            }
+            .center {
+                font-size: 30px;
+            }
+            #div1 {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+            #div3 {
+                width: 500px;
+                height: 500px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+    <button id="addbtn">xx</button>
+        <input id="number1" type="text">
+        <input id="number2" type="text">
+        <span id="result"></span>
+        
+        <div id="div1" class="red">111</div>
+        <div id="div2">
+            <div id="div3">123</div>
+        </div>
+        <a href="#">a</a>
+        <a href="aaa">aaaaa</a>
+        <input type="button" value="alert" id="btn1">
+        <div class="wrap">
+            <ul id="list">
+                <li>Simon</li>
+                <li>Kenner</li>
+                <li>Erik</li>
+            </ul>
+        </div>
+        <button id="btn2">change</button>
+    </body>
+    <!-- <script type="text/javascript" src="1-1.js"></script> -->
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            function alertA() {
+                alert('aaaa');
+            }
+            function alertM() {
+                alert('mmmmm')
+            }
+            
+            // var oBtn1 = document.getElementById("btn1");
+            // addClickEvent(oBtn1, alertM);
+            // addEnterEvent(document, alertA);
+            // $.enter(document, alertA);
+            // $.click("#btn2",alertA);
+
+
+            /*function renderList() {
+                $("#list").innerHTML = '<li>new item</li>';
+            }
+            function clickListener(event) {
+                console.log(event);
+                var e = event || window.event;
+                var target = e.target || e.srcElement;
+                console.log(target)
+            }
+            function init() {
+                // each($("#list").getElementstagName('li'), function(item) {
+                //     $.click(item, clickListener);
+                // })
+                $.delegate("#list", "li", "mousedown", clickListener);
+
+                $.click("#btn2", renderList);
+            }
+            init();*/
+            // $.click($("#list"), clickListener);
+            /*function clickListener(ev) {
+                var oEvent = ev || event;
+                var target = oEvent.srcElement ? oEvent.srcElement : oEvent.target;
+                alert(target.innerHTML);
+                return false;
+                oEvent.stopPropagation();
+                oEvent.cancelBubble = true;
+            }
+            $.click($("#wrap"), out);
+            function out() {
+                alert('鎴戞槸鍐掓场才多少如果');
+            }*/
+            // console.log('a');
+            // console.log(isIE())
+            /*ajax({
+                type:"get",
+                url:"http://localhost:8080/test.txt",
+                // data:"name=dipoo&info=good",
+                dataType:"text",
+                success:function(data){
+                    console.log(data);
+                }
+            });*/
+            var oBtn1 = document.getElementById("wrap");
+            addClickEvent($("#list li"), out) ;
+            // oBtn1.onclick = out;
+            function out() {
+                console.log("aaa");
+            }
+        }
+    </script>
+</html>
