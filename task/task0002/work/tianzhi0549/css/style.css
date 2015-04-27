@@ -6,10 +6,30 @@
     overflow: hidden;
     font-size: 0;
     height: 372px;
+    position: relative;
 }
 .carousel .container{
     position: relative;
 }
 .carousel img{
     position: absolute;
+}
+.carousel .dots-container{
+    position: absolute;
+    text-align: center;
+    bottom: 10%;
+    width: 100%;
+}
+.carousel .dot{
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: white solid 1px;
+    display: inline-block;
+    margin: 0 2px;
+    cursor: pointer;
+}
+.carousel .dot.selected{
+    background-color: white;
+    border: white solid 1px;
 }
