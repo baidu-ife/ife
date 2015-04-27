@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>拖曳</title>
+    <style>
+        body{
+            position: relative;
+        }
+        .container{
+            width: 600px;
+            height: 600px;
+            margin:0 auto;
+            background: #4183C4;
+            padding: 20px 0px;
+            overflow: hidden;
+        }
+        .right,.left{
+           width: 260px;
+           margin: 0px 20px;
+           background: #fff;
+           height: 560px;
+           float: left;
+        }
+        .box{
+            width: 100%;
+            height: 70px;
+            background: red;
+            border: 1px solid #000;
+        }
+        .choosed{
+            width: 260px;
+            height: 70px;
+            background: lightpink;
+            position: absolute;
+            filter:alpha(opacity=50);
+            opacity:0.5;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="right"></div>
+</div>
+<script src="js/unit.js"></script>
+<script src="js/task0002_4.js"></script>
+
+</body>
+</html>
