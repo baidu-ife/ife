@@ -196,17 +196,15 @@ function isSiblingNode(element, siblingNode) {
 // 获取dom相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
     var position = {x:0,y:0};
-    var origin = element;
-    while(element !== null){
-        position.x += element.offsetLeft;
-        position.y += element.offsetTop;
-        if(origin !== element && element.nodeType == 1){
-            //是祖先元素，则减去滚动条位置
-            position.x -= element.scrollLeft;
-            position.y -= element.scrollTop;
-        }
-        element = element.offsetParent;
-    }    
+    var origin = element,e;
+    for(e = element; e != null; e = e.offsetParent){
+        position.x += e.offsetLeft;
+        position.y += e.offsetTop;
+    }
+    for(e = element.parentNode; e != null && e.nodeType === 1; e = e.parentNode){
+        position.x -= e.scrollLeft;
+        position.y -= e.scrollTop;
+    }
     return position;
 }
 //增加：通过类名查找元素，返回符合条件的元素数组
@@ -277,6 +275,7 @@ function $(selector,_root) {
 
 
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
+/*
 function addEvent(element, event, listener) {
     if(element.addEventListener){
         element.addEventListener(event,listener,false);
@@ -286,7 +285,24 @@ function addEvent(element, event, listener) {
         element['on' + event] = listener;
     }
 }
-
+*/
+//修改后的事件处理方法
+function addEvent(element, event, listener) {
+    if(element.addEventListener){
+        element.addEventListener(event,function(e){
+            var target = e.target;
+            listener.call(target,e);
+        },false);
+    }else if(element.attachEvent){
+        element.attachEvent('on' + event,function(){
+            var event = window.event;
+            var target = event.srcElement;
+            listener.call(target,event);
+        });
+    }else{
+        element['on' + event] = listener;
+    }
+}
 // 实现对click事件的绑定
 function addClickEvent(element, listener) {
     addEvent(element,'click',listener);
@@ -294,14 +310,13 @@ function addClickEvent(element, listener) {
 // 实现对于按Enter键时的事件绑定
 function addEnterEvent(element, listener) {
     addEvent(element,'keydown',function(e){
-        var event = e || window.event;
-        var key = event.keyCode;
+        //var event = e || window.event;
+        var key = e.keyCode;
         if(key === 13){
-            listener.call(event);
+            listener.call(e);
         }
     });
 }
-
 //接下来我们把上面几个函数和$做一下结合，把他们变成$对象的一些方法
 $['on'] = addEvent;
 $['un'] = function(element,event,listener){
@@ -318,6 +333,7 @@ $['click'] = addClickEvent;
 $['enter'] = addEnterEvent;
 
 // 事件代理
+/*
 function delegateEvent(element, tag, eventName, listener) {
     $.on(element,eventName,function(e){
         var event = e || window.event;
@@ -327,9 +343,15 @@ function delegateEvent(element, tag, eventName, listener) {
         }
     });
 }
-
+*/
+function delegateEvent(element, tag, eventName, listener) {
+    $.on(element,eventName,function(e){
+        if(this.nodeName.toLowerCase() === tag){
+            listener.call(this,e);
+        }
+    });
+}
 $.delegate = delegateEvent;
-
 
 //5. BOM
 // 判断是否为IE浏览器，返回-1或者版本号
@@ -389,8 +411,6 @@ function ajax(url, options) {
     xhr.open(method,url,true);
     xhr.send(data);
 }
-
-
 
 
 

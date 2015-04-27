@@ -108,8 +108,7 @@ Carouse.prototype.stopTimer = function(){
 Carouse.prototype.addCursorHandler = function(){
   var self = this;
   $.delegate(this.ele,'li','click',function(e){
-    var event = e || window.event;
-    var target = event.target || event.srcElement;
+    var target = e.target || e.srcElement;
     var index = +target.getAttribute('data-index');
     if(index === self.current){
       return false;

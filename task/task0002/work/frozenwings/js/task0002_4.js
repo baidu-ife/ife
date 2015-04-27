@@ -1,35 +1,7 @@
-function addEvent(element, event, listener) {
-  if(element.addEventListener){
-      element.addEventListener(event,function(e){
-        var target = e.target;
-        listener.call(target,e);
-      },false);
-  }else if(element.attachEvent){
-      element.attachEvent('on' + event,function(){
-        var event = window.event;
-        var target = event.srcElement;
-        listener.call(target,event);
-      });
-  }else{
-      element['on' + event] = listener;
-  }
-}
-$.on = addEvent;
-function delegateEvent(element, tag, eventName, listener) {
-    $.on(element,eventName,function(e){   
-        if(this.nodeName.toLowerCase() === tag){
-            listener.call(this,e);
-        }
-    });
-}
-$.delegate = delegateEvent;
-
 //(function(){
   var input = $('#search-box input');
   function SearchTips(target,dataUrl){
     this.target = target;
-    this.targetActive = false;
-    this.container = null;
     this.url = dataUrl;
     this.list = null;
     this.items = [];
@@ -39,12 +11,11 @@ $.delegate = delegateEvent;
     this.active = false;
   }
   SearchTips.prototype.init = function(){
-    console.log('init SearchTips');
+    //console.log('init SearchTips');
     var self = this;
     var htmlStr = '<ul></ul>';
     this.target.insertAdjacentHTML('afterend',htmlStr);
     this.list = $('ul',this.target.parentNode);
-    this.container = this.target.parentNode;
     $.delegate(this.list,'li','click',function(e){
         typeof e.stopPropagation === 'undefined' ? e.cancelBubble = true : e.stopPropagation();
         var value = this.innerHTML;
@@ -58,8 +29,7 @@ $.delegate = delegateEvent;
     });
     
     $.on($('html'),'click',function(e){
-        //console.log(e.target);
-        if(e.target !== self.target){
+        if(this !== self.target){
           self.hide();
         }
     });
@@ -93,9 +63,6 @@ $.delegate = delegateEvent;
     this.list.style.display = 'none';
     this.current = -1;
   }
-  SearchTips.prototype.destroy = function(){
-    //console.log('destroy SearchTips');
-  }
   SearchTips.prototype.up = function(){
     if(this.current < 0){
       this.current = this.size - 1;
@@ -126,18 +93,14 @@ $.delegate = delegateEvent;
       removeClass(this.items[i],'active');
     }    
   }
+
   var searchTips = new SearchTips(input);
-  
 
   $.on(input,'focus',function(e){
     addClass(this,'active');
     if(this.value !== ''){
         searchTips.show();
     }
-  });
-  $.on(input,'blur',function(e){
-    //removeClass(this,'active');
-    //searchTips.hide();
   });
   $.on(input,'keydown',function(e){
     var keyCode = e.keyCode;
@@ -158,6 +121,4 @@ $.delegate = delegateEvent;
     }
   });
   searchTips.init();
-
-
 //})();

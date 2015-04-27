@@ -22,11 +22,16 @@
     height:12px;
     border-radius:50%;
     border:1px solid #ffffff;
-    background-color:transparent;
+    /*background-color:transparent;*/
+    background-color:#ffffff;
+    opacity: 0.5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     cursor:pointer;
 }
 .slide li.active{
-    background-color:#ffffff;
+    /*background-color:#ffffff;*/
+    opacity:1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 .slide .item{
     position:absolute;
