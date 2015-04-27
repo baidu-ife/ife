@@ -8,29 +8,12 @@
     </style>
 </head>
 <body>
-<div id="Outer" onclick="OuterClick()" style="height:200px;width:200px;padding:50px;background-color:mistyrose">
-<div id="Inner" onclick="InnerClick()" style="height:100px;width:100px;padding:25px;background-color:lavender"></div>
-</div>
+
+
 <script src="js/util.js"></script>
-<script>
-    function OuterClick() {
-        if(event.expando == "from_inner")
-        {
-            alert("Event actually fired by clicking on inner DIV!")
-        }
-        else
-        {
-            alert("Event fired by clicking on outer DIV!")
-        }
-    }
-    function InnerClick() {
-        var eventObj = document.createEventObject();
-        // Set an expando property on the event object. This will be used by the
-        // event handler to determine what element was clicked on.
-        eventObj.expando = "from_inner";
-        parent.document.all.Outer.fireEvent("onclick",eventObj);
-        event.cancelBubble = true;
-    }
-</script>
+<scrtip>
+    ajax();
+
+</scrtip>
 </body>
 </html>

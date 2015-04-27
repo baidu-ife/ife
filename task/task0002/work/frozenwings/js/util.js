@@ -396,10 +396,19 @@ function getCookie(cookieName) {
 
 // 学习Ajax，并尝试自己封装一个Ajax方法
 // options: data,onsuccess,timeout,method
+function serialize(data){
+    var args = [];
+    for(var p in data){
+        if(data.hasOwnProperty(p)){
+            args.push(p + '=' + data[p]);
+        }
+    }
+    return args.join('&');
+}
 function ajax(url, options) {
     var xhr = new XMLHttpRequest();
     var onsuccess = options.onsuccess || function(){}
-    var method = options.method || 'get';
+    var method = options.method.toLocaleLowerCase() || 'get';
     var data = options.data || null;
     xhr.onreadystatechange = function(){
         if(xhr.readyState === 4){
@@ -409,7 +418,11 @@ function ajax(url, options) {
         }
     }
     xhr.open(method,url,true);
-    xhr.send(data);
+    if(options.method.toLocaleLowerCase() === 'get'){
+        xhr.send(null);
+    }else{
+        xhr.send(serialize(data));
+    }
 }
 
 

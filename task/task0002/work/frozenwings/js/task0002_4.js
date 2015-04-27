@@ -35,10 +35,16 @@
     });
     this.items = this.list.getElementsByTagName('li');  //NodeList 动态更新
   }
-  SearchTips.prototype.getData = function(){
-    this.data = ['apple','orange','banbana','tomato','cherry'];
+  SearchTips.prototype.onGetData = function(data){
+    this.data = JSON.parse(data);
     this.size = this.data.length;
     this.render();
+  }
+  SearchTips.prototype.getData = function(){
+    ajax('getNames',{
+        method:'get',
+        onsuccess:bind(this,this.onGetData)
+    });
   }
   SearchTips.prototype.render = function(){
     //console.log('render SearchTips');
@@ -104,7 +110,6 @@
   });
   $.on(input,'keydown',function(e){
     var keyCode = e.keyCode;
-    //console.log(keyCode);
     switch(keyCode){
       case 38:
         searchTips.up();

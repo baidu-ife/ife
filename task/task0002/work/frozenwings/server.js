@@ -30,15 +30,28 @@ var getFile = function(path,req,res){
 }
 
 var server = http.createServer(function(req,res){
-    var urlObject = parse(req.url);
-    var path;
-    if(req.url === '/getNames'){
-        path = join(root,'names.json');
+    switch(req.method){
+        case 'POST':
+            if(req.url === '/ajax'){
+                req.setEncoding('utf8');
+                req.on('data',function(chunk){
+                    //console.log(chunk);
+                });
+            }
+            break;
+        case 'GET':
+            var urlObject = parse(req.url);
+            var path;
+            if(req.url === '/getNames'){
+                path = join(root,'names.json');
+            }else{
+                path = join(root,urlObject.pathname);
+            }
+            getFile(path,req,res);
+            break;
+        default:
+            break;
     }
-    else{
-        path = join(root,urlObject.pathname);           
-    }    
-    getFile(path,req,res);
 });
 server.listen(8000);
 util.log('Server running on 8000.');
