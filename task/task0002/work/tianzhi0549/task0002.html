@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>task0002</title>
+    <script src="js/util.js"></script>
+</head>
+
+<body>
+    <p id="test">Test.<a id="testa" class="cls1">Test2.</a></p>
+    <input id="text" />
+    <ul id="list">
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+    </ul>
+    <script>
+        ajax("ajax.txt", {
+            data: {a: 123},
+            onsuccess: function (text){
+                console.log(text);
+            },
+            onfail: function (status){
+                console.log(status);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.err-msg{
+    color: red;
+}
+.carousel{
+    overflow: hidden;
+    font-size: 0;
+    height: 372px;
+}
+.carousel .container{
+    position: relative;
+}
+.carousel img{
+    position: absolute;
+}
