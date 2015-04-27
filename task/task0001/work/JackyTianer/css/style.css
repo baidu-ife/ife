@@ -1,0 +1,150 @@
+/**simple reset css**/
+body, ul, h1, h2, h3, h4, h5, h6, p {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    width: 100%;
+    background: #591c5c;
+    height: 80px;
+    position: relative;
+}
+
+.header .menu {
+    background: #591c5c;
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.header .menu .logo {
+    position: absolute;
+    bottom: 0;
+    background: url("../img/icon-github.png") no-repeat;
+    width: 30px;
+    height: 34px;
+}
+
+.header .menu .nav {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
+.header .menu .nav:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.header .menu .nav ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.header .menu .nav li {
+    font-family: "宋体", sans-serif;
+    font-size: 14px;
+    float: left;
+    margin-left: 28px;
+}
+
+.header .icon {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    margin-left: 10px;
+    background: url("../img/icon-github.png") no-repeat;
+    width: 30px;
+    height: 34px;
+
+}
+
+@media screen and (max-width: 980px) {
+    .header .icon {
+        visibility: hidden;
+    }
+
+}
+
+.footer {
+    margin-top: 150px;
+    background: #030303;
+    color: white;
+}
+
+.footer .footer-nav {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+
+}
+
+.footer .footer-nav ul {
+    margin: 0 auto;
+}
+
+.footer .footer-nav ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.footer .footer-nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer .footer-content {
+    padding: 50px 80px;
+}
+
+.footer .footer-content ul.title-list li.title-item {
+    float: left;
+    width: 20%;
+}
+
+.footer .footer-content ul.title-list:after {
+    content: '';
+    display: block;
+    clear: both;
+
+}
+
+
+
+.footer .footer-content ul.link-list {
+    margin-top: 20px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.footer .footer-content ul.link-list li{
+    margin-top: 15px;
+}
+
+.footer .copyright{
+    text-align: center;
+}
+
+.footer .copyright .icon{
+    margin: 20px auto 0 auto;
+    width: 30px;
+    height: 34px;
+    background: url('../img/icon-github.png');
+}
