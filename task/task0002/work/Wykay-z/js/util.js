@@ -82,10 +82,8 @@ function trim(str) {
     return str; 
 }
 
-// 使用示例
-var str = '      hi!  ';
-str = trim(str);
-console.log(str); // 'hi!'
+
+
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参赛传递
 function each(arr, fn) {
@@ -220,7 +218,8 @@ $.enter  = function(element, listener) {
 
 
 
-// 
+// 其实之前就看过很多遍的ajax，但还是没搞明白到底是怎么回事，后端server具体指什么，没学过xml或php也可以实现吗？还有这些xml以及php的文件是放在本地吗？
+//只是简单地把W3school的代码复制过来了，不知道该怎么处理options这个参数。
 function ajax(url, options) {
     var xmlhttp;
     if(window.XMLHttpRequest){
@@ -239,7 +238,6 @@ function ajax(url, options) {
     xmlhttop.send();
 }
 
-// 使用示例：
 
 
 

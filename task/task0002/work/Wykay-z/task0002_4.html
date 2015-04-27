@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task0002_4</title>
+	<script src="js/util.js"></script>
+	
+</head>
+<style>
+
+body {
+	position: relative;
+}
+#search_form {
+	width: 360px;
+	height: 40px;
+	margin: 100px auto;
+	background: #fff;
+	border: 1px solid #aaa;
+	padding: 0;
+}
+#search_text {
+	float: left;
+	width: 290px;
+	height: 40px;
+	border: none;
+	outline: none;
+	line-height: 40px;
+	margin: 0;
+	padding: 0;
+	padding-left: 10px;
+}
+#search_btn {
+	float: left;
+	border: none;
+	width: 60px;
+	height: 40px;
+	background: #ddd;
+}
+#suggest_list {
+	width: 360px;
+	border: 1px solid #aaa;
+}
+#suggest_list ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#suggest_list ul li {
+	padding: 10px;
+	cursor: pointer;
+}
+#suggest_list ul li:hover {
+	background: #ddd;
+}
+
+</style>
+<body>
+	
+	<form id="search_form">
+		<input type="text" id="search_text">
+		<input type="submit" id="search_btn">
+	</form>
+
+
+	<div id="suggest_list" style="display: none;">
+		<ul>
+			<li>aaa</li>
+			<li>bbb</li>
+			<li>ccc</li>
+		</ul>
+	</div>
+
+
+	<script src="js/task0002_4.js"></script>
+</body>
+</html>
