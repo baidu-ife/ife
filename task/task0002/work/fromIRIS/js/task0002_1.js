@@ -1,3 +1,4 @@
+//第一阶段
 $.click("#btn1", getLove);
 function getLove() {
 	var sTr = $("#txt1").value;
@@ -18,7 +19,7 @@ function getLove() {
 		oP.innerHTML = uniqArr;
 	}
 }
-
+//第二阶段
 $.click("#btn2", getLove2);
 function getLove2() {
 	var sTr = $("#txt2").value;
@@ -36,19 +37,21 @@ function getLove2() {
 	}
 	oP.innerHTML = uniqArr;
 }
-
+//第三阶段
 $.click("#btn3", getLove3);
+var oTip = document.createElement('p');
+$("#div3").insertBefore(oTip,$("#btn3"));
 function getLove3() {
+	$("#check-box").innerHTML = "";
 	var sTr = $("#txt3").value;
-	$("#txt3").value = "";
-	var oTip = document.createElement('p');
-	$("#div3").insertBefore(oTip,$("#btn3"));
+
 	if (sTr != "") {
 		var sep = /[,\uff0c\s\u3001;\n\t]+/g
-		//先将字符转换成以空格为间的形式
+		//先将字符转换成以空格为间隔的形式
 		var replaceStr = sTr.replace(sep, " ");
 		var arr = replaceStr.split(" ");
 		if (arr.length >= 0 && arr.length <= 10) {
+			oTip.innerHTML = "";
 			var uniqArr = uniqArray(arr);
 			for (var i = 0; i<uniqArr.length; i++) {
 				//将去重得到的空数组去掉
@@ -63,15 +66,16 @@ function getLove3() {
 				oLabel.setAttribute("for", uniqArr[j]);
 				var sCheckName = document.createTextNode(uniqArr[j]);
 				oLabel.appendChild(sCheckName);
-				$("#div3").appendChild(oLabel);
+				$("#check-box").appendChild(oLabel);
 				var oInput = document.createElement("input");
 				oInput.setAttribute("type", "checkbox");
 				oInput.setAttribute("id", uniqArr[j]);
-				$("#div3").appendChild(oInput);
+				$("#check-box").appendChild(oInput);
+				$("#check-box").appendChild(document.createElement("br"));
 			}
-			oP.innerHTML = uniqArr;
+			// oP.innerHTML = uniqArr;
 		}else {
-			oTip.innerHTML = "输入小于等于10个兴趣";
+			oTip.innerHTML = "请输入小于等于10个兴趣";
 		}
 	}else {
 		oTip.innerHTML = "请输入";

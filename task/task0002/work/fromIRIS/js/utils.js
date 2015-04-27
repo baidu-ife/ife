@@ -202,15 +202,13 @@ function $(selector) {
         }
     } else {
         var partArr = sTr.split(" ");
-        console.log(partArr)
         var sParent = partArr[0].replace(partArr[0].charAt(0), "");
         if (partArr[1].charAt(0) == ".") {
             var sSon = partArr[1].replace(partArr[1].charAt(0), "");
         } else {
             var sSon = partArr[1];
         }
-        
-        console.log(sSon)
+
         var oParent = document.getElementById(sParent);
         if (partArr[1].charAt(0) == ".") {
             return getClass(oParent, sSon)[0];
@@ -504,7 +502,7 @@ var createAjax = function() {
     return xhr;
 };
 // ajax
-var ajax = function(options) {
+var ajax = function(url,options) {
     // 初始化
     //type参数,可选
     var type = options.type;                 //type
@@ -515,15 +513,15 @@ var ajax = function(options) {
     //data参数可选
     var data = options.data;                   //data
 
-    //url参数，必填 
-    var url = options.url;                    //url
+    //url参数，必填
+    var url = url;                            //url
     if (type == "get") {
         url = url + "?" + data;
     }
-    //datatype参数可选    
+    //datatype参数可选
     var dataType = options.dataType;             //dataType
     //回调函数
-    var success = options.success;
+    var success = options.onsuccess;
     if (dataType == null){
         //dataType参数可选，默认为text
         dataType = "text";
@@ -539,17 +537,17 @@ var ajax = function(options) {
             if(dataType == "text"||dataType=="TEXT") {
                 if (success){
                     //普通文本
-                    success(xhr.responseText);
+                    success(xhr.responseText, xhr);
                 }
             }else if(dataType == "xml"||dataType == "XML") {
                 if (success != null){
                     //接收xml文档
-                    success(xhr.responseXML);
+                    success(xhr.responseXML, xhr);
                 }
             }else if(dataType == "json"||dataType == "JSON") {
                 if (success != null){
                     //将json字符串转换为js对象
-                    success(eval("(" + xhr.responseText + ")"));
+                    success(eval("(" + xhr.responseText + ")"), xhr);
                 }
             }
         }
@@ -563,4 +561,3 @@ var ajax = function(options) {
 
     }
 };
-    
