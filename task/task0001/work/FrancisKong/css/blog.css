@@ -1,0 +1,218 @@
+@charset "UTF-8";
+.main{
+	width: 100%;	
+	margin:auto;
+	/*
+	FLEXBOX 实现居中对齐
+	*/
+	display: -webkit-flex;
+  	display: flex;
+  	-webkit-justify-content: center;
+    justify-content: center;
+    /*
+    垂直居中对齐
+    -webkit-align-items: center;
+          align-items: center;
+    */
+}
+.container{
+	margin: 10px;
+	float: left;
+}
+.content{
+	position: relative;
+	background-color: white;
+	height: 350px;
+	width: 650px;
+	margin-left: 50px;
+	padding: 10px;
+	margin-top: 10px;
+}
+.label{
+	margin-top:30px;
+	float: left;
+}
+.label-top{
+	text-align: center;
+	vertical-align: middle;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+	background-color: rgb(82,42,92);
+}
+.label-bottom{
+	text-align: center;
+	vertical-align: middle;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+	background-color: rgb(166,96,183);
+}
+.title{
+	color: rgb(166,96,183);
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+.subtitle{
+	color: #666;
+	margin-top: 10px;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+p {
+	text-indent: 2em;
+}
+.date{
+	position: absolute;
+	text-align: right;
+	bottom: 10px;
+	right: 10px;
+	color: rgb(153,153,153);
+}
+.page{
+	text-align: center;
+	margin: 10px;
+}
+.btn-page{
+	border-style: none;
+	background-color: white;
+	min-width: 45px;
+	min-height: 40px;
+	padding: 10px;
+}
+.btn-page:hover{
+	background-color: rgb(166,96,183);
+	color: white;
+}
+
+.right{
+	float: right;
+	margin-top: 20px;
+	width: 350px;
+	overflow: hidden;
+	vertical-align: top;
+}
+.search{
+	background-color: white;
+	width: 350px;
+	height: 90px;
+	line-height: 90px;
+	text-align: center;
+}
+#txt-search{
+	background-image: url("../img/magnifier.png");
+	background-repeat: no-repeat;
+	color: rgb(153,153,153);
+	text-indent: 40px;
+	font-size: 16px;
+	width:200px;
+	height: 40px;
+	line-height: 40px;
+	background-position: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(221,221,221);
+}
+#btn-go{
+	position: relative;
+	background-color:rgb(221,221,221);
+	color: white;
+	width: 50px;
+	height: 45px;
+	font-size: 16px;
+	margin-left: -8px;
+	border-style: none;
+ }
+ .category{
+ 	margin-top: 10px;
+ 	width: 350px;
+ 	height: 160px;
+ 	background-color: white;
+ 	line-height: 40px;
+ 	color: rgb(153,153,153);
+ }
+ .category li{
+ 	list-style: none;
+ 	border-bottom: solid 1px rgb(221,221,221);
+ 	border-left: solid  5px rgb(166,96,183);
+ 	padding-left: 10px;
+ }
+ .category li:hover{
+ 	border-left-color: rgb(82,42,92);
+ }
+ .calendar{
+ 	margin-top: 10px;
+	background-color: white;
+	height: 210px;
+	padding: 20px;
+	overflow: hidden;
+}
+.calendar-header{
+	color: rgb(82,42,92);
+	font-weight: bold;
+	text-align: center;
+	height: 20px;
+}
+.back-arrow a,.forward-arrow a{
+	color: rgb(82,42,92);
+	text-decoration: none;
+}
+.back-arrow{
+	margin-left: 0px;
+	float: left;
+	height: 20px;
+}
+.forward-arrow{
+	margin-right: 0px;
+	float: right;
+	height: 20px;
+}
+.calendar-content{
+	color: rgb(153,153,153);
+}
+.calendar-content ul{
+	
+	text-align: center;
+	padding: 10px 8px;
+}
+.calendar-content li{
+	border-bottom: solid 1px rgb(221,221,221);
+	list-style: none;
+	float: left;
+	width: 40px;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.others{
+	color: rgb(221,221,221);
+}
+.calendar-content-day li:hover{
+	background-color: rgb(82,42,92);
+}
+.others:hover{
+	background-color:white !important ; 
+}
+.tags{
+	margin-top: 10px;
+	background-color: white;
+	height: 200px;
+	padding: 10px 20px;  /*上下，左右*/
+}
+.tags label{
+	color: rgb(153,153,153);
+}
+.tags-content{
+	margin-top: 20px;
+}
+.tags-content h1,.tags-content h2,.tags-content h3,.tags-content h4,.tags-content h5{
+	color: rgb(82,42,92);
+	display: inline;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}

@@ -1,0 +1,240 @@
+@charset "UTF-8";
+.main{
+	display: -webkit-flex;
+  	display: flex;
+  	-webkit-justify-content: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.tabs li{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	border:solid 1px rgb(238,238,238);
+	border-top: solid 5px;
+	background-color: white;
+	min-width: 80px;
+	text-align: center;
+	padding: 5px;
+}
+#tabs-one{
+	border-top-color: rgb(223,198,230);
+}
+#tabs-two{
+	border-top-color: rgb(217,172,220);
+}
+#tabs-three{
+	border-top-color: rgb(210,166,255);
+}
+#tabs-four{
+	border-top-color: rgb(255,169,140);
+}
+#tabs-five{
+	border-top-color: rgb(255,255,136);
+}
+#tabs-one:hover{
+	border-top-color: rgb(82,42,92);
+	border-bottom-color: white;
+}
+#tabs-two:hover{
+	border-top-color: rgb(194,102,175);
+	border-bottom-color: white;
+}
+#tabs-three:hover{
+	border-top-color: rgb(89,0,178);
+	border-bottom-color: white;
+}
+#tabs-four:hover{
+	border-top-color: rgb(140,35,0);
+	border-bottom-color: white;
+}
+#tabs-five:hover{
+	border-top-color: rgb(217,163,0);
+	border-bottom-color: white;
+}
+.container{ 
+	clear: both;
+	width: 750px;
+	background-color: white;
+	padding: 10px 20px;
+	margin: 0 auto;
+
+}
+.cols-left{
+	float: left;
+	width: 400px;
+}
+.cols-branch-left{
+	float: left;
+	width: 180px;
+}
+.cols-branch-right{
+	margin-right: 30px;
+	float: right;
+	width: 180px;
+}
+.cols-right{
+	margin-top: -10px;
+	float: left;
+	margin-left: -20px;
+}
+.cols-right-branch-left{
+	float: left;
+}
+.cols-right-branch-right{
+	float: right;
+	margin-left: 10px;
+}
+.col-big{
+	width: 370px;
+}
+.col-middle{
+	margin-top: 10px;
+	width: 180px;
+}
+.col-small{
+	margin-top: 10px;
+	width: 180px;
+}
+.col-big img{
+	vertical-align: top;		/*清除图片下的几像素间隙*/
+	width: 370px;
+	height: 170px;
+}
+.col-middle img{
+	vertical-align: top;
+	width: 180px;
+	height: 120px;
+}
+.col-small img{
+	vertical-align: top;
+	width: 180px;
+	height: 120px;
+}
+.col-big-content{
+	padding: 5px;
+	height: 80px;
+	background-color:rgb(82,42,92);
+}
+.col-middle-content{
+	padding: 5px;
+	height: 120px;
+	background-color: rgb(217,163,0);
+}
+.col-small-content{
+	padding: 5px;
+	height: 95px;
+	background-color: rgb(89,0,178);
+}
+
+h4,p,span{
+	color: white;
+}
+.letter{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border:solid 1px white;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+	margin:10px;
+}
+.more{
+	background-color: white;
+	height: 50px;
+	width: 100%;
+	margin-top: 10px;
+	line-height: 50px;
+	text-align: center;
+}
+.more img{
+	width: 40px;
+	height: 35px;
+	vertical-align: middle;
+}
+#more-info{
+	color: black;
+	font-size: 16px;
+}
+.right{
+	float: right;
+	margin-top: 55px;
+	width: 300px;
+	overflow: hidden;
+	margin-left: 10px;
+}
+.search{
+	background-color: white;
+	padding: 20px;;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+#txt-search{
+	background-image: url("../img/magnifier.png");
+	background-repeat: no-repeat;
+	color: rgb(153,153,153);
+	text-indent: 40px;
+	font-size: 16px;
+	width:200px;
+	height: 40px;
+	line-height: 40px;
+	background-position: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(221,221,221);
+}
+#txt-search:focus{
+	outline:none;				/*移除输入框获得焦点时的边线*/
+	border-color: black;
+}
+#btn-go{
+	position: relative;
+	background-color:rgb(221,221,221);
+	color: white;
+	width: 50px;
+	height: 45px;
+	font-size: 16px;
+	margin-left: -8px;
+	border-style: none;
+ }
+ .rank{
+ 	background-color: white;
+ 	margin-top: 10px;
+ 	padding: 20px 10px;
+ }
+ .rank-title{
+ 	font-size: 14px;
+ }
+ .rank-item{
+ 	margin-top: 10px;
+ 	vertical-align: top;
+ 	height: 25px;
+ }
+ .num{
+ 	background-color: rgb(82,42,92);
+ 	width:18px;
+ 	height: 18px;
+ 	border-radius: 50%;
+ 	text-align: center;
+ 	color: white;
+ 	display: inline-block;
+ 	line-height: 18px;
+ 	margin-bottom: 5px;
+
+ }
+ .rank-wrap{
+ 	width: 120px;
+ 	height: 20px;
+ 	display: inline-block;
+ 	border:1px solid black;
+ }
+.rank-scale{
+	background-color: rgb(82,42,92);
+	display: inline-block;
+	height: 20px;
+}
+.rank-name{
+	display: inline-block;
+}

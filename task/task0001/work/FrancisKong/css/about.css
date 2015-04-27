@@ -1,0 +1,118 @@
+@charset "UTF-8";
+.main{
+	margin:100px auto;
+    height: 1500px;
+    width: 980px;
+    background-color: white;
+    position: relative;
+}
+p{
+	margin-top: 0px;
+}
+.timeline{
+	width: 10px;
+	height: 100%;
+	background-color: rgb(238,238,238);
+	position: absolute;
+	left: 50%;
+	margin-left: -5px
+}
+.portrait{
+	width: 160px;
+	height: 160px;
+	position: absolute;
+	left: 50%;
+	margin-left: -90px;
+	border: 10px solid rgb(238,238,238);
+	border-radius: 50%;
+	overflow: hidden;
+	margin-top: -60px;
+}
+.img{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 50%;
+	margin-left: -55px;
+	border-radius: 50%;
+	border: 5px solid rgb(238,238,238);
+}
+
+.title{
+	position: absolute;
+	left: 30%;
+	font-size: 20px;
+}
+.content{
+	position: absolute;
+	left: 58%;
+	font-size: 14px;
+	width: 200px;
+}
+.title-name{
+	top: 10%;
+}
+.content-name{
+	text-indent: 2em;
+	top: 10%;
+}
+.img-phone{
+	margin-top: 300px;
+}
+.title-contact{
+	top: 30%;
+}
+.content-contact{
+	top: 30%;
+}
+.img-edu{
+	top: 35%;
+}
+.years{
+	position: absolute;
+	width: 80px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	border:solid 5px rgb(238,238,238);
+	border-radius: 20px;
+	left: 50%;
+	margin-left: -45px;
+	background-color: white;
+}
+.year-one{
+	top: 45%;
+}
+.year-two{
+	top: 50%;
+}
+.year-three{
+	top: 55%;
+}
+.title-edu,.content-edu{
+	top: 45%;
+}
+.edu-exp{
+	margin-bottom: 55px;
+}
+.img-practice{
+	top: 60%;
+}
+.year-four{
+	top: 70%;
+}
+.year-five{
+	top: 75%;
+}
+.title-practice{
+	top: 70%;
+}
+.content-practice{
+	top: 70%;
+}
+.practice-exp{
+	margin-bottom: 50px;
+}
+
+
+

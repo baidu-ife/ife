@@ -1,0 +1,90 @@
+.banner{
+	width: 100%;
+	height: 600px;
+	position: relative;
+	background-image: url("../img/banner-bg.jpg") ;
+	background-size: cover; 			/*背景图像缩放，页面缩放保留图片比例*/
+	background-repeat: no-repeat;
+}
+.main{
+	position: absolute;
+	color: white;
+	padding: 10px 10px 30px 10px;
+	width: 400px;
+	height: 120px;
+	right: 100px;
+	bottom: 0px;
+	/*
+	背景渐变透明
+	*/
+	background: -webkit-linear-gradient(rgba(255,255,255,0.5), transparent);
+	background: -moz-linear-gradient(rgba(255,255,255,0.5), transparent);
+    background: -ms-linear-gradient(rgba(255,255,255,0.5), transparent);
+    background: -o-linear-gradient(rgba(255,255,255,0.5), transparent);
+    background: linear-gradient(rgba(255,255,255,0.5), transparent);
+}
+.main h3{
+	text-align: right;
+}
+.main p{
+	line-height: 150%;
+}
+.three-cols{
+	margin-top: 10px;
+	position: relative;
+	clear: both;
+	overflow: hidden;			/*三列等高布局——隐藏超出的空白*/
+	/*
+	三列居中
+	*/
+	margin: 0 auto;				
+	text-align: center;			
+}
+
+.first-col img,.second-col img,.third-col img{
+	width: 300px;
+	height: 180px;
+	padding: 10px;
+	margin-bottom: 0px;
+}
+.first-col p,.second-col p,.third-col p{
+	text-indent: 2em;
+	line-height: 170%;
+	margin: 0px;
+	padding: 0px 30px 25px 30px;
+	text-align:left;
+} 
+.first-col,.second-col,.third-col {
+	background: white;
+	width: 320px;
+	margin-top: 10px;
+	vertical-align: top;			/*顶部对齐*/
+	position: relative;
+	display: inline-block;			/*三列显示在一行*/			
+	margin-bottom: -99999px;		/*三列等高布局*/
+	padding-bottom: 99999px;		/*三列等高布局*/
+}
+.intro{
+	width: 100%;
+	margin-top: 100px;
+	background-color:white;
+	height: 500px;
+	position: relative;
+}
+.portrait{
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left; 
+	left: 50%;                              /*向左移动50%*/
+	margin-left: -80px;						/*左边框居中后，向左移动宽度的一半达到居中效果*/
+	position: relative;
+	margin-top: -50px;
+	border: 10px solid rgb(238,238,238);
+}
+.title{
+	text-align: center;
+	padding-top: 180px;
+	font-family: "Century Gothic";
+}

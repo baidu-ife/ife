@@ -1,0 +1,98 @@
+@charset "UTF-8";
+body{
+	margin: 0;
+	background: rgb(238,238,238);
+	min-width: 980px;
+	overflow: auto;
+}
+a{
+	font-family: "宋体";
+    font-size: 14px;
+    color: white;
+    margin: 14px;
+    text-decoration:none;			/*设置链接样式*/
+}
+/*@media screen and (max-width:980px) {
+  #icon {
+  	visibility: hidden;
+  } 媒体查询*/ 			
+.head{
+	background-color: rgb(82,42,92);
+	width: 100%;
+	height: 80px;
+	position: relative;
+}
+#logo{
+	width: 60px;
+	height: 70px;
+	float: left;
+	margin-left: 100px;
+	margin-top: 5px;
+}
+#icon{
+	position: absolute;
+	bottom: 0px;
+	right: 5px;
+}
+.nav{
+	top: 50px;
+	
+	position: absolute;
+	right: 100px;
+}
+
+
+.introduce{
+	text-indent: 2em;
+	width: 600px;
+	position: absolute;
+	left: 50%;
+	margin-left: -300px;
+}
+.footer{
+	vertical-align: bottom;
+	width: 100%;
+}
+.footer-top{
+	text-align: center;
+	background-color: black;
+	border-bottom:1px solid white;
+	height: 40px;
+	line-height: 40px;
+}
+.footer-bottom{
+	text-align: center;
+	background-color: black;
+	height: 300px;
+	position: relative;
+	color: white;
+}
+.col{
+	float: left;
+	width: 20%;
+}
+.copyright{
+	text-align: center;
+	padding-top: 200px;
+	bottom: 80px;
+	color: white;
+}
+.icon2{
+	text-align: center;
+	position: absolute;
+	margin: 0px auto;
+	bottom: 0px;
+	width: 100%;
+	display: block;
+}
+
+ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+li a:hover{
+	text-decoration:underline; 
+}
+
+  	
