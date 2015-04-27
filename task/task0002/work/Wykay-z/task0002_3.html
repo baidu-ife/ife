@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task0002_3</title>
+	<script src="js/util.js"></script>
+	
+</head>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: box-sizing;
+}
+ul {
+	list-style: none;
+}
+#select {
+
+	width: 600px;
+	text-align: center;
+	margin: 10px auto;
+}
+#sliderBox {
+	position: relative;
+	width: 800px;
+	height: 400px;
+	margin: 20px auto;
+}
+#sliderBox .imgList{
+	position: relative;
+	width: 800px;
+	height: 400px;
+	overflow: hidden;
+}
+#sliderBox .imgList li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 800px;
+	height: 400px;
+}
+#sliderBox .countNum {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+#sliderBox .countNum li {
+	width: 20px;
+	height: 20px;
+	float: left;
+	color: #fafafa;
+	background: rgba(0,0,0,.3);
+	text-align: center;
+	line-height: 20px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+#sliderBox .countNum li.current {
+	background: rgba(0,0,0,.7);
+	color: #fff;
+}
+
+
+
+
+
+
+</style>
+<body>
+	<div id="select">
+		<p>请先选择速度与顺序</p>
+		<label>速度</label>
+		<select id="selSpeed">
+			<option value="1">快速</option>
+			<option value="2">正常</option>
+			<option value="3">缓慢</option>
+		</select>
+
+		<label>顺序</label>
+		<select id="selOrder">
+			<option value="1">正序</option>
+			<option value="2">倒序</option>
+		</select>
+		<button id="btn">确定</button>
+	</div>
+	<div id="sliderBox"></div>
+
+
+	<script src="js/task0002_3.js"></script>
+</body>
+</html>
