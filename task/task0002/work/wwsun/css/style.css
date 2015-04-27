@@ -2,9 +2,32 @@ p#errorTip {
     color: red;
 }
 
+/*test3*/
+
 ul.slide-show {
     list-style-type: none;
     margin-left: -2em;
+}
+
+ul.slide-footer {
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 230px;
+}
+
+ul.slide-footer li {
+    cursor: pointer;
+    float: left;
+    margin: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: solid 2px red;
+    font-size: 0;
+}
+
+ul.slide-footer li:hover {
+    border: dashed 2px cornflowerblue;
 }
 
 .hideable {
