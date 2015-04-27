@@ -52,3 +52,25 @@
 .list .item .highlight{
     color: red;
 }
+
+.container{
+    background-color: white;
+    border: black solid 1px;
+    width: 150px;
+    height: 400px;
+    float: left;
+    margin-right: 150px;
+}
+.container .item{
+    height: 50px;
+    background-color: red;
+    border-bottom: 1px black solid;
+}
+.container .item.moving{
+    left: 0;
+    right: 0;
+    cursor: move;
+    position: relative;
+    border: 1px black solid;
+    opacity: 0.8;
+}
