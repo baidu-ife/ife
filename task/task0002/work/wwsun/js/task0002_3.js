@@ -1,23 +1,19 @@
-// todo: reading http://g-liu.com/blog/2013/08/tutorial-basic-carouselslideshow-with-javascript/
-
 /**
- * todo: complete the two parameters
+ *
  * start the carousel application
- * @param direction
- * @param isLoop
+ * @param direction is true when slide from first to last, otherwise from last to left
  * @param interval
  */
-function startSlides(direction, isLoop, interval) {
-    setInterval("toggleSlide(true)", interval);
+function startSlides(direction, interval) {
+    setInterval("toggleSlide("+direction+")", interval);
 }
-
 
 /**
  * toggle all slides
  * @param direction is boolean value, true for NEXT, false for PREV
  */
 function toggleSlide(direction) {
-    var elements = document.getElementsByClassName("hideable"); // gets all the "slides" in our slideshow
+    var elements = $(".hideable"); // gets all the "slides" in our slideshow
     var visibleID = getVisible(elements);
     elements[visibleID].style.display = "none"; // hide the currently visible LI
 
@@ -26,7 +22,6 @@ function toggleSlide(direction) {
     if(direction || direction == 'undefined') {
         makeVisible = next(visibleID, elements.length); // get the next sklde
     }
-
     elements[makeVisible].style.display = "block"; // show the previous or next slide
 }
 
@@ -67,5 +62,18 @@ function next(num, arrayLength) {
     else return num+1;
 }
 
-// start
+function goToIndex(index) {
+    var elements = $('.hideable');
+    var visId = getVisible(elements);
+    elements[visId].style.display = 'none';
+    elements[index].style.display = 'block';
+}
+
+$.delegate('#slide-nav', 'li', 'click', function(event) {
+    var target = getTarget(event);
+    var index = target.getAttribute('data-index') - 1;
+    goToIndex(index);
+
+});
+
 startSlides(true, true, 2000);
