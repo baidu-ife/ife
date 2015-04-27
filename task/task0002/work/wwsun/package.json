@@ -1,0 +1,11 @@
+{
+  "name": "node-restful",
+  "version": "1.0.0",
+  "description": "a restful api based on express and node",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "express": "^4.12.3"
+  }
+
+}
