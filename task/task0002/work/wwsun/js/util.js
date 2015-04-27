@@ -135,8 +135,8 @@ function removeClass(element, oldClassName) {
 function isSiblingNode(element, siblingNode) {
     var nodes = element.parent.childNodes;
     var i, n;
-    for (i=0, n=nodes.length; i<n; i++) {
-        if(nodes[i] == siblingNode) {
+    for (i = 0, n = nodes.length; i < n; i++) {
+        if (nodes[i] == siblingNode) {
             return true;
         }
     }
@@ -162,7 +162,7 @@ function getPosition(element) {
  * @param selector
  * @returns {*}
  */
-var $ = function(selector) {
+function $(selector) {
     var root = document.body; // set the body element as the root element
     var childNodes = root.childNodes;
 
@@ -212,24 +212,24 @@ var $ = function(selector) {
 }
 
 /**
+ * Event util
  * bind the element with a specific event listener/handler
  * @param element is the dom element you want to bind with the event
  * @param event 'click', 'scroll' etc.
  * @param listener is the event handler
  */
 function addEvent(element, event, listener) {
-
-    if (element.addEventListener) { // Webkit
-        element.addEventListener(event, listener, false);
+    if (element.addEventListener) { // DOM2
+        element.addEventListener(event, listener, false); // false means handle the events when bubbling
     } else if (element.attachEvent) { // IE
         element.attachEvent("on" + event, listener);
-    } else {
+    } else { // DOM0
         element["on" + event] = listener;
     }
-
 }
 
 /**
+ * Event util
  * remove the event handler which was bound by the addEvent(or addEventListener) function
  *
  * @param element
@@ -237,13 +237,12 @@ function addEvent(element, event, listener) {
  * @param listener is the specific listener you want to remove, if null, remove all listeners
  */
 function removeEvent(element, event, listener) {
-
-    if(listener) {
-        if (element.removeEventListener) {
+    if (listener) {
+        if (element.removeEventListener) {  // DOM2
             element.removeEventListener(event, listener, false);
-        } else if (element.detachEvent) {
+        } else if (element.detachEvent) {   // IE
             element.detachEvent("on" + event, listener);
-        } else {
+        } else {  // DOM0
             element["on" + event] = null;
         }
     } else {
@@ -251,9 +250,60 @@ function removeEvent(element, event, listener) {
     }
 }
 
+/**
+ * Event util
+ *
+ * @param event
+ */
+function getEvent(event) {
+    return event ? event : window.event;
+}
+
+/**
+ * Event util
+ * @param event
+ * @returns {*|string|EventTarget|Node|Object}
+ */
+function getTarget(event) {
+    return event.target || event.srcElement;
+}
+
+/**
+ * Event util
+ * @param event
+ */
+function preventDefault(event) {
+    if (event.preventDefault) {
+        event.preventDefault();
+    } else {
+        event.returnValue = false;
+    }
+}
+
+function stopPropagation(event) {
+    if (event.stopPropagation) {
+        event.stopPropagation();
+    } else {
+        event.cancelBubble = true;
+    }
+}
 
 $.on = function (selector, event, listener) {
-    addEvent($(selector), event, listener);
+
+    var nodes = $(selector);
+    if (document.addEventListener) {
+        if (nodes.length) {
+            each(nodes, function (item, index) {
+                addEvent(item, event, listener);
+                //item.addEventListener(event, listener, false);
+            });
+        } else {
+            addEvent(nodes, event, listener);
+            //nodes.addEventListener(event, listener, false);
+        }
+    }
+
+    //addEvent($(selector), event, listener);
 };
 
 $.un = function (selector, event, listener) {
@@ -264,23 +314,28 @@ $.click = function (selector, handler) {
     $.on(selector, 'click', handler);
 };
 
-$.enter = function (element, handler) {
-    element.addEventListener('keydown', function (e) {
-        var theEvent = e || window.event;
-        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+$.enter = function (selector, handler) {
+    var element = $(selector);
+    element.addEventListener('keydown', function (event) {
+        event = EventUtil.getEvent(event);
+        var code = event.keyCode || event.which || event.charCode;
         if (code == 13) {
             handler();
         }
     }, false);
 };
 
-$.delegate = function (selector, tag, event, listener) {
-    $.on(selector, event, function (e) {
-        var target = e.target || e.srcElement;
+$.delegate = function (selector, tag, type, listener) {
+
+    var element = $(selector);
+
+    addEvent(element, type, function(event) {
+        event = getEvent(event);
+        var target = getTarget(event);
         if (target.nodeName.toLowerCase() == tag) {
-            listener(e);
+            listener(event);
         }
-    })
+    });
 };
 
 /**
