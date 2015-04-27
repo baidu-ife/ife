@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002_5</title>
+    <style>
+        #container {
+            margin: 100px auto;
+            width: 800px;
+            height: 600px;
+            background-color: #aaa;
+            padding: 30px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .list {
+
+            float: left;
+            width: 150px;
+            height: 600px;
+            border: 1px solid #000;
+        }
+
+        .list .item {
+            width: 150px;
+            height: 50px;
+            background-color: #903;
+            border-bottom: 1px solid #000;
+            color: #fff;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .moveItem {
+            background-color: rgba(153,0,51,0.5);
+            height: 50px;
+            width: 150px;
+            color: #fff;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            z-index: 10;
+        }
+        #rightList {
+            float: right;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="leftList" class="list">
+            <div class="item" data-index="1">1</div>
+            <div class="item" data-index="2">2</div>
+            <div class="item" data-index="3">3</div>
+            <div class="item" data-index="4">4</div>
+            <div class="item" data-index="5">5</div>        
+        </div>
+
+
+        <div id="rightList" class="list">
+            <div class="item" data-index="1">1</div>
+            <div class="item" data-index="2">2</div>
+            <div class="item" data-index="3">3</div>
+            <div class="item" data-index="4">4</div>
+            <div class="item" data-index="5">5</div>    
+        </div>
+
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/task0002_5.js"></script>
+</body>
+</html>

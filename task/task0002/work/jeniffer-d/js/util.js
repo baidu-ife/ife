@@ -53,7 +53,7 @@ function cloneObject(src) {
         var newObject = new Object();
         for (var j in src) {
             if (src.hasOwnProperty(j)) {           //判断是否是自有属性
-                newObject[j] = arguments.callee(src[j]);
+                newObject[j] = arguments.callee(src[j]); //递归调用原函数
             }
         }
         return newObject;  
@@ -85,20 +85,23 @@ function trim(str) {
     if (typeof str != "string") {
         return console.log("error! input must be an array.");
     }
-    var arr = [];
-    for (var i = 0; i < str.length; i++) {
-        var code = str.charCodeAt(i);
-        if (code == 32 || code == 12288 || code == 9) { ////半角空格 32，全角空格 12288，tab 9
-            arr[i] = "";
-        } else {
-            arr[i] = str[i];
-        }
-    }
-    return arr.join("");
+    // var arr = [];
+    // for (var i = 0; i < str.length; i++) {
+    //     var code = str.charCodeAt(i);
+    //     if (code == 32 || code == 12288 || code == 9) { ////半角空格 32，全角空格 12288，tab 9
+    //         arr[i] = "";
+    //     } else {
+    //         arr[i] = str[i];
+    //     }
+    // }
+    // return arr.join("");
+    return str.replace(/(^\s*)|(\s*$)/g,"");
 
 }
 
-// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参赛传递
+
+
+// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr,fn) {
     if (!isArray(arr)) {
         return console.log("error! first argument must be an array");
@@ -166,13 +169,13 @@ function removeClass(element, oldClassName) {
     var eleClassName = trim(element.className);
     var rmClassName = trim(oldClassName);
     var reg = new RegExp("\\s?" + rmClassName + "\\s?","g");
-    if (eleClassName.search(reg) != -1) {
+    if (eleClassName.search(reg) != -1) { //元素类名里有目标类名
         element.className = eleClassName.replace(reg," ");
     }
-    if (eleClassName == "") {
+    if (eleClassName == "") { //元素类名为空
         return;
     }
-    if (eleClassName == rmClassName) {  
+    if (eleClassName == rmClassName) {  //元素类名等于目标类名
         return element.className = ""; 
     }
 }
@@ -182,7 +185,7 @@ function isSiblingNode(element, siblingNode) {
     if (!element || !siblingNode) {
         return console.log("error!");
     }
-    if (element.parentNode == siblingNode.parentNode) {
+    if (element.parentNode == siblingNode.parentNode) { //判断两个元素的父元素是不是同一个
         return true;
 
     } else {
@@ -198,7 +201,7 @@ function getPosition(element) {
     while (current != null) {
         left += current.offsetLeft;
         top += current.offsetTop;
-    }console.log(left);
+    }
     if (document.compatMode == "BackCompat") {
         var eleScrollLeft = document.body.scrollLeft;
         var eleScrollTop = document.body.scrollTop;
@@ -215,35 +218,48 @@ function getPosition(element) {
 
 // 实现一个简单的Query,!!!getElementByClassName的兼容性问题
 function $(selector) {          
-    var arr = selector.split(" ");
-    var parentNode = null;
-    var ele = null;
+    var arr = selector.split(" ");  //把输入的查询条件拆分，从左到右搜索
+    var parentNode = null;          //父元素
+    var ele = null;                 //当前元素
     var idExp = /^#[\w-]+$/;
     var attrExp = /^\[[\w\-=]+\]$/;
     var classExp = /^\.[\w\-]+$/;
 
     for (var i = 0; i < arr.length; i++) {
+        
+        //id选择器
         if (arr[i].search(idExp) != -1) {
             var id = arr[i].slice(1);
+            //是否有父元素，如果有，在父元素的基础上最id查询
+            //如果没有，默认父元素为document
             ele = parentNode ? parentNode.getElementById(id) : document.getElementById(id);
+        
+        //类选择器
         } else if (arr[i].search(classExp) != -1) {
             var classname = arr[i].slice(1);
             ele = parentNode ? parentNode.getElementsByClassName(classname)[0] : document.getElementsByClassName(classname)[0];
+        
+        //属性选择器
         } else if (arr[i].search(attrExp) != -1) {
             var index = arr[i].indexOf("=");
             if (index != -1) {
                 var val = arr[i].slice(index+1, -1);
                 var attr = arr[i].slice(1, index);
-                ele = parentNode ? getElementByAttributeValue (parentNode, attr, val) : getElementByAttributeValue (null, attr, val);
+                ele = parentNode ? getElementByAttributeValue(parentNode, attr, val) : getElementByAttributeValue (null, attr, val);
             } else {
                 var attr = arr[i].slice(1, -1);
-                ele = parentNode ? getElementByAttributeValue (parentNode, attr,null) : getElementByAttributeValue (null, attr, null);
+                ele = parentNode ? getElementByAttributeValue(parentNode, attr, null) : getElementByAttributeValue (null, attr, null);
             } 
+        
+        //类型选择器
         } else {
             ele = parentNode ? parentNode.getElementsByTagName(arr[i])[0] : document.getElementsByTagName(arr[i])[0];
         }
+
+        //父元素设为当前元素，循环
         parentNode = ele;
     }
+
     return ele;
 }
 
@@ -297,8 +313,7 @@ function addClickEvent(element, listener) {
 }
 
 // 实现对于按Enter键时的事件绑定                 //先绑定keyup事件,才能有事件对象e, 判断e.keyCode???
-function addEnterEvent(element, listener) {
-    
+function addEnterEvent(element, listener) { 
     if (e.keyCode == 13) {
         addEvent(element, "keyup", function(e){
             var e = e || window.event;
@@ -334,6 +349,7 @@ $.on = function (selector, event, listener) {
 $.click = function (selector,listener) {
     addClickEvent($(selector),listener);
 } 
+
 //当回调函数不是匿名函数时才可以用
 $.un = function (selector, event, listener) {
     removeEvent($(selector), event, listener);
@@ -364,7 +380,7 @@ function setCookie(cookieName, cookieValue, expiredays) {
 
 
 function getCookie(cookieName) { 
-    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)"); //正则表达式看不懂（）和|的区别
+    var arr, reg = new RegExp("(^| )" + cookieName + "=([^;]*)(;|$)"); //正则表达式看不懂（）和|的区别
     if (arr = document.cookie.match(reg))
         return decodeURIComponent(arr[2]); 
     else 
@@ -373,7 +389,7 @@ function getCookie(cookieName) {
 
 
 
-function ajax (url, option) {  //样例中的xhr是啥
+function ajax (url, option) {  
     var realUrl = "", realData, xmlhttp, isUrlData = false, type = "GET";
     if (option.type) {
         type = option.type;
@@ -402,19 +418,9 @@ function ajax (url, option) {  //样例中的xhr是啥
         xmlhttp.send(realData);        
         xmlhttp.onreadystatechange = function (){
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                this.call(onsuccess,xmlhttp.responseText,xmlhttp);
+                option.onsuccess(xmlhttp.responseText,xmlhttp);
             } 
         };   
     }
-    
-
     return xmlhttp;
 }
-
-
-
-// addEvent(element, event, listener) -> $.on(element, event, listener);
-// removeEvent(element, event, listener) -> $.un(element, event, listener);
-// addClickEvent(element, listener) -> $.click(element, listener);
-// addEnterEvent(element, listener) -> $.enter(element, listener);
-

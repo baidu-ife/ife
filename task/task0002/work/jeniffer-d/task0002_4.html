@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002_4</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+        #container {
+            width: 500px;
+            height: 500px;
+            position: relative;
+
+        }
+        #search {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 20px;
+            line-height: 20px;
+        }
+        #result {
+            position: absolute;
+            top: 22px;
+            left: 0;
+            border: 2px solid #000;
+            display: none;
+
+        }
+        #result li {
+            width: 300px;
+            list-style: none;
+            cursor: pointer;
+        }
+
+/*      #result li:hover {
+            background-color: #aaa;
+        }*/
+
+        .active {
+            background-color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="search">
+        <ul id="result">
+        </ul>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/task0002_4.js"></script>
+</body>
+</html>

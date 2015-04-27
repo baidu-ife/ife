@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002_1</title>
+    <style>
+        .task {
+/*          width: 500px;
+            margin: 100px auto;*/
+            padding: 100px;
+            border-bottom: 1px solid #000;
+        }
+
+        .hobby {
+
+            height: 20px;
+            line-height: 20px;
+            margin-left: 10px;
+        }
+
+        .show {
+            margin-top: 10px;
+        }
+
+        #error {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="task">
+        <h1>小练习1：第一阶段</h1>
+        <p>在页面中，有一个单行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用半角逗号来作为不同爱好的分隔。当点击按钮时，把用户输入的兴趣爱好，按照上面所说的分隔符分开后保存到一个数组，过滤掉空的、重复的爱好，在按钮下方创建一个段落显示处理后的爱好。</p>
+        <label for="hobby1">爱好:<input type="text" id="hobby1" class="hobby"></label>        
+        <button id="btn1">显示</button>
+        <div id="show1" class="show"></div>
+    </div>
+
+    <div class="task">
+        <h1>小练习1：第二阶段</h1>
+        <p>单行变成多行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。当点击按钮时的行为同上</p>
+        <label for="hobby2">爱好:</label>
+        <textarea name="hobby" id="hobby2" cols="30" rows="10"></textarea>      
+        <button id="btn2">显示</button>
+        <div id="show2" class="show"></div>
+    </div>
+
+    <div class="task">
+        <h1>小练习1：第三阶段</h1>
+        <p>用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。同时，当点击按钮时，不再是输出到一个段落，而是每一个爱好输出成为一个checkbox，爱好内容作为checkbox的label。</p>
+        <label for="hobby3">爱好:</label>
+        <textarea name="hobby" id="hobby3" cols="30" rows="5"></textarea>       
+        <button id="btn3">显示</button>
+        <p id="error">爱好个数必须在1-10之间。（我的理解：检测经过去重、去空字符之后的爱好个数在1，10之间）</p>
+        <div id="show3">
+        </div>
+    </div>  
+    
+    <script src="js/util.js"></script>
+    <script src="js/task0002_1.js"></script>
+</body>
+</html>

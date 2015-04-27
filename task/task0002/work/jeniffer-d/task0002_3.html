@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002_3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            overflow: hidden;
+            zoom: 1;
+            position: relative;
+            width: 480px;
+            height: 300px;
+        }
+        #list {
+            position: absolute;
+            height: 300px;
+            width: 3360px;
+            z-index: 1;
+        }
+        
+        #list img {
+            float: left;
+        }
+
+        #buttons {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            width: 200px;
+            margin-left: -100px;
+            z-index: 3;
+            text-align: center;
+        }
+
+        #buttons span{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 5px;
+        }
+        .move {
+            height: 50px;
+            line-height: 50px;
+            width: 40px;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            text-align: center;         
+            z-index: 2;
+        }
+        .move:hover {
+            color: #fff;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        #right {
+            right: 0;
+        }
+
+        #buttons .on {
+            background-color: #ffc;
+        }
+
+        .circulate {
+            -webkit-transition-duration: 1s; 
+            transition-duration:1s;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="left" class="move">&lt;</div>
+        <div id="right" class="move">&gt;</div>
+        <div id="list" style="left:-480px;" class="circulate">
+            <img src="img/5.jpg" alt="5">
+            <img src="img/1.jpg" alt="1">
+            <img src="img/2.jpg" alt="2">
+            <img src="img/3.jpg" alt="3">
+            <img src="img/4.jpg" alt="4">
+            <img src="img/5.jpg" alt="5">
+            <img src="img/1.jpg" alt="1">
+        </div>  
+        <div id="buttons">
+            <span data-index="1" class="on"></span>
+            <span data-index="2"></span>
+            <span data-index="3"></span>    
+            <span data-index="4"></span>    
+            <span data-index="5"></span>    
+        </div>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/task0002_3.js"></script>
+</body>
+</html>
