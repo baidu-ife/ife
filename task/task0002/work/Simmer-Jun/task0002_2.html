@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+<style type="text/css">
+	body,input,button {
+		padding: 0;
+		margin: 0;
+	}
+	body {
+		font-family: "Microsoft YaHei";
+		font-size: 24px;
+		line-height: 1;
+	}
+	.box {
+		height: 500px;
+		width:80%;
+		min-width: 500px;
+		border: 1px solid #eb5b17;
+		margin: 100px auto;
+	}
+	p {
+		width: 90%;
+		min-width: 450px;
+		margin: 50px auto;
+		text-align: center;
+	} 
+	p span {
+		background: #000;
+		display: inline-block;
+		padding: 0 10px;
+		color: #FFF;
+	}
+	p input {
+		display: inline-block;
+		height: 24px;
+		width: 250px;
+		font-size: 24px;
+		color: #000;
+	}
+	p button {
+		background: #eb5b17;
+		display: inline-block;
+		text-align: center;
+		height: 80px;
+		width: 200px;
+		color: #FFF;
+		border: none;
+		font-size: 28px;
+		cursor: pointer;
+	}
+	.time-input span {
+		background: #FFF;
+		color: #123;
+		font-size: 12px;
+	}
+</style>
+</head>
+<body>
+	<div class="box">
+		<p id="now">现在是:<span>0000</span>年<span>00</span>月<span>00</span>日<span>00</span>:<span>00</span>:<span>00</span></p>
+		<p id="des-day">距离:<span>0000</span>年<span>00</span>月<span>00</span>日</p>
+		<p id="time">还有:<span>00</span>天<span>00</span>小时<span>00</span>分<span>00</span>秒</p>
+		<p class="time-input">请输入时间:<input id="date" type="text" length="30"><span>(!请按照YYYY-MM-DD输入年月日)</span></p>
+		<p><button id="start" type="button">开始倒计时</button></p>
+	</div>
+	<script type="text/javascript" src="js/task0002_2.js"></script>
+</body>
+</html>

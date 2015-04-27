@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>task0002</title>
+	<style type="text/css">
+	input {
+		display: block;
+		width: 980px;
+		margin: 200px auto;
+	}
+	button {
+		display: block;
+		width: 2000px;
+		height: 120px;
+	}
+	</style>
+</head>
+<body>
+<div id="box"><div  class="box"><p>hahah</p></div></div>
+<input id="number1"class="text " type="text">
+<input id="number2" type="text">
+<span id="result"></span>
+<button id="addbtn" class="admin left">点我求和</button>
+<script type="text/javascript">
+function $(id) {
+	return document.getElementById(id);
+}
+function add(num1,num2){
+	return num1+num2;
+}
+function renderResult(result){
+	$("result").innerHTML = result;
+}
+function addEventHandler(){
+	var num1 = $("number1").value;
+	var num2 = $("number2").value;
+	var result = add(num1,num2);
+	renderResult(result);
+}
+//function initEvent(){
+//	$("addbtn").addEventListener("click",addEventHandler);
+//}//IE9以上才开始支持DOM事件监听器同时也支持IE自己的事件监听器
+// initEvent();
+
+
+
+</script>
+<script type="text/javascript" src="js/util.js"></script>
+</body>
+</html>
