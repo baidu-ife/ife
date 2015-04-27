@@ -60,29 +60,6 @@ p{
 	width: 100%;
 }
 
-
-.lu-col-4-1{
-	width: 25%;
-}
-.lu-col-4-2{
-	width: 50%;
-}
-.lu-col-4-3{
-	width: 75%;
-}
-.lu-col-4-4{
-	width: 100%;
-}
-.lu-col-2-1,
-.lu-col-2-2{
-	float: left;
-}
-.lu-col-2-1{
-	width: 50%;
-}
-.lu-col-2-2{
-	width: 100%;
-}
 .lu-col-5-1{
 	width: 20%;
 }
@@ -544,7 +521,6 @@ main > nav,.panel-content,.more{
 }
 .panel-content{
 	padding: 15px;
-	padding-right: 10px;
 }
 .panel-item{
 	position: relative;
@@ -588,8 +564,15 @@ span.circle{
 }
 .panel-col{
 	float: left;
-	padding-right: 10px;
-	box-sizing: border-box;
+}
+.panel-col-2{
+	width: 300px;
+}
+.panel-col-1{
+	width: 145px;
+}
+.panel-content .panel-col+.panel-col{
+	padding-left: 10px;
 }
 .more{
 	padding: 6px 12px;
@@ -644,42 +627,69 @@ span.number{
 
 /*about me style*/
 .main-content{
-	height: 1200px;
-	margin-top: 30px;
+	padding: 20px 0 100px 0;
+}
+.main-content .container{
+	padding-top: 60px;
+}
+.article{
+	width: 49.5%;
+	padding-bottom: 1300px;
+	margin-bottom: -1300px;
+	background-color: #fff;
+}
+.blank{
+	width: 680px;
+	margin: 0 auto;
 	position: relative;
-	background: url(../img/bg.png)no-repeat;
-	margin-bottom: 160px;
+	top: -50px;
 }
-
-.myname,.contactme,.education,.work{
-	position: absolute;
-	left: 400px;
-	font-size: 20px;
+.info{
+	margin-bottom: 30px;
+	text-align: center;
 }
-.myname,.mydescription{
-	top: 200px;
+.info-img{
+	margin-bottom: 50px;
 }
-.mydescription,.mycontact,.secondary,.university,.mywork{
-	position: absolute;
-	right: 130px;
-	width: 320px;
+.info-img img{
+	border: 6px solid #e2e2e2;
+	border-radius: 50%;
 }
-
-.contactme,.mycontact{
-	top: 450px;
+.info-title{
+	width: 300px;
+	float: left;
+	text-align: right;
+	font-size: 23px;
 }
-.education,.secondary{
-	top:675px;
+.info-content{
+	width: 300px;
+	text-align: left;
+	float: right;
+}
+.phone{
+	width: 120px;
+	border-radius: 50%;
 }
 .education,.work{
-	left: 360px;
+	width: 340px;
+	margin-right: 34px;
+	margin-bottom: 20px;
 }
-.secondary,.university,.mywork{
-	right: 100px;
+.info-year{
+	width: 60px;
+	height: 24px;
+	line-height: 24px;
+	float: left;
+	text-align: center;
+	border-radius: 5px;
+	border: 4px solid #e2e2e2;
+	background-color: #fff;
 }
-.university{
-	top: 727px;
+.info-school,.info-work{
+	float: left;
+	margin-left: 10px;
+	line-height: 30px;
 }
-.work,.mywork{
-	top:1030px;
+.info-work{
+	width: 200px;
 }
