@@ -155,7 +155,7 @@
 
 //运行
 gallery.slide({
-    back: true,
+    back: true,//不是字符串
     loop: true,
     timeout: 1500
 })
