@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color:gainsboro;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+.clearFix:after{
+	display: block;
+	clear: both;
+	content: 'clear';
+	visibility: hidden;
+}
+.gallery-main {
+	width: 980px;
+	height: auto;
+	margin: 0 auto;
+	padding: 30px auto 100px;
+}
+.gallery-left {
+	width: 700px;
+	height: auto;
+	zoom:1
+}
+
+.gallery-left .tab-items{
+	padding-top: 20px;
+	padding-bottom: 0;
+}
+.gallery-left .tab-items ul {
+	zoom: 1;
+}
+
+.gallery-left .tab-items ul li {
+	float: left;
+	padding: 15px 20px 20px 20px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	border-top: 5px solid mediumpurple;
+	border-bottom: 1px solid gainsboro;
+	background-color: white;
+	margin-right: 1px;
+	margin-bottom: 0;
+}
+#selected-item {
+	border-top: 5px solid purple;
+	border-bottom: 1px solid white;}
+.gallery-left .tab-items ul li:hover{
+	border-top: 5px solid purple;
+	border-bottom: 1px solid white;
+}
+.picture-wrap {
+	box-sizing: border-box;/*定义padding margin不会撑开容器超出父容器大小*/
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px 10px 50px 15px;
+	background-color: white;
+	margin-top: -20px;/*ul高度无法根据li内容调整（未解决），负边距补白*/
+	border: 0px dotted #008000;
+
+}
+.left-wrap,.right-wrap{
+	font-size: 0;/*消除inline-block间隔*/
+	display: inline-block;
+	vertical-align: top;
+}
+.big-picture {
+	width: 330px;
+}
+.big-picture img {
+	width: 100%;
+}
+.state {
+	width: 100%;
+	background-color:#800080;
+	padding: 20px;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+.big-left,.big-right {
+	width: 162px;
+	display: inline-block;
+	padding: 0 auto;
+	margin-top: 5px;	
+	vertical-align: top;
+}
+.big-right {
+	margin-left: 5px;
+}
+.small-picture {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.small-picture img {
+	width: 100%;
+	
+}
+.right-wrap {
+	margin-top:-5px;/*微调，不知怎么回事，右边两列图片低了一点*/
+}
+
+
+
+
