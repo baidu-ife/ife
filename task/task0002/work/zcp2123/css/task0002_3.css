@@ -1,0 +1,30 @@
+ul, li, div {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#infoList {
+    width: 200px;
+    border: 1px solid grey;
+}
+
+#infoList li {
+    cursor: pointer;
+    padding: 3px;
+}
+
+#infoList li span {
+    color: red;
+}
+
+#infoList li.selected {
+    background-color: grey;
+}
+
+.hide {
+    display: none;
+}

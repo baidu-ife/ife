@@ -742,6 +742,43 @@ img {
     text-align: center;
 }
 
+.waterSprite {
+    background-image: url("../img/spritesheet.png");
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.waterSprite-gallery1 {
+    width: 330px;
+    height: 150px;
+    background-position: -5px -5px;
+}
+
+.waterSprite-gallery2 {
+    width: 160px;
+    height: 100px;
+    background-position: -5px -165px;
+}
+
+.waterSprite-gallery3 {
+    width: 160px;
+    height: 100px;
+    background-position: -175px -165px;
+}
+
+.waterSprite-gallery4 {
+    width: 160px;
+    height: 100px;
+    background-position: -345px -5px;
+}
+
+.waterSprite-gallery5 {
+    width: 160px;
+    height: 100px;
+    background-position: -345px -115px;
+}
+
+
 .waterfallItemBig, .waterfallItem {
     margin-bottom: 10px;
 }
