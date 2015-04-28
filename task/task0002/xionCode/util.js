@@ -156,21 +156,82 @@ window.onload = function(){
 		return obj;
 	}
 	
-	console.log("$():"+$("span").id);
+	console.log("$():"+$("#test .m1").id);
 	//实现简单的Query
 	function $(select) {
-		if(/#\w+/.test(select)) {
+		if(/^#\w+$/.test(select)) {
 			var arr = select.split("");
 			arr.shift();
 			var str = arr.join("");
 			return document.getElementById(str);
-		}else if(/\w/.test(select)) {
+		}else if(/^\w+$/.test(select)) {
 			return document.getElementsByTagName(select)[0];
-		}
-		
-		else {
+		}else if(/^\.\w+$/.test(select)) {
+			var arr = select.split("");
+			arr.shift();
+			var str = arr.join("");
+			return document.getElementsByClassName(str)[0];
+		}else if(/^\[\w+-?\w+\]$/.test(select)) {
+			var arr = select.split("");
+			arr.shift();
+			arr.pop();
+			var str = arr.join(""),
+				objs = document.getElementsByTagName("*");
+			for(var i = 0;i < objs.length;i++) {
+				if(objs[i].attributes[str]) {
+					return objs[i];
+				}
+			}
+			return -1;
+		}else if(/^\[\w+-?\w+\]=\w+$/.test(select)) {
+			var arr = select.split("="),
+				attrValue = arr[1],
+				objs = document.getElementsByTagName("*");
+			var attr0 = arr[0].split("");
+			attr0.shift();
+			attr0.pop();
+			var attrName = attr0.join("");
+			for( var i = 0;i < objs.length;i++) {
+				if(objs[i].attributes[attrName]) {
+					if(objs[i].attributes[attrName].value == attrValue) {
+						return objs[i];
+					}
+				}
+			}
+			return -1;
+		}else if(/^#\w+\s\.\w+$/.test(select)) {
+			var arr = select.split(" ");
+			var arr0=arr[0].split("");
+			arr0.shift();
+			var idStr = arr0.join("");
+			var arr1 = arr[1].split("");
+			arr1.shift();
+			var classStr = arr1.join("");
+			return document.getElementById(idStr).getElementsByClassName(classStr)[0];
+		}else {
 			return -1;
 		}
+	}
+//4
+	
+	// 给一个element绑定一个针对event事件的响应，响应函数为listener
+	function addEvent(element, event, listener) {
+		element.addEventListener(event, listener, false);
+	}
+
+	// 移除element对象对于event事件发生时执行listener的响应
+	function removeEvent(element, event, listener) {
+		element.removeEventListener(event, listener, false);
+	}
+
+	// 实现对click事件的绑定
+	function addClickEvent(element, listener) {
+		element.addEventListener(event, "click", false);
+	}
+
+	// 实现对于按Enter键时的事件绑定
+	function addEnterEvent(element, listener) {
+		
 	}
 }
 
