@@ -22,11 +22,13 @@ li {
 	height: auto;
 	margin: 0 auto;
 	padding: 30px auto 100px;
+	zoom: 1;
 }
 .gallery-left {
 	width: 700px;
 	height: auto;
-	zoom:1
+	zoom:1;
+	float: left;
 }
 
 .gallery-left .tab-items{
@@ -62,7 +64,6 @@ li {
 	padding: 10px 10px 50px 15px;
 	background-color: white;
 	margin-top: -20px;/*ul高度无法根据li内容调整（未解决），负边距补白*/
-	border: 0px dotted #008000;
 
 }
 .left-wrap,.right-wrap{
@@ -76,13 +77,7 @@ li {
 .big-picture img {
 	width: 100%;
 }
-.state {
-	width: 100%;
-	background-color:#800080;
-	padding: 20px;
-	box-sizing: border-box;
-	font-size: 16px;
-}
+
 .big-left,.big-right {
 	width: 162px;
 	display: inline-block;
@@ -104,7 +99,221 @@ li {
 .right-wrap {
 	margin-top:-5px;/*微调，不知怎么回事，右边两列图片低了一点*/
 }
+.state {
+	padding: 20px;
+	background-color: #808080;
+	box-sizing: border-box;/*文字说明总状态*/
+}
+.state h1 {
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 5px;
+}
+.state p {
+	font-size: 14px;
+	margin-left: 35px;
+}
+.state-a {
+	background: #006400;
+	color: #00FFFF;
+}
+.state-b {
+	background: #000080;
+	color: #8A2BE2;
+}
+.state-c {
+	background: #451254;
+	color: #AA2233;
+}
+.state-d {
+	background: #351681;
+	color: #742646; 	
+}
+.state-e {
+	background: #638524;
+	color: #741599;
+}
+.state-f {
+	background: #326916;
+	color: #419652;
+}
+.state-g {
+	background: #256984;
+	color: #00FFEE;
+}
+.state-h {
+	background: #746952;
+	color: #012354;
+}
+.state-i {
+	background: #632541;
+	color: #796512;
+}
+.state-j {
+	background: #456285;
+	color: #321654;
+}
+.state-k {
+	background: #417441;
+	color: #741852;
+}
 
+.letter {/*字母总状态*/
+	box-sizing: border-box;
+	text-align: center;
+	color: white;
+	width: 25px;
+	border: 2px solid white;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius:50%;
+	display: inline-block;
+	font-size: 16px;
+}
+.letter-a {
+	border: 2px dotted red;
+	color: #000080;
+}
+.letter-b {
+	border: 2px solid red;
+	color: #A52A2A;
+}
 
+.gallery-right {
+	width: 260px;
+	margin-top:80px;
+	float: right;
+}
+.right-block1 {
+	background-color: white;
+	padding: 20px;
+}
+.find {
+	box-sizing: border-box;
+	background: white;
+	font-size: 0;
+	border: 1px solid #DDDDDD;
+	position: relative;/*给img input button参考*/
+}
+.find img {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+.find input {
+	box-sizing: border-box;
+	padding: 0 40px 0 40px;/*输入文字时候留出img和button位置*/
+	border: none;
+	height: 44px;
+	width: 100%;/*占去img和button的位置*/
+	font-size: 16px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	outline: none;
+}
 
+.find button {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	border: none;
+	width: 34px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	vertical-align: top;
+	background-color: #DDDDDD;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+}
+.find input:focus + button{
+	background-color: #999999;
+}
+.find input:focus{
+	border: solid 1px #999999;
+}
 
+.right-block2 {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px 10px;
+	background: white;
+	margin-top: 10px;
+}
+.right-block2 h1{
+	color: #DDDDDD;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.right-block2 li {
+	margin-top: 10px;
+}
+.right-block2 label {
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius:50%;
+	background-color:#000080;
+	color: white;
+	text-align: center;
+	line-height: 10px;
+	padding: 0px 5px;
+}
+.right-block2 div {
+	width:120px;
+	height: 20px;
+	border: 1px solid red;
+	display: inline-block;
+	vertical-align: top;
+}
+.right-block2 div span.span1 {
+	display: inline-block;
+	width: 100%;
+	height: 20px;
+	background:red;
+}
+.right-block2 div span.span2 {
+	display: inline-block;
+	width: 85%;
+	height: 20px;
+	background:red;
+}
+.right-block2 div span.span3 {
+	display: inline-block;
+	width: 70%;
+	height: 20px;
+	background:red;
+}
+.right-block2 div span.span4 {
+	display: inline-block;
+	width: 50%;
+	height: 20px;
+	background:red;
+}
+.right-block2 div span.span5 {
+	display: inline-block;
+	width: 20%;
+	height: 20px;
+	background:red;
+}
+.right-block2 p {
+	display: inline-block;
+}
+.more-wrap{
+	width: 980px;
+	margin: 0 auto;
+	text-align: center;
+}
+.more {
+	width: 700px;
+	background: white;
+	margin-top: -30px;
+	margin-bottom: 200px;
+}
+
+.more span {
+	text-align: center;
+}
