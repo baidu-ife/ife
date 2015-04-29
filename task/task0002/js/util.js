@@ -219,7 +219,7 @@ function addEnterEvent(element, listener) {
 	}, false);
 	
 }
-
+/*
 // 判断是否为IE浏览器，返回-1或者版本号
 function isIE() {
 	if(!+[1,]) {
@@ -250,7 +250,7 @@ function getCookie(cookieName) {
 	}
 	return "";
 }
-
+*/
 
 
 
