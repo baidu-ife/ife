@@ -1,5 +1,5 @@
 //返回所有的class。。还是不明白为什么util.js文件里不做queryall。。
-function getByClass(selector){
+/*function getByClass(selector){
     var classResult = []
     oClass = document.getElementsByTagName('*')
     for (var i=0; i<oClass.length; i++){
@@ -10,10 +10,10 @@ function getByClass(selector){
     }
     return classResult;
 }
-
-var items = getByClass('item');
-var timer = setInterval(autoPlay, 4000)
 var index = 0;
+var items = getByClass('item');
+var timer = setInterval(autoPlay, 5000)
+
 
 function autoPlay () {
     changeImg(index);
@@ -42,11 +42,33 @@ function changeImg(index){
 $.delegate = delegateEvent;
 $.delegate('#btn', 'li' , 'click', function (event) {
     console.log(event.type)
-    for (var i=0; i<items.length; i++){
-        items[i].className = "items pre"
-    }
-    console.log(items[event.type])
-    items[event.type].className = 'item active';
-    items[event.type+1].className = 'item'
-    
+    index = event.type
+    clearInterval(timer)
+    items[index].style['left'] = '100%'
+    timer = setInterval(autoPlay, 5000)
+    //changeImg(event.value)
 })
+
+*/
+
+
+//将图片全部float来做的 没办法循环
+(function  () {
+    var timer2 = setInterval(autoPlay2, 3000)
+    var left,indexFloat = 0;
+    function autoPlay2 () {
+        if (indexFloat == 4) {
+            $('#gallery-float').style.left = 0;
+            indexFloat=0;
+        } else {
+            $('#gallery-float').style.left = -indexFloat*100+'%';
+            indexFloat++
+        }
+    }
+
+    $.delegate('#btn-float', 'li' , 'click', function (event) {
+        indexFloat = event.type;
+        $('#gallery-float').style.left = -indexFloat*100+'%';
+        addClass(event,'li-active')
+    })
+})();

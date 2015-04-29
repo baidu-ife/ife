@@ -105,6 +105,12 @@ function trim(str) {
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
+    //  if(!isArray(arr)){
+    //     return false;
+    // }
+    // if(!isFunction(fn)){
+    //     return false;
+    //}
     for (var i=0; i<arr.length; i++){
         fn.call(this, arr[i], i)
     }
@@ -157,19 +163,28 @@ function getPosition(element) {
     return {x: element.scrollLeft, y:element.scrollTop}
 }
 
+//获取所有满足class选择器的所有dom，不是作业要求
+function getByClass(selector){
+    var classResult = []
+    oClass = document.getElementsByTagName('*')
+    for (var i=0; i<oClass.length; i++){
+        var patt = new RegExp(selector)
+        if (patt.test(oClass[i].className)) {
+            classResult.push(oClass[i])
+        }
+    }
+    return classResult;
+}
+
 
 // 实现一个简单的Query
 function $(selector) {
-    if(/\#/.test(selector)){
-        if (/\./.test(selector)){
-            //暂时未完成
-            selectorid = selector.replace('#', '').replace('/\.[a-zA-Z0-9-]/','');
-            selectorclass = 'aa';
-        } else {
-            selector = selector.replace('#', '')
-            return document.getElementById(selector)
-        }
-    } else if(/[^\#]*\./.test(selector)){//排除嵌套的情况
+    if(/^\#[^\#\.\=]+$/.test(selector)){//排除嵌套的情况
+        //id选择器
+        selector = selector.replace('#', '').replace('/\.[a-zA-Z0-9\-]/','');
+        return document.getElementById(selector)
+    } else if(/^\.[^\#\.\=]+$/.test(selector)){//排除嵌套的情况
+        //class选择器
         selector = selector.replace('.', '')
         var oClass = document.getElementsByTagName('*');
         //觉得可能会用到 所以把所有匹配class的元素都找到了然后只返回了第一个
@@ -206,11 +221,37 @@ function $(selector) {
             }
             return oAttrResult[0];
         } 
-    } else {
+    // } else if(trim(selector).split(" ").length > 1){
+    //         var reAttr = trim(selector).split(/\s+/)//将每个选择器分割成数组
+    //         var lastSelector = reAttr[reAttr.length-1].replace(".","")//去掉最后一个class选择器的点
+    //         var oAttrResult = getByClass(lastSelector)//数组保存所有满足最后一个class选择器的dom
+    //         for (var j=0; j<oAttrResult.length; j++){
+    //             parentFilter(oAttrResult[j], reAttr)
+    //         }
+    }else {
             return document.getElementsByTagName(selector)[0]
     }
 }
 
+// function parentFilter (child, selectArr) {
+//     var parent = child.parentNode; //保存父节点,会更新
+//     for (var i = selectArr.length - 2; i >= 0; i--) {
+//         parentCompare(parent, selectArr[i])
+//     }
+// }
+
+// function parentCompare (parent,selector) {
+//     if (parent.className == selector) {
+//         parent = parent.parentNode;
+//     } else {
+//         return false
+//         //break;
+//     }
+// }
+
+
+
+    
 
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
 $.on = function(selector, event, listener){
@@ -281,7 +322,7 @@ $.delegate = delegateEvent;
 
 function isIE() {
 
-    var ua = navigator.userAgent;console.log(ua)
+    var ua = navigator.userAgent;
     if (/MSIE ([^;]+)/.test(ua)) {
         return RegExp["$1"]
     } else {
@@ -319,21 +360,28 @@ function ajax(url, options) {
         options.type = "post"
     };
     var xhr = new XMLHttpRequest();
-    if (options.type === "get") {
+    if (options.type.toLowerCase() == "get") {
         url += (url.indexOf("?") == -1 ? "?" : "&");
-        url += encodeURIComponent(data.name) + "=" + encodeURIComponent(data.password);
-    } else if (options.type === "post")
-    xhr.open(options.type, url, true);
-    xhr.send(options.data)
-    if (xhr.status == 4) {
+        //记得改格式
+        url += encodeURIComponent(options.data) + "=" + encodeURIComponent(options.data);
+        xhr.open(options.type, url, true);
+        xhr.send();
+    } else if (options.type.toLowerCase() == "post") {
+        xhr.open(options.type, url, true);
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+        xhr.send(options.data);
+    }
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
         if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-            options.onsuccess()
+            options.onsuccess(xhr.responseText, xhr)
         } else {
-            options.onfail();
+            options.onfail(xhr.responseText, xhr);
         }
-    };
+        };
+    }
 }
-
 // 使用示例：
 /*ajax(
     'http://localhost:8080/server/ajaxtest', 

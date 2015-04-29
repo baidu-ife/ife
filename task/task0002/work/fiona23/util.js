@@ -151,6 +151,12 @@ console.log(str); // 'hi!'
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参赛传递
 function each(arr, fn) {
+     if(!isArray(arr)){
+        return false;
+    }
+    if(!isFunction(fn)){
+        return false;
+    }
     for (var i=0; i<arr.length; i++){
         fn.call(this, arr[i], i)
     }
@@ -372,7 +378,7 @@ $.delegate("#list", "li", "click", clickListener);
 
 function isIE() {
 
-    var ua = navigator.userAgent;console.log(ua)
+    var ua = navigator.userAgent;
     if (/MSIE ([^;]+)/.test(ua)) {
         return RegExp["$1"]
     } else {
@@ -404,21 +410,34 @@ function getCookie(cookieName) {
 }
 
 // 
-/*function ajax(url, options) {
+function ajax(url, options) {
     // your implement
-    options = {
-        type: "post",
-        data:{
-            name: nameword,
-            password: passwordword
-        },
-
+    if (!options.type) {
+        options.type = "post"
+    };
+    var xhr = new XMLHttpRequest();
+    if (options.type.toLowerCase() == "get") {
+        url += (url.indexOf("?") == -1 ? "?" : "&");
+        //记得改格式
+        url += encodeURIComponent(options.data) + "=" + encodeURIComponent(options.data);
+        xhr.open(options.type, url, true);
+        xhr.send();
+    } else if (options.type.toLowerCase() === "post") {
+        xhr.open(options.type, url, true);
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+        xhr.send(options.data);
     }
-    var xhr = createXHR()
-    if(options.type === "post"){
-
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+        if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+            options.onsuccess(xhr.responseText, xhr)
+        } else {
+            options.onfail(xhr.responseText, xhr);
+        }
+        };
     }
-}*/
+}
 
 // 使用示例：
 /*ajax(
