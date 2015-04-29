@@ -223,16 +223,30 @@ window.onload = function(){
 	function removeEvent(element, event, listener) {
 		element.removeEventListener(event, listener, false);
 	}
+	
+	/*var fun = function(event, xun) {
+		
+	}*/
+	var xun = function() {
+		console.log(1);
+	}
 
 	// 实现对click事件的绑定
 	function addClickEvent(element, listener) {
-		element.addEventListener(event, "click", false);
+		element.addEventListener("click", listener, false);
 	}
-
+	addEnterEvent($("#number1"), xun);
 	// 实现对于按Enter键时的事件绑定
-	function addEnterEvent(element, listener) {
+	/*function addEnterEvent(element, listener) {
+		function fun(event,fn) {
+			if(event.keyCode == 13) {
+				
+			}
+		}
 		
-	}
+		element.addEventListener("keyup", fun, false);
+		
+	}*/
 }
 
 
