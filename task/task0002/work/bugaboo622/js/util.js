@@ -1,4 +1,5 @@
 //========2. JavaScript数据类型及语言基础=======
+
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr){
 	return(arr instanceof Array);
@@ -40,7 +41,7 @@ function uniqArray(arr) {
 }
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
 // 先暂时不要简单的用一句正则表达式来实现
-function trim(str){
+function simpleTrim(str){
   while ((str.indexOf(" ")==0) && (str.length>1)){
     str=str.substring(1,str.length);
   }
@@ -51,6 +52,11 @@ function trim(str){
     str="";
   }
   return str;
+}
+// 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
+// 尝试使用一行简洁的正则表达式完成该题目
+function trim(str) {
+    return str.replace(/^\s+|\s+$/g,'')
 }
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn){
@@ -68,3 +74,34 @@ function getObjectLength(obj) {
   }
   return n;
 }
+// 判断是否为邮箱地址
+function isEmail(emailStr) {
+    var re=/^\w+@[0-9a-z]+(\.[a-z]+){1,3}$/;
+    return re.test(emailStr);
+}
+// 判断是否为手机号
+function isMobilePhone(phone) {
+    var re=/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+    return re.test(phone); 
+}
+//===========3. DOM=============
+// 为element增加一个样式名为newClassName的新样式
+function addClass(element, newClassName) {
+    // your implement
+}
+
+// 移除element中的样式oldClassName
+function removeClass(element, oldClassName) {
+    // your implement
+}
+
+// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
+function isSiblingNode(element, siblingNode) {
+    // your implement
+}
+
+// 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
+function getPosition(element) {
+    // your implement
+}
+// your implement
