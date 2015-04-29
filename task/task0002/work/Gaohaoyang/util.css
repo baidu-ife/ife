@@ -1,0 +1,18 @@
+.class1{
+    width: 100px;
+    height: 100px;
+    border:2px solid #999;
+}
+.class2{
+    background-color: #ccc;
+}
+.class3{
+    border-radius: 10px;
+}
+#div2{
+    position: relative;
+    margin-left: 500px;
+}
+#grand{
+    position: relative;
+}

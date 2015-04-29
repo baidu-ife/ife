@@ -205,9 +205,9 @@ console.log("oDiv1.className---->" + oDiv1.className);
 removeClass(oDiv1, 'class2');
 console.log("oDiv1.className---->" + oDiv1.className);
 
-var oDiv2 = document.getElementById('div2');
-console.log(isSiblingNode(oDiv1, oDiv2));
-var oH1 = document.getElementById('h');
+var oDiv2 = document.getElementById('son');
+// console.log(isSiblingNode(oDiv1, oDiv2));
+var oH1 = document.getElementById('son');
 console.log(isSiblingNode(oDiv1, document.getElementById('grand')));
 
 console.log(getPosition(oH1));
@@ -216,23 +216,64 @@ console.log(getPosition(oH1));
 //---------------------------------------------------------
 // 实现一个简单的Query
 function $(selector) {
-    if (true) {};
-
+    var result = null;
+    selector = trim(selector); //使用了上面的trim()
+    if (selector.indexOf(" ") !== -1) { //若存在空格
+        var selectorArr = selector.split(/\s+/); //拆成数组
+        //待解决/////////////////////////////////////
+    } else { //只有一个，直接查询
+        var signal = selector[0];
+        console.log("signal--->" + signal);
+        switch (signal) {
+            case "#":
+                console.log("case#");
+                result = document.getElementById(selector.substr(1));
+                break;
+            case ".":
+                console.log("case.");
+                var allElements = document.getElementsByTagName("*");
+                for (var i = 0; i < allElements.length; i++) {
+                    console.log(allElements[i].getAttribute("class"));
+                    console.log(selector.substr(1));
+                    if (allElements[i].getAttribute("class") == selector.substring(1)) {
+                        console.log("in");
+                        // result = allElements[i];
+                        // break;
+                    }
+                }
+                break;
+            default:
+                console.log("error");
+                break;
+        }
+    }
+    // console.log(selectorArr);
+    // if (selectorArr[0][0] === "#") {
+    //     result = document.getElementById(selectorArr[0].substring(1));
+    //     return result;
+    // }
+    return result;
 }
 
+
+$(".class1");
 // 可以通过id获取DOM对象，通过#标示，例如
-$("#adom"); // 返回id为adom的DOM对象
+// $(".class1").innerHTML = "inneraclasssssaainner"; // 返回id为adom的DOM对象
+// console.log($("#div1"));
 
 // 可以通过tagName获取DOM对象，例如
-$("a"); // 返回第一个<a>对象
+// $("a"); // 返回第一个<a>对象
 
 // 可以通过样式名称获取DOM对象，例如
-$(".classa"); // 返回第一个样式定义包含classa的对象
+// $(".classa"); // 返回第一个样式定义包含classa的对象
 
 // 可以通过attribute匹配获取DOM对象，例如
-$("[data-log]"); // 返回第一个包含属性data-log的对象
+// $("[data-log]"); // 返回第一个包含属性data-log的对象
 
-$("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
+// $("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
 
 // 可以通过简单的组合提高查询便利性，例如
-$("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
+// $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
+// console.log($("#grand"));
+// var oGrand = $("#grand");
+// console.log(oGrand.getElementById("son"));
