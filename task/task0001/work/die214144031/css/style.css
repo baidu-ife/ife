@@ -156,7 +156,8 @@ display:none;
 	border-right: 4px #f0f0f0 solid;
 }
 .main {
- width:100%  min-width: 1300px;
+        width:100%;
+        min-width: 1300px;
 	background-color: #F0F0F0;
 	height: 500px;
 }
