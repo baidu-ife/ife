@@ -117,6 +117,36 @@ function getPosition(element) {
     return position;
 }
 // 实现一个简单的Query
-function $(selector) {
+function $(selector) {          
+    var arr = selector.split(" ");
+    var parentNode = null;
+    var ele = null;
+    var idExp = /^#[\w-]+$/;
+    var attrExp = /^\[[\w\-=]+\]$/;
+    var classExp = /^\.[\w\-]+$/;
 
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].search(idExp) != -1) {
+            var id = arr[i].slice(1);
+            ele = parentNode ? parentNode.getElementById(id) : document.getElementById(id);
+        } else if (arr[i].search(classExp) != -1) {
+            var classname = arr[i].slice(1);
+            ele = parentNode ? parentNode.getElementsByClassName(classname)[0] : document.getElementsByClassName(classname)[0];
+        } else if (arr[i].search(attrExp) != -1) {
+            var index = arr[i].indexOf("=");
+            if (index != -1) {
+                var val = arr[i].slice(index+1, -1);
+                var attr = arr[i].slice(1, index);
+                ele = parentNode ? getElementByAttributeValue (parentNode, attr, val) : getElementByAttributeValue (null, attr, val);
+            } else {
+                var attr = arr[i].slice(1, -1);
+                ele = parentNode ? getElementByAttributeValue (parentNode, attr,null) : getElementByAttributeValue (null, attr, null);
+            } 
+        } else {
+            ele = parentNode ? parentNode.getElementsByTagName(arr[i])[0] : document.getElementsByTagName(arr[i])[0];
+        }
+        parentNode = ele;
+    }
+    return ele;
 }
+$("#aa #box3 .box4").style.width="120px";
