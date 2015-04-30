@@ -85,23 +85,38 @@ function isMobilePhone(phone) {
     return re.test(phone); 
 }
 //===========3. DOM=============
-// 为element增加一个样式名为newClassName的新样式
-function addClass(element, newClassName) {
-    // your implement
-}
 
+// 为element增加一个样式名为newClassName的新样式
+function addClass(element, newClassName) {  
+    if (!element.className.match(new RegExp('(\s|^)'+newClassName+'(\s|$)'))) {
+    	element.className += " " + newClassName; 
+    } 
+}  
 // 移除element中的样式oldClassName
 function removeClass(element, oldClassName) {
-    // your implement
+    if (!element.className.match(new RegExp('(\s|^)'+oldClassName+'(\s|$)'))) {
+    	console.log(1);
+        element.className = element.className.replace(new RegExp('(\\s|^)'+oldClassName+'(\\s|$)'),' ');
+    }
 }
-
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
-    // your implement
+    var eParent=element.parentNode;
+    var sParent=siblingNode.parentNode;
+    return eParent=sParent?true:false;
 }
-
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
-    // your implement
+    var position = {x:0,y:0};
+    var index=element;
+ 	while(index){
+        position.x += index.offsetLeft;
+        position.y += index.offsetTop;
+        index = index.offsetParent;
+    }
+    return position;
 }
-// your implement
+// 实现一个简单的Query
+function $(selector) {
+
+}
