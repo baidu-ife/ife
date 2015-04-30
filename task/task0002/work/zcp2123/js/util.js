@@ -401,7 +401,7 @@ function delegateEvent(element, tag, eventName, listener) {
         if(target.tagName.toLowerCase() == tag.toLowerCase()) {
             listener.call(target, event);
         }
-    })
+    });
 }
 
 //$.on = addEvent;
@@ -411,23 +411,39 @@ function delegateEvent(element, tag, eventName, listener) {
 //$.delegate = delegateEvent;
 
 $.on = function(selector, event, listener) {
-    addEvent($(selector), event, listener);
+    var nodeList = $(selector, false);
+    each(nodeList, function (item, index) {
+        addEvent(item, event, listener);
+    });
+
 }
 
 $.un = function(selector, event, listener) {
-    removeEvent($(selector), event, listener);
+    var nodeList = $(selector, false);
+    each(nodeList, function (item, index) {
+        removeEvent(item, event, listener);
+    });
 }
 
 $.click = function(selector, listener) {
-    addClickEvent($(selector), listener);
+    var nodeList = $(selector, false);
+    each(nodeList, function (item, index) {
+        addClickEvent(item, listener);
+    });
 }
 
 $.enter = function(selector, listener) {
-    addEnterEvent($(selector), listener);
+    var nodeList = $(selector, false);
+    each(nodeList, function (item, index) {
+        addEnterEvent(item, listener);
+    });
 }
 
 $.delegate = function(selector, tag, event, listener) {
-    delegateEvent($(selector), tag, event, listener);
+    var nodeList = $(selector, false);
+    each(nodeList, function (item, index) {
+        delegateEvent(item, tag, event, listener);
+    });
 }
 
 /****************************************************************************************/
