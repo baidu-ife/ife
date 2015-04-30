@@ -124,11 +124,32 @@ function $(selector) {
     var idExp = /^#[\w-]+$/;
     var attrExp = /^\[[\w\-=]+\]$/;
     var classExp = /^\.[\w\-]+$/;
+    function getElementByAttributeValue (parent, attribute, value) {
+	    if (parent) {
+	        var allElements = parent.getElementsByTagName("*");
+	    } else {
+	        var allElements = document.getElementsByTagName('*');
+	    }
+	    console.log(allElements.length);
+	    if (value) {
+	        for (var i = 0; i < allElements.length; i++) {
+	            if (allElements[i].getAttribute(attribute) == value) {
+	                return allElements[i];
+	            }
+	        }
+	    } else {
+	        for (var i = 0; i < allElements.length; i++) {
+	            if (allElements[i].getAttribute(attribute)) {
+	                return allElements[i];
+	            }
+	        }      
+	    }
+	}
 
     for (var i = 0; i < arr.length; i++) {
         if (arr[i].search(idExp) != -1) {
             var id = arr[i].slice(1);
-            ele = parentNode ? parentNode.getElementById(id) : document.getElementById(id);
+            ele = document.getElementById(id);
         } else if (arr[i].search(classExp) != -1) {
             var classname = arr[i].slice(1);
             ele = parentNode ? parentNode.getElementsByClassName(classname)[0] : document.getElementsByClassName(classname)[0];
@@ -149,4 +170,103 @@ function $(selector) {
     }
     return ele;
 }
-$("#aa #box3 .box4").style.width="120px";
+//===========4. 事件============
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+    if (element.addEventListener) {
+        element.addEventListener(event, listener, false);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + event, listener);
+    } else {
+        element["on" + event] = listener;
+    }
+}
+// 移除element对象对于event事件发生时执行listener的响应
+function removeEvent(element, event, listener) {
+    if (element.removeEventListener) {
+        element.removeEventListener(event, listener, false);
+    } else if (element.detachEvent) {
+        element.detachEvent("on" + event, listener);
+    } else {
+        element["on" + event] = null;
+    }
+}
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    addEvent(element,"click", listener);
+}
+
+// 实现对于按Enter键时的事件绑定  
+function addEnterEvent(element, listener) {   
+    if (e.keyCode == 13) {
+        addEvent(element, "keyup", function(e){
+            var e = e || window.event;
+            listener.call(this);
+        });
+    }
+}
+//=========5. BOM=================
+// 判断是否为IE浏览器，返回-1或者版本号
+function isIE () {
+    if (window.ActiveXObject === undefined) return -1;
+    if (!document.querySelector) return 7;
+    if (!document.addEventListener) return 8;
+    if (!window.atob) return 9;
+    if (!document.__proto__) return 10;
+    return 11;
+}
+// 设置cookie
+function setCookie(cookieName, cookieValue, expiredays) {
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate()+expiredays);
+    document.cookie=cookieName+'='+cookieValue;+';expires='+oDate.toGMTString();
+}
+// 获取cookie值
+function getCookie(cookieName) {
+    var arr1=document.cookie.split('; ');
+    for (var i = 0;i<arr1.length;i++) {
+    	var arr2=arr1[i].split('=');
+    	if(arr2[0]==cookieName){
+    		return decodeURI(arr2[1]);
+    	}
+	}
+}
+//=======6.ajax============
+//学习Ajax，并尝试自己封装一个Ajax方法。实现如下方法：
+function ajax (url, option) { 
+    var realUrl = "", realData, xmlhttp, isUrlData = false, type = "GET";
+    if (option.type) {
+        type = option.type;
+    } 
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    if (option.data) {
+        isUrlData = typeof option.data == Object ? false : true;
+    }
+
+    if (isUrlData) {
+        realUrl = url + option.data;
+        realData = "";
+    } else {
+        realUrl = url;
+        realData = option.data;
+    }
+
+    if(xmlhttp != null) {
+        xmlhttp.open(type,realUrl,true);
+        xmlhttp.send(realData);        
+        xmlhttp.onreadystatechange = function (){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                this.call(onsuccess,xmlhttp.responseText,xmlhttp);
+            } 
+        };   
+    }
+    
+
+    return xmlhttp;
+}
