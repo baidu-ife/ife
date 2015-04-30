@@ -19,7 +19,9 @@
 					<p class="menuTitle">分类列表</p>
 					<div id="classContent">
 						<ul id="taskClass">
-							<li id="task0">默认分类  <span class="taskNum" id="taskNum0">(0)</span><span class="pullRight" id="menuDelete"><b>X</b></span></li>
+							<ul class='taskUl' id="task0" delete='0'>
+								<li class="taskList"><p>默认分类  </p><span class="taskNum" id="taskNum0">(0)</span><span class="pullRight menuDelete" style="display:none"><b>X</b></span></li>
+							</ul>
 							<div class="clear"></div>
 						</ul>
 					</div>
@@ -40,21 +42,23 @@
 					<p class="subMenuTitle">完成</p>
 				</div>
 				<div class="todolist">
-					<div class="time" id="todotime">
-						<p>2015-04-29</p>
-					</div>
-					<div class="task">
-						<ul class="todotask">
-							<li>
-								<p>todo 1</p>
-							</li>
-							<li>
-								<p>todo 2</p>
-							</li>
-							<li>
-								<p class="todochoosen">todo 3</p>
-							</li>
-						</ul>
+					<div id="task20150429">
+						<div class="time todotime" id="">
+							<p>2015-04-29</p>
+						</div>
+						<div class="task">
+							<ul class="todotask">
+								<li class="done">
+									<p>todo 1</p>
+								</li>
+								<li class="">
+									<p>todo 2</p>
+								</li>
+								<li>
+									<p class="todochoosen">todo 3</p>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -71,7 +75,7 @@
 				<span class="todoIcon pullRight" id="todoEdit"><img src="img/edit.png" alt="edit"></span>
 				<span class="todoIcon pullRight" id="todoDone"><img src="img/finish.png" alt="done"></span>
 			</div>
-			<div class="time" id="taskTime"><p>任务日期：<span>2015-4-29</span></p></div>
+			<div class="time" id="taskTime"><p>任务日期：<span>2015-04-29</span></p></div>
 			<div id="taskContent"><p>完成前端编码。</p></div>
 		</div>
 		<div class="clear"></div>
