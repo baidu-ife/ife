@@ -11,7 +11,6 @@ function getSuggest(selector){
             oSugul.style.display = "block";
         	var data = JSON.parse(res).data;
             var liStr = "";
-            console.log(data);
             for (var i = data.length - 1; i >= 0; i--) {
                 var oLi = "<li>" + data[i].substring(0,data[i].indexOf(inputVal)) + "<em>"+ inputVal +"</em>"+ data[i].substr(data[i].indexOf(inputVal)+inputVal.length) +"</li>"
                 liStr += oLi;
@@ -45,7 +44,6 @@ function getSelect(){
 }
 
 $.on("#search","keyup",function(ev){
-    console.log(ev);
     switch (ev.keyCode) {
         case 40 :
         seletNext(true);
@@ -55,7 +53,6 @@ $.on("#search","keyup",function(ev){
         break;
         case 13 :
         getSelect();
-        console.log("回车");
         break;
         case 37 :
         case 39 :
@@ -66,11 +63,9 @@ $.on("#search","keyup",function(ev){
     }
 });
 $.on("#search","focus",function(ev){
-    console.log(ev);
     getSuggest("#search");
 });
 $.on("#search","blur",function(ev){
-    console.log(ev);
     var delay = setTimeout(function(){
         oSugul.style.display = "none";
     },100);
@@ -82,9 +77,5 @@ $.delegate("#suggests","li","mouseover",function(e){
         oLiArr[i].className = "";
     }
     e.target.className = "active";
-    console.log(e.target);
-    console.log(e);
-    //console.log(this);
-
 })
 $.delegate("#suggests","li","click",getSelect)
