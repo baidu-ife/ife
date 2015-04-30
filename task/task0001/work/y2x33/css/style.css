@@ -1,0 +1,622 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+body{
+    background-color: #eee;
+}
+/*************header***********/
+#header{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    width: 100%;
+
+    background-color: #522a5c;
+}
+/*底部10px，水平居中*/
+.content-wrap{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -490px;
+
+    width: 980px;
+}
+#logo{
+    float: left;
+    font-size: 18px;
+    color: #fff;
+}
+#menu{
+    float: right;
+}
+#menu li{
+    margin-left: 26px;
+    display: inline;
+
+    list-style: none;
+}
+#menu a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    font-family: "Windows SimSun", sans-serif;
+}
+.clear{
+    clear: both;
+}
+.git-logo{
+    position: absolute;
+    right: 10px;
+    bottom: -5px;
+}
+.git-logo img{
+    border: 0px;
+}
+
+/**************banner****************/
+#banner{
+    width: 100%;
+    height: 560px;
+    background: url("../img/banner-bg.jpg") no-repeat;
+
+    color: #fff;
+}
+#banner .content-wrap{
+    bottom: 0;
+    top: 80px;/*banner中的*/
+
+    height:560px;/*与banner相同*/
+}
+#banner-content{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 360px;
+    height: 115px;
+    padding: 10px 10px 30px 10px;
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#46ffffff', endColorstr='#00ffffff',GradientType=0 );/* 6<IE<10 */
+    background:  -ms-linear-gradient(top, rgba(255, 255, 2557,.7), rgba(255, 255, 255, 0));   /* IE>=10 */
+    background: -moz-linear-gradient(top, rgba(255,255,255,.7), rgba(255,255,255,0));
+    background:   -o-linear-gradient(top, rgba(255,255,255,.7), rgba(255,255,255,0));
+    background:     -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.7)), to(rgba(255,255,255,0)));
+}
+#banner .title{
+    float: right;
+    clear: right;
+
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+/*文字超标的情况下怎么办，会填充到margin的？*/
+#banner p{
+    clear: both;
+
+    font-size: 12px ;
+    line-height: 150%;
+    text-indent: 2em;
+}
+
+/*****************content****************/
+#index-content{
+    width: 100%;
+
+    background-color: #eee;
+}
+#blog-wrap{
+    margin: 0 auto;
+    width: 980px;
+
+    background-color: #eee;
+}
+.blog{
+    float:left;
+
+    margin-top: 10px;
+    width: 320px;
+    background: #fff;
+    /*实现等高布局，但是会导致整个#index-content垂直方向充满，如何解决？*/
+    /*padding-bottom: 5000px;*/
+    /*margin-bottom: -5000px;*/
+    /*overflow: hidden;*/
+}
+/*第二个和第三个.blog*/
+.blog + .blog{
+    margin-left: 10px;
+}
+.blog img{
+    margin: 10px 10px 0 10px;
+}
+.blog p{
+    margin:15px 30px 25px 20px;
+    font-size: 12px;
+    line-height: 170%;
+    text-indent: 2em;
+}
+.fill{
+    height: 100px;
+    background-color: #eee;
+}
+/**********author************/
+#author{
+    height:600px;
+}
+#author-icon{
+    position: relative;
+    top:-50px;
+    /*水平居中*/
+    left: 50%;
+    margin-left:-80px;
+}
+#info{
+    position: relative;
+    left: 50%;
+    margin-left: -300px;
+
+    width: 600px;
+}
+#info-title{
+    margin-bottom: 45px;
+
+    font-size: 20px;
+    font-family: Century Gothic,sans-serif;
+    text-align: center;
+}
+#info p{
+    font-size: 14px;
+    line-height: 170%;
+    text-indent: 2em;
+}
+/***********footer***********************/
+#footer{
+    position: relative;
+    height:450px;
+    color: #fff;
+    text-decoration: none;
+
+    background-color: #000;
+}
+.hr{
+    height:1px;
+    background-color:  #a9a9a9;
+}
+#menu2{
+    line-height: 40px;
+    text-align: center;
+}
+#menu2 li{
+    display: inline;
+}
+#menu2 li + li{
+    margin-left: 30px;
+}
+#menu2 a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+}
+#catalogue{
+    width: 980px;
+    margin: 45px auto 0 auto;
+}
+#catalogue ul{
+    float:left;
+    font-size: 12px;
+}
+#catalogue ul + ul{
+    margin-left: 148px;
+}
+#catalogue li:first-child{
+    margin-top: 35px;
+}
+#catalogue li{
+    list-style: none;
+}
+#copy-right{
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -31px;
+}
+#copy-right img{
+    clear: both;
+    position: relative;
+    left:15px;
+    bottom: -5px;
+
+    margin-top: 20px;
+}
+
+/************* ↑for index *************/
+/************* for blog  ************/
+#gallery-content,
+#blog-content{
+    position: relative;
+    left: 50%;
+    margin-left: -490px;
+    margin-top: 20px;
+    height: 1340px;
+    width: 980px;
+}
+/*********** article *************/
+#gallery-wrap,
+#article-wrap{
+    float: left;
+    width: 710px;
+    margin-right: 10px;
+}
+.article{
+    position: relative;
+    margin-bottom: 10px;
+    padding:20px 10px 20px 20px;/*为什么！！貌似正文自带了margin-right*/
+    height: 370px;
+    background-color: #fff;
+}
+.article-date{
+    position: absolute;
+    top: 20px;
+    left: -50px;
+
+    width: 50px;
+    height: 40px;
+
+    line-height: 40px;
+    text-align: center;
+    color:#fff;
+
+    background-color: #522a5c;
+}
+.article-tag{
+    position: absolute;
+    top: 60px;
+    left: -50px;
+
+    width: 50px;
+    height: 40px;
+
+    line-height: 40px;
+    text-align: center;
+    color:#fff;
+
+    background-color: #a660b7;
+}
+.article-title{
+    font-size: 16px;
+    color: #a660b7;
+    font-weight: 700;
+}
+.article-vice-title{
+    clear: both;
+    margin: 10px 0 20px 0;
+    font-size: 12px;
+    color: #666;
+    font-weight: 700;
+}
+.article-body{
+    text-indent: 2em;
+    font-size: 12px;
+    line-height:170%;
+}
+.article-tail{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    font-size: 12px;
+    color: #666;
+}
+#page-wrap{
+    margin-top: 30px;/*?而且article已经自带10margin-bottom了，实际应该是10px*/
+    text-align: center;
+}
+#page-wrap span{
+    margin-left: 10px;
+    padding: 15px;
+
+    font-size: 12px;
+    background-color: #fff;
+}
+#page-wrap span:hover,
+#page-wrap .current-page{
+    color: #fff;
+    background-color: #a660b7;
+}
+#page-wrap .disable-page{
+    color: #666;
+}
+/*************** search ******************/
+
+.right-bar{
+    float:right;
+    width: 260px;
+}
+#search-wrap{
+    padding: 20px;
+    background-color: #fff;
+}
+#search-wrap div{
+    border: 1px solid #ddd;
+    background: url("../img/go-to-search.png") no-repeat top right;
+    padding-right: 45px;
+}
+#search-wrap div:hover{
+    border: 1px solid #000;
+    background: url("../img/go-to-search-hover.png") no-repeat top right;
+}
+#search-wrap input{
+    border: none;
+    background: url("../img/search.png") no-repeat top left;
+    padding-left: 40px;
+    width: 220px;
+    height:40px;
+}
+/*********** tag **************/
+#tag-nav{
+    margin-top: 10px;
+    height: 200px;
+}
+#tag-nav li{
+    height: 50px;
+    margin: 1px 0;
+    padding-left: 20px;
+    border-left: 5px solid #dfc6e6;
+
+    list-style: none;
+    line-height: 50px;
+    background-color: #fff;
+}
+#tag-nav li:hover,
+#tag-nav .chosen-tag{
+    border-left: 5px solid #522a5c;
+}
+/******* calendar *********/
+#calendar{
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+#calendar table{
+    border-collapse:separate;
+    border-spacing:10px;
+}
+#calendar td{
+    width: 30px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+#last-month-btn,
+#year-month,
+#next-month-btn{
+    color: #522a5c;
+    font-weight: 700;
+}
+td#today{
+    background-color: #773c88;
+}
+#calendar td.write-blog-day{
+    font-weight: 700;
+    color: #522a5c;
+}
+/********* tag **************/
+#tag-map{
+    margin-top: 10px;
+    padding: 10px;
+    height: 200px;
+    background-color: #fff;
+}
+#tag-map span{
+    margin-right: 5px;
+    color: #773c88;
+}
+/************************** for gallery ************************************/
+/* gallery-wrap, gallery-content同blog, 见blog区*/
+#gallery-content{
+    height: 900px;
+}
+#gallery-nav li{
+    float:left;
+    margin: 0;
+    padding: 15px 20px 20px 20px;
+
+    font-size: 12px;
+
+    display: inline;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    background-color: #fff;
+}
+#gallery-nav li:hover{
+    border-bottom-color: #fff;
+}
+/*nav在hover以及被选中的变化*/
+.nav-type-all{                              /*all*/
+    border-top: 5px solid #dfc6e6;
+}
+#gallery-nav .nav-type-all li:hover,
+.nav-type-all.type-chosen{
+    border-top-color: #522a5c;
+}
+.nav-type-j{                                /*type-j*/
+    border-top: 5px solid #dac9e3
+}
+.nav-type-j:hover,
+.nav-type-j.type-chosen {
+    border-top-color: #522a5c;
+}
+.nav-type-u{                                /*type-u*/
+    border-top: 5px solid #d1a8f7;
+}
+.nav-type-u:hover,
+.nav-type-u.type-chosen {
+    border-top-color: #53079f;
+}
+.nav-type-f{                                /*type-f*/
+    border-top: 5px solid #f4Ac96;
+}
+.nav-type-f:hover,
+.nav-type-f.type-chosen {
+    border-top-color: #8b2300;
+}
+.nav-type-a{                                /*type-a*/
+    border-top: 5px solid #fbe299;
+}
+.nav-type-a:hover,
+.nav-type-a.type-chosen {
+    border-top-color: #d2a31b;
+}
+
+
+#gallery-all{
+    margin-top: 55px;
+    padding: 20px 10px 20px 20px;
+    height:680px;
+    background-color: #fff;
+}
+
+.gallery-each{
+    float:left;
+    margin: 0 10px 10px 0;
+
+}
+.type-j{
+    background-color: #522a5c;
+}
+.type-u{
+    background-color: #53079f;
+}
+.type-f{
+    background-color: #8b2300;
+}
+.type-a{
+    background-color: #d2a31b;
+}
+#load-more{
+    margin-top: 10px;
+    height: 50px;
+    font-size: 12px;
+    line-height: 50px;
+    text-align: center;
+
+    background-color: #fff;
+}
+/********* rank-board************/
+#rank-board{
+    margin-top: 10px;;
+    padding: 20px 10px;
+
+    font-size: 14px;
+    background-color: #fff;
+}
+.rank-each{
+    margin-top: 15px;
+    line-height: 18px;
+    height: 18px;
+}
+.rank-each div{
+    float:left;
+}
+.rank-number{
+    margin-right: 10px;
+    height: 18px;
+    width: 18px;
+    color: #fff;
+    text-align: center;
+    background-color: #522a5c;
+    border-radius: 12px;
+}
+.rank-popularity{
+    margin-right: 10px;
+    height: 18px;
+    width: 100px;
+    border: 1px solid #522a5c;
+}
+.rank-popularity div{
+    height: 18px;
+    background-color: #522a5c;
+}
+/******************* for about ****************************/
+
+#about-content{
+    position: relative;
+    left: 50%;;
+    margin: 100px 0 20px -490px;
+    padding-top: 180px;
+    padding-bottom: 20px;
+    width: 980px;
+    height: 1300px;
+    background-color: #fff;
+}
+#my-icon{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    margin-left: -90px;
+    width: 160px;
+    height: 160px;
+
+    border: 10px solid #eee;
+    border-radius: 90px;
+}
+
+#ver-bar{
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    margin-left: -3px;
+
+    background-color: #eee;
+    width: 6px;
+    height: 2000px;
+}
+.my-each{
+    margin: 0 auto;
+    width: 580px;
+    height: 300px;
+}
+.my-each-title{
+    float: left;
+    width: 240px;
+    height: inherit;
+    font-size: 20px;
+    text-align: center;
+}
+.my-each img{
+    position:absolute;
+    left: 50%;
+    margin-left: -55px;
+    margin-top: -100px;
+
+    border: 5px solid #eee;
+    border-radius: 60px;
+ }
+.my-each .items{
+    float: right;
+    width: 240px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.each-item{
+    height: 50px;
+}
+.item-year{
+    position: relative;
+    top: 20px;
+    left: -100px;
+    width: 80px;
+    text-align: center;
+    background-color: #fff;
+    border: 5px solid #eee;
+    border-radius: 5px;
+}
+.item-des{
+    font-size: 12px;
+}

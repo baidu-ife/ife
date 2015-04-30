@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>task002_1</title>
+</head>
+<body>
+    <div>
+        <h2>第一阶段：请输入爱好，可用半角逗号分隔</h2>
+        <input type="text" id="hobby"/><br/>
+        <button id="hobbyBtn">确定</button>
+        <p id="hobbyShow"></p>
+    </div>
+    <div>
+        <h2>第二阶段：请输入爱好，可用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号分隔</h2>
+        <textarea type="text" id="hobby2" style="height: 100px;width: 200px;resize: none"></textarea><br/>
+        <button id="hobbyBtn2">确定</button>
+        <p id="hobbyShow2"></p>
+    </div>
+        <h2>第三阶段：用户输入的爱好数量不能超过10个，也不能什么都不输入</h2>
+        <textarea type="text" id="hobby3" style="height: 100px;width: 200px;resize: none"></textarea>
+        <div id="errorMsg" style="color: #ff0000;font-size: 12px">您未输入</div>
+        <button id="hobbyBtn3" disabled="disabled">确定</button>
+        <div id="hobbyShow3"></div>
+    </div>
+
+    <script type="text/javascript" src="js/util.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/task002_1.js"></script>
+</body>
+</html>

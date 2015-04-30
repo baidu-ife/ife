@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>task002_5</title>
+    <style>
+        *{
+            text-align: center;;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body{
+            margin-top:20px;
+        }
+        .content{
+            margin:20px auto;
+            padding:20px 80px;
+            width: 500px;
+            height: 400px;
+            background: #eee;
+        }
+        .container{
+            width: 202px;
+            height: 400px;
+            background: #fff;
+            border: solid 1px #000;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float:right;
+        }
+        .box{
+            width: 200px;
+            height: 50px;
+            line-height: 50px;;
+            border: solid 1px #000;
+            background: #f00;
+        }
+        .box:hover{
+            background-color: #000;
+            color: #f00;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        可将选中的box拖拽至<strong>目标box的位置</strong>或<strong>容器中所有box的下方</strong>
+        <br/><br/>
+        <small>BUG : 要先选中其文本内容，点住box内文本外才能进行拖拽，<br/>
+            在IE中则要选中文本内容并点住文本内容才能进行拖拽（什么鬼QAQ</small>
+    </div>
+    <div class="content">
+        <div class="container left">
+            <div class="box">box0</div>
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+            <div class="box">box3</div>
+        </div>
+        <div class="container right">
+            <div class="box">box4</div>
+            <div class="box">box5</div>
+            <div class="box">box6</div>
+            <div class="box">box7</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/task002_5.js"></script>
+</body>
+</html>

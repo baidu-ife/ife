@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>task002_4</title>
+    <style>
+        *{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        #search-wrap{
+            margin: 10% auto;
+            width: 600px;
+        }
+        #search{
+            height: 50px;
+            width: 400px;
+        }
+        #hint{
+            width: 500px;
+            border: solid 1px #ddd;
+            visibility:hidden;
+        }
+        div[data-hint-item]{
+            padding: 5px;
+        }
+        .active{
+            background-color: #87cefa;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-wrap">
+        <div>
+            <h2>类百度搜索框，后台开启下可用</h2>
+            <input type="search" id="search"/>
+            <div id="hint"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/task002_4.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>task002_3</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        body{
+            overflow: hidden;
+        }
+        #slide-wrap{
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        .slide-indicator{
+            position: absolute;
+            margin-left: -30%;
+            left: 50%;
+            bottom: 10%;
+            width: 60%;
+            z-index: 9999;
+            text-align: center;
+        }
+        .slide-indicator li{
+            margin: 1px;
+            height: 10px;
+            width: 10px;
+
+            display: inline-block;
+            cursor: pointer;
+            border: solid 1px #000;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+        .active{
+            background-color: #000;
+        }
+
+        .slide-inner{
+            position: relative;
+            width: 100%;
+        }
+        .slide-item{
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+        }
+        .slide-item img{
+            width: 100%;
+        }
+        .current{
+            left: 0;
+        }
+        @keyframes slideToRight {
+            from {left: 0;  top: 0;}
+            to {left: 100%;  top: 0;}
+        }
+        @-webkit-keyframes slideToRight {
+            from {left: 0;  top: 0;}
+            to {left: 100%;  top: 0;}
+        }
+        @keyframes slideToLeft {
+            from {left: 0;  top: 0;}
+            to {left: -100%;  top: 0;}
+        }
+        @-webkit-keyframes slideToLeft {
+            from {left: 0;  top: 0;}
+            to {left: -100%;  top: 0;}
+        }
+        @keyframes slideFromLeft {
+            from {left: -100%;  top: 0;}
+            to {left: 0;  top: 0;}
+        }
+        @-webkit-keyframes slideFromLeft {
+            from {left: -100%;  top: 0;}
+            to {left: 0;  top: 0;}
+        }
+        @keyframes slideFromRight {
+            from {left: 100%;  top: 0;}
+            to {left: 0;  top: 0;}
+        }
+        @-webkit-keyframes slideFromRight {
+            from {left: 100%;  top: 0;}
+            to {left: 0;  top: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div id="slide-wrap">
+        <ol class="slide-indicator">
+            <li data-slide-to="0" class="active"></li>
+            <li data-slide-to="1"></li>
+            <li data-slide-to="2"></li>
+            <li data-slide-to="3"></li>
+            <li data-slide-to="4"></li>
+        </ol>
+        <div class="slide-inner">
+            <div class="slide-item current"><img src="img/s0.png" alt="s0"/></div>
+            <div class="slide-item"><img src="img/s1.png" alt="s1"/></div>
+            <div class="slide-item"><img src="img/s2.png" alt="s2"/></div>
+            <div class="slide-item"><img src="img/s3.png" alt="s3"/></div>
+            <div class="slide-item"><img src="img/s4.png" alt="s4"/></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/task002_3.js"></script>
+</body>
+</html>
