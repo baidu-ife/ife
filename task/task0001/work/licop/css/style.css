@@ -1,0 +1,126 @@
+/*main index file */
+
+/*banner*/
+.banner {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    background: url(../img/banner-bg.jpg) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+#ban-wp {
+    position: relative;
+    height: 580px;
+}
+.block {
+    position: absolute;
+    width: 360px;
+    height: 160px;
+    bottom: 0px;
+    right: 0px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%); 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, .7)), color-stop(75%, rgba(255, 255, 255, .5)), color-stop(100%, rgba(255, 255, 255, 0))); 
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%); 
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%); 
+    background-image: linear-gradient(top, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%); 
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#CCFFFFFF', EndColorStr='#00FFFFFF'); 
+}
+.block dl {
+    padding:10px 10px 30px 10px;
+}
+.block dt {
+    font-size: 14px;
+    color: #fff;
+    margin:0 0 12px 240px;
+}
+.block dd {
+    font-size: 12px;
+    color:#fff;
+    line-height: 150%;
+    text-indent: 2em;
+}
+.main {
+    margin-top: 10px;
+ 
+}
+#main-contain {
+     overflow: hidden;
+}
+.items {
+    width: 320px;
+    float: left;
+    background: #fff;
+    margin: 0 10px 0 0;
+    margin-bottom: -2000px;
+    padding-bottom:2000px;
+    text-align: center;
+}
+
+.items img {
+    margin: 10px auto;
+}
+#items3 {
+    margin-right: 0px;
+
+}
+article {
+    padding: 0 30px 25px 30px; 
+}
+article >p {
+    font-size: 12px;
+    color: #333;
+    text-indent: 2em;
+    line-height: 170%;
+    text-align: left;
+}
+.introduce {
+    background: #fff;
+    margin-top: 116px;
+    padding-bottom: 180px;
+}
+.introduce figure {
+    position: relative;
+    top: -60px;
+    margin: 0 auto;
+    text-align: center;
+}
+.introduce h2 {
+    font-family: 'Century Gothic';
+    font-weight: lighter;
+    color: #333;
+    text-align: center;
+}
+.introduce p {
+     width: 600px;
+     font-size: 14px;
+     color: #333; 
+     margin: 38px auto 0;
+     text-indent: 2em;
+     line-height: 140%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
