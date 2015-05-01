@@ -374,10 +374,15 @@ div#gallery-tab >div:hover {
     vertical-align: middle;
 }
 .rank-type {
-    background-color: purple;
-    border-radius: 50%;
-    width: 20px;
-    color: white;
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-color: #522a5c;
+  border-radius: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
 }
 
 .rank-status-all {
@@ -387,9 +392,9 @@ div#gallery-tab >div:hover {
     border: solid black 1px;
 }
 .rank-status-perct {
-    height: 100%;
-    width: 30%;
-    background-color: purple;
+    display: block;
+    height: 20px;
+    background-color: #522a5c;
 }
 /*about*/
 #about-main {
@@ -473,28 +478,47 @@ footer {
 }
 
 #footer-menu-wrap {
-    position: relative;
-    width: 100%;
-    border-bottom: 1px solid #333;
-}
-
-footer .menu {
+    overflow: hidden;
     height: 35px;
     line-height: 35px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+}
+#footer-menu-wrap>a{
+    height: 35px;
+    padding: 11px 20px;
+    color: #fff;
+    font-size: 14px;
+}
+ ul.foot-list{
+  width: 980px;
+}
+.foot-list>li {
+  float: left;
+  width: 190px;
+}
+.foot-list a {
+  display: block;
+  line-height: 20px;
+  color: #fff;
+  text-decoration: underline;
+  font-size: 12px;
+  font-weight: 400;
+}
+.foot-list h5 {
+  margin-bottom: 15px;
+  color: #666;
 }
 
-footer .menu a {
-    font-size: 14px;
-    padding: 11px 20px;
-}
 
 #copyright {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    width: 980px;
 }
-#copyright span{
+div#copyright>p{
+    margin-bottom: 10px;
+    font-size: 12px;
     color: white;
+    text-align: center;
 }
 
 table#footer-table {

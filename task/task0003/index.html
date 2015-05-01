@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>GTD</title>
+    <link rel="stylesheet" href="./css/index.css" media="all"/>
+</head>
+<body onresize="autosize()">
+    <header>
+        <div id="gtd-banner">
+            <p>GTD Tools</p>
+        </div>
+    </header>
+    <div id="gtd-content">
+        <div id="gtd-side">
+            <div id="gtd-category">
+                <div id="ctg-content">
+                    <div id="ctg-taskAll">
+                        <p>所有任务(<span id="ctg-taskNum"></span>)</p>
+                    </div>
+                    <div id="ctg-listCtg">
+
+                    </div>
+                </div>
+                <div id="ctg-newBtn">
+                    <p>+新增分类</p>
+                </div>
+            </div>
+            <div id="gtd-task">
+                <div id="tsk-content">
+                    <div id="tsk-filter">
+                        <button>all</button>
+                        <button>todo</button>
+                        <button>done</button>
+                    </div>
+                    <div id="tsk-list"></div>
+                </div>
+
+                <div id="tsk-newBtn">
+                    <p>+新增项目</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="gtd-detail">
+            <div>
+                <button id="todo-editBtn">编辑</button>
+                <button id="todo-confirmBtn">确认</button>
+            </div>
+            <div>
+                <input id="todo-title" readonly  class="todo-edit">
+            </div>
+            <div>
+                <input id="todo-time" readonly class="todo-edit">
+            </div>
+            <div>
+                <textarea id="todo-detail" readonly class="todo-edit"></textarea>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="./js/util.js" type="application/javascript"></script>
+    <script src="./js/index.js" type="application/javascript"></script>
+</body>
+</html>

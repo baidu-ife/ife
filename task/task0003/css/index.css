@@ -1,0 +1,154 @@
+/*RESET
+-------------------------------------------------------------- */
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form,ul,li{margin:0;}
+ul { padding:0;}
+ol,li{margin:0; padding:0;}
+table { border-collapse: collapse; border-spacing: 0 }
+fieldset, img { border: 0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal }
+ol, ul { list-style: none }
+del, ins { text-decoration: none }
+caption, th { text-align: left }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal }
+input, button, textarea, select { font-size: 100% ; outline: 0 }
+q:before, q:after { content: '' }
+addr, acronym { border: 0; font-variant: normal }
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sub { top: -0.5em; }
+sup { bottom: -0.25em; }
+/*CLEARFIX
+-------------------------------------------------------------- */
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/*POSITION
+-------------------------------------------------------------- */
+.tl { text-align: left }
+.tc { text-align: center }
+.tr { text-align: right }
+.fl { float: left; display: inline }
+.fr { float: right; display: inline }
+.vm { vertical-align: middle; }
+.pr { position: relative }
+.pa { position: absolute }
+.none { display: none }
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    background-color: #FF6600;
+}
+
+input {
+    /*width: 100%;*/
+}
+
+textarea {
+    /*width: 100%;*/
+}
+#gtd-content {
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+
+#gtd-side {
+    width: 400px;
+    float: left;
+    /*height: 100%;*/
+    /*background-color: blue;*/
+
+}
+#gtd-category {
+    width: 200px;
+    /*height: 100%;*/
+    float: left;
+    /*background-color: blue;*/
+    position: relative;
+}
+#ctg-content {
+    background-color: #CCCCCC;
+
+}
+#ctg-newBtn {
+    background-color: #666666;
+    font-size: 30px;
+    text-align: center;
+
+    /*position: absolute;*/
+    /*bottom: 0px;*/
+    /*vertical-align: bottom;*/
+}
+.ctg-ctgList {
+    font-size: 30px;
+    color: #000000;
+}
+.ctg-taskList>li{
+    /*background-color: #999999;*/
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+
+}
+p.dltBtn {
+    visibility: hidden;
+}
+.ctgP div:hover .dltBtn {
+    visibility: visible;
+}
+#tsk-newBtn {
+    background-color: #666666;
+    /*position: absolute;*/
+    /*bottom: 0px;*/
+    font-size: 30px;
+    text-align: center;
+}
+#gtd-task {
+    height: 100%;
+    background-color: #dddddd;
+}
+
+#tsk-list {
+    color: red;
+    font-size: 25px;
+}
+#gtd-detail {
+    /*height: 100%;*/
+    background-color: #ffffff;
+
+
+}
+
+.todo-edit {
+    visibility: hidden;
+}
+.tsk-todo > li{
+    color: #333333;
+    font-size: 20px;
+    text-align: center;
+
+}
+/*clearfix*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
