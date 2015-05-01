@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![百度Web前端技术学院](asset/github.jpg)
 
 手机访问的同学不要忘记请点击下方的“View all of README.md”查看完整信息。
@@ -276,4 +275,3 @@
 
 关注我们的微信公众号：搜索baidu_ife或扫描下方二维码
 ![二维码](asset/weixin.jpeg)
->>>>>>> 3daf8480a9f9d26202901f8342f38e000fc2ab76

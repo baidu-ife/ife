@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # JavaScript基础
 
 **任务编号**：`TASK 0002`
@@ -1321,4 +1320,3 @@ var suggestData = ['Simon', 'Erik', 'Kener'];
 
 - 初级班同学请在[这里](https://github.com/baidu-ife/ife/issues/766)，按要求回复您的task0002的Github地址。
 - 中级班同学请在[这里](https://github.com/baidu-ife/ife/issues/765)，按要求回复您的task0002的Github地址。
->>>>>>> 3daf8480a9f9d26202901f8342f38e000fc2ab76
