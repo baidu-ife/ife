@@ -14,7 +14,7 @@ function run() {
 			var date = new Date(dateList);
 			var present = new Date();//现在的时间
 
-			if(date >= present) {
+			if(date > present) {
 				var allTime = date - present;
 				var difDay = Math.floor(allTime / (24 * 60 * 60 * 1000));
 				var difHour = Math.floor((allTime - difDay * (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
@@ -23,12 +23,17 @@ function run() {
 				$(".display").innerHTML = "距离" + date.getFullYear() + "年" +
 					(date.getMonth() + 1) + "月" + date.getDate() + "日还有" + difDay + "天" + 
 					difHour + "小时" + difMin + "分" + difSec + "秒";
+			}else if(date == present) {
+				clearInterval(t);
 			}else {
+				clearInterval(t);
 				$(".display").innerHTML = "输入格式不正确，或者输入时间比现在小";
 			}
 		}else {
+			clearInterval(t);
 			$(".display").innerHTML = "输入格式不正确，或者输入时间比现在小";
 		}
+		console.log(1);
 	}, 1000);
 }
 
