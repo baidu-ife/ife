@@ -1,6 +1,9 @@
 * {
 	margin: 0;
 	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 html, body {
 	width: 100%;
@@ -113,6 +116,7 @@ ul {
 	padding: 1%;
 	display: inline-block;
 	font-size: 14px;
+	cursor: pointer;
 }
 .done {
 	color: #337e15;
@@ -143,10 +147,11 @@ ul {
 
 /* TODO CONTENT BEGINS*/
 .edit {
+	height: 89.5%;
 	width: 69.85%;
 }
 #todoTitle {
-	height: 15%;
+	height: 10%;
 	width: 100%;
 	background: #f2f2f2;
 	font-size: 20px;
@@ -154,23 +159,73 @@ ul {
 }
 #todoText {
 	display: inline-block;
-	padding: 15px;
+	padding: 1.5%;
 }
 .todoIcon {
 	cursor: pointer;
 	margin: 10px;
 }
 #taskTime {
-	height: 15%;
+	height: 10%;
 	border-bottom: 1px solid #cecece;
 }
 #taskTime p {
-	padding: 20px;
+	padding: 1.8%;
 }
 #taskContent p {
 	padding: 10px;
 }
 
+/* FORM */
+#todoForm {
+	height: 100%;
+}
+#formTitle, #formTime {
+	display: inline-block;
+	width: 100%;
+	height: 10%;
+	font-size: 25px;
+	padding-left: 10px;
+	border: 0;
+	border-bottom: 1px solid #cecece;
+	color: #ccc;
+}
+#formTitle {
+	width: 80%;
+	background: #f2f2f2;
+}
+#formTitle:focus, #formTime:focus {
+	color: #000;
+}
+#formTime {
+	font-size: 20px;
+}
+#click {
+	display: inline-block;
+	height: 10%;
+	width: 20%;
+	background: #f2f2f2;
+	border-bottom: 1px solid #cecece;
+}
+.formButton {
+	display: inline-block;
+	margin: 5%;
+	padding: 3%;
+	width: 40%;
+	height: 70%;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 20px;
+	border: 1px solid #ccc;
+}
+#formContent {
+	width: 100%;
+	height: 80%;
+	padding: 10px;
+	font-size: 20px;
+	border: 0;
+}
 .clear {
 	clear: both;
 }

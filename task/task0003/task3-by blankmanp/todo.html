@@ -37,9 +37,9 @@
 		<div class="menu subMenu pullLeft">
 			<div class="menuContent" id="subMenuContent">
 				<div id="subTitle">
-					<p class="subMenuTitle choosen">所有</p>
-					<p class="subMenuTitle">未完成</p>
-					<p class="subMenuTitle">完成</p>
+					<p class="subMenuTitle choosen" id="all">所有</p>
+					<p class="subMenuTitle" id="notdone">未完成</p>
+					<p class="subMenuTitle" id="done">完成</p>
 				</div>
 				<div class="todolist">
 					<div id="task20150429">
@@ -48,14 +48,14 @@
 						</div>
 						<div class="task">
 							<ul class="todotask">
-								<li class="done">
+								<li class="todotaskLi done">
 									<p>todo 1</p>
 								</li>
-								<li class="">
+								<li class="todotaskLi">
 									<p>todo 2</p>
 								</li>
-								<li>
-									<p class="todochoosen">todo 3</p>
+								<li class="todotaskLi todochoosen">
+									<p>todo 3</p>
 								</li>
 							</ul>
 						</div>
@@ -77,6 +77,15 @@
 			</div>
 			<div class="time" id="taskTime"><p>任务日期：<span>2015-04-29</span></p></div>
 			<div id="taskContent"><p>完成前端编码。</p></div>
+			<!--form id="todoForm">
+				<input type="text" id="formTitle" value="请输入标题" />
+				<span class="pullRight" id="click">
+					<button class="formButton" id="buttonSave" type="submit">Save</button>
+					<button class="formButton pullRight" id="buttonDelete">Delete</button>
+				</span>
+				<input type="text" class="time" id="formTime" value="请输入时间" />
+				<textarea name="" id="formContent" cols="30" rows="10"></textarea>
+			</form-->
 		</div>
 		<div class="clear"></div>
 	</div>
