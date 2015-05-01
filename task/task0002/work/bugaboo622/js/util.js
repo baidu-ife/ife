@@ -6,26 +6,24 @@ function isArray(arr){
 }
 // 判断fn是否为一个函数，返回一个bool值
 function isFunction(fn) {
-    if(typeof(fn)=="function"){
-    	return true;
-    }else{
-    	return false;
-    }
+    return typeof(fn)=="function";
 }
 // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
 // 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
 function cloneObject(obj){
-  if(typeof(obj)!="object"||obj===null)return obj;
-    var o= obj instanceof(Array)?[]:{};
+  if(typeof(obj)!="object"||obj===null){
+        return obj;
+    }
+    var clone= obj instanceof(Array)?[]:{};
     for(var i in obj){
       if(typeof(obj[i])=="object" && obj[i]!=null){
-        o[i]=arguments.callee(obj[i]);
+        clone[i]=arguments.callee(obj[i]);
       }
       else{
-        o[i]=obj[i];
+        clone[i]=obj[i];
       }
     }
-    return o;
+    return clone;
 }
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr) {
@@ -205,6 +203,39 @@ function addEnterEvent(element, listener) {
         });
     }
 }
+// 把上面几个函数和$做一下结合，把他们变成$对象的一些方法
+$.on = addEvent;
+$.un = removeEvent;
+$.click = addClickEvent;
+$.enter = addEnterEvent;
+
+function delegateEvent(element, tag, eventName, listener) { 
+    addEvent(element, eventName, function(event) {
+        var e = event || window.event;
+        var target = event.target || event.srcElement;
+        if (target.nodeName.toLowerCase() == tag.toLowerCase()) {
+            listener(e);
+        }
+    });
+}
+$.delegate = delegateEvent;
+//估计有同学已经开始吐槽了，函数里面一堆$看着晕啊，那么接下来把我们的事件函数做如下封装改变：
+$.on = function (selector, event, listener) {
+    addEvent($(selector), event, listener);
+};
+
+$.click = function (selector,listener) {
+    addClickEvent($(selector),listener);
+} 
+$.un = function (selector, event, listener) {
+    removeEvent($(selector), event, listener);
+}
+
+$.delegate = function (selector, tag, eventName, listener) {
+    delegateEvent($(selector), tag, eventName, listener);
+}
+
+
 //=========5. BOM=================
 // 判断是否为IE浏览器，返回-1或者版本号
 function isIE () {
