@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="./css/app.css">
+    <!--[if lt ie 9]>
+	    <script src="./js/lib/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header class="web-hd">
+		GTD Tools
+	</header>
+
+	<div class="web-bd">
+		<!-- 左侧 -->
+		<div class="category-list">
+			<header class="hd">
+				所有任务 (<span class="num">0</span>)
+			</header>
+			<section class="bd">
+				<h4 class="title">分类列表</h4>
+				<ul class="categorys">
+					<li class="level level-1 has-sub-category z-open">
+						<a class="category-name">百度ife项目 (<span class="num">2</span>)</a>
+						<ul class="sub-category z-hide1">
+							<li class="level level-2 z-active">
+								<a class="category-name" href="">task1 (<span class="num">6</span>)</a>
+							</li>
+							<li class="level level-2">
+								<a class="category-name" href="">task2 (<span class="num">3</span>)</a>
+							</li>
+						</ul>
+					</li>
+					<li class="level level-1">
+						<a class="category-name">毕业设计 (<span class="num">1</span>)</a>
+					</li>
+					<!-- 默认分类不支持添加子级分类也不能删除这个分类 -->
+					<li class="level level-1 z-active">
+						<a class="category-name">默认分类 (<span class="num">0</span>)</a>
+					</li>
+				</ul>
+			</section>
+			<footer class="ft">
+				<a href="" class="btn add-category">
+					<i class="icon icon-add">+</i>
+					新增分类
+				</a>
+			</footer>
+		</div>
+
+		<!-- 中间 -->
+		<div class="task-list">
+			<header class="hd">
+				<ul class="task-status-nav inline">
+					<li class="inline-item all z-active"><a href="">所有</a></li>
+					<li class="inline-item undone"><a href="">未完成</a></li>
+					<li class="inline-item done"><a href="">已完成</a></li>
+				</ul>
+			</header>
+			<section class="bd">
+				<section class="time-node">
+					<p class="title">2015-04-28</p>
+					<a href="" class="item done">td do 1</a>
+					<a href="" class="item">td do 2</a>
+				</section>
+				<section class="time-node">
+					<p class="title">2015-04-28</p>
+					<a href="" class="item">td do 3</a>
+					<a href="" class="item">td do 4</a>
+				</section>
+			</section>
+			<footer class="ft">
+				<a href="" class="btn add-category">
+					<i class="icon icon-add">+</i>
+					新增任务
+				</a>
+			</footer>
+		</div>
+
+		<!-- 右侧 -->
+		<div class="task-info">
+			<div class="detail-bd z-hide">
+				<header class="hd">
+					<h4>to-do 6</h4>
+					<div class="operates">
+						<a href="" class="icon icon-done btn btn-done"></a>
+						<a href="" class="icon icon-edit btn btn-edit"></a>
+					</div>
+				</header>
+				<div class="task-time">
+					任务时间：<span class="time">2015-04-23</span>
+				</div>
+				<div class="bd">
+					<article class="content">
+						完成任务的编码工作
+					</article>
+				</div>
+			</div>
+
+			<div class="edit-bd">
+				<header class="hd">
+					<input type="text" name="" placeholder="输入标题" id="taskHeader">
+					<div class="operates">
+						<a href="" class="btn btn-sure">确认</a>
+						<a href="" class="btn btn-cancel">取消</a>
+					</div>
+				</header>
+				<div class="task-time">
+					任务时间：<input type="text" placeholder="日期格式：2015-04-02" name="" id="">
+				</div>
+				<div class="bd">
+					<div class="content">
+						<textarea name="" id="taskContent" cols="30" rows="10"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 弹窗 -->
+
+    <script src="./js/lib/util.js"></script>
+</body>
+</html>
