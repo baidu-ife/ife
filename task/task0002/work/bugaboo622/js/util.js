@@ -58,10 +58,9 @@ function trim(str) {
 }
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn){
+    var i;
   for(var i=0;i<arr.length;i++){
-    item=arr[i];
-    index=i;   
-    fn(item,index);
+    fn.call(null,arr[i],i);
   }
 } 
 // 获取一个对象里面第一层元素的数量，返回一个整数
