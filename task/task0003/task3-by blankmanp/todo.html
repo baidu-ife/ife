@@ -1,94 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Tasks</title>
-	<link rel="stylesheet" href="todo.css" />
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="todo.css" />
 </head>
 <body>
-	<div class="container">
-		<div class="title">
-			<div class="titleContent">GTD Tools</div>
-		</div>
-		<div class="menu supMenu pullLeft">
-			<div class="menuContent" id="supMenuContent">
-				<div id="supTitle">
-					<p class="menuTitle">所有任务  <span id="tasksNum">(11)</span></p>
-				</div>
-				<div id="supClass">
-					<p class="menuTitle">分类列表</p>
-					<div id="classContent">
-						<ul id="taskClass">
-							<ul class='taskUl' id="task0" delete='0'>
-								<li class="taskList"><p>默认分类  </p><span class="taskNum" id="taskNum0">(0)</span><span class="pullRight menuDelete" style="display:none"><b>X</b></span></li>
-							</ul>
-							<div class="clear"></div>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="add" id="addClass">
-				<ul>
-					<li class="addIcon">+</li>
-					<li class="addContent">增加分类</li>
-				</ul>
-			</div>
-		</div>
-		<div class="menu subMenu pullLeft">
-			<div class="menuContent" id="subMenuContent">
-				<div id="subTitle">
-					<p class="subMenuTitle choosen" id="all">所有</p>
-					<p class="subMenuTitle" id="notdone">未完成</p>
-					<p class="subMenuTitle" id="done">完成</p>
-				</div>
-				<div class="todolist">
-					<div id="task20150429">
-						<div class="time todotime" id="">
-							<p>2015-04-29</p>
-						</div>
-						<div class="task">
-							<ul class="todotask">
-								<li class="todotaskLi done">
-									<p>todo 1</p>
-								</li>
-								<li class="todotaskLi">
-									<p>todo 2</p>
-								</li>
-								<li class="todotaskLi todochoosen">
-									<p>todo 3</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="add" id="addTask">
-				<ul>
-					<li class="addIcon">+</li>
-					<li class="addContent">增加任务</li>
-				</ul>
-			</div>
-		</div>
-		<div class="edit content pullLeft">
-			<div id="todoTitle">
-				<p id="todoText">to-do 4</p>
-				<span class="todoIcon pullRight" id="todoEdit"><img src="img/edit.png" alt="edit"></span>
-				<span class="todoIcon pullRight" id="todoDone"><img src="img/finish.png" alt="done"></span>
-			</div>
-			<div class="time" id="taskTime"><p>任务日期：<span>2015-04-29</span></p></div>
-			<div id="taskContent"><p>完成前端编码。</p></div>
-			<!--form id="todoForm">
-				<input type="text" id="formTitle" value="请输入标题" />
-				<span class="pullRight" id="click">
-					<button class="formButton" id="buttonSave" type="submit">Save</button>
-					<button class="formButton pullRight" id="buttonDelete">Delete</button>
-				</span>
-				<input type="text" class="time" id="formTime" value="请输入时间" />
-				<textarea name="" id="formContent" cols="30" rows="10"></textarea>
-			</form-->
-		</div>
-		<div class="clear"></div>
-	</div>
+    <div class="blacker pop" style="display: none;"></div>
+    <div class="container">
+        <div class="title">
+            <div class="titleContent">GTD Tools</div>
+        </div>
+        <div class="menu supMenu pullLeft">
+            <div class="menuContent" id="supMenuContent">
+                <div id="supTitle">
+                    <p class="menuTitle">所有任务  <span id="tasksNum">(11)</span></p>
+                </div>
+                <div id="supClass">
+                    <p class="menuTitle">分类列表</p>
+                    <div id="classContent">
+                        <ul id="taskClass"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="add" id="addClass">
+                <ul>
+                    <li class="addIcon">+</li>
+                    <li class="addContent">增加分类</li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu subMenu pullLeft">
+            <div class="menuContent" id="subMenuContent">
+                <div id="subTitle">
+                    <p class="subMenuTitle choosen" id="all">所有</p>
+                    <p class="subMenuTitle" id="notdone">未完成</p>
+                    <p class="subMenuTitle" id="done">完成</p>
+                </div>
+                <div id="todolist"></div>
+            </div>
+            <div class="add" id="addTask">
+                <ul>
+                    <li class="addIcon">+</li>
+                    <li class="addContent">增加任务</li>
+                </ul>
+            </div>
+        </div>
+        <div class="edit content pullLeft">
+            <div id="todoTitle">
+                <p id="todoText"></p>
+                <span class="todoIcon pullRight" id="todoEdit"><img src="img/edit.png" alt="edit"></span>
+                <span class="todoIcon pullRight" id="todoDone"><img src="img/finish.png" alt="done"></span>
+            </div>
+            <div class="time" id="taskTime"><p><span></span></p></div>
+            <div id="taskContent"><p></p></div>
+            <!--form id="todoForm">
+                <input type="text" id="formTitle" value="请输入标题" />
+                <span class="pullRight" id="click">
+                    <button class="formButton" id="buttonSave" type="submit">Save</button>
+                    <button class="formButton pullRight" id="buttonDelete">Delete</button>
+                </span>
+                <input type="text" class="time" id="formTime" value="请输入时间" />
+                <textarea name="" id="formContent" cols="30" rows="10"></textarea>
+            </form-->
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="pop popbox" style="display: none;">
+        <form id="addForm">
+            <div class="addInput">
+            	<label for="addTitle" class="formLabel">Please enter class title:</label>
+                <input type="text" id="addTitle" name="addTitle" class="formInput" />
+            </div>
+            <div class="addInput pullRight">
+            	<label for="subClass" class="formLabel">subClass</label>
+            	<input type="checkbox" class="formCheckbox" id="subClass" />
+            </div>
+            <div class="addButton">
+            	<a class="button" id="addConfirm">Confirm</a>
+            	<a class="button" id="addClose">Close</a>
+            </div>
+        </form>
+    </div>
 </body>
 <script type="text/javascript" src="todo.js"></script>
 </html>
