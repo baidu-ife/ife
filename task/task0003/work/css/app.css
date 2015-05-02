@@ -300,11 +300,10 @@ textarea {
 .icon-add {
   font-size: 36px;
   font-weight: bold;
-  height: 20px;
+  height: auto;
   width: 20px;
   text-align: center;
   margin-right: 10px;
-  line-height: 10px;
   background-image: none;
 }
 
