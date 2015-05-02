@@ -298,9 +298,9 @@ function $(selector) {
 
                 for (var j = 0; j<arr2.length; j++) {
                     //返回第一个符合条件的元素
-                    if (arr2[j] === oClass);
-
+                    if (arr2[j] === oClass) {
                         return aElem[i];
+                    }
                 }
             }
             
