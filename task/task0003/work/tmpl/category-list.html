@@ -1,0 +1,39 @@
+<!-- @view category-list -->
+<div class="category-list">
+    <header class="hd">
+        所有任务 (<span class="num">0</span>)
+    </header>
+    <section class="bd">
+        <h4 class="title">分类列表</h4>
+        <ul class="categorys">
+            <!-- @insert-view category-item -->
+            
+            <!-- 默认分类不支持添加子级分类也不能删除这个分类 -->
+            <li class="level level-1 z-active">
+                <a class="category-name">默认分类 (<span class="num">0</span>)</a>
+            </li>
+        </ul>
+    </section>
+    <footer class="ft">
+        <a href="" class="btn add-category">
+            <i class="icon icon-add">+</i>
+            新增分类
+        </a>
+    </footer>
+</div>
+
+<!-- @view category-item -->
+<li class="level level-1">
+    <a class="category-name">毕业设计 (<span class="num">1</span>)</a>
+</li>
+<li class="level level-1 has-sub-category z-open">
+    <a class="category-name">百度ife项目 (<span class="num">2</span>)</a>
+    <ul class="sub-category z-hide1">
+        <li class="level level-2 z-active">
+            <a class="category-name" href="">task1 (<span class="num">6</span>)</a>
+        </li>
+        <li class="level level-2">
+            <a class="category-name" href="">task2 (<span class="num">3</span>)</a>
+        </li>
+    </ul>
+</li>

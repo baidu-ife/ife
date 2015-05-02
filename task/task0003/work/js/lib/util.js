@@ -562,14 +562,11 @@ function ajax (url,options) {
 }
 
 // 扩展对象
-function extend(oldObj,tarObj) {
-    var res=cloneObject(tarObj);
-    for(var prop in oldObj){
-        if(oldObj.hasOwnProperty(prop)){
-            if(typeof tarObj[prop] === "undefined"){
-                res[prop]=oldObj[prop];
-            }
+$.extend=function (oldObj,tarObj) {
+    var temp=cloneObject(tarObj);
+    for(var prop in temp){
+        if(temp.hasOwnProperty(prop)){
+            oldObj[prop]=temp[prop];
         }
     }
-    return res;
 };

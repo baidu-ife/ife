@@ -218,6 +218,8 @@ th {
 html,
 body {
   height: 100%;
+  min-width: 768px;
+  overflow-x: auto
 }
 
 body {
@@ -535,6 +537,7 @@ textarea {
 .task-info .task-time {
   background-color: #fafaee;
   font-size: 16px;
+  padding-right: 15px;
 }
 
 .task-info .operates :first-child {
