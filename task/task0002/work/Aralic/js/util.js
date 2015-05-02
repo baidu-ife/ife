@@ -284,23 +284,28 @@ function $(selector) {
     //获取class元素，兼容ie低版本,返回第一个符合条件
     //三个参数，1、父级 2、class名 3、标签名
     function getClass(oParent,oClass,tagName) {
-        tagName = tagName || '*';
-        //得到所有的tagName标签元素
+        tagName = tagName || "*";
         var aElem = oParent.getElementsByTagName(tagName);
         var arr = [];
 
         for (var i = 0; i<aElem.length; i++) {
-            //对每个元素的class名进行处理
-            var classNames = trim(aElem[i].className);
-            var arr2 = classNames.split(/\s+/);
+            
+            if (aElem[i].className) {
+                //对每个元素的class名进行处理
+                var classNames = trim(aElem[i].className);
+                         
+                var arr2 = classNames.split(/\s+/);
 
-            for (var j = 0; j<arr2.length; j++) {
-                //返回第一个符合条件的元素
-                if (arr2[j] == oClass);
-                    return aElem[i];
+                for (var j = 0; j<arr2.length; j++) {
+                    //返回第一个符合条件的元素
+                    if (arr2[j] === oClass);
+
+                        return aElem[i];
+                }
             }
+            
         }
-        
+        return '';
     }
 
 }
