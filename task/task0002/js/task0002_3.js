@@ -11,7 +11,7 @@ for(var i = 0, len = picList.length;i < len;i++) {
 	dot.style.height = 10;
 	dot.style.width = 10;
 	dot.style.border = "1px solid #fff";
-	dot.style.borderRadius = 10;
+	//dot.style.borderRadius = 10;无法使用
 	dot.style.marginRight = 10;
 	dot.style.cursor = "pointer";
 	dots.appendChild(dot);
