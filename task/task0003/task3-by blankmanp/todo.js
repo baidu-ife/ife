@@ -2,11 +2,24 @@
     //全局变量:
     var g = {
         storage: {
-        	file: {0: '默认分类'},
-            task: {'默认分类': ['task1', 'task2', 'task3']},
-            todo: {'默认分类': {'task1': ['todo120120301', 'todo220120301', 'todo320140301'],
-            					'task2': ['todo120120401', 'test20130201'],
-            					'task3': ['todo320150501']}}
+        	file: {0: '默认分类', 1: 'test'},
+            task: {'默认分类': [], 'test': ['task1', 'task2', 'task3']},
+            todo: {'默认分类': {},
+            		'test': {'task1': ['todo120120301', 'todo220120301', 'todo320140301'],
+            					'task2': ['todo120120401', 'test20120301'],
+            					'task3': ['todo320150501']}
+            	  }
+        },
+        toLocal: function(name, json) {
+        	json = JSON.stringify(json);
+        	localStorage.setItem(name, json);
+        },
+        fromLocal: function() {
+        	for (var name in g.storage) {
+	        	var json = localStorage.getItem(name);
+	        	json = JSON.parse(json);
+	        	this.storage[name] = json;
+	        }
         },
         att: function(element, name, value) {
             if (!value)
@@ -144,40 +157,57 @@
                     str = [],
                     ul = document.getElementsByClassName("taskUl"),
                     choosen = document.getElementsByClassName("choosen")[0];
-            	if (text == "all") {
-            		alert("can't name with 'all'!");
-            	}
-            	else {
-	                if (!document.getElementById("subClass").checked) {
-	                    str.push("<ul class='taskUl' id='task" + ul.length + "' delete='1'>");
-	                    str.push("<li class='titleli taskList'>");
-	                    str.push("<img src='img/file.png' />")
-	                    str.push("<p>" + text + "</p>");
-	                    str.push("<span class='taskNum' id='taskNum" + ul.length + "'>(0)</span>");
-	                    str.push("<span class='pullRight menuDelete' style='display:none'><b>X</b></span>");
-	                    str.push("</li>");
-	                    str.push("</ul>");
-	                    str = str.join("");
-	                    ul[0].parentNode.innerHTML += str;
-	                    g.storage.task[text] = new Array();
-	                    task.showDelete();
-	                }
-	                else {
+                if (!document.getElementById("subClass").checked) {
+                	var i = 0;
+                    for (var val in g.storage.file) {
+                    	if (g.storage.file[val] == text) {
+                    		alert("The name is used!");
+                    		return false;
+                    	}
+                    	if (g.storage.file.hasOwnProperty(val)) {
+                    		i ++;
+                    	}
+                    }
+                    g.storage.file[i] = text;
+                    str.push("<ul class='taskUl' id='task" + ul.length + "' delete='1'>");
+                    str.push("<li class='titleli taskList'>");
+                    str.push("<img src='img/file.png' />")
+                    str.push("<p>" + text + "</p>");
+                    str.push("<span class='taskNum' id='taskNum" + ul.length + "'>(0)</span>");
+                    str.push("<span class='pullRight menuDelete' style='display:none'><b>X</b></span>");
+                    str.push("</li>");
+                    str.push("</ul>");
+                    str = str.join("");
+                    ul[0].parentNode.innerHTML += str;
+                }
+                else {
+                	if (g.att(choosen, 'add') != 0) {
 	                	var ulnum = choosen.parentNode.id.slice(4),
 	                	    num = g.DOM.siblings(choosen).length;
-	                	str.push("<li class='titleli subTaskList'>");
+	                	    f = g.att(choosen, 'f');
+	                    for (var i = 0; i < g.storage.task[f].length; i ++) {
+	                    	if (g.storage.task[f][i] == text) {
+	                    		alert("The name is used!");
+	                    		return false;
+	                    	}
+	                    }
+	                    g.storage.task[f].push(text);
+	                    g.storage.todo[f][text] = new Array();
+	                	str.push("<li class='titleli subTaskList' f='" + f + "' t='" + text + "'>");
 	                    str.push("<img src='img/subfile.png' />")
 	                    str.push("<p>" + text + "</p>");
 	                    str.push("<span class='taskNum' id='taskNum" + ulnum + "_" + num + "'>(0)</span>");
-	                    str.push("<span class='pullRight menuDelete' style='display:none'><b>X</b></span>");
 	                    str.push("</li>");
 	                    str = str.join("");
 	                    ul[ulnum].innerHTML += str;
-
-	                }
+                	}
+                	else {
+                		alert("Can't add task to this class!")
+                	}
 	            }
 	        g.UI.hide(document.getElementsByClassName("pop"));
 	        task.classChoosen();
+	        task.showDelete();
             }
             document.getElementById("addClose").onclick = function() {
                 g.UI.hide(document.getElementsByClassName("pop"));
@@ -199,14 +229,18 @@
             edit.view();
             document.getElementById("buttonSave").onclick = function() {
             	edit.saveEdit();
+            	return false;
             }
         }
     };
     Task.prototype.taskDone = function() {
         var todoDone = document.getElementById("todoDone");
         todoDone.onclick = function() {
+        	console.log("HI")
             var choosen = document.getElementsByClassName("todochoosen")[0];
-            g.DOM.addClass(choosen, "done");
+            if (choosen) {
+           		g.DOM.addClass(choosen, "done");
+            }
         }
     };
     Task.prototype.classChoosen = function() {
@@ -233,7 +267,7 @@
             	g.DOM.removeClass(document.getElementsByClassName("todotaskLi"), "todochoosen");
                 g.DOM.addClass(this, "todochoosen");
                 var time = g.att(this, "time");
-                var title = g.att(this, "t");
+                var title = g.att(this, "todo");
                 document.getElementById("todoText").innerHTML = title;
                 document.getElementById("taskTime").innerHTML = "<p>任务日期：<span>" + time + "</span></p>";
             }
@@ -274,6 +308,9 @@
     		if (f == "默认分类") {
     			str.push("delete=0 add=0");
     		}
+    		else {
+    			str.push("delete=1 add=1")
+    		}
     		str.push(">");
             str.push('<li class="titleli taskList ');
             if (f == "默认分类") {
@@ -289,7 +326,6 @@
 	            	str.push('<li class="titleli subTaskList" f="' + f + '" t="' + t[j] + '">');
 	            	str.push('<img src="img/subfile.png" /><p>' + t[j] + '  </p>');
 	            	str.push('<span class="taskNum" id="taskNum' + i + '_' + j + '">(0)</span>');
-	            	str.push('<span class="pullRight menuDelete" style="display:none"><b>X</b></span>');
 	            	str.push('</li>');
 	            }
 	        };
@@ -297,18 +333,19 @@
             htmlstr = str.join("");
             document.getElementById("taskClass").innerHTML += htmlstr;
             str = [];
-            task.initTodo(f);
+            task.initTodo(g.storage.file['0']);
             i ++;
     	}
     };
     Task.prototype.initTodo = function(f, t) {
-    	var time = [], todo = [];
+    	var time = [], todo = [], d = [];
     	if (!t) {
     		for (var val in g.storage.todo[f]) {
     			var a = g.storage.todo[f];
     			for (var i = 0; i < a[val].length; i ++) {
     				var b = a[val][i].slice(-8),
     				    c = a[val][i].slice(0, -8);
+    				d.push([a[val][i], val]);
     				if (time.length != 0) {
     					for (var j = 0; j < time.length; j ++) {
     						if (time[j] == b) {
@@ -364,19 +401,28 @@
     		time[i] = temp[i][0];
     		todo[i] = temp[i][1];
     	}
-    	var str = [];
+    	var str = [], timeTemp = [];
     	for (var i = 0; i < time.length; i ++) {
-    	str.push('<div id="task' + time[i] + '">');
-    		time[i] = time[i].split("");
-    		time[i].splice(4, 0, '-');
-    		time[i].splice(7, 0, '-');
-    		time[i] = time[i].join("");
-    		str.push('<div class="time todotime"><p>' + time[i] + '</p></div>')
+    		str.push('<div id="task' + time[i] + '">');
+    		timeTemp[i] = time[i].split("");
+    		timeTemp[i].splice(4, 0, '-');
+    		timeTemp[i].splice(7, 0, '-');
+    		timeTemp[i] = timeTemp[i].join("");
+    		str.push('<div class="time todotime"><p>' + timeTemp[i] + '</p></div>')
     		str.push('<div class="task">');
     		str.push('<ul class="todotask">');
     		var temp = todo[i].split(" ");
     		for (var j = 0; j < temp.length; j ++) {
-    			str.push('<li class="todotaskLi" f="' + f + '"t="' + temp[j] + '"time="' + time[i] + '"><p>' + temp[j] + '</p></li>')
+    			str.push('<li class="todotaskLi" f="' + f + '"todo="' + temp[j] + '"time="' + timeTemp[i])
+    			if (t) {
+    				str.push('" t="' + t + '"><p>' + temp[j] + '</p></li>');
+    			}
+    			else {
+    				for (var k = 0; k < d.length; k ++) {
+    					if (temp[j] + time[i] == d[k][0])
+    						str.push('" t="' + d[k][1] + '"><p>' + temp[j] + '</p></li>');
+    				}
+    			}
     		}
     		str.push("</ul></div></div>")
     	}
@@ -392,8 +438,8 @@
         str.push('<form id="todoForm">');
         str.push('<input type="text" id="formTitle" value="请输入标题" />');
         str.push('<span class="pullRight" id="click">')
-        str.push('<button class="formButton" id="buttonSave" type="submit">save</button>')
-        str.push('<button class="formButton pullRight" id="buttonDelete">Undo</button></span>');
+        str.push('<a class="formButton" id="buttonSave">save</a>')
+        str.push('<a class="formButton pullRight" id="buttonDelete">Undo</a></span>');
         str.push('<input type="date" class="time" id="formTime" value="年-月-日" />');
         str.push('<textarea id="formContent" cols="30" rows="10"></textarea>');
         str.push('</from>');
@@ -405,6 +451,8 @@
     };
     Edit.prototype.undo = function() {
         document.getElementsByClassName("edit")[0].innerHTML = this.normal;
+        document.getElementById("todoText").innerHTML = g.att(document.getElementsByClassName("todochoosen")[0], 'todo');
+        document.getElementById("taskTime").innerHTML = "<p>任务日期：<span>" + g.att(document.getElementsByClassName("todochoosen")[0], "time") + "</span></p>";
         task.editTask();
     };
     Edit.prototype.saveEdit = function() {
@@ -412,11 +460,37 @@
             time = document.getElementById("formTime").value,
             content = document.getElementById("formContent").value,
             choosen = document.getElementsByClassName("todochoosen")[0],
+            timeBefore = g.att(choosen, "time"),
             reg = /\d+/g,
-            year = reg.exec(time),
-            mouth = reg.exec(time),
-            day = reg.exec(time);
-        g.DOM.removeNode(choosen);
+            temp,
+            result = [];
+        if (!title) {
+        	alert("Please enter title");
+        	return false;
+        }
+        else if (!time) {
+        	alert("Please enter time");
+        	return false;
+        }
+        else if (!(/\d{4}-\d{2}-\d{2}/.test(time))) {
+        	alert("The time is wrong");
+        	return false;
+        }
+        while ((temp = reg.exec(time)) != null) {
+           	result.push(temp);
+        }
+        var todo = title + result[0] + result[1] + result[2], t = g.att(choosen, 't'), f = g.att(choosen, 'f'), titleBefore = g.att(choosen, "todo");
+        result = [];
+        while ((temp = reg.exec(timeBefore)) != null) {
+        	result.push(temp);
+        }
+        var todoBefore = titleBefore + result[0] + result[1] + result[2];
+        for (var i = 0; i < g.storage.todo[f][t].length; i ++) {
+        	if (g.storage.todo[f][t][i] == todoBefore)
+        		g.storage.todo[f][t][i] = todo;
+        }
+        task.initTodo(f, t);
+        document.getElementsByClassName("edit")[0].innerHTML = this.normal;
     };
     Edit.prototype.saveAdd = function() {
     };
