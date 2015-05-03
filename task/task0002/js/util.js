@@ -197,7 +197,13 @@ function $(select) {
 
 // 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
-	element.addEventListener(event, listener, false);
+	if (element.addEventListener) {
+		element.addEventListener(event, listener, false);
+	} else if (element.attachEvent) {
+		element.attachEvent("on" + event, listener);
+	} else {
+		element["on" + type] = listener;
+	}
 }
 
 // 移除element对象对于event事件发生时执行listener的响应
