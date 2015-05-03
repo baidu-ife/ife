@@ -154,54 +154,107 @@ function $(selector) {
         //1.如果存在#，直接从#开始向后查
         //2.如果存在tag直接找到所有的tag然后向后查
         //3.样式类，属性，从后向前查，得到它所有的父节点名称，去筛选匹配
-        
-        
-    } else { //只有一个，直接查询
-        var signal = selector[0]; //
-        var allElements = null;
+        //以上的做法有点太复杂，我还是做一个简单的正向匹配吧。
+
+        var rootScope = myQuery(selectorArr[0]); //第一次的查找范围
         var i = null;
-        var content = selector.substr(1);
-        var currAttr = null;
-        switch (signal) {
-            case "#":
-                return document.getElementById(content);
-            case ".":
-                allElements = document.getElementsByTagName("*");
-                for (i = 0; i < allElements.length; i++) {
-                    currAttr = allElements[i].getAttribute("class");
-                    if (currAttr !== null && currAttr.search(content) != -1) {
-                        return allElements[i];
-                    }
-                }
-                break;
-            case "[": //属性选择
-                if (content.search("=") == -1) { //只有属性，没有值
-                    allElements = document.getElementsByTagName("*");
-                    for (i = 0; i < allElements.length; i++) {
-                        if (allElements[i].getAttribute(selector.slice(1, -1)) !== null) {
-                            return allElements[i];
-                        }
-                    }
-                } else { //既有属性，又有值
-                    allElements = document.getElementsByTagName("*");
-                    var pattern = /\[(\w+)\s*\=\s*(\w+)\]/;
-                    var result = selector.match(pattern);
-                    var key = result[1];
-                    var value = result[2];
-                    for (i = 0; i < allElements.length; i++) {
-                        if (allElements[i].getAttribute(key) == value) {
-                            return allElements[i];
-                        }
-                    }
-                }
-                break;
-            default: //tag
-                console.log("in");
-                return document.getElementsByTagName(selector)[0];
+        var j = null;
+        var result = [];
+        //循环选择器中的每一个元素
+        for (i = 1; i < selectorArr.length; i++) {
+            for (j = 0; j < rootScope.length; j++) {
+                result.push(myQuery(selectorArr[i], rootScope[j]));
+            }
+            // rootScope = result;
+            // 目前这个方法还有bug
         }
+        return result[0][0];
+    } else { //只有一个，直接查询
+        return myQuery(selector, document)[0];
     }
 }
-console.log($("#div1").getElementsByTagName('div'));
+
+/**
+ * 针对一个内容查找结果 success
+ * @param  {String} selector 选择器内容
+ * @param  {Element} root    根节点元素
+ * @return {NodeList数组}    节点列表，可能是多个节点也可能是一个
+ */
+function myQuery(selector, root) {
+    var signal = selector[0]; //
+    var allChildren = null;
+    var content = selector.substr(1);
+    var currAttr = null;
+    var result = [];
+    root = root || document; //若没有给root，赋值document
+    switch (signal) {
+        case "#":
+            result.push(document.getElementById(content));
+            break;
+        case ".":
+            allChildren = root.getElementsByTagName("*");
+            // var pattern0 = new RegExp("\\b" + content + "\\b");
+            for (i = 0; i < allChildren.length; i++) {
+                currAttr = allChildren[i].getAttribute("class");
+                if (currAttr !== null) {
+                var currAttrsArr = currAttr.split(/\s+/);
+                    console.log(currAttr);
+                    for (j = 0; j < currAttrsArr.length; j++) {
+                        if (content === currAttrsArr[j]) {
+                            result.push(allChildren[i]);
+                            console.log(result);
+                        }
+                    }
+                }
+            }
+            break;
+        case "[": //属性选择
+            if (content.search("=") == -1) { //只有属性，没有值
+                allChildren = root.getElementsByTagName("*");
+                for (i = 0; i < allChildren.length; i++) {
+                    if (allChildren[i].getAttribute(selector.slice(1, -1)) !== null) {
+                        result.push(allChildren[i]);
+                    }
+                }
+            } else { //既有属性，又有值
+                allChildren = root.getElementsByTagName("*");
+                var pattern = /\[(\w+)\s*\=\s*(\w+)\]/; //为了分离等号前后的内容
+                var cut = selector.match(pattern); //分离后的结果，为数组
+                var key = cut[1]; //键
+                var value = cut[2]; //值
+                for (i = 0; i < allChildren.length; i++) {
+                    if (allChildren[i].getAttribute(key) == value) {
+                        result.push(allChildren[i]);
+                    }
+                }
+            }
+            break;
+        default: //tag
+            result = root.getElementsByTagName(selector);
+            break;
+    }
+    return result;
+}
+
+// console.log(myQuery("[gao]"));
+
+var bo = /\bclass2\b[^\-]/.test("class2 class1");
+console.log(bo);
+
+
+console.log("只有一个，直接查询-----");
+console.log($("#div1"));
+console.log("只有一个，直接查询-----");
+console.log('$("#div1 .class2-1")----两个元素----');
+// console.log($("#div1 .class2-1"));
+$("#div1 .class2-1").innerHTML = "abc";
+console.log('$("#div1 .class2-1")----两个元素----');
+
+$("#ul1 .first").innerHTML = "firrrrrst";
+console.log($("#ul1 .first"));
+// console.log("#div1 div .class1 [gao=gao1]".split(/\s+/));
+
+// console.log($("#div1").getElementsByTagName('div'));
 
 // 可以通过id获取DOM对象，通过#标示，例如
 // 返回id为adom的DOM对象
@@ -229,4 +282,3 @@ console.log($("#div1").getElementsByTagName('div'));
 // console.log("value--->" + result[2]);
 
 // $("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
-
