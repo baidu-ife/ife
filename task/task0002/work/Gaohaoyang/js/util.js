@@ -201,7 +201,6 @@ function $(selector) {
         }
     }
 }
-
 console.log($("#div1").getElementsByTagName('div'));
 
 // 可以通过id获取DOM对象，通过#标示，例如
