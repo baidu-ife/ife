@@ -50,7 +50,7 @@ function createEvent(element) {
 				dragSquare.style.top = childHeight * dragSquare.index;
 			}
 		}else {
-			if(left < dragDistance) {
+			if(left < -dragDistance) {
 				removeChild(div, list, dragSquare.index);
 				addChild(leftDiv);
 			} else {
