@@ -220,6 +220,7 @@
             edit.view();
             document.getElementById("buttonSave").onclick = function() {
             	edit.saveAdd();
+            	return false;
             }
         };
     };
@@ -493,6 +494,36 @@
         document.getElementsByClassName("edit")[0].innerHTML = this.normal;
     };
     Edit.prototype.saveAdd = function() {
+    	var title = document.getElementById("formTitle").value,
+            time = document.getElementById("formTime").value,
+            content = document.getElementById("formContent").value,
+            choosen = document.getElementsByClassName("choosen")[0],
+            reg = /\d+/g,
+            temp,
+            result = [];
+        if (!title) {
+        	alert("Please enter title");
+        	return false;
+        }
+        else if (!time) {
+        	alert("Please enter time");
+        	return false;
+        }
+        else if (!(/\d{4}-\d{2}-\d{2}/.test(time))) {
+        	alert("The time is wrong");
+        	return false;
+        }
+        while ((temp = reg.exec(time)) != null) {
+           	result.push(temp);
+        }
+        var todo = title + result[0] + result[1] + result[2], t = g.att(choosen, 't'), f = g.att(choosen, 'f');
+        if (!t) {
+        	alert("Please add a subclass");
+        	return false;
+        }
+        g.storage.todo[f][t].push(todo);
+        task.initTodo(f, t);
+        document.getElementsByClassName("edit")[0].innerHTML = this.normal;
     };
     //初始化
     var task = new Task(), edit = new Edit();
