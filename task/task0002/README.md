@@ -320,33 +320,93 @@ function isMobilePhone(phone) {
 
 ```javascript
 // 为element增加一个样式名为newClassName的新样式
-function addClass(element, newClassName) {
-    // your implement
+function addClass(element,className) {
+    element.className+=className+' ';   //element.className是字符串，各个样式类需要按空格分开；
 }
 
 // 移除element中的样式oldClassName
-function removeClass(element, oldClassName) {
-    // your implement
+function removeClass(element,className) {
+    element.classList.remove(className);
 }
 
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
-function isSiblingNode(element, siblingNode) {
-    // your implement
+function isSiblingNode(element,siblingNode) {
+    return element.parentNode===siblingNode.parentNode;
 }
 
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
-    // your implement
+    var position={
+        x: 0,
+        y: 0
+    }
+    if(element.offsetParent!=null) {
+        position.x=element.offsetLeft+getPosition(element.offsetParent);
+        position.y=element.offsetTop+getPosition(element.offsetParent);
+        return position;
+    }
+    else {
+        return position;
+    }
 }
-// your implement
-```
 
 接下来挑战一个`mini $`，它和之前的`$`是不兼容的，它应该是`document.querySelector`的功能子集，在不直接使用`document.querySelector`的情况下，在你的`util.js`中完成以下任务：
 
 ```javascript
 // 实现一个简单的Query
 function $(selector) {
-    
+    var sTr = selector;
+    if (sTr.search(/\s+/g) == -1) {
+        var firstChart = sTr.charAt(0);
+        switch (firstChart)
+        {
+            case "#":
+                var newStr = sTr.replace(firstChart, "");
+                return document.getElementById(newStr);
+                break;
+
+            case ".":
+                var newStr = sTr.replace(firstChart, "");
+                return getClass(document, newStr)[0];
+                break;
+
+            case "[":
+                console.log(sTr.search(/=/g))
+                if (sTr.search(/=/g) == -1) {
+                    var reg = /^\[|\]$/g;//开头结尾的符号[];
+                    var newStr = sTr.replace(reg, "");
+                    return getAttr(document, newStr)[0];
+                } else {
+                    var reg = /^\[|\]$/g;//开头结尾的符号[];
+                    var newStr = sTr.replace(reg, "");
+                    console.log(newStr)
+                    var arrStr = newStr.split("=");
+                    console.log(arrStr)
+                    var oAttrName = arrStr[0];
+                    var oAttrValue = arrStr[1];
+                    return getAttrValue(document, oAttrName, oAttrValue)[0];
+                }
+                break;
+
+            default:
+                return document.getElementsByTagName(sTr)[0];
+        }
+    } else {
+        var partArr = sTr.split(" ");
+        var sParent = partArr[0].replace(partArr[0].charAt(0), "");
+        if (partArr[1].charAt(0) == ".") {
+            var sSon = partArr[1].replace(partArr[1].charAt(0), "");
+        } else {
+            var sSon = partArr[1];
+        }
+
+        var oParent = document.getElementById(sParent);
+        if (partArr[1].charAt(0) == ".") {
+            return getClass(oParent, sSon)[0];
+        } else {
+            return oParent.getElementsByTagName(sSon)[0];
+        }
+    }
 }
 
 // 可以通过id获取DOM对象，通过#标示，例如
@@ -386,7 +446,12 @@ $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第
 ```javascript
 // 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
-    // your implement
+    if (element.addEventListener) {
+        element.addEventListener(event, listener, false);
+    }
+    else{
+        element.attachEvent('on'+event,listener);
+    }
 }
 
 // 例如：
@@ -397,7 +462,12 @@ addEvent($("#doma"), "click", a);
 
 // 移除element对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
 function removeEvent(element, event, listener) {
-    // your implement
+    if (element.removeEventListener) {
+        element.removeEventListener(event, listener);
+    }
+    else {
+        element.detach('on' + event, listener);
+    }
 }
 ```
 
@@ -405,12 +475,23 @@ function removeEvent(element, event, listener) {
 ```javascript
 // 实现对click事件的绑定
 function addClickEvent(element, listener) {
-    // your implement
+    element.['onclick']=listener;
 }
 
 // 实现对于按Enter键时的事件绑定
 function addEnterEvent(element, listener) {
-    // your implement
+    element['onkeypress']=function(event){
+        var key;
+        if(window.event){
+            key=event.keyCode;
+        }
+        else{
+            key=event.which;
+        }
+        if(key==13){
+            listener();
+        }
+    };
 }
 ```
 
@@ -500,8 +581,16 @@ init();
 
 ```javascript
 // 先简单一些
+//参考资料：http://www.cnblogs.com/silence516/archive/2009/09/03/delegateEvent.html
 function delegateEvent(element, tag, eventName, listener) {
-    // your implement
+    $.on(element, eventName, function (event) {
+        var target = $.getTarget(event);
+        switch (target.nodeName.toLowerCase()) {
+            case tag:
+                listener();
+                break;
+        }
+    });
 }
 
 $.delegate = delegateEvent;
@@ -513,6 +602,7 @@ $.delegate($("#list"), "li", "click", clickHandle);
 
 估计有同学已经开始吐槽了，函数里面一堆$看着晕啊，那么接下来把我们的事件函数做如下封装改变：
 
+//感觉没必要
 ```javascript
 $.on(selector, event, listener) {
     // your implement
@@ -560,12 +650,28 @@ function isIE() {
 
 // 设置cookie
 function setCookie(cookieName, cookieValue, expiredays) {
-    // your implement
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + expiredays)
+    document.cookie = cookieName + "=" + cookieValue + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
 }
 
 // 获取cookie值
-function getCookie(cookieName) {
-    // your implement
+function getCookie(cookieName)
+{
+    if (document.cookie.length>0)
+    {
+        cookieStart=document.cookie.indexOf(cookieName + "=");
+        if (cookieStart!=-1)
+        {
+            cookieStart=cookieStart + cookieName.length+1;
+            cookieEnd=document.cookie.indexOf(";",cookieStart);
+            if (cookieEnd==-1){
+                cookieEnd=document.cookie.length;
+            }
+            return document.cookie.substring(cookieStart,cookieEnd);
+        }
+    }
+    return "";
 }
 
 ```
