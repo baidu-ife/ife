@@ -40,7 +40,7 @@ function limitInput() {
     var strongText = $("p");
     var arr = input.split(/[\n 　,，、;；]/);
     if (arr && arr.length > 10) {
-//        $("#favourite").value = $("#favourite").value.replace(/[\n 　,，、;；][^\n 　,，、;；]*?$/,"");
+        $("#favourite").value = $("#favourite").value.replace(/[\n 　,，、;；][^\n 　,，、;；]*?$/,"");
 
         strongText.innerHTML = "最多输入10个爱好";
     } else {
