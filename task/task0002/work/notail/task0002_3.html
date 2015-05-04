@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>轮播图</title>
+	<style>
+		#tool{
+			width: 980px;
+			margin: 0 auto;
+		}
+		#tool span{
+			display: inline-block;
+			margin-right: 40px;
+		}
+		#tool span:last-child{
+			margin-right: 0;
+		}
+		#during{
+			width: 50px;
+		}
+		#container{
+			position: relative;
+			width: 100%;
+			height: 400px;
+			margin-top: 20px;
+			border: 1px solid #DADADA;
+		}
+		.img-con{
+			position: relative;
+		}
+		.img-con img{
+			position: absolute;
+			width: 100%;
+			height: 400px;
+		}
+		.side{
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			z-index: 15;
+			width: 60%;
+			margin-left: -30%;
+			text-align: center;
+			list-style: none;
+		}
+		.side li{
+			display: inline-block;
+			width:10px;
+			height: 10px;
+			margin: 1px;
+			background-color: rgba(0,0,0,0);
+			border: 1px solid #fff;
+			border-radius: 10px;
+		}
+		.side .active{
+			background-color: rgba(255,255,255,1);
+		}
+	</style>
+</head>
+<body>
+	<div id = "tool">
+		<span>
+			轮播的顺序：
+			<label><input name="turns" value="left" type="radio" checked/>正序</label>
+			<label><input name="turns" value="right" type="radio"/>逆序</label>
+			<button id="turns-btn">确定</button>
+		</span>
+		<span>
+			是否循环：
+			<label><input name="loop" value="looped" type="radio" checked/>循环</label>
+			<label><input name="loop" value="unloop" type="radio"/>不循环</label>
+			<button id="loop-btn">确定</button>
+		</span>
+		<span>
+			间隔时长：<input id = "during" type="text">秒
+			<button id="dur-btn">确定</button>
+		</span>
+	</div>
+	<div id="container">
+		<div class = "img-con">
+			<div>
+				<img src="img/box1.png">
+			</div>
+			<div>
+				<img src="img/box2.png">
+			</div>
+			<div>
+				<img src="img/box3.png">
+			</div>
+			<div>
+				<img src="img/box4.png">
+			</div>
+			<div>
+				<img src="img/box5.png">
+			</div>
+		</div>
+		<ol class = "side">
+			<li class = "active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>	
+		</ol>
+	</div>
+	<script src="js/util.js"></script>
+	<script src="js/task0002_3.js"></script>
+</body>
+</html>
