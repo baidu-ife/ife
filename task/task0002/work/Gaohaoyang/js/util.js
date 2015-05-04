@@ -137,6 +137,11 @@ function getPosition(element) {
 
 //---------------------------------------------------------
 // 实现一个简单的Query
+//多个选择器有点难到我了，看了一些资料觉得思路应该如下：
+//1.如果存在#，直接从#开始向后查
+//2.如果存在tag直接找到所有的tag然后向后查
+//3.样式类，属性，从后向前查，得到它所有的父节点名称，去筛选匹配
+//以上的做法有点太复杂，我还是做一个简单的正向匹配吧。
 function $(selector) {
 
     if (!selector) {
@@ -150,11 +155,6 @@ function $(selector) {
     selector = selector.trim();
     if (selector.indexOf(" ") !== -1) { //若存在空格
         var selectorArr = selector.split(/\s+/); //拆成数组
-        //多个选择器有点难到我了，看了一些资料觉得思路应该如下：
-        //1.如果存在#，直接从#开始向后查
-        //2.如果存在tag直接找到所有的tag然后向后查
-        //3.样式类，属性，从后向前查，得到它所有的父节点名称，去筛选匹配
-        //以上的做法有点太复杂，我还是做一个简单的正向匹配吧。
 
         var rootScope = myQuery(selectorArr[0]); //第一次的查找范围
         var i = null;
@@ -197,7 +197,7 @@ function myQuery(selector, root) {
             for (i = 0; i < allChildren.length; i++) {
                 currAttr = allChildren[i].getAttribute("class");
                 if (currAttr !== null) {
-                var currAttrsArr = currAttr.split(/\s+/);
+                    var currAttrsArr = currAttr.split(/\s+/);
                     console.log(currAttr);
                     for (j = 0; j < currAttrsArr.length; j++) {
                         if (content === currAttrsArr[j]) {
@@ -236,49 +236,77 @@ function myQuery(selector, root) {
     return result;
 }
 
-// console.log(myQuery("[gao]"));
+/**
+ * ==================事件=======================
+ */
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+    if (element.addEventListener) {
+        element.addEventListener(event, listener);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + event, listener);
+    }
+}
 
-var bo = /\bclass2\b[^\-]/.test("class2 class1");
-console.log(bo);
+// 例如：
 
+// addEvent($(".second"), "click", function () {
+//     alert("clicksecond");
+// });
 
-console.log("只有一个，直接查询-----");
-console.log($("#div1"));
-console.log("只有一个，直接查询-----");
-console.log('$("#div1 .class2-1")----两个元素----');
-// console.log($("#div1 .class2-1"));
-$("#div1 .class2-1").innerHTML = "abc";
-console.log('$("#div1 .class2-1")----两个元素----');
+// 移除element对象对于event事件发生时执行listener的响应
+function removeEvent(element, event, listener) {
+    if (element.removeEventListenr) {
+        element.removeEventListenr(event, listener);
+    } else if (element.detachEvent) {
+        element.detachEvent("on" + event, listener);
+    }
+}
 
-$("#ul1 .first").innerHTML = "firrrrrst";
-console.log($("#ul1 .first"));
-// console.log("#div1 div .class1 [gao=gao1]".split(/\s+/));
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    addEvent(element, "click", listener);
+}
 
-// console.log($("#div1").getElementsByTagName('div'));
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+    addEvent(element, "keydown", function(event) {
+        if (event.keyCode == 13) {
+            listener();
+        }
+    });
+}
 
-// 可以通过id获取DOM对象，通过#标示，例如
-// 返回id为adom的DOM对象
-//console.log($("#div1").getAttribute("class").search("class2")!=-1);
-// console.log($(".gao"));
-// $(".class1").innerHTML = "testttttclasssssssssss";
+// 估计有同学已经开始吐槽了，函数里面一堆$看着晕啊，那么接下来把我们的事件函数做如下封装改变：
 
-// 可以通过tagName获取DOM对象，例如
-// $("a"); // 返回第一个<a>对象
+// $.on(selector, event, listener) {
+//     // your implement
+// }
 
-// // 可以通过样式名称获取DOM对象，例如
-// $(".classa"); // 返回第一个样式定义包含classa的对象
+// $.click(selector, listener) {
+//     // your implement
+// }
 
-// // 可以通过attribute匹配获取DOM对象，例如
-//$("[data-log]"); // 返回第一个包含属性data-log的对象
+// $.un(selector, event, listener) {
+//     // your implement
+// }
 
-// $("[date]").innerHTML = "date1111";
-// $("[person=gaohaoyang]").innerHTML = "gaohaoyang";
-// $("[gaohaoyang=gaohaoyang]").innerHTML = "h2 gaohaoyang";
+// $.delegate(selector, tag, event, listener) {
+//     // your implement
+// }
 
-// $("[person=gaohaoyang]").innerHTML = "attr";
-// var pattern = /\[(\w+)\=(\w+)\]/;
-// var result = "[person=gaohaoyang]".match(pattern);
-// console.log("key---->" + result[1]);
-// console.log("value--->" + result[2]);
+// // 使用示例：
+// $.click("[data-log]", logListener);
+// $.delegate('#list', "li", "click", liClicker);
 
-// $("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
+$.on = function(selector, event, listener) {
+    addEvent($(selector),event,listener);
+};
+// var $ = {};
+$.on(".second","click",function() {
+    console.log("clicksecond");
+});
+
+// $.on($(".second"), "click", function () {
+//     alert("clicksecond");
+// });
