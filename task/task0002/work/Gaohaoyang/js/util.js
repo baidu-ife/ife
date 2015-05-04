@@ -302,6 +302,9 @@ function addEnterEvent(element, listener) {
 $.on = function(selector, event, listener) {
     addEvent($(selector),event,listener);
 };
+$.click = function(selector,listener){
+    addClickEvent($(selector),listener);
+};
 // var $ = {};
 $.on(".second","click",function() {
     console.log("clicksecond");
