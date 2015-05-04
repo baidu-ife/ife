@@ -8,11 +8,34 @@ function isArray (arr) {
 };
 
 function isFunction(fn) {
-
-    return boolean;
+    return typeof fn == "function";
 };
 
 function cloneObject(src) {
+	var target;
+	var typeOfSrc = typeof src;
+
+	if(typeOfSrc == "string" || typeOfSrc == "number" || typeOfSrc == "boolean") {
+		target = src;
+		return target;
+	} else {
+		if(src instanceof Date) {
+			target = src;
+			return target;
+		} else if(src instanceof Array) {
+			target = [];
+			for(var index = 0; index < src.length; index ++){
+				target[index] = cloneObject(src[index]);
+			}
+			return target;
+		} else {
+			target = {};
+			for(var item in src){
+				target[item] = cloneObject(src[item]);
+			}
+			return target;
+		}
+	}
 
 };
 
