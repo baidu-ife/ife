@@ -1,0 +1,86 @@
+#caroucel{
+    position: relative;
+    width: 500px;
+    height: 200px;
+
+
+}
+#slides{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+}
+div.item:nth-child(1){
+    background-color: #efefef;
+}
+div.item:nth-child(2){
+    background-color: #ababff;
+}
+div.item:nth-child(3){
+    background-color: #abffab;
+}
+div.item{
+    transition-property: left;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    display:none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+/*origin static state*/
+div.active, div.next, div.pre{
+    display: block;
+}
+#slides > .pre{
+    left: -100%;
+}
+#slides > .active{
+    left: 0%;
+}
+#slides > .next{
+    left: 100%;
+}
+
+/*add action to origin state*/
+
+#slides > .pre.right, #slides > .next.left{
+    left: 0;
+}
+#slides > .active.right{
+    left: 100%;
+}
+#slides > .active.left{
+    left: -100%;
+}
+
+
+
+
+#caroucel-indicaters{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+
+#caroucel-indicaters li{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+#caroucel-indicaters li.active{
+    background-color: #ffffff;
+}
