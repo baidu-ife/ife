@@ -390,14 +390,11 @@ function addEnterEvent(element, listener) {
     	}
     };
 }
-function enter(){
-	console.log("press enter");
-}
 $.on = addEvent;
 $.un = removeEvent;
 $.click = addClickEvent;
 $.enter = addEnterEvent;
-$.enter(document.body,enter);
+
 
 //事件代理
 function delegateEvent(element,tag,eventName,listener){
@@ -495,6 +492,7 @@ function ajax(url,options){
 	}
 
 }
+/*
 var options = {
         type: "get",
         data: {
@@ -507,5 +505,5 @@ var options = {
         onfail: function(){
         	console.log("error");
         }
-};
+};*/
 //ajax("ajax.php",options);
