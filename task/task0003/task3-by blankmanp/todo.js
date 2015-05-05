@@ -2,23 +2,17 @@
     //全局变量:
     var g = {
         storage: {
-        	file: {0: '默认分类'},
-            task: {'默认分类': []},
-            todo: {'默认分类': {"folder": []}}
+        	file: {0: '默认分类', 1: 'test'},
+            task: {'默认分类': [], 'test': ['task1', 'task2', 'task3']},
+            todo: {'默认分类': {},
+            		'test': {'task1': ['todo120120301', 'todo220120301', 'todo320140301'],
+            					'task2': ['todo120120401', 'test20120301'],
+            					'task3': ['todo320150501']}
+            	  }
         },
-        toLocal: function() {
-        	if (arguments.length == 0) {
-        		for (var val in g.storage) {
-	        		var json = g.storage[val];
-	        		json = JSON.stringify(json);
-	        		localStorage.setItem(val, json);
-	        	}
-	        }
-            else {
-        		var name = arguments[0], json = g.storage[name];
-        		json = JSON.stringify(json);
-        		localStorage.setItem(name, json);
-        	}
+        toLocal: function(name, json) {
+        	json = JSON.stringify(json);
+        	localStorage.setItem(name, json);
         },
         fromLocal: function() {
         	for (var name in g.storage) {
@@ -32,14 +26,6 @@
                 return element.getAttribute(name);
             else
                 return element.setAttribute(name, value);
-        },
-        stopBubble: function(e) {
-        	if (e && e.stopPropagation) {
-        		e.stopPropagation();
-        	}
-        	else {
-        		window.event.cancelBubble = true;
-        	}
         },
         UI: {
             hide: function(elem) {
@@ -150,25 +136,10 @@
     Task.prototype.delete = function() {
         var del = document.getElementsByClassName("menuDelete");
         for (var i = del.length - 1; i >= 0; i --) {
-            del[i].onclick = function(e) {
+            del[i].onclick = function() {
                 if (g.att(this.parentNode.parentNode, "delete") != 0) {
                 	if (confirm("sure?")) {
                         g.DOM.removeNode(this.parentNode.parentNode);
-                        var file = this.parentNode.parentNode.id.slice(4),
-                        	f = g.att(this.parentNode, "f");
-                        delete g.storage.file[file];
-                        delete g.storage.task[f];
-                        delete g.storage.todo[f];
-                        if (document.getElementsByClassName("choosen").length == 2) {
-                        	task.initTodo(g.att(document.getElementsByClassName("choosen")[0], "f"));
-                        }
-                        else {
-                        	var temp = g.att(document.getElementById("task0").firstChild, "f")
-                        	task.initTodo(temp);
-                        	g.stopBubble(e);
-                        };
-                        edit.undo();
-                        g.toLocal()
                     }
                 }
                 else {
@@ -198,10 +169,8 @@
                     	}
                     }
                     g.storage.file[i] = text;
-                    g.storage.task[text] = new Array();
-                    g.storage.todo[text] = {"folder": []};
-                    str.push("<ul class='taskUl' id='task" + ul.length + "' delete='1' add='1'>");
-                    str.push("<li class='titleli taskList' f='" + text + "'>");
+                    str.push("<ul class='taskUl' id='task" + ul.length + "' delete='1'>");
+                    str.push("<li class='titleli taskList'>");
                     str.push("<img src='img/file.png' />")
                     str.push("<p>" + text + "</p>");
                     str.push("<span class='taskNum' id='taskNum" + ul.length + "'>(0)</span>");
@@ -212,11 +181,7 @@
                     ul[0].parentNode.innerHTML += str;
                 }
                 else {
-                	if (text == "folder") {
-                		alert("The name is unaccessable!");
-                		return false;
-                	}
-                	if (g.att(choosen.parentNode, 'add') != 0) {
+                	if (g.att(choosen, 'add') != 0) {
 	                	var ulnum = choosen.parentNode.id.slice(4),
 	                	    num = g.DOM.siblings(choosen).length;
 	                	    f = g.att(choosen, 'f');
@@ -237,11 +202,9 @@
 	                    ul[ulnum].innerHTML += str;
                 	}
                 	else {
-                		alert("Can't add task to this class!");
-                		return false;
+                		alert("Can't add task to this class!")
                 	}
 	            }
-        	g.toLocal();
 	        g.UI.hide(document.getElementsByClassName("pop"));
 	        task.classChoosen();
 	        task.showDelete();
@@ -249,14 +212,14 @@
             document.getElementById("addClose").onclick = function() {
                 g.UI.hide(document.getElementsByClassName("pop"));
             }
-        };
+        }
     };
     Task.prototype.addTask = function() {
         var addTodo = document.getElementById("addTask");
         addTodo.onclick = function() {
             edit.view();
             document.getElementById("buttonSave").onclick = function() {
-            	edit.save("add");
+            	edit.saveAdd();
             	return false;
             }
         };
@@ -266,7 +229,7 @@
         todoEdit.onclick = function() {
             edit.view();
             document.getElementById("buttonSave").onclick = function() {
-            	edit.save("edit");
+            	edit.saveEdit();
             	return false;
             }
         }
@@ -274,6 +237,7 @@
     Task.prototype.taskDone = function() {
         var todoDone = document.getElementById("todoDone");
         todoDone.onclick = function() {
+        	console.log("HI")
             var choosen = document.getElementsByClassName("todochoosen")[0];
             if (choosen) {
            		g.DOM.addClass(choosen, "done");
@@ -338,12 +302,6 @@
         }
     };
     Task.prototype.init = function() {
-    	if (localStorage.length == 0) {
-    		g.toLocal();
-    	}
-    	else {
-    		g.fromLocal();
-    	};
     	var i = 0;
     	for (var val in g.storage.file) {
     		var str = [], f = g.storage.file[val];
@@ -379,51 +337,60 @@
             task.initTodo(g.storage.file['0']);
             i ++;
     	}
-    	task.showDelete();
-	    task.addClass();
-	    task.addTask();
-	    task.editTask();
-	    task.taskDone();
-	    task.taskChoosen();
-	    task.titleChoosen();
-	    task.classChoosen();
     };
     Task.prototype.initTodo = function(f, t) {
     	var time = [], todo = [], d = [];
     	if (!t) {
-    		var a = g.storage.todo[f]["folder"];
     		for (var val in g.storage.todo[f]) {
-    			for (var i = 0; i < g.storage.todo[f].length; i ++) {
-    				if (val != "folder") {
-    					d.push(g.storage.todo[f][val][i], val);
+    			var a = g.storage.todo[f];
+    			for (var i = 0; i < a[val].length; i ++) {
+    				var b = a[val][i].slice(-8),
+    				    c = a[val][i].slice(0, -8);
+    				d.push([a[val][i], val]);
+    				if (time.length != 0) {
+    					for (var j = 0; j < time.length; j ++) {
+    						if (time[j] == b) {
+    							todo[j] += " " + c;
+    							break;
+    						}
+    						else if (j == time.length - 1) {
+    							time.push(b);
+    							todo.push(c);
+    							break;
+    						}
+    					}
+    				}
+    				else {
+    					time.push(b);
+    					todo.push(c);
     				}
     			}
     		}
     	}
     	else {
     		var a = g.storage.todo[f][t];
-    	}	
-    	for (var i = 0; i < a.length; i ++) {
-	    	var b = a[i].slice(-8),
-	    		c = a[i].slice(0, -8);
-	    	if (time.length != 0) {
-	    		for (var j = 0; j < time.length; j ++) {
-	    			if (time[j] == b) {
-	    				todo[j] += " " + c;
-	    				break;
-	    			}
-	    			else if (j == time.length - 1) {
-	    				time.push(b);
-	    				todo.push(c);
-	    				break;
-	    			}
-	   			}
-	    	}    				
-	    	else {
-	    		time.push(b);
-	    		todo.push(c);
-	    	}
-   		}
+    		for (var i = 0; i < a.length; i ++) {
+    			var b = a[i].slice(-8),
+    				c = a[i].slice(0, -8);
+    			if (time.length != 0) {
+    				for (var j = 0; j < time.length; j ++) {
+    					if (time[j] == b) {
+    						todo[j] += " " + c;
+    						break;
+    					}
+    					else if (j == time.length - 1) {
+    						time.push(b);
+    						todo.push(c);
+    						break;
+    					}
+    				}
+    			}    				
+    			else {
+    				time.push(b);
+    				todo.push(c);
+    			}
+    		}
+    	}
     	var temp = [];
     	for (var i = 0; i < time.length; i ++) {
     		temp.push([time[i], todo[i]]);
@@ -447,20 +414,15 @@
     		str.push('<ul class="todotask">');
     		var temp = todo[i].split(" ");
     		for (var j = 0; j < temp.length; j ++) {
-    			str.push('<li class="todotaskLi" f="' + f + '"todo="' + temp[j] + '"time="' + timeTemp[i]);
+    			str.push('<li class="todotaskLi" f="' + f + '"todo="' + temp[j] + '"time="' + timeTemp[i])
     			if (t) {
     				str.push('" t="' + t + '"><p>' + temp[j] + '</p></li>');
     			}
     			else {
-    				if (d.length > 0) {
-	    				for (var k = 0; k < d.length; k ++) {
-	    					if (temp[j] + time[i] == d[k][0])
-	    						str.push('" t="' + d[k][1] + '"><p>' + temp[j] + '</p></li>');
-	    				}
-	    			}
-	    			else {
-	    				str.push('" t="folder"><p>' + temp[j] + '</p></li>')
-	    			}
+    				for (var k = 0; k < d.length; k ++) {
+    					if (temp[j] + time[i] == d[k][0])
+    						str.push('" t="' + d[k][1] + '"><p>' + temp[j] + '</p></li>');
+    				}
     			}
     		}
     		str.push("</ul></div></div>")
@@ -490,14 +452,49 @@
     };
     Edit.prototype.undo = function() {
         document.getElementsByClassName("edit")[0].innerHTML = this.normal;
-        if (document.getElementsByClassName("todochoosen").length > 0) {
-        	document.getElementById("todoText").innerHTML = g.att(document.getElementsByClassName("todochoosen")[0], 'todo');
-        	document.getElementById("taskTime").innerHTML = "<p>任务日期：<span>" + g.att(document.getElementsByClassName("todochoosen")[0], "time") + "</span></p>";
-        }
+        document.getElementById("todoText").innerHTML = g.att(document.getElementsByClassName("todochoosen")[0], 'todo');
+        document.getElementById("taskTime").innerHTML = "<p>任务日期：<span>" + g.att(document.getElementsByClassName("todochoosen")[0], "time") + "</span></p>";
         task.editTask();
     };
-    Edit.prototype.save = function(type) {
+    Edit.prototype.saveEdit = function() {
         var title = document.getElementById("formTitle").value,
+            time = document.getElementById("formTime").value,
+            content = document.getElementById("formContent").value,
+            choosen = document.getElementsByClassName("todochoosen")[0],
+            timeBefore = g.att(choosen, "time"),
+            reg = /\d+/g,
+            temp,
+            result = [];
+        if (!title) {
+        	alert("Please enter title");
+        	return false;
+        }
+        else if (!time) {
+        	alert("Please enter time");
+        	return false;
+        }
+        else if (!(/\d{4}-\d{2}-\d{2}/.test(time))) {
+        	alert("The time is wrong");
+        	return false;
+        }
+        while ((temp = reg.exec(time)) != null) {
+           	result.push(temp);
+        }
+        var todo = title + result[0] + result[1] + result[2], t = g.att(choosen, 't'), f = g.att(choosen, 'f'), titleBefore = g.att(choosen, "todo");
+        result = [];
+        while ((temp = reg.exec(timeBefore)) != null) {
+        	result.push(temp);
+        }
+        var todoBefore = titleBefore + result[0] + result[1] + result[2];
+        for (var i = 0; i < g.storage.todo[f][t].length; i ++) {
+        	if (g.storage.todo[f][t][i] == todoBefore)
+        		g.storage.todo[f][t][i] = todo;
+        }
+        task.initTodo(f, t);
+        document.getElementsByClassName("edit")[0].innerHTML = this.normal;
+    };
+    Edit.prototype.saveAdd = function() {
+    	var title = document.getElementById("formTitle").value,
             time = document.getElementById("formTime").value,
             content = document.getElementById("formContent").value,
             choosen = document.getElementsByClassName("choosen")[0],
@@ -520,35 +517,23 @@
            	result.push(temp);
         }
         var todo = title + result[0] + result[1] + result[2], t = g.att(choosen, 't'), f = g.att(choosen, 'f');
-        if (type == "edit") {
-        	var  todochoosen = document.getElementsByClassName("todochoosen")[0],
-            	timeBefore = g.att(todochoosen, "time"), 
-            	t = g.att(todochoosen, 't'),
-            	f = g.att(todochoosen, 'f');
-            	titleBefore = g.att(todochoosen, "todo");
-        	result = [];
-	        while ((temp = reg.exec(timeBefore)) != null) {
-	        	result.push(temp);
-	        }
-	        var todoBefore = titleBefore + result[0] + result[1] + result[2];
-	        for (var i = 0; i < g.storage.todo[f][t].length; i ++) {
-	        	console.log(todoBefore);
-	        	if (g.storage.todo[f][t][i] == todoBefore)
-	        		g.storage.todo[f][t][i] = todo;
-	        }
+        if (!t) {
+        	alert("Please add a subclass");
+        	return false;
         }
-        else if (type == "add") {
-        	if (t) {
-	        	g.storage.todo[f][t].push(todo);
-	        }
-	        g.storage.todo[f]["folder"].push(todo);
-        }
+        g.storage.todo[f][t].push(todo);
         task.initTodo(f, t);
         document.getElementsByClassName("edit")[0].innerHTML = this.normal;
-        task.editTask();
-        g.toLocal("todo");
     };
     //初始化
     var task = new Task(), edit = new Edit();
     task.init();
+    task.showDelete();
+    task.addClass();
+    task.addTask();
+    task.editTask();
+    task.taskDone();
+    task.taskChoosen();
+    task.titleChoosen();
+    task.classChoosen();
 })()
