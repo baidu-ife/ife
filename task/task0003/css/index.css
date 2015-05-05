@@ -12,7 +12,7 @@ caption, th { text-align: left }
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal }
 input, button, textarea, select { font-size: 100% ; outline: 0 }
 q:before, q:after { content: '' }
-addr, acronym { border: 0; font-variant: normal }
+acronym { border: 0; font-variant: normal }
 sub, sup { font-size: 75%; line-height: 0; position: relative; }
 sub { top: -0.5em; }
 sup { bottom: -0.25em; }
@@ -47,18 +47,10 @@ header {
     background-color: #FF6600;
 }
 
-input {
-    /*width: 100%;*/
-}
-
-textarea {
-    /*width: 100%;*/
-}
 #gtd-content {
-    /*width: 100%;*/
-    /*height: 100%;*/
-}
+    min-width: 600px;
 
+}
 #gtd-side {
     width: 400px;
     float: left;
@@ -97,6 +89,12 @@ textarea {
     text-align: center;
 
 }
+.ctg-del {
+    visibility: hidden;
+}
+.ctg-ctgEle:hover .ctg-del {
+    visibility: visible;
+}
 p.dltBtn {
     visibility: hidden;
 }
@@ -122,11 +120,28 @@ p.dltBtn {
 #gtd-detail {
     /*height: 100%;*/
     background-color: #ffffff;
+    /*visibility: hidden;*/
 
 
 }
-
-.todo-edit {
+textarea {
+    resize:none;
+}
+.todo-alert {
+    color: red;
+}
+#todo-cpltBtn {
+    /*display: block;*/
+    visibility: hidden;
+}
+#todo-edit {
+    visibility: hidden;
+}
+.todo-editArea {
+    border: none;
+    display: block;
+}
+.todo-editBtn {
     visibility: hidden;
 }
 .tsk-todo > li{
@@ -135,20 +150,8 @@ p.dltBtn {
     text-align: center;
 
 }
-/*clearfix*/
-.clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-.clearfix {
-    display: inline-block;
-}
-* html .clearfix {
-    height: 1%;
-}
-.clearfix {
-    display: block;
+
+
+.done {
+    text-decoration: line-through;
 }

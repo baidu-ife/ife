@@ -29,9 +29,9 @@
             <div id="gtd-task">
                 <div id="tsk-content">
                     <div id="tsk-filter">
-                        <button>all</button>
-                        <button>todo</button>
-                        <button>done</button>
+                        <button id="filter-all">all</button>
+                        <button id="filter-todo">todo</button>
+                        <button id="filter-done">done</button>
                     </div>
                     <div id="tsk-list"></div>
                 </div>
@@ -44,21 +44,19 @@
         </div>
 
         <div id="gtd-detail">
-            <div>
-                <button id="todo-editBtn">编辑</button>
-                <button id="todo-confirmBtn">确认</button>
-            </div>
-            <div>
-                <input id="todo-title" readonly  class="todo-edit">
-            </div>
-            <div>
-                <input id="todo-time" readonly class="todo-edit">
-            </div>
-            <div>
-                <textarea id="todo-detail" readonly class="todo-edit"></textarea>
-            </div>
 
+            <div id="todo-edit">
+                <button id="todo-editBtn">编辑内容</button>
+                <button id="todo-cpltBtn">完成任务</button>
+                <div>
+                    标题：<span id="todo-titleAlert" class="todo-alert"></span> <input id="todo-title" class="todo-editArea">
+                    日期：<span id="todo-timeAlert" class="todo-alert"></span><input id="todo-time" class="todo-editArea">
+                    内容：<span id="todo-detailAlert" class="todo-alert"></span><textarea id="todo-detail" class="todo-editArea"></textarea>
+                    <button id="todo-cancelBtn" class="todo-editBtn">取消内容</button>
+                    <button id="todo-confirmBtn" class="todo-editBtn">确认内容</button>
+                </div>
 
+            </div>
         </div>
     </div>
     <script src="./js/util.js" type="application/javascript"></script>
