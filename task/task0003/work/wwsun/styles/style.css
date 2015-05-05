@@ -1,0 +1,207 @@
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0 auto;
+}
+
+nav {
+    position: relative;
+    padding-top: 20px;
+    background: #3366CC;
+    min-height: 91vh;
+    border-right: solid 1px darkblue;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+ul ul {
+    margin-bottom: 0;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    outline: 0;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header {
+    background: #3366cc;
+    border-bottom: solid 1px #39f;
+}
+
+.header h1 {
+    margin: 0 auto;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+.left {
+    float: left;
+    width: 17%;
+}
+
+.middle {
+    float: left;
+    /*display: block;*/
+    overflow: hidden;
+    width: 17%;
+    background: #CCCCCC;
+}
+
+.right {
+    float: left;
+    width: 65%;
+}
+
+
+ul#navigation {
+    /*width: 100%;*/
+}
+
+ul#navigation li {
+    list-style: none;
+    background-color: #3366CC;
+    border-top: solid 1px #3366CC;
+    text-align: left;
+    margin: 0;
+}
+
+ul#navigation li a {
+    display: block;
+    text-decoration: none;
+    padding: .25em;
+    border-bottom: solid 1px #39f;
+    border-right: solid 1px #39f;
+}
+
+ul#navigation li a:link, a:visited { color: #fff; }
+ul#navigation li a:hover, a:active { color: #000; }
+ul#navigation li a:hover { background-color: #fff; }
+
+div.task-list {
+    position: relative;
+    padding-top: 20px;
+    min-height: 91vh;
+    border-right: solid 1px;
+}
+
+div.editor {
+    /*padding-top: 20px;*/
+
+    height: 91vh;
+}
+
+div.task-list-header {
+    margin-top: -20px;
+    padding: 12px;
+    background: whitesmoke;
+}
+
+div.task-list-header ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+div.task-list-header ul li {
+    display: inline;
+}
+
+div.task-list-header ul li a {
+    text-decoration: none;
+    padding: .2em 1em;
+    color: black;
+    background-color: #FFFF99;
+}
+
+div.task-list-header a:hover {
+    color: #fff;
+    background-color: #369;
+}
+
+div.task-list-detail {
+
+}
+
+div.task-list-detail ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+div.task-list-detail ul a {
+    color: #000;
+    display: block;
+}
+
+a.task-date {
+    background: #FFFFCC;
+    padding: 5px 15px;
+}
+
+div.task-list-detail ul ul {
+    padding: 5px 5px 5px 40px;
+}
+
+div.task-list-detail ul ul a:hover {
+    color: green;
+}
+
+div.panel-footer {
+    color: #FFFFFF;
+    width: 100%;
+    background: #003399;
+    position: absolute;
+    bottom: 0;
+}
+
+div.panel-footer:hover {
+    opacity: 0.5;
+    border-top: solid 1px darkblue;
+}
+
+div.panel-footer a {
+    width: inherit;
+    text-align: center;
+    display: block;
+    padding: 15px;
+}
+
+div.todo-title {
+    font-size: larger;
+    background: whitesmoke;
+    border-bottom: solid 1px;
+    padding: 10px;
+}
+
+div.todo-date {
+    background: #FFFFCC;
+    border-bottom: solid 1px;
+    padding: 10px;
+}
+
+div.todo-content {
+    padding: 10px;
+}
