@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#container{
+	width:480px;
+	height: 344px;
+	background: red;
+	margin: 50px auto;
+	overflow: hidden;
+	position: relative;
+}
+#content img{
+	width: 480px;
+	height: 344px;
+	display: none;
+}
+#tab{
+	list-style: none;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+#tab li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: #000;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+	margin-right: 10px;
+	cursor: pointer;	
+}
+#tab .selected{
+	background: orange;
+}
+#content .selected{
+	display: block;
+}
+		
