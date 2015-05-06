@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/task0002_2.css">
+    <title>task0002_2 小练习-2</title>
+    <script type="text/javascript" src="js/task0002_2.js"></script>
+</head>
+<body>
+    <h1>小练习2</h1>
+    <hr>
+    <p>
+        在和上一任务同一目录下面创建一个 task0002_2.html 文件，在 js 目录中创建 task0002_2.js ，并在其中编码，实现一个倒计时功能。
+        <ul>
+            <li>界面首先有一个文本输入框，允许按照特定的格式 YYYY-MM-DD 输入年月日</li>
+            <li>输入框旁有一个按钮，点击按钮后，计算当前距离输入的日期的00:00:00有多少时间差</li>
+            <li>在页面中显示，距离YYYY年MM月DD日还有XX天XX小时XX分XX秒</li>
+            <li>每一秒钟更新倒计时上显示的数</li>
+            <li>如果时差为0，则倒计时停止</li>
+        </ul>
+    </p><hr>
+    <span id="hint">Hint：请按照2008-08-08这样的格式输入日期</span>
+    <form>
+        <input id="input" type="text" placeholder="1992-05-14">
+        <input type="button" value="开始计算！" onclick="countTime()">
+        <input type="button" value="停止计时！" onclick="clearInterval(interval)">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

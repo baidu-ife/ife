@@ -1,0 +1,36 @@
+* {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+p {
+    color: #333;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.hint {
+    color: #ab466a;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.btn {
+    margin: 10px;
+    padding: 5px;
+    position: absolute;
+}
+
+#single-input,
+#multi-input,
+#final-input {
+    margin-top: 10px;
+    padding: 5px;
+    width: 20em;
+}
+
+#warning {
+    font-size: 10px;
+    color: #f00;
+    /*position: absolute;*/
+    /*display: none;*/
+}

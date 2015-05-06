@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/task0002_1.css">
+    <title>task0002_1 小练习-1</title>
+    <script type="text/javascript" src="js/task0002_1.js"></script>
+</head>
+<body>
+    <h1>小练习1</h1>
+    <hr>
+    <h2>第一阶段</h2>
+    <p>在页面中，有一个单行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用半角逗号来作为不同爱好的分隔。</p>
+    <p>当点击按钮时，把用户输入的兴趣爱好，按照上面所说的分隔符分开后保存到一个数组，过滤掉空的、重复的爱好，在按钮下方创建一个段落显示处理后的爱好。</p>
+    <span class="hint">Hint：请在输入框中输入您的爱好，并用逗号（半角）隔开</span><br>
+    <form>
+        <input id="single-input" type="text" placeholder="hobby">
+        <input class="btn" type="button" value="提交" onclick="dealwithit()">
+    </form>
+    <div id="hobby-phase1"></div>
+    <hr>
+    <h2>第二阶段</h2>
+    <p>单行变成多行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。</p>
+    <p>当点击按钮时的行为同上</p>
+    <span class="hint">Hint：请在输入框中输入您的爱好，可以使用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号隔开</span>
+    <form>
+        <textarea id="multi-input" placeholder="hobby"></textarea>
+        <input class="btn" type="button" value="提交" onclick="dealwiththem()">
+    </form>
+    <div id="hobby-phase2"></div>
+    <hr>
+    <h2>第三阶段</h2>
+    <p>用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。</p>
+    <p>同时，当点击按钮时，不再是输出到一个段落，而是每一个爱好输出成为一个checkbox，爱好内容作为checkbox的label。</p>
+    <span class="hint">Hint：请在输入框中输入您的爱好，可以使用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号隔开</span>
+    <form id="final-step">
+        <textarea id="final-input" placeholder="hobby"></textarea>
+        <input class="btn" type="button" value="提交" onclick="dealwithall()">
+        <span id="warning"><!-- Warning: --></span>
+    </form>
+    <div id="hobby-phase3"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+* {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+p,
+li {
+    color: #333;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+#hint {
+    color: #ab466a;
+    font-weight: bold;
+    font-size: 10px;
+    display: block;
+    margin: 10px 0;
+}
+
+#result {
+    width: 25em;
+    height: 5em;
+    border: solid #888 1px;
+    margin: 10px 0;
+    padding: 10px;
+}

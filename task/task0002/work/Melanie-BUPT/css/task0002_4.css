@@ -1,0 +1,32 @@
+* {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.hint {
+    color: #ab466a;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+#search-box {
+    width: 15em;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#search-list {
+    width: 13em;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#search-list li.active {
+    background-color: #ddd;
+}
+
+#search-list li:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
