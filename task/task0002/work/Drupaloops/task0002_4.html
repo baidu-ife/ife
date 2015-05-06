@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>task0002_4</title>
+    <style type="text/css">
+        .autoComplete{
+            width: 100%;
+            height: 200px;
+        }
+        #autoComplete{
+            width: 500px;
+            border: 0px;
+            height: 35px;
+            border: 1px solid #ccc;
+        }
+        #autoCompleteList{
+            display: none;
+            margin-top: 0px;
+            width: 500px;
+            border: 1px solid #ccc;
+        }
+        #autoCompleteList div{
+            width: 500px;
+            height: 35px;
+            line-height: 33px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!--允许使用鼠标点击选中提示栏中的某个选项-->
+    <!--允许使用键盘上下键来选中提示栏中的某个选项，回车确认选中-->
+    <!--选中后，提示内容变更到输入框中-->
+
+    <div class="autoComplete">
+        <h1>输入提示框</h1>
+        <input type="text" id="autoComplete" value="">
+        <div id="autoCompleteList"></div>
+    </div>
+<script src="js/task0002_4.js"></script>
+</body>
+</html>
+
