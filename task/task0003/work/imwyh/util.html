@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+        <title>task0003</title>
+        <link rel="stylesheet" type="text/css" href="css/task0003.css">
+    </head>
+    <body>
+    	<header>
+            <h1>GTD Tools</h1>
+        </header>
+        <main>
+            <div id="content-box">
+                <div id="content-wrap">
+                    <div id="content-nav">
+                        <h2 id="content-title"></h2>
+                        <span id="complete"></span>
+                        <span id="edit"></span>
+                    </div>
+                    <p id="content-date">从左侧选取一个任务查看详情</p>
+                    <div id="content-main"></div>
+                </div>
+            </div>
+            <div id="task-box">
+                <p id="allTask" class="task-nav">所有任务&nbsp;(<span id="task-num"></span>)</p>
+                <p class="task-nav">分类列表</p>
+                <ul id="task-item-box"></ul>
+                <p id="newSub" class="task-date-add">
+                    <span>+</span>新增分类
+                </p>
+            </div>
+            <div id="date-box">
+                <ul id="date-nav" class="box-nav">
+                    <li id="dateAll" class="selected">所有</li>
+                    <li id="dateHangIn">未完成</li>
+                    <li id="dateComplete">已完成</li>
+                </ul>
+                <ul id="date-item-box">
+                </ul>
+                <p id="newTask" class="task-date-add">
+                    <span>+</span>新增任务
+                </p>
+            </div>
+        </main>
+        <cover id="cover">
+            <div>
+                <input id="cover-title" type="text" placeholder="标题">
+                <input id="cover-date" type="text" placeholder="">
+                <text><textarea id="cover-main"></textarea></text>
+                <input id="cover-check" type="submit" value="√">
+                <input id="cover-cancel" type="submit" value="×">
+            </div>
+        </cover>
+    	<script type="text/javascript" src="js/util.js" ></script>
+    	<script type="text/javascript" src="js/task0003.js" ></script>
+    </body>
+</html>

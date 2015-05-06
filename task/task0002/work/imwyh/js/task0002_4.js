@@ -61,3 +61,4 @@ function refresh(){
         url:"http://api.wedc.cc/baidu_ife/task0002_4.php/?callback=?"
     });
 }
+
