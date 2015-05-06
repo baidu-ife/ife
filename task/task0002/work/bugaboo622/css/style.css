@@ -1,12 +1,14 @@
-body{
+body,img,ul{
 	margin: 0;
 	padding: 0;
-	background: #727272;
 }
 input,textarea,button{
 	padding: 0;
 	outline: none;
 	border:none;
+}
+ul,li{
+	list-style: none;
 }
 #wrapper{
 	margin: auto;
@@ -86,4 +88,47 @@ input,textarea,button{
 	font-size: 20px;
 	color: white;
 	background: #212121;
+}
+#show{
+	width: 300px;
+	margin: auto;
+	background: black;
+}
+/*任务三*/
+#slide{
+	position: relative;
+	width: 1280px;
+	height: 400px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+#slide-wrapper{
+	position: absolute;
+	left: 0;
+}
+#slide-wrapper li{
+	float: left;
+}
+#slide-wrapper li img{
+	position: relative;
+}
+#btn{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 8px;
+}
+#btn a{
+	cursor: pointer;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 12px;
+	background: #666666;
+}
+#btn a.active{
+	background: white;
+}
+#btn a:hover{
+	background: white;
 }
