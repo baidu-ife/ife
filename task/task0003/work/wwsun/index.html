@@ -20,22 +20,47 @@
                 <ul id="navigation">
                     <li><a href="#">所有任务（11）</a></li>
                     <li><a href="#">分类列表（2）</a>
-                        <ul>
-                            <li><a href="#">百度IFE项目（10）</a>
-                                <ul>
-                                    <li class="active"><a href="#">task1（6）</a></li>
-                                    <li><a href="#">task2（4）</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">毕业设计</a></li>
+                        <ul id="categoryList">
+                            <!--<li><a href="#">百度IFE项目（10）</a>-->
+                            <!--<ul>-->
+                            <!--<li class="active"><a href="#">task1（6）</a></li>-->
+                            <!--<li><a href="#">task2（4）</a></li>-->
+                            <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li><a href="#">毕业设计</a></li>-->
+                            <!--<li><a href="#">默认分类</a></li>-->
                         </ul>
                     </li>
                 </ul>
 
                 <div class="panel-footer">
-                    <a href="#">新增分类</a>
+                    <a href="#categoryModal">新增分类</a>
                 </div>
             </nav>
+
+            <div id="categoryModal" class="modal-dialog">
+                <div>
+                    <a href="#close" title="关闭" class="close">X</a>
+
+                    <h2>添加分类</h2>
+
+                    <form id="newCategoryForm" onsubmit="return false;">
+
+                        <div>
+                            <label for="nameInput">分类名称</label>
+                            <input type="text" name="name" id="nameInput"/>
+                        </div>
+
+                        <div>
+                            <label for="parentInput">上层分类</label>
+                            <select name="parent" id="parentInput">
+                            </select>
+                        </div>
+
+                        <button id="newCategoryBtn"><a href="#close">确定</a></button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="middle">
             <div class="task-list">
@@ -65,7 +90,7 @@
                 </div>
 
                 <div class="panel-footer">
-                    <a href="#">新增分类</a>
+                    <a href="#" id="newTaskBtn">新增分类</a>
                 </div>
             </div>
         </div>
@@ -81,8 +106,9 @@
 </div>
 
 
-
 <!--JavaScript Files-->
+<script src="scripts/Category.js"></script>
+<script src="scripts/Task.js"></script>
 <script src="scripts/util.js"></script>
 <script src="scripts/task0003.js"></script>
 </body>
