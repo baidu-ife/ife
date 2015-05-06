@@ -266,7 +266,13 @@ ul {
 	margin-top: 20px;
 }
 .addButton {
-	margin-top: 80px;
+	margin-top: 20%;
+}
+::-webkit-datetime-edit-text {
+	color: #ccc;
+}
+::-webkit-inner-spin-button {
+	margin-top: 1%;
 }
 .button {
 	display: inline-block;

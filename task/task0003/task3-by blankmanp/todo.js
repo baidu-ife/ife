@@ -303,10 +303,29 @@
             taskli[i].onclick = function() {
             	g.DOM.removeClass(document.getElementsByClassName("todotaskLi"), "todochoosen");
                 g.DOM.addClass(this, "todochoosen");
-                var time = g.att(this, "time");
-                var title = g.att(this, "todo");
+                var time = g.att(this, "time"), 
+                    title = g.att(this, "todo"), 
+                    f = g.att(this, "f"), 
+                    t = g.att(this, "t"), 
+                    a = g.storage.todo[f][t],
+                    reg = /\d+/g,
+                    result = [],
+                    temp;
+                while ((temp = reg.exec(time)) != null) {
+                	result.push(temp);
+                }
+                var timeTemp = result[0] + result[1] + result[2];
+                for (var i = 0; i < a.length; i ++) {
+                	if ((title + timeTemp) == a[i][0]) {
+                		var content = a[i][1];
+                		break;
+                	}
+                }
                 document.getElementById("todoText").innerHTML = title;
                 document.getElementById("taskTime").innerHTML = "<p>任务日期：<span>" + time + "</span></p>";
+                if (content) {
+                	document.getElementById("taskContent").innerHTML = "<p>" + content + "</p>";
+                }
             }
         }
     };
@@ -393,9 +412,9 @@
     	if (!t) {
     		var a = g.storage.todo[f]["folder"];
     		for (var val in g.storage.todo[f]) {
-    			for (var i = 0; i < g.storage.todo[f].length; i ++) {
-    				if (val != "folder") {
-    					d.push(g.storage.todo[f][val][i], val);
+    			if (val != "folder") {
+    				for (var i = 0; i < g.storage.todo[f][val].length; i ++) {
+    					d.push([g.storage.todo[f][val][i][0], val]);
     				}
     			}
     		}
@@ -404,8 +423,8 @@
     		var a = g.storage.todo[f][t];
     	}	
     	for (var i = 0; i < a.length; i ++) {
-	    	var b = a[i].slice(-8),
-	    		c = a[i].slice(0, -8);
+	    	var b = a[i][0].slice(-8),
+	    		c = a[i][0].slice(0, -8);
 	    	if (time.length != 0) {
 	    		for (var j = 0; j < time.length; j ++) {
 	    			if (time[j] == b) {
@@ -473,13 +492,23 @@
         this.normal = document.getElementsByClassName("edit")[0].innerHTML;
     };
     Edit.prototype.view = function() {
-        var str = [];
+        var str = [], choosen = document.getElementsByClassName("todochoosen")[0]
         str.push('<form id="todoForm">');
-        str.push('<input type="text" id="formTitle" value="请输入标题" />');
+        if (choosen) {
+        	str.push('<input type="text" id="formTitle" value="' + g.att(choosen, "todo") + '" />');
+        }
+        else {
+        	str.push('<input type="text" id="formTitle" value="请输入标题" />');
+        }
         str.push('<span class="pullRight" id="click">')
         str.push('<a class="formButton" id="buttonSave">save</a>')
         str.push('<a class="formButton pullRight" id="buttonDelete">Undo</a></span>');
-        str.push('<input type="date" class="time" id="formTime" value="年-月-日" />');
+        if (choosen) {
+        	str.push('<input type="date" class="time" id="formTime" value="' + g.att(choosen, "time") + '" />');
+        }
+        else {
+        	str.push('<input type="date" class="time" id="formTime" value="1970-01-01" />');
+        }
         str.push('<textarea id="formContent" cols="30" rows="10"></textarea>');
         str.push('</from>');
         str = str.join("");
@@ -529,19 +558,28 @@
         	result = [];
 	        while ((temp = reg.exec(timeBefore)) != null) {
 	        	result.push(temp);
-	        }
+	        };
 	        var todoBefore = titleBefore + result[0] + result[1] + result[2];
-	        for (var i = 0; i < g.storage.todo[f][t].length; i ++) {
-	        	console.log(todoBefore);
-	        	if (g.storage.todo[f][t][i] == todoBefore)
-	        		g.storage.todo[f][t][i] = todo;
-	        }
+	        if (t != "folder") {
+		        for (var i = 0; i < g.storage.todo[f][t].length; i ++) {
+		        	if (g.storage.todo[f][t][i][0] == todoBefore) {
+		        		g.storage.todo[f][t][i][0] = todo;
+		        		g.storage.todo[f][t][i][1] = content;
+		        	}
+		        }
+		        for (var i = 0; i < g.storage.todo[f]["folder"].length; i ++) {
+		        	if (g.storage.todo[f]["folder"][i][0] == todoBefore) {
+		        		g.storage.todo[f]["folder"][i][0] = todo;
+		        		g.storage.todo[f]["folder"][i][1] = content;
+		        	}
+		        }
+		    }
         }
         else if (type == "add") {
         	if (t) {
-	        	g.storage.todo[f][t].push(todo);
+	        	g.storage.todo[f][t].push([todo, content]);
 	        }
-	        g.storage.todo[f]["folder"].push(todo);
+	        g.storage.todo[f]["folder"].push([todo, content]);
         }
         task.initTodo(f, t);
         document.getElementsByClassName("edit")[0].innerHTML = this.normal;
