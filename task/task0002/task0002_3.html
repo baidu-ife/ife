@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dottie图片轮播练习</title>
+        <link rel="stylesheet" href="css/task0002_3.css">
+    </head>
+    <body>
+    <div id="box">
+        <div class="list">
+            <ul class="target">
+                <li><img src="img/01.jpg"></li>
+                <li><img src="img/02.jpg"></li>
+                <li><img src="img/03.jpg"></li>
+                <li><img src="img/04.jpg"></li>
+                <li><img src="img/05.jpg"></li>
+                <li><img src="img/06.jpg"></li>
+                <li><img src="img/07.jpg"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="setplay">
+            <div class="setItem">
+                <label class="setting">轮播顺序设置： </label>
+                <input type="radio" name="sequence" id="seq1" value="1" checked>
+                <label for="seq1">正序播放</label>
+                <input type="radio" name="sequence" id="seq2" value="-1">
+                <label for="seq2">逆序播放</label>
+                <br>
+            </div>
+
+            <div class="setItem">
+                <label class="setting">轮播循环设置： </label>
+                <input type="radio" name="isloop" id="yes" value="1" checked>
+                <label for="yes">循环</label>
+                <input type="radio" name="isloop" id="no" value="-1">
+                <label for="no">不循环</label>
+                <br>
+            </div>
+
+
+            <div class="setItem">
+                <label class="setting">切换间隔时长设置： </label>
+                <input type="range" min="1000" max="7000" step="1000" name="gap" id="gap" value="2000">
+            </div>
+
+            <input type="button" class="setBtn" value="确定">
+    </div>
+
+    <script src="js/util.js"></script>
+    <script src="js/task0002_3.js"></script>
+    </body>
+</html>

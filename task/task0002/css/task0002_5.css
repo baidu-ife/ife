@@ -1,0 +1,29 @@
+@charset "utf-8";
+.container{
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 30px 60px;
+    background-color: #CCCCCC;
+    overflow: hidden;
+}
+
+.content{
+    width: 100px;
+    height: 300px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    float: left;
+}
+
+.con-right{
+    margin-left: 100px;
+}
+
+.item{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #000000;
+    background-color: #ff6600;
+}
+

@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+body, div, ul, li, img {
+    margin:0;
+    padding:0;
+}
+ul {
+    list-style-type:none;
+}
+body {
+    background:#000;
+    text-align:center;
+    font:12px/20px Arial;
+}
+#box {
+    position:relative;
+    width:332px;
+    height:222px;
+    background:#fff;
+    border-radius:5px;
+    border:8px solid #fff;
+    margin:10px auto;
+    cursor:pointer;
+}
+#box .list {
+    position:relative;
+    width:330px;
+    height:220px;
+    overflow:hidden;
+}
+#box .list ul {
+    position:absolute;
+    /*overflow: hidden;*/
+    top:0;
+    left:0;
+}
+#box .list li {
+    width:330px;
+    height:220px;
+    float: left;
+    /*display: inline;*/
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+}
+#box .list img{
+    width: 330px;
+    height: 220px;
+    margin: 0;
+}
+#box .count {
+    position:absolute;
+    right:0;
+    bottom:5px;
+}
+#box .count li {
+    color:#fff;
+    float:left;
+    width:20px;
+    height:20px;
+    cursor:pointer;
+    margin-right:5px;
+    overflow:hidden;
+    background:#F90;
+    opacity:0.7;
+    filter:alpha(opacity=70);
+    border-radius:20px;
+}
+#box .count li.current {
+    color:#fff;
+    opacity:1;
+    filter:alpha(opacity=100);
+    font-weight:700;
+    background:#f60;
+}
+#tmp {
+    width:100px;
+    height:100px;
+    background:red;
+    position:absolute;
+}
+.setplay{
+    margin:0px auto;
+    width: 400px;
+    background-color: #ffffff;
+    text-align: left;
+    overflow: hidden;
+    padding: 10px 0;
+}
+.setItem{
+    width: 400px;
+    padding: 10px;
+}
+.setItem *{
+    float: left;
+}
+
+.setBtn{
+    margin-top: 10px;
+    margin-right: 30px;
+    float: right;
+}
