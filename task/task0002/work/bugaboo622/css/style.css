@@ -1,0 +1,134 @@
+body,img,ul{
+	margin: 0;
+	padding: 0;
+}
+input,textarea,button{
+	padding: 0;
+	outline: none;
+	border:none;
+}
+ul,li{
+	list-style: none;
+}
+#wrapper{
+	margin: auto;
+	overflow: hidden;
+	width: 1300px;
+}
+.box{
+	width: 32%;
+	height: 520px;
+	float: left;
+	font-size: 20px;
+	text-align: center;
+	background: #4CAF50;
+	margin-top: 30px;
+	margin-left: 15px;
+	padding-top: 70px;
+	color: white;
+}
+#third .display{
+	text-align: center;
+}
+.box textarea{
+	width: 380px;
+	height: 100px;
+	border-radius: 5px;
+}
+#first input{
+	height: 28px;
+	line-height: 28px;
+	width: 280px;
+	border:none;
+}
+.box button{
+	cursor: pointer;
+	width: 80px;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	line-height: 28px;
+	font-size: 20px;
+	background: #8BC34A;
+	color: white;
+}
+.box .display p,#third .display div{
+	width: 380px;
+	margin: 5px auto;
+	color: white;
+	border-radius: 10px;
+    background: #212121;
+}
+#error{
+	color:red;
+	display: none;
+}
+/*倒计时部分*/
+#clk{
+	width: 800px;
+	height: 500px;
+	background:#4CAF50;
+	margin:auto;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 50px;
+	padding-top:20px; 
+}
+#clk input{
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+}
+#clk button{
+	cursor: pointer;
+	height: 50px;
+	width: 80px;
+	font-size: 20px;
+	color: white;
+	background: #212121;
+}
+#show{
+	width: 300px;
+	margin: auto;
+	background: black;
+}
+/*任务三*/
+#slide{
+	position: relative;
+	width: 1280px;
+	height: 400px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+#slide-wrapper{
+	position: absolute;
+	left: 0;
+}
+#slide-wrapper li{
+	float: left;
+}
+#slide-wrapper li img{
+	position: relative;
+}
+#btn{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 8px;
+}
+#btn a{
+	cursor: pointer;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 12px;
+	background: #666666;
+}
+#btn a.active{
+	background: white;
+}
+#btn a:hover{
+	background: white;
+}
