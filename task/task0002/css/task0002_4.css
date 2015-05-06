@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#wrap {
+	margin: 100px auto;
+	width: 200px;
+	position: relative;
+}
+#int {
+	width: 200px;
+	height: 20px;
+}
+#oi {
+	list-style-type: none;
+	border: 1px solid #aaa;
+	width: 180px;
+}
+#oi li {
+	height: 20px;
+	cursor: pointer;
+	padding-left: 10px;
+}
+#oi li:hover {
+	background: #aaa;
+}
+.hid {
+	display: none;
+}
+.backg {
+	background: #aaa;
+}
