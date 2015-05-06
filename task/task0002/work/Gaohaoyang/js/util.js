@@ -428,3 +428,34 @@ ajax(
         }
     }
 );　
+
+function ajax(url, fnSucc, fnFaild) {
+    //1.创建ajax对象
+    //解决兼容性
+    if (window.XMLHttpRequest) {    //用window解决报错
+        varoAjax = new XMLHttpRequest();
+    } else {
+        var oAjax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    //2.连接服务器
+    //open(方法, 文件名, 异步传输)
+    oAjax.open("GET", url, true);
+    
+    //3.发送请求
+    oAjax.send();
+    
+    //4.接收返回
+    oAjax.onreadystatechange = function() { //就绪后调用
+        //oAjax.readyState                  //浏览器和服务器，进行到哪一步了
+        if (oAjax.readyState == 4) {        //4代表整个交互过程已经完成,读取完成
+            if(oAjax.status == 200) {       //成功
+                fnSucc(oAjax.responseText);
+            } else {                        //失败  oAjax.status == 404
+                if(fnFaild){
+                    fnFaild(oAjax.status);
+                }   
+            }
+        }
+    };
+}
