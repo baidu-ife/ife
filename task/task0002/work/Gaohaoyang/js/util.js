@@ -262,7 +262,11 @@ function removeEvent(element, event, listener) {
         element.detachEvent("on" + event, listener);
     }
 }
-
+var abc = function() {
+    console.log("abc");
+};
+addEvent($('.first'), "click", abc);
+removeEvent($('.first'), "click", abc);
 // 实现对click事件的绑定
 function addClickEvent(element, listener) {
     addEvent(element, "click", listener);
@@ -277,39 +281,150 @@ function addEnterEvent(element, listener) {
     });
 }
 
+// 事件代理
+// 先简单一些
+function delegateEvent(element, tag, eventName, listener) {
+    element['on' + eventName] = function(ev) {
+        var e = ev || window.event;
+        var target = e.target || e.srcElement;
+        if (target.nodeName.toLowerCase() === tag) {
+            target['on' + eventName] = listener;
+        }
+    };
+}
+
 // 估计有同学已经开始吐槽了，函数里面一堆$看着晕啊，那么接下来把我们的事件函数做如下封装改变：
 
-// $.on(selector, event, listener) {
-//     // your implement
-// }
-
-// $.click(selector, listener) {
-//     // your implement
-// }
-
-// $.un(selector, event, listener) {
-//     // your implement
-// }
-
-// $.delegate(selector, tag, event, listener) {
-//     // your implement
-// }
-
-// // 使用示例：
-// $.click("[data-log]", logListener);
-// $.delegate('#list', "li", "click", liClicker);
-
 $.on = function(selector, event, listener) {
-    addEvent($(selector),event,listener);
+    addEvent($(selector), event, listener);
 };
-$.click = function(selector,listener){
-    addClickEvent($(selector),listener);
+$.click = function(selector, listener) {
+    addClickEvent($(selector), listener);
 };
-// var $ = {};
-$.on(".second","click",function() {
-    console.log("clicksecond");
-});
+$.un = function(selector, event, listener) {
+    removeEvent($(selector), event, listener);
+};
+$.delegate = function(selector, tag, event, listener) {
+    delegateEvent($(selector), tag, event, listener);
+};
 
-// $.on($(".second"), "click", function () {
-//     alert("clicksecond");
-// });
+
+// ---------5 BOM-------
+
+// 判断是否为IE浏览器，返回-1或者版本号
+function isIE() {
+    var s = navigator.userAgent.toLowerCase();
+    console.log(s);
+    //ie10的信息：
+    //mozilla/5.0 (compatible; msie 10.0; windows nt 6.2; trident/6.0)
+    //ie11的信息：
+    //mozilla/5.0 (windows nt 6.1; trident/7.0; slcc2; .net clr 2.0.50727; .net clr 3.5.30729; .net clr 3.0.30729; media center pc 6.0; .net4.0c; .net4.0e; infopath.2; rv:11.0) like gecko
+    var ie = s.match(/rv:([\d.]+)/) || s.match(/msie ([\d.]+)/);
+    if (ie) {
+        return ie[1];
+    } else {
+        return -1;
+    }
+}
+
+// 设置cookie
+function setCookie(cookieName, cookieValue, expiredays) {
+    var cookie = cookieName + "=" + encodeURIComponent(cookieValue);
+    if (typeof expiredays === "number") {
+        cookie += ";max-age=" + (expiredays * 60 * 60 * 24);
+    }
+    document.cookie = cookie;
+}
+
+// 获取cookie值
+function getCookie(cookieName) {
+    var cookie = {};
+    var all = document.cookie;
+    if (all === "") {
+        return cookie;
+    }
+    var list = all.split("; ");
+    for (var i = 0; i < list.length; i++) {
+        var p = list[i].indexOf("=");
+        var name = list[i].substr(0, p);
+        var value = list[i].substr(p + 1);
+        value = decodeURIComponent(value);
+        cookie[name] = value;
+    }
+    return cookie;
+}
+
+//-------------Ajax---------------
+// 学习Ajax，并尝试自己封装一个Ajax方法。实现如下方法：
+function ajax(url, options) {
+
+    var xhr;
+    if (window.xhrRequest) {
+        xhr = new xhrRequest();
+    }
+    else {        //兼容 IE5 IE6
+        xhr = new ActiveXObject('Microsoft.xhr');
+    }
+
+    // 处理data
+    if (options.data) {
+        var dataarr = [];
+        for (var item in options.data) {
+            dataarr.push(item + '=' + options.data[item]);
+        }
+        var data = dataarr.join('&');
+    }
+
+    // 处理type
+    if (!options.type) {
+        options.type = 'GET';
+    }
+    options.type = options.type.toUpperCase();
+
+    // 发送请求
+    if (options.type === 'GET') {
+        var myURL = '';
+        if (options.data) {
+            myURL = url + '?' + data;
+        }
+        else {
+            myURL = url;
+        }
+        xhr.open('GET', myURL, true);
+        xhr.send();
+    }
+    else if (options.type === 'POST') {
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(data);
+    }
+
+    // readyState
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                if (options.onsuccess) {
+                    options.onsuccess(xhr.responseText, xhr.responseXML);
+                }
+            }
+            else {
+                if (options.onfail) {
+                    options.onfail();
+                }
+            }
+        }
+    }
+}
+
+// 使用示例：
+ajax(
+    'http://localhost:8080/server/ajaxtest', {
+        data: {
+            name: 'simon',
+            password: '123456'
+        },
+        onsuccess: function(responseText, xhr) {
+            console.log(responseText);
+        }
+    }
+);　
