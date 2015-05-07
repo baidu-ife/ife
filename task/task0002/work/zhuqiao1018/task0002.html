@@ -26,11 +26,56 @@
 		srcObj.a = 2;
 		srcObj.b.b1[0] = "Hello";
 
-		console.log(abObj.a);
-		console.log(abObj.b.b1[0]);
+		// console.log(abObj.a);
+		// console.log(abObj.b.b1[0]);
 
-		console.log(tarObj.a);      // 1
-		console.log(tarObj.b.b1[0]);    // "hello"
+		// console.log(tarObj.a);      // 1
+		// console.log(tarObj.b.b1[0]);    // "hello"
+
+
+		var arr = [2, 5, 7, 7, 7, "ss", 10, 3, 2, 7, 7, "ss"];
+		arr = uniqArray(arr);
+
+		//console.log(arr);
+
+		var todo = function(index, item) {
+			console.log("index:" + index + ",val:" + item + ";");
+		}
+
+		//each(arr, todo);
+
+		var obj = {
+		    a: 1,
+		    b: 2,
+		    c: {
+		        c1: 3,
+		        c2: 4
+		    }
+		};
+		//console.log(getObjectLength(obj)); // 3
+
+		var emailTest = ["23","4@4","@.com", "bupt.bupt@gmail.com", "ruby@bupt.edu.com"];
+
+		var phoneTest = ["12345", "13141274634", "18911269547", "12345678901"];
+
+		var testEmail = function(index, item) {
+			if(isEmail(item))
+				console.log(item + " is email");
+			else
+				console.log(item + " is not email");
+		}
+
+		each(emailTest, testEmail);
+
+		var testPhone = function(index, item) {
+			if(isMobilePhone(item))
+				console.log(item + " is phone number");
+			else
+				console.log(item + " is not phone number");
+		}
+		each(phoneTest, testPhone);
+
+
     </script>
 </body>
 </html>
