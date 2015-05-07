@@ -4,10 +4,12 @@ div.box{
     border: solid 1px #080808;
     float:left;
     margin-right: 100px;
+    position: relative;
 }
 div.content{
     width: 100px;
     height: 50px;
     border: solid 1px #080808;
     background-color: #31b0d5;
+    position: relative;
 }

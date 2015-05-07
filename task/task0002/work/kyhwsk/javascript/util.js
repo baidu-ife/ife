@@ -140,6 +140,23 @@ function isMobilePhone(phone) {
     return /^1\d{10}$/.test(phone);
 }
 
+//add your own insertAfter----------------------------------------------
+function insertAfter(newElement,targetElement) {
+    //target is what you want it to go after. Look for this elements parent.
+    var parent = targetElement.parentNode;
+
+    console.log(parent.lastElementChild);
+    console.log(targetElement);
+    //if the parents lastchild is the targetElement...
+    if(parent.lastElementChild === targetElement) {
+        //add the newElement after the target element.
+        parent.appendChild(newElement);
+    } else {
+        // else the target has siblings, insert the new element between the target and it's next sibling.
+        parent.insertBefore(newElement, targetElement.nextSibling);
+    }
+}
+
 
 // 为dom增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
@@ -211,6 +228,10 @@ String.prototype.trimMoreSpace = function () {
 
 }
 
+function childLen(){
+    return this.childElementCount;
+}
+
 function $(selectors, root) {
     root = root == null ? document : root;
     //return document.querySelector(selector);
@@ -271,8 +292,6 @@ function $(selectors, root) {
 }
 //
 
-
-
 // 可以通过id获取DOM对象，通过#标示，例如
 
 
@@ -287,7 +306,6 @@ function addEvent(element, event, listener) {
         });
     }
 }
-
 
 // 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
 function removeEvent(element, event, listener) {
@@ -317,6 +335,8 @@ function addEnterEvent(element, listener) {
 }
 $.on = addEvent, $.un = removeEvent, $.click = addClickEvent, $.enter = addEnterEvent;
 
+
+
 var EventUtil = {
     getTarget: function (e) {
         return e.target || e.srcElement;
@@ -334,7 +354,7 @@ var EventUtil = {
             e.returnValue = false;
     }
 }
-
+//允许为一组元素添加代理
 function delegateEvent(elements, tag, eventName, listener) {
     // your implement
     elements = elements.length ? elements : [elements]
@@ -357,8 +377,7 @@ $.delegate = delegateEvent;
 
 $.on = function (selector, event, listener, extra) {
     // your implement
-    var length = arguments.length;
-    addEvent($(selector), event, listener);
+    typeof selector == 'string'? addEvent($(selector), event, listener) : addEvent(selector, event, listener);
 }
 
 $.click = function (selector, listener) {
@@ -373,7 +392,13 @@ $.un = function (selector, event, listener) {
 
 $.delegate = function (selector, tag, event, listener) {
     // your implement
+    if(typeof  selector === 'string')
     delegateEvent($(selector), tag, event, listener);
+    else
+    {
+        var elem = selector;
+        delegateEvent(elem, tag, event, listener);
+    }
 }
 
 
