@@ -6,7 +6,7 @@ $.click("button", function() {
     
     var showDiv = $(".show");
     var inputValue = $("input").value;
-    var pattern = /^\d{4}-((0[1-9])|(1[0-2]))-((0[1-9])|(1\s)|(3[0-1]))$/; //判断时间格式
+    var pattern = /^\d{4}-((0[1-9])|(1[0-2]))-((0[1-9])|([1-2]\d)|(3[0-1]))$/; //判断时间格式
 
     if (pattern.test(inputValue)) {
         console.log("right");
