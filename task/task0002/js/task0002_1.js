@@ -20,7 +20,7 @@ function getInput(target){
     }
 }
 
-function showInput(){
+function showInput(event){
     var arr = getInput("#hobbies");
     var hintstr = "";
     if(arr == -1){
@@ -35,9 +35,6 @@ function showInput(){
     $("#hint").style.display = "none";
     var e = event || window.event;
     var target = e.target || e.srcElement;
-//    var pobj = document.createElement("p");
-//    pobj.appendChild(document.createTextNode("您的兴趣是：" + arr.join() + "。"));
-//    target.parentNode.appendChild(pobj);
     for(var k in arr){
         var chkbox = document.createElement("input");
         chkbox.type = "checkbox";
@@ -51,4 +48,6 @@ function showInput(){
     }
 }
 
-$.click("#sure", showInput);
+$.click("#sure", function(e){
+    showInput(e);
+});
