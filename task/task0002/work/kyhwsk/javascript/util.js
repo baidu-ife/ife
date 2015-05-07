@@ -157,6 +157,21 @@ function insertAfter(newElement,targetElement) {
     }
 }
 
+function previousNum(elem){
+    var count = 0;
+    while(elem.previousElementSibling){
+        count ++ ;
+    }
+    return count;
+}
+
+function nextNum(elem){
+    var count = 0;
+    while(elem.nextElementSibling){
+        count ++ ;
+    }
+    return count;
+}
 
 // 为dom增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {

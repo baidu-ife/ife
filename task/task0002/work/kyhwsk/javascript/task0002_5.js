@@ -36,27 +36,25 @@ function Dragger(){
     $.delegate($('.box').allElems,'div','dragend',function(e){
         var elem = e.target;
         var blockNum = Math.ceil(parseInt(elem.style.top)/self.elemHeight);
-        console.log(blockNum);
         var brother = elem;
 
         blockNum > 0 ? (function(){
-            while(blockNum -- ){
+            while(brother && blockNum -- ){
                 brother = brother.nextElementSibling;
             }
-            console.log('----')
+            if(!brother) brother = elem.parentNode.lastChild;
+
             insertAfter(elem, brother);
         })()
             :(function(){
-            while(blockNum ++ ){
+            while(brother && blockNum ++ ){
                 brother = brother.previousElementSibling;
             }
-            console.log('++++')
-            elem.parentNode.insertBefore(elem, brother);
+            if(!brother) brother = elem.parentNode.firstChild;
 
+            elem.parentNode.insertBefore(elem, brother);
         })();
 
-        elem.style.left ='0px';
-        elem.style.top = '0px';
         self.resumeOtherElem(elem);
     });
 
@@ -73,10 +71,8 @@ function Dragger(){
             console.log('done');
         })
     });
-
-
-
 }
+
 Dragger.prototype.upOtherElem = function (elem){
     while(elem.nextElementSibling){
         elem = elem.nextElementSibling;
@@ -85,6 +81,7 @@ Dragger.prototype.upOtherElem = function (elem){
 }
 
 Dragger.prototype.resumeOtherElem = function (elem){
+    elem.style.left = '0px';
    each(elem.parentNode.children,function(elem){
        elem.style.top = '0px';
    });
