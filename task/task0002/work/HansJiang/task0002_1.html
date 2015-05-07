@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <html meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <link href="css/style.css" rel="stylesheet">
+    <Script src="js/task0002.js"></Script>
+    <Script src="js/task0002_1.js"></Script>
+    <Script src="js/util.js"></Script>
+</head>
+<body>
+    <div  class="container">
+        <p>阶段1:</p>
+        <textarea id="text1"  placeholder="输入兴趣爱好" cols="40" rows="1"></textarea><br />
+        <button id="submit1"  onclick="level1_show()">提交</button>
+        <button onclick="deletenode() ">删除</button>
+        <div id="level1">
+        </div>
+        <p>阶段2:</p>
+        <textarea id="text2"  placeholder="输入兴趣爱好" cols="40" rows="2"></textarea><br />
+        <button id="submit2"  onclick="level2_show()">提交</button>
+        <button onclick="deletenode1() ">删除</button>
+        <div id="level2">
+        </div>
+        <p>阶段3:</p>
+        <textarea id="text3"  placeholder="输入兴趣爱好" cols="40" rows="3"></textarea>
+        <span id="warning"></span><br />
+        <button id="submit3"  onclick="level3_show()">提交</button>
+        <button onclick="deletenode2() ">删除</button>
+        <p>兴趣爱好</p>
+        <div id="level3">
+        </div>
+    </div>
+</body>
+</html>
