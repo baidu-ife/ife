@@ -56,9 +56,6 @@ div.active, div.next, div.pre{
     left: -100%;
 }
 
-
-
-
 #caroucel-indicaters{
     position: absolute;
     bottom: 10px;

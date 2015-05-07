@@ -76,13 +76,11 @@ function moveSlide(){
 function play() {
     //playing before the first Interval
     showSlide();
-    setTimeout(moveSlide,  stopDuring);
 
-    //others slide playing
-    timerId = setInterval(function () {
-        showSlide();
-        setTimeout(moveSlide, stopDuring);
-    }, interval);
+    setTimeout(moveSlide,  stopDuring);
+    while(mySlide.slides[mySlide.index]){
+
+    }
 }
 
 //------init slide---
@@ -93,12 +91,11 @@ generateDots();
 //-----play--------
 
 //play normally
-play();
+//play();
 
 $.click('#caroucel-indicaters li', function() {
 
     clearInterval(timerId);
-
 //---reset index of next----
     removeClass(mySlide.slides[mySlide.next], 'next');  //clear originally slide
 
@@ -115,3 +112,4 @@ $.click('#caroucel-indicaters li', function() {
     //after having moved thd slide, play nomally again
     setTimeout(play, interval - stopDuring);
 });
+

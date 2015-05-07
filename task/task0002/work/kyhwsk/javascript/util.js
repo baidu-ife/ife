@@ -7,6 +7,27 @@ function isArray(arr) {
 function isFunction(func) {
     return Object.prototype.toString.call(func).slice(8, -1) === 'Function';
 }
+function Slice(){
+    return  Array.prototype.slice;
+}
+function bind(func, context){
+    var _args = Slice.call(arguments, 2);
+    var bound = function(){
+        var args = Slice.call(arguments, 0);
+        return func.apply(context, _args.concat(args));
+    }
+    bound.$func = func;
+    return bound;
+}
+
+function bindAll(obj, context){
+    context = context || obj;
+    for(p in obj){
+        if(! isFunction(obj[p])) continue;
+        obj[p] = bind(obj[p], context);
+    }
+    return obj;
+}
 
 function cloneObject(src) {
     // your implement
@@ -85,7 +106,16 @@ function each(arr, fn) {
         }
     }
 }
-
+function indexOf(array, item){
+    if(array.indexOf)
+    return array.indexOf(item);
+    else
+    for(var i = 0; i < array.length; i++){
+        if(array[i] === item)
+        return i;
+    }
+    return -1;
+}
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {
@@ -112,6 +142,24 @@ function isMobilePhone(phone) {
 
 
 // 为dom增加一个样式名为newClassName的新样式
+function addClass(element, newClassName) {
+    // your implement
+    if (element.classList)
+        element.classList.add(newClassName);
+    else {
+        if (element.className.indexOf(newClassName) != -1)
+            element.className += ' ' + newClassName;
+    }
+}
+
+function hasClass(element, ClassName){
+    if(element.className){
+        return indexOf(element.className, ClassName) != -1;
+    }else{
+        return element.className.indexOf(ClassName) != -1;
+    }
+}
+
 function addClass(element, newClassName) {
     // your implement
     if (element.classList)
@@ -184,7 +232,7 @@ function $(selectors, root) {
 
             } else if (/^\.(.+)$/.test(selector)) {//class
                 selector = selector.match(/^\.(.+)$/)[1].replace(/\./g, ' ');
-                element = root.getElementsByClassName(selector)[0];
+                elements = root.getElementsByClassName(selector);
 
             } else if (/^(\[)(.+)(\])$/.test(selector)) {//attr
                 selector = /^(\[)(.+)(\])$/.exec(selector)[2];
@@ -214,11 +262,15 @@ function $(selectors, root) {
     }
 
     //return
-    if (elements.length > 0)
-        return elements[0];//
-    else
+    if (elements.length > 0){
+        element = elements[0];
+        element.allElems = elements//
+    }
+
         return element;
 }
+//
+
 
 
 // 可以通过id获取DOM对象，通过#标示，例如
@@ -228,7 +280,7 @@ function $(selectors, root) {
 function addEvent(element, event, listener) {
     // your implement
     if (element.addEventListener) {
-        element.addEventListener(event, listener, false);
+        element.addEventListener(event, listener, true);
     } else {//IE
         element.attachEvent("on" + event, function (event) {
             listener.call(element, event);
@@ -241,7 +293,7 @@ function addEvent(element, event, listener) {
 function removeEvent(element, event, listener) {
     // your implement
     if (element.removeEventListener) {
-        element.removeEventListener(event, listener, false);
+        element.removeEventListener(event, listener, true);
     } else {
         element.detachEvent("on" + event, listener);
     }
@@ -274,24 +326,38 @@ var EventUtil = {
             event.stopPropagation();
         else
             event.cancelBubble = true;
+    },
+    preventDefault: function(e){
+        if(e.preventDefault)
+            e.preventDefault();
+        else
+            e.returnValue = false;
     }
 }
-function delegateEvent(element, tag, eventName, listener) {
+
+function delegateEvent(elements, tag, eventName, listener) {
     // your implement
-    addEvent(element, eventName, function (event) {
-        var target = EventUtil.getTarget(event);
-        console.log(target.tagName);
-        if (target.tagName.toLowerCase() == tag) {
-            listener.call(target, event);
-        }
-    });
+    elements = elements.length ? elements : [elements]
+
+    for(var i = 0; i < elements.length; i++){
+        var element = elements[i];
+
+        addEvent(element, eventName, function (event) {
+            var target = EventUtil.getTarget(event);
+            // console.log(target.tagName);
+            if (target.tagName.toLowerCase() == tag) {
+                listener.call(target, event);
+            }
+        });
+    }
 }
 
 $.delegate = delegateEvent;
 
 
-$.on = function (selector, event, listener) {
+$.on = function (selector, event, listener, extra) {
     // your implement
+    var length = arguments.length;
     addEvent($(selector), event, listener);
 }
 

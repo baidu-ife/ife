@@ -1,0 +1,31 @@
+.center{
+    width:200px;
+    height: 100px;
+    margin: auto;
+}
+form.search{
+    position: relative;
+    margin-top: 50px;
+    width: 300px;
+    height:500px;
+}
+.search input[type='text']{
+    width: 100%;
+}
+ul.tips{
+    width: 100%;
+    position: absolute;
+    border: solid 1px #ccc;
+    cursor: pointer;
+    font-size: 14px;
+}
+.tips a{
+    height: 15px;
+    line-height: 15px;
+    width:100%;
+    text-decoration: none;
+    display: block;
+}
+.tips a.active{
+    background: #cccccc;
+}

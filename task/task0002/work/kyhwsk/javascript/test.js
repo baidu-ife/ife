@@ -98,10 +98,6 @@ $.delegate('#list', "li", "click", clicklistener);
 myLog("test7--  my AJAX");
 var getOpt = {
     type: 'get',
-    data: {
-        name: 'simon',
-        password: '123456'
-    },
     onsuccess: function (responseText, xhr) {
         console.log(responseText);
     },
