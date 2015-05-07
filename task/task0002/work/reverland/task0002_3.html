@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002_0003</title>
+</head>
+<body>
+<style>
+.hide {
+    display: none;
+}
+.slideshow {
+    position: relative;
+    padding: 0px;
+    height: 400px;
+    width: 1280px;
+    overflow: hidden;
+}
+.indicators {
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    margin-left: -30%;
+    padding:0;
+    text-align: center;
+    bottom: 30px;
+}
+.indicators li {
+    margin-left: 10px;
+    height: 10px;
+    width: 10px;
+    border: solid black 1px;
+    z-index: 99;
+    display: inline-block;
+    border-radius: 10px;
+}
+</style>
+<script>
+imgs = {
+    n: 5,
+    urls: [
+        "http://echarts.baidu.com/doc/asset/img/bannerStudy.png",
+        "http://echarts.baidu.com/doc/asset/img/slide-01.png",
+        "http://echarts.baidu.com/doc/asset/img/slide-05.jpg",
+        "http://echarts.baidu.com/doc/asset/img/slide-03.png",
+        "http://echarts.baidu.com/doc/asset/img/slide-02.png"
+        ],
+    cur: 0,
+    dir: "toright",
+    loop: true,
+    interval: 5
+}
+</script>
+<div class="slideshow">
+</div>
+<script src="js/util.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/task0002_3.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

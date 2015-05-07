@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="list">
+    <li id="item1">Simon</li>
+    <li id="item2">Kenner</li>
+    <li id="item3">Erik</li>
+</ul>
+<button id="btn">Change</button>
+<script src="util.js" type="text/javascript"></script>
+<script>
+function clickListener(event) {
+    console.log(event);
+}
+
+function renderList() {
+    $("#list").innerHTML = '<li>new item</li>';
+}
+
+function init() {
+    $.delegate("#list", "li", "click", clickListener);
+    $.click("#btn", renderList);
+}
+init();
+</script>
+</body>
+</html>
