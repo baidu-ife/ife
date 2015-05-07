@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <title>倒计时</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--
+        倒计时
+        * 界面首先有一个文本输入框，允许按照特定的格式YYYY-MM-DD输入年月日；
+        * 输入框旁有一个按钮，点击按钮后，计算当前距离输入的日期的00:00:00有多少时间差
+        * 在页面中显示，距离YYYY年MM月DD日还有XX天XX小时XX分XX秒
+        * 每一秒钟更新倒计时上显示的数
+        * 如果时差为0，则倒计时停止 -->
+        <div class="container">
+        <h1>倒计时</h1>
+            <div>请输入一个未来的时间：（格式YYYY-MM-DD）</div>
+            <input type="text" value="2016-06-05">
+            <button>倒计时</button>
+            <div class="show">距离YYYY年MM月DD日还有XX天XX小时XX分XX秒</div>
+        </div>
+
+        <script src="js/util.js"></script>
+        <script src="js/task0002_2.js"></script>
+    </body>
+</html>
