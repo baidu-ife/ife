@@ -1,0 +1,50 @@
+*{margin: 0; padding: 0; border: none;}
+#carousel{
+    position:relative; 
+    width:100%; 
+    height:450px; 
+    overflow:hidden;
+}
+#myCarousel img {
+    width: 100%; 
+    min-height: 450px;
+}
+#carousel_info{
+    position:absolute; 
+    bottom:0; 
+    left:50px; 
+    line-height:50px;
+    color:#fff;
+    z-index:1001;
+    text-decoration: none;
+}
+#carousel ul{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    bottom: 0px;
+    background: -webkit-linear-gradient(top,rgba(0,0,0,0.1),rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.5));
+    background: -moz-linear-gradient(top,rgba(0,0,0,0.1),rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.5));
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='rgba(0,0,0,0.1)',endColorStr='rgba(0,0,0,0.5)',gradientType='1');
+}
+#carousel ul li{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: transparent;
+    list-style: none;
+}
+#carousel ul li.on{ 
+    background-color:#fff
+}
+#myCarousel a{
+    position:absolute;
+    width: 100%;
+    height: inherit;
+}
