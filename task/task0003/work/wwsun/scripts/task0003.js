@@ -6,6 +6,8 @@ var categories = [];
 
 var tasks = [];
 
+var storage = getLocalStorage(); // for compatibility
+
 // now only support two level category
 function buildCategoryMenu() {
     var i,
@@ -172,7 +174,7 @@ function setupMenuDelegate(selector) {
         } else if(target.dataset.index == 'all-tasks') {
             // todo: buildAllTasks();
         } else {
-            localStorage.setItem('currentCategoryId', target.dataset.index);
+            storage.setItem('currentCategoryId', target.dataset.index);
             var category = getCategoryById(parseInt(target.dataset.index)); // by default, index is a string
             buildTaskListByCategory(category);
         }
@@ -185,7 +187,7 @@ function appInit() {
     categories = [];
     var cat2 = new Category('默认分类', '');
     categories.push(cat2);
-    localStorage.setItem('currentCategoryId', 'all-tasks');//set it as the default selected category
+    storage.setItem('currentCategoryId', 'all-tasks');//set it as the default selected category
 }
 
 // event binding
@@ -208,7 +210,7 @@ $.click('#addTaskBtn', function() {
     var title = form.elements['title'].value;
     var due = form.elements['due'].value;
     var content = form.elements['content'].value;
-    var categoryId = localStorage.getItem('currentCategoryId');
+    var categoryId = storage.getItem('currentCategoryId');
 
     var task = addNewTask(title, categoryId, due, content);
     displayTaskDetail(task);
