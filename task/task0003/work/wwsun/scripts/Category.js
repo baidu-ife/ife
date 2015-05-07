@@ -2,13 +2,12 @@
  *
  * @param name is category name
  * @param parent is the parent category name
- * @param level 1 means root category, 2 means secondary category
  * @constructor
  */
-function Category(name, parent, level) {
+function Category(name, parent) {
+    this.id = Date.now(); // use the create time as the id
     this.name = name;
     this.parent = parent;
-    this.level = level;
     this.subCategories = [];
     this.tasks = [];
 }
@@ -20,15 +19,15 @@ Category.prototype = {
      * add new sub category of current category
      * @param subCategory
      */
-    addSubCategory: function(subCategory) {
-        this.subCategories.push(subCategory);
+    addSubCategory: function(subCategoryId) {
+        this.subCategories.push(subCategoryId);
     },
 
     /**
      * add new task of current category
      * @param task
      */
-    addTasks: function(task) {
+    addTask: function(task) {
         this.tasks.push(task);
     }
 };

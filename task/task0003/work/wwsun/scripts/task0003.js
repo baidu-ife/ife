@@ -1,9 +1,10 @@
-// todo: mock data - obsolete temp
-var categories = [
-    {id:1, name:"百度IFE项目", parent: "", subCategories: ["task1"], tasks:['todo-1','todo-2']},
-    {id:2, name:"task1", parent: 1, subCategories: [], tasks:['todo-3','todo-4']},
-    {id:3, name:"默认分类", parent: "", subCategories: [], tasks:['todo-11','todo-12']}
-];
+// todo: 使用 localStorage 保存当前操作的分类和任务
+// todo: 禁止添加重复的分类名
+
+// init: mock data
+var categories = [];
+
+var tasks = [];
 
 // now only support two level category
 function buildCategoryMenu() {
@@ -19,6 +20,7 @@ function buildCategoryMenu() {
             var li = document.createElement('li');
             var a = document.createElement('a');
             a.setAttribute('href','#');
+            a.setAttribute('data-index', categories[i].id);
             a.innerHTML = categories[i].name;
             li.appendChild(a);
 
@@ -31,7 +33,11 @@ function buildCategoryMenu() {
                     var subli = document.createElement('li');
                     var suba = document.createElement('a');
                     suba.setAttribute('href','#');
-                    suba.innerHTML = categories[i].subCategories[j];
+
+                    var subCategory = getCategoryById(parseInt(categories[i].subCategories[j]));
+                    suba.setAttribute('data-index', subCategory.id);
+                    suba.innerHTML = subCategory.name;
+
                     subli.appendChild(suba);
                     subul.appendChild(subli);
                 }
@@ -60,7 +66,7 @@ function setupCategoryDropdownMenu() {
     for (i=0, n=categories.length; i<n; i++) {
         if(categories[i].parent==="") {
             var option = document.createElement('option');
-            option.setAttribute('value', categories[i].name);
+            option.setAttribute('value', categories[i].id);
             option.innerHTML = categories[i].name;
             select.appendChild(option);
         }
@@ -68,20 +74,118 @@ function setupCategoryDropdownMenu() {
     }
 }
 
-function getCategoryByName(name) {
+function getCategoryById(id) {
     var i,
         n;
 
     for (i=0, n=categories.length; i<n; i++) {
-        if(categories[i].name === name) {
+        if(categories[i].id === id) {
             return categories[i];
         }
     }
 }
 
-function addNewCategory(name, parent) {
-    var category = new Category(name, parent, 0);
+function getTaskById(id) {
+    var i,
+        n;
+
+    for (i=0, n=tasks.length; i<n; i++) {
+        if(tasks[i].id === id) {
+            return tasks[i];
+        }
+    }
+}
+
+function addNewCategory(name, parentId) {
+    var category = new Category(name, parentId, 0);
+    if (parentId != '') {
+
+        // find super category
+        var superCategory = getCategoryById(parseInt(parentId));
+        superCategory.addSubCategory(category.id);
+
+    }
     categories.push(category);
+}
+
+function addNewTask(title, categoryId, date, content) {
+    var task = new Task(title, categoryId, date, content);
+    var category = getCategoryById(parseInt(categoryId));
+    category.addTask(task.id);
+    tasks.push(task);
+
+    buildTaskListByCategory(category); // refresh the task list
+
+    return task;
+}
+
+function buildTaskListByCategory(category) {
+    var i,
+        n;
+
+    var taskList = $('#task-list');
+    taskList.innerHTML = ''; // empty the task list
+
+    if (category.tasks !== undefined) {
+        for (i=0, n=category.tasks.length; i<n; i++) {
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.setAttribute('href','#');
+
+            var task = getTaskById(category.tasks[i]);
+
+            a.setAttribute('data-index',task.id);
+            a.innerHTML = task.title;
+            li.appendChild(a);
+            taskList.appendChild(li);
+        }
+    }
+
+}
+
+function displayTaskDetail(task) {
+    $('#todo-title').innerHTML = task.title;
+    $('#todo-date').innerHTML = task.date;
+    $('#todo-content').innerHTML = task.content;
+}
+
+function setupTaskListDelegate(selector) {
+    var taskUl = $(selector);
+    EventUtil.addHandler(taskUl, 'click', function(event) {
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+        var task = getTaskById(parseInt(target.dataset.index));
+
+        displayTaskDetail(task);
+    });
+}
+
+function setupMenuDelegate(selector) {
+    var list = $(selector);
+    EventUtil.addHandler(list, 'click', function(event) {
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+        if (target.dataset.index === undefined) { // get attribute 'data-index'
+            // do nothing
+        } else if(target.dataset.index == 'all-tasks') {
+            // todo: buildAllTasks();
+        } else {
+            localStorage.setItem('currentCategoryId', target.dataset.index);
+            var category = getCategoryById(parseInt(target.dataset.index)); // by default, index is a string
+            buildTaskListByCategory(category);
+        }
+    });
+
+    setupTaskListDelegate('#task-list');
+}
+
+function appInit() {
+    categories = [];
+    var cat2 = new Category('默认分类', '');
+    categories.push(cat2);
+    localStorage.setItem('currentCategoryId', 'all-tasks');//set it as the default selected category
 }
 
 // event binding
@@ -91,22 +195,30 @@ $.click('#newCategoryBtn', function() {
     var name = form.elements['name'].value;
 
     var select = $('#parentInput');
-    var parent = select.options[select.selectedIndex].value;
+    var parentId = select.options[select.selectedIndex].value;
 
-    console.log(parent);
+    addNewCategory(name, parentId);
 
-    if (parent != '') {
-        // find parent item, and put name into the sub-categories
-        var category = getCategoryByName(parent);
-        category.subCategories.push(name);
-    }
+    buildCategoryMenu(); // refresh category menu
+    setupCategoryDropdownMenu(); // refresh category select items
+});
 
-    addNewCategory(name, parent);
+$.click('#addTaskBtn', function() {
+    var form = $('#newTaskForm');
+    var title = form.elements['title'].value;
+    var due = form.elements['due'].value;
+    var content = form.elements['content'].value;
+    var categoryId = localStorage.getItem('currentCategoryId');
 
-    buildCategoryMenu();
+    var task = addNewTask(title, categoryId, due, content);
+    displayTaskDetail(task);
 });
 
 // App start
+
+appInit();
+
+setupMenuDelegate('#navigation');
 
 setupCategoryDropdownMenu();
 
@@ -114,7 +226,6 @@ buildCategoryMenu();
 //refreshCategoryList();
 
 // App test
-
 
 function print() {
     var i, n;
