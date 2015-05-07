@@ -7,7 +7,7 @@ input,textarea,button{
 	outline: none;
 	border:none;
 }
-ul,li{
+li{
 	list-style: none;
 }
 a{
@@ -174,28 +174,29 @@ a{
 }
 /*task0002_5*/
 #work-space{
-	width: 800px;
-	height: 600px;
-	margin: 20px auto;
+	height: 452px;
 	padding-top: 20px;
-	background: gray;
+	background: #B6B6B6;
 }
-.drag-box{
-	width: 300px;
-	height: 500px;
+.drag-wrap{
+	width: 150px;
+	height: 450px;
 	float: left;
-	margin-left: 64px;
+	margin-left: 160px;
 	text-align: center;
 	border:1px solid black;
+	position: relative;
 }
-#list-1,#list-2{
-	width: 300px;
-	background: red;
-}
-#work-space a{
+.drag-wrap li {
 	display: block;
-	height: 50px;
-	line-height: 50px;
-	border: 1px solid black;
-	cursor: move;
+    width: 150px;
+    height: 40px;
+    background: #8BC34A;
+    border: 1px solid black;
+    margin: -1px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    cursor: move;
+    position: absolute;
 }
