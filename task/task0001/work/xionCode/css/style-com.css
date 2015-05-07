@@ -9,8 +9,7 @@
 	width:980px;
 	left:50%;
 	margin-left:-490px;
-	background:#522a5c;
-	z-index:2;}
+	background:#522a5c;}
 .menu{
 	display:inline-block;
 	position:absolute;
@@ -31,11 +30,15 @@
 	position:absolute;
 	right:0;
 	margin-right:10px;
-	margin-top:43px;
-	z-index:1;}
+	margin-top:43px;}
 .git-link img{
 	width:30px;
 	height:34px;}
+@media (max-width: 980px) {
+    .git-link {
+        display: none;
+    }
+}
 /*顶部结束*/
 .search-container{
 	position:absolute;

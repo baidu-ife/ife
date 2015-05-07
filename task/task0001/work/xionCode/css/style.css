@@ -1,6 +1,9 @@
 *{
 	margin:0;
 	padding:0;}
+.body{
+	main-width:980px;
+	}
 .banner{
 	background-size:cover;
 	background-image:url(../img/banner-bg.jpg);
@@ -34,24 +37,19 @@
 .summary{
 	height:480px;
 	width:100%;
-	background-color:#eeeeee;}
+	background-color:#eeeeee;
+}
 .sum-main{
-	height:480px;
-	position:relative;
 	width:980px;
-	margin:0 auto;}
+	margin:0 auto;
+	overflow:hidden;
+}
 .sum-txt{
 	float:left;
-	display:inline-block;
-	_height:300px;
-	min-height:300px;
-	max-height:430px;
-	margin-top:10px;
-	margin:10px 0 0 10px;
+	margin:10px 0 -900px 10px;
 	width:320px;
-	overflow:hidden;
 	background-color:#FFF;
-	padding-top:10px;}
+	padding-bottom:900px;}
 .sum-txt:first-child{
 	margin-left:0;}
 .sum-txt img{
@@ -60,7 +58,7 @@
 	display:block;
 	margin:0 auto;}
 .sum-txt p{
-	margin:15px 30px 25px 30px;
+	margin:15px 30px 0 30px;
 	font-size:12px;
 	line-height:170%;
 	text-indent:24px;}
