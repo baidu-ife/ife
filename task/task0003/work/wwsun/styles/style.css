@@ -156,17 +156,21 @@ div.task-list-detail ul a {
     display: block;
 }
 
-a.task-date {
+li.task-date {
     background: #FFFFCC;
     padding: 5px 15px;
 }
 
-div.task-list-detail ul ul {
+div.task-list-detail ul a {
     padding: 5px 5px 5px 40px;
 }
 
-div.task-list-detail ul ul a:hover {
+div.task-list-detail ul a:hover {
     color: green;
+}
+
+div.task-list-detail ul li:hover {
+    background: #FFFF99;
 }
 
 div.panel-footer {

@@ -18,17 +18,9 @@
         <div class="left task-category">
             <nav>
                 <ul id="navigation">
-                    <li><a href="#">所有任务（11）</a></li>
-                    <li><a href="#">分类列表（2）</a>
+                    <li><a href="#" data-index="all-tasks">所有任务</a></li>
+                    <li><a href="#">分类列表</a>
                         <ul id="categoryList">
-                            <!--<li><a href="#">百度IFE项目（10）</a>-->
-                            <!--<ul>-->
-                            <!--<li class="active"><a href="#">task1（6）</a></li>-->
-                            <!--<li><a href="#">task2（4）</a></li>-->
-                            <!--</ul>-->
-                            <!--</li>-->
-                            <!--<li><a href="#">毕业设计</a></li>-->
-                            <!--<li><a href="#">默认分类</a></li>-->
                         </ul>
                     </li>
                 </ul>
@@ -73,32 +65,56 @@
                 </div>
 
                 <div class="task-list-detail">
-                    <ul>
-                        <li><a href="#" class="task-date">2015-04-28</a>
-                            <ul>
-                                <li><a href="#">to-do 1</a></li>
-                                <li><a href="#">to-do 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="task-date">2015-04-29</a>
-                            <ul>
-                                <li><a href="#">to-do 3</a></li>
-                                <li><a href="#">to-do 4</a></li>
-                            </ul>
-                        </li>
+                    <ul id="task-list">
+                        <!--<li class="task-date">2015-04-29</li>-->
+                        <!--<li><a href="#">task 1</a></li>-->
+                        <!--<li><a href="#">task 2</a></li>-->
+                        <!--<li><a href="#">task 3</a></li>-->
+
+                        <!--<li class="task-date">2015-05-10</li>-->
+                        <!--<li><a href="#">task 6</a></li>-->
+                        <!--<li><a href="#">task 7</a></li>-->
                     </ul>
                 </div>
 
                 <div class="panel-footer">
-                    <a href="#" id="newTaskBtn">新增分类</a>
+                    <a href="#taskModal" id="newTaskBtn">新增任务</a>
+                </div>
+
+                <div id="taskModal" class="modal-dialog">
+                    <div>
+                        <a href="#close" title="关闭" class="close">X</a>
+
+                        <h2>添加分类</h2>
+
+                        <form id="newTaskForm" onsubmit="return false;">
+
+                            <div>
+                                <label for="taskTitleInput">任务名称</label>
+                                <input type="text" name="title" id="taskTitleInput"/>
+                            </div>
+
+                            <div>
+                                <label for="taskDueInput">截止时间</label>
+                                <input type="text" name="due" id="taskDueInput"/>
+                            </div>
+
+                            <div>
+                                <label for="taskContentArea">任务内容</label>
+                                <textarea name="content" id="taskContentArea" cols="30" rows="10"></textarea>
+                            </div>
+
+                            <button id="addTaskBtn"><a href="#close">确定</a></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="right">
             <div class="editor">
-                <div class="todo-title">this is the title</div>
-                <div class="todo-date">任务日期：<span>2015-04-28</span></div>
-                <div class="todo-content">content</div>
+                <div id="todo-title" class="todo-title">this is the title</div>
+                <div class="todo-date">任务日期：<span id="todo-date">2015-04-28</span></div>
+                <div id="todo-content" class="todo-content">content</div>
             </div>
         </div>
     </div>
