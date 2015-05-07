@@ -212,11 +212,11 @@ function myQuery(selector, root) {
                 currAttr = allChildren[i].getAttribute("class");
                 if (currAttr !== null) {
                     var currAttrsArr = currAttr.split(/\s+/);
-                    console.log(currAttr);
+                    // console.log(currAttr);
                     for (j = 0; j < currAttrsArr.length; j++) {
                         if (content === currAttrsArr[j]) {
                             result.push(allChildren[i]);
-                            console.log(result);
+                            // console.log(result);
                         }
                     }
                 }
