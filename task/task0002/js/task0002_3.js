@@ -98,14 +98,11 @@ autoPlay.prototype = {
     doMove: function(iTarget){
         var oThis = this;
         window.clearInterval(oThis.timer);
-//        console.log(oThis.oBtn[0].style.marginLeft);
-//        console.log(oThis.oBtn[oThis.iNow].offsetLeft);
         oThis.timer = window.setInterval(function(){
             var speed = (iTarget - oThis.oUl.offsetLeft) / 1;
             speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
             oThis.oUl.offsetLeft == iTarget ? clearInterval(oThis.timer) : oThis.oUl.style.left = oThis.oUl.offsetLeft + speed +"px";
         },20);
-//        oThis.oUl.style.left = oThis.oUl.offsetLeft + iTarget;
     },
     reset: function(){
         var oThis = this;
