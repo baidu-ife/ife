@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    position: relative;
+    width: 820px;
+    margin: 90px auto 0 auto;
+
+}
+.col{
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+    border: solid 1px black;
+    height:auto;
+    text-align: center;
+}
+.col li{
+    height: 30px;
+    margin: 5px;
+    width: 300px;
+    background-color: red;
+    color: white;}
+.active{
+    opacity: 0.3;
+    position: absolute;
+}
