@@ -4,13 +4,14 @@ function countdown(){
     var errinfo = "";
     var lefttime = 1;
     if(datearr[0].match(/^\d{4}$/) == null){
-        errinfo = "年份输入不符合格式要求"
-        return;
+        errinfo = "年份输入不符合格式要求";
     }else if(datearr[1].match(/^\d{2}$/) == null){
-        errinfo = "月份输入不符合格式要求"
-        return;
+        errinfo = "月份输入不符合格式要求";
     }else if(datearr[2].match(/^\d{2}$/) == null){
-        errinfo = "日期输入不符合格式要求"
+        errinfo = "日期输入不符合格式要求";
+    }
+    if(errinfo != ""){
+        alert(errinfo);
         return;
     }
     endtime = new Date(datearr[0], datearr[1]-1, datearr[2], 0, 0, 0);
