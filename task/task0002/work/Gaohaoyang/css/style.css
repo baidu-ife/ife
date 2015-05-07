@@ -18,3 +18,34 @@ textarea{
 .show{
     margin-top: 10px;
 }
+/**
+ * 轮播图
+ */
+.imgRotation{
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+.img-list{
+    width: 2500px;
+    font-size: 0;
+    position: absolute;
+}
+.circle{
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    margin-left: -45px;
+}
+.circle a{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border:1px solid #fff;
+}
+.active{
+    background-color: #fff;
+    cursor: default;
+}
