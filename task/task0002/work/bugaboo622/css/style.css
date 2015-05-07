@@ -10,6 +10,10 @@ input,textarea,button{
 ul,li{
 	list-style: none;
 }
+a{
+	text-decoration: none;
+	color: black;
+}
 #wrapper{
 	margin: auto;
 	overflow: hidden;
@@ -131,4 +135,67 @@ ul,li{
 }
 #btn a:hover{
 	background: white;
+}
+/* task0002_4*/
+#tips-wrapper{
+	width: 980px;
+	height: 500px;
+	margin: auto;
+	padding-top:40px; 
+	text-align: center;
+	background: #4CAF50;
+	font-size: 20px;
+	color: white;
+}
+#input{
+	width: 196px;
+	height: 40px;
+	border:1px solid black;
+	margin-top: 10px;
+	padding-left: 4px;
+	line-height: 20px;
+	font-size: 20px;
+}
+#tips{
+	width: 200px;
+	margin: auto;
+	background: white;
+}
+#tips a{
+	display: block;
+	text-align: left;
+	width: 196px;
+	padding-left: 4px;
+	height: 26px;
+	line-height: 26px;
+}
+#tips a:hover,#tips a.active{
+	background: #eeeeee;
+}
+/*task0002_5*/
+#work-space{
+	width: 800px;
+	height: 600px;
+	margin: 20px auto;
+	padding-top: 20px;
+	background: gray;
+}
+.drag-box{
+	width: 300px;
+	height: 500px;
+	float: left;
+	margin-left: 64px;
+	text-align: center;
+	border:1px solid black;
+}
+#list-1,#list-2{
+	width: 300px;
+	background: red;
+}
+#work-space a{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid black;
+	cursor: move;
 }
