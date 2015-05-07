@@ -1,0 +1,7 @@
+initialize:怎么处理
+
+默认的View里有initialize；
+继承的一个子类也要有initialize；
+生成的实例也要有initialize；
+
+3个都要调用怎么办

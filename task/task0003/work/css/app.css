@@ -195,21 +195,6 @@ th {
   float: right !important;
 }
 
-.tap-highlight-transparent {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.disable-user-behavior {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-user-drag: none;
-}
-
 
 /*
 * scaffolding
@@ -300,10 +285,10 @@ textarea {
 .icon-add {
   font-size: 36px;
   font-weight: bold;
-  height: auto;
-  width: 20px;
-  text-align: center;
-  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  line-height: 11px;
+  top: 11px;
   background-image: none;
 }
 
@@ -404,6 +389,10 @@ textarea {
 
 .category-list .bd {
   padding-top: 42px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .category-list .bd .title {
@@ -412,17 +401,37 @@ textarea {
 }
 
 .categorys .level {
-  line-height: 1.8;
+  line-height: 1.9;
   overflow: hidden;
   white-space: nowrap;
-}
-
-.categorys .level-1 {
+  position: relative;
   font-size: 16px;
 }
 
-.categorys .level.z-active,
-.categorys .level.z-open .level.z-active {
+.categorys .level.has-sub-category .level {
+  font-size: 14px;
+}
+
+.categorys .level:hover > .del {
+  /*ie8需要声明ddt才能使用直接选择器*/
+  display: block;
+}
+
+.categorys .level .del {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  font-size: 18px;
+  display: none;
+  cursor: pointer;
+  line-height: normal;
+}
+
+.categorys .level.has-sub-category .del {
+  top: 1px;
+}
+
+.categorys .level.z-active {
   background-color: #fff;
 }
 
@@ -431,14 +440,7 @@ textarea {
   padding-left: 25px;
   margin-left: 15px;
   display: block;
-}
-
-.categorys .level-2 .category-name{
-  margin-left: 30px;
-}
-
-.categorys .level-3 .category-name{
-  margin-left: 45px;
+  cursor: default;
 }
 
 .categorys .category-name:before {
@@ -450,12 +452,18 @@ textarea {
   top: 50%;
   left: 0;
   margin-top: -11px;
-  background: url(../img/icons.jpg) no-repeat;
+  background: url(../img/icons.png) no-repeat;
   background-position: -55px -1px;
 }
 
 .categorys .sub-category {
   padding-bottom: 5px;
+  padding-left: 15px;
+  display: none;
+}
+
+.level.z-open > .sub-category {
+  display: block;
 }
 
 .categorys .sub-category .category-name:before {
@@ -463,8 +471,10 @@ textarea {
 }
 
 .add-category {
-  line-height: 40px;
   display: block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
 }
 
 

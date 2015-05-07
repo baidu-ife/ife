@@ -154,6 +154,14 @@ function addClass(element, newClassName) {
     }
 }
 
+function toggleClass(element, testClassName){
+    if(hasClass(element, testClassName)){
+        removeClass(element, testClassName);
+    }else{
+        addClass(element, testClassName);
+    }
+}
+
 // 检测是否存在样式
 function hasClass(element, testClassName) {
     if(element.classList){
