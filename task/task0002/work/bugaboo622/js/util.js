@@ -92,7 +92,6 @@ function addClass(element, newClassName) {
 // 移除element中的样式oldClassName
 function removeClass(element, oldClassName) {
     if (!element.className.match(new RegExp('(\s|^)'+oldClassName+'(\s|$)'))) {
-    	console.log(1);
         element.className = element.className.replace(new RegExp('(\\s|^)'+oldClassName+'(\\s|$)'),' ');
     }
 }

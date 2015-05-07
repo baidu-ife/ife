@@ -1,10 +1,10 @@
 $.click('#go',function(){
-	var to =$('#to').value.split('-');
-	var clk =setInterval(timer,1000);
+	var to = $('#to').value.split('-');
+	var clk = setInterval(timer,1000);
 	function timer () {
-		var now =new Date();
-		var date =new Date(to[0],to[1]-1,to[2],0,0,0,0);
-		var distance =Math.floor(date-now)/1000;
+		var now = new Date();
+		var date = new Date(to[0],to[1]-1,to[2],0,0,0,0);
+		var distance = Math.floor( date - now )/1000;
 		$('#clk p').innerHTML ='距离'+to[0]+'年'+to[1]+'月'+to[2]+'日还有:'
 		if(distance<=0){
 			clearInterval(clk);
