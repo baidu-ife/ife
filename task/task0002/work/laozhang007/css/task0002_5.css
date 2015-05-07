@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#hint{
+    width: 200px;
+    margin: 40px auto;
+    text-align: center;
+}
+#container {
+    width: 420px;
+    margin: 0 auto;
+    position: relative;
+}
+.box {
+    list-style: none;
+    position: relative;
+    width: 150px;
+    height: 300px;
+    border: 1px solid #000;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.box li {
+    width: 150px;
+    height: 30px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    line-height: 30px;
+    background-color: red;
+}
+.onmove{
+    border: 1px solid #000;
+    opacity: 0.6;
+    filter:Alpha(opacity=60); /* IE8 以及更早的浏览器 */
+    cursor: move;
+}
