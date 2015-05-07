@@ -25,5 +25,8 @@
     height: 30px;
     border: 1px solid #000000;
     background-color: #ff6600;
+    /*top: 0;*/
+    /*left: 0;*/
+    /*position: absolute;*/
 }
 
