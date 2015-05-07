@@ -74,6 +74,20 @@ function trim(str) {
     //匹配开头和结尾的空白字符，并全局匹配
 }
 
+/*
+ * 除去数组中的空元素
+ */
+function deleteBlank(arr) {
+    var arr2 = [];
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i].match(/\s+/) || arr[i]==="") {
+            continue;
+        } else {
+            arr2.push(arr[i]);
+        }
+    }
+    return arr2;
+}
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
@@ -262,11 +276,7 @@ function removeEvent(element, event, listener) {
         element.detachEvent("on" + event, listener);
     }
 }
-var abc = function() {
-    console.log("abc");
-};
-addEvent($('.first'), "click", abc);
-removeEvent($('.first'), "click", abc);
+
 // 实现对click事件的绑定
 function addClickEvent(element, listener) {
     addEvent(element, "click", listener);
@@ -358,104 +368,57 @@ function getCookie(cookieName) {
 // 学习Ajax，并尝试自己封装一个Ajax方法。实现如下方法：
 function ajax(url, options) {
 
-    var xhr;
-    if (window.xhrRequest) {
-        xhr = new xhrRequest();
-    }
-    else {        //兼容 IE5 IE6
-        xhr = new ActiveXObject('Microsoft.xhr');
-    }
+    var dataResult; //结果data
 
     // 处理data
-    if (options.data) {
-        var dataarr = [];
-        for (var item in options.data) {
-            dataarr.push(item + '=' + options.data[item]);
+    if (typeof(options.data) === 'object') {
+        var str = '';
+        for (var c in options.data) {
+            str = str + c + '=' + options.data[c] + '&';
         }
-        var data = dataarr.join('&');
+        dataResult = str.substring(0, str.length - 1);
     }
 
     // 处理type
-    if (!options.type) {
-        options.type = 'GET';
-    }
-    options.type = options.type.toUpperCase();
+    options.type = options.type || 'GET';
+
+    //获取XMLHttpRequest对象
+    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 
     // 发送请求
-    if (options.type === 'GET') {
-        var myURL = '';
-        if (options.data) {
-            myURL = url + '?' + data;
-        }
-        else {
-            myURL = url;
-        }
-        xhr.open('GET', myURL, true);
-        xhr.send();
-    }
-    else if (options.type === 'POST') {
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.send(data);
+    oXhr.open(options.type, url, true);
+    if (options.type == 'GET') {
+        oXhr.send(null);
+    } else {
+        oXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        oXhr.send(dataResult);
     }
 
     // readyState
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 if (options.onsuccess) {
                     options.onsuccess(xhr.responseText, xhr.responseXML);
                 }
-            }
-            else {
+            } else {
                 if (options.onfail) {
                     options.onfail();
                 }
             }
         }
-    }
+    };
 }
 
 // 使用示例：
-ajax(
-    'http://localhost:8080/server/ajaxtest', {
-        data: {
-            name: 'simon',
-            password: '123456'
-        },
-        onsuccess: function(responseText, xhr) {
-            console.log(responseText);
-        }
-    }
-);　
-
-function ajax(url, fnSucc, fnFaild) {
-    //1.创建ajax对象
-    //解决兼容性
-    if (window.XMLHttpRequest) {    //用window解决报错
-        varoAjax = new XMLHttpRequest();
-    } else {
-        var oAjax = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    
-    //2.连接服务器
-    //open(方法, 文件名, 异步传输)
-    oAjax.open("GET", url, true);
-    
-    //3.发送请求
-    oAjax.send();
-    
-    //4.接收返回
-    oAjax.onreadystatechange = function() { //就绪后调用
-        //oAjax.readyState                  //浏览器和服务器，进行到哪一步了
-        if (oAjax.readyState == 4) {        //4代表整个交互过程已经完成,读取完成
-            if(oAjax.status == 200) {       //成功
-                fnSucc(oAjax.responseText);
-            } else {                        //失败  oAjax.status == 404
-                if(fnFaild){
-                    fnFaild(oAjax.status);
-                }   
-            }
-        }
-    };
-}
+// ajax(
+//     'http://localhost:8080/server/ajaxtest', {
+//         data: {
+//             name: 'simon',
+//             password: '123456'
+//         },
+//         onsuccess: function(responseText, xhr) {
+//             console.log(responseText);
+//         }
+//     }
+// );　
