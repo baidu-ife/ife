@@ -85,7 +85,7 @@
                     <div>
                         <a href="#close" title="关闭" class="close">X</a>
 
-                        <h2>添加分类</h2>
+                        <h2>添加任务</h2>
 
                         <form id="newTaskForm" onsubmit="return false;">
 
@@ -112,10 +112,42 @@
         </div>
         <div class="right">
             <div class="editor">
-                <div id="todo-title" class="todo-title">this is the title</div>
-                <div class="todo-date">任务日期：<span id="todo-date">2015-04-28</span></div>
-                <div id="todo-content" class="todo-content">content</div>
+                <div id="todo-title" class="todo-title"></div>
+                <div class="todo-date">任务日期：<span id="todo-date"></span>
+                    <span class="todo-status"><a href="#">完成</a></span>
+                    <span class="todo-modify"><a href="#modifyTaskModal" id="modifyTaskBtn" data-index="">修改</a></span>
+                </div>
+                <div id="todo-content" class="todo-content"></div>
             </div>
+
+            <div id="modifyTaskModal" class="modal-dialog">
+                <div>
+                    <a href="#close" title="关闭" class="close">X</a>
+
+                    <h2>修改任务</h2>
+
+                    <form id="modifyTaskForm" onsubmit="return false;">
+
+                        <div>
+                            <label for="taskTitleInput">任务名称</label>
+                            <input type="text" name="title" id="taskTitleInput1"/>
+                        </div>
+
+                        <div>
+                            <label for="taskDueInput">截止时间</label>
+                            <input type="text" name="due" id="taskDueInput1"/>
+                        </div>
+
+                        <div>
+                            <label for="taskContentArea">任务内容</label>
+                            <textarea name="content" id="taskContentArea1" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <button id="isModifyBtn"><a href="#close">确定</a></button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 

@@ -210,6 +210,15 @@ div.todo-content {
     padding: 10px;
 }
 
+div.todo-date span.todo-status, span.todo-modify {
+    background: white;
+    padding: 5px;
+}
+
+div.todo-date a {
+    color: #000000;
+}
+
 .modal-dialog {
     position: fixed;
     font-family: Arial, Helvetica, sans-serif;
