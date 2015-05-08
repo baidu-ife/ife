@@ -51,8 +51,6 @@ textarea {
 }
 
 /* 输入框提示 */
-.input-hint {
-}
 .input-hint input {
     display: block;
     -webkit-box-sizing: border-box;
@@ -62,6 +60,7 @@ textarea {
     border: 1px solid #888;
     outline: none;
     padding: 3px 5px;
+    margin: 0;
 }
 .input-hint ul {
     display: none;
