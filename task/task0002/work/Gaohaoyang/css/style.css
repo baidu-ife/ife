@@ -64,6 +64,7 @@ textarea {
     padding: 3px 5px;
 }
 .input-hint ul {
+    display: none;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -76,7 +77,13 @@ textarea {
 }
 .input-hint li {
     padding: 3px 5px;
+    cursor: pointer;
 }
+
+.input-hint li span{
+    color: #A73535;
+}
+
 .input-hint .active {
     background: #eee;
 }

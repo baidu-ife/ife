@@ -5,17 +5,23 @@
 允许使用鼠标点击选中提示栏中的某个选项
 允许使用键盘上下键来选中提示栏中的某个选项，回车确认选中
 选中后，提示内容变更到输入框中*/
-var suggestData = ['a', 'abandon', 'abdomen', 'abide', 'abide', 'ability', 'able', 'abnormal', 'aboard', 'abolish', 'abound', 'about', 'above', 'test2', 'test3'];
+var suggestData = ['a', 'abandon', 'abdomen', 'abide', 'ability', 'able', 'abnormal', 'aboard', 'abolish', 'abound', 'about', 'above', 'fiction', 'field', 'fierce', 'fight', 'test2', 'test3'];
 
 // 给input加监听
 var inputArea = $("input");
+var ulArea = $("ul");
 
-if (inputArea.addEventListener) { // all browsers except IE before version 9
-    inputArea.addEventListener("input", OnInput);
+addInputListener();
+
+function addInputListener() {
+    if (inputArea.addEventListener) { // all browsers except IE before version 9
+        inputArea.addEventListener("input", OnInput);
+    }
+    if (inputArea.attachEvent) { // Internet Explorer and Opera
+        inputArea.attachEvent("onpropertychange", OnPropChanged); // Internet Explorer
+    }
 }
-if (inputArea.attachEvent) { // Internet Explorer and Opera
-    inputArea.attachEvent("onpropertychange", OnPropChanged); // Internet Explorer
-}
+
 
 // Firefox, Google Chrome, Opera, Safari from version 5, Internet Explorer from version 9
 function OnInput(event) {
@@ -37,10 +43,71 @@ function OnPropChanged(event) {
  */
 function handleInput(inputValue) {
     console.log(inputValue);
+    var liString = "";
     var pattern = new RegExp("^" + inputValue, "i"); //获取开头相同的字符串
-    for (var i = 0; i < suggestData.length; i++) {
-        if (inputValue !== "" && suggestData[i].match(pattern)) {
-            console.log(suggestData[i]);
+
+    if (inputValue === "") {
+        ulArea.style.display = "none";
+    } else {
+        for (var i = 0; i < suggestData.length; i++) {
+            if (suggestData[i].match(pattern)) {
+                console.log(suggestData[i]);
+                liString += "<li><span>" + inputValue + "</span>" + suggestData[i].substr(inputValue.length) + "</li>";
+            }
         }
+        ulArea.innerHTML = liString;
+        ulArea.style.display = "block";
+
+        keydownLi();
+        clickLi(); //鼠标点击li
     }
+}
+
+/**
+ * 鼠标点击li
+ */
+function clickLi() {
+    console.log("clickLi");
+    delegateEvent(ulArea, "li", "mouseover", function() {
+        addClass(this, "active");
+    });
+    delegateEvent(ulArea, "li", "mouseout", function() {
+        removeClass(this, "active");
+    });
+    delegateEvent(ulArea, "li", "click", function() {
+        inputArea.value = deleteSpan(this.innerHTML);
+    });
+}
+
+function keydownLi() {
+    /*addEvent(inputArea, "keydown", function() {
+        if (event.keyCode == 40) {
+            addClass($("li"), "active"); //让第一个li高亮，并让ul获取焦点
+            ulArea.focus();
+        }
+    });*/
+
+    delegateEvent(ulArea, "li", "keydown", function() {
+        //down
+        if (event.keyCode == 40) {
+            console.log("obj");
+            removeClass($(".active"), "active");
+        }
+        //enter
+        if (event.keyCode == 13) {
+            console.log("enter");
+            inputArea.value = deleteSpan($(".active").innerHTML);
+        }
+    });
+}
+
+/**
+ * 删除span标签，获取字符串
+ * @param  {String} string 带有span标签的字符串
+ * @return {String}        去掉span标签的字符串
+ */
+function deleteSpan(string) {
+    var pattern = /^<span>(\w+)<\/span>(\w+)$/;
+    var stringArr = string.match(pattern);
+    return stringArr[1] + stringArr[2];
 }
