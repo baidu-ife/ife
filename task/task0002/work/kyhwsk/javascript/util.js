@@ -139,14 +139,21 @@ function isMobilePhone(phone) {
     // your implement
     return /^1\d{10}$/.test(phone);
 }
-
+function getUpperBrotherNum(elem){
+    var count = 0;
+    while(elem.previousElementSibling){
+        count ++ ;
+        elem = elem.previousElementSibling;
+    }
+    return count;
+}
 //add your own insertAfter----------------------------------------------
 function insertAfter(newElement,targetElement) {
     //target is what you want it to go after. Look for this elements parent.
     var parent = targetElement.parentNode;
 
-    console.log(parent.lastElementChild);
-    console.log(targetElement);
+   // console.log(parent.lastElementChild);
+    //console.log(targetElement);
     //if the parents lastchild is the targetElement...
     if(parent.lastElementChild === targetElement) {
         //add the newElement after the target element.
@@ -224,13 +231,14 @@ function isSiblingNode(element, siblingNode) {
 // 获取dom相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
     // your implement
+    var x = 0, y =0;
     for (var elem = element; elem !== null; elem = elem.offsetParent) {
         x += elem.offsetLeft;
-        y += elem.offsetRight;
+        y += elem.offsetTop;
     }
-    for (var elem = element.parentNode; elem !== null && e.nodeType == 1; elem = elem.parentNode) {
+    for (var elem = element.parentNode; elem !== null && elem.nodeType == 1; elem = elem.parentNode) {
         x -= elem.scrollLeft;
-        y += elem.scrollTop;
+        y -= elem.scrollTop;
     }
     return {x: x, y: y};
 }

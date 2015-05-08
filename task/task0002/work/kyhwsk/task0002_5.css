@@ -5,8 +5,20 @@ div.box{
     float:left;
     margin-right: 100px;
     position: relative;
+    background-color: rgba(55, 213, 255, 0.3);
+}
+div.box2{
+    top: 100px;
+}
+div.wrap{
+    width: 450px;
+    height: 1000px;
+    margin: auto;
 }
 div.content{
+    font-size: x-large;
+    text-align: center;
+    line-height: 50px;
     width: 100px;
     height: 50px;
     border: solid 1px #080808;
