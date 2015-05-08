@@ -21,23 +21,32 @@ var OriginalID = "";
 
 function Mousedown(selector){
 	if(isDragging == false){
-		selector.addEventListener('mousedown',function(ev){
-			OriginalID = selector;
-			selector.id="redbox";
-			var ev = ev || winddow.event;
-			OriginalX =  ev.pageX;
-			OriginalY =  ev.pageY;
-			mouseOffsetX = OriginalX - getE("#redbox").offsetLeft;
-			mouseOffsetY = OriginalY - getE("#redbox").offsetTop;
-			getE("#redbox").style.position= "absolute";
-			isDragging = true;
-		})
+		if(selector.addEventListener){
+			selector.addEventListener('mousedown',mousedown,false)
+		}
+		else if(selector.attachEvent){
+			selector.attachEvent('onmousedown',mousedown)
+		}
+		else{
+			selector['mousedown']=mousedown;
+		}
+	}
+	function mousedown(ev){
+		OriginalID = selector;
+		selector.id="redbox";
+		var ev = ev || winddow.event;
+		OriginalX =  ev.pageX;
+		OriginalY =  ev.pageY;
+		mouseOffsetX = OriginalX - getE("#redbox").offsetLeft;
+		mouseOffsetY = OriginalY - getE("#redbox").offsetTop;
+		getE("#redbox").style.position= "absolute";
+		isDragging = true;
 	}
 }
 
 //鼠标移动
 document.onmousemove = function(ev){
-	var ev = ev || winddow.event;
+	var ev = ev || window.event;
 	var mouseX =  ev.pageX;
 	var mouseY =  ev.pageY;
 	
@@ -48,7 +57,7 @@ document.onmousemove = function(ev){
 		moveX = mouseX - mouseOffsetX;
 		moveY = mouseY - mouseOffsetY;
 		
-		//alert(moveX);
+		console.log(isDragging);
 		
 		getE("#redbox").style.left= moveX +"px";
 		getE("#redbox").style.top = moveY +"px";
@@ -88,7 +97,9 @@ document.onmouseup = function(ev){
 	isDragging = false;
 }
 
-Mousedown(getE("#b1"));
-Mousedown(getE("#b2"));
-Mousedown(getE("#b3"));
-Mousedown(getE("#b4"));
+window.onload = function(){
+	Mousedown(getE("#b1"));
+	Mousedown(getE("#b2"));
+	Mousedown(getE("#b3"));
+	Mousedown(getE("#b4"));
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>输入提示框</title>
+<style type="text/css">
+*{margin:0; padding:0;}
+body{width:1200xp;background-color:#CCF;}
+form{display:block;margin:50px auto;background-color:#CCF;width:520px;}
+#container{margin:0 auto;}
+.text{font-size:16px;background-color:white;padding:5px 0;outline:none;border:none;}
+#suggest{background-color:white; width:402px;border:solid grey 1px;position:absolute;}
+#suggest ul{list-style:none;}
+#suggest ul li{padding:3px; font-size:14px; line-height:25px; cursor:pointer;}
+.on{background-color:#CCC;}
+.off{background-color:white;}
+</style>
+</head>
+
+<body>
+<div id="container">
+    <form>
+        <input type='text' id='text' class='text' size='50px'>
+        <input type='submit' id='btn' class='text'>
+    </form>
+</div>
+<div id="suggest" style="display:none;">
+	<ul>
+    	<li class='off'>结果1</li>
+        <li class='off'>结果2</li>
+        <li class='off'>结果3</li>
+    </ul>
+</div>
+<script language="javascript" type="text/javascript" src="js/task0002_4.js"></script>
+</body>
+</html>
