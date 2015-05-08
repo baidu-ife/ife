@@ -166,7 +166,7 @@ function $(selector) {
         return document;
     }
 
-    selector = selector.trim();
+    selector = trim(selector);
     if (selector.indexOf(" ") !== -1) { //若存在空格
         var selectorArr = selector.split(/\s+/); //拆成数组
 
