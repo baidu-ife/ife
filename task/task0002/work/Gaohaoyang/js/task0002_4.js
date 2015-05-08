@@ -11,7 +11,9 @@ var suggestData = ['a', 'abandon', 'abdomen', 'abide', 'ability', 'able', 'abnor
 var inputArea = $("input");
 var ulArea = $("ul");
 
-addInputListener();
+addInputListener();//监听input
+clickLi(); //鼠标点击li
+keydownLi(); //键盘事件
 
 function addInputListener() {
     if (inputArea.addEventListener) { // all browsers except IE before version 9
@@ -57,9 +59,6 @@ function handleInput(inputValue) {
         }
         ulArea.innerHTML = liString;
         ulArea.style.display = "block";
-
-        keydownLi();
-        clickLi(); //鼠标点击li
     }
 }
 
@@ -80,23 +79,39 @@ function clickLi() {
 }
 
 function keydownLi() {
-    /*addEvent(inputArea, "keydown", function() {
-        if (event.keyCode == 40) {
-            addClass($("li"), "active"); //让第一个li高亮，并让ul获取焦点
-            ulArea.focus();
-        }
-    });*/
+    addEvent(inputArea, "keydown", function(event) {
 
-    delegateEvent(ulArea, "li", "keydown", function() {
+        var highLightLi = $(".active");
+        console.log(highLightLi);
         //down
         if (event.keyCode == 40) {
-            console.log("obj");
-            removeClass($(".active"), "active");
+            if (highLightLi) {
+                var nextLi = highLightLi.nextSibling;
+                if (nextLi) {
+                    removeClass(highLightLi, "active");
+                    addClass(nextLi, "active");
+                }
+            } else {
+                addClass($("li"), "active");
+            }
+        }
+        //up
+        if (event.keyCode == 38) {
+            if (highLightLi) {
+                var preLi = highLightLi.previousSibling;
+                if (preLi) {
+                    removeClass(highLightLi, "active");
+                    addClass(preLi, "active");
+                }
+            } else {
+                addClass($("li"), "active");
+            }
         }
         //enter
         if (event.keyCode == 13) {
-            console.log("enter");
-            inputArea.value = deleteSpan($(".active").innerHTML);
+            if (highLightLi) {
+                inputArea.value = deleteSpan(highLightLi.innerHTML);
+            }
         }
     });
 }
