@@ -179,7 +179,7 @@ function addNewCategory(name, parentId) {
  * @param categoryId
  * @param date
  * @param content
- * @returns {Task}
+ * @returns {Task} instance of Task object
  */
 function addNewTask(title, categoryId, date, content) {
 
@@ -220,8 +220,10 @@ function buildTaskListByCategory(category) {
 
     if (category.tasks !== undefined) {
         for (i = 0, n = category.tasks.length; i < n; i++) {
+
             var li = document.createElement('li');
             var a = document.createElement('a');
+
             a.setAttribute('href', '#');
 
             var task = getTaskById(category.tasks[i]);
@@ -232,6 +234,31 @@ function buildTaskListByCategory(category) {
             taskList.appendChild(li);
         }
     }
+}
+
+function buildAllTaskLit() {
+
+    var taskList = $('#task-list');
+    taskList.innerHTML = '';
+
+    var i,
+        n;
+
+    for (i=0, n=storage.length; i<n; i++) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+
+        var key = storage.key(i);
+        var value = JSON.parse(storage.getItem(key));
+        if(value.title) {
+            a.setAttribute('href','#');
+            a.setAttribute('data-index', value.id);
+            a.innerHTML = value.title;
+            li.appendChild(a);
+            taskList.appendChild(li);
+        }
+    }
+
 }
 
 function displayTaskDetail(task) {
@@ -260,7 +287,7 @@ function setupMenuDelegate(selector) {
         if (target.dataset.index === undefined) { // get attribute 'data-index'
             // do nothing
         } else if (target.dataset.index == 'all-tasks') {
-            // todo: buildAllTasks();
+            buildAllTaskLit();
         } else {
             storage.setItem('currentCategoryId', target.dataset.index);
             var category = getCategoryById(parseInt(target.dataset.index)); // by default, index is a string
@@ -352,21 +379,10 @@ $.click('#isModifyBtn', function(event) {
 
 
 // App start
-
 appInit();
 
 setupMenuDelegate('#navigation');
 
 setupCategoryDropdownMenu();
 
-buildCategoryMenu();
-//refreshCategoryList();
-
-// App test
-
-function print() {
-    var i, n;
-    for (i = 0, n = categories.length; i < categories.length; i++) {
-        console.log(categories[i]);
-    }
-}
+buildCategoryMenu(); // build the menu after page refresh

@@ -102,7 +102,7 @@ var ClassUtil = {
 
 /**
  * Compatible with the browser that only support globalStorage
- * @returns {*}
+ * @returns {*} localStorage / globalStorage if available
  */
 function getLocalStorage() {
     if (typeof localStorage == 'object') {
@@ -114,11 +114,10 @@ function getLocalStorage() {
     }
 }
 
-
 /**
  * select dom elements by id, class, attribute, attribute=value
- * @param selector
- * @returns {*}
+ * @param selector like '#id', '.class', 'tagName'
+ * @returns {*} html element or elements
  */
 function $(selector) {
     var root = document.body; // set the body element as the root element
