@@ -89,6 +89,19 @@
 		}
 		//each(phoneTest, testPhone);
 
+		var li2_1 = document.getElementById("2.1");
+		var li2_2 = document.getElementById("2.2");
+		var li1 = document.getElementById("1");
+		var li2_3 = document.getElementById("2.3");
+
+		function madan(){
+			console.log(isSiblingNode(li2_1, li2_3));
+			console.log(getPosition(li2_1));
+			console.log(getPosition(document.getElementsByTagName("body")[0]));
+
+		};
+		window.setTimeout(madan, 3000);
+
 
     </script>
 </body>

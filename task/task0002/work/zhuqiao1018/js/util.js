@@ -111,19 +111,97 @@ function removeClass(element, oldClassName) {
 
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
-    var bodyEle = document.getElementsByTagName(body);
-    var elementDepth = 0,
-        siblingNodeDepth = 0;
+    var htmlEle = document.getElementsByTagName("html")[0];
+    var elementDepth = 1,
+        siblingNodeDepth = 1;
+    var parentNode = element.parentNode;
+    var temp = siblingNode.parentNode;
 
-
+    //两个元素是相互包含的关系
     if(element.contains(siblingNode) || siblingNode.contains(element))
-        return;
+        return false;
 
-    while(element.parentNode != bodyEle)
+    //element 是body元素
+    if(parentNode == htmlEle)
+    	return;
+
+    while(parentNode.compareDocumentPosition(htmlEle) !=0)
+    {
+    	if(parentNode.contains(siblingNode)){
+    		while(temp != parentNode){
+    			temp = temp.parentNode;
+    			siblingNodeDepth ++;
+    		}
+    		break;
+    	}
+    	parentNode = parentNode.parentNode;
+    	elementDepth ++ ;
+    }
+    return siblingNodeDepth == elementDepth;
 }
 
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
+	var x = 0, y = 0;
+    while (element != null) {
+        x += element.offsetLeft;
+        y += element.offsetTop;
+        element = element.offsetParent;
+    }
+    return { x: x, y: y };
+}
+
+// 实现一个简单的Query
+function $(selector) {
+    var selectors = selector.split(" ");
+    var elements = null;
+    var startWith = selectors[0].substring(0, 1);
+
+    switch(startWith){
+        case "#" :
+            elements = document.getElementById(selectors[0]);
+            break;
+        case "." :
+            if(document.getElementsByClassName){
+                elements = document.getElementsByClassName(selectors[0]);
+                break;
+            }
+            var nodes = document.getElementsByTagName("*");
+            for(var index = 0; index < nodes.length; index ++){
+                 if(hasClass(selectors[0],nodes[i])) {
+                    elements.push(nodes[i]);
+                }
+            }
+            break;
+        case "[" :
+            
+            break;
+        default :
+            
+            break;
+    }
+
+    if(!elements)
+    return elements;
+}
+
+
+
+/* ------------  4. 事件   ------------- */
+
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+    // your implement
+}
+
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    // your implement
+}
+
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+    // your implement
 }
 
 
