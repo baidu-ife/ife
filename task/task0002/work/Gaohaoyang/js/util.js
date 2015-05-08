@@ -70,8 +70,10 @@ function simpleTrim(str) {
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
 // 尝试使用一行简洁的正则表达式完成该题目
 function trim(str) {
-    return str.replace(/^\s+|\s+$/g, '');
-    //匹配开头和结尾的空白字符，并全局匹配
+    if (str.length != -1) {
+        return str.replace(/^\s+|\s+$/g, '');
+        //匹配开头和结尾的空白字符，并全局匹配
+    }
 }
 
 /*
@@ -80,7 +82,7 @@ function trim(str) {
 function deleteBlank(arr) {
     var arr2 = [];
     for (i = 0; i < arr.length; i++) {
-        if (arr[i].match(/\s+/) || arr[i]==="") {
+        if (arr[i].match(/\s+/) || arr[i] === "") {
             continue;
         } else {
             arr2.push(arr[i]);
@@ -166,7 +168,7 @@ function $(selector) {
         return document;
     }
 
-    selector = selector.trim();
+    selector = trim(selector);
     if (selector.indexOf(" ") !== -1) { //若存在空格
         var selectorArr = selector.split(/\s+/); //拆成数组
 
@@ -292,15 +294,13 @@ function addEnterEvent(element, listener) {
 }
 
 // 事件代理
-// 先简单一些
-function delegateEvent(element, tag, eventName, listener) {
-    element['on' + eventName] = function(ev) {
-        var e = ev || window.event;
-        var target = e.target || e.srcElement;
-        if (target.nodeName.toLowerCase() === tag) {
-            target['on' + eventName] = listener;
+function delegateEvent(element,tag,eventName,listener){
+    addEvent(element, eventName, function(event){
+        var target = event.target || event.srcElement;
+        if(target.tagName.toLowerCase() == tag.toLowerCase()) {
+            listener.call(target, event);
         }
-    };
+    });
 }
 
 // 估计有同学已经开始吐槽了，函数里面一堆$看着晕啊，那么接下来把我们的事件函数做如下封装改变：
