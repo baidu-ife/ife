@@ -20,25 +20,24 @@ function cloneObject(src) {
 	if(typeOfSrc == "string" || typeOfSrc == "number" || typeOfSrc == "boolean") {
 		target = src;
 		return target;
-	} else {
-		if(src instanceof Date) {
-			target = src;
-			return target;
-		} else if(src instanceof Array) {
-			target = [];
-			for(var index = 0; index < src.length; index ++){
-				target[index] = cloneObject(src[index]);
-			}
-			return target;
-		} else {
-			target = {};
-			for(var item in src){
-				target[item] = cloneObject(src[item]);
-			}
-			return target;
+	} 
+	if(src instanceof Date) {
+		target = src;
+		return target;
+	} 
+	if(src instanceof Array) {
+		target = [];
+		for(var index = 0; index < src.length; index ++){
+			target[index] = cloneObject(src[index]);
 		}
+		return target;
 	}
 
+	target = {};
+	for(var item in src){
+		target[item] = cloneObject(src[item]);
+	}
+	return target;
 };
 
 function uniqArray(arr) {
@@ -112,7 +111,15 @@ function removeClass(element, oldClassName) {
 
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
-	
+    var bodyEle = document.getElementsByTagName(body);
+    var elementDepth = 0,
+        siblingNodeDepth = 0;
+
+
+    if(element.contains(siblingNode) || siblingNode.contains(element))
+        return;
+
+    while(element.parentNode != bodyEle)
 }
 
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}

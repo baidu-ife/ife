@@ -11,6 +11,20 @@
     <input id="number2" type="text">
     <span id="result"></span>
     <button id="addbtn">add</button>
+    <ul>
+    	<li id="1">1</li>
+    	<li id="2">2
+    		<ul id="2-1">
+    			<li id="2.1">2.1</li>
+    			<li id="2.2">2.2</li>
+    		</ul>
+    		<ul id="2-2">
+    			<li id="2.3">2.3</li>
+    		</ul>
+    	</li>
+    	<li id="3">3</li>
+    </ul>
+
     <script type="text/javascript" src="./js/util.js"></script>
     <script type="text/javascript">
 		var srcObj = {
@@ -65,7 +79,7 @@
 				console.log(item + " is not email");
 		}
 
-		each(emailTest, testEmail);
+		//each(emailTest, testEmail);
 
 		var testPhone = function(index, item) {
 			if(isMobilePhone(item))
@@ -73,7 +87,7 @@
 			else
 				console.log(item + " is not phone number");
 		}
-		each(phoneTest, testPhone);
+		//each(phoneTest, testPhone);
 
 
     </script>
