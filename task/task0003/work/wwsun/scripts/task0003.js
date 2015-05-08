@@ -1,5 +1,4 @@
 // todo: 禁止添加重复的分类名
-// todo: 修改任务内容
 // todo: 允许删除分类（鼠标hover显示删除按钮，需要confirm）
 // todo: 允许更改任务状态
 
@@ -239,6 +238,7 @@ function displayTaskDetail(task) {
     $('#todo-title').innerHTML = task.title;
     $('#todo-date').innerHTML = task.date;
     $('#todo-content').innerHTML = task.content;
+    $('#modifyTaskBtn').dataset.index = task.id;
 }
 
 function setupTaskListDelegate(selector) {
@@ -303,6 +303,53 @@ $.click('#addTaskBtn', function () {
     var task = addNewTask(title, categoryId, due, content);
     displayTaskDetail(task);
 });
+
+$.click('#modifyTaskBtn', function (event) {
+    event = EventUtil.getEvent(event);
+    var target = EventUtil.getTarget(event);
+    var taskId = target.dataset.index;
+
+    var task = getTaskById(parseInt(taskId));
+
+    var form = $('#modifyTaskForm');
+    form.elements['title'].value = task.title;
+    form.elements['due'].value = task.date;
+    form.elements['content'].value = task.content;
+    $('#isModifyBtn').dataset.index = task.id;
+
+
+});
+
+$.click('#isModifyBtn', function(event) {
+    event = EventUtil.getEvent(event);
+    var target = EventUtil.getTarget(event);
+    var taskId = target.parentElement.dataset.index;
+
+    var form = $('#modifyTaskForm');
+    var title = form.elements['title'].value;
+    var due = form.elements['due'].value;
+    var content = form.elements['content'].value;
+
+    // save updated task to local storage
+    var taskArray = getTaskArray();
+
+    var i,
+        n;
+    for (i=0, n=tasks.length; i<n; i++) {
+        if(taskArray[i].id === parseInt(taskId)) {
+
+            taskArray[i].title = title;
+            taskArray[i].date = due;
+            taskArray[i].content = content;
+
+            storage.setItem(taskId, JSON.stringify(taskArray[i])); // replace the original single item
+            displayTaskDetail(taskArray[i]);
+        }
+    }
+
+    storage.setItem('taskArray', JSON.stringify(taskArray));
+});
+
 
 // App start
 
