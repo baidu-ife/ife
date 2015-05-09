@@ -154,6 +154,7 @@ div.task-list-detail ul {
 div.task-list-detail ul a {
     color: #000;
     display: block;
+    width: 65%;
 }
 
 li.task-date {
@@ -167,10 +168,33 @@ div.task-list-detail ul a {
 
 div.task-list-detail ul a:hover {
     color: green;
+    background: #FFFF99;
 }
 
-div.task-list-detail ul li:hover {
+/*div.task-list-detail ul li:hover {*/
+    /*background: #FFFF99;*/
+/*}*/
+
+ul.task-list {
+    margin-right: 50px;
+}
+
+a.task-left {
+    float: left;
+    width: 100%;
+}
+
+span.task-right {
+    display: block;
+    float: right;
+    width: 50px;
+    padding: 5px;
     background: #FFFF99;
+    font-size: smaller;
+}
+
+span.task-right:hover {
+    background: white;
 }
 
 div.panel-footer {

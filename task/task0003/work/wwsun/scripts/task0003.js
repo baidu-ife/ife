@@ -1,6 +1,7 @@
 // todo: 禁止添加重复的分类名
 // todo: 允许删除分类（鼠标hover显示删除按钮，需要confirm）
 // todo: 允许更改任务状态
+// todo: 任务根据日期进行排序
 
 var storage = getLocalStorage(); // for compatibility
 
@@ -223,14 +224,22 @@ function buildTaskListByCategory(category) {
 
             var li = document.createElement('li');
             var a = document.createElement('a');
+            var span = document.createElement('span');
 
             a.setAttribute('href', '#');
+            a.setAttribute('class', 'task-left');
 
             var task = getTaskById(category.tasks[i]);
 
             a.setAttribute('data-index', task.id);
             a.innerHTML = task.title;
+
+            span.setAttribute('data-index', task.id);
+            span.setAttribute('class', 'task-right');
+            span.innerHTML = '删除';
+
             li.appendChild(a);
+            li.appendChild(span);
             taskList.appendChild(li);
         }
     }
@@ -268,14 +277,72 @@ function displayTaskDetail(task) {
     $('#modifyTaskBtn').dataset.index = task.id;
 }
 
-function setupTaskListDelegate(selector) {
-    var taskUl = $(selector);
-    EventUtil.addHandler(taskUl, 'click', function (event) {
-        event = EventUtil.getEvent(event);
-        var target = EventUtil.getTarget(event);
-        var task = getTaskById(parseInt(target.dataset.index));
-        displayTaskDetail(task);
-    });
+function taskItemClickHandler(event) {
+    event = EventUtil.getEvent(event);
+    var target = EventUtil.getTarget(event);
+    var task = getTaskById(parseInt(target.dataset.index));
+    displayTaskDetail(task);
+}
+
+function taskItemDeleteHandler(event) {
+    event = EventUtil.getEvent(event);
+    var target = EventUtil.getTarget(event);
+    //var task = getTaskById(parseInt(target.dataset.index));
+    //alert(target.dataset.index);
+    if(confirm("是否删除该任务？")) {
+        // delete the item
+        deleteTaskById(target.dataset.index);
+    } else {
+        // cancel delete: do nothing
+    }
+}
+
+function deleteTaskById(taskId) {
+    taskId = parseInt(taskId);
+
+    var taskArray = getTaskArray();
+    var categoryArray = getCategoryArray();
+
+    var i,  // loop index
+        n;  // loop length
+
+    // 1. delete the task in the category item
+
+    var categoryId = parseInt(getTaskById(taskId).category);
+    var category = getCategoryById(categoryId);
+
+
+    for (i=0, n=categoryArray.length; i<n; i++) {
+        // find the category in array
+        if (categoryArray[i].id === categoryId) {
+            var j,
+                m;
+
+            for (j=0, m=categoryArray[i].tasks.length; j<m; i++) {
+                if (taskId === categoryArray[i].tasks[j]) {
+                    categoryArray[i].tasks.splice(j,1); // todo: Error!!!
+                    break;
+                }
+            }
+        }
+    }
+    storage.setItem('categoryArray', JSON.stringify(categoryArray));
+
+    // 2. delete the task from taskArray
+    for (i=0, n=taskArray.length; i<n; i++) {
+        if(taskArray[i].id = taskId) {
+            taskArray.splice(i,1);
+            break;
+        }
+    }
+    storage.setItem('taskArray', JSON.stringify(taskArray));
+
+    // 3. delete the single item from localStorage
+    storage.removeItem(taskId);
+
+    // 4. refresh the task list menu
+    console.log(category);
+    buildTaskListByCategory(category);
 }
 
 function setupMenuDelegate(selector) {
@@ -295,7 +362,8 @@ function setupMenuDelegate(selector) {
         }
     });
 
-    setupTaskListDelegate('#task-list');
+    $.delegate('#task-list', 'a', 'click', taskItemClickHandler);
+    $.delegate('#task-list', 'span', 'click', taskItemDeleteHandler)
 }
 
 function appInit() {
@@ -343,7 +411,6 @@ $.click('#modifyTaskBtn', function (event) {
     form.elements['due'].value = task.date;
     form.elements['content'].value = task.content;
     $('#isModifyBtn').dataset.index = task.id;
-
 
 });
 
