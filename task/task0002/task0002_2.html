@@ -1,0 +1,48 @@
+<html lang="zh-CN">
+<head>
+	<title>倒计时</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<input type="text" id="time" placeholder="请输入停止时间">
+	<button id="btn">提交</button>
+	<p id="result"></p>
+	<script type="text/javascript">
+//获取停止时间，绑定点击事件（获取当前时间，相减，得到正确时间，回调函数。
+function addEvent(element,event,listener){
+	if(element.addEventListener){
+		element.addEventListener(event,listener,false);
+	}else if(element.attachEvent){
+		element.attachEvent("on"+event,listener);
+	}
+}
+var SetTime = function(nowtime, endtime){
+	var result = endtime - nowtime;
+	if(result<=0){
+		document.getElementById("result").innerHTML = "请输入正确的格式";
+	}else{
+		day = Math.floor(result/(1000*24*60*60));
+		hour = Math.floor((result-day*1000*24*60*60)/(1000*60*60));
+		minute = Math.floor((result-day*1000*24*60*60-hour*1000*60*60)/(1000*60));
+		second = ((result- day*1000*24*60*60-hour*1000*60*60-minute*1000*60)/1000);
+		return day ,hour ,minute ,second;
+	}
+}
+function con(endtime){
+	var time = document.getElementById("time").value;
+	var endtime = Date.parse(time);
+	var nowtime=new Date();
+	SetTime(nowtime,endtime);
+	document.getElementById("result").innerHTML = "距离"+time+"还有"+day+"天"+hour+"小时"+minute+"分钟"+second+"秒";
+	if(day==0&&hour==0&&minute==0&&second==0){
+		document.getElementById("result").innerHTML = "倒计时结束！";
+	}else{
+		setTimeout(con,1000);
+	}
+}
+var btn = document.getElementById("btn");
+addEvent(btn, "click",con);
+//几个时间的函数没有把握好，出来显示的结果均为 NUN！
+</script>
+</body>
+</html>
