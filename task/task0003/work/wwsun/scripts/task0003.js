@@ -25,9 +25,6 @@ function getTaskArray() {
     return taskArray;
 }
 
-var categories = getCategoryArray();
-var tasks = getTaskArray();
-
 // now only support two level category
 function buildCategoryMenu() {
     var i,
@@ -203,12 +200,18 @@ function addNewTask(title, categoryId, date, content) {
     storage.setItem('taskArray', JSON.stringify(taskArray));
     storage.setItem('categoryArray', JSON.stringify(categoryArray));
 
-    buildTaskListByCategory(category.id); // refresh the task list
+    buildTaskListByCategory(category.id, null); // refresh the task list
 
     return task;
 }
 
-function buildTaskListByCategory(categoryId) {
+/**
+ * build task list by category and task status
+ * @param categoryId
+ * @param status {boolean} true to display all finished tasks in the specified category
+ * false to display un-finished tasks, null to display all takss
+ */
+function buildTaskListByCategory(categoryId, status) {
     var i,
         n;
 
@@ -219,27 +222,89 @@ function buildTaskListByCategory(categoryId) {
 
     if (category.tasks !== undefined) {
 
-        for (i = 0, n = category.tasks.length; i < n; i++) {
+        if (status===null) {
+            for (i = 0, n = category.tasks.length; i < n; i++) {
 
-            var li = document.createElement('li');
-            var a = document.createElement('a');
-            var span = document.createElement('span');
+                // create a code block - mimicking block scope
+                (function(){
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+                    var span = document.createElement('span');
 
-            a.setAttribute('href', '#');
-            a.setAttribute('class', 'task-left');
+                    a.setAttribute('href', '#');
+                    a.setAttribute('class', 'task-left');
 
-            var task = JSON.parse(storage.getItem(category.tasks[i]));
+                    var task = JSON.parse(storage.getItem(category.tasks[i]));
 
-            a.setAttribute('data-index', task.id);
-            a.innerHTML = task.title;
+                    a.setAttribute('data-index', task.id);
+                    a.innerHTML = task.title;
 
-            span.setAttribute('data-index', task.id);
-            span.setAttribute('class', 'task-right');
-            span.innerHTML = '删除';
+                    span.setAttribute('data-index', task.id);
+                    span.setAttribute('class', 'task-right');
+                    span.innerHTML = '删除';
 
-            li.appendChild(a);
-            li.appendChild(span);
-            taskList.appendChild(li);
+                    li.appendChild(a);
+                    li.appendChild(span);
+                    taskList.appendChild(li);
+                })();
+            }
+        } else if (status === true) { // display all finished tasks
+            for (i = 0, n = category.tasks.length; i < n; i++) {
+
+                (function() {
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+                    var span = document.createElement('span');
+
+                    var task = JSON.parse(storage.getItem(category.tasks[i]));
+                    if (task.status===true) {
+                        a.setAttribute('href', '#');
+
+                        a.setAttribute('class', 'task-left');
+
+                        a.setAttribute('data-index', task.id);
+                        a.innerHTML = task.title;
+
+                        span.setAttribute('data-index', task.id);
+                        span.setAttribute('class', 'task-right');
+                        span.innerHTML = '删除';
+
+                        li.appendChild(a);
+                        li.appendChild(span);
+                        taskList.appendChild(li);
+                    }
+                })();
+            }
+        } else if (status === false) { // display all unfinished tasks
+            for (i = 0, n = category.tasks.length; i < n; i++) {
+
+                (function() {
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+                    var span = document.createElement('span');
+
+                    var task = JSON.parse(storage.getItem(category.tasks[i]));
+                    if (task.status===false) {
+                        a.setAttribute('href', '#');
+
+                        a.setAttribute('class', 'task-left');
+
+                        a.setAttribute('data-index', task.id);
+                        a.innerHTML = task.title;
+
+                        span.setAttribute('data-index', task.id);
+                        span.setAttribute('class', 'task-right');
+                        span.innerHTML = '删除';
+
+                        li.appendChild(a);
+                        li.appendChild(span);
+                        taskList.appendChild(li);
+                    }
+                })();
+
+            }
+        } else {
+            // do nothing
         }
     }
 }
@@ -324,7 +389,7 @@ function deleteTaskById(taskId) {
                     break;
                 }
             }
-            //break;
+            break;
         }
     }
     storage.setItem('categoryArray', JSON.stringify(categoryArray));
@@ -342,7 +407,7 @@ function deleteTaskById(taskId) {
     storage.removeItem(taskId);
 
     // 4. refresh the task list menu
-    buildTaskListByCategory(categoryId);
+    buildTaskListByCategory(categoryId, null);
 }
 
 function categoryItemClickHandler(event) {
@@ -356,7 +421,7 @@ function categoryItemClickHandler(event) {
     } else {
         storage.setItem('currentCategoryId', target.dataset.index);
         var category = getCategoryById(parseInt(target.dataset.index)); // by default, index is a string
-        buildTaskListByCategory(category.id);
+        buildTaskListByCategory(category.id, null);
     }
 
     $.delegate('#task-list', 'a', 'click', taskItemClickHandler);
@@ -437,9 +502,6 @@ function changeTaskStatus(taskId) {
 }
 
 function appInit() {
-    categories = [];
-    var cat2 = new Category('默认分类', '');
-    categories.push(cat2);
     storage.setItem('currentCategoryId', 'all-tasks');//set it as the default selected category
 }
 
@@ -518,6 +580,21 @@ $.click('#changeTaskStatusBtn', function (event) {
     event = EventUtil.getEvent(event);
     var target = EventUtil.getTarget(event);
     changeTaskStatus(target.dataset.index);
+});
+
+$.click('#unfinish-tasks-btn', function (event) {
+    var catId = storage.getItem('currentCategoryId');
+    buildTaskListByCategory(catId, false);
+});
+
+$.click('#finish-tasks-btn', function (event) {
+    var catId = storage.getItem('currentCategoryId');
+    buildTaskListByCategory(catId, true);
+});
+
+$.click('#all-tasks-btn', function (event) {
+    var catId = storage.getItem('currentCategoryId');
+    buildTaskListByCategory(catId, null);
 });
 
 $.delegate('#navigation', 'a', 'click', categoryItemClickHandler);
