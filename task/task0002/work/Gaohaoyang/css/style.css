@@ -86,3 +86,27 @@ textarea {
 .input-hint .active {
     background: #eee;
 }
+
+/**
+ * 界面拖拽交互
+ */
+.block{
+    width: 200px;
+    height: 500px;
+    border:1px solid #333;
+    float: left;
+    /*position: relative;*/
+}
+.block div{
+    width: 200px;
+    height: 60px;
+    background-color: #929BDD;
+    border-bottom:1px solid #333;
+    position: absolute;
+}
+.right-block{
+    margin-left: 300px;
+}
+.clearfix{
+    overflow: hidden;
+}
