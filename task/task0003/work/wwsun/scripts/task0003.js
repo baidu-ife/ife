@@ -1,6 +1,4 @@
 // todo: 禁止添加重复的分类名
-// todo: 允许删除分类（鼠标hover显示删除按钮，需要confirm）
-// todo: 允许更改任务状态
 // todo: 任务根据日期进行排序
 
 var storage = getLocalStorage(); // for compatibility
@@ -218,7 +216,7 @@ function buildTaskListByCategory(categoryId) {
     taskList.innerHTML = ''; // empty the task list
 
     var category = JSON.parse(storage.getItem(categoryId));
-    
+
     if (category.tasks !== undefined) {
 
         for (i = 0, n = category.tasks.length; i < n; i++) {
@@ -276,6 +274,7 @@ function displayTaskDetail(task) {
     $('#todo-date').innerHTML = task.date;
     $('#todo-content').innerHTML = task.content;
     $('#modifyTaskBtn').dataset.index = task.id;
+    $('#changeTaskStatusBtn').dataset.index = task.id;
 }
 
 function taskItemClickHandler(event) {
@@ -405,6 +404,38 @@ function deleteCategoryById(categoryId) {
     buildCategoryMenu(); // refresh the category menu
 }
 
+function changeTaskStatus(taskId) {
+    taskId = parseInt(taskId);
+
+    var btn = $('#changeTaskStatusBtn');
+
+    var task = getTaskById(taskId);
+    //1. update single task item in local storage
+    task.changeStatus();
+    if(task.status) {
+        btn.setAttribute('class', 'finish-task');
+        btn.innerHTML= '完成';
+    } else {
+        btn.setAttribute('class', 'unfinish-task');
+        btn.innerHTML = '未完成';
+    }
+
+    storage.setItem(taskId, JSON.stringify(task));
+
+    //2. update task item in task array in local storage
+    var taskArray = getTaskArray();
+    var i,
+        n;
+
+    for (i=0, n=taskArray.length; i<n; i++) {
+        if(taskArray[i].id === taskId) {
+            taskArray[i].status = task.status;
+            break;
+        }
+    }
+    storage.setItem('taskArray',JSON.stringify(taskArray));
+}
+
 function appInit() {
     categories = [];
     var cat2 = new Category('默认分类', '');
@@ -481,6 +512,12 @@ $.click('#isModifyBtn', function (event) {
     }
 
     storage.setItem('taskArray', JSON.stringify(taskArray));
+});
+
+$.click('#changeTaskStatusBtn', function (event) {
+    event = EventUtil.getEvent(event);
+    var target = EventUtil.getTarget(event);
+    changeTaskStatus(target.dataset.index);
 });
 
 $.delegate('#navigation', 'a', 'click', categoryItemClickHandler);

@@ -271,6 +271,16 @@ div.todo-date a {
     color: #000000;
 }
 
+.unfinish-task {
+    color: white;
+    background: red;
+}
+
+.finish-task {
+    color: white;
+    background: green;
+}
+
 .modal-dialog {
     position: fixed;
     font-family: Arial, Helvetica, sans-serif;
