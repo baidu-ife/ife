@@ -82,7 +82,9 @@ ul#navigation {
 ul#navigation li {
     list-style: none;
     background-color: #3366CC;
-    border-top: solid 1px #3366CC;
+
+    border-bottom: solid 1px #39f;
+    border-right: solid 1px #39f;
     text-align: left;
     margin: 0;
 }
@@ -91,8 +93,38 @@ ul#navigation li a {
     display: block;
     text-decoration: none;
     padding: .25em;
-    border-bottom: solid 1px #39f;
-    border-right: solid 1px #39f;
+
+}
+
+ul#navigation li span {
+    display: block;
+    padding: .25em;
+    color: yellow;
+    font-weight: bold;
+}
+
+ul#navigation li span:hover {
+    background: #fff;
+    color: #000000;
+}
+
+ul#navigation li li {
+    margin-right: 20px;
+}
+
+ul#navigation li li > a {
+    /*width: 50%;*/
+}
+
+a.cat-left {
+    float: left;
+    width: 80%;
+}
+
+span.cat-right {
+    float: left;
+    width: 20%;
+    margin-right: -20%;
 }
 
 ul#navigation li a:link, a:visited { color: #fff; }
@@ -170,10 +202,6 @@ div.task-list-detail ul a:hover {
     color: green;
     background: #FFFF99;
 }
-
-/*div.task-list-detail ul li:hover {*/
-    /*background: #FFFF99;*/
-/*}*/
 
 ul.task-list {
     margin-right: 50px;
