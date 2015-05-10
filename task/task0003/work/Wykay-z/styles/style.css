@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('font/font/fontello.eot?71945293');
+  src: url('font/font/fontello.eot?71945293#iefix') format('embedded-opentype'),
+       url('font/font/fontello.woff?71945293') format('woff'),
+       url('font/font/fontello.ttf?71945293') format('truetype'),
+       url('font/font/fontello.svg?71945293#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.demo-icon
+{
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+
+
+/*****   reset   ******/
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video,input {
+    margin: 0;  
+    padding: 0; 
+    border: 0;  
+    font-size: 100%;  
+    font: inherit;  
+    vertical-align: baseline;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block;}
+body {  line-height: 1;}
+ol, ul {  list-style: none;}
+blockquote, q { quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after { content: '';  content: none;}
+a { text-decoration: none;}
+.clearfloat {clear:both;}
+
+
+html {
+	width: 100%;
+	
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper {
+	width: 100%;
+	min-width: 800px;
+	min-height: 520px;
+	height: 100%;
+}
+
+
+
+.header {
+	height: 10%;
+	background: #aaa;
+}
+.header h4 {
+	padding-top: 1%;
+}
+.main-content {
+	height: 90%;
+}
+.task-category, .task-item, .task-detail {
+	float: left;
+	height: 100%;
+	position: relative;
+	border-left: 1px solid #ddd;
+}
+.task-category {
+	width: 20%;
+	background: #eee;
+}
+.task-item {
+	width: 20%;
+	background: #f9f9f9;
+}
+.task-detail {
+	width: 60%;
+	background: #fcfcfc;
+}
+
+
+.column-footer {
+	height: 6%;
+	width: 100%;
+	line-height: 2.2em;
+	padding-left: 5%;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #ddd;
+}
+
+
+
+
+.header h4 {
+	font-size: 16px;
+	line-height: 2em;
+	padding-left: 1%;
+}
+.main-content {
+	font-size: 12px;
+	line-height: 1.6em;
+}
+.main-content h5 {
+	font-size: 14px;
+	line-height: 2em;
+}
+
+.task-category h5:hover, .task-category li li:hover, .task-category h5.active {
+	background: #fff;
+}
+.main-category {
+	padding-left: 5%;
+}
+.category-name {
+	padding-left: 5%;
+}
+.sub-category-name {
+	padding-left: 5%;
+}
+
+
+.state-tab {
+	background: #eee;
+	height: 6%;
+	border-bottom: 1px solid #ddd;
+}
+.state-tab li{
+	float: left;
+	margin-top: 2%;
+	margin-left: 3%;
+	padding: 0 2%;
+	border: 1px solid #eee;
+}
+.state-tab li:hover, .state-tab li:active, .state-tab li.active {
+	background: #fff;
+	border: 1px solid #aaa;
+}
+
+
+.divided-date {
+	height: 5%;
+	background-color: cornsilk;
+	line-height: 2em;
+	padding-left: 5%;
+}
+.time-items li {
+	line-height: 2em;
+	padding-left: 10%;
+}
+
+
+.task-detail {
+}
+.task-header {
+	padding-left: 2%;
+	height: 7%;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	line-height: 2em;
+	font-size: 16px;
+}
+.task-title {
+	float: left;
+	
+}
+.task-header span {
+	float: right;
+	margin-right: 2%;
+}
+
+
+.task-info {
+	height: 6%;
+	background-color: cornsilk;
+	padding-left: 2%;
+	line-height: 2.4em;
+}
+
+.task-content {
+	padding: 1% 2%;
+}
