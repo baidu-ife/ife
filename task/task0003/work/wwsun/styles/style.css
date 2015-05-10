@@ -1,0 +1,381 @@
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0 auto;
+}
+
+nav {
+    position: relative;
+    padding-top: 20px;
+    background: #3366CC;
+    min-height: 91vh;
+    border-right: solid 1px darkblue;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+ul ul {
+    margin-bottom: 0;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    outline: 0;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header {
+    background: #3366cc;
+    border-bottom: solid 1px #39f;
+}
+
+.header h1 {
+    margin: 0 auto;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media screen and (min-width: 1170px) {
+    .left {
+        float: left;
+        width: 17%;
+    }
+
+    .middle {
+        float: left;
+        overflow: hidden;
+        width: 17%;
+        background: #CCCCCC;
+    }
+
+    .right {
+        float: left;
+        width: 65%;
+    }
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1170px) {
+    .left {
+        float: left;
+        width: 25%;
+    }
+
+    .middle {
+        float: left;
+        overflow: hidden;
+        width: 25%;
+        background: #CCCCCC;
+    }
+
+    .right {
+        float: left;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .left {
+        float: left;
+        width: 30%;
+    }
+
+    .middle {
+        float: left;
+        overflow: hidden;
+        width: 30%;
+        background: #CCCCCC;
+    }
+
+    .right {
+        float: left;
+        width: 40%;
+    }
+}
+
+
+ul#navigation {
+    /*width: 100%;*/
+}
+
+ul#navigation li {
+    list-style: none;
+    background-color: #3366CC;
+
+    border-bottom: solid 1px #39f;
+    border-right: solid 1px #39f;
+    text-align: left;
+    margin: 0;
+}
+
+ul#navigation li a {
+    display: block;
+    text-decoration: none;
+    padding: .25em;
+
+}
+
+ul#navigation li span {
+    display: block;
+    padding: .25em;
+    color: yellow;
+    font-weight: bold;
+}
+
+ul#navigation li span:hover {
+    background: #fff;
+    color: #000000;
+}
+
+ul#navigation li li {
+    margin-right: 20px;
+}
+
+ul#navigation li li > a {
+    /*width: 50%;*/
+}
+
+a.cat-left {
+    float: left;
+    width: 80%;
+}
+
+span.cat-right {
+    float: left;
+    width: 20%;
+    margin-right: -20%;
+}
+
+ul#navigation li a:link, a:visited { color: #fff; }
+ul#navigation li a:hover, a:active { color: #000; }
+ul#navigation li a:hover { background-color: #fff; }
+
+div.task-list {
+    position: relative;
+    padding-top: 20px;
+    min-height: 91vh;
+    border-right: solid 1px;
+}
+
+div.editor {
+    /*padding-top: 20px;*/
+
+    height: 91vh;
+}
+
+div.task-list-header {
+    margin-top: -20px;
+    padding: 12px;
+    background: whitesmoke;
+}
+
+div.task-list-header ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+div.task-list-header ul li {
+    display: inline;
+}
+
+div.task-list-header ul li a {
+    text-decoration: none;
+    padding: .2em 1em;
+    color: black;
+    background-color: #FFFF99;
+}
+
+div.task-list-header a:hover {
+    color: #fff;
+    background-color: #369;
+}
+
+div.task-list-detail {
+
+}
+
+div.task-list-detail ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+div.task-list-detail ul a {
+    color: #000;
+    display: block;
+    width: 65%;
+}
+
+li.task-date {
+    background: #FFFFCC;
+    padding: 5px 15px;
+}
+
+div.task-list-detail ul a {
+    padding: 5px 5px 5px 40px;
+}
+
+div.task-list-detail ul a:hover {
+    color: green;
+    background: #FFFF99;
+}
+
+ul.task-list {
+    margin-right: 50px;
+}
+
+a.task-left {
+    float: left;
+    width: 100%;
+}
+
+span.task-right {
+    display: block;
+    float: right;
+    width: 50px;
+    padding: 5px;
+    background: #FFFF99;
+    font-size: smaller;
+}
+
+span.task-right:hover {
+    background: white;
+}
+
+div.panel-footer {
+    color: #FFFFFF;
+    width: 100%;
+    background: #003399;
+    position: absolute;
+    bottom: 0;
+}
+
+div.panel-footer:hover {
+    opacity: 0.5;
+    border-top: solid 1px darkblue;
+}
+
+div.panel-footer a {
+    width: inherit;
+    text-align: center;
+    display: block;
+    padding: 15px;
+}
+
+div.todo-title {
+    font-size: larger;
+    background: whitesmoke;
+    border-bottom: solid 1px;
+    padding: 10px;
+}
+
+div.todo-date {
+    background: #FFFFCC;
+    border-bottom: solid 1px;
+    padding: 10px;
+}
+
+div.todo-content {
+    padding: 10px;
+}
+
+div.todo-date span.todo-status, span.todo-modify {
+    background: white;
+    padding: 5px;
+}
+
+div.todo-date a {
+    color: #000000;
+}
+
+.unfinish-task {
+    color: white;
+    background: red;
+}
+
+.finish-task {
+    color: white;
+    background: green;
+}
+
+.modal-dialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal-dialog a, p, h2 {
+    color: #000000;
+}
+
+.modal-dialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modal-dialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+    background: #00d9ff;
+}
