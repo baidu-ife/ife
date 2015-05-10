@@ -7,26 +7,61 @@
 var relatX = 0;
 var relatY = 0;
 
+function init() {
+    var dragAreaHeight = $(".drag-block").offsetTop;
+    $(".pos1").style.top = 500;
+    console.log($(".pos1").style.top);
+    for (var i = 0; i < 6; i++) {
+        // $("'.pos"+i+"'").style.top += dragAreaHeight;
+        $(".pos1").style.top += dragAreaHeight;
+    }
+    console.log(dragAreaHeight);
+    console.log($(".pos2").style.top);
+}
+
+init();
+
 $.delegate(".left-block", "div", "mousedown", function(ev) {
-    console.log("111")
-    console.log(this)
+    console.log("111");
+    console.log(this);
+    var oDiv = this;
     var oEvent = ev || event;
 
     relatX = oEvent.clientX - this.offsetLeft;
     relatY = oEvent.clientY - this.offsetTop;
 
     //鼠标移动
-    this.onmousemove = function(ev) {
+    document.onmousemove = function(ev) {
         var oEvent = ev || event;
         console.log("222");
-        console.log(this);
-        this.style.left = oEvent.clientX - relatX + "px";
-        this.style.top = oEvent.clientY - relatY + "px";
+        console.log(oDiv);
+        oDiv.style.left = oEvent.clientX - relatX + "px";
+        oDiv.style.top = oEvent.clientY - relatY + "px";
     };
 
     //鼠标松开
-    this.onmouseup = function() {
-        this.onmousemove = null;
-        this.onmouseup = null;
+    document.onmouseup = function() {
+        document.onmousemove = null;
+        document.onmouseup = null;
     };
+    return false;
 });
+
+/**
+ * 获取外联样式
+ * @param  {element} goal DOM节点元素对象
+ * @return {element}      可以获取外联样式的元素对象
+ */
+function getCssValue(goal) {
+    var obj = null;
+    var value = null;
+    if (window.ActiveXObject) {
+        obj = document.querySelector(goal);
+        value = obj.currentStyle;
+        return value;
+    } else {
+        obj = document.querySelector(goal);
+        value = getComputedStyle(obj);
+        return value;
+    }
+}

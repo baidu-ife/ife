@@ -92,17 +92,40 @@ textarea {
  */
 .block{
     width: 200px;
-    height: 500px;
+    height: 359px;
     border:1px solid #333;
     float: left;
-    /*position: relative;*/
+    /* position: relative; */
 }
 .block div{
     width: 200px;
-    height: 60px;
+    height: 59px;
     background-color: #929BDD;
     border-bottom:1px solid #333;
     position: absolute;
+    text-align: center;
+    color: #fff;
+    line-height: 59px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.pos1{
+    top:0;
+}
+.pos2{
+    top: 60px;
+}
+.pos3{
+    top:120px;
+}
+.pos4{
+    top:180px;
+}
+.pos5{
+    top:210px;
+}
+.pos6{
+    top: 270px;
 }
 .right-block{
     margin-left: 300px;
