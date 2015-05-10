@@ -404,12 +404,14 @@ function delegateEvent(element,tag,eventName,listener){
     	event = event || window.event;
     	var target = event.target || event.srcElement;
     	if(target.tagName.toLowerCase() == tag){
-    		listener();
+    		listener(event,target);
     	}
     };	
 }
 $.delegate = delegateEvent;
-$.delegate($("#list"), "li", "click", clicklistener);
+// $.delegate($("#list"), "li", "click", function(event,target){
+// 	console.log(event.type+","+target.offsetHeight);
+// });
 
 
 //BOM操作

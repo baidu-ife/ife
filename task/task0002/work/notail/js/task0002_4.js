@@ -3,12 +3,13 @@ $.on(ipt,"keyup",function(event){
 	if(!ipt.value){
 		return;
 	}
+	event = event || window.event;
 	var ul = $(".sug-ul");
 	var options = {
 		data: {input: ipt.value},
 		onsuccess: function(responseText,xhr){
 			var data = JSON.parse(responseText);
-			var len = data.length,flag = 0,temp = -1;
+			var len = data.length,flag = 0;
 			if(!event){
 				return;
 			}
@@ -33,10 +34,9 @@ $.on(ipt,"keyup",function(event){
 				}
 				sug.style.display = "block";
 			}else{
-				var lis = ul.getElementsByTagName("li");
 				//按键
 				switch(event.keyCode) {
-					case 38:
+					case 38: //up
 						if($("li.select")){
 							var preLi = $("li.select").previousSibling;
 							if(preLi){
@@ -47,7 +47,7 @@ $.on(ipt,"keyup",function(event){
 							firstLi && selectLi(ul,firstLi);
 						}
 						break;
-					case 40:
+					case 40: //down
 						if($("li.select")){
 							var nextLi = $("li.select").nextSibling;
 							if(nextLi){
@@ -58,11 +58,11 @@ $.on(ipt,"keyup",function(event){
 							firstLi && selectLi(ul,firstLi);
 						}
 						break;
-					case 13:
-						ipt.value = $("li.select").value;
+					case 13: //enter
+						ipt.value = $("li.select").innerHTML;
 						clearUl();
 						break;
-				}				
+				}
 			}
 			//清除类名
 			function clearClass(ul){
@@ -82,7 +82,6 @@ $.on(ipt,"keyup",function(event){
 					ul.removeChild(ul.firstChild);
 				}
 				flag = 0;
-				temp = -1;
 				$("#sug").style.display = "none";
 			}
 
