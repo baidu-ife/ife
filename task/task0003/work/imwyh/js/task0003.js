@@ -1,11 +1,15 @@
 /* global $ */
+//正在显示的任务
 var contentShowing = [];
+//正在显示的任务列表
 var tableItems = [];
+//最后点击的任务
 var latestTag = "";
+//编辑或者新增任务
 var isEditing = false;
 
 //读取数据
-var data = eval('(' + unescape(getCookie("dd")|| "%7B%22taskItem%22%3A%5B%7B%22name%22%3A%22%u9ED8%u8BA4%u9879%u76EE%22%2C%22default%22%3A%22true%22%2C%22num%22%3A%221%22%2C%22subdirectory%22%3A%5B%7B%22name%22%3A%22%u9ED8%u8BA4%22%2C%22default%22%3A%22true%22%2C%22num%22%3A%221%22%2C%22content%22%3A%5B%7B%22id%22%3A%221430901099000%22%2C%22title%22%3A%22%u8FD9%u662F%u81EA%u52A8%u751F%u6210%u7684%u9879%u76EE%22%2C%22time%22%3A%2220150507%22%2C%22isComplete%22%3A%22false%22%2C%22main%22%3A%22%u8D76%u5DE5%u5E72%u4E86%u597D%u51E0%u5929%uFF0C%u8FDE%u7EED%u71AC%u4E86%u4E09%u5929%u7684%u591C%uFF0C%u5E73%u5747%u6BCF%u5929%u7761%u77205%u5C0F%u65F6%u4E0D%u5230%uFF0C%u4E5F%u7B97%u662F%u6709%u4E86%u4E2A%u4EA4%u4EE3%u3002%u80FD%u505A%u51FA%u6765%u975E%u5E38%u5F00%u5FC3%uFF0C%u5373%u4F7F%u5DF2%u7ECF%u8FD9%u4E48%u665A%u4E86%u3002%u5927%u4F53%u90FD%u5B9E%u73B0%u4E86%uFF0C%u81EA%u5DF1%u6D4B%u8BD5%u4F9D%u7136%u6709%u82E5%u5E72%u53EF%u4EE5%u5728%u4EA4%u4E92%u4E0A%u4F18%u5316%u7684%u5730%u65B9%u5427%u3002%u4F9D%u7136%u611F%u8C22%u767E%u5EA6%u63D0%u4F9B%u7684%u8FD9%u6B21%u673A%u4F1A%uFF1A%uFF09%22%7D%5D%7D%5D%7D%5D%2C%22num%22%3A%221%22%7D") + ')');
+var data = eval('(' + unescape(localStorage.contentData||getCookie("contentData")|| "%7B%22taskItem%22%3A%5B%7B%22name%22%3A%22%u9ED8%u8BA4%u9879%u76EE%22%2C%22default%22%3A%22true%22%2C%22num%22%3A%221%22%2C%22subdirectory%22%3A%5B%7B%22name%22%3A%22%u9ED8%u8BA4%22%2C%22default%22%3A%22true%22%2C%22num%22%3A%221%22%2C%22content%22%3A%5B%7B%22id%22%3A%221430901099000%22%2C%22title%22%3A%22%u8FD9%u662F%u81EA%u52A8%u751F%u6210%u7684%u9879%u76EE%22%2C%22time%22%3A%2220150507%22%2C%22isComplete%22%3A%22false%22%2C%22main%22%3A%22%u8D76%u5DE5%u5E72%u4E86%u597D%u51E0%u5929%uFF0C%u8FDE%u7EED%u71AC%u4E86%u4E09%u5929%u7684%u591C%uFF0C%u5E73%u5747%u6BCF%u5929%u7761%u77205%u5C0F%u65F6%u4E0D%u5230%uFF0C%u4E5F%u7B97%u662F%u6709%u4E86%u4E2A%u4EA4%u4EE3%u3002%u80FD%u505A%u51FA%u6765%u975E%u5E38%u5F00%u5FC3%uFF0C%u5373%u4F7F%u5DF2%u7ECF%u8FD9%u4E48%u665A%u4E86%u3002%u5927%u4F53%u90FD%u5B9E%u73B0%u4E86%uFF0C%u81EA%u5DF1%u6D4B%u8BD5%u4F9D%u7136%u6709%u82E5%u5E72%u53EF%u4EE5%u5728%u4EA4%u4E92%u4E0A%u4F18%u5316%u7684%u5730%u65B9%u5427%u3002%u4F9D%u7136%u611F%u8C22%u767E%u5EA6%u63D0%u4F9B%u7684%u8FD9%u6B21%u673A%u4F1A%uFF1A%uFF09%22%7D%5D%7D%5D%7D%5D%2C%22num%22%3A%221%22%7D") + ')');
 
 //转换时间
 function changeDate(time) {
@@ -25,7 +29,11 @@ data.__proto__.freshTaskItemBox = function() {
 		}
 		str += '</p><ul>';
 		for(var y = 0; y < this.taskItem[x].subdirectory.length; y++) {
-			str += '<li id="taskSub-' + x + '-' + y + '" class="task-sub"><span class="file"></span>' + this.taskItem[x].subdirectory[y].name + '&nbsp;(' + this.taskItem[x].subdirectory[y].num + ')<span class="del">+</span></li>';
+			str += '<li id="taskSub-' + x + '-' + y + '" class="task-sub"><span class="file"></span>' + this.taskItem[x].subdirectory[y].name + '&nbsp;(' + this.taskItem[x].subdirectory[y].num + ')';
+			if(this.taskItem[x].subdirectory[y].default != "true") {
+				str += '<span class="del">+</span>';
+			}
+			str += '</li>';
 		}
 		str += '</ul></li>';
 	}
@@ -118,6 +126,7 @@ data.del = function(tag) {
 	data.updateNum();
 	data.freshTaskItemBox();
 	data.freshDateBox();
+	saveData();
 }
 
 data.updateNum = function() {
@@ -131,6 +140,7 @@ data.updateNum = function() {
 		this.num += this.taskItem[z].num;
 	}
 	$("#task-num").innerHTML = this.num;
+	saveData();
 }
 
 data.freshTaskItemBox();
@@ -157,33 +167,42 @@ $.on($("#newSub"), "click", function(){
 			break;
 		}
 	}
-	
+	tableItems = [];
 	if(t.length === 1){
 		var x = {
 			name: p,
 			num: 0,
 			subdirectory: []
-			}
+		}
 		data.taskItem.push(x);
-		data.freshTaskItemBox();
-		data.freshDateBox();
+		latestTag = "taskItem-" + (data.taskItem.length - 1);
 	}else if(t.length >= 2){
 		var x = {
 			name: p,
 			num: 0,
 			content: []
-			}
-		data.taskItem[1].subdirectory.push(x);
-		data.freshTaskItemBox();
-		data.freshDateBox();
+		}
+		data.taskItem[t[1]].subdirectory.push(x);
+		latestTag = "taskSub-" + t[1] + "-" + (data.taskItem[t[1]].subdirectory.length - 1);
 	}
+	data.freshTaskItemBox();
+	data.freshDateBox(0);
+	saveData();
 });
 
 //新增任务浮层
 $.on($("#newTask"), "click", function(){
+	var t = latestTag.split("-");
+	t[1]? t[1]: t[1] = 0;
+	t[2]? t[2]: t[2] = 0;
+	if(typeof(data.taskItem[t[1]].subdirectory[t[2]])==="undefined") {
+		alert("请先从左侧选择一个子分类");
+		return;
+	}
 	var d = new Date();
 	$("#cover-date").placeholder = d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate();	
 	$("#cover").style.display = "inline";
+	saveData();
 });
 
 //新增任务
@@ -227,9 +246,11 @@ $.on($("#cover-check"), "click", function(){
 			isComplete: "false",
 			main: main
 		}
+		tableItems.push(x);
 		var t = latestTag.split("-");
 		t[1]? t[1]: t[1] = 0;
 		t[2]? t[2]: t[2] = 0;
+		isEditing = false;
 		data.taskItem[t[1]].subdirectory[t[2]].content.push(x);
 		data.updateNum();
 		data.freshTaskItemBox();
@@ -239,11 +260,7 @@ $.on($("#cover-check"), "click", function(){
 	$("#cover-title").value = "";
 	$("#cover-date").value = "";
 	$("#cover-main").value = "";
-});
-
-//取消新增任务
-$.on($("#cover-cancel"), "click", function(){
-	$("#cover").style.display = "none";
+	saveData();
 });
 
 //确认完成任务
@@ -258,6 +275,7 @@ $.on($("#complete"), "click", function(){
 	}
 	data.freshTaskItemBox();
 	data.freshDateBox(0);
+	saveData();
 });
 
 //编辑任务
@@ -351,9 +369,14 @@ $.on($("#dateComplete"), "click", function(){
 	$("#dateComplete").className="selected";
 })
 
-//时间有限，本来保存数据应该绑定在动作之后
+//保存数据
 function saveData(){
-	setTimeout("saveData()",3000);
-	setCookie("contentData",JSON.stringify(data),99);
+	if(typeof(Storage) !== "undefined")
+		{
+			localStorage.contentData = escape(JSON.stringify(data));
+	   }
+	 else
+	   {
+		   setCookie("contentData",JSON.stringify(data),99);
+	   }
 }
-saveData();
