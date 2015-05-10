@@ -108,6 +108,12 @@ textarea {
     line-height: 59px;
     font-size: 18px;
     font-weight: bold;
+    cursor: move;
+}
+.block .active{
+    border:1px solid #333;
+    opacity: 0.5;
+    
 }
 .pos1{
     top:0;
