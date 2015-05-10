@@ -55,23 +55,62 @@ a:hover {
     margin-left: -15px;
 }
 
+@media screen and (min-width: 1170px) {
+    .left {
+        float: left;
+        width: 17%;
+    }
 
-.left {
-    float: left;
-    width: 17%;
+    .middle {
+        float: left;
+        overflow: hidden;
+        width: 17%;
+        background: #CCCCCC;
+    }
+
+    .right {
+        float: left;
+        width: 65%;
+    }
 }
 
-.middle {
-    float: left;
-    /*display: block;*/
-    overflow: hidden;
-    width: 17%;
-    background: #CCCCCC;
+
+@media screen and (min-width: 800px) and (max-width: 1170px) {
+    .left {
+        float: left;
+        width: 25%;
+    }
+
+    .middle {
+        float: left;
+        overflow: hidden;
+        width: 25%;
+        background: #CCCCCC;
+    }
+
+    .right {
+        float: left;
+        width: 50%;
+    }
 }
 
-.right {
-    float: left;
-    width: 65%;
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .left {
+        float: left;
+        width: 30%;
+    }
+
+    .middle {
+        float: left;
+        overflow: hidden;
+        width: 30%;
+        background: #CCCCCC;
+    }
+
+    .right {
+        float: left;
+        width: 40%;
+    }
 }
 
 
