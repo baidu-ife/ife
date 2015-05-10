@@ -310,36 +310,6 @@ textarea {
   display: inline-block;
 }
 
-.fade {
-  -webkit-transition: opacity .4s;
-  -o-transition: opacity .4s;
-  transition: opacity .4s;
-}
-
-.fade.in.out {
-  opacity: 1;
-}
-
-.fade.out {
-  opacity: 0;
-}
-
-.tip {
-  background-color: rgba(0,0,0,0.5);
-  padding: 5px 15px;
-  color: #fff;
-  font-size: 12px;
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  border-radius: 2px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
 
 /*
 * 页面具体样式
@@ -458,15 +428,14 @@ textarea {
 .categorys .level .del {
   position: absolute;
   right: 10px;
-  top: 3px;
+  top: 4px;
   font-size: 18px;
   display: none;
   cursor: pointer;
   line-height: normal;
-  font-weight:bold;
 }
 
-.categorys .level.has-sub-category .sub-category .del {
+.categorys .level.has-sub-category .del {
   top: 1px;
 }
 
@@ -546,9 +515,6 @@ textarea {
   display: block;
   padding-left: 30px;
   cursor: default;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  line-height: 1.42;
 }
 
 .time-node .item.z-active {

@@ -223,19 +223,6 @@ function getElementsByClassName (context,selCssName) {
     return temp;
 }
 
-// 获取下一个兄弟元素
-function getNextSiblingElement (curDom) {
-    if(curDom.nextElementSibling){
-        return curDom.nextElementSibling;
-    }else{
-        var res=curDom.nextSibling;
-        while(res!==null && res.nodeType!==1){
-            res=res.nextSibling;
-        }
-        return res;
-    }
-};
-
 // 实现一个简单的Query,只返回一个元素
 // 匹配选择器要逆向思维,从后往前查找，有两个情况列外：1.第一个选择器是id的时候，他会用byid缩小范围;  2.最后一个是tag的时候会用bytag缩小范围;  其他的情况就是把body里面的东西全拿出来挨个筛选
 function $ (selector,context) {

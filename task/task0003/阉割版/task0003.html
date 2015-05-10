@@ -18,7 +18,7 @@
         <!-- 左侧 -->
         <div id="categoryList" class="category-list">
             <header class="hd">
-                所有任务 (<span id="allTaskNum" class="num">0</span>)
+                所有任务 (<span class="num">0</span>)
             </header>
             <section class="bd">
                 <h4 class="title">分类列表</h4>
@@ -38,9 +38,9 @@
         <div id="taskList" class="task-list">
             <header class="hd">
                 <ul class="task-status-nav inline">
-                    <li class="inline-item z-active" data-value="all"><a class="fileter-item" href="javascript:void(0);">所有</a></li>
-                    <li class="inline-item" data-value="undone"><a class="fileter-item" href="javascript:void(0);">未完成</a></li>
-                    <li class="inline-item" data-value="done"><a class="fileter-item" href="javascript:void(0);">已完成</a></li>
+                    <li class="inline-item fileter-item z-active" data-value="all"><a href="">所有</a></li>
+                    <li class="inline-item fileter-item" data-value="undone"><a href="">未完成</a></li>
+                    <li class="inline-item fileter-item" data-value="done"><a href="">已完成</a></li>
                 </ul>
             </header>
             <section class="bd tasks">
@@ -55,11 +55,11 @@
         </div>
 
         <!-- 右侧 -->
-        <div id="taskInfo" class="task-info">
+        <div class="task-info">
             <div id="taskDetail" class="detail-bd">
                 <header class="hd">
                     <h4 class="header"></h4>
-                    <div class="operates z-hide">
+                    <div class="operates">
                         <a href="javascript:void(0);" id="completeTask" class="icon icon-done btn btn-done"></a>
                         <a href="javascript:void(0);" id="editTask" class="icon icon-edit btn btn-edit"></a>
                     </div>
@@ -96,9 +96,8 @@
     <!-- 弹窗 -->
 
     <script src="./js/lib/util.js"></script>
-    <script src="./js/lib/mvc.js"></script>
-    <script src="./js/model.js"></script>
-    <script src="./js/view.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/define.js"></script>
+    <script src="./js/view/categoryList.js"></script>
 </body>
 </html>

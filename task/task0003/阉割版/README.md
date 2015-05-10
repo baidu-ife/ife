@@ -6,6 +6,3 @@
 * JavaScript构造函数学习笔记
 * JavaScript面向对象编程学习笔记
 * JavaScript设计模式学习笔记
-
-
-第一次用mvc的方式，写的乱的啊！！哭～

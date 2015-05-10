@@ -1,319 +1,299 @@
-/*
+/**
  * app.js
+ * 集合只能与对应的视图有耦合，视图之间的耦合通过发布订阅模式关联
  */
 
-// 对浏览器做初始化处理，如兼容性问题
-;(function initialize(exports) {
-    // Object.create
-    if (typeof Object.create !== "function") {
-        Object.prototype.create = function(par) {
-            function F() {};
-            F.prototype = par;
-            return new F();
+
+var Tip=function () {
+    var obj={
+        tipDom:null,
+        show:function (txt) {
+            var that=this;
+            this.tipDom=this.createElement(txt);
+            document.body.appendChild(this.tipDom);
+            setTimeout(function () {
+                addClass(that.tipDom,"in");
+            },10);
+
+            setTimeout(function () {
+                that.hide();
+            },3000);
+        },
+        hide:function () {
+            var that=this;
+            removeClass(that.tipDom,"in");
+            setTimeout(function () {
+                document.body.removeChild(that.tipDom);  
+            },410);
+        },
+        createElement:function (txt) {
+            var div=document.createElement("div");
+            div.innerHTML=txt;
+            addClass(div,"tip");
+            addClass(div,"fade");
+            addClass(div,"out");
+            return div;
+        }
+    };
+    return obj;
+}();
+
+
+(function () {
+    var CATEGORY_LOCALSTORAGE_NAME = "CategoryRecord",
+        TASK_LOCALSTORAGE_NAME = "TaskRecord";
+
+    var categoryList = new CategoryList(); // 所有分类
+    var taskList = new TaskList(); // 所有任务
+
+    function createData () {
+        if (localStorage[TASK_LOCALSTORAGE_NAME]) {
+            taskList.fetch(TASK_LOCALSTORAGE_NAME);
+        } else {
+            taskList.addTask({
+                header: "to do 1",
+                content: "to do 1 content",
+                status: 0,
+                time: "2015-5-7",
+                categoryId: 0
+            });
+            taskList.addTask({
+                header: "to do 2",
+                content: "to do 2 content",
+                status: 1,
+                time: "2015-5-8",
+                categoryId: 0
+            });
+            taskList.addTask({
+                header: "to do 3",
+                content: "to do 3 content",
+                status: 0,
+                time: "2015-5-10",
+                categoryId: 1
+            });
+            taskList.addTask({
+                header: "to do 4",
+                content: "to do 4 content",
+                status: 0,
+                time: "2015-5-11",
+                categoryId: 0
+            });
+
+            taskList.save(TASK_LOCALSTORAGE_NAME);
+        }
+
+        if (localStorage[CATEGORY_LOCALSTORAGE_NAME]) {
+            categoryList.fetch(CATEGORY_LOCALSTORAGE_NAME);
+        } else {
+            categoryList.addCategoryItem("默认分类", -1);
+            categoryList.addCategoryItem("百度ife项目", -1);
+            categoryList.addCategoryItem("毕业设计", -1);
+            categoryList.addCategoryItem("社团活动", -1);
+
+            categoryList.save(CATEGORY_LOCALSTORAGE_NAME);
+            categoryList.fetch(CATEGORY_LOCALSTORAGE_NAME);
         }
     }
 
-    // 该方法摘自《基于javascript的mvc富应用开发》
-    Math.guid = function() {
-        return ('xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = Math.random() * 16 | 0,
-                v = c == 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        })).toUpperCase();
-    }
-})(window);
+    var taskInfoView=new TaskInfoView($("#taskInfo"),{
+        initialize:function () {
+            this.on("selectedTaskChange", function (e) {
+                var taskId=e.taskId,
+                    activeTask;
+                // if(!this.curTask || this.curTask.get("id") == taskId) return;
+                activeTask=taskList.getTask(taskId);
 
+                (typeof e.success == "function") || (e.success=function(){});
 
-;(function(exports) {
-    var slice = Array.prototype.slice,
-        doc = document;
+                if(this.selectTaskItem(activeTask)){
+                    e.success();
+                }
+            });
 
-    // 事件机制
-    var EventManager = {
-        on: function(eveType, handler) {
-            var callbacks = this.callbacks || (this.callbacks = {});
-            var handlers = callbacks[eveType] || (callbacks[eveType] = []);
-            handlers.push(handler);
-        },
-        off: function(eveType, handler) {
-            var callbacks,
-                handlers;
-            if ((callbacks = this.callbacks) && (handlers = callbacks[eveType])) {
-                if (!handler) {
-                    handlers = [];
+            this.on("updateCurTask", function (e) {
+                var theTask=e.theTask;
+                if(!theTask) return;
+
+                taskList.save(TASK_LOCALSTORAGE_NAME);
+                taskListView.updateTaskDom(theTask);
+
+                Tip.show("保存成功");
+            });
+
+            this.on("addNewTask", function (e) {
+                var opts=e.attrs;
+                if(!opts) return;
+
+                opts.categoryId=parseInt(categoryListView.curCategoryId);
+                if(opts.categoryId == -1){
+                    Tip.show("请先选择分类");
                     return;
                 }
-                for (var i = 0; i < handlers.length; i++) {
-                    if (handlers[i] = handler) {
-                        handlers.splice(i, 1);
-                    }
-                }
-            }
-        },
-        trigger: function() {
-            var args = slice.call(arguments, 0),
-                eveType = args.shift();
+                opts.status=0;
 
-            var callbacks,
-                handlers;
-            if ((callbacks = this.callbacks) && (handlers = callbacks[eveType])) {
-                for (var i = 0; i < handlers.length; i++) {
-                    handlers[i].apply(this, args);
-                }
-            }
+                var nTask=taskList.addTask(opts);
+
+                // 更新集合
+                taskList.save(TASK_LOCALSTORAGE_NAME);
+
+                // 更新视图
+                taskListView.addTaskDom(nTask);
+                categoryListView.addNewTaskToUpdateNum();
+
+                e.success && e.success.call(this,nTask);
+
+                Tip.show("添加成功");
+            });
         }
-    };
+    });
 
-
-    // 模型
-    var Model = function(attrs) {
-        this.cid = Math.guid();
-        this.id = typeof attrs.id !== "undefined" ? attrs.id : this.cid;
-        this.attributes = {
-            id: this.id
-        };
-
-        this.set(attrs);
-        this.initialize.apply(this, arguments);
-    };
-    Model.prototype = {
-        constructor: Model,
-        initialize: function() {},
-        set: function() {
-            var attrs = arguments[0];
-            for (var prop in attrs) {
-                if (attrs.hasOwnProperty(prop)) {
-                    this.attributes[prop] = attrs[prop];
-                }
-            }
-
-            this.trigger("change");
+    var taskListView = new TaskListView($("#taskList"), {
+        events: {
+            "click .fileter-item": "filterByStatusHandler",//将事件处理程序绑定在li上，点击在a事件没有冒泡到li，这是为啥？
+            "click .add-task": "addTaskHandler",
+            "click .item": "selectTaskHandler"
         },
-        get: function(name) {
-            return this.attributes[name];
-        },
-        toJSON: function() {
-            return this.attributes;
-        },
-        clone: function() {
-            var constructor = this.constructor;
-            var res = new constructor(this.attributes);
-            return res;
-        },
-        save: function(name) { // 保存到服务器或localstroage
-            localStorage.setItem(name || this.id, JSON.stringify(this));
-
-            this.trigger("change");
-        },
-        fetch: function(name) { // 从服务器或localstroage中获取数据
-            var res = JSON.parse(localStorage[name]);
-            this.set(res);
-
-            this.trigger("change");
-        },
-        destroy: function(name) {
-            localStorage.removeItem(name || this.id);
-        }
-    };
-    $.extend(Model.prototype, EventManager);
-
-
-    // 集合
-    var List = function(opts) {
-        opts || (opts={});
-        opts.model && (this.model = opts.model);
-        this.records = {};
-        this.cid = Math.guid();
-        this.id = typeof opts.id !== "undefined" ? opts.id : this.cid;
-
-        this.initialize.apply(this, arguments);
-    };
-    List.prototype = {
-        constructor: List,
-        initialize: function() {},
-        _getNextId:function () {
-            var idArr=[];
-            var records=this.records;
-            for(var i in records){
-                if(records.hasOwnProperty(i)){
-                    idArr.push(parseInt(records[i].id));
-                }
-            }
-            if(idArr.length <= 0) return 0;
-            var maxid=Math.max.apply(Math, idArr);
-            return maxid+1;
-        },
-        addItem: function(item) {
-            if (item.constructor === this.model) {
-                this.records[item.id] = item;
-            } else {
-                var constructor = this.model;
-                var res = new constructor(item);
-                this.records[item.id] = item;
-            }
-        },
-        removeItem: function(item) {
-            var records = this.records;
-            if (typeof item === "object") {
-                for (var i in records) {
-                    if (records.hasOwnProperty(i)) {
-                        if (records[i] === item) {
-                            delete records[i];
-                            return;
-                        }
-                    }
-                }
-            } else {
-                records[item] && (delete records[item]);
-            }
-        },
-        save: function(name) {
-            var res = [],
-                records = this.records;
-            for (var i in records) {
-                if (records.hasOwnProperty(i)) {
-                    res.push(records[i]);
-                }
-            }
-            localStorage.setItem(name || this.id, JSON.stringify(res));
-
-            this.trigger("change");
-        },
-        count:function () {
-            var count = 0,
-                records = this.records;
-            for (var i in records) {
-                if (records.hasOwnProperty(i)) {
-                    count++;
-                }
-            }
-            return count;
-        },
-        fetch: function(name) {
-            var res = JSON.parse(localStorage[name]);
-            this.populate(res);
-
-            this.trigger("change");
-            this.trigger("fetch");
-        },
-        populate: function(items) {
-            this.records = {};
-            var constructor = this.model;
-
-            for (var i = 0; i < items.length; i++) {
-                this.records[items[i].id] = new constructor(items[i]);
-            }
-        },
-        find: function(itemId) {
-            var records = this.records;
-            for (var i in records) {
-                if (records.hasOwnProperty(i)) {
-                    if (records[i].id == itemId) {
-                        return records[i];
-                    }
-                }
-            }
-        },
-        destroy: function(name) {
-            localStorage.removeItem(name || this.id);
-
-            this.records = {};
-        }
-    };
-    $.extend(List.prototype, EventManager);
-
-
-    // 控制器+视图
-    var View = function(root, opts) {
-        this.root = root;
-        this.cid = Math.guid();
-        this.id = typeof opts.id !== "undefined" ? opts.id : this.cid;
-        this.events = opts.events;
-
-        opts.modelList && (this.modelList = opts.modelList);
-
-        this.initialize.call(this, opts);
-        opts.handlers && this.addEventHandler(opts.handlers);
-        this.events && this.createEvent();
-    };
-    View.prototype = {
-        constructor: View,
-        eventSpliter: /^(\w+)\s*(.*)$/,
         initialize: function() {
-            var opt=arguments[0];
-            if(isFunction(opt.initialize)){
-                opt.initialize.call(this);
-            }
+            this.curTaskId = null;
+            this.curTaskItemDom = null;
+            this.curTaskArr=[];
+            this.allTaskArr=[];
+            this.curFilterStatus="all";
+
+            this.on("selectedCategoryChange", function(e) {
+                var cateId = e.categoryId;
+                if (cateId == null) return;
+
+                this.allTaskArr = taskList.filterTaskByCategoryId(cateId);
+                this.curTaskArr=this.filterByStatus(this.curFilterStatus);
+                this.refresh();
+
+                // 默认选择第一条
+                this.selectTaskHandler({
+                    target:getElementsByClassName($(".tasks"),"item")[0]||null
+                });
+            })
         },
-        $: function(selector) {
-            return $(selector, this.root);
-        },
-        createEvent: function() {
-            for (var key in this.events) {
-                var methodName = this.events[key],
-                    method = this.proxy(this[methodName]),
-                    match = key.match(this.eventSpliter),
-                    eventName = match[1],
-                    selector = match[2];
-                if (selector === "") {
-                    $.on(this.root, eventName, method);
-                } else {
-                    $.delegate(this.root, selector, eventName, method);
+        handlers: {
+            filterByStatusHandler: function(e) {
+                e=e||window.event;
+                var tar=e.target||e.srcElement;
+                tar=tar.parentNode;
+
+                var items=getElementsByClassName(this.root,'inline-item');
+                for(var i=0; i<items.length; i++){
+                    removeClass(items[i],'z-active');
                 }
-            }
-        },
-        addEventHandler: function(obj) {
-            var fn = this.constructor.prototype;
-            for (var i in obj) {
-                if (obj.hasOwnProperty(i)) {
-                    fn[i] = obj[i];
-                }
-            }
-        },
-        proxy: function(func) {
-            var that = this;
-            return function() {
-                func.apply(that, arguments);
+                addClass(tar, "z-active");
+
+                this.curFilterStatus=tar.getAttribute("data-value");
+                this.curTaskArr=this.filterByStatus(this.curFilterStatus);
+                this.refresh();
+            },
+            addTaskHandler: function(e) {
+                taskInfoView.willAddTask();
+            },
+            selectTaskHandler: function(e) {
+                e=e||window.event;
+                var tarDom=e.target||e.srcElement;
+                if(!tarDom) return;
+                var taskId=tarDom.getAttribute("data-id"),
+                    that=this;
+
+                taskInfoView.trigger("selectedTaskChange", {
+                    taskId: taskId,
+                    success:function () {
+                        that.curTaskId = taskId;
+                        that.setCurTaskItemDom(tarDom);
+                    }
+                });
+
             }
         }
-    };
-    $.extend(View.prototype, EventManager);
+    });
 
+    var categoryListView = new CategoryListView($("#categoryList"), {
+        id: 1,
+        events: {
+            "click .add-category": "addCategoryHandler",
+            "click .del": "removeCategoryItemHandler",
+            "click .category-name": "selectCategoryItemHandler",
+            "click .bd": "removeCurCategoryIdHandler"
+        },
+        initialize: function() {
+            this.curCategoryItemDom = null; //这些应该在继承的时候就添加进去而不是在生成实例的时候
+            this.curCategoryId = -1;
 
-    // @prama protoProps 添加到child的prototype的方法
-    var extend = function(protoProps) {
-        var parent = this,
-            child;
+            this.taskList=taskList;
+            this.taskList.localStorageName=TASK_LOCALSTORAGE_NAME;
+            this.categoryList=categoryList;
+            this.categoryList.localStorageName=CATEGORY_LOCALSTORAGE_NAME;
 
-        child = function() {
-            parent.apply(this, arguments);
-        };
-        child.prototype = Object.create(parent.prototype);
-        child.prototype.constructor = child;
+            var that=this;
 
-        // 复制parent的静态属性到child中
-        $.extend(child, parent);
+            categoryList.on("fetch", function(e) {
+                that.$("#allTaskNum").innerHTML=taskList.getTaskCount();
 
-        // 复制protoProps到child的prototype上
-        $.extend(child.prototype, protoProps);
+                that.$(".categorys").innerHTML = "";
+                that.addCategorys(this.records);
 
-        //方便调用父类的方法
-        child.__super__ = parent.prototype;
+                // 默认选择“默认分类”
+                that.selectCategoryItemHandler({
+                    target:that.$(".categorys").firstChild
+                });
+            });
+        },
+        handlers: {
+            addCategoryHandler: function(e) {
+                var parId = this.curCategoryId || -1;
+                if(parId==0) {
+                    Tip.show('不能给“默认分类”添加子级分类');
+                    return;
+                }
+                var _name = window.prompt("请输入类别名称");
+                if (!_name) return;
 
-        return child;
-    };
+                this.addCategoryItem(_name,parId);
+            },
+            removeCurCategoryIdHandler: function() {
+                this.curCategoryId = -1;
+                this.curCategoryItemDom && removeClass(this.curCategoryItemDom, "z-active");
+            },
+            selectCategoryItemHandler: function(e) {
+                e = e || window.event;
+                var tarDom = e.target || e.srcElement;
+                var cateId = tarDom.getAttribute("data-id");
 
+                this.curCategoryId = cateId;
+                this.setCurCategoryItemDom(hasClass(tarDom,"level") ? tarDom : tarDom.parentNode);
 
-    // 继承某个对象
-    Model.extend = View.extend = List.extend = extend;
+                taskListView.trigger("selectedCategoryChange", {
+                    categoryId: cateId
+                });
+            },
+            removeCategoryItemHandler: function(e) {
+                e = e || window.event;
+                var tarDom = e.target || e.srcElement,
+                    isDel,
+                    isDelSubCate = !1;
 
-    exports.Model = Model;
-    exports.View = View;
-    exports.List = List;
+                if (hasClass(tarDom.parentNode, "has-sub-category")) {
+                    isDel = window.confirm("删除所有子类别及其任务，确定删除吗");
+                    isDelSubCate = !0;
+                } else {
+                    isDel = window.confirm("同时删除该分类下的所有任务，确定删除吗");
+                }
+                if (!isDel) return;
 
-})(window);
+                var cateId = tarDom.getAttribute("data-id");
+                if (cateId == null) return;
 
+                this.removeCategoryItem(cateId,isDelSubCate,tarDom.parentNode);
+            }
+        }
+    });
 
+    // 填数据
+    createData();
 
-// test case
-// ==================================================
+})();

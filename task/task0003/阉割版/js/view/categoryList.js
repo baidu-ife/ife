@@ -257,3 +257,53 @@ var categoryListView = new CategoryListView($("#categoryList"), {
 
 
 
+// 填数据
+$.on(window, "load", function(e) {
+
+    if (localStorage[CATEGORY_LOCALSTORAGE_NAME]) {
+        categoryList.fetch(CATEGORY_LOCALSTORAGE_NAME);
+    } else {
+        categoryList.addCategoryItem("默认分类", -1);
+        categoryList.addCategoryItem("百度ife项目", -1);
+        categoryList.addCategoryItem("毕业设计", -1);
+        categoryList.addCategoryItem("社团活动", -1);
+
+        categoryList.save(CATEGORY_LOCALSTORAGE_NAME);
+    }
+
+    if (localStorage[TASK_LOCALSTORAGE_NAME]) {
+        taskList.fetch(TASK_LOCALSTORAGE_NAME);
+    } else {
+        taskList.addTask({
+            header: "to do 1",
+            content: "to do 1 content",
+            status: 0,
+            time: "2015-5-7",
+            categoryId: 0
+        });
+        taskList.addTask({
+            header: "to do 2",
+            content: "to do 2 content",
+            status: 1,
+            time: "2015-5-8",
+            categoryId: 0
+        });
+        taskList.addTask({
+            header: "to do 3",
+            content: "to do 3 content",
+            status: 0,
+            time: "2015-5-10",
+            categoryId: 1
+        });
+        taskList.addTask({
+            header: "to do 4",
+            content: "to do 4 content",
+            status: 0,
+            time: "2015-5-11",
+            categoryId: 0
+        });
+
+        taskList.save(TASK_LOCALSTORAGE_NAME);
+    }
+});
+
