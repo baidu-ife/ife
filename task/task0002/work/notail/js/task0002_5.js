@@ -102,7 +102,8 @@ function previousElement(node){
 
 //鼠标按下事件函数
 function mouseDown(event){
-	var target = event ? event.target : window.event.srcElement;
+	event = event ? event : window.event;
+	var target = event.target || window.event.srcElement;
 	if(target.className == "drag"){
 		curItem = target;
 		mouseOffset = getMouseOffset(curItem,event);
@@ -112,10 +113,12 @@ function mouseDown(event){
 	if(target.className == "drag-con"){
 		return false;
 	}
+	console.log(event.type);
 }
 
 //鼠标移动事件函数
 function mouseMove(event){
+	event = event ? event : window.event;
 	activeCon = null;
 	activeItem = null;
 	updatePosition(); //每次拖放完后，元素的位置可能出现变化，所以要更新
@@ -141,9 +144,9 @@ function mouseMove(event){
 			//将元素放在合适位置
 			if(activeItem){
 				if(beforeOrAfter(itemCopy,activeItem) == "before" && !activeItem.previousSibling){
-					activeCon.insertBefor(curItem,activeItem);
-				}else if(beforeOrAfter(itemCopy,activeItem) == "after" && !activeItem.nextSibling){
-					activeCon.insertBefor(curItem,nextElement(activeItem));
+					activeCon.insertBefore(curItem,activeItem);
+				}else if(beforeOrAfter(itemCopy,activeItem) == "after" && !nextElement(activeItem)){
+					activeCon.insertBefore(curItem,nextElement(activeItem));
 				}else{
 					activeCon.appendChild(curItem);
 				}
@@ -164,6 +167,7 @@ function mouseUp(event){
 }
 //鼠标相对于元素左上角的位置
 function getMouseOffset(curItem,event){
+	event = event ? event : window.event;
 	return {x: event.pageX - curItem.offsetLeft,
 			y: event.pageY - curItem.offsetTop}
 }
