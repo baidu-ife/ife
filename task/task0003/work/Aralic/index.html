@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <title>Aralic's To do list</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="header-title">Aralic's To Do List</h1>        
+    </div>
+    <div class="container">
+        <!-- 左侧 -->
+        <div class="main-left">
+            <div class="all-task" data-name="mainBox"><span>所有任务</span>(<span>0</span>)</div>
+            <div class="task-tree">分类列表</div>
+            <!-- 目录分类 -->
+            <ul class="task-category" id="mainBox">
+                <li class="menus">
+                    <div class="menus-title active" id="default-menu" data-name="defaultMenu">
+                        <span class="iconfont">&#xe622;</span><strong>默认分类</strong>(<span class="unFinishNum">0</span>)
+                    </div>
+                </li>
+            </ul>
+            <div class="add-top-menus">
+                <div>
+                    <i class="iconfont">&#xe635;</i><button>新增分类</button>
+                </div>
+            </div>
+        </div>
+        <!-- 中间栏 -->
+        <div class="main-middle">
+            <div class="task-tab-head">
+                <button class="active">所有</button>
+                <button>未完成</button>
+                <button>已完成</button>
+            </div>
+            <div class="task-tab-con">
+                <div class="items active" id="allTaskList"></div>
+                <div class="items" id="unFinishTask"></div>
+                <div class="items" id="finishTask"></div>
+            </div>
+            <div class="add-task">
+                <div>
+                    <i class="iconfont">&#xe635;</i><button>新增任务</button>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="main-right">
+            <div class="right-top">
+                <input class="task-title" type="text" disabled><span class="title-tip"></span>
+                <button class="iconfont task-finish" title="保存任务">&#xe602;</button>
+                <button class="iconfont task-edit" title="完成任务">&#xe630;</button>
+            </div>
+            <div class="task-date">任务日期<input type="text" disabled><span class="date-tip"></span></div>
+            <p class="task-content"><textarea class="task-input" disabled></textarea></p>
+            <div class="task-btn">
+                <div class="add-save">
+                    <i class="iconfont">&#xe635;</i><button>保存任务</button>
+                </div>
+                <div class="cancel-save">
+                    <i class="iconfont">&#xe60d;</i><button>取消修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 右键自定义菜单 -->
+    <div class="context-menu">
+        <button class="add-second-menus">添加分类</button>
+        <button class="remove-second-menus">删除分类</button>
+    </div>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/method.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/task.js"></script>
+</body>
+</html>
