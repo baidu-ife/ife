@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/*task0002_3*/
+
+.carousel {
+    position: relative;
+    width: 980px;
+    margin:0 auto;
+    height: 450px;
+}
+
+.gallery {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: inherit;
+    height: 450px;
+}
+
+.gallery > .active{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.gallery > .next{
+    position: absolute;
+    left: -100%;
+    top: 0;
+}
+.gallery > .prev{
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+
+.item{
+    width: 100%;
+    height: inherit;
+    transition: .6s ease-in-out left;
+}
+.item img{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    min-height: 450px;
+}
+
+.c-list {
+    position: absolute;
+    bottom: 40px;
+    margin-left: 50%;
+}
+
+.c-list > li{
+    list-style: none;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+}
+
+.c-list .active{
+    background-color: #FFF;
+}
+
+/*task0002_4*/
+.search{
+    position: relative;
+    width: 250px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.s-icon{
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    width: 37px;
+    height: 37px;
+    background-image: url("../img/icon-search.png");
+}
+
+#s-input{
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    font-size: 18px;
+    text-indent: .5em;
+    border: 1px solid #CCC;
+}
+#s-input:focus{
+    border: 1px solid #666;
+}
+.suggest ul{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    list-style: none;
+    border: 1px solid #CCC;
+    font-family: "Microsoft YaHei";
+}
+.suggest ul li{
+    font-size: 16px;
+    line-height: 25px;
+    text-indent: .5em;
+}
+
+#s-result .selected{
+    color: #FFF;
+    background-color: #CCC;
+}
+
+/*task0002_5*/
+.box{
+    float: left;
+    overflow: hidden;
+    min-height: 450px;
+    margin: 20px 30px;
+    border: 1px solid #ced0ca;
+    list-style: none;
+}
+.block{
+    width: 200px;
+    height: 50px;
+    background-color: #d57eff;
+    border: 1px solid #ced0ca;
+}
+
