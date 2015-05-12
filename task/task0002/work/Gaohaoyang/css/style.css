@@ -90,6 +90,9 @@ textarea {
 /**
  * 界面拖拽交互
  */
+.drag-block{
+    position:relative;
+}
 .block{
     width: 200px;
     height: 359px;
@@ -115,27 +118,15 @@ textarea {
     opacity: 0.5;
     
 }
-.pos1{
-    top:0;
-}
-.pos2{
-    top: 60px;
-}
-.pos3{
-    top:120px;
-}
-.pos4{
-    top:180px;
-}
-.pos5{
-    top:210px;
-}
-.pos6{
-    top: 270px;
-}
 .right-block{
     margin-left: 300px;
 }
-.clearfix{
-    overflow: hidden;
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
 }
