@@ -95,7 +95,7 @@ function trim(str) {
     for (var j=newstr.length; j>0;j--){
         //判断最后一个不是空格的字符
         if(whitespace.indexOf(newstr.charAt(j)) == -1){
-            newstr = newstr.slice(0,-j);
+            newstr = newstr.slice(0,j+1);
             break;
         }
     }
@@ -144,14 +144,14 @@ function isMobilePhone(phone) {
 // 为dom增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
     element.className += " "+ newClassName
-    
+    element.className = trim(element.className)
 }
 
 // 移除dom中的样式oldClassName
 function removeClass(element, oldClassName) {
-     element.className = element.className.replace(oldClassName,"")
+     element.className = element.className.replace(oldClassName,"");
+     element.className = trim(element.className)
 }
-
 
 // 判断siblingNode和dom是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
@@ -164,17 +164,26 @@ function getPosition(element) {
 }
 
 //获取所有满足class选择器的所有dom，不是作业要求
-function getByClass(selector){
+function getByClass(selector, parent){
     var classResult = []
-    oClass = document.getElementsByTagName('*')
+    if (parent) {
+        parent = parent 
+    } else {
+        parent = document
+    }
+    var oClass = parent.getElementsByTagName('*')
     for (var i=0; i<oClass.length; i++){
-        var patt = new RegExp(selector)
-        if (patt.test(oClass[i].className)) {
-            classResult.push(oClass[i])
+        var classArr = oClass[i].className.split(" ")
+        for (var j = classArr.length - 1; j >= 0; j--) {
+            if (classArr[j] === selector) {
+                classResult.push(oClass[i]);
+                break;
+            }
         }
     }
     return classResult;
 }
+
 
 
 // 实现一个简单的Query
@@ -187,12 +196,15 @@ function $(selector) {
         //class选择器
         selector = selector.replace('.', '')
         var oClass = document.getElementsByTagName('*');
-        //觉得可能会用到 所以把所有匹配class的元素都找到了然后只返回了第一个
         var classResult = []
+        oClass = document.getElementsByTagName('*')
         for (var i=0; i<oClass.length; i++){
-            var patt = new RegExp(selector)
-            if (patt.test(oClass[i].className)) {
-                classResult.push(oClass[i])
+            var classArr = oClass[i].className.split(" ")
+            for (var j = classArr.length - 1; j >= 0; j--) {
+                if (classArr[j] === selector) {
+                    classResult.push(oClass[i]);
+                    break;
+                }
             }
         }
         return classResult[0];
@@ -255,12 +267,16 @@ function $(selector) {
 
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
 $.on = function(selector, event, listener){
-    if ($(selector).addEventListener) {
-        $(selector).addEventListener(event, listener, false);
-    } else if($(selector).attachEvent) {
-        $(selector).attachEvent("on" + event, listener);
+    //如果输入的是选择器，就转为dom
+    if (typeof selector === 'string') {
+        selector = $(selector)
+    }
+    if (selector.addEventListener) {
+        selector.addEventListener(event, listener, false);
+    } else if(selector.attachEvent) {
+        selector.attachEvent("on" + event, listener);
     } else {
-        $(selector)["on" + event] = listener;
+        selector["on" + event] = listener;
     }
 }
 
@@ -272,16 +288,19 @@ $.on = function(selector, event, listener){
 
 // 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
 $.un = function(selector, event, listener){
+    if (typeof selector === 'string') {
+        selector = $(selector)
+    }
     if(listener){
-        if ($(selector).removeEventListener) {
-            $(selector).removeEventListener(event, listener, false);
+        if (selector.removeEventListener) {
+            selector.removeEventListener(event, listener, false);
         } else {
-            $(selector).DetachEvent(event, listener);
+            selector.DetachEvent(event, listener);
         }
     } else {
         //通过复制节点移除所有响应函数
-        var newElement = $(selector).cloneNode(true)
-        $(selector).parentNode.replaceChild(newElement, $(selector));
+        var newElement = selector.cloneNode(true)
+        selector.parentNode.replaceChild(newElement, selector);
     }
 }
 
@@ -307,7 +326,7 @@ $.enter = function(selector, listener){
 function delegateEvent(selector, tag, eventName, listener) {
     $.on(selector, eventName, function (event) {
         var e = event || window.event;
-        target = e.srcElement? e.srcElement : e.target;
+        var target = e.srcElement? e.srcElement : e.target;
         if(target.tagName.toLowerCase() === tag){
             //把被点击的元素和事件触发者传入
             listener(target, e);

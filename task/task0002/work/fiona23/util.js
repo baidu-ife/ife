@@ -137,7 +137,7 @@ function trim(str) {
     for (var j=newstr.length; j>0;j--){
         //判断最后一个不是空格的字符
         if(whitespace.indexOf(newstr.charAt(j)) == -1){
-            newstr = newstr.slice(0,-j);
+            newstr = newstr.slice(0,j+1);
             break;
         }
     }
@@ -145,9 +145,11 @@ function trim(str) {
 }
 
 // 使用示例
-var str = '   hi!  ';
+var str = '   hiiiiii!  ';
 str = trim(str);
 console.log(str); // 'hi!'
+var strrrr = trim('    active active active  ')
+console.log(strrrr)
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参赛传递
 function each(arr, fn) {
@@ -206,14 +208,14 @@ function isMobilePhone(phone) {
 // 为dom增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
     element.className += " "+ newClassName
-    
+    element.className = trim(element.className)
 }
 
 // 移除dom中的样式oldClassName
 function removeClass(element, oldClassName) {
-     element.className = element.className.replace(oldClassName,"")
+     element.className = element.className.replace(oldClassName,"");
+     element.className = trim(element.className)
 }
-
 
 // 判断siblingNode和dom是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
@@ -300,15 +302,18 @@ $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第
 
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
 $.on = function(selector, event, listener){
-    if ($(selector).addEventListener) {
-        $(selector).addEventListener(event, listener, false);
-    } else if($(selector).attachEvent) {
-        $(selector).attachEvent("on" + event, listener);
+    //如果输入的是选择器，就转为dom
+    if (typeof selector === 'string') {
+        selector = $(selector)
+    }
+    if (selector.addEventListener) {
+        selector.addEventListener(event, listener, false);
+    } else if(selector.attachEvent) {
+        selector.attachEvent("on" + event, listener);
     } else {
-        $(selector)["on" + event] = listener;
+        selector["on" + event] = listener;
     }
 }
-
 // 例如：
 //function clicklistener(event) {
     
