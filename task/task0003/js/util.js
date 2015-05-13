@@ -147,7 +147,7 @@ function $(select) {
 		return document.getElementById(str);
 	}else if(/^\w+$/.test(select)) {
 		return document.getElementsByTagName(select)[0];
-	}else if(/^\.\w+$/.test(select)) {
+	}else if(/^\.\w+[-*\w+]*$/.test(select)) {
 		var arr = select.split("");
 		arr.shift();
 		var str = arr.join("");
