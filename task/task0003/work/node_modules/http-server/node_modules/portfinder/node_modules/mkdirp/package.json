@@ -1,0 +1,49 @@
+{
+  "name": "mkdirp",
+  "description": "Recursively mkdir, like `mkdir -p`",
+  "version": "0.0.7",
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "main": "./index",
+  "keywords": [
+    "mkdir",
+    "directory"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/node-mkdirp.git"
+  },
+  "scripts": {
+    "test": "node node_modules/tap/bin/tap.js test/*.js"
+  },
+  "devDependencies": {
+    "tap": "0.0.x"
+  },
+  "license": "MIT/X11",
+  "engines": {
+    "node": "*"
+  },
+  "_id": "mkdirp@0.0.7",
+  "dependencies": {},
+  "_engineSupported": true,
+  "_npmVersion": "1.0.10",
+  "_nodeVersion": "v0.5.0-pre",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "d89b4f0e4c3e5e5ca54235931675e094fe1a5072",
+    "tarball": "http://registry.npmjs.org/mkdirp/-/mkdirp-0.0.7.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "substack",
+      "email": "mail@substack.net"
+    }
+  ],
+  "directories": {},
+  "_shasum": "d89b4f0e4c3e5e5ca54235931675e094fe1a5072",
+  "_resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.0.7.tgz",
+  "_from": "mkdirp@>=0.0.0 <0.1.0"
+}

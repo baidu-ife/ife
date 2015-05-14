@@ -248,6 +248,12 @@ textarea {
   border-color: #777;
 }
 
+blockquote {
+  padding-left: 10px;
+  border-left: 2px solid #ccc;
+  margin: 6px 0;
+}
+
 /*配合这个网站的通用的模块*/
 .inline {
   list-style: none;
@@ -386,6 +392,7 @@ textarea {
   left: 0;
   width: 100%;
   color: #666;
+  z-index: 999;
 }
 
 .web-bd {
@@ -491,13 +498,14 @@ textarea {
 
 .categorys .level .del {
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 3px;
   font-size: 18px;
   display: none;
   cursor: pointer;
   line-height: normal;
   font-weight:bold;
+  padding: 0 5px;
 }
 
 .categorys .level.has-sub-category .sub-category .del {

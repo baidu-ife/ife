@@ -35,4 +35,19 @@
         z-index: 3;
         display: block;
     }
+
+    .segue-view-btn {
+        position: absolute;
+        right: 30px;
+        top: 11px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .segue-view-btn:before {
+        content: "";
+        border: 10px solid;
+        border-color: transparent #333 transparent transparent;
+        display: block;
+    }
 }

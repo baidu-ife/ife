@@ -55,12 +55,14 @@ var CategoryListView = View.extend({
                 nextDom=cateItemDom.parentNode.firstChild;
             }
             if(nextDom===cateItemDom){
-                nextDom=cateItemDom.parentNode;
+                nextDom=cateItemDom.parentNode.parentNode;
             }
 
-            this.selectCategoryItemHandler({
-                target:nextDom
-            });
+            if(window.os.phone !== 1){
+                this.selectCategoryItemHandler({
+                    target:nextDom
+                });
+            }
         }
 
         var parDom=cateItemDom.parentNode;
@@ -70,6 +72,8 @@ var CategoryListView = View.extend({
         }else{
             parDom.removeChild(cateItemDom);
         }
+
+        this.$("#allTaskNum").innerHTML=taskList.getTaskCount();
     },
     createElement: function(cateItem) {
         var li = document.createElement("li");
@@ -135,11 +139,14 @@ var CategoryListView = View.extend({
         this.curCategoryItemDom = cateItemDom;
     },
     addNewTaskToUpdateNum:function () {
+        var taskList=this.taskList;
         if(this.curCategoryItemDom){
             var numDom=getElementsByClassName(this.curCategoryItemDom, "num")[0];
             var num = parseInt(numDom.innerHTML);
             num++;
             numDom.innerHTML=num;
+
+            this.$("#allTaskNum").innerHTML=taskList.getTaskCount();
         }
     }
 });
