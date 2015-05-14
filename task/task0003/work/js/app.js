@@ -5,25 +5,41 @@
 
 
 var Tip=function () {
+    var timer1, timer2, timer3;
+
     var obj={
         tipDom:null,
         show:function (txt) {
             var that=this;
-            this.tipDom=this.createElement(txt);
-            document.body.appendChild(this.tipDom);
-            setTimeout(function () {
+            if(this.tipDom==null){
+                this.tipDom=this.createElement(txt);
+                document.body.appendChild(this.tipDom);
+            }else{
+                this.tipDom.innerHTML=txt;
+            }
+            
+            if(timer1){
+                clearTimeout(timer1);
+            }
+            timer1 = setTimeout(function () {
                 addClass(that.tipDom,"in");
             },10);
-
-            setTimeout(function () {
+            if(timer2){
+                clearTimeout(timer2);
+            }
+            timer2 = setTimeout(function () {
                 that.hide();
             },3000);
         },
         hide:function () {
             var that=this;
             removeClass(that.tipDom,"in");
-            setTimeout(function () {
+            if(timer3){
+                clearTimeout(timer3);
+            }
+            timer3 = setTimeout(function () {
                 document.body.removeChild(that.tipDom);  
+                that.tipDom=null;
             },410);
         },
         createElement:function (txt) {

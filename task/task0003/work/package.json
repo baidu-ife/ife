@@ -1,0 +1,12 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "用来在手机上查看静态页面",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -p 8888"
+  },
+  "devDependencies": {
+    "http-server": "^0.7.3"
+  }
+}

@@ -1,0 +1,38 @@
+/*
+* responsive.css
+* @author ych
+ */
+
+@media screen and (max-width: 768px) {
+    html,
+    body {
+      min-width: 320px;
+    }
+
+    .web-bd {
+        padding-left: 0;
+    }
+
+    .category-list,
+    .task-list {
+        margin-left: 0;
+        float: none;
+    }
+
+    .category-list,
+    .task-list,
+    .task-info {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .category-list.z-active,
+    .task-list.z-active,
+    .task-info.z-active {
+        z-index: 3;
+        display: block;
+    }
+}
