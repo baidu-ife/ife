@@ -75,6 +75,7 @@ function clickLi() {
     });
     delegateEvent(ulArea, "li", "click", function() {
         inputArea.value = deleteSpan(this.innerHTML);
+        ulArea.style.display = "none";
     });
 }
 
@@ -111,6 +112,7 @@ function keydownLi() {
         if (event.keyCode == 13) {
             if (highLightLi) {
                 inputArea.value = deleteSpan(highLightLi.innerHTML);
+                ulArea.style.display = "none";
             }
         }
     });

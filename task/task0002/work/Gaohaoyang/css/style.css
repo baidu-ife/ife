@@ -90,14 +90,17 @@ textarea {
 /**
  * 界面拖拽交互
  */
+.drag-block{
+    position:relative;
+}
 .block{
     width: 200px;
-    height: 359px;
+    height: 479px;
     border:1px solid #333;
     float: left;
     /* position: relative; */
 }
-.block div{
+.move{
     width: 200px;
     height: 59px;
     background-color: #929BDD;
@@ -110,32 +113,20 @@ textarea {
     font-weight: bold;
     cursor: move;
 }
-.block .active{
+/*.block .active{
     border:1px solid #333;
     opacity: 0.5;
     
-}
-.pos1{
-    top:0;
-}
-.pos2{
-    top: 60px;
-}
-.pos3{
-    top:120px;
-}
-.pos4{
-    top:180px;
-}
-.pos5{
-    top:210px;
-}
-.pos6{
-    top: 270px;
-}
+}*/
 .right-block{
     margin-left: 300px;
 }
-.clearfix{
-    overflow: hidden;
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
 }
