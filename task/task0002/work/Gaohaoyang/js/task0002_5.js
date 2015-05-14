@@ -157,5 +157,5 @@ function judgeInBlock(x, y, block) {
     var x1 = getPosition(block).x + block.offsetWidth;
     var y0 = getPosition(block).y;
     var y1 = getPosition(block).y + block.offsetHeight;
-    return x > x0 && x < x1 && y > y0 && y < y1;
+    return x > x0 && x < x1 && y > y0 && y < y1; 
 }
