@@ -10,7 +10,8 @@ ul{list-style:none;}
 .list-container{width:229px;height:100%;border-right:1px solid #cecece;background:#f2f2f2;
     float:left;position:relative;}
 .list-container:first-child{text-indent:10px;}
-.alltask{margin:27px 0 21px 0px;cursor:pointer;}
+.alltask-container{margin:27px 0 21px 0px;}
+.alltask{cursor:pointer;line-height:28px;}
 .classify-list{font-size:16px; }
 .classify-ele{text-indent:16px;}
 .classify-list-title,.classify-title,.classify-sub{height:28px;line-height:28px;cursor:pointer;}
