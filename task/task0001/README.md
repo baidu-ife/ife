@@ -56,8 +56,7 @@
 
 - [知乎上的一些Web基本概念介绍](http://www.zhihu.com/question/22689579)
 - [慕课网HTML+CSS基础课程](http://www.imooc.com/learn/9)
-- [w3school html教程](http://w3school.com.cn/html/index.asp)
-- [MDN HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Introduction)
+- [w3school html教程](http:/HTML/Introduction)
 
 ## 2. 给你的网页加点样式
 
