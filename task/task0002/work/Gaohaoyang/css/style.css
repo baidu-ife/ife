@@ -95,12 +95,12 @@ textarea {
 }
 .block{
     width: 200px;
-    height: 359px;
+    height: 479px;
     border:1px solid #333;
     float: left;
     /* position: relative; */
 }
-.block div{
+.move{
     width: 200px;
     height: 59px;
     background-color: #929BDD;
@@ -113,11 +113,11 @@ textarea {
     font-weight: bold;
     cursor: move;
 }
-.block .active{
+/*.block .active{
     border:1px solid #333;
     opacity: 0.5;
     
-}
+}*/
 .right-block{
     margin-left: 300px;
 }

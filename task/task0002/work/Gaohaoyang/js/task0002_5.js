@@ -6,10 +6,14 @@
 // 注意交互中良好的用户体验和使用引导
 
 
-var relatX = 0;
-var relatY = 0;
+// var relatX = 0;
+// var relatY = 0;
 var oLeftBlock = $(".left-block");
 var oRightBlock = $(".right-block");
+
+var rightBlockX = oRightBlock.offsetLeft;
+
+var z = 1;
 
 init(); //初始化
 
@@ -36,115 +40,122 @@ function initPosition(block) {
     }
 }
 
-
 /**
  * 拖拽方法
  */
-function drag(ev) {
-    console.log("111");
-    console.log(this);
-    var oDiv = ev.target || ev.srcElement;
-    var oEvent = ev || event;
+function drag(e) {
+    var ev = e || window.event;
+    var target = ev.target || ev.srcElement;
+    if (target.className.toLowerCase() != "move") {
+        return;
+    }
 
-    addClass(oDiv, "active");
-    oDiv.style.zIndex = 100;
+    //记录鼠标位置
+    var disX = ev.clientX;
+    var disY = ev.clientY;
 
-    relatX = oEvent.clientX - oDiv.offsetLeft;
-    relatY = oEvent.clientY - oDiv.offsetTop;
+    // 当前方块的位置
+    var divLeft = target.offsetLeft;
+    var divTop = target.offsetTop;
 
-    var block = oDiv.parentNode;
-    var firstMove = true; //第一次移动
-    onmove = true;
+    //addClass
+    // addClass(target, "active");
+    target.style.border = "1px solid #333";
+    target.style.opacity = 0.5;
+
+    //zIndex+1
+    target.style.zIndex = z++;
+
+
+    var parent = target.parentNode;
+    var firstMove = true;
 
     //鼠标移动
-    document.onmousemove = function(ev) {
+    document.onmousemove = function(e) {
         if (firstMove) {
-            // nextUp(oDiv);
-            block.removeChild(oDiv);
-            initPosition(block);
-            $(".drag-block").appendChild(oDiv);
+            parent.removeChild(target);
+            $(".drag-block").appendChild(target);
         }
         firstMove = false;
+        var ev = e || window.event;
+
+        if (outOfSreen(ev.clientX, ev.clientY, ev)) {
+            target.parentNode.removeChild(target);
+            parent.appendChild(target);
+            if (parent.className.search("left-block") != -1) {
+                target.style.left = 1 + "px";
+            } else if (parent.className.search("right-block") != -1) {
+                target.style.left = rightBlockX + 1 + "px";
+            }
+            initPosition(parent);
+            document.onmousemove = null;
+        } else {
+            //move
+            target.style.left = divLeft + ev.clientX - disX + "px";
+            target.style.top = divTop + ev.clientY - disY + "px";
+            //refresh block
+            initPosition(parent);
+        }
 
 
-        var oEvent = ev || event;
-        // console.log("222");
-        // console.log(oDiv);
-        var parentPos = getPosition(oDiv.parentNode);
-        oDiv.style.left = oEvent.clientX - relatX + "px";
-        oDiv.style.top = oEvent.clientY - relatY + "px";
-        initPosition(block);
-        console.log("---111---" + oEvent.clientX);
-        console.log("top--->" + oDiv.style.top);
-        console.log("left-->" + oDiv.style.left);
+
     };
-
-    //鼠标松开
-    document.onmouseup = function(ev) {
-        console.log("firstMove---" + firstMove);
-        firstMove = false;
+    //鼠标抬起
+    document.onmouseup = function(e) {
         document.onmousemove = null;
         document.onmouseup = null;
-        removeClass(oDiv, "active");
+        // removeClass(target, "active");
+        target.style.border = "none";
+        target.style.borderBottom = "1px solid #333";
+        target.style.opacity = 1;
 
-        var oEvent = ev || event;
-        console.log("--1---" + oEvent.clientX);
-        oDiv.parentNode.removeChild(oDiv);
-        // console.log(oEvent.clientX);
-        if (onmove) {
-            if (judgeInBlock(oEvent.clientX, oEvent.clientY, oLeftBlock)) {
-                oLeftBlock.appendChild(oDiv);
-                oDiv.style.left = "1px";
-                initPosition(oLeftBlock);
-            } else if (judgeInBlock(oEvent.clientX, oEvent.clientY, oRightBlock)) {
-                console.log("right-block");
-                oRightBlock.appendChild(oDiv);
-                oDiv.style.left = "1px";
-                initPosition(oRightBlock);
-            } else {
-                console.log("else");
+        var ev = e || window.event;
+        target.parentNode.removeChild(target);
+        if (judgeInBlock(ev.clientX, ev.clientY, oLeftBlock)) {
+            oLeftBlock.appendChild(target);
+            target.style.left = 1 + "px";
+            initPosition(oLeftBlock);
+        } else if (judgeInBlock(ev.clientX, ev.clientY, oRightBlock)) {
+            oRightBlock.appendChild(target);
+            target.style.left = rightBlockX + 1 + "px";
+            initPosition(oRightBlock);
+        } else {
+            parent.appendChild(target);
+            if (parent.className.search("left-block") != -1) {
+                target.style.left = 1 + "px";
+            } else if (parent.className.search("right-block") != -1) {
+                target.style.left = rightBlockX + 1 + "px";
             }
-            onmove = false;
+            initPosition(parent);
         }
-        // initPosition(oDiv.parentNode,dragAreaTop);
+        // initPosition(target);
     };
     return false;
 }
 
+/**
+ * 判断是否移出屏幕
+ * @param  {number} x 坐标
+ * @param  {number} y 坐标
+ * @return {boolean}   是否在屏幕外
+ */
+function outOfSreen(x, y, e) {
+    var maxW = document.documentElement.clientWidth;
+    var maxH = document.documentElement.clientHeight;
+    return e.clientX <= 0 || e.clientX >= maxW || e.clientY <= 0 || e.clientY >= maxH;
+}
+
+/**
+ * 判断是否在区域内
+ * @param  {Number} x     当前鼠标位置
+ * @param  {Number} y     当前鼠标位置
+ * @param  {Element} block 容器元素
+ * @return {boolean}       是否在容器内
+ */
 function judgeInBlock(x, y, block) {
     var x0 = getPosition(block).x;
     var x1 = getPosition(block).x + block.offsetWidth;
     var y0 = getPosition(block).y;
     var y1 = getPosition(block).y + block.offsetHeight;
-    console.log(x0 + "-" + x + "-" + x1 + "," + y0 + "-" + y + "-" + y1);
     return x > x0 && x < x1 && y > y0 && y < y1;
 }
-
-/**
- * 下面的节点上移
- * @param  {element} oDiv 当前拖动节点
- */
-/*function nextUp(oDiv) {
-    var next = oDiv.nextSibling.nextSibling;
-    console.log(next);
-    if (next) {
-        next.style.top = next.offsetTop - 60 + "px";
-        nextUp(next);
-    }
-}*/
-
-/**
- * 获取外联样式
- * @param  {element} element DOM节点元素对象
- * @return {element}      可以获取外联样式的元素对象
- */
-/*function getCssValue(element) {
-    var value = null;
-    if (window.ActiveXObject) {
-        value = element.currentStyle;
-        return value;
-    } else {
-        value = getComputedStyle(element);
-        return value;
-    }
-}*/
