@@ -86,3 +86,47 @@ textarea {
 .input-hint .active {
     background: #eee;
 }
+
+/**
+ * 界面拖拽交互
+ */
+.drag-block{
+    position:relative;
+}
+.block{
+    width: 200px;
+    height: 479px;
+    border:1px solid #333;
+    float: left;
+    /* position: relative; */
+}
+.move{
+    width: 200px;
+    height: 59px;
+    background-color: #929BDD;
+    border-bottom:1px solid #333;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    line-height: 59px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: move;
+}
+/*.block .active{
+    border:1px solid #333;
+    opacity: 0.5;
+    
+}*/
+.right-block{
+    margin-left: 300px;
+}
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
