@@ -156,20 +156,27 @@ function $(selector) {
     var selectors = selector.split(" ");
     var elements = null;
     var startWith = selectors[0].substring(0, 1);
+    
+    //选择器的实际内容
+    var selectorContent = selectors[0].substring(1);
 
     switch(startWith){
         case "#" :
-            elements = document.getElementById(selectors[0]);
+            elements = document.getElementById(selectorContent);
             break;
         case "." :
             if(document.getElementsByClassName){
-                elements = document.getElementsByClassName(selectors[0]);
+                elements = document.getElementsByClassName(selectorContent);
                 break;
             }
+
+            //这里需要在上下文查找 对于这种selector: #*** .***
             var nodes = document.getElementsByTagName("*");
             for(var index = 0; index < nodes.length; index ++){
-                 if(hasClass(selectors[0],nodes[i])) {
-                    elements.push(nodes[i]);
+                var currentNodeClassName = nodes[index].className;
+s
+                if(hasClass(selectors[0], nodes[index])) {
+                    elements.push(nodes[index]);
                 }
             }
             break;
