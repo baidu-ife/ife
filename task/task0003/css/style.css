@@ -1,0 +1,233 @@
+/* header */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei",sans-serif;
+    font-size: 13px;
+
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+
+    cursor: default;
+}
+
+#header{
+    height: 60px;
+    width: auto;
+    min-width: 700px;
+    line-height: 60px;
+    padding-left: 20px;
+
+    font-size: 20px;
+    color: #eee;
+    background-color: #000;
+}
+
+#content{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 400px;
+    width: auto;
+    min-width: 700px;
+    overflow: hidden;
+}
+/* catalog */
+#catalog-task{
+    float: left;
+    width: 250px;
+    height: 100%;
+    position: relative;
+    background-color: #eee;
+    border: solid 1px #ddd;
+}
+.catalog-task-wrap{
+    width: 100%;
+    height: inherit;
+
+    padding: 20px;
+}
+.add{
+    width: inherit;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0;
+
+    text-indent: 2em;
+    border: solid 1px #ddd;
+    background:#eee url("../img/add.png") no-repeat 20px 12px;
+    cursor: pointer;
+}
+.task-all-title,
+.catalog-all-title{
+    line-height: 25px;
+    margin-bottom: 5px;
+    text-indent: 2em;
+    background:#eee url("../img/down.png") no-repeat left;
+}
+hr{
+    margin: 10px 0;
+}
+[data-catalog-no]{
+    margin-top: 5px;
+}
+
+.catalog-name{
+    height: 25px;
+    line-height: 25px;
+
+    text-indent: 2em;
+    background:#eee url("../img/folder.png") no-repeat left;
+}
+[data-task-no]{
+    height: 25px;
+    line-height: 25px;
+    text-indent: 4em;
+    background:#eee url("../img/task.png") no-repeat 30px 6px;
+}
+.catalog-name.isChosen,
+[data-task-no].isChosen,
+.catalog-name:hover,
+[data-task-no]:hover{
+    background-color: #ddd;
+}
+.delete{/* to show/hide .delete*/
+    float: right;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.catalog-name .delete{
+    display: none;
+}
+.catalog-name:hover .delete{
+    display: block;
+}
+[data-task-no] .delete{
+    display: none;
+}
+[data-task-no]:hover .delete{
+    display: block;
+}
+
+/* task-list */
+#task-list{
+    float: left;
+    position: relative;
+    width: 250px;
+    height: 100%;
+    border-right: solid 1px #ddd;
+}
+.task-state-wrap{
+    width: 100%;
+    height: 40px;
+    border-bottom: solid 1px #ddd;
+    background-color: #eee;
+}
+[data-task-state]{
+    margin: 5px;
+    padding: 5px;
+    display: inline;
+    line-height: 40px;
+}
+.state-chosen{
+    background-color: #fff;
+    border: solid 1px #ddd;
+}
+.todo-date{
+    background-color: #ffffe0;
+    line-height: 25px;
+    text-indent: 2em;
+}
+[data-todo-no]{
+    line-height: 25px;
+    text-indent: 4em;
+}
+[data-todo-no].todo-chosen{
+    background-color: #eee;
+}
+[data-todo-no]:hover{
+    background-color: #eee;
+}
+
+/* todocontent */
+#todo-content{
+    position: relative;
+    width: auto;
+    min-width: 200px;
+    height: 100%;
+    margin-left: 500px;/**/
+    border-right: solid 1px #ddd;
+    display: none;
+}
+.todo-header{
+    height: 50px;
+    padding:15px 10px;
+    border-bottom: solid 1px #ddd;
+}
+#btn-ok,
+#btn-save,
+#btn-edit,
+#btn-cancel{
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+    display: none;
+}
+.todo-info{
+    padding: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: solid 1px #ddd;
+}
+#todo-title,
+#todo-date{
+    border: none;
+    background-color: #fff;
+}
+#todo-content-inner{
+    position: absolute;
+    bottom: 0;
+    top: 100px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    color: #000;
+    background-color: #eee;
+    border: none;
+    resize: none;
+}
+/* 编辑模式下的编辑框样式 */
+#todo-content.edit #todo-title,
+#todo-content.edit #todo-date{
+    border: solid 1px #ddd;
+}
+#todo-content.edit #todo-content-inner{
+    background-color: #fff;
+}
+/***************************/
+/* 各模式下的按钮变化 */
+[data-state].edit #btn-ok,/*编辑状态下只有取消修改和保存修改*/
+[data-state].edit #btn-edit{
+    display: none;
+}
+[data-state].edit #btn-cancel,
+[data-state].edit #btn-save{
+    display: block;
+}
+
+[data-state] #btn-ok,
+[data-state="unfinished"] #btn-edit{
+    display: block;
+}
+/***************************/
+#tip{
+    float: right;
+    font-size: 10px;
+    color: #f00;
+}
+
