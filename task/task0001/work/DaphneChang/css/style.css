@@ -1,87 +1,242 @@
+*{margin: 0; padding: 0; }
+
 body{
-    font-family: Microsoft YaHei;
+    background-color: lightgrey;
+}
+
+.realwidth{
+    width: 980px;
 }
 
 header{
     width: 100%;
-    height: 80px;
-    background-color: #522A5C;
+    background-color: purple; 
     position: relative;
 }
 
-.header-wrap{
-    width: 900px;
-    background-color: lightblue;
+.headerwrap{
+    height: 80px;
     margin: 0 auto;
     position: relative;
-    bottom: -80px;
 }
 
 .logo{
     width: 50px;
     height: 50px;
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
 }
 
 .menu{
-    position: absolute;
-    bottom: 5px;
-    right: 0;
-}
-.menu-item{
-    color: white;
-    font-family: SimSun;
+    list-style: none;
+    font-family:SimSun;
     font-size: 14px;
-    display: inline-block;
-    margin-left: 28px;
-}
-
-.icon-github{
     position: absolute;
-    right: 10px;
-    bottom: 0;
+    right: 0;
+    bottom: 5px;
 }
 
-@media screen and (max-width:900px){
-    .icon-github{
+
+.menu li{
+    float: left;
+    margin-left:28px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+}
+
+.githublogo{
+    height: 34px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+@media screen and (max-width:980px) {
+    .githublogo{
         display: none;
     }
 }
 
-h1{
-    font-size: 14px;
-
-}
-
-p{
-    text-indent: 2em;
-    font-size: 12px;
-    line-height: 150%;
-}
-
-#heading1{
-    width: 300px;
-    height: 80px;
-    background-color: lightgrey;
-    position: absolute;
-    right: 0;
-    top:-125px;
-    /*padding: 10px 10px 30px 10px;*/
-}
-
-.realbody{
-    width: 900px;
-    height: 500px;
-    margin: 0 auto;
-    background-color: yellow;
+.bannerwrap{
     position: relative;
 }
 
+.banner{
+    width:100%;
+    display: block;
+}
 
+.bannertext{
+    position: absolute;
+    left: 50%;
+    margin-left: -490px;
+    bottom: 0;
+}
 
+.gradient{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 340px;
+    height: 80px;
+    background: -webkit-linear-gradient(top,rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0) 100%);
+    padding: 10px 10px 30px;
+}
 
+.gradient h1{
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+}
 
-.footer{
+.gradient div{
+    font-size: 12px;
+    line-height: 150%;
+    text-indent: 2em;
+    margin-top: 12px;
+}
 
+.threeimg{
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 170%;
+}
+
+#left,
+#middle,
+#right{
+    width: 320px;
+    margin-bottom: -10000px;
+    padding-bottom: 10000px;
+    float: left;
+    background-color: white;
+}
+
+#middle{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.threeimg img{
+    width: 300px;
+    height: 180px;
+    margin: 10px;
+    display: block;
+}
+
+.threetext{
+    margin: 5px 30px 25px;
+    text-indent: 2em;
+}
+
+.introduction{
+    margin: 0 auto;
+    position: relative;
+    color: black;
+}
+
+.avatar{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin:0 auto;
+    display: block;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.infotext{
+    background-color: white;
+    margin-top: -110px;
+    padding-top: 160px;
+    padding-bottom: 180px;
+    text-align: center;
+}
+
+h2{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: Century Gothic;
+}
+
+.infotext div{
+    width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: SimHei;
+    text-align: left;
+    text-indent: 2em;
+}
+
+footer{
+    background-color: black;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-family:SimSun;
+    font-size: 14px;
+}
+
+.bottommenu{
+    height: 40px;
+    list-style: none;
+    line-height: 40px;
+    border-bottom: 1px solid grey;
+}
+
+.bottommenu li{
+    display: inline-block;
+    margin-left:28px;
+}
+
+.bottommenu a{
+    text-decoration: none;
+    color: white;
+}
+
+.bottomlink{
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.bottomlink ul{
+    float: left;
+    list-style: none;
+    width: 196px;
+    color: lightgrey;
+}
+
+.bottomlink a{
+    text-decoration: none;
+    color: white;
+}
+
+.bottomlink a:hover{
+    text-decoration: underline;
+}
+
+.bottomlink li{
+    margin: 5px 0;
+}
+
+.copyright{
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+}
+
+.copyright img{
+    display: block;
+    width: 30px;
+    margin: 0 auto;
 }
