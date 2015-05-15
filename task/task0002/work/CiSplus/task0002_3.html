@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>task0002_3</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link href="css/task0002_3.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="main-content">
+            <div id="imginfo">
+                <ul>
+                    <li>
+                        <!--把图片的宽高写在了html里面，而没有写在css里面，是因为，js要获取img的width，通过style.width，如果写到css里，就获取不到，是个""-->
+                        <img src="img/first.png" alt="first" style="width: 500px;height: 300px;">
+                    </li>
+                    <li>
+                        <img src="img/second.png" alt="second" style="width: 500px;height: 300px;">
+                    </li>
+                    <li>
+                        <img src="img/third.png" alt="third" style="width: 500px;height: 300px;">
+                    </li>
+                    <li>
+                        <img src="img/fourth.png" alt="fourth" style="width: 500px;height: 300px;"border="">
+                    </li>
+                </ul>
+                <div id="slide">
+                    <a href="javascript:;" class="active"></a>
+                    <a href="javascript:;"></a>
+                    <a href="javascript:;"></a>
+                    <a href="javascript:;"></a>
+                </div>
+            </div>
+            <div id="selectitem">
+                <label>循环顺序:</label>
+                <select name="" id="looporder">
+                    <option value="1">正序</option>
+                    <option value="0">逆序</option>
+                </select>&nbsp;&nbsp;
+                <label>是否循环:</label>
+                <select name="" id="isloop">
+                    <option value="1">是</option>
+                    <option value="0">否</option>
+                </select>
+                <br>
+                <label>时间间隔:</label>
+                <input type="text" id="interval">
+                <label>秒</label>
+                <input type="button" id="check" value="确定">
+            </div>
+        </div>    
+        <script src="js/util.js"></script>
+        <script src="js/task0002_3.js"></script>
+    </body>
+</html>
