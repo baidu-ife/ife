@@ -1,0 +1,271 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+.app-container {
+    min-width: 900px;
+    min-height: 500px;
+    height: 100%;
+    padding-top: 51px;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 460px;
+    background-color: #DDDDDD;
+}
+.category-container, .task-container {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 230px;
+    border-right: 1px solid #CDCDCD;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.main-container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+.task-container {
+    margin-left: -230px;
+    background-color: white;
+}
+.category-container {
+    margin-left: -460px;
+    background-color: #F2F2F2;
+}
+.app-container>.header {
+    height: 50px;
+    font-size: large;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #CDCDCD;
+}
+.app-container>.header>span {
+    padding: 0 25px;
+    line-height: 50px;
+}
+.category-container>.title {
+    padding: 5px 15px;
+}
+.category-container>.title:first-child {
+    margin-top: 15px;
+}
+.category-container>.title:nth-child(2) {
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+.multilevel-list {
+    cursor: pointer;
+}
+.category-list>.item-0 {
+    padding: 4px 35px;
+}
+.category-list>.item-1 {
+    padding: 4px 45px;
+}
+.category-list>.item-1:hover {
+    background-color: white;
+}
+.category-list>.item-1.selected {
+    background-color: white;
+}
+.multilevel-list .btn-remove {
+    float: right;
+}
+
+.num:before {
+    content: ' (';
+}
+.num:after {
+    content: ')';
+}
+.btn-remove {
+    font-family: 'consolas';
+    vertical-align: bottom;
+    display: none;
+}
+.multilevel-list>li:hover .btn-remove {
+    display: inline-block;
+}
+.multilevel-list>li.fixed>.btn-remove {
+    display: none;
+}
+.btn-create {
+    box-sizing: border-box;
+    position: absolute;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 40px;
+    border-top: 1px solid #CCCCCC;
+    bottom: 0;
+    width: 100%;
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+input {
+    outline: none;
+}
+input[type=text] {
+    padding: 5px 5px;
+    font-size: large;
+}
+#win-create-task>div:not(:first-child) {
+    padding: 0 20px;
+}
+#win-create-task>div>select {
+    width: 100%;
+}
+#win-create-task>div>input {
+    width: 100%;
+    box-sizing: border-box;
+}
+.popup-win {
+    background-color: white;
+    position: fixed;
+    width: 300px;
+    margin-left: -150px;
+    left: 50%;
+    border: 1px solid #dddddd;
+    top: 20%;
+    z-index: 10;
+    display: none;
+}
+.popup-win .caption {
+    padding: 5px 5px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.popup-win .content {
+    padding: 0 20px;
+}
+#win-create-task>div:nth-child(2) {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#win-create-task>div:last-child {
+    text-align: center;
+    margin: 10px 0;
+}
+#win-create-task>div:last-child button {
+    padding: 5px 10px;
+
+}
+#win-create-task>div:last-child button:first-child {
+    margin-right: 50px;
+}
+#win-create-task>div:nth-child(2) div:last-child {
+    text-align: right;
+}
+#win-create-task select {
+    margin-bottom: 2px;
+}
+.task-container ul {
+    list-style: none;
+}
+.task-container .filter {
+    font-size: 12px;
+    height: 40px;
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #CCCCCC;
+}
+.task-container .filter span {
+    line-height: 40px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #EEEEEE;
+}
+.task-container .filter span.selected {
+    border: 1px solid #CCCCCC;
+    background-color: white;
+}
+.task-container .todo-list li {
+    padding: 5px 20px;
+}
+.task-container .todo-list li.item-0 {
+    background-color: #FAFAEE;
+}
+.task-container .todo-list li.item-1 {
+    padding: 5px 40px;
+}
+.task-container .todo-list li.item-1.selected {
+    background-color: #F2F2F2;
+}
+.task-container .todo-list li.item-1.done {
+    color: #238C00;
+}
+.main-container .todo-header .todo-name {
+    font-size: 25px;
+}
+.main-container {
+    position: relative;
+}
+.main-container .todo-header {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 150px;
+    background-color: #F2F2F2;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.main-container .todo-header button {
+    position: absolute;
+    padding: 5px 10px;
+    font-size: 12px;
+    top: 10px;
+}
+.main-container .todo-header .todo-done {
+    right: 10px;
+}
+.main-container .todo-header .todo-edit {
+    right: 70px;
+}
+.main-container .todo-date {
+    padding: 20px 0;
+    background-color: #FAFAEE;
+    font-size: 14px;
+    padding-left: 30px;
+    border-bottom: 1px #CCCCCC solid;
+}
+textarea.todo-content  {
+    box-sizing: border-box;
+    padding: 10px 10px;
+    outline: none;
+    width: 100%;
+    border: none;
+    resize : none;
+}
+.todo-name input {
+    padding: 0 5px;
+    padding-bottom: 2px;
+    width: 100%;
+    margin-left: -5px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #F2F2F2;
+    border-bottom: #CCCCCC solid 1px;
+    font-size: 25px;
+}
+.todo-content {
+    padding: 20px;
+}
+.todo-content  textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 1em;
+}

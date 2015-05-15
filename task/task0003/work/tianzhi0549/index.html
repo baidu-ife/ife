@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GTD Tools</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="app-container">
+        <div id="win-create-task" class="popup-win">
+            <h4 class="caption">创建新任务</h4>
+            <div>
+                <p>请选择分类：</p>
+                <select class="category"></select>
+                <div><button id="create-category">新建分类</button></div>
+            </div>
+            <div>
+                <p>请输入任务名称：</p>
+                <input class="task-name" type="text" />
+            </div>
+            <div><button class="ok">确定</button><button class="cancel">取消</button></div>
+        </div>
+        <div class="header">
+            <span>GTD Tools</span>
+        </div>
+        <div class="category-container">
+            <div class="title">所有任务<span class="num">0</span></div>
+            <div class="title">分类列表</div>
+            <ul class="category-list multilevel-list">
+            </ul>
+            <div class="btn-create">
+                新增任务
+            </div>
+        </div>
+        <div class="task-container">
+            <div class="filter">
+                <span class="selected" id="btn-all">所有</span>
+                <span id="btn-undone">未完成</span>
+                <span id="btn-done">已完成</span>
+            </div>
+            <ul class="todo-list multilevel-list">
+
+            </ul>
+            <div class="btn-create">
+                新增事项
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="todo-header">
+                <div class="todo-name">todo 1</div>
+                <button class="todo-edit">编辑</button>
+                <button class="todo-done">完成</button>
+            </div>
+            <div class="todo-date">任务日期：<span>2015-5-14 20:16</span></div>
+            <div class="todo-content">123</div>
+        </div>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
