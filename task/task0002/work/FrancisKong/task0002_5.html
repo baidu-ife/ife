@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>小练习5</title>
+<style type="text/css">
+	.container{
+		width: 200px;
+		height: 500px;
+		border: 1px solid #000;
+	}
+	.box{
+		width: 200px;
+		height: 50px;
+		margin: 0 auto;
+		border: 1px solid #000;
+		background-color: #007ACC;
+		cursor: pointer;
+		position: absolute;
+	}
+	#left-box{
+		position: absolute;
+		top: 50px;
+		left: 100px;
+	}
+	#left-box:after{
+		clear: both;
+	}
+	#right-box{
+		position: absolute;
+		top: 50px;
+		left: 500px;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="left-box" class="container">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<div id="right-box" class="container">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+<script type="text/javascript" src="js/task0002_5.js"></script>
+</body>
+</html>
