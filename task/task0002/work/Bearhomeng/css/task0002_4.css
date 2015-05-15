@@ -1,0 +1,16 @@
+.center{
+    width: 400px;
+    margin: auto;
+}
+
+.tip {
+    width: 200px;
+    border: 1px solid #ccc;
+    position: absolute;
+    display: none;
+    text-align: left;
+    line-height: 18px;
+}
+.tip-active{
+    background: #CCCCCC;
+}

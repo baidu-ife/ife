@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>task0002</title>
+		<script type="text/javascript">
+			 //			alert("Hello World!");
+			 //			console.log("Hello World!");
+			function $(id) {
+				return document.getElementById(id);
+			}
+
+			function add(num1, num2) {
+				return num1 + num2;
+			}
+
+			function renderResult(result) {
+				$("result").innerHTML = result;
+			}
+
+			function addEventHandle() {
+				var num1 = $('number1').value;
+				var num2 = $('number2').value;
+				var result = add(num1, num2);
+				renderResult(result);
+//				alert(result)
+			}
+
+			function initEvent() {
+				$('addbtn').addEventListener('click', addEventHandle, false);
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="number1" />
+		<input type="text" id="number2" />
+		<span id="result"></span>
+		<button id="addbtn"></button>
+		<script type="text/javascript">
+			initEvent();
+		</script>
+	</body>
+
+</html>
