@@ -42,7 +42,6 @@ function createEvent(element) {
 		// 判断界限
 		if(div.className == "leftDiv") {
 			if(left > dragDistance) {
-				console.log("flag");
 				removeChild(div, list, dragSquare.index);				
 				addChild(rightDiv);
 			}else {

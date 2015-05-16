@@ -159,6 +159,7 @@ console.log(taskList);
     }
     dateList = uniqArray(dateList);
 
+    // 
     for(var i = 0;i < dateList.length;i++) {
         var taskEle = document.createElement("li");
         taskEle.className = "task-ele";
@@ -167,10 +168,21 @@ console.log(taskList);
         var task = document.createElement("dl");
         taskEle.appendChild(task);
 
+        // 为task项添加date项
         var taskDate = document.createElement("dt");
         taskDate.className = "task-date";
         taskDate.innerHTML = dateList[i];
+        task.appendChild(taskDate);
 
+        // 为task项添加todo项
+        for(var j = 0;j < taskList.length;j++) {
+            if(taskList[j].date === dateList[i]) {
+                var taskSub = document.createElement("dd");
+                taskSub.className = "task-sub";      
+                taskSub.innerHTML = taskList[j].sub;
+                task.appendChild(taskSub);
+            }
+        }
     }
 }
 
@@ -249,10 +261,12 @@ function addClassifyEle(ele, parent) {
         " (<span class='num'>" + ele.num + "</span>)";
 
     // 列表头添加remove按钮
-    addRemoveImg(classifyTitle);
-    addEvent(classifyTitle, "mouseover", removeEle);
-    addEvent(classifyTitle, "mouseout", removeImg);
-
+    if(ele.name !== "默认分类") {
+        addRemoveImg(classifyTitle);
+        addEvent(classifyTitle, "mouseover", removeEle);
+        addEvent(classifyTitle, "mouseout", removeImg);    
+    }
+    
     // 点击列表头后，隐藏/显示内容
     addEvent(classifyTitle, "click", setDisplay);
     
@@ -275,7 +289,6 @@ function addClassifySub(taskMenu, parent) {
     addEvent(classifySub, "mouseout", removeImg);
     // task元素点击后被选中
     addEvent(classifySub, "click", selected);    
-
     return classifySub;
 }
 
@@ -331,5 +344,3 @@ function addRemoveImg(ele) {
         }
     });
 }
-
-
