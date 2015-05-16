@@ -18,6 +18,34 @@ textarea {
     margin-top: 10px;
 }
 
+body{
+    font-family: 'Microsoft YaHei', 'SimHei', 'STHeiti', sans-serif;
+}
+.small-title{
+    font-size: 16px;
+    margin-left: 100px;
+    font-weight: normal;
+}
+h1{
+    font-weight: normal;
+}
+.index-content{
+    max-width: 600px;
+    border-bottom: 1px dashed #aaa;
+}
+.index-content a{
+    display:block;
+    margin: 10px;
+    text-decoration: none;
+}
+.other-info{
+    padding: 10px;
+    line-height: 1.5;
+}
+.other-info a{
+    text-decoration: none;
+}
+
 /**
  * 轮播图
  */
