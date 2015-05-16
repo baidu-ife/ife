@@ -94,7 +94,7 @@ var app=(function (){
             if("click" in listeners){
                 for(i=0; i<listeners["click"].length; i++){
                     if(listeners["click"][i]){
-                        if(listeners["click"][i](positionOfItem)){
+                        if(listeners["click"][i](positionOfItem, getData(this, "id"))){
                             selected=true;
                         }
                     }
@@ -115,7 +115,7 @@ var app=(function (){
             if("remove" in listeners){
                 for(i=0; i<listeners["remove"].length; i++){
                     if(listeners["remove"][i]){
-                        if(listeners["remove"][i](positionOfItem, this.parentNode)){
+                        if(listeners["remove"][i](getData(this.parentNode, "id"))){
                             return;
                         }
                     }
@@ -123,6 +123,13 @@ var app=(function (){
             }
             multiLevelList.removeItem(this.parentNode);
         });
+        /**
+         * 对事件添加监听器。
+         * @param event 事件名称。目前取值: click, remove.
+         * @param fn 事件发生的回调函数。
+         *           对于click事件来说，返回true表示需要选中这一项。返回false表示不会选中。
+         *           对于remove事件来说，返回true表示删除，返回false表示取消删除。
+         */
         multiLevelList.addListener=function (event, fn){
             if(!(event in listeners)){
                 listeners[event]=[];
@@ -207,9 +214,10 @@ var app=(function (){
          * @param fixed 是否不可删除。
          * @returns 返回新添加的项目。
          */
-        multiLevelList.addItem=function (text, parent, fixed){
+        multiLevelList.addItem=function (text, parent, fixed, id){
             var children=[], refNode=null;
             var item=createItem(text, parent?getLevel(parent)+1:0, fixed);
+            setData(item, "id", id);
             if(parent===null){
                 element.appendChild(item);
             }else{
@@ -237,6 +245,7 @@ var app=(function (){
             this.name=name;
             this.fixed=fixed?true:false;
             this.tasks=[];
+            this.id=guid();
         }
         Category.prototype.addTask=function (name){
             var task=new Task(name);
@@ -254,16 +263,10 @@ var app=(function (){
             }
             return sum;
         };
-        /**
-         * 删除本类别下的任务。
-         * @param index 要删除的任务的索引。
-         */
-        Category.prototype.removeTask=function (index){
-            this.tasks.splice(index, 1);
-        }
         function Task(name){
             this.name=name;
             this.toDoList=[];
+            this.id=guid();
         }
 
         /**
@@ -285,12 +288,39 @@ var app=(function (){
             this.name=name;
             this.date=new Date(date);
             this.state=state;
+            this.id=guid();
         }
         ToDo.prototype.getFormattedDate=function (){
             return this.date.getFullYear()+"-"+
                 this.date.getMonth()+"-"+
                 this.date.getDate();
         };
+        /**
+         * 根据id获取对应的分类/目录/事项对象。
+         * @param id
+         */
+        function getObjById(id){
+            var categoryIndex, taskIndex, toDoIndex;
+            var category, task, toDo;
+            for(categoryIndex=0; categoryIndex<root.length; categoryIndex++){
+                category=root[categoryIndex];
+                if(category.id===id){
+                    return category;
+                }
+                for(taskIndex=0; taskIndex<category.tasks.length; taskIndex++){
+                    task=category[taskIndex];
+                    if(task.id===id){
+                        return task;
+                    }
+                    for(toDoIndex=0; toDoIndex<task.toDoList.length; toDoIndex++) {
+                        toDo=task.toDoList[toDoIndex];
+                        if(toDo.id===id){
+                            return toDo;
+                        }
+                    }
+                }
+            }
+        }
         dataProvider.DONE=0;
         dataProvider.UNDONE=1;
         dataProvider.getToDoCount=function (){
@@ -316,8 +346,8 @@ var app=(function (){
         dataProvider.addTask=function (name, categoryIndex){
             return root[categoryIndex].addTask(name);
         };
-        dataProvider.addToDo=function (name, date, state, categoryIndex, taskIndex){
-            return root[categoryIndex].tasks[taskIndex].addToDo(name, date, state);
+        dataProvider.addToDo=function (name, date, state, taskId){
+            return getObjById(taskId).addToDo(name, date, state);
         };
         dataProvider.init=function (){
             var data=localStorage["data"]?JSON.parse(localStorage["data"]):null, categoryIndex,
@@ -337,12 +367,33 @@ var app=(function (){
                 });
             }
         };
-        dataProvider.removeTask=function (categoryIndex, taskIndex){
-            root[categoryIndex].removeTask(taskIndex);
+        dataProvider.remove=function (id){
+            each(root, function (index, categoty){
+                if(categoty.id===id){
+                    root.splice(index, 1);
+                    return true;
+                }
+                return each(categoty.tasks, function (index, task){
+                    if(task.id===id){
+                        categoty.tasks.splice(index, 1);
+                        return true;
+                    }
+                    return each(task.toDoList, function (index, todo){
+                        if(todo.id===id){
+                            task.toDoList.splice(index, 1);
+                            return true;
+                        }
+                    });
+                });
+            });
         };
-
-        dataProvider.removeCategory=function (index){
-            root.splice(index, 1);
+        dataProvider.getToDoList=function (taskId){
+            var task=getObjById(taskId);
+            if(task instanceof Task){
+                return task.toDoList;
+            }else{
+                throw new Error("taskId("+taskId+") is not a id of task.");
+            }
         };
         dataProvider.save=function (){
             localStorage["data"]=JSON.stringify(root);
@@ -440,26 +491,93 @@ var app=(function (){
                 rootElement.appendChild(option);
             }
         }
+        function isLeapYear(year){
+            return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+        }
+        function getSelectedVal(element){
+            return element.options[element.selectedIndex].value;
+        }
+        function fillDay(){
+            var yearVal=parseInt(getSelectedVal(year));
+            var monthVal=parseInt(getSelectedVal(month));
+            day.innerHTML="";
+            if(monthVal===2){
+                if(isLeapYear(yearVal)){
+                    addOption(day, "日", 1, 29);
+                }else{
+                    addOption(day, "日", 1, 28);
+                }
+            }else{
+                if(monthVal===1||monthVal===3||
+                        monthVal===5||monthVal===7||
+                        monthVal===8||monthVal===10||
+                        monthVal===12){
+                    addOption(day, "日", 1, 31);
+                }else{
+                    addOption(day, "日", 1, 30);
+                }
+            }
+        }
+        function selectByVal(element, val){
+            var options=element.getElementsByTagName("option");
+            each(options, function (index, item){
+                if(item.selected){
+                    item.selected=false;
+                }
+                if(item.value===val){
+                    item.selected=true;
+                }
+            });
+        }
+        function getVal(){
+            return getSelectedVal(year)+"-"+getSelectedVal(month)+"-"+
+            getSelectedVal(day)+" "+getSelectedVal(hour)+":"+getSelectedVal(minute);
+        }
         //添加年
         addOption(year, "年", 2015, 2015+50);
         //添加月
-        addOption(year, "月", 1, 12);
-        $.on(year, "change", function (e){
-            console.log(e);
-        });
+        addOption(month, "月", 1, 12);
+        addOption(hour, "时", 0, 23);
+        addOption(minute, "分", 0, 59);
+        fillDay();
+        $.on(year, "change", fillDay);
+        $.on(month, "change", fillDay);
         this.edit=function (){
-
+            var yearVal=element.innerHTML.split(" ")[0].split("-")[0];
+            var monthVal=element.innerHTML.split(" ")[0].split("-")[1];
+            var dayVal=element.innerHTML.split(" ")[0].split("-")[2];
+            var hourVal=element.innerHTML.split(" ")[1].split(":")[0];
+            var minuteVal=element.innerHTML.split(" ")[1].split(":")[1];
+            element.innerHTML="";
+            selectByVal(year, yearVal);
+            selectByVal(month, monthVal);
+            selectByVal(day, dayVal);
+            selectByVal(hour, hourVal);
+            selectByVal(minute, minuteVal);
+            element.appendChild(year);
+            element.appendChild(month);
+            element.appendChild(day);
+            element.appendChild(hour);
+            element.appendChild(minute);
+        };
+        this.show=function (){
+            element.innerHTML=getVal();
+        };
+        this.val=function (){
+            return getVal();
         };
     }
     function addNewCategory(name){
-        dataProvider.addCategory(name);
-        categoryMultiLevelList.addItem(name, null);
+        var id=dataProvider.addCategory(name).id;
+        categoryMultiLevelList.addItem(name, null, false, id);
     }
     function addNewTask(name, categoryIndex){
-        dataProvider.addTask(name, categoryIndex);
-        categoryMultiLevelList.addItem(name, categoryMultiLevelList.getChildrenList()[categoryIndex]);
+        var id=dataProvider.addTask(name, categoryIndex).id;
+        categoryMultiLevelList.addItem(name, categoryMultiLevelList.
+            getChildrenList()[categoryIndex], false, id);
     }
-    function addNewToDo(name, date, categoryIndex, taskIndex){
+    function addNewToDo(name, date, taskId){
+        var toDo=dataProvider.addToDo(name, new Date(), taskId);
 
     }
     function initCategoryList(){
@@ -467,11 +585,11 @@ var app=(function (){
             categoryListItem=null, j, taskListItem;
         for(i=0; i<categories.length; i++){
             categoryListItem=categoryMultiLevelList.addItem(categories[i].name,
-                null, categories[i].fixed);
+                null, categories[i].fixed, categories[i].id);
             categoryMultiLevelList.setCount(categoryListItem, categories[i].getToDoCount());
             for(j=0; j<categories[i].tasks.length; j++){
                 taskListItem=categoryMultiLevelList.addItem(categories[i].tasks[j].name,
-                    categoryListItem);
+                    categoryListItem, false, categories[i].tasks[j].id);
                 categoryMultiLevelList.setCount(taskListItem, categories[i].tasks[j].getToDoCount());
             }
         }
@@ -481,23 +599,19 @@ var app=(function (){
         var todoName=new EditableLabel($(".todo-name"));
         var todoContent=new EditableLabel($(".todo-content"),
             document.createElement("textarea"));
+        var todoDate=new EditableDateLabel($(".todo-date .date"));
         var isEditing=false;
         toDoMultiLevelList=multiLevelList($(".todo-list"));
         categoryMultiLevelList=multiLevelList($(".category-list"));
         $(".category-container .title .num").innerHTML=dataProvider.getToDoCount();
         initCategoryList();
-        categoryMultiLevelList.addListener("remove", function (posOfItem, item){
-            $(".category-container .title .num").innerHTML-=$(".num", item).innerHTML;
-            //删除任务
-            if(posOfItem.length===2){
-                dataProvider.removeTask(posOfItem[0], posOfItem[1]);
-            }
-            //删除分类
-            if(posOfItem.length===1){
-                dataProvider.removeCategory(posOfItem[0]);
-            }
+        categoryMultiLevelList.addListener("remove", function (id){
+            $(".category-container .title .num").innerHTML=dataProvider.getToDoCount();
+            dataProvider.remove(id);
         });
-        categoryMultiLevelList.addListener("click", function (posOfItem, item){
+        categoryMultiLevelList.addListener("click", function (posOfItem, id){
+            toDoMultiLevelList.addItem("abc", null, true, "123");
+            //只有二级菜单才可以选中。
             return posOfItem.length===2;
         });
 
@@ -510,6 +624,7 @@ var app=(function (){
             if(!isEditing){
                 todoName.edit();
                 todoContent.edit();
+                todoDate.edit();
                 isEditing=true;
             }
         });
@@ -521,6 +636,7 @@ var app=(function (){
                 }
                 todoName.show();
                 todoContent.show();
+                todoDate.show();
             }
             isEditing=false;
         });

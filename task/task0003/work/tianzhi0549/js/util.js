@@ -268,8 +268,11 @@ function uniqArray(arr) {
 function each(arr, fn) {
     var i=0;
     for(i=0; i<arr.length; i++){
-        fn(i, arr[i]);
+        if(fn(i, arr[i])){
+            return true;
+        }
     }
+    return false;
 }
 //事件操作。
 $.on=function (element, event, listener){
@@ -406,4 +409,19 @@ function extend(Child, Parent) {
     Child.prototype = new F();
     Child.prototype.constructor = Child;
     Child.uber = Parent.prototype;
+}
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+}
+function setData(element, key, value){
+    element["data-"+key]=value;
+}
+function getData(element, key){
+    return element["data-"+key];
 }

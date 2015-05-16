@@ -269,3 +269,6 @@ textarea.todo-content  {
     resize: none;
     font-size: 1em;
 }
+.todo-list .num {
+    display: none;
+}
