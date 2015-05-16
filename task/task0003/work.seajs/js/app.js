@@ -266,7 +266,7 @@ define(function (require, exports, module) {
             taskList.addTask({
                 header: "更新及其他",
                 content: ['<h4 style="margin-bottom:5px">更新日志</h4>',
-                    '<p>2015.5.15 － 模块化</p>',
+                    '<p>2015.5.16 － 模块化</p>',
                     '<p>2015.5.14 － 简单的响应移动端</p>',
                     '<p>2015.5.10 － 初版发布</p>',
                     '<br><br>',
