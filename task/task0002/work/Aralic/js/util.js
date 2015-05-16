@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 
-=======
 /*
  * util.js
  * 
  */
->>>>>>> master
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr) {
     // return arr instanceof Array; /
@@ -21,11 +18,7 @@ function isArray(arr) {
 
 // 判断fn是否为一个函数，返回一个bool值
 function isFunction(fn) {
-<<<<<<< HEAD
-    return typeof fn === 'function';
-=======
     return Object.prototype.toString.call(fn) === '[object Function]';
->>>>>>> master
 }
 
 // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
@@ -58,27 +51,17 @@ function cloneObject(src) {
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 // 第二个参数可选，true表示去掉空元素
 function uniqueArray(arr,empty) {
-<<<<<<< HEAD
-    var i,
-        length;
-    var obj = {};
-    var newArr = [];
-=======
     var obj = {},
         newArr = [],
         i,
         length;
->>>>>>> master
     for (i = 0, length = arr.length; i<length; i++) {
         //第二个参数为true 并且数组元素为空 则跳出循环进行下一次遍历
         if (empty == true && trim(arr[i]) == '') {
             continue;
         }
-<<<<<<< HEAD
-        if (!obj[arr[i]]) {
-=======
+
         if (!(arr[i] in obj)) {
->>>>>>> master
             obj[arr[i]] = arr[i];
             newArr.push(arr[i]);
         }
@@ -306,17 +289,13 @@ function $(selector) {
     //获取class元素，兼容ie低版本,返回第一个符合条件
     //三个参数，1、父级 2、class名 3、标签名
     function getClass(oParent,oClass,tagName) {
-<<<<<<< HEAD
-        tagName = tagName || "*";
-=======
+
         tagName = tagName || '*';
         //得到所有的tagName标签元素
->>>>>>> master
+
         var aElem = oParent.getElementsByTagName(tagName);
         var arr = [];
-
         for (var i = 0; i<aElem.length; i++) {
-<<<<<<< HEAD
             
             if (aElem[i].className) {
                 //对每个元素的class名进行处理
@@ -334,7 +313,6 @@ function $(selector) {
             
         }
         return '';
-=======
             //对每个元素的class名进行处理
             var classNames = trim(aElem[i].className);
             var arr2 = classNames.split(/\s+/);
@@ -346,8 +324,7 @@ function $(selector) {
             }
         }
         return '';
-        
->>>>>>> master
+
     }
 
 }
@@ -374,11 +351,7 @@ function $(selector) {
 // 给一个dom绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
     //设置事件名标识
-<<<<<<< HEAD
-    var evName = '' + event;
-=======
     var evName = event;
->>>>>>> master
 
     //把事件函数添加到绑定的元素自定义属性上
     if (element.evName) {
@@ -428,21 +401,14 @@ function addClickEvent(element, listener) {
 function addEnterEvent(element, listener) {
     var fn = function(ev) {
         var ev = ev || event;
-<<<<<<< HEAD
+
         if (ev.keyCode == 13) { 
-=======
-        if (ev.keyCode == 13) {
->>>>>>> master
             listener();
         }
     }
     addEvent(element, 'keydown', fn);
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 //获取行间样式
 function getStyle(element,attr){
     if(element.currentStyle){
@@ -481,24 +447,16 @@ $.delegate = function(element, tag, event, listener) {
         var target = ev.target || ev.srcElement;
         //nodeName 标签名字
         if (target.nodeName.toLowerCase() == tag) {
-<<<<<<< HEAD
-            listener();
-=======
             listener(ev);
->>>>>>> master
         }
     });
 };
 
 $.extend = function(json1, json2) {
     for (var attr in json1) {
-<<<<<<< HEAD
-        json2[attr] = json1[attr];
-=======
         if (json1.hasOwnProperty(attr)) {
             json2[attr] = json1[attr];
         }
->>>>>>> master
     } 
     return json2;
 };
@@ -546,7 +504,7 @@ function ajax(url, options) {
     } else {
         var xhr = new ActiveXObject('Microsoft.XMLHTTP');
     }
-s
+
     //请求数据的处理 键值对 => 字符串
     if (typeof options.data === 'object') {
         for (var attr in options.data) {
