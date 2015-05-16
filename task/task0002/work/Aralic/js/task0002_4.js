@@ -6,8 +6,14 @@ window.onload = function() {
 
 //按键抬起事件
 function getData() {
+<<<<<<< HEAD
 
     var oDataList = $('#dataList');
+=======
+    //下拉提示列表
+    var oDataList = $('#dataList');
+    //搜索框
+>>>>>>> master
     var sInput = $('#kw');
     var oldValue = null;
     //当前文本框的值不为空 且和之前不相同
@@ -16,7 +22,10 @@ function getData() {
         var oScript = document.createElement('script');
         //获取时间戳
         var oTime = new Date().getTime()
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+(sInput.value)+'&json=1&p=3&cb=Aralic&oTime';
         document.body.appendChild(oScript);
     } else if (sInput.value == '') {
@@ -29,6 +38,10 @@ function getData() {
 
 //jsonp的回调函数
 function Aralic(data) {
+<<<<<<< HEAD
+=======
+    console.log(data);
+>>>>>>> master
     var oDataList = $('#dataList');
     var sInput = $('#kw');
     var str = '';
