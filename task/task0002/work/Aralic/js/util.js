@@ -1,4 +1,7 @@
-
+/*
+ * util.js
+ * 
+ */
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr) {
 	// return arr instanceof Array; /
@@ -14,7 +17,7 @@ function isArray(arr) {
 
 // 判断fn是否为一个函数，返回一个bool值
 function isFunction(fn) {
-	return typeof fn === 'function';
+	return Object.prototype.toString.call(fn) === '[object Function]';
 }
 
 // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
@@ -47,16 +50,16 @@ function cloneObject(src) {
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 // 第二个参数可选，true表示去掉空元素
 function uniqueArray(arr,empty) {
-	var i,
+    var obj = {},
+        newArr = [],
+	    i,
 		length;
-	var	obj = {};
-	var	newArr = [];
 	for (i = 0, length = arr.length; i<length; i++) {
 		//第二个参数为true 并且数组元素为空 则跳出循环进行下一次遍历
 		if (empty == true && trim(arr[i]) == '') {
 			continue;
 		}
-		if (!obj[arr[i]]) {
+		if (!(arr[i] in obj)) {
 			obj[arr[i]] = arr[i];
 			newArr.push(arr[i]);
 		}
@@ -431,7 +434,9 @@ $.delegate = function(element, tag, event, listener) {
 
 $.extend = function(json1, json2) {
     for (var attr in json1) {
-        json2[attr] = json1[attr];
+        if (json1.hasOwnProperty(attr)) {
+            json2[attr] = json1[attr];
+        }
     } 
     return json2;
 };
