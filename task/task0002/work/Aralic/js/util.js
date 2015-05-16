@@ -484,7 +484,7 @@ function ajax(url, options) {
     } else {
         var xhr = new ActiveXObject('Microsoft.XMLHTTP');
     }
-s
+
     //请求数据的处理 键值对 => 字符串
     if (typeof options.data === 'object') {
         for (var attr in options.data) {
