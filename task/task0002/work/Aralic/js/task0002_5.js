@@ -1,5 +1,8 @@
 window.onload = function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
     var index = 1;
     
     var oBox = $('#box');
@@ -129,6 +132,7 @@ window.onload = function() {
 
     }
     
+<<<<<<< HEAD
 =======
 	var index = 1;
 	
@@ -259,5 +263,7 @@ window.onload = function() {
 
 	}
 	
+>>>>>>> master
+=======
 >>>>>>> master
 };

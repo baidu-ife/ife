@@ -1,5 +1,6 @@
 window.onload = function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     // 实例化构造函数 参数为整个父级盒子id
     var oMyCarousel = new Carousel("myCarousel");
 
@@ -31,12 +32,17 @@ function Carousel(id) {
 =======
 	// 实例化构造函数 参数为整个父级盒子id
 	var oMyCarousel = new Carousel("myCarousel");
+=======
+    // 实例化构造函数 参数为整个父级盒子id
+    var oMyCarousel = new Carousel("myCarousel");
+>>>>>>> master
 
-	//配置参数，可选
-	oMyCarousel.init();
+    //配置参数，可选
+    oMyCarousel.init();
 };
 //轮播图组件
 function Carousel(id) {
+<<<<<<< HEAD
 	//默认配置参数
 	this.setting = {
 		//轮播图顺序：默认是“right”向右, “left”：向左
@@ -58,11 +64,34 @@ function Carousel(id) {
 	this.iNow = 0;
 	this.iNow2 = 0;
 >>>>>>> master
+=======
+    //默认配置参数
+    this.setting = {
+        //轮播图顺序：默认是“right”向右, “left”：向左
+        "order": "right",
+        //循环：默认循环
+        "loop": true,
+        //间隔时间：默认3000ms
+        "time": 3000
+    };
+    //整个轮播图父级
+    this.oParent = document.getElementById(id);
+    //轮播图容器
+    this.oContainer = getClass(this.oParent, 'container')[0];
+    //图片盒子个数
+    this.aBox = getClass(this.oContainer, 'item');
+    //整个容器宽度
+    this.oParentWidth = this.oParent.offsetWidth;
+
+    this.iNow = 0;
+    this.iNow2 = 0;
+>>>>>>> master
 
 }
 
 //初始化
 Carousel.prototype.init = function(userSetting) {
+<<<<<<< HEAD
 <<<<<<< HEAD
     userSetting = userSetting || {};
     //合并设置参数
@@ -86,21 +115,31 @@ Carousel.prototype.init = function(userSetting) {
 	userSetting = userSetting || {};
 	//合并设置参数
 	$.extend(userSetting, this.setting);
+=======
+    userSetting = userSetting || {};
+    //合并设置参数
+    $.extend(userSetting, this.setting);
+>>>>>>> master
 
-	//创建按钮并初始化
-	this.createCircle();
+    //创建按钮并初始化
+    this.createCircle();
 
-	//图片盒子初始化
-	this.boxInit();
+    //图片盒子初始化
+    this.boxInit();
 
-	//按钮点击事件
-	this.cricleClick();
+    //按钮点击事件
+    this.cricleClick();
 
-	//图片自动轮播
-	this.autoPlay();
+    //图片自动轮播
+    this.autoPlay();
 
+<<<<<<< HEAD
 	//鼠标移入移出
 	this.hover();
+>>>>>>> master
+=======
+    //鼠标移入移出
+    this.hover();
 >>>>>>> master
 };
 
@@ -108,6 +147,9 @@ Carousel.prototype.init = function(userSetting) {
 Carousel.prototype.createCircle = function() {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
     //创建按钮圆点
     var oOl = document.createElement('ol');
     oOl.id = 'carousel-indicators';
@@ -132,6 +174,7 @@ Carousel.prototype.createCircle = function() {
         this.iNow = this.aLi.length-1;
         this.aLi[this.aLi.length-1].className = 'active';
     }
+<<<<<<< HEAD
 =======
 	//创建按钮圆点
 	var oOl = document.createElement('ol');
@@ -158,11 +201,16 @@ Carousel.prototype.createCircle = function() {
 		this.aLi[this.aLi.length-1].className = 'active';
 	}
 >>>>>>> master
+=======
+>>>>>>> master
 };
 
 //内容区 初始化
 Carousel.prototype.boxInit = function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
     //设置图片在可视区外面
     for (var i = 0; i<this.aBox.length; i++) {
         this.aBox[i].index = i;
@@ -176,6 +224,7 @@ Carousel.prototype.boxInit = function() {
         //设置显示最后一张图片
         this.aBox[this.aBox.length-1].style.left = 0;
     }
+<<<<<<< HEAD
 =======
 	//设置图片在可视区外面
 	for (var i = 0; i<this.aBox.length; i++) {
@@ -191,11 +240,16 @@ Carousel.prototype.boxInit = function() {
 		this.aBox[this.aBox.length-1].style.left = 0;
 	}
 >>>>>>> master
+=======
+>>>>>>> master
 };
 
 //原点按钮点击事件
 Carousel.prototype.cricleClick = function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
     //保存this指向
     var This = this;
 
@@ -229,6 +283,7 @@ Carousel.prototype.cricleClick = function() {
             }
         }
     }
+<<<<<<< HEAD
 =======
 	//保存this指向
 	var This = this;
@@ -264,11 +319,16 @@ Carousel.prototype.cricleClick = function() {
 		}
 	}
 >>>>>>> master
+=======
+>>>>>>> master
 };
 
 //设置自动播放
 Carousel.prototype.autoPlay = function() { 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
     var This = this;
     //开启定时器
     this.nowTimer = setInterval(change,this.setting.time);
@@ -301,6 +361,7 @@ Carousel.prototype.autoPlay = function() {
         animate(This.aBox[This.iNow],{left: -This.oParentWidth});
         This.iNow = This.iNow2;
     }
+<<<<<<< HEAD
 =======
 	var This = this;
 	//开启定时器
@@ -335,11 +396,16 @@ Carousel.prototype.autoPlay = function() {
 		This.iNow = This.iNow2;
 	}
 >>>>>>> master
+=======
+>>>>>>> master
 };
 
 //鼠标输入移出
 Carousel.prototype.hover = function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
     var This = this;
     //鼠标移入到轮播图 停止轮播
     this.oParent.onmouseover = function() {
@@ -350,6 +416,7 @@ Carousel.prototype.hover = function() {
     this.oParent.onmouseout = function() {
         This.autoPlay();
     };
+<<<<<<< HEAD
 }
 
 function animate(element,json,callback,easing){
@@ -440,12 +507,57 @@ function animate(element,json,callback,easing){
 		}
 	}
 >>>>>>> master
+=======
+}
+
+function animate(element,json,callback,easing){
+    //默认匀速
+    easing = easing || "linear";
+    //默认值 每张图片动画时间400ms
+    var times = 400;
+    //left 的初始值
+    var left = parseInt(getStyle(element,'left'));
+    //运动开始的时间戳
+    var startTime = new Date().getTime();
+    //清定时器
+    clearInterval(element.timer);
+    element.timer = setInterval(function(){
+        var changeTime = new Date().getTime();
+        //运动时间
+        var t = changeTime - startTime;
+        //如果运动时间超过或等于默认事件 清除定时器
+        if(t >= times){
+            element.style.left = json['left'] + 'px';
+            clearInterval(element.timer);
+            if(callback){
+                callback.call(element);
+            }
+        } else {
+            var value = Tween[easing](t, left,json['left'] - left,times);
+            
+            element.style.left = value + 'px';
+        }
+    },13);
+    
+    var Tween = {
+        linear: function (t, b, c, d){  //匀速
+            return c*t/d + b;
+        },
+        easeIn: function(t, b, c, d){  //加速曲线
+            return c*(t/=d)*t + b;
+        }
+    }
+>>>>>>> master
 }
 
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 	
+>>>>>>> master
+=======
+    
 >>>>>>> master
