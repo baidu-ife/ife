@@ -7,6 +7,8 @@
 
 # blog
 
+* [JavaScript作用域学习笔记](https://github.com/yyzych/Blog/issues/6)
+
 * [JavaScript作用域学习笔记](http://naotu.baidu.com/edit.html)
 * [JavaScript原型学习笔记](http://blog.csdn.net/u012038144/article/details/45419953)
 * [JavaScript闭包学习笔记](http://www.zhihu.com/question/19554716/answer/44485088)
