@@ -272,3 +272,9 @@ textarea.todo-content  {
 .todo-list .num {
     display: none;
 }
+.todo-list .nothing {
+    background-color: white !important;
+    font-size: 12px;
+    text-align: center;
+    line-height: 32px;
+}

@@ -384,7 +384,7 @@ function ajax(url, options) {
                 options.onfail(xmlhttp.status);
             }
         }
-    }
+    };
     if(options.method==="GET"){
         xmlhttp.open(options.method, url+'?'+param, true);
         xmlhttp.send();
@@ -420,8 +420,8 @@ function guid() {
         s4() + '-' + s4() + s4() + s4();
 }
 function setData(element, key, value){
-    element["data-"+key]=value;
+    element.setAttribute("data-"+key, value);
 }
 function getData(element, key){
-    return element["data-"+key];
+    return element.getAttribute("data-"+key);
 }

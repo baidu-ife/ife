@@ -5,113 +5,64 @@ var app=(function (){
     var toDoMultiLevelList=null;
     var myWinCreatingTask=null;
     var toDoList=null;
+    var isEditing=false;
     var multiLevelList=function (element){
         var multiLevelList={};
         var listeners={};
-        function getLevel(element){
-            var m=element.className.match(/item-(\d+)/i);
-            if(m!==null){
-                return parseInt(m[1]);
-            }else{
-                throw new Error("cannot obtain the level of this element");
+        /*
+         * 设定数据。
+         * 数据格式：
+         *  item={
+         *      id: string
+         *      text: string,
+         *      num: number,
+         *      children: [item, item...],
+         *      cls: string
+         *  }
+         *  data=[item, item...]
+        */
+        multiLevelList.setData=function (data){
+            var html="", i;
+            if(data.length===0){
+                data.push({
+                    text: "这里还什么都没有",
+                    "id": "noid",
+                    cls: "fixed nothing"
+                });
             }
-        }
-
-        function prevLiElement(li){
-            var prev=li;
-            while(true){
-                prev=prev.previousSibling;
-                if(prev===null||prev.tagName==="LI"){
-                    break;
+            for(i=0; i<data.length; i++){
+                html+=getItemHtml(data[i], 0);
+            }
+            element.innerHTML=html;
+        };
+        function getItemHtml(item, level){
+            var r="", cls="";
+            var i;
+            item.num=item.num||0;
+            r='<li data-id="'+item.id+'" class="item-'+level+' '+item.cls+'">'+item.text+'<span class="num">'+item.num+
+                '</span><span class="btn-remove">×</span></li>';
+            if(item.children){
+                for(i=0; i<item.children.length; i++){
+                    r+=getItemHtml(item.children[i], level+1);
                 }
             }
-            return prev;
-        }
-        function decreaseCount(li, num){
-            multiLevelList.setCount(li, multiLevelList.getCount(li)-num);
-        }
-        function getCount(li){
-            var numLabel=$(".num", li);
-            if(numLabel!==null){
-                return parseInt(numLabel.innerHTML);
-            }else{
-                return 1;
-            }
-        }
-        function nextLiElement(li){
-            var next=li.nextSibling;
-            while(true){
-                if(next===null||next.tagName==="LI"){
-                    break;
-                }
-                next=next.nextSibling;
-            }
-            return next;
-        }
-        function getParentItem(item){
-            var prev=item;
-            while(true){
-                prev=prevLiElement(prev);
-                if(prev===null) return null;
-                if(getLevel(prev)<getLevel(item)){
-                    return prev;
-                }
-            }
-        }
-        //定位一个列表项在多级列表中的位置，返回数组。
-        function positionItem(item){
-            var i, r=[], level=0;
-            var items=element.getElementsByTagName('li');
-            for(i=0; i<items.length; i++){
-                level=getLevel(items[i]);
-                if(level===r.length){
-                    r.push(0);
-                }else if(level===r.length-1){
-                    r[level]++;
-                }else{
-                    r[level]++;
-                    r=r.slice(0, level+1);
-                }
-                if(items[i]===item){
-                    return r;
-                }
-            }
-            throw new Error("cannot find this item in this list");
-        }
-        function createItem(text, level, fixed){
-            var li=document.createElement("li");
-            li.innerHTML=text+"<span class=\"num\">0</span><span class=\"btn-remove\">×</span>";
-            addClass(li, "item-"+level);
-            if(fixed){
-                addClass(li, "fixed");
-            }
-            return li;
+            return r;
         }
         $.delegate(element, "li", "click", function (e){
             var i;
-            var positionOfItem=positionItem(this);
-            var selected=false, oldSelectedItem=null;
             if("click" in listeners){
                 for(i=0; i<listeners["click"].length; i++){
                     if(listeners["click"][i]){
-                        if(listeners["click"][i](positionOfItem, getData(this, "id"))){
-                            selected=true;
+                        if(listeners["click"][i](getData(this, "id"))){
+                            return;
                         }
                     }
                 }
-            }
-            if(selected){
-                oldSelectedItem=$(".selected", element);
-                if(oldSelectedItem){
-                    removeClass(oldSelectedItem, "selected");
-                }
-                addClass(this, "selected");
             }
         });
 
         $.delegate(element, ".btn-remove", "click", function (){
             var i=0;
-            var positionOfItem=positionItem(this.parentNode);
             if("remove" in listeners){
                 for(i=0; i<listeners["remove"].length; i++){
                     if(listeners["remove"][i]){
@@ -121,14 +72,11 @@ var app=(function (){
                     }
                 }
             }
-            multiLevelList.removeItem(this.parentNode);
         });
         /**
          * 对事件添加监听器。
          * @param event 事件名称。目前取值: click, remove.
          * @param fn 事件发生的回调函数。
-         *           对于click事件来说，返回true表示需要选中这一项。返回false表示不会选中。
-         *           对于remove事件来说，返回true表示删除，返回false表示取消删除。
          */
         multiLevelList.addListener=function (event, fn){
             if(!(event in listeners)){
@@ -146,155 +94,11 @@ var app=(function (){
                 }
             }
         };
-
-        multiLevelList.removeItem=function (item){
-            var next=null, cur=nextLiElement(item);
-            var pa=item;
-            while(cur!==null){
-                if(getLevel(cur)<=getLevel(item)){
-                    break;
-                }
-                next=nextLiElement(cur);
-                element.removeChild(cur);
-                cur=next;
-            }
-            while(true){
-                pa=getParentItem(pa);
-                if(pa){
-                    decreaseCount(pa, getCount(item));
-                }else{
-                    break;
-                }
-            }
-
-            element.removeChild(item);
-        };
-        multiLevelList.getChildrenList=function (root){
-            var children=[];
-            var subLevel=root?getLevel(root)+1:0;
-            var next=root?nextLiElement(root):$(".item-0", element);
-            while(next){
-                if(getLevel(next)===subLevel){
-                    children.push(next);
-                }else if(getLevel(next)<subLevel){
-                    break;
-                }
-                next=nextLiElement(next);
-            }
-            return children;
-        };
-        /**
-         * 设置item列表项右侧的数字的值。
-         * @param item
-         * @param num
-         */
-        multiLevelList.setCount=function (item, num){
-            var numLabel=$(".num", item);
-            if(numLabel){
-                numLabel.innerHTML=num;
-            }
-        };
-        /**
-         * 获取item列表项右侧的数字的值。
-         * @param item
-         * @returns
-         */
-        multiLevelList.getCount=function (item){
-            var numLabel=$(".num", item);
-            if(numLabel){
-                return parseInt(numLabel.innerHTML);
-            }else{
-                throw new Error("cannot find count label");
-            }
-        };
-        /**
-         * 像列表中添加新项目。
-         * @param text 新项目的文本内容。
-         * @param parent 要添加到的父元素, parent===null表示添加到根元素。
-         * @param fixed 是否不可删除。
-         * @returns 返回新添加的项目。
-         */
-        multiLevelList.addItem=function (text, parent, fixed, id){
-            var children=[], refNode=null;
-            var item=createItem(text, parent?getLevel(parent)+1:0, fixed);
-            setData(item, "id", id);
-            if(parent===null){
-                element.appendChild(item);
-            }else{
-                children=multiLevelList.getChildrenList(parent);
-                if(children.length===0){
-                    refNode=nextLiElement(parent);
-                }else{
-                    refNode=nextLiElement(children[children.length-1]);
-                }
-                if(refNode===null){
-                    element.appendChild(item);
-                }else{
-                    element.insertBefore(item, refNode);
-                }
-            }
-            return item;
-        };
-
         return multiLevelList;
     };
     var dataProvider=(function (){
         var dataProvider={};
         var root=[];
-        function Category(name, fixed){
-            this.name=name;
-            this.fixed=fixed?true:false;
-            this.tasks=[];
-            this.id=guid();
-        }
-        Category.prototype.addTask=function (name){
-            var task=new Task(name);
-            this.tasks.push(task);
-            return task;
-        };
-        /**
-         * 获取本类下的TODO事项个数。
-         * @returns {number}
-         */
-        Category.prototype.getToDoCount=function (){
-            var i, sum=0;
-            for(i=0; i<this.tasks.length; i++){
-                sum+=this.tasks[i].getToDoCount();
-            }
-            return sum;
-        };
-        function Task(name){
-            this.name=name;
-            this.toDoList=[];
-            this.id=guid();
-        }
-
-        /**
-         * 向任务添加TODO事项。
-         * @param name 事项名称。
-         * @param date 时间。
-         * @param state 状态(未完成, 已完成).
-         * @returns 返回新添加的TODO对象。
-         */
-        Task.prototype.addToDo=function (name, date, state){
-            var toDo=new ToDo(name, date, state);
-            this.toDoList.push(toDo);
-            return toDo;
-        };
-        Task.prototype.getToDoCount=function (){
-            return this.toDoList.length;
-        };
-        function ToDo(name, date, state){
-            this.name=name;
-            this.date=new Date(date);
-            this.state=state;
-            this.id=guid();
-        }
-        ToDo.prototype.getFormattedDate=function (){
-            return this.date.getFullYear()+"-"+
-                this.date.getMonth()+"-"+
-                this.date.getDate();
-        };
         /**
          * 根据id获取对应的分类/目录/事项对象。
          * @param id
@@ -308,7 +112,7 @@ var app=(function (){
                     return category;
                 }
                 for(taskIndex=0; taskIndex<category.tasks.length; taskIndex++){
-                    task=category[taskIndex];
+                    task=category.tasks[taskIndex];
                     if(task.id===id){
                         return task;
                     }
@@ -321,14 +125,31 @@ var app=(function (){
                 }
             }
         }
+
+        dataProvider.DISPLAY_ALL_TODO=0;
+        dataProvider.DISPLAY_UNDONE_TODO=1,
+        dataProvider.DISPLAY_DONE_TODO=2;
         dataProvider.DONE=0;
         dataProvider.UNDONE=1;
+        dataProvider.curSelectedTaskId="";
+        dataProvider.curSelectedToDoId="";
+        dataProvider.displayToDoState=dataProvider.DISPLAY_ALL_TODO;
         dataProvider.getToDoCount=function (){
             var i, sum=0;
             for(i=0; i<root.length; i++){
                 sum+=root[i].getToDoCount();
             }
             return sum;
+        };
+        dataProvider.modifyToDo=function (toDoId, name, date, content){
+            var toDo=getObjById(toDoId);
+            if(toDo){
+                toDo.name=name;
+                toDo.date=new Date(date);
+                toDo.content=content;
+            }else{
+                throw new Error("cannot this item(\""+toDoId+"\").");
+            }
         };
         dataProvider.getCategories=function (){
             return root;
@@ -337,31 +158,35 @@ var app=(function (){
         dataProvider.clear=function (){
             //delete localStorage['data'];
         };
-
-        dataProvider.addCategory=function (name, fixed){
-            var category=new Category(name, fixed);
+        dataProvider.getToDo=function (toDoId){
+            return getObjById(toDoId);
+        };
+        dataProvider.addCategory=function (category){
             root.push(category);
             return category;
         };
-        dataProvider.addTask=function (name, categoryIndex){
-            return root[categoryIndex].addTask(name);
+        dataProvider.addTask=function (task, categoryId){
+            getObjById(categoryId).addTask(task);
+            return task;
         };
-        dataProvider.addToDo=function (name, date, state, taskId){
-            return getObjById(taskId).addToDo(name, date, state);
+        dataProvider.addToDo=function (toDo, taskId){
+            getObjById(taskId).addToDo(toDo);
+            return toDo;
         };
         dataProvider.init=function (){
             var data=localStorage["data"]?JSON.parse(localStorage["data"]):null, categoryIndex,
                 taskIndex, toDoIndex;
             if(!data||data.length===0){
                 root=[];
-                dataProvider.addCategory("默认分类", true);
+                dataProvider.addCategory(new Category("默认分类", true));
             }else{
                 each(data, function (index, categoty){
-                    var categoryObj=dataProvider.addCategory(categoty.name, categoty.fixed);
+                    var categoryObj=dataProvider.addCategory(new
+                            Category(categoty.name, categoty.fixed, categoty.id));
                     each(categoty.tasks, function (index, task){
-                        var taskObj=categoryObj.addTask(task.name);
+                        var taskObj=categoryObj.addTask(new Task(task.name, task.id));
                         each(task.toDoList, function (index, todo){
-                            taskObj.addToDo(todo.name, todo.date, todo.state);
+                            taskObj.addToDo(new ToDo(todo.name, todo.date, todo.state, todo.id));
                         });
                     });
                 });
@@ -387,10 +212,27 @@ var app=(function (){
                 });
             });
         };
-        dataProvider.getToDoList=function (taskId){
-            var task=getObjById(taskId);
+        dataProvider.getToDoList=function (taskId, state){
+            var task=getObjById(taskId), i, todoList=[];
             if(task instanceof Task){
-                return task.toDoList;
+                if(state===dataProvider.DISPLAY_ALL_TODO){
+                    return task.toDoList;
+                }else{
+                    if(state===dataProvider.DISPLAY_DONE_TODO){
+                        for(i=0; i<task.toDoList.length; i++){
+                            if(task.toDoList[i].state===dataProvider.DONE){
+                                todoList.push(task.toDoList[i]);
+                            }
+                        }
+                    }else{
+                        for(i=0; i<task.toDoList.length; i++){
+                            if(task.toDoList[i].state===dataProvider.UNDONE){
+                                todoList.push(task.toDoList[i]);
+                            }
+                        }
+                    }
+                    return todoList;
+                }
             }else{
                 throw new Error("taskId("+taskId+") is not a id of task.");
             }
@@ -400,6 +242,57 @@ var app=(function (){
         };
         return dataProvider;
     }());
+    function Category(name, fixed, id){
+        this.name=name;
+        this.fixed=fixed?true:false;
+        this.tasks=[];
+        this.id=id||guid();
+    }
+    Category.prototype.addTask=function (task){
+        this.tasks.push(task);
+        return task;
+    };
+    Category.prototype.getTasks=function (){
+        return this.tasks;
+    };
+    /**
+     * 获取本类下的TODO事项个数。
+     * @returns {number}
+     */
+    Category.prototype.getToDoCount=function (){
+        var i, sum=0;
+        for(i=0; i<this.tasks.length; i++){
+            sum+=this.tasks[i].getToDoCount();
+        }
+        return sum;
+    };
+    function Task(name, id){
+        this.name=name;
+        this.toDoList=[];
+        this.id=id||guid();
+    }
+    Task.prototype.addToDo=function (toDo){
+        this.toDoList.push(toDo);
+    };
+    Task.prototype.getToDoCount=function (){
+        return this.toDoList.length;
+    };
+    function ToDo(name, date, state, id, content){
+        this.name=name;
+        this.date=new Date(date);
+        this.state=state;
+        this.id=id||guid();
+        this.content=content||"";
+    }
+    ToDo.prototype.getFormattedDate=function (){
+        return this.date.getFullYear()+"-"+
+            (this.date.getMonth()+1)+"-"+
+            this.date.getDate();
+    };
+    ToDo.prototype.getFormattedTime=function (){
+        return this.getFormattedDate()+" "+
+            this.date.getHours()+":"+this.date.getMinutes();
+    };
     function PopupWin(element){
         this.show=function (){
             if(this.init){
@@ -429,8 +322,9 @@ var app=(function (){
         });
         var addTask=function (){
             var taskName=$(".task-name", element).value;
+            var categoryId=categoriesList.options[categoriesList.selectedIndex].value;
             if(taskName!==""){
-                addNewTask(taskName, categoriesList.selectedIndex);
+                switchDisplay(dataProvider.addTask(new Task(taskName), categoryId).id, "");
                 self.hide();
             }else{
                 alert("请输入任务名称。");
@@ -441,15 +335,15 @@ var app=(function (){
         $.click($("#create-category", element), function (){
             var category=prompt("请输入新分类名称", "");
             if(category!==null&&category!==""){
-                addNewCategory(category);
-                addOptionToCategoriesList(dataProvider.getCategories().length-1,
-                    category);
+                var id=dataProvider.addCategory(new Category(category, false)).id;
+                addOptionToCategoriesList(id, category);
+                sync();
             }
         });
         this.init=function (){
             var categories=dataProvider.getCategories(), i;
             for(i=0; i<categories.length; i++){
-                addOptionToCategoriesList(i, categories[i].name);
+                addOptionToCategoriesList(categories[i].id, categories[i].name);
             }
         };
         this.unInit=function (){
@@ -567,78 +461,237 @@ var app=(function (){
             return getVal();
         };
     }
-    function addNewCategory(name){
-        var id=dataProvider.addCategory(name).id;
-        categoryMultiLevelList.addItem(name, null, false, id);
-    }
-    function addNewTask(name, categoryIndex){
-        var id=dataProvider.addTask(name, categoryIndex).id;
-        categoryMultiLevelList.addItem(name, categoryMultiLevelList.
-            getChildrenList()[categoryIndex], false, id);
-    }
-    function addNewToDo(name, date, taskId){
-        var toDo=dataProvider.addToDo(name, new Date(), taskId);
-
-    }
-    function initCategoryList(){
-        var categories=dataProvider.getCategories(), i,
-            categoryListItem=null, j, taskListItem;
-        for(i=0; i<categories.length; i++){
-            categoryListItem=categoryMultiLevelList.addItem(categories[i].name,
-                null, categories[i].fixed, categories[i].id);
-            categoryMultiLevelList.setCount(categoryListItem, categories[i].getToDoCount());
-            for(j=0; j<categories[i].tasks.length; j++){
-                taskListItem=categoryMultiLevelList.addItem(categories[i].tasks[j].name,
-                    categoryListItem, false, categories[i].tasks[j].id);
-                categoryMultiLevelList.setCount(taskListItem, categories[i].tasks[j].getToDoCount());
+    function sync(){
+        function category2Item(category){
+            var taskItems=[];
+            var i, cls="";
+            for(i=0; i<category.tasks.length; i++){
+                taskItems.push(task2Item(category.tasks[i]));
             }
+            if(category.fixed){
+                cls="fixed";
+            }
+            return {
+                "id": category.id,
+                text: category.name,
+                num: category.getToDoCount(),
+                children: taskItems,
+                "cls": cls
+            };
+        }
+        function task2Item(task){
+            var cls="";
+            if(task.id==dataProvider.curSelectedTaskId){
+                cls="selected";
+            }
+            return {
+                "id": task.id,
+                text: task.name,
+                num: task.getToDoCount(),
+                "cls": cls
+            };
+        }
+        function toDo2Item(toDo){
+            var cls=(toDo.state===dataProvider.DONE?"done ":"");
+            cls+=(toDo.id===dataProvider.curSelectedToDoId?"selected":"");
+            return {
+                "id": toDo.id,
+                text: toDo.name,
+                "cls": cls
+            };
+        }
+        function date2Item(dateStr){
+            return {
+                "id": "noid",
+                text: dateStr,
+                cls: "fixed"
+            };
+        }
+        function toDoList2DateMap(toDoList){
+            var toDoDateMap={}, formattedDate="", i;
+            //转换为日期map.
+            for(i=0; i<toDoList.length; i++){
+                formattedDate=toDoList[i].getFormattedDate();
+                if(!(formattedDate in toDoDateMap)){
+                    toDoDateMap[formattedDate]=[toDoList[i]];
+                }else{
+                    toDoDateMap[formattedDate].push(toDoList[i]);
+                }
+            }
+            return toDoDateMap;
+        }
+        //同步分类列表
+        var categoriesListData=[];
+        var categories=dataProvider.getCategories();
+        var i, tasks=null;
+        for(i=0; i<categories.length; i++){
+            categoriesListData.push(category2Item(categories[i]));
+        }
+        categoryMultiLevelList.setData(categoriesListData);
+        //同步事项列表
+        if(dataProvider.curSelectedTaskId){
+            var toDoListData=[];
+            var map=toDoList2DateMap(dataProvider.
+                getToDoList(dataProvider.curSelectedTaskId,
+                dataProvider.displayToDoState));
+            var dateStr="", dateItem=null;
+            for(dateStr in map){
+                if(map.hasOwnProperty(dateStr)){
+                    dateItem=date2Item(dateStr);
+                    dateItem.children=[];
+                    for(i=0; i<map[dateStr].length; i++){
+                        dateItem.children.push(toDo2Item(map[dateStr][i]));
+                    }
+                    toDoListData.push(dateItem);
+                }
+            }
+            toDoMultiLevelList.setData(toDoListData);
+        }else{
+            toDoMultiLevelList.setData([]);
+        }
+        //修改任务总数显示
+        $(".category-container .title .num").innerHTML=dataProvider.getToDoCount();
+        //同步事项的显示内容
+        if(dataProvider.curSelectedToDoId!==""){
+            var curSelectedToDo=dataProvider.getToDo(dataProvider.curSelectedToDoId);
+            $(".todo-name").innerHTML=curSelectedToDo.name;
+            $(".todo-date .date").innerHTML=curSelectedToDo.getFormattedTime();
+            $(".todo-content").innerHTML=curSelectedToDo.content;
+            if(curSelectedToDo.state===dataProvider.DONE){
+                $(".todo-done").innerHTML="待办";
+            }else{
+                $(".todo-done").innerHTML="完成";
+            }
+        }else{
+            $(".todo-name").innerHTML="";
+            $(".todo-date .date").innerHTML="";
+            $(".todo-content").innerHTML="";
+            $(".todo-done").innerHMLT="完成";
         }
     }
+
+    /**
+     * 切换当前选中为给定的task与toDo.
+     * @param taskId
+     * @param toDoId
+     */
+    function switchDisplay(taskId, toDoId){
+        if(isEditing){
+            alert("请先保存正在编辑的内容。");
+            return;
+        }
+        dataProvider.curSelectedTaskId=taskId;
+        dataProvider.curSelectedToDoId=toDoId;
+        sync();
+    }
+
+    /**
+     * 转换为什么都没有选中的状态。
+     */
+    function selectNothing(){
+        switchDisplay("", "");
+    }
+    /***/
     app.init=function (){
         dataProvider.init();
         var todoName=new EditableLabel($(".todo-name"));
         var todoContent=new EditableLabel($(".todo-content"),
             document.createElement("textarea"));
         var todoDate=new EditableDateLabel($(".todo-date .date"));
-        var isEditing=false;
         toDoMultiLevelList=multiLevelList($(".todo-list"));
         categoryMultiLevelList=multiLevelList($(".category-list"));
-        $(".category-container .title .num").innerHTML=dataProvider.getToDoCount();
-        initCategoryList();
-        categoryMultiLevelList.addListener("remove", function (id){
-            $(".category-container .title .num").innerHTML=dataProvider.getToDoCount();
-            dataProvider.remove(id);
-        });
-        categoryMultiLevelList.addListener("click", function (posOfItem, id){
-            toDoMultiLevelList.addItem("abc", null, true, "123");
-            //只有二级菜单才可以选中。
-            return posOfItem.length===2;
-        });
-
-        toDoList=multiLevelList($(".todo-list"));
         myWinCreatingTask=new CreatingTaskPopupWin($("#win-create-task"));
+        sync();
+        categoryMultiLevelList.addListener("click", function (id){
+            switchDisplay(id, "");
+        });
+        categoryMultiLevelList.addListener("remove", function (id){
+            dataProvider.remove(id);
+            if(dataProvider.curSelectedTaskId===id){
+                selectNothing();
+            }
+            sync();
+        });
+        toDoMultiLevelList.addListener("click", function (id){
+            switchDisplay(dataProvider.curSelectedTaskId, id);
+        });
+        toDoMultiLevelList.addListener("remove", function (id){
+            dataProvider.remove(id);
+            if(dataProvider.curSelectedToDoId===id){
+                switchDisplay(dataProvider.curSelectedTaskId, "");
+            }
+            sync();
+        });
         $.click($(".category-container .btn-create"), function (){
             myWinCreatingTask.show();
         });
+        //新建TODO事项
+        $.click($(".task-container .btn-create"), function (){
+            if(dataProvider.curSelectedTaskId){
+                switchDisplay(dataProvider.curSelectedTaskId,
+                    dataProvider.addToDo(new ToDo("ToDo", new Date(),
+                    dataProvider.UNDONE), dataProvider.curSelectedTaskId).id);
+            }else{
+                alert("请选中一个任务。");
+            }
+        });
         $.click($(".todo-edit"), function (){
-            if(!isEditing){
-                todoName.edit();
-                todoContent.edit();
-                todoDate.edit();
-                isEditing=true;
+            if(dataProvider.curSelectedToDoId){
+                if(!isEditing){
+                    this.innerHTML="保存";
+                    todoName.edit();
+                    todoContent.edit();
+                    todoDate.edit();
+                    isEditing=true;
+                }else{
+                    if(todoName.val()===""){
+                        alert("事项名称不能为空。");
+                        return;
+                    }
+                    this.innerHTML="编辑";
+                    todoName.show();
+                    todoContent.show();
+                    todoDate.show();
+                    dataProvider.modifyToDo(dataProvider.curSelectedToDoId, todoName.val(),
+                        todoDate.val(), todoContent.val());
+                    sync();
+                    isEditing=false;
+                }
             }
         });
         $.click($(".todo-done"), function (){
+            var selectedToDo=null;
             if(isEditing){
-                if(todoName.val()===""){
-                    alert("事项名称不能为空。");
-                    return;
-                }
-                todoName.show();
-                todoContent.show();
-                todoDate.show();
+                alert("请先保存正在编辑的内容。");
+                return;
             }
-            isEditing=false;
+            if(dataProvider.curSelectedToDoId!==""){
+                selectedToDo=dataProvider.getToDo(dataProvider.curSelectedToDoId);
+                if(selectedToDo.state===dataProvider.UNDONE){
+                    selectedToDo.state=dataProvider.DONE;
+                }else{
+                    selectedToDo.state=dataProvider.UNDONE;
+                }
+            }
+            sync();
+        });
+        $.click($("#btn-all"), function (){
+            dataProvider.displayToDoState=dataProvider.DISPLAY_ALL_TODO;
+            removeClass($(".filter .selected"), "selected");
+            addClass(this, "selected");
+            sync();
+        });
+        $.click($("#btn-done"), function (){
+            dataProvider.displayToDoState=dataProvider.DISPLAY_DONE_TODO;
+            removeClass($(".filter .selected"), "selected");
+            addClass(this, "selected");
+            sync();
+        });
+        $.click($("#btn-undone"), function (){
+            dataProvider.displayToDoState=dataProvider.DISPLAY_UNDONE_TODO;
+            removeClass($(".filter .selected"), "selected");
+            addClass(this, "selected");
+            sync();
         });
         $.on(window, "resize", function (e){
             console.log($(".main-container").clientHeight-150);
