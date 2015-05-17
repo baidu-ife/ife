@@ -4,7 +4,9 @@
 
 # 最新公告
 
-[任务2已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0002)，初级班的任务时间是从4月24日至5月7日，中级班为4月18日至4月25日。
+[任务3已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0003)，初级班的任务时间是从5月7日至5月18日，中级班为4月30日至5月10日。
+
+[任务2已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0002)，初级班的任务时间是从4月24日至5月7日，中级班为4月18日至4月27日。
 
 [任务1已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0001)，初级班Review提交截止时间为**4月23日**，中级班为**4月16日**。
 
@@ -111,7 +113,11 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同一个班级的同学完成每个任务的时间段是相同的，即所有人在同一时间开始进行任务，并在截止时间前完成任务，若当前任务未能在规定时间内完成，你也需要放弃当前这个题目，继续和其他同学一起参加下一个任务的挑战。
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们会维护一张所有同学的任务完成的状态表，您可以看见谁做得快，谁做的好，我们鼓励并欢迎学员之间多交流、分享。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们鼓励并欢迎学员之间多交流、分享。
+
+### 任务提交方式 ###
+
+任务提交方式会在每个任务说明中描述。大体方式为在专门开设的任务提交issue回复你的任务地址。
 
 **整个学习周期**
 
