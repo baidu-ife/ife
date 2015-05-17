@@ -8,7 +8,7 @@ function starttime(){
 	}
 	var d=Math.floor(result/86400000);
 	var h=Math.floor((result%86400000)/(86400000/24));
-	var m=Math.floor((result%86400000/24)/(86400000/24/60));
+	var m=Math.floor((result%(86400000/24))/(86400000/24/60));
 	var s=Math.floor((result%(86400000/24/60))/1000);
 	var time=d+"天"+h+"小时"+m+"分"+s+"秒";
 	document.getElementById("txt").innerText=time;
