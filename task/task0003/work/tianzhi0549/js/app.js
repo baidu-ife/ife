@@ -154,10 +154,6 @@ var app=(function (){
         dataProvider.getCategories=function (){
             return root;
         };
-
-        dataProvider.clear=function (){
-            //delete localStorage['data'];
-        };
         dataProvider.getToDo=function (toDoId){
             return getObjById(toDoId);
         };
@@ -174,13 +170,15 @@ var app=(function (){
             return toDo;
         };
         dataProvider.init=function (){
-            var data=localStorage["data"]?JSON.parse(localStorage["data"]):null, categoryIndex,
+            var data=localStorage["data"]?JSON.parse(localStorage["data"]):{}, categoryIndex,
                 taskIndex, toDoIndex;
-            if(!data||data.length===0){
-                root=[];
+            var root=data["root"]||[];
+            dataProvider.curSelectedTaskId=data["taskId"]||"";
+            dataProvider.curSelectedToDoId=data["toDoId"]||"";
+            if(!root||root.length===0){
                 dataProvider.addCategory(new Category("默认分类", true));
             }else{
-                each(data, function (index, categoty){
+                each(root, function (index, categoty){
                     var categoryObj=dataProvider.addCategory(new
                             Category(categoty.name, categoty.fixed, categoty.id));
                     each(categoty.tasks, function (index, task){
@@ -238,7 +236,11 @@ var app=(function (){
             }
         };
         dataProvider.save=function (){
-            localStorage["data"]=JSON.stringify(root);
+            var data={};
+            data["root"]=root;
+            data["taskId"]=dataProvider.curSelectedTaskId;
+            data["toDoId"]=dataProvider.curSelectedToDoId;
+            localStorage["data"]=JSON.stringify(data);
         };
         return dataProvider;
     }());
