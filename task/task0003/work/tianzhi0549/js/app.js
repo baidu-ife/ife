@@ -598,6 +598,9 @@ var app=(function (){
         var todoContent=new EditableLabel($(".todo-content"),
             document.createElement("textarea"));
         var todoDate=new EditableDateLabel($(".todo-date .date"));
+        function fitContentArea(){
+            $(".todo-content").style.height=$(".main-container").clientHeight-150+"px";
+        }
         toDoMultiLevelList=multiLevelList($(".todo-list"));
         categoryMultiLevelList=multiLevelList($(".category-list"));
         myWinCreatingTask=new CreatingTaskPopupWin($("#win-create-task"));
@@ -693,10 +696,8 @@ var app=(function (){
             addClass(this, "selected");
             sync();
         });
-        $.on(window, "resize", function (e){
-            console.log($(".main-container").clientHeight-150);
-            $(".todo-content").style.height=$(".main-container").clientHeight-150+"px";
-        });
+        $.on(window, "resize", fitContentArea);
+        fitContentArea();
     };
     app.destroy=function (){
         dataProvider.save();
