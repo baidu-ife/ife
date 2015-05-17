@@ -50,8 +50,6 @@ function Dragger(){
                 if(!brother) brother = self.dragElem.parentNode.firstChild;
                 self.dragElem.parentNode.insertBefore(self.dragElem, brother);
             })();
-
-
             self.resumeOtherElem();
         }else{
             var foreignOverBlockNum = Math.ceil(parseInt(self.relaOtherContainDis)/self.elemHeight);//跨过的元素数目
@@ -59,35 +57,41 @@ function Dragger(){
              !(foreignOverBlockNum < 0)|| (foreignOverBlockNum = 0);
             foreignOverBlockNum < self.toContainer.children.length || (foreignOverBlockNum = self.toContainer.children.length);//保证在范围内
 
-
             self.resumeOtherElem();
             if(self.toContainer.firstElementChild)//对方容器不空
                  self.toContainer.insertBefore(self.dragElem, self.toContainer.children[foreignOverBlockNum]);
             else
                 self.toContainer.appendChild(self.dragElem);
         }
-
-
-
     });
 
     each($('.box').allElems, function(box) {
         $.on(box, 'dragover', function (e) {
             EventUtil.preventDefault(e);
+            console.log('over');
+
         });
         $.on(box, 'dragenter', function (e) {
             EventUtil.preventDefault(e);
+            console.log('enter');
+            this.style.borderColor = '#000000';
+
         });
+
         $.on(box, 'drop', function(e){
             EventUtil.preventDefault(e);
-            console.log('done');
-
+            console.log('drop to');
             console.log(this);
 
             if(this == self.dragElem.parentNode){ self.isDropLocal = true; return;}
-
             self.toContainer = this;
             self.relaOtherContainDis = getPosition(self.dragElem).y - getPosition(this).y;      //相对对方父元素Y位轴位移
+        });
+
+        $.on(box, 'dragleave', function (e) {
+            EventUtil.preventDefault(e);
+            console.log('leave');
+
         });
     });
 }

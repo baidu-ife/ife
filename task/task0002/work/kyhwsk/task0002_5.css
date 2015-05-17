@@ -3,15 +3,16 @@ div.box{
     width: 102px;
     border: solid 1px #080808;
     float:left;
-    margin-right: 100px;
+    /*margin: 0 200px;*/
     position: relative;
     background-color: rgba(55, 213, 255, 0.3);
 }
 div.box2{
     top: 100px;
+    left: 500px;
 }
 div.wrap{
-    width: 450px;
+    width: 1600px;
     height: 1000px;
     margin: auto;
 }
