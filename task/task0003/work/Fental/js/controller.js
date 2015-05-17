@@ -320,6 +320,7 @@ var controller = (function() {
                                         gtd.addClassify(name);
                                     }
                                     updateList();
+                                    changeClassify(getActiveClassify());
                                 }
                                 else {
                                     //当前类别
@@ -327,6 +328,7 @@ var controller = (function() {
                                         gtd.addSubClassify(activeClassify.getAttribute('data-name'), name);
                                     }
                                     updateList('classify', activeClassify.getAttribute('data-name'));
+                                    changeClassify(getActiveClassify());
                                 }
                             }
                         }
