@@ -2,24 +2,24 @@ init();
 function getLocalData() {
     var testData = [[{
         classify : "默认分类",    
-        task : "task1",
-        date : "2015-5-10",
+        task : "task2",
+        date : "2015-5-20",
         sub : "to-do 3",
         completed : true,
         content : "打游戏"
     },{
         classify : "默认分类",
         task : "task2",
-        date : "2015-5-10",
+        date : "2015-5-23",
         sub : "to-do 4",
         completed : true,
         content : "打游戏"
     },{
         classify : "默认分类",
         task : "task2",
-        date : "2015-5-17",
+        date : "2015-5-23",
         sub : "to-do 4",
-        completed : true,
+        completed : false,
         content : "打游戏"
     }
     
@@ -125,6 +125,9 @@ function init() {
 
     // 新增分类
     addEvent($(".add"), "click", addClassify);
+
+    // 任务列表的顶部选择栏
+    initOptionList();
     
 console.log("end");
     
@@ -136,30 +139,43 @@ console.log("end");
 // 初始化任务列表
 function initTaskList(task) {
     var data = getVar("data")(),
+        subList = getVar("subList")(),
         taskList = [],
         dateList = [],
         list = $(".task-list"),
         eleIndex = task.parentNode.parentNode.index;
-    // 将包含task的对象，存入taskList
-console.log(task.name);
-    for(var i = 0;i < data[eleIndex].length;i++) {
-        if(task.name === data[eleIndex][i].task) {
-            taskList.push(data[eleIndex][i]);
-        }
+
+    // 清空列表
+    while(list.firstChild) {
+        list.removeChild(list.firstChild);
     }
-console.log(taskList);
+
+    // "所有"option被选中
+    var optionList = document.getElementsByClassName("task-option");
+    for(var i = 0;i < optionList.length;i++) {
+            optionList[i].classList.remove("option-selected");
+        }
+    optionList[0].classList.add("option-selected");
+
+    // 将包含task的对象，存入taskList
+    for(var i = 0;i < data.length;i++) {
+        for(var j = 0;j < data[i].length;j++) {
+            if(task.name === data[i][j].task) {
+                taskList.push(data[i][j]);
+            }    
+        }
+        
+    }
+
     // 将date存入dateList
     for(var i = 0;i < taskList.length;i++) {
-        /*var arr = taskList[i].date.split("-");
-        var temp = arr[0];
-        arr[0] = arr[arr.length - 1];
-        arr[arr.length - 1] = temp;
-        dateList.push(arr.join("\/"));*/
         dateList.push(taskList[i].date);
     }
-    dateList = uniqArray(dateList);
 
-    // 
+    // 为dateList按规则排序
+    dateList = sortDate(uniqArray(dateList));
+
+    // 填充task列表内容
     for(var i = 0;i < dateList.length;i++) {
         var taskEle = document.createElement("li");
         taskEle.className = "task-ele";
@@ -180,13 +196,105 @@ console.log(taskList);
                 var taskSub = document.createElement("dd");
                 taskSub.className = "task-sub";      
                 taskSub.innerHTML = taskList[j].sub;
+                if(taskList[j].completed === true) {
+                    taskSub.style.color = "green";
+                }
                 task.appendChild(taskSub);
             }
         }
     }
 }
 
+function initOptionList() {
+    var optionList = document.getElementsByClassName("task-option"),
+    all = optionList[0],
+    unfinish = optionList[1],
+    finish = optionList[2];
+    addEvent(all, "click", optionEvent);
+    addEvent(unfinish, "click", optionEvent);
+    addEvent(finish, "click", optionEvent);
 
+    function optionEvent(event) {
+        var taskList = $(".task-list"),
+            taskSubList = taskList.getElementsByClassName("task-sub"),
+            len = taskSubList.length,
+            dateList = taskList.getElementsByClassName("task-date"),
+            dLen = dateList.length;
+        for(var i = 0;i < optionList.length;i++) {
+            optionList[i].classList.remove("option-selected");
+        }
+        this.classList.add("option-selected");
+
+        if(taskList.firstChild) {
+            switch(event.target) {
+                case all : {
+                    // 初始化
+                    for(var i = 0;i < len;i++) {
+                        taskSubList[i].style.display = "block";
+                    }
+                    for(var i = 0;i < dLen;i++) {
+                        dateList[i].style.display = "block";
+                    }
+                    break;
+                }
+                case unfinish : {
+                    // 初始化
+                    for(var i = 0;i < dLen;i++) {
+                        dateList[i].style.display = "block";
+                    }
+
+                    for(var i = 0;i < len;i++) {
+                        if(taskSubList[i].style.color === "green") {
+                            taskSubList[i].style.display = "none";
+
+                            // 当该日期下没有需要显示的todo时，隐藏日期
+                            var thisNode = taskSubList[i];                    
+                            if(thisNode === thisNode.parentNode.lastChild) {
+                                while(thisNode.style.display === "none" && thisNode.classList.contains("task-sub")) {
+                                    if(thisNode.previousSibling === thisNode.parentNode.firstChild) {
+                                        thisNode.previousSibling.style.display = "none";
+                                    }
+                                    thisNode = thisNode.previousSibling;
+                                }    
+                            }
+                        }else {
+                            taskSubList[i].style.display = "block";
+                        }
+                           
+                   }
+                   break;      
+                }
+                case finish : {
+                    // 初始化
+                    for(var i = 0;i < dLen;i++) {
+                        dateList[i].style.display = "block";
+                    }
+
+                    for(var i = 0;i < len;i++) {
+                        if(taskSubList[i].style.color === "green") {
+                            taskSubList[i].style.display = "block";
+                        }else {
+                            taskSubList[i].style.display = "none";
+
+                            // 当该日期下没有需要显示的todo时，隐藏日期
+                            var thisNode = taskSubList[i];
+                            if(thisNode === thisNode.parentNode.lastChild) {
+                                while(thisNode.style.display === "none") {
+                                    if(thisNode.previousSibling === thisNode.parentNode.firstChild) {
+                                        thisNode.previousSibling.style.display = "none";
+                                    }
+                                    thisNode = thisNode.previousSibling;
+                                }    
+                            }
+                        }
+                   }
+                   break;   
+                }                
+            }    
+        }
+        
+    }
+}
 
 /////////////////////////////////////////////////////////////////////
 
@@ -343,4 +451,35 @@ function addRemoveImg(ele) {
             }
         }
     });
+}
+
+// 按日期大小排序
+function sortDate(arr) {
+    var len = arr.length,
+        i = 0,
+        temp = "";
+    while(len > 0) {
+        for(;i < len -1;i++) {
+            if(compare(arr[i], arr[i + 1])) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        len--;
+    }
+    return arr;
+}
+
+// 比较日期
+function compare(a, b) {
+    var aList = a.split("-"),
+        bList = b.split("-"),
+        len = aList.length;
+    for(var i = 0;i < len;i++) {
+        if(aList[i] > bList[i]) {
+            return true;
+        }
+    }
+    return false;
 }
