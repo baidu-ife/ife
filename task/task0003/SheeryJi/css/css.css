@@ -1,0 +1,146 @@
+body{
+	background:#FFFFFF;
+	margin:0 0;
+}
+.header{
+	background:#DDDDDD;
+	color:#3e3e3e;
+	font-size:20px;
+	height:50px;
+	overflow:auto;
+	border:#B1B1B1 1px solid;
+}
+.usual_class1{
+	margin-top:15px;
+	margin-left:15px;
+}
+.container{
+	overflow: auto;
+}
+.left{
+	width:300px;
+	height:800px;
+	background:#f2f2f2;
+	float:left;
+	margin-left:-100%;
+	position:relative;
+}
+.middle{
+	background:#ffffff;
+	height:800px;
+	width:100%;
+	float:left;
+}
+.middle_content{
+	padding-left:600px;
+}
+.right{
+	width:300px;
+	height:800px;
+	background:#fafaee;
+	float:left;
+	margin-left:-100%;
+	position:relative;
+	left:300px;
+	border-left:#B1B1B1 1px solid;
+	border-right:#B1B1B1 1px solid;
+	position:relative;
+}
+.ul_class{
+	list-style-image:url("../img/file.jpg");
+}
+.ul_class li{
+	margin-top:10px;
+	cursor:pointer;
+}
+#click_class{
+    color:red;
+}
+.ul_subclass{
+	list-style-image:url("../img/subfile.jpg");
+	margin-left: 5px;
+    padding-left:5px;
+    color:#000000;
+}
+.ul_subclass li{
+	margin-top:8px;
+	cursor:pointer;
+}
+.status{
+	width:100%;
+	height:50px;
+	background:#f2f2f2;
+	overflow: auto;
+}
+.status span{
+	margin-right:15px;
+	padding:5px;
+}
+.ul_task{
+	list-style: none;
+	margin-top:0px;
+	padding-top:0px;
+}
+.ul_task li{
+	margin-top:8px;
+	cursor:pointer;
+}
+.task_title{
+	width:100%;
+	height:70px;
+	background:#f2f2f2;
+	overflow: auto;
+	font-weight: bold;
+	font-size: 23px;
+}
+.task_date{
+	width:100%;
+	height:50px;
+	background:#fafaee;
+	overflow: auto;
+}
+.icon{
+	float:right;
+	margin-right:15px;
+	margin-top:15px;
+}
+.usual_class2{
+	margin-top:20px;
+	margin-left:15px;
+	float:left;
+}
+.add_model{
+	width:300px;;
+	height:50px;
+	position:absolute;
+	bottom:0px;
+	border-top:1px solid #B1B1B1;
+}
+.usual_class3{
+	margin-top:15px;
+	margin-left:15px;
+	float:left;
+	cursor:pointer;
+}
+.endding{
+    color:#B1B1B1;
+}
+.hide{
+    display: none;
+}
+.usual_task{
+    margin-top:15px;
+    margin-left:15px;
+}
+span{
+    cursor:pointer;
+}
+#sub{
+    cursor:pointer;
+}
+#update{
+    cursor:pointer;
+}
+#click_task{
+    color:blue;
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="所有分类" number="21">
+	<class name="百度IFE项目" number="9">
+		<subclass name="task1" number="3">
+		    <task name="to-do 1" date="2015-04-01" status="未完成" taskid="1">
+		    	完成index的编码。
+		    </task>
+		    <task name="to-do 2" date="2015-04-02" status="已完成" taskid="2">
+		    	完成blog的编码。
+		    </task>
+		    <task name="to-do 3" date="2015-04-03" status="已完成" taskid="3">
+		    	完成person的编码。
+		    </task>
+	   </subclass>
+	   <subclass name="task2" number="3">
+            <task name="to-do 1" date="2015-04-04" status="未完成" taskid="4">
+                完成util.js的编码。
+            </task>
+            <task name="to-do 2" date="2015-04-05" status="已完成" taskid="5">
+                完成task0002_1的编码。
+            </task>
+            <task name="to-do 3" date="2015-04-06" status="未完成" taskid="6">
+                完成task0002_2的编码。
+            </task>
+       </subclass>
+       <task name="to-do 21" date="2015-04-12" status="未完成" taskid="7">
+                完成hehe的编码。
+            </task>
+            <task name="to-do 22" date="2015-04-12" status="已完成" taskid="8">
+                完成blog的编码。
+            </task>
+            <task name="to-do 23" date="2015-04-13" status="已完成" taskid="9">
+                完成person的编码。
+            </task>
+    </class>
+	<class name="毕业设计" number="3">
+		<subclass name="task1" number="3">
+            <task name="to-do 6" date="2015-04-12" status="已完成" taskid="10">
+                完成task1_3的编码。
+            </task>
+            <task name="to-do 1" date="2015-04-13" status="未完成" taskid="11">
+                完成task1_2的编码。
+            </task>
+            <task name="to-do 2" date="2015-04-14" status="未完成" taskid="12">
+                完成task2_2的编码。
+            </task>
+       </subclass>
+	</class>
+	<class name="社团活动" number="3">
+		<subclass name="task1" number="3">
+            <task name="to-do 6" date="2015-04-30" status="未完成" taskid="13">
+                完成task3的编码。
+            </task>
+            <task name="to-do 1" date="2015-04-30" status="已完成" taskid="14">
+                完成task1的编码。
+            </task>
+            <task name="to-do 2" date="2015-04-30" status="未完成" taskid="15">
+                完成task2的编码。
+            </task>
+       </subclass>
+	</class>
+	<class name="家庭生活" number="3">
+		<subclass name="task1" number="3">
+            <task name="to-do 6" date="2015-04-30" status="已完成" taskid="16">
+                完成task3的编码。
+            </task>
+            <task name="to-do 1" date="2015-04-30" status="未完成" taskid="17">
+                完成task1的编码。
+            </task>
+            <task name="to-do 2" date="2015-04-30" status="未完成" taskid="18">
+                完成task2的编码。
+            </task>
+       </subclass>
+	</class>
+	<class name="默认分类" number="3">
+		<subclass name="task1" number="3">
+            <task name="to-do 6" date="2015-04-30" status="未完成" taskid="19">
+                完成task3的编码。
+            </task>
+            <task name="to-do 1" date="2015-04-30" status="未完成" taskid="20">
+                完成task1的编码。
+            </task>
+            <task name="to-do 2" date="2015-04-30" status="未完成" taskid="21">
+                完成task2的编码。
+            </task>
+       </subclass>
+	</class>
+</root>
