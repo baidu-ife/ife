@@ -1,0 +1,327 @@
+/*normal*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: 400 normal 14px Arial, SimSun, sans-serif;
+}
+ul {
+    list-style: none;
+}
+li {
+    cursor: pointer;
+}
+html,
+body {
+    width: 100%;
+    height: 100%
+}
+/*header*/
+header {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    min-width: 1280px;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    background-color: #ddd;
+}
+/*ie8的min-width不包括padding border*/
+header h1 {
+    padding-left: 12px;
+    font-size: 20px;
+    line-height: 60px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    color: #969696;
+}
+main {
+    min-width: 1280px;
+    height: 100%;
+}
+.list,
+.task-container,
+.task {
+    position: relative;
+    min-height: 720px;
+    height: 100%;
+    padding-top: 60px;
+    border-bottom: 1px solid #ccc;
+}
+
+.list {
+    float: left;
+    width: 230px;
+    height: 100%;
+    background-color: #ededed;
+    border-right: 1px solid #ccc;
+}
+.task-container {
+    float: left;
+    width: 230px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+.task {
+    overflow: hidden;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 230px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 44px;
+    border-top: 1px solid #cbcbcb;
+}
+/*icon-font*/
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?-i1e5dg');
+    src:url('../fonts/icomoon.eot?#iefix-i1e5dg') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?-i1e5dg') format('woff'),
+    url('../fonts/icomoon.ttf?-i1e5dg') format('truetype'),
+    url('../fonts/icomoon.svg?-i1e5dg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*.list*/
+.all-tasks {
+    padding-left: 10px;
+    padding-top: 24px;
+    padding-bottom: 10px;
+}
+.classify-list {
+    height: 80%;
+    overflow: scroll;
+}
+
+.all-list-title {
+    padding-left: 10px;
+    line-height: 2;
+}
+.classify-list h1 {
+    cursor: pointer;
+}
+.classify-list h2 {
+    position: relative;
+    padding-left: 48px;
+    line-height: 2;
+    vertical-align: text-bottom;
+}
+/*.classify-list ul {*/
+    /*display: none;*/
+/*}*/
+.classify-list ul li {
+    position: relative;
+    line-height: 2;
+    padding-left: 55px;
+    vertical-align: text-bottom;
+}
+.active-classify {
+    background-color: #fff;
+}
+/*.classify-list .active-classify + ul {*/
+    /*display: block;*/
+/*}*/
+.icon-folder-open,
+.icon-file-empty,
+.icon-cross {
+    line-height: 2;
+}
+.icon-folder-open:before {
+    position: absolute;
+    left: 20px;
+    content: "\e930";
+    font-size: 14px;
+}
+
+.icon-cross:before {
+    position: absolute;
+    left: 200px;
+    content: "\ea0f";
+    font-size: 14px;
+}
+.icon-cross {
+    display: none;
+}
+.classify-list h2:hover {
+    cursor: pointer;
+}
+.classify-list ul {
+    display: none;
+}
+.classify-list li:hover .icon-cross,
+.classify-list h2:hover .icon-cross {
+    display: inline;
+    cursor: pointer;
+}
+.icon-file-empty:before {
+    position: absolute;
+    left: 40px;
+    content: "\e924";
+    font-size: 14px;
+}
+
+.icon-plus:hover {
+    cursor: pointer;
+}
+.icon-plus:before {
+    content: "\ea0a";
+    position: absolute;
+    font-size: 14px;
+    left: 17px;
+    line-height: 40px;
+}
+
+/*.task-container*/
+.task-classify {
+    height: 40px;
+    padding-left: 10px;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+}
+.task-classify li {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid transparent;
+}
+.task-classify li.active-state {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.task-panel {
+    overflow: scroll;
+}
+.task-panel li {
+    position: relative;
+}
+.task-panel li:hover .icon-cross {
+    display: inline;
+    cursor: pointer;
+    font-size: 12px;
+}
+.task-date {
+    height: 27px;
+    padding-left: 17px;
+    font-size: 12px;
+    line-height: 27px;
+    background-color: #fafaee;
+}
+.task-title {
+    height: 27px;
+    padding-left: 32px;
+    line-height: 27px;
+}
+.task-title.visit {
+    background-color: #f0f0f0;
+}
+.had-done {
+    color: #008d00;
+}
+
+/*.task*/
+.show-task {
+    display: none;
+}
+.show-task.active {
+    display: block;
+}
+.task .title {
+    position: relative;
+    padding-left: 15px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 60px;
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+.icon-pencil2:before {
+    content: "\e906";
+    position: absolute;
+    right: 20px;
+    font-size: 25px;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.icon-checkmark:before {
+    content: "\ea10";
+    position: absolute;
+    right: 70px;
+    font-size: 25px;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.task .date {
+    height: 52px;
+    line-height: 52px;
+    padding-left: 15px;
+    background-color: #fafaee;
+    border-bottom: 1px solid #ccc;
+}
+.task .content {
+    padding: 15px;
+}
+.edit-task {
+    display: none;
+}
+.edit-task.active {
+    display: block;
+}
+.edit-container {
+    /*text-align: center;*/
+}
+.edit-title,
+.edit-date {
+    width: 200px;
+    padding-left: 20px;
+    font-size: 12px;
+    line-height: 24px;
+}
+.edit-content {
+    width: 700px;
+    height: 400px;
+    padding: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+}
+.button-set {
+    width: 820px;
+    padding-left: 15px;
+    padding-top: 20px;
+    text-align: center;
+}
+.button-set button {
+    padding: 4px 10px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.button-set button:hover {
+    background-color: #eee;
+}

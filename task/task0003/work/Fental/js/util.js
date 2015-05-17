@@ -265,10 +265,18 @@ function $(selector) {
 
     var scanElement = function(element, oneSelector) {
         var temp;
+        var eachClass;
         if (oneSelector.indexOf(".") === 0) {
             temp = oneSelector.replace(".", "");
-            if (element.nodeType == 1 && element.className !== undefined && element.className.indexOf(temp) !== -1) {
-                return element;
+            if (element.nodeType == 1 && element.className !== undefined) {
+
+                eachClass = element.className.split(/\s/);
+
+                for (var i = 0; i < eachClass.length; i++) {
+                    if (eachClass[i] === temp) {
+                        return element;
+                    }
+                }
             }
         }
         else if (oneSelector.indexOf("[") === 0) {
@@ -398,23 +406,26 @@ function addEnterEvent(element, listener) {
 //$.enter = addEnterEvent;
 
 //事件代理 http://www.cnblogs.com/rubylouvre/archive/2009/08/09/1542174.html
-function delegateEvent(element, tag, eventName, listener) {
+function delegateEvent(element, tags, eventName, listener) {
     addEvent(element, eventName, function(e){
         e = e || window.event;
         var target = e.srcElement ? e.srcElement : e.target;
         //对标签进行代理
-        if (tag.indexOf(".") === -1) {
-            var targetName = target.nodeName.toLowerCase();
-            if (targetName === tag) {
-                listener(e);
+        var allTags = tags.split(' ');
+        for (var i = 0; i < allTags.length; i++) {
+            if (allTags[i].indexOf(".") === -1) {
+                var targetName = target.nodeName.toLowerCase();
+                if (targetName === allTags[i]) {
+                    listener(e);
+                }
             }
-        }
-        //对类进行代理
-        else {
-            var targetClassName = target.className;
-            var className = tag.replace(".", "");
-            if (targetClassName.indexOf(className) !== -1) {
-                listener(e);
+            //对类进行代理
+            else {
+                var targetClassName = target.className;
+                var className = allTags[i].replace(".", "");
+                if (targetClassName.indexOf(className) !== -1) {
+                    listener(e);
+                }
             }
         }
     });
@@ -529,4 +540,24 @@ function ajax(url, options) {
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         request.send(encodeFromData(options.data));
     }
+}
+
+function bubbleSort(arr) {
+    var i = arr.length ,j;
+    var tempExchangVal;
+    while (i > 0) {
+        for (j = 0; j < i-1; j++) {
+            if (arr[j]._date > arr[j+1]._date) {
+                tempExchangVal = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tempExchangVal;
+            }
+        }
+        i--;
+    }
+    return arr;
+}
+function getTarget(e) {
+    e = e || window.event;
+    return e.srcElement ? e.srcElement : e.target;
 }

@@ -2,15 +2,15 @@
  * Created by T on 2015/4/20.
  */
 function changeImage(options) {
-    //默认设置
+    //???????
     options.order = options.order || "left";
-    //left 正序，right逆序
+    //left ????right????
     options.isLoop = options.isLoop || true;
     options.time = options.time || 5000;
 
     var panel = $("#panel");
     var container = $("#container");
-    //增加控制点
+    //????????
     var ul = document.createElement("ul");
     var content = "";
     var scroll;
@@ -28,7 +28,7 @@ function changeImage(options) {
     container.style.left = "0";
     for (var j = 0; j < images.length; j++) {
         (function(i) {
-            //为每个控制点绑定点击函数
+            //????????????????
             archor[i].onclick = function() {
                 var position;
                 var currentPosition;
@@ -43,12 +43,12 @@ function changeImage(options) {
                         addClass(archor[k], "active");
                     }
                 }
-                //IE 10及以上及其他浏览器使用transition
+                //IE 10???????????????????transition
                 if (isIE() == -1 || isIE() > 9) {
                     position = i * -500;
                     container.style.left = position + "px";
                 }
-                //IE 10一下用js模拟动画
+                //IE 10?????js?????
                 else {
                     position = i * -500;
                     currentPosition = parseInt(container.style.left);
@@ -80,7 +80,7 @@ function changeImage(options) {
             };
         })(j);
     }
-    //轮播函数
+    //???????
     var startScroll = function(order) {
         if (order === "left") {
             return setInterval(function(){
@@ -114,7 +114,7 @@ function changeImage(options) {
 
     scroll = startScroll(options.order);
 
-    //当鼠标进入容器时，停止轮播
+    //????????????????????
     panel.onmouseenter  = function(e) {
         e = e || window.event;
         clearInterval(scroll);
@@ -126,7 +126,7 @@ function changeImage(options) {
         }
     };
 
-    //当鼠标离开容器时，继续轮播
+    //?????????????????????
     panel.onmouseleave  = function(e) {
         scroll = startScroll(options.order);
     };

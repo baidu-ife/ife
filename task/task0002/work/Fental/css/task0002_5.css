@@ -37,6 +37,8 @@ body:after {
 .box.dragged {
     position: absolute;
     opacity: 0.8;
+    /*opacity: 0;*/
+    /*font-size: 0;*/
 }
 .btn-container {
     margin: 15px auto;
