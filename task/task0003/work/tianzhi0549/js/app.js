@@ -1,3 +1,52 @@
+/**
+ * 因为不熟悉网页APP的设计模式，所以代码写的太乱了。
+ * 在这里说一下程序的大致思路，希望能让老师review起来方便一些:-). 老师辛苦了！
+ *
+ * 首先是一个名叫app的单例。这个APP的所有代码都写在这个函数里。
+ * app有两个公开方法分别是init和destroy.
+ * init在onload事件中调用，主要做按钮事件绑定，初始化子控件，初始化数据这样的工作。
+ * destroy在onunload中调用，只做了一件事就是保存数据。
+ *
+ * 然后是另外一个单例, dataProvider, 就是存储数据，提供数据的对象。
+ * dataProvider里面有一个root变量。保存分类，任务，事项这些数据，概览如下。
+ * root=[category1, category2...]
+ * category={
+ *  id: 是一个guid生成的字符串。
+ *  name: 分类的名称。
+ *  tasks: [task1, task2...] 分类下面的任务。
+ *  fixed: true/false 表示分类是否可删除。
+ * }
+ * task={
+ *  id: 同category.
+ *  name: 同category.
+ *  todoList: [toDo1, toDo2...] 任务下面的toDo事项。
+ * }
+ * toDo={
+ *  id: 同上。
+ *  name: 同上。
+ *  date: 日期对象，事项进行时间。
+ *  state: ToDo.DONE/ToDo.UNDONE 事项完成状态。
+ * }
+ *
+ * 然后是很重要的sync函数。
+ * 这个函数负责渲染界面(请允许我用这个词).
+ * 就是根据dataProvider中的数据，修改界面上的显示。
+ * 每次修改之后，都要调用这个函数来同步界面。
+ *
+ * 还有就是多级列表包装器: multiLevelList.
+ * 这个函数负责把一个dom元素包装秤一个多级列表对象返回。
+ *
+ * 还有关于名称为xxx2Item的函数。
+ * 因为前面的multiLevelList需要传入特定格式的数据然后用来显示。
+ * 这些函数就是把category, task, toDo对象转换成那个特定数据格式的函数。
+ *
+ * 大概就是这些了，如果老师觉得那里还有问题，请随时联系我。
+ * TEL: 18328581949.
+ * QQ: 623774708.
+ * EMAIL: tianzhi0549@163.com.
+ * 谢谢老师:-)!
+ */
+
 var app=(function (){
     "use strict";
     var app={};
@@ -129,8 +178,6 @@ var app=(function (){
         dataProvider.DISPLAY_ALL_TODO=0;
         dataProvider.DISPLAY_UNDONE_TODO=1,
         dataProvider.DISPLAY_DONE_TODO=2;
-        dataProvider.DONE=0;
-        dataProvider.UNDONE=1;
         dataProvider.curSelectedTaskId="";
         dataProvider.curSelectedToDoId="";
         dataProvider.displayToDoState=dataProvider.DISPLAY_ALL_TODO;
@@ -218,13 +265,13 @@ var app=(function (){
                 }else{
                     if(state===dataProvider.DISPLAY_DONE_TODO){
                         for(i=0; i<task.toDoList.length; i++){
-                            if(task.toDoList[i].state===dataProvider.DONE){
+                            if(task.toDoList[i].state===ToDo.DONE){
                                 todoList.push(task.toDoList[i]);
                             }
                         }
                     }else{
                         for(i=0; i<task.toDoList.length; i++){
-                            if(task.toDoList[i].state===dataProvider.UNDONE){
+                            if(task.toDoList[i].state===ToDo.UNDONE){
                                 todoList.push(task.toDoList[i]);
                             }
                         }
@@ -295,6 +342,8 @@ var app=(function (){
         return this.getFormattedDate()+" "+
             this.date.getHours()+":"+this.date.getMinutes();
     };
+    ToDo.DONE=0;
+    ToDo.UNDONE=1;
     function PopupWin(element){
         this.show=function (){
             if(this.init){
@@ -353,6 +402,12 @@ var app=(function (){
         };
     }
     extend(CreatingTaskPopupWin, PopupWin);
+    /**
+     * 包装一个元素为可编辑的label. 就是调用edit方法可以出现一个文本区域让用户编辑。
+     * @param element 要包装的元素。
+     * @param input 调用edit之后显示的文本框对象。
+     * @constructor
+     */
     function EditableLabel(element, input){
         input=input||document.createElement("input");
         input.type="text";
@@ -494,7 +549,7 @@ var app=(function (){
             };
         }
         function toDo2Item(toDo){
-            var cls=(toDo.state===dataProvider.DONE?"done ":"");
+            var cls=(toDo.state===ToDo.DONE?"done ":"");
             cls+=(toDo.id===dataProvider.curSelectedToDoId?"selected":"");
             return {
                 "id": toDo.id,
@@ -509,6 +564,12 @@ var app=(function (){
                 cls: "fixed"
             };
         }
+
+        /**
+         * 转换toDo列表为以日期为键的map.
+         * @param toDoList
+         * @returns {{}}
+         */
         function toDoList2DateMap(toDoList){
             var toDoDateMap={}, formattedDate="", i;
             //转换为日期map.
@@ -559,7 +620,7 @@ var app=(function (){
             $(".todo-name").innerHTML=curSelectedToDo.name;
             $(".todo-date .date").innerHTML=curSelectedToDo.getFormattedTime();
             $(".todo-content").innerHTML=curSelectedToDo.content;
-            if(curSelectedToDo.state===dataProvider.DONE){
+            if(curSelectedToDo.state===ToDo.DONE){
                 $(".todo-done").innerHTML="待办";
             }else{
                 $(".todo-done").innerHTML="完成";
@@ -635,7 +696,7 @@ var app=(function (){
             if(dataProvider.curSelectedTaskId){
                 switchDisplay(dataProvider.curSelectedTaskId,
                     dataProvider.addToDo(new ToDo("ToDo", new Date(),
-                    dataProvider.UNDONE), dataProvider.curSelectedTaskId).id);
+                    ToDo.UNDONE), dataProvider.curSelectedTaskId).id);
             }else{
                 alert("请选中一个任务。");
             }
@@ -672,10 +733,10 @@ var app=(function (){
             }
             if(dataProvider.curSelectedToDoId!==""){
                 selectedToDo=dataProvider.getToDo(dataProvider.curSelectedToDoId);
-                if(selectedToDo.state===dataProvider.UNDONE){
-                    selectedToDo.state=dataProvider.DONE;
+                if(selectedToDo.state===ToDo.UNDONE){
+                    selectedToDo.state=ToDo.DONE;
                 }else{
-                    selectedToDo.state=dataProvider.UNDONE;
+                    selectedToDo.state=ToDo.UNDONE;
                 }
             }
             sync();
@@ -712,3 +773,5 @@ window.onload=function (){
 window.onunload=function (){
     app.destroy();
 };
+
+
