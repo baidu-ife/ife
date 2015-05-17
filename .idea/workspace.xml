@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21851335-6d5d-4b74-b881-f3f272598643" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/fonts/icomoon.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/fonts/icomoon.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/fonts/icomoon.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/js/adapter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/js/controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/fonts/icomoon.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/css/ie-normal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/js/model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/task0003.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/js/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/task0002/work/Fental/js/task0002_3.js" afterPath="$PROJECT_DIR$/task/task0002/work/Fental/js/task0002_3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/task0002/work/Fental/css/task0002_5.css" afterPath="$PROJECT_DIR$/task/task0002/work/Fental/css/task0002_5.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/task0002/work/Fental/js/util.js" afterPath="$PROJECT_DIR$/task/task0002/work/Fental/js/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/task0003/work/Fental/js/controller.js" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/js/controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/task0003/work/Fental/task0003.html" afterPath="$PROJECT_DIR$/task/task0003/work/Fental/task0003.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ife.iws" />
@@ -32,51 +20,17 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/js/controller.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.6486091">
-                    <caret line="298" column="35" selection-start-line="298" selection-start-column="35" selection-end-line="298" selection-end-column="35" />
-                    <folding>
-                      <element signature="e#182#443#0" expanded="false" />
-                      <element signature="e#490#643#0" expanded="false" />
-                      <element signature="e#688#3661#0" expanded="false" />
-                      <element signature="e#3739#7178#0" expanded="false" />
-                      <element signature="e#7235#9047#0" expanded="false" />
-                      <element signature="e#9080#9180#0" expanded="false" />
-                      <element signature="e#9215#9427#0" expanded="false" />
-                      <element signature="e#9491#9546#0" expanded="false" />
-                      <element signature="e#9591#10665#0" expanded="false" />
-                      <element signature="e#10722#11444#0" expanded="false" />
-                      <element signature="e#11502#11721#0" expanded="false" />
-                      <element signature="e#11759#31622#0" expanded="false" />
-                      <element signature="e#17092#18027#0" expanded="false" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="ife" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="task0003.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="task0003.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/task0003.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.833334">
-              <caret line="106" column="8" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.70293397">
+              <caret line="95" column="87" selection-start-line="95" selection-start-column="87" selection-end-line="95" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -94,12 +48,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.06532066">
-              <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
+            <state vertical-scroll-proportion="-19.814816">
+              <caret line="166" column="1" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/js/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-27.222221">
+              <caret line="279" column="25" selection-start-line="279" selection-start-column="25" selection-end-line="279" selection-end-column="25" />
+              <folding>
+                <element signature="e#182#443#0" expanded="false" />
+                <element signature="e#490#643#0" expanded="false" />
+                <element signature="e#688#3661#0" expanded="false" />
+                <element signature="e#3739#7178#0" expanded="false" />
+                <element signature="e#7235#9047#0" expanded="false" />
+                <element signature="e#9080#9180#0" expanded="false" />
+                <element signature="e#9215#9427#0" expanded="false" />
+                <element signature="e#9491#9546#0" expanded="false" />
+                <element signature="e#9591#10665#0" expanded="false" />
+                <element signature="e#11502#11721#0" expanded="false" />
+                <element signature="e#17092#18027#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,10 +130,10 @@
         <option value="$PROJECT_DIR$/task/task0003/work/Fental/js/test.js" />
         <option value="$PROJECT_DIR$/task/task0002/work/Fental/js/util.js" />
         <option value="$PROJECT_DIR$/task/task0003/work/Fental/js/util.js" />
-        <option value="$PROJECT_DIR$/task/task0003/work/Fental/task0003.html" />
         <option value="$PROJECT_DIR$/task/task0003/work/Fental/js/model.js" />
-        <option value="$PROJECT_DIR$/task/task0003/work/Fental/js/controller.js" />
         <option value="$PROJECT_DIR$/task/task0003/work/Fental/css/style.css" />
+        <option value="$PROJECT_DIR$/task/task0003/work/Fental/js/controller.js" />
+        <option value="$PROJECT_DIR$/task/task0003/work/Fental/task0003.html" />
       </list>
     </option>
   </component>
@@ -665,13 +641,20 @@
       <option name="project" value="LOCAL" />
       <updated>1430659015775</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="task3-gtd">
+      <created>1431889196311</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1431889196311</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-157" width="1920" height="989" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -688,7 +671,6 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -716,7 +698,8 @@
     <MESSAGE value="modify task0002_3" />
     <MESSAGE value="task0002_4" />
     <MESSAGE value="debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug" />
+    <MESSAGE value="task3-gtd" />
+    <option name="LAST_COMMIT_MESSAGE" value="task3-gtd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1055,18 +1038,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/task0003.html">
+    <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.833334">
-          <caret line="106" column="8" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="8" />
+        <state vertical-scroll-proportion="-19.814816">
+          <caret line="166" column="1" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6486091">
-          <caret line="298" column="35" selection-start-line="298" selection-start-column="35" selection-end-line="298" selection-end-column="35" />
+        <state vertical-scroll-proportion="-27.222221">
+          <caret line="279" column="25" selection-start-line="279" selection-start-column="25" selection-end-line="279" selection-end-column="25" />
           <folding>
             <element signature="e#182#443#0" expanded="false" />
             <element signature="e#490#643#0" expanded="false" />
@@ -1077,18 +1060,16 @@
             <element signature="e#9215#9427#0" expanded="false" />
             <element signature="e#9491#9546#0" expanded="false" />
             <element signature="e#9591#10665#0" expanded="false" />
-            <element signature="e#10722#11444#0" expanded="false" />
             <element signature="e#11502#11721#0" expanded="false" />
-            <element signature="e#11759#31622#0" expanded="false" />
             <element signature="e#17092#18027#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/css/style.css">
+    <entry file="file://$PROJECT_DIR$/task/task0003/work/Fental/task0003.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06532066">
-          <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.70293397">
+          <caret line="95" column="87" selection-start-line="95" selection-start-column="87" selection-end-line="95" selection-end-column="87" />
           <folding />
         </state>
       </provider>

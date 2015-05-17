@@ -271,16 +271,16 @@ var controller = (function() {
             alert('请输入内容！');
             return false;
         }
-        if (tName.replace(/[^\x00-\xff]/g, '__').length > 20) {
-            alert('标题不允许超过20个字！');
+        if (tName.replace(/[^\x00-\xff]/g, '__').length > 25) {
+            alert('标题不允许超过25个字！');
             return false;
         }
         if (!trim(tDate).match(/^\d{4}-\d{2}-\d{2}$/)) {
             alert('时间格式错误，正确格式为YYYY-MM-DD');
             return false;
         }
-        if (tContent.replace(/[^\x00-\xff]/g, '__').length > 200) {
-            alert('内容不允许超过200字！');
+        if (tContent.replace(/[^\x00-\xff]/g, '__').length > 400) {
+            alert('内容不允许超过400字！');
             return false;
         }
         return true;
