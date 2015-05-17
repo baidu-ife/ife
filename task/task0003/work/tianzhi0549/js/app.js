@@ -409,8 +409,11 @@ var app=(function (){
      * @constructor
      */
     function EditableLabel(element, input){
-        input=input||document.createElement("input");
-        input.type="text";
+        input=input||function (){
+            var input=document.createElement("input");
+            input.setAttribute("type", "text");
+            return input;
+        };
         this.edit=function (){
             input.value=element.innerHTML;
             element.innerHTML="";
