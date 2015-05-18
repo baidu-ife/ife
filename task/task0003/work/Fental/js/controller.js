@@ -443,7 +443,9 @@ var controller = (function() {
                         break;
                     //取消编辑
                     case 'cancel': {
-                        cancelEdit();
+                        if (confirm('确认取消编辑？')) {
+                            cancelEdit();
+                        }
                     }
                         break;
                 }

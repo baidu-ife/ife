@@ -13,6 +13,7 @@ li {
 }
 html,
 body {
+    min-width: 1280px;
     width: 100%;
     height: 100%
 }
@@ -299,6 +300,7 @@ footer {
 .edit-title,
 .edit-date {
     width: 200px;
+    height: 24px;
     padding-left: 20px;
     font-size: 12px;
     line-height: 24px;
@@ -310,6 +312,7 @@ footer {
     font-size: 12px;
     line-height: 1.5;
     border: 1px solid #ccc;
+    vertical-align: top;
 }
 .button-set {
     width: 820px;
