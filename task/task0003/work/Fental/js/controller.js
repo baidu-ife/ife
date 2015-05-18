@@ -14,7 +14,7 @@ var controller = (function() {
             return list.getElementsByClassName('active-classify')[0];
         }
         else {
-            return getElementsByClassName(list, 'active-classify')[0];
+            return getElementsByClassName('active-classify', list);
         }
     };
 
