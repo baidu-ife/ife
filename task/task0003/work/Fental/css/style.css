@@ -113,7 +113,7 @@ footer {
 }
 .classify-list {
     height: 80%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .all-list-title {
@@ -183,7 +183,7 @@ footer {
     font-size: 14px;
 }
 
-.icon-plus:hover {
+.add:hover {
     cursor: pointer;
 }
 .icon-plus:before {
@@ -212,7 +212,7 @@ footer {
     border: 1px solid #ccc;
 }
 .task-panel {
-    overflow: scroll;
+    overflow: auto;
 }
 .task-panel li {
     position: relative;
@@ -284,6 +284,7 @@ footer {
     border-bottom: 1px solid #ccc;
 }
 .task .content {
+    word-wrap: break-word;
     padding: 15px;
 }
 .edit-task {

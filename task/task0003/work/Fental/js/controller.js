@@ -201,7 +201,7 @@ var controller = (function() {
                 $('#task-title').innerHTML = info.name + '<span class="icon-checkmark" id="check-mark"></span><span class="icon-pencil2" id="pencil"></span>';
             }
             $('#task-date').innerHTML = '任务日期：' + info.date;
-            $('#task-content').innerHTML = currentTask.content;
+            $('#task-content').innerHTML = '<pre>' + currentTask.content + '</pre>';
         }
         else {
             $('#task-title').innerHTML = '';
@@ -301,6 +301,9 @@ var controller = (function() {
             $.on('body', 'click', function(e) {
                 var activeClassify = getActiveClassify();
                 var target = getTarget(e);
+                if (target.tagName.toLowerCase() === 'span') {
+                    target = target.parentNode;
+                }
                 switch (target.id) {
                     //增加分类 || 子分类
                     case 'add-classify': {
@@ -339,6 +342,8 @@ var controller = (function() {
                         break;
                     //新增任务，打开编辑窗口
                     case 'add-task': {
+
+
                         if (activeClassify.id === 'all-list-title') {
                             alert('请先选中具体分类再增加任务！');
                         }
@@ -403,8 +408,8 @@ var controller = (function() {
                                         //updateList('subClassify', activeClassify.getAttribute('data-parent'), activeClassify.getAttribute('data-name'));
                                         updateTaskContainer(type, showType, [activeClassify.getAttribute('data-parent'), activeClassify.getAttribute('data-name')], [tName, tDate, activeClassify.getAttribute('data-name')]);
                                         $('#task-title').innerHTML = tName + '<span class="icon-checkmark" id="check-mark"></span><span class="icon-pencil2" id="pencil"></span>';
-                                        $('#task-date').innerHTML = tDate;
-                                        $('#task-content').innerHTML = tContent;
+                                        $('#task-date').innerHTML = '任务日期：' + tDate;
+                                        $('#task-content').innerHTML = '<pre>' + tContent + '</pre>';
                                     }
                                     else {
                                         if ((tmp = currentTask.getAttribute('data-sub-classify')) !== '') {
@@ -415,8 +420,8 @@ var controller = (function() {
                                             updateTaskContainer(type, showType, [activeClassify.getAttribute('data-name')], [tName, tDate, tmp]);
 
                                             $('#task-title').innerHTML = tName + '<span class="icon-checkmark" id="check-mark"></span><span class="icon-pencil2" id="pencil"></span>';
-                                            $('#task-date').innerHTML = tDate;
-                                            $('#task-content').innerHTML = tContent;
+                                            $('#task-date').innerHTML = '任务日期：' + tDate;
+                                            $('#task-content').innerHTML = '<pre>' + tContent + '</pre>';
                                         }
                                         else {
                                             gtd.editTaskOutOfSub(activeClassify.getAttribute('data-name'), oName, oDate, tName, tDate, tContent);
@@ -425,8 +430,8 @@ var controller = (function() {
                                             updateTaskContainer(type, showType, [activeClassify.getAttribute('data-name')], [tName, tDate, '']);
 
                                             $('#task-title').innerHTML = tName + '<span class="icon-checkmark" id="check-mark"></span><span class="icon-pencil2" id="pencil"></span>';
-                                            $('#task-date').innerHTML = tDate;
-                                            $('#task-content').innerHTML = tContent;
+                                            $('#task-date').innerHTML = '任务日期：' + tDate;
+                                            $('#task-content').innerHTML = '<pre>' + tContent + '</pre>';
                                         }
                                     }
 
