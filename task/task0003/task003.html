@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head lang="h-cmn-Hans">
+<head lang="zh-cmn-Hans">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>GTD Tools</title>
@@ -14,44 +14,44 @@
   <div id="content">
   <div id="catalog-task">
       <div class="catalog-task-wrap">
-          <div class="task-all-title">所有任务（<span class="unfinished-count">1</span>）</div>
-          <div class="task-wrap">
+          <div class="task-all-title">所有任务（<span id="unfinished-count-all">1</span>）</div>
+            <div class="task-wrap">
+                <!--  感觉这里的逻辑实现起来不太对，所以只显示数量。不显示具体任务
               <div data-task-no="0">
                   <span class="task-name">task0</span>
                   （<span class="unfinished-count">6</span>）
               </div>
-              <!--<div data-task-no="1">
+              <div data-task-no="1">
                   <span class="task-name">task1</span>
                   （<span class="unfinished-count">4</span>）
               </div>-->
           </div>
           <hr/>
           <div class="catalog-all-title">分类列表</div>
-          <div class="catalog-wrap">
-              <div data-catalog-no="0" id="default-catalog">
-                  <div class="catalog-name  isChosen">
-                     <span>默认分类</span>
+          <div id="catalog-wrap">
+              <div data-catalog-no="0" class="isChosen" id="default-catalog">
+                  <div class="catalog-name">
+                      <span>默认分类</span>
                       （<span class="unfinished-count">1</span>）
                   </div>
               </div>
-              <!--<div data-catalog-no="1">
+<!--
+             <div data-catalog-no="1">
                   <div class="catalog-name">
                       <span>ife</span>
                       （<span class="unfinished-count">10</span>）
                       <img class="delete" src="img/delete.png"/>
                   </div>
-                  &lt;!&ndash;<div class="task-wrap">&ndash;&gt;
-                      <div data-task-no="0">
-                          <span class="task-name">task0</span>
-                          （<span class="unfinished-count">6</span>）
-                          <img class="delete" src="img/delete.png"/>
-                      </div>
-                      <div data-task-no="1">
-                          <span class="task-name">task1</span>
-                          （<span class="unfinished-count">4</span>）
-                          <img class="delete" src="img/delete.png"/>
-                      </div>
-                  &lt;!&ndash;</div>&ndash;&gt;
+                  <div data-task-no="0">
+                      <span class="task-name">task0</span>
+                      （<span class="unfinished-count">6</span>）
+                      <img class="delete" src="img/delete.png"/>
+                  </div>
+                  <div data-task-no="1">
+                      <span class="task-name">task1</span>
+                      （<span class="unfinished-count">4</span>）
+                      <img class="delete" src="img/delete.png"/>
+                  </div>
               </div>-->
           </div>
       </div>
@@ -68,7 +68,6 @@
           <div class="todo-each-day">
               <div class="todo-date">2015-05-12</div>
               <div data-todo-no="0">to-do 0</div>
-              <!--<div data-todo-no="1" class="todo-chosen">to-do 1</div>-->
           </div>
       </div>
       <div class="add">新增任务</div>

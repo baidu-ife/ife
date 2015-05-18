@@ -89,7 +89,7 @@ hr{
     text-indent: 4em;
     background:#eee url("../img/task.png") no-repeat 30px 6px;
 }
-.catalog-name.isChosen,
+[data-catalog-no].isChosen .catalog-name,
 [data-task-no].isChosen,
 .catalog-name:hover,
 [data-task-no]:hover{

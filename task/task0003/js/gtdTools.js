@@ -5,32 +5,118 @@
 /*
 我是这么理解需求的，最左栏是目录(catalog)和子目录(task)列表，
 中间栏是task/默认分类下的具体的todo列表，也就是所谓的任务列表。
+注：catalog里同级的task和todo只能选一个。请不要同时加啊！！！
 
 不足：
 在最左栏中，catalog和task的上下文环境没有统一，导致操作变得很麻烦，这种麻烦贯穿了所有添加、删除操作。
 
-额外优化：
-从任务列表直接删除任务to-do
+
  */
 
 /**
  * 定义catalog task todo 对象
  */
+/*if(!localStorage.catalog){
+    localStorage.c*/
+var Catalog=[
+        {
+            name:"默认分类",//default catalog
+            todo:[
+                {
+                    name:"todo0",
+                    date:"2015-05-16",
+                    content:"i'm the first one",
+                    state:"unfinished"
+                }
+            ],
+            count:1
+        },
+        {
+            name:"new",
+            task:[
+                {
+                    name:"task0",
+                    todo:[],
+                    count:0
+                }
+            ],
+            todo:[],
+            count:0
+        },
+        {
+            name:"new2",
+            task:[],
+            todo:[
+                {
+                    name:"todo1",
+                    date:"2015-05-16",
+                    content:"hello world",
+                    state:"unfinished"
+                }
+            ],
+            count:1
+        }
+    ];
+/*}*/
+localStorage.setItem("catalog",JSON.stringify(Catalog));
+//console.log(myCatalog[0].task[0].todo[0].date);
+/*console.log(myCatalog.length);
+console.log(myCatalog[1].task.length);*/
+/*if(myCatalog[0].task[0].todo[0].date>"2015-05-12"){
+    console.log("大于");
+}*/
+
+/**
+ * 一些全局变量
+ */
+/*countAll  //所有未完成的todo
+*/
+
+
+/**
+ * 载入所有数据
+ */
+var myCatalog=JSON.parse(localStorage.getItem("catalog"));
+var countAll=myCatalog[0].count;//初始值为默认列表中的未完成的任务
+for(var i=1;i<myCatalog.length;i++){//默认列表不需要重新载入
+    //获取分类列表
+    var catalogWrap=document.getElementById("catalog-wrap");
+
+    //所有分类
+    var ele=document.createElement("div");
+    ele.setAttribute("data-catalog-no",i+"");
+    var nameEle=document.createElement("div");
+    addClass(nameEle,"catalog-name");
+    nameEle.innerHTML="<span>" + myCatalog[i].name + "</span>"+
+                   "（<span class='unfinished-count'>" + myCatalog[i].count + "</span>）" +
+                   "<img class='delete' src='img/delete.png'/>";
+    ele.appendChild(nameEle);
+    if(myCatalog[i].task.length!=0){
+        var taskEle=document.createElement("div");
+        for(var j=0;j<myCatalog[i].task.length;j++){
+            taskEle.setAttribute("data-task-no",j+"");
+            taskEle.innerHTML="<span class='task-name'>"+myCatalog[i].task[j].name+"</span>"+
+                              "（<span class='unfinished-count'>"+myCatalog[i].task[j].count+"</span>）"+
+                              "<img class='delete' src='img/delete.png'/>";
+            ele.appendChild(taskEle);
+        }
+    }
+    catalogWrap.appendChild(ele);
+    countAll+=myCatalog[i].count;
+}
+document.getElementById("unfinished-count-all").innerHTML=countAll+"";
 
 
 
 
-
+var allCatalogBtn=document.getElementsByClassName("catalog-all-title")[0];
+var allTaskBtn=document.getElementsByClassName("task-all-title")[0];
+var allCatalog=document.getElementById("catalog-wrap");
+var allTask=document.querySelector(".task-wrap");/*只是最前面的.task-wrap，即“所有任务下的”*/
 
 /**
  *“所有任务”“分类列表”展开/关闭
  */
-var allCatalogBtn=document.getElementsByClassName("catalog-all-title")[0];
-var allTaskBtn=document.getElementsByClassName("task-all-title")[0];
-var allCatalog=document.getElementsByClassName("catalog-wrap")[0];
-var allTask=document.querySelector(".task-wrap");/*只是最前面的.task-wrap，即“所有任务下的”*/
-
-
 addEvent(allCatalogBtn,"click",function(){
     if(allCatalog.style.display=="none"){
         allCatalog.style.display="block";
@@ -57,70 +143,139 @@ addEvent(allTaskBtn,"click",function(){
 /**
  * catalog-task 选择任务(√)
  */
-var chosen=document.getElementsByClassName("isChosen")[0];/*坑爹啊QAQ [0]，因为.classList的操作对象……*/
-var catalogs=document.getElementsByClassName("catalog-name");//querySelectorAll("[data-catalog-no]");
-var tasks=document.querySelectorAll("[data-task-no]");
 
+
+var chosen=document.getElementsByClassName("isChosen")[0];//注意其实是Elements！！！
+var catalogs=document.getElementsByClassName("catalog-name");//点击catalog-name被选中
+var tasks=document.querySelectorAll("[data-task-no]");
 for(var j=0;j<tasks.length;j++) {//选中子分类，该节点含有[data-task-no]
-    addEvent(tasks[j], "click", choose);
+    addEvent(tasks[j], "click", chooseItem);
 }
 for(var i=0;i<catalogs.length;i++){//选中分类名.catalog-name,其parentNode含有[data-catalog-no]
-    addEvent(catalogs[i],"click", choose);
+    addEvent(catalogs[i],"click", chooseItem);
 }
 
-function choose(event){
-        var item=event.target;
-        if(item.parentNode.getAttribute("data-catalog-no")==null&&
-            item.getAttribute("data-task-no")==null){//可能会选中.catalog-name或者[data-task-no]中的子节点
-            item=item.parentNode;
+function chooseItem(event){
+    var item=event.target;
+    while(item.getAttribute("data-catalog-no")==null&&
+        item.getAttribute("data-task-no")==null){//可能会选中.catalog-name或者[data-task-no]中的子节点
+        item=item.parentNode;
+    }
+
+    //↓something strange!!
+    //按下delete后依然会触发chooseItem，此时此处仍然可以找到item([data-task-no]),但是delete元素的父元素却为null
+    //console.log(item);
+    //console.log(item.parentNode);//->null
+    if(item.parentNode==null){
+        return;
+    }
+
+    //deal with style(class) change
+    if(chosen!=null){//如果chosen不是null,则先移除chosen
+        removeClass(chosen,"isChosen");
+    }
+    if(item===chosen){//如果本来就已经选中，则取消选择
+        //removeClass(chosen,"isChosen");
+        chosen=null;
+        return;
+    }
+    else{//如果选中其他，则重置chosen以及其样式
+        //removeClass(chosen,"isChosen");
+        chosen=item;
+        addClass(item,"isChosen");
+    }
+
+    //deal with todobar
+    var todoWrap=document.getElementsByClassName("todo-wrap")[0];
+    var current;//目标todo
+    todoWrap.innerHTML="";
+    if(chosen.getAttribute("data-catalog-no")!=null){//choose catalog
+        // if catalog contains todos(suppose catalog can only contains todos or tasks)
+        current=myCatalog[chosen.getAttribute("data-catalog-no")];
+    }
+    else{
+        current=myCatalog[chosen.parentNode.getAttribute("data-catalog-no")].task[chosen.getAttribute("data-task-no")];
+    }
+    if(current.todo.length!=0){
+        //change the todobar
+        for(var i=0;i<current.todo.length;i++){
+            var todoItem=document.createElement("div");
+            addClass(todoItem,"todo-each-day");
+            var str="";
+            if(i==0||current.todo[i].date!=current.todo[i-1].date){
+                str+="<div class='todo-date'>" + current.todo[i].date + "</div>";
+            }
+            todoItem.innerHTML=str+ "<div data-todo-no='"+i+"'>" + current.todo[i].name + "</div>";
+            addClickEvent(todoItem,chooseTodo);
+            todoWrap.appendChild(todoItem);
+            //console.log("append new ");
         }
-        if(chosen!=null)//如果chosen不是null,则先移除chosen
-            removeClass(chosen,"isChosen");
-        if(item==chosen){//如果本来就已经选中，则取消选择
-            //removeClass(chosen,"isChosen");
-            chosen=null;
-        }
-        else{//如果选中其他，则重置chosen以及其样式
-            //removeClass(chosen,"isChosen");
-            chosen=item;
-            addClass(item,"isChosen");
-        }
+    }
 }
-/*问题1（√）：因为用event.target定位，所以可能会定位到各种子元素……比如span .delete .catalog-name。所以最好在空白的地方点击
+/*问题1（√）：因为用event.target定位，所以可能会定位到各种子元素……比如span .delete。所以最好在空白的地方点击
  * 优化（√）：两个addEvent应该可以合并
  * */
-
-/**
- * 选择任务后todo列表变化
- */
+//todo:更改todo栏状态时，是否需要判断todo栏选择的todo状态？
+//todo:是否需要将更改todo栏独立出一个方法？
 
 
 /**
- * 删除分类/任务
+ * 删除分类/任务（√）
  */
 var deleteBtn=document.getElementsByClassName("delete");
 for(var i=0;i<deleteBtn.length;i++){
     addClickEvent(deleteBtn[i],deleteItem);
 }
 function deleteItem(event){
-    //console.log(event.target);
-    var item=event.target;
-    //console.log(item);
-    while(item.parentNode.getAttribute("data-catalog-no")==null&&
-        item.parentNode.getAttribute("data-task-no")==null){
-        item=item.parentNode;
+    var cfm=confirm("确定要删除该任务？");
+    if(cfm==false){
+        return;
     }
-    if(item.getAttribute("data-task-no")==null){//要删除的是catalog，需要再上去一层
-        item=item.parentNode;
+
+    //获取元素以及编号
+    var item=event.target;//console.log(item);
+    var current=null;//item in myCatalog
+    if(item.parentNode.getAttribute("data-task-no")!=null){//选中task下的delete
+        item=item.parentNode;//item:[data-task-no]
+        current=myCatalog[item.parentNode.getAttribute("data-catalog-no")].task[item.getAttribute("data-task-no")];
+        console.log("delete "+item.parentNode.getAttribute("data-catalog-no")+"-"+item.getAttribute("data-task-no")+":"+current.name);
+        myCatalog[item.parentNode.getAttribute("data-catalog-no")].count-=current.count;
     }
+    else{//选中catalog下的delete
+        item=item.parentNode.parentNode;
+        current=myCatalog[item.getAttribute("data-catalog-no")];
+        console.log("delete "+item.getAttribute("data-catalog-no")+":"+current.name);
+    }
+
+
+    //界面变化
+    //在catalog栏中消失
     item.parentNode.removeChild(item);
+    //如果删除的任务正在todo栏中显示，则todo栏清空
+    if(item==chosen||chosen.parentNode==item){
+        console.log("删除的内容正在todo栏中显示，清空todo栏");
+        document.getElementsByClassName("todo-wrap")[0].innerHTML="";
+        chosen=null;
+    }
+
+    // 更改myCatalog,并存储
+    //console.log(current.name);
+
+    document.getElementById("unfinished-count-all").innerHTML=String(countAll-current.count);
+    current=null;//如何删除？（此处暂时处理为设为空）
+    //console.log(myCatalog);//不因此↑而变?
+    //console.log(current);//console.log(current.name);
+    localStorage.setItem("catalog",JSON.stringify(myCatalog));
+
 }
 //todo:“所有任务”中保持同步
+//不足：程序可读性有点差
+//BUG(√):点击delete后会自动调用chooseItem，出现异常
 
 /**
  * 添加分类
- * 当前无选中(chosen==null)，添加【新分类】（.catalog-wrap下插入）
- * 如果当前选中“默认分类”（chosen.parent=defaultCatalog），则添加【新分类】（.catalog-wrap下插入）
+ * 当前无选中(chosen==null)，添加【新分类】（#catalog-wrap下插入）
+ * 如果当前选中“默认分类”（chosen.parent=defaultCatalog），则添加【新分类】（#catalog-wrap下插入）
  * 如果当前选中其他分类（chosen~=.catalog-name)，则添加【子分类】（*chosen的父节点下插入）
  * 当前选中子分类（chosen~=[data-task-no]），则添加【子分类】（*chosen的父节点下插入）
  */
@@ -137,7 +292,6 @@ addClickEvent(addCatalog,function(){
     if(newName!=null&&newName!=""){
         var item;
         if(chosen==null||chosen.parentNode==defaultCatalog){
-            //在列表最后添加新分类
             item=document.createElement("div");//构造节点
             item.setAttribute("data-catalog-no",catalogNo+"");
             item.innerHTML="<div class='catalog-name'>"+
@@ -146,6 +300,8 @@ addClickEvent(addCatalog,function(){
                            "<img class='delete' src='img/delete.png'/></div>";
             //console.log(item);
             allCatalog.appendChild(item);//插入节点
+            addClickEvent(item.getElementsByClassName("catalog-name")[0],chooseItem);//添加事件
+
             catalogNo++;//记号更新
         }
         else {
@@ -157,12 +313,14 @@ addClickEvent(addCatalog,function(){
                            "<img class='delete' src='img/delete.png'/>";
             //console.log(item);
             chosen.parentNode.appendChild(item);
+            addClickEvent(item,chooseItem);//添加事件
             taskNo++;
         }
-        addClickEvent(item,choose);//添加事件
+        //添加删除事件
         addClickEvent(item.getElementsByClassName("delete")[0],deleteItem);
     }
 });
+//BUG（√）:新添加的分类下再添加的子分类不能被选中！因为直接对item添加选中事件，实际上根据catalog和task应该对不同的元素进行添加
 //todo：“所有任务”中保持同步（仅task)
 //todo:标记当前data-catalog-no,data-task-no
 //todo:存储数据
@@ -176,13 +334,14 @@ var states=document.querySelectorAll("[data-task-state]");
 
 for(var i=0;i<states.length;i++){
     addClickEvent(states[i],function(event){
-        removeClass(currentState,"state-chosen");
-        var item=event.target;
-        addClass(item,"state-chosen");
-        currentState=item;
     });
 }
-
+function chooseTodo(event){
+    removeClass(currentState,"state-chosen");
+    var item=event.target;
+    addClass(item,"state-chosen");
+    currentState=item;
+}
 /**
  * todo状态变化，列表变化
  */
@@ -194,36 +353,38 @@ for(var i=0;i<states.length;i++){
 var currentTodo=document.getElementsByClassName("todo-chosen")[0];
 var todos=document.querySelectorAll("[data-todo-no]");
 
-for(var i=0;i<todos.length;i++){
-    addClickEvent(todos[i],function(event){
+for(var i=0;i<todos.length;i++) {
+    addClickEvent(todos[i], chooseTodo);
+}
+
+function chooseTodo(event){
+    if(currentTodo!=null){
         removeClass(currentTodo,"todo-chosen");
-        var item=event.target;
-        addClass(item,"todo-chosen");
-        currentTodo=item;
-    });
+    }
+    var item=event.target;
+    addClass(item,"todo-chosen");
+    currentTodo=item;
 
     //右侧详细信息变化
-    addClickEvent(todos[i],function(event){
-        //先判断之前是否有任务在编辑
-        if(content.classList.contains("new")){
-            var cfm=confirm("确定放弃本次新增？");
-            if(!cfm){
-                return;
-            }
+    //先判断之前是否有任务在编辑
+    if(content.classList.contains("new")){
+        var cfm=confirm("确定放弃本次新增？");
+        if(!cfm){
+            return;
         }
-        else if(content.classList.contains("edit")){
-            var cfm=confirm("确定放弃本次修改？");
-            if(!cfm){
-                return;
-            }
+    }
+    else if(content.classList.contains("edit")){
+        var cfm=confirm("确定放弃本次修改？");
+        if(!cfm){
+            return;
         }
-        var item=event.target;//即.todo-chosen
-        //todo：填充数据
-        tip.innerHTML="";
-        content.style.display="block";
-        removeClass(content,"edit");
-        removeClass(content,"new");
-    });
+    }
+    var item=event.target;//即.todo-chosen
+    //todo：填充数据
+    tip.innerHTML="";
+    content.style.display="block";
+    removeClass(content,"edit");
+    removeClass(content,"new");
 }
 
 
