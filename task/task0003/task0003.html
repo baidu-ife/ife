@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>task0003</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--[if IE 8 and IE 9]>
+    <link rel="stylesheet" href="css/ie.css">
+    <script src="js/ie.js" type="text/javascript"></script>
+    <![endif]-->
+</head>
+<body>
+<header id="header">
+    <h1>GTD Tools</h1>
+</header>
+<div class="main">
+    <div class="task_type_wrap">
+        <h2>所有任务 (<span id="allTask">7</span>)</h2>
+        <p>分类列表</p>
+        <ul class="task_type_wrap_ul" id="task_type_wrap_ul">
+
+        </ul>
+        <p class="task_add_type">新增分类</p>
+    </div>
+    <div class="task_item_wrap">
+        <ul class="task_item_wrap_nav" id="task_item_wrap_nav">
+            <li data-status="2" class="task_item_wrap_nav_active">所有</li>
+            <li data-status="1">未完成</li>
+            <li data-status="0">已完成</li>
+        </ul>
+        <ul class="task_item_ul" id="task_item_ul">
+
+        </ul>
+        <p class="task_add_task">新增任务</p>
+    </div>
+    <div class="task_info">
+      <div class="task_info_title">
+          <input type="text" value="" id="title" placeholder="请输入标题"/>
+          <button class="task_info_end"></button>
+          <button class="task_info_editor"></button>
+          <button class="task_info_save hidden">保存</button>
+      </div>
+      <div class="task_info_time">
+          <label for="time">任务日期</label>
+          <input type="text" id="time" placeholder="请输入2015-05-13格式的日期"/>
+      </div>
+      <div class="task_info_content">
+          <textarea id="textarea"  placeholder="请输入内容，不能超过1000个字符"></textarea>
+      </div>
+      </div>
+</div>
+
+<div class="addTaskType_wrap hidden">
+        <h3>新增分类</h3>
+        <input type="text" id="addTaskType"/><br>
+        <button id="addTaskType_submit">确定</button>
+        <button id="addTaskType_close">取消</button>
+</div>
+
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/store.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
