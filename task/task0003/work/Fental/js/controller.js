@@ -128,7 +128,15 @@ var controller = (function() {
                         continue;
                     }
                 }
-                if (allSections.indexOf(allTasks[k].date) === -1) {
+                var flag = (function() {
+                    for (var i = 0; i < allSections.length; i++) {
+                        if (allSections[i] === allTasks[k].date) {
+                            return 1;
+                        }
+                    }
+                    return -1;
+                })();
+                if (flag === -1) {
                     allSections.push(allTasks[k].date);
                     if (allTasks[k].state) {
                         hadDone = ' had-done';

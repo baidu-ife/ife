@@ -125,7 +125,15 @@ Gtd.prototype = {
     //add
     addClassify: function(cName) {
         var allClassifies = JSON.parse(localStorage.getItem('allClassifies'));
-        if (allClassifies.indexOf(cName) !== -1) {
+        var flag = (function() {
+            for (var i = 0;i < allClassifies.length; i++) {
+                if (allClassifies[i] === cName) {
+                    return 1;
+                }
+            }
+            return -1;
+        })();
+        if (flag !== -1) {
             alert('该类别已存在！');
         }
         else {
