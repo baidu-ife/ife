@@ -335,13 +335,34 @@ var $={
         var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));  
         if(arr != null){  
             return (arr[2]);  
-        }else{  
+        }
+        else{  
             return "";  
         }  
 	}
 
-	function ajax(url, options) {
-	    // your implement
+    function ajax(url, options) {
+        var xml;
+        function getXml() {
+            var xml;
+            if (window.XMLHttpRequest) {
+                xml = new XMLHttpRequest;
+            } else {
+                xml = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            return xml;
+	   }
+	   xml = getXml();
+	   xml.onreadystatechange = function () {
+	   	if (xml.readyState == 4 && xml.status == 200) { // 如果顺利发送数据并成功应答
+	   	    options.onsuccess();// 调用options的onsuccess方法
+	   	}
+	   	else if (xml.readyState == 4) {
+	   	    options.onfail();// 数据发送失败
+	   	}
+
+	   	}
+	   }
 	}
 
 

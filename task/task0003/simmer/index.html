@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang='zn-CH'>
+<head>
+    <meta charset="UTF-8">
+    <title>Task management - Simmer</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="shourtcut icon" href="favicon.ico" ></link>
+</head>
+<body>
+<div class="wraper clearfix">
+    <p class="logo">Simmer - ToDo</p>
+    <div class="class clearfix">
+        <h3>所有任务（<span class="number"></span>)</h3>
+        <h3>分类列表</h3>
+        <div class="class-box">        
+        </div>
+        <div class="add">
+            <span class="icon">&#xea0a;</span>新增分类
+        </div>  
+    </div>
+    <div class="task clearfix">
+        <div class="task-status">
+            <a href="##" id="all" class="active">所有</a>
+            <a href="##" id="doing">未完成</a>
+            <a href="##" id="complete">已完成</a>
+        </div>
+        <div class="task-list">
+        </div>
+        <div class="add">
+            <span class="icon">&#xea0a;</span>新增任务
+        </div>
+    </div>
+    <div class="contend">
+    <div class="done">
+        <h3 class="title">完成百度Task0003</h3>
+        <p>任务日期：<span class="date">2015-05-10</span></p>
+        <div class="task-contend">
+        <p>该设计稿仅为线框原型示意图，所有的视觉设计不需要严格按照示意图。如果有设计能力的同学，欢迎实现得更加美观，如果没有，也可以按照线框图实现。以下内容可以自行发挥</p>
+        </div>
+    </div>
+    <div class="doing">
+        <div class="detail">
+            <p >标题：<span class="title">完成百度Task0003 </span><span class="icon" title="编辑任务" >&#xe905;</span><span class="icon" title="完成任务" >&#xea10;</span></p>
+            <p>任务日期：<span class="date">2015-05-10</span></p>
+            <div class="task-contend">
+            <p>该设计稿仅为线框原型示意图，所有的视觉设计不需要严格按照示意图。如果有设计能力的同学，欢迎实现得更加美观，如果没有，也可以按照线框图实现。以下内容可以自行发挥</p>
+            </div>
+        </div>
+        <div class="edit">
+           <p class="title"><input type="text" size="20" maxlength="20" class="tit-value" placeholder="请输入标题" /><i>注意标题限制在20个字以内！</i><span class="btn" title="确认修改" >确认</span><span class="btn" title="取消修改" >取消</span></p>
+            <p class="date"><input type="text" class="date-value" placeholder="日期"><i>注意输入的日期格式为xxxx-xx-xx！</i></p>
+            <div class="task-contend">
+            <textarea name="task-contend" id="contend" cols="30" rows="10"></textarea>
+            <p>请输入的字数限制在5000字以内！</p>
+            </div> 
+        </div>
+    </div>
+    </div>
+</div>
+<div class="mask">
+        <div class="mask-bg"></div>
+        <div id="float">
+            <div class="addclass">
+                <div class="creat">
+                    <span class="btn" title="点击创建主分类">创建主分类</span>
+                    <span class="btn" title="点击创建子分类">创建子分类</span>
+                </div>
+                <div class="mainitem">
+                    <p>输入主分类：<input type="text" size="10" placeholder="输入主分类名称"></p>
+                    <p><span class="message">(!输入的字符控制在10个以内)</span></p>
+                    <span class="btn" title="创建">确认</span>
+                </div>
+                <div class="childitem">
+                    <p>在当前<span class="ipoint">激活目录下</span>下创建分类</p>
+                    <p>Name：<input type="text" size="10" placeholder="输入子分类名称"></p>
+                    <p><span class="message">(!输入的字符控制在10个以内)</span></p>
+                    <span class="btn" title="创建">确认</span>
+                </div>
+            </div>
+            <div class="makesure">
+                <p>您的任务内容有改动，请确认！</p>
+                <span class="btn">保存更改</span>
+            </div>
+            <span class="closemask" title="关闭">&#xea0f;</span>
+        </div>
+    </div>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
