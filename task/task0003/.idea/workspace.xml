@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/js/gtdTools.js" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e764edaa-e032-4488-b78d-72b70e4ba34a" name="Default" comment="" />
     <ignored path="task003.iws" />
@@ -24,8 +27,8 @@
       <file leaf-file-name="task003.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task003.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.464286">
-              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="72" />
+            <state vertical-scroll-proportion="-11.535714">
+              <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -44,8 +47,8 @@
       <file leaf-file-name="gtdTools.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/gtdTools.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6291161">
-              <caret line="263" column="93" selection-start-line="263" selection-start-column="93" selection-end-line="263" selection-end-column="93" />
+            <state vertical-scroll-proportion="0.14662273">
+              <caret line="429" column="26" selection-start-line="429" selection-start-column="26" selection-end-line="429" selection-end-column="26" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -292,6 +295,32 @@
     <entry file="file://$PROJECT_DIR$/task003.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/gtdTools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task003.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="40" column="64" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
           <folding />
         </state>
@@ -489,16 +518,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/task003.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.464286">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="72" />
+        <state vertical-scroll-proportion="-11.535714">
+          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/gtdTools.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6291161">
-          <caret line="263" column="93" selection-start-line="263" selection-start-column="93" selection-end-line="263" selection-end-column="93" />
+        <state vertical-scroll-proportion="0.14662273">
+          <caret line="429" column="26" selection-start-line="429" selection-start-column="26" selection-end-line="429" selection-end-column="26" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
