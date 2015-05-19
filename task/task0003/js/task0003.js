@@ -1,6 +1,6 @@
 init();
 function getLocalData() {
-    var testData = [[{
+/*    var testData = [[{
         classify : "默认分类",    
         task : "task2",
         date : "2015-5-20",
@@ -11,7 +11,7 @@ function getLocalData() {
         classify : "默认分类",
         task : "task2",
         date : "2015-5-23",
-        sub : "to-do 4",
+        sub : "to-do 5",
         completed : true,
         content : "打游戏"
     },{
@@ -29,14 +29,14 @@ function getLocalData() {
         task : "task3",
         date : "2015-5-12",
         sub : "to-do 9",
-        completed : true,
+        completed : false,
         content : "打游戏"
     }],[{
         classify : "baidu-",
         task : "task4",
         date : "2015-5-10",
         sub : "to-do 1",
-        completed : true,
+        completed : false,
         content : "打游戏"
     },{
         classify : "baidu-",
@@ -50,11 +50,11 @@ function getLocalData() {
         task : "task6",
         date : "2015-5-10",
         sub : "to-do 7",
-        completed : true,
+        completed : false,
         content : "打游戏"
     }]];
     localStorage.setItem("testData", JSON.stringify(testData));
-    console.log(JSON.parse(localStorage.getItem("testData")));
+    console.log(JSON.parse(localStorage.getItem("testData")));*/
     return JSON.parse(localStorage.getItem("testData"));
 }
 
@@ -62,6 +62,7 @@ function getVar(temp) {
     var x;
     switch(temp) {
         case "data" : x = getLocalData();break;
+        case "initFlag" : x = true;
         case "selectList" : {
             x = [];
             x.push($(".alltask"));
@@ -70,7 +71,21 @@ function getVar(temp) {
             x.push.apply(x, document.getElementsByClassName("classify-sub"));
             break;}
         case "subList" : {
+            x = [];
             x = uniqArray($(".classify-list").getElementsByClassName("classify-sub"));
+            break;
+        }
+        case "myTask" : {
+            x = {};
+            x.cTitle = $(".title");
+            x.date = $(".date");
+            x.cContent = $(".content");            
+            break;
+        }
+        case "myBtn" : {
+            x = {};
+            x.btn1 = $(".btn");
+            x.btn0 = document.getElementsByClassName("btn")[1];
             break;
         }
     }
@@ -114,6 +129,14 @@ function init() {
         initEle(classifyEle, taskMenu);
     }
 
+    // 打开页面后，选中默认分类
+    var classifyTitleList = document.getElementsByClassName("classify-title");
+    for(var i = 0;i < classifyTitleList.length;i++) {
+        if(classifyTitleList[i].name === "默认分类") {            
+            classifyTitleList[i].click();
+        }
+    }
+
     // 初始化所有任务
     var subList = getVar("subList")();
 
@@ -124,16 +147,66 @@ function init() {
     addEvent(alltask, "click", setDisplay);
 
     // 新增分类
-    addEvent($(".add"), "click", addClassify);
+    addEvent($(".addClassify"), "click", addClassify);
 
     // 任务列表的顶部选择栏
     initOptionList();
     
+    // 任务列表的新增任务
+    initAddTask();
+
+    // 两个btn的初始化
+    initBtn();
 console.log("end");
     
 }
 
 //////////////////////////////////////////////////////////////////////
+
+// 正文
+function initContent() {
+
+}
+
+// 两个btn的初始化
+function initBtn() {
+    var myBtn = getVar("myBtn")();
+    var myTask = getVar("myTask")();
+    var data = getVar("data")();
+    addEvent(myBtn.btn0, "click", function(event) {
+        if(myTask.cTitle) {
+            if(this.title === "完成任务") {
+
+                var thisTask = $(".subSelected");
+                for(var i = 0;i < data.length;i++) {
+                    for(var j = 0;j < data[i].length;j++) {                
+                        if(data[i][j].classify == thisTask.ele.classify && 
+                            data[i][j].sub == thisTask.ele.sub) {
+                            if(confirm("是否确认完成？")) {
+                                data[i][j].completed = true;
+                                saveData(data);
+                                initTaskList(thisTask.father);
+                                var myBtn = getVar("myBtn")();
+                                myBtn.btn0.style.display = "none";
+                            }
+                        }
+                    }
+                }
+            }
+        }        
+    });
+    addEvent(myBtn.btn1, "click",function(event) {
+        if(myTask.cTitle) {
+            if(this.title === "编辑任务") {
+                switchPage("edit");
+            }
+        }
+    });
+}
+
+
+
+
 
 
 // 初始化任务列表
@@ -142,8 +215,10 @@ function initTaskList(task) {
         subList = getVar("subList")(),
         taskList = [],
         dateList = [],
-        list = $(".task-list"),
+        list = $(".task-list");
+    if(task.parentNode) {
         eleIndex = task.parentNode.parentNode.index;
+    }
 
     // 清空列表
     while(list.firstChild) {
@@ -181,14 +256,14 @@ function initTaskList(task) {
         taskEle.className = "task-ele";
         list.appendChild(taskEle);
 
-        var task = document.createElement("dl");
-        taskEle.appendChild(task);
+        var taskL = document.createElement("dl");
+        taskEle.appendChild(taskL);
 
         // 为task项添加date项
         var taskDate = document.createElement("dt");
         taskDate.className = "task-date";
         taskDate.innerHTML = dateList[i];
-        task.appendChild(taskDate);
+        taskL.appendChild(taskDate);
 
         // 为task项添加todo项
         for(var j = 0;j < taskList.length;j++) {
@@ -196,15 +271,40 @@ function initTaskList(task) {
                 var taskSub = document.createElement("dd");
                 taskSub.className = "task-sub";      
                 taskSub.innerHTML = taskList[j].sub;
+                taskSub.index = j;
                 if(taskList[j].completed === true) {
                     taskSub.style.color = "green";
                 }
-                task.appendChild(taskSub);
+
+                // 为todo项添加点击事件，点击后显示详情
+                addEvent(taskSub, "click", function(event) {
+                    this.ele = taskList[this.index];
+                    this.father = task;
+                    var todoList = document.getElementsByClassName("task-sub");
+                    for(var i = 0;i < todoList.length;i++) {
+console.log(taskList[i]);                        
+                        todoList[i].classList.remove("subSelected");
+                    }
+                    this.classList.add("subSelected");
+
+                    var myTask = getVar("myTask")();
+                    var myBtn = getVar("myBtn")();
+                    myTask.cTitle.value = taskList[this.index].sub;
+                    myTask.date.value = taskList[this.index].date;
+                    myTask.cContent.value = taskList[this.index]["content"];                    
+                    if(taskList[this.index].completed === true) {
+                        myBtn.btn0.style.display = "none";
+                    }else {
+                        myBtn.btn0.style.display = "inline-block";
+                    }
+                });
+                taskL.appendChild(taskSub);
             }
         }
     }
 }
 
+// 任务列表顶部选项
 function initOptionList() {
     var optionList = document.getElementsByClassName("task-option"),
     all = optionList[0],
@@ -296,6 +396,61 @@ function initOptionList() {
     }
 }
 
+// 新增列表
+function initAddTask() {
+    var myTask = getVar("myTask")();
+    var addTask = $(".addTask");
+console.log(myTask);    
+    addEvent(addTask, "click", function(event) {
+                        
+        switchPage("add");
+    });
+}
+
+// 功能切换
+function switchPage(option) {
+    var myBtn = getVar("myBtn")();    
+    var myTask = getVar("myTask")();
+    switch(option) {
+        case "add" : {
+            for(var i in myTask) {
+                myTask[i].disabled = "";
+                myTask[i].value = "";
+                myTask[i].style.backgroundColor = "#fff";
+                if(myTask[i].classList.contains("title")) {
+                    myTask[i].focus();
+                }
+            }
+            myBtn.btn1.src = "img/cancel.png";
+            myBtn.btn1.title = "取消";
+            myBtn.btn0.title = "确认";
+            myBtn.btn0.style.display = "inline-block";
+            break;
+        }
+        case "edit" : {
+            for(var i in myTask) {
+                myTask[i].disabled = "";
+                myTask[i].style.backgroundColor = "#fff";
+                if(myTask[i].classList.contains("title")) {
+                    myTask[i].focus();
+                }
+            }
+            myBtn.btn1.src = "img/cancel.png";
+            myBtn.btn1.title = "取消";
+            myBtn.btn0.title = "确认";
+            myBtn.btn0.style.display = "inline-block";
+            break;
+        }
+        case "default" : {
+            myBtn.btn1.src = "img/write.png";
+            myBtn.btn1.title = "编辑任务";
+            myBtn.btn0.title = "完成任务";    
+            break;
+        }
+    }
+}
+
+
 /////////////////////////////////////////////////////////////////////
 
 // 初始化分类列表内的分类
@@ -314,8 +469,8 @@ function initEle(ele, taskMenu) {
 
 //////////////////////////////////////////////////////////////////////////////////
 // 将修改数据存入本地
-function saveData() {
-    
+function saveData(data) {
+    localStorage.setItem("testData", JSON.stringify(data));
 }
 
 // 鼠标划过时，显示删除。
@@ -329,19 +484,21 @@ function removeImg(event) {
 
 // 点击后，隐藏/显示列表项
 function setDisplay(event) {
-    if(this.nextSibling.style.display === "none") {
-        var thisNode = this.nextSibling;
-        while(thisNode) {
-            thisNode.style.display = "block";
-            thisNode.parentNode.displayFlag = true;
-            thisNode = thisNode.nextSibling;
-        }
-    }else {
-        var thisNode = this.nextSibling;
-        while(thisNode) {
-            thisNode.style.display = "none";
-            thisNode.parentNode.displayFlag = false;
-            thisNode = thisNode.nextSibling;
+    if(this.nextSibling) {
+        if(this.nextSibling.style.display === "none") {
+            var thisNode = this.nextSibling;
+            while(thisNode) {
+                thisNode.style.display = "block";
+                thisNode.parentNode.displayFlag = true;
+                thisNode = thisNode.nextSibling;
+            }
+        }else {
+            var thisNode = this.nextSibling;
+            while(thisNode) {
+                thisNode.style.display = "none";
+                thisNode.parentNode.displayFlag = false;
+                thisNode = thisNode.nextSibling;
+            }
         }
     }
 }
@@ -364,8 +521,9 @@ function addClassifyEle(ele, parent) {
     var classifyTitle = document.createElement("dt");
     classifyTitle.className = "classify-title";
     addEvent(classifyTitle, "click", selected);
+    classifyTitle.name = ele.name;
     parent.appendChild(classifyTitle);
-    classifyTitle.innerHTML = "<img src='img/classify.png'> " + ele.name + 
+    classifyTitle.innerHTML = "<img src='img/classify.png'> " + classifyTitle.name + 
         " (<span class='num'>" + ele.num + "</span>)";
 
     // 列表头添加remove按钮

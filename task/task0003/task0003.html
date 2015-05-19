@@ -43,7 +43,7 @@
                 </ul></li>-->
             </dl>
             <div class="bottom">
-                <div class="add">
+                <div class="add addClassify">
                     <img src="img/add.png"><span>新增分类</span>
                 </div>
             </div>
@@ -57,7 +57,7 @@
             </ul>
             <ul class="task-list"></ul>
             <div class="bottom">
-                <div class="add">
+                <div class="add addTask">
                     <img src="img/add.png"><span>新增任务</span>
                 </div>
             </div>
@@ -65,15 +65,15 @@
         <!--正文栏-->
         <div class="content-container">
             <div class="content-title">
-                <h3 class="title">to-do 6</h3>
-                <img src="img/write.png" class="btn-write">
-                <img src="img/complete.png" class="btn-complete">
+                <input class="title" type="text" disabled="disabled" placeholder="标题" autocomplete="off" >
+                <img src="img/write.png" class="btn" title="编辑任务">
+                <img src="img/complete.png" class="btn" title="完成任务">
             </div>
             <div class="content-date">
-                任务日期：<span class="date">2015-04-30</span>
+                任务日期：<input class="date" type="text" placeholder="年-月-日" disabled="disabled" autocomplete="off">
             </div>
             <div class="textarea-container">
-                <textarea class="content" disabled="disabled"></textarea>
+                <textarea class="content" disabled="disabled" autocomplete="off"></textarea>
             </div>
         </div>
     </div>

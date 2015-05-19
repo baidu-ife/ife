@@ -37,10 +37,11 @@ ul{list-style:none;}
 /*正文栏*/
 .content-container{background:blue;height:100%;}
 .content-title{height:51px;width:100%;border-bottom:1px solid #eeeeee;background:#f2f2f2;}
-.title{display:inline-block;text-indent:14px;font-size:16px;font-weight:normal;line-height:51px;}
+.title{display:inline-block;text-indent:14px;font-size:16px;font-weight:normal;line-height:31px;width:100px;margin:10px 0 0 10px;border:none;background-color:#f2f2f2;}
 .content-title img{display:inline-block;float:right;margin:10px 20px 10px 0;cursor:pointer;}
 .content-date{text-indent:16px;line-height:52px;height:52px;border-bottom:1px solid #eeeeee;
     background:#fafaee;font-size:14px;}
+.date{width:100px;height:25px;margin:10px 0 0 0;padding-left:10px;background:#fafaee;border:none;}    
 .textarea-container{display:block;background:#fff;position:absolute;padding:20px;top:105px;bottom:0;
     left:460px;right:0;}
 .content{width:100%;height:100%;resize:none;border:none;background:#fff;}
