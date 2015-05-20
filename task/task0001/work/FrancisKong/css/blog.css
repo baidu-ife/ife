@@ -15,6 +15,11 @@
           align-items: center;
     */
 }
+.left{
+	float: left;
+	width: 750px;
+	overflow: hidden;
+}
 .container{
 	margin: 10px;
 	float: left;
@@ -76,6 +81,8 @@ p {
 .page{
 	text-align: center;
 	margin: 10px;
+	width: auto;
+
 }
 .btn-page{
 	border-style: none;

@@ -5,6 +5,11 @@
   	-webkit-justify-content: center;
     justify-content: center;
     margin-top: 20px;
+    overflow: hidden;
+}
+.tabs{
+	width: 750px;
+	overflow: hidden;
 }
 .tabs li{
 	float: left;
