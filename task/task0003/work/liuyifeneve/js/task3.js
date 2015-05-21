@@ -537,27 +537,6 @@ window.onload = function(){
 			}
 		}
 	}
-	function screenadjst(){
-		if(document.documentElement.clientWidth>980){
-			$('#textright').style.width = (document.documentElement.clientWidth-400+'px');
-		}
-		else{
-			$('#textright').style.width = '580px';
-		}
-		if(document.documentElement.clientHeight>537){
-			$('#index').style.height = document.documentElement.clientHeight-57+'px';
-			$('#tasks').style.height = document.documentElement.clientHeight-92+'px';
-			$('#tasktext').style.height = document.documentElement.clientHeight-177+'px';
-		}
-		else{
-			$('#index').style.height = '480px';
-			$('#tasks').style.height = '445px';
-			$('#tasktext').style.height = '360px';
-		}
-		$('#edititle').style.width = parseInt($('#textright').style.width)-150+'px';
-		$('#editdate').style.width = parseInt($('#textright').style.width)-150+'px';
-		$('#edittext').style.width = parseInt($('#textright').style.width)-50+'px';
-	}
 	function addinfo(flag){
 		var temp = JSON.parse(localStorage.getItem(flag));
 		$('#tasktittle').childNodes[1].innerHTML = temp.name;
@@ -579,7 +558,27 @@ window.onload = function(){
 			$('#finish').style.display = 'none';
 		}
 	}
-	
+	function screenadjst(){
+		if(document.documentElement.clientHeight>537){
+			$('#index').style.height = document.documentElement.clientHeight-57+'px';
+			$('#tasks').style.height = document.documentElement.clientHeight-93+'px';
+			$('#tasktext').style.height = document.documentElement.clientHeight-177+'px';
+		}
+		else{
+			$('#index').style.height = '480px';
+			$('#tasks').style.height = '444px';
+			$('#tasktext').style.height = '360px';
+		}
+		if(document.documentElement.clientWidth>980){
+			$('#textright').style.width = (document.documentElement.clientWidth-400+'px');
+		}
+		else{
+			$('#textright').style.width = '580px';
+		}
+		$('#edititle').style.width = parseInt($('#textright').style.width)-150+'px';
+		$('#editdate').style.width = parseInt($('#textright').style.width)-150+'px';
+		$('#edittext').style.width = parseInt($('#textright').style.width)-50+'px';
+	}
 	function datasave(){
 		tasklist[0]=new Object();
 		tasklist[0].name = '百度IFE项目';
