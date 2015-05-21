@@ -386,12 +386,12 @@ function ajax(url, options) {
     var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 
     // 发送请求
-    oXhr.open(options.type, url, true);
+    xhr.open(options.type, url);
     if (options.type == 'GET') {
-        oXhr.send(null);
+        xhr.send(null);
     } else {
-        oXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        oXhr.send(dataResult);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(dataResult);
     }
 
     // readyState
