@@ -1,0 +1,296 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style-type: none;
+}
+.header{
+	width: auto;
+	height: 60px;
+	border: 1px solid #D8D2D2;
+	background: #E9E7E7;
+	line-height: 60px;
+}
+.header span{
+	font-size: 20px;
+	margin-left: 30px;
+}
+.mainLeft{
+	width: 230px;
+	float: left;
+	height: 540px;
+	background: #F6F6F6;
+	border: 1px solid #D8D2D2;
+	position: relative;
+}
+.main{
+	margin-left: 462px;
+	border: 1px solid #D8D2D2;
+	height: 540px;
+	position: relative;
+	overflow: hidden;
+}
+#allList{
+	margin-top: 30px;
+	margin-left: 30px;
+	font-size: 18px;
+	font-weight: normal;
+}
+.nolist{
+	margin-top: 30px;
+	margin-left: 30px;
+	font-size: 15px;
+	font-weight: normal;
+}
+#list li{
+	padding-left: 30px;
+	font-size: 15px;
+	cursor: pointer;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	position: relative;
+}
+#list li:before{
+	content: url(../img/c4.jpg);
+}
+#list li:first-child{
+	margin-top: 30px;
+}
+.listspan{
+	margin-left: 20px;
+}
+.del{
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 7px;
+}
+li:hover .del{
+	display: inline-block;
+}
+#list li:first-child .del{
+	display: none;
+}
+.dell{
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 7px;
+}
+li div:hover .dell{
+	display: inline-block;
+}
+.smortdiv{
+	padding-left: 35px;
+	margin-top: 10px;
+	position: relative;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.smortdiv span{
+	margin-left: 20px;
+	margin-right: 40px;
+}
+.smortdiv:before{
+	content: url(../img/c6.jpg);
+}
+.active{
+	background: #fff;
+}
+.newwrap{
+	position: absolute;
+	bottom: 0;
+	width: 230px;
+	height: 40px;
+	border: 1px solid #D8D2D2;
+	margin-left: -1px;
+	line-height: 40px;
+}
+.newwrap img{
+	margin-left: 30px;
+	margin-right: 10px;
+	margin-bottom: -3px;
+}
+.newwrap span{
+	font-size: 18px;
+	cursor: pointer;
+}
+.newTop{
+	width: 230px;
+	height: 40px;
+	border-bottom: 1px solid #D8D2D2;
+	line-height: 40px;
+}
+.newTop a{
+	padding: 7px;
+	cursor: pointer;
+	text-decoration: none;
+	border: 1px solid #D8D2D2;
+	margin-left: 12px;
+}
+.newTop a:hover{
+	background: #fff;
+}
+.title{
+	height: 52px;
+	border-bottom: 1px solid #D8D2D2;
+	background: #F6F6F6;
+	position: relative;
+	line-height: 52px;
+}
+#inTitle{
+	width: 350px;
+	padding-left: 20px;
+	height: 30px;
+	margin-left: 30px;
+	border-style: none;
+	background: #F6F6F6;
+	outline: none;
+}
+.timer{
+	height: 52px;
+	border-bottom: 1px solid #D8D2D2;
+	background: #F6E7E7;
+	display: block;
+	line-height: 52px;
+}
+#inTime{
+	width: 200px;
+	padding-left: 20px;
+	height: 30px;
+	margin-left: 30px;
+	background: #F6E7E7;
+	border-style: none;
+	outline: none;
+}
+.articler{
+	position: absolute;
+	bottom: 40px;
+	top: 105px;
+	left: 0;
+	padding: 20px;
+	width: 100%;
+	border-style: none;
+	outline: none;
+	background: #fff;
+}
+.finish{
+	position: absolute;
+	right: 90px;
+	top: 10px;
+	cursor: pointer;
+}
+.edit{
+	position: absolute;
+	right: 30px;
+	top: 10px;
+	cursor: pointer;
+}
+#alertDiv{
+	width: 400px;
+	height: 200px;
+	background: #E9E7E7;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -100px;
+	z-index: 9999;
+	display: none;
+}
+#alertDiv span{
+	display: block;
+	font-size: 20px;
+	margin:30px;
+}
+#catalog{
+	width: 200px;
+	height: 30px;
+	margin: 0 auto;
+	display: block;
+}
+#mainBottom{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background: #F6F6F6;
+	height: 40px;
+	border: 1 solid #D8D2D2;
+	display: none;
+}
+#storage{
+	position: absolute;
+	bottom: 8px;
+	font-size: 18px;
+	left: 350px;
+	cursor: pointer;
+}
+#remove{
+	position: absolute;
+	bottom: 8px;
+	font-size: 18px;
+	left: 550px;
+	cursor: pointer;
+}
+#mainBottom span:before{
+	content: url(../img/c1.jpg);
+	margin-right: 20px;
+}
+#ensure{
+	margin-top: 20px;
+	margin-left: 120px;
+	width: 50px;
+	height: 50px;
+}
+#cancle{
+	width: 50px;
+	height: 50px;
+	margin-left: 50px;
+}
+#mask{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: 0.5;
+	z-index: 9000;
+	background: #E8E4E4;
+	display: none;
+}
+.mainLeft dl{
+	background: #FFFDFD;
+}
+.mainLeft dt{
+	width: 100%;
+	height: 26px;
+	text-align: center;
+	line-height: 26px;
+	background: #F6F6F6;
+}
+.mainLeft dd{
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	cursor: pointer;
+	border-bottom: 1px solid  #F6F6F6;
+	display: inline-block;
+	position: relative;
+}
+.dddel{
+	display: none;
+	position: absolute;
+	right: 5px;
+	top: 6px;
+}
+.mainLeft dd:hover .dddel{
+	display: inline-block;
+}
+.centeractive{
+	background: #F6E7E7;
+}
+.ddfinish{
+	color: blue;
+}

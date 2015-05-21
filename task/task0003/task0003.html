@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/task0003.css">
+</head>
+<body>
+<header class="header">
+<span>GTD Tools</span>
+</header>
+<aside class="mainLeft">
+	<h1 id="allList">所有任务()</h1>
+	<h4 class="nolist">分类列表</h4>
+	<ul id="list">
+	</ul>
+	<div class="newwrap">
+		<img src="img/c1.jpg">
+		<span>新增分类</span>
+	</div>
+</aside>
+<aside class="mainLeft" id='maincenter'>
+	<div class="newTop">
+		<a>所有</a><a>未完成</a><a>已完成</a>
+	</div>
+	<div id='showdl'>
+	</div>
+	<div class="newwrap" id='secWrap'>
+		<img src="img/c1.jpg">
+		<span>新增任务</span>
+	</div>
+</aside>
+<article class="main">
+	<section class="title">
+	<input type="text" id='inTitle'>
+		<div class="finish"><img src="img/c2.jpg"></div>
+		<div class="edit"><img src="img/c3.jpg"></div>
+	</section>
+	<time class="timer">
+		<input type="text" id="inTime">
+	</time>
+	<textarea class="articler"></textarea>
+	<div id='mainBottom'>
+	<span id="storage">保存</span>
+	<span id="remove">取消</span>
+	</div>
+</article>
+<div id='alertDiv'>
+	<span>请输入目录:</span>
+	<input type="text" id="catalog">
+	<button id="ensure">确认</button>
+	<button id="cancle">取消</button>
+</div>
+<div id="mask"></div>
+<script type="text/javascript" src="js/uti.js"></script>
+<script type="text/javascript" src="js/task0003.js"></script>
+</body>
+</html>
