@@ -37,6 +37,9 @@ h1{
     display:block;
     margin: 10px;
     text-decoration: none;
+    color: #274E70;
+}
+.index-content a:hover，.other-info a:hover{
     color: #5D809E;
 }
 .other-info{
@@ -45,6 +48,7 @@ h1{
 }
 .other-info a{
     text-decoration: none;
+    color: #274E70;
 }
 
 /**
