@@ -5,10 +5,10 @@ var activeID = 1;
 var nextID = 0;
 var imageWidth = $("img").offsetWidth;
 var circleArr = $(".circle").getElementsByTagName('a');
-var intervalTime = 3500;
+var intervalTime = 3000;
 
-for(var i=0;i<circleArr.length;i++){
-    circleArr[i].index = i+1;
+for (var i = 0; i < circleArr.length; i++) {
+    circleArr[i].index = i + 1;
 }
 
 function startMove(target) {

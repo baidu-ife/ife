@@ -24,7 +24,6 @@ function addInputListener() {
     }
 }
 
-
 // Firefox, Google Chrome, Opera, Safari from version 5, Internet Explorer from version 9
 function OnInput(event) {
     var inputValue = event.target.value;
