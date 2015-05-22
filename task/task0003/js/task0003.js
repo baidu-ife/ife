@@ -38,11 +38,6 @@ $.click(cancle,function(){
 	mask.style.display='none';
 })
 
-//自建浮层里的确定操作增加目录或者子目录
-$.click(ensure,function(){
-	var newcatalog=catalog.value;
-	alertDiv.style.display='none';
-	mask.style.display='none';
 	if(getStorage('file')){
 		var file=getStorage('file');
 		file.key='file';
@@ -54,7 +49,14 @@ $.click(ensure,function(){
 		'name': '默认分类()',
 		'children': []
 	})
+		saveStorage(file);
 	}
+	init();
+//自建浮层里的确定操作增加目录或者子目录
+$.click(ensure,function(){
+	var newcatalog=catalog.value;
+	alertDiv.style.display='none';
+	mask.style.display='none';
 	if($('.active')){
 		var ss=$('.active').getElementsByTagName('span');
 		var obj=getStorage('file');
@@ -315,11 +317,11 @@ function show(){
 			for(var i=0;i<cata.length;i++){
 				if(swith==1){
 			if(cata[i].situation=='finish'){
-			hash[cata[i].timer]+="<dd class='ddfinish'>"+cata[i].Title+'<img src="task0003/img/c5.jpg" class="dddel"></dd>';
+			hash[cata[i].timer]+="<dd class='ddfinish'>"+cata[i].Title+'<img src="img/c5.jpg" class="dddel"></dd>';
 			hash[cata[i].timer]=hash[cata[i].timer].replace('undefined','');
 			}
 			else{
-			hash[cata[i].timer]+="<dd>"+cata[i].Title+'<img src="task0003/img/c5.jpg" class="dddel"></dd>';
+			hash[cata[i].timer]+="<dd>"+cata[i].Title+'<img src="img/c5.jpg" class="dddel"></dd>';
 			hash[cata[i].timer]=hash[cata[i].timer].replace('undefined','');
 			}
 			}
