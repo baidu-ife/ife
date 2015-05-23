@@ -1,0 +1,364 @@
+body {
+    position: relative;
+    min-width: 800px;
+    font-size: 14px;
+}
+
+#header {
+    width: 100%;
+    height: 60px;
+    background-color: #DDD;
+    color: #999;
+}
+
+#header h1 {
+    margin-left: 20px;
+    font: bold 20px/60px arial,sans-serif;
+}
+
+#allTasks:hover, .itemList h3:hover, .itemList h4:hover, .taskList h6:hover, .choose {
+    background-color: white;
+    cursor: pointer;
+}
+
+.delete {
+    display: none;
+    float: right;
+    padding-right: 10px;
+    color: red;
+    font-family: Arial, sans-serif;
+}
+
+#nav {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    width: 230px;
+    border: 1px solid #CCC;
+    background-color: #F2F2F2;
+}
+
+/*#nav a {
+    display: block;
+    padding: 10px;
+}
+
+#nav a:hover {
+    background-color: white;
+}
+
+.sonTask {
+    margin-left: 10px;
+}
+
+.taskClassification {
+    position: absolute;
+    top: 76px;
+    bottom: 42px;
+    right: 0;
+    left: 0;
+    overflow: auto;
+}*/
+
+.typeList h2 {
+    line-height: 35px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.typeList h3 {
+    line-height: 30px;
+    font-size: 16px;
+    padding-left: 25px;
+}
+
+.typeList h4 {
+    line-height: 25px;
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+.typeList li h3:hover .delete, .itemList li h4:hover .delete, .taskList h6:hover .delete {
+    display: inline;
+}
+
+.itemList {
+    position: absolute;
+    top: 70px;
+    bottom: 42px;
+    right: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.addTaskClassification, .addTask {
+    position: absolute;
+    bottom: 0;
+    width: 230px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    font-size: 14px;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    background-color: #EEE;
+    cursor: pointer;
+}
+
+.addTaskClassification:hover, .addTask:hover {
+    background-color: #FAFAEE;
+}
+
+.addTaskClassification img, .addTask img {
+    margin: -3px 5px 0 5px;
+    vertical-align: middle;
+}
+
+#aside {
+    position: absolute;
+    top: 60px;
+    left: 231px;
+    bottom: 0;
+    width: 230px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+
+#taskStatus {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.taskStatus {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.taskStatus.choose {
+    background-color: #FFF;
+    border: 1px solid #CCC;
+}
+
+.taskStatus:hover {
+    background-color: #FFF;
+    border: 1px solid #CCC;
+}
+
+.taskList{
+    position: absolute;
+    top: 40px;
+    bottom: 42px;
+    right: 0;
+    left: 0;
+    border-top: 1px solid #CCC;
+    overflow: auto;
+}
+
+.taskList h5 {
+    font-size: 14px;
+    line-height: 30px;
+    background: #FAFAEE;
+    padding-left: 10px;
+}
+
+.taskList h6 {
+    font-size: 14px;
+    line-height: 25px;
+    padding-left: 25px;
+}
+
+.taskFinish {
+    color: #4CAF50;
+}
+
+#main {
+    position: absolute;
+    top: 60px;
+    left: 462px;
+    bottom: 0;
+    right: 2px;
+}
+
+.taskTitle {
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    border: 1px solid #CCC;
+    background-color: #EEE;
+}
+
+.taskTitle h2 {
+    margin-left: 10px;
+}
+
+.operates {
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: middle;
+}
+
+.icon {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    height: 27px;
+    width: 27px;
+    margin-right: 15px;
+    vertical-align: middle;
+    background: url("../img/icons.png");
+}
+
+.iconDone {
+    background-position: -5px -48px;
+}
+
+.iconEdit {
+    background-position: -7px -6px;
+}
+
+.taskDate {
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    border: 1px solid #CCC;
+    margin-top: -1px;
+    background-color: #FAFAEE;
+}
+
+.taskCont {
+    width: 100%;
+    padding: 10px;
+    word-break: break-all;
+    border-left: 1px solid #CCC;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.taskCont button {
+    display: none;
+    width: 80px;
+    height: 28px;
+    background-color: grey;
+    border-radius: 6px;
+    color: #fff;
+    padding: 6px 24px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+
+.taskCont button:hover {
+    background-color: #999;
+}
+
+#main strong {
+    margin-left: 10px;
+}
+
+#main input {
+    display: none;
+    width: 200px;
+    padding: 5px 7px;
+    margin-left: 10px;
+    outline: none;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+    font-size: 14px;
+}
+
+#main textarea {
+    display: none;
+    width: 100%;
+    height: 200px;
+    margin-left: -1px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+}
+
+.dialogBg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    opacity: 0.7;
+    -ms-filter: Alpha(opacity=70);
+    filter: Alpha(opacity=70);
+}
+
+.dialog {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -200px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    background-color: #333333;
+}
+
+.dialog h2 {
+    height: 49px;
+    line-height: 49px;
+    border-bottom: 1px solid #CCC;
+    text-align: center;
+}
+
+.dialogInput, .dialogSelect {
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+}
+
+.dialogInput input, .dialogSelect select{
+    width: 180px;
+    padding: 3px 5px;
+    outline: none;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+    font-size: 14px;
+}
+
+.dialogInput input {
+    margin-left: 14px;
+}
+
+.dialog .error {
+    color: red;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.dialogAction {
+    height: 50px;
+}
+
+.dialogAction div {
+    float: left;
+    width: 200px;
+    height: 49px;
+    line-height: 49px;
+    text-align: center;
+    border-top: 1px solid #CCC;
+    background-color: #333;
+}
+
+.dialogSure {
+    border-bottom-left-radius: 10px;
+}
+
+.dialogCancle {
+    border-bottom-right-radius: 10px;
+}
+
+.dialogSure:hover,  .dialogCancle:hover{
+    background-color: #CCC;
+}

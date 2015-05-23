@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+body,header,footer,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+html {
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+fieldset,img {
+    border:0;
+}
+ol,ul {
+    list-style:none;
+}
+button {
+    border: none;
+}
+caption,th {
+    text-align:left;
+}
+q:before,q:after {
+    content:'';
+}
+abbr,acronym {
+    border:0;
+}
+a {
+    text-decoration: none;
+    color: #666666;
+}
+input, select, textarea {
+    outline: none;
+    border: none;
+    -moz-outline-style: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 清除IE6下的浮动 触发asLayout*/
+.clearfix {
+    zoom: 1;
+}

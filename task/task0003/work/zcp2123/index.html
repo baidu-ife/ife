@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>GTD Tools</h1>
+    </div>
+    <div id="nav">
+
+        <ul class="typeList">
+            <li>
+                <h2 id="allTasks" class="choose" onclick="categoryClick(this);"><span class="name">所有任务</span>(<i>6</i>)</h2>
+            </li>
+            <li>
+                <h2>分类列表</h2>
+                <ul class="itemList">
+                    <!--<li>
+                        <h3>默认分类(0)</h3>
+                        <ul class="item">
+                            <li>
+                                <h4>默认子分类(0)</h4>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>百度IFE项目(5)<span class="delete">X</span></h3>
+                        <ul class="item">
+                            <li><h4>task0001(3)<span class="delete">X</span></h4></li>
+                            <li><h4>task0001(3)<span class="delete">X</span></h4></li>
+                            <li><h4>task0001(3)<span class="delete">X</span></h4></li>
+                        </ul>
+                    </li>-->
+
+                </ul>
+            </li>
+        </ul>
+
+        <!--<h3 class="allTasks"><a href="javascript:;">所有任务（<span class="taskNumber">0</span>）</a></h3>
+        <h3><a href="javascript:;">分类列表</a></h3>
+        <ul class="taskClassification">
+            <li class="sonTask">
+                <a href="javascript:;">默认分类（<span class="taskNumber">0</span>）</a>
+                <ul>
+                    <li class="sonTask">
+                        <a href="javascript:;">默认分类（<span class="taskNumber">0</span>）</a>
+                    </li>
+                    <li class="sonTask">
+                        <a href="javascript:;">11（<span class="taskNumber">0</span>）</a>
+                    </li>
+                    <li class="sonTask">
+                        <a href="javascript:;">22（<span class="taskNumber">0</span>）</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>-->
+        <div class="addTaskClassification">
+            <img src="img/add.jpg" alt="add taskClassification"/>
+            <span>新增分类</span>
+        </div>
+
+    </div>
+    <div id="aside">
+
+        <div id="taskStatus">
+            <a href="javascript:;" class="taskStatus choose" onclick="taskStatusClick(this);">所有</a>
+            <a href="javascript:;" class="taskStatus" onclick="taskStatusClick(this);">未完成</a>
+            <a href="javascript:;" class="taskStatus" onclick="taskStatusClick(this);">已完成</a>
+        </div>
+        <ul class="taskList">
+            <!--<dl>
+                <dt>2015-02-18</dt>
+                <dd>to do1<span class="delete">X</span></dd>
+                <dd>to do2<span class="delete">X</span></dd>
+                <dt>2015-03-18</dt>
+                <dd>to do3<span class="delete">X</span></dd>
+                <dd>to do4<span class="delete">X</span></dd>
+            </dl>-->
+        </ul>
+        <div class="addTask">
+            <img src="img/add.jpg" alt="add new task"/>
+            <span>新增任务</span>
+        </div>
+
+    </div>
+
+    <div id="main">
+        <div class="taskTitle">
+            <strong>任务标题：</strong>
+            <span></span>
+            <input type="text" class="taskTitleInput" placeholder="在此输入任务标题">
+            <div class="operates">
+                <a href="javascript:;" class="icon iconDone"></a>
+                <a href="javascript:;" class="icon iconEdit"></a>
+            </div>
+        </div>
+        <div class="taskDate">
+            <strong>任务时间：</strong>
+            <span></span>
+            <input type="text" class="taskDateInput" placeholder="在此输入任务时间">
+        </div>
+        <div class="taskCont">
+            <span></span>
+            <textarea class="taskContInput" placeholder="请在此处输入任务内容"></textarea>
+            <p class="taskError"></p>
+            <button class="contSure">保存</button>
+            <button class="contCancle">取消</button>
+        </div>
+    </div>
+
+    <!--<div class="dialogBg"></div>
+    <div class="dialog">
+        <h2>弹出框</h2>
+        <div class="dialogInput">
+            <input type="text" placeholder="请输入任务名称">
+        </div>
+        <div class="dialogAction">
+            <div class="dialogSure">确定</div>
+            <div class="dialogCancle">取消</div>
+        </div>
+    </div>-->
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/model/model.js"></script>
+    <script type="text/javascript" src="js/controller/controller.js"></script>
+    <script type="text/javascript" src="js/dialog.js"></script>
+    <script type="text/javascript" src="js/task0003.js"></script>
+</body>
+</html>
