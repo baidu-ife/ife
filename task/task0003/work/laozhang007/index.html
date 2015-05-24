@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <link rel="stylesheet" href="css/default.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<div class="header">
+    <h1>GTD Tools</h1>
+</div>
+<div class="wrap">
+    <div class="category">
+        <h2>所有任务<span id="total"></span></h2>
+        <h2>分类列表</h2>
+        <div id="all">
+        </div>
+
+        <div id="addCategory" class="bottom">
+            新增分类
+        </div>
+    </div>
+    <div class="task">
+        <div id="filter" class="top">
+            <a data-type="all" href="#">所有</a>
+            <a data-type="unfinished" class="active" href="#">未完成</a>
+            <a data-type="finished" href="#">已完成</a>
+        </div>
+        <div id="alltask" class="container">
+
+        </div>
+        <div id="addTask" class="bottom">
+            新增任务
+        </div>
+    </div>
+    <div class="detail">
+        <div class="title">
+            <label>任务名称：</label>
+            <h3></h3>
+            <input type="text"/>
+            <div class="oper">
+                <a href="#" class="delete"></a>
+                <a href="#" class="edit"></a>
+                <a href="#" class="finish"></a>
+            </div>
+        </div>
+        <div class="date">
+            <label>完成日期：</label>
+            <h3></h3>
+            <input type="text"/>
+            <span>(yyyy-mm-dd)</span>
+        </div>
+        <div class="content">
+            <p></p>
+            <textarea></textarea>
+        </div>
+        <div class="bottom">
+            <a href="#" class="submit">确定</a>
+            <a href="#" class="cancel">取消</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/util.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

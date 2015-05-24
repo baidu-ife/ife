@@ -1,0 +1,220 @@
+*{
+    box-sizing:border-box;
+}
+html,body{
+    height:100%;
+    font:14px "NSimSun","SimSun";
+}
+.header{
+    position:absolute;
+    top:0;
+    left:0;
+    height:75px;
+    width:100%;
+    background-color: #dddddd;
+    border:1px solid #cccccc;
+}
+.header > h1{
+    height:75px;
+    font:bold 2em "Microsoft YaHei";
+    line-height:75px;
+    color:#666666;
+    padding-left:20px;
+}
+.wrap{
+    min-width:960px;
+    height:100%;
+    padding-top:75px;
+}
+.category{
+    float:left;
+    position:relative;
+    width:200px;
+    height:100%;
+    background-color:#f2f2f2;
+    border-right:1px solid #cccccc;
+}
+.category h2{
+    margin:15px 0;
+    text-align:left;
+    padding-left:10px;
+}
+
+.folder>h3{
+    padding:8px 8px 8px 0;
+    height:30px;
+    cursor:pointer;
+    background:url(../img/folder.png) no-repeat;
+}
+.lv1 > h3{
+    padding-left:30px;
+    background-position: 10px center;
+}
+.lv2 > h3{
+    padding-left:50px;
+    background-position: 30px center;
+}
+.lv3 > h3{
+    padding-left:70px;
+    background-position: 50px center;
+}
+.lv4 > h3{
+    padding-left:90px;
+    background-position: 70px center;
+}
+.folder a {
+    float:right;
+    width:14px;
+    height:14px;
+    background: url(../img/cancel.png) center center no-repeat;
+    display:none;
+}
+.file > h3{
+    background-image:url(../img/file.png);
+}
+.folder>h3.active{
+    background-color:#ffffff;
+}
+.folder>h3:hover>a,.folder.active>h3>a{
+    display:block;
+}
+.task{
+    float:left;
+    position:relative;
+    width:200px;
+    height:100%;
+    border-right:1px solid #cccccc;
+}
+.task h3{
+    height:30px;
+    line-height:30px;
+    padding-left:10px;
+    background-color:#fafaee;
+}
+.task li{
+    height:30px;
+    line-height:30px;
+    padding-left:40px;
+    cursor:pointer;
+}
+.task li.finished{
+    color:blue;
+}
+.task li.active{
+    background-color:#f2f2f2;
+}
+.detail{
+    position:relative;
+    margin-left:400px;
+    height:100%;
+}
+
+.top,.bottom,.title,.date{
+    height:50px;
+    line-height:50px;
+    padding:0 10px;
+}
+.top{
+    background-color:#eeeeee;
+    text-align:center;
+}
+.top a{
+    width:50px;
+    text-align: center;
+    display:inline-block;
+    text-decoration: none;
+    height:26px;
+    line-height:24px;
+    border:1px solid #eeeeee;
+    border-radius:3px;
+}
+.top a:hover{
+    border:1px solid #cccccc;
+}
+.top a.active{
+    background-color:#ffffff;
+    border:1px solid #cccccc;
+}
+.category > .bottom,.task > .bottom{
+    position:absolute;
+    width:100%;
+    left:0;
+    bottom:0;
+    border-top:1px solid #cccccc;
+    text-align:center;
+    background:#eeeeee url(../img/add.png) 40px center no-repeat;
+    cursor:pointer;
+}
+.detail > .bottom{
+    text-align:left;
+}
+.submit,.cancel{
+    display:inline-block;
+    text-decoration: none;
+    height:50px;
+    width:100px;
+    text-align:center;
+    color:#000000;
+    font-size:16px;
+    border:1px solid #999999;
+}
+.submit:hover,.cancel:hover{
+    border:1px solid #666666;
+    color:#ffffff;
+    background-color:#666666;
+}
+.category > .bottom:hover{
+    color:blue;
+}
+.top,.title,.date{
+    border-bottom:1px solid #cccccc;
+}
+.title{
+    background-color:#f2f2f2;
+}
+.title>h3,.date>h3,.title>label,.date>label{
+    display:inline-block;
+}
+.oper{
+    float:right;
+}
+.finish,.delete,.edit{
+    float:right;
+    margin:10px 10px 0 0;
+    width:30px;
+    height:30px;
+}
+.finish{
+    background:url(../img/finish.png) center center no-repeat;
+}
+.delete{
+    background:url(../img/delete.png) center center no-repeat;
+}
+.edit{
+    background:url(../img/edit.png) center center no-repeat;
+}
+.finish:hover,.delete:hover,.edit:hover{
+    background-color:#dddddd;
+    border-radius:5px;
+}
+
+.date{
+    background-color:#fafaee;
+}
+.content{
+    padding:10px;
+}
+.detail input{
+    width:300px;
+    height:30px;
+    line-height:30px;
+}
+.detail textarea{
+    width:100%;
+    max-width:600px;
+    height:400px;
+}
+.date span{
+    display:inline-block;
+    color:#999999;
+}
