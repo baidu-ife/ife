@@ -1,0 +1,14 @@
+body, html {
+    background-color: #EDEDED !important;
+}
+
+.intro {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.intro h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
