@@ -8,7 +8,7 @@ ul{list-style:none;}
 .main{position:absolute;top:60px;bottom:0;width:100%;min-height:400px;}
 /*分类栏*/
 .list-container{width:229px;height:100%;border-right:1px solid #cecece;background:#f2f2f2;
-    float:left;position:relative;}
+    float:left;position:relative;overflow:hidden;}
 .list-container:first-child{text-indent:10px;}
 .alltask-container{margin:27px 0 21px 0px;}
 .alltask{cursor:pointer;line-height:28px;}
@@ -17,6 +17,7 @@ ul{list-style:none;}
 .classify-list-title,.classify-title,.classify-sub{height:28px;line-height:28px;cursor:pointer;}
 .selected{background:#fff;}
 .classify-sub{font-size:14px;text-indent:30px;}
+/*.list-content{position:relative;width:229px;overflow-y:scroll;background:yellow;}*/
 .bottom{height:40px;width:229px;border-top:1px solid #cecece;background:#eeeeee;
     position:absolute;bottom:0;}
 .add{height:20px;width:100px;margin:10px 0 10px 17px;line-height:20px;font-size:12px;
@@ -34,6 +35,7 @@ ul{list-style:none;}
 .task-date{text-indent:20px;background:#fafaee;}
 .task-sub{text-indent:50px;cursor:pointer;}
 .task-selected{background:#f2f2f2;}
+.subSelected{background:yellow;}
 /*正文栏*/
 .content-container{background:blue;height:100%;}
 .content-title{height:51px;width:100%;border-bottom:1px solid #eeeeee;background:#f2f2f2;}
