@@ -53,7 +53,6 @@ function getLocalData() {
     if(!localStorage.getItem("testData")) {
         localStorage.setItem("testData", JSON.stringify(testData));    
     }
-    console.log(JSON.parse(localStorage.getItem("testData")));
     return JSON.parse(localStorage.getItem("testData"));
 }
 
@@ -99,7 +98,6 @@ function init() {
     var data = getVar("data")(),
         alltask = $(".alltask");
     var dLen = data.length;// 项目个数
-console.log(data)    
     var num = document.getElementsByClassName("num");// 待完成个数组成的数组
     var classifyList = document.getElementsByClassName("classify-list")[0];   
     var classifyMenu = [];// 分类集合
@@ -159,8 +157,6 @@ console.log(data)
 
     // 两个btn的初始化
     initBtn();
-console.log("end");
-    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -173,7 +169,6 @@ function updateAlltask() {
     while(taskList.lastChild && taskList.lastChild.classList.contains("classify-sub")) {       
         taskList.removeChild(taskList.lastChild);
     }
-console.log(taskList)
     for(var i = 0;i < subList.length;i++) {
         addClassifySub(subList[i].name, alltask.parentNode);
     }
@@ -262,8 +257,7 @@ function modifyData(option, obj) {
 
     switch(option) {
         case "remove" : {
-            if(obj.task) {// 删除子分类
-console.log("子分类")                
+            if(obj.task) {// 删除子分类               
                 for(var i = 0;i < data.length;i++) {
                     for(var j = 0;j < data[i].length;j++) {    
                         if(obj.task === data[i][j].task) {
@@ -316,9 +310,7 @@ console.log("子分类")
                         }
                         saveData(data);
                         initTaskList(thisTask.father);               
-                        index = thisTask.index;
-console.log("this.index:" + thisTask.index)                    
-console.log(todoList)                        
+                        index = thisTask.index;                   
                         updatePage(data[i][j]);
 
                         // 重新载入taskList后，使当前todo项被点击，获得"subSelected"class
@@ -551,8 +543,7 @@ function initOptionList() {
 // 新增列表
 function initAddTask() {
     var myTask = getVar("myTask")();
-    var addTask = $(".addTask");
-console.log(myTask);    
+    var addTask = $(".addTask");   
     addEvent(addTask, "click", function(event) {
         if($(".selected").classList.contains("classify-sub")) {
             switchPage("add");    
@@ -701,8 +692,7 @@ function setDisplay(event) {
 
 // 点击后，选中该元素
 function selected(event) {
-    var selectList = getVar("selectList")();
-console.log(selectList)    
+    var selectList = getVar("selectList")();  
     if(selectList) {
         for(var i = 0;i < selectList.length;i++) {
             selectList[i].classList.remove("selected");
@@ -813,8 +803,7 @@ function addRemoveImg(ele) {
                 updateNum();
             }else if(this.parentNode.classList.contains("classify-sub")) {
                 obj.classify = this.parentNode.parentNode.name;
-                obj.task = this.parentNode.name;
-console.log(obj.classify+ ":" +obj.task)                
+                obj.task = this.parentNode.name;              
                 modifyData("remove", obj);
                 obj = {};
 
