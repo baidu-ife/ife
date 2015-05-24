@@ -1,3 +1,4 @@
+//写的好混乱 虽然功能基本写出来了 但是代码一团糟根本不具备可读性
 window.onload=function(){
 var newwrap=$('.newwrap').getElementsByTagName('span');//新建分类
 var alertDiv=$('#alertDiv');//新建分类弹出层
@@ -8,6 +9,7 @@ var catalog=$('#catalog');
 var list=$('#list');//分类列表
 var arr=$('#list').getElementsByTagName('li');
 var mainLeft=$('.mainLeft');
+//把本地存储的分类目录字符串转成节点
 function init(){
 	var strr='';
 	var obo=getStorage('file');
@@ -25,7 +27,6 @@ function init(){
 }
 		
 }
-init();
 //弹出自建浮层和遮蔽层
 $.click(newwrap[0],function(){
 	catalog.value='';
@@ -37,13 +38,7 @@ $.click(cancle,function(){
 	alertDiv.style.display='none';
 	mask.style.display='none';
 })
-
-//自建浮层里的确定操作增加目录或者子目录
-$.click(ensure,function(){
-	var newcatalog=catalog.value;
-	alertDiv.style.display='none';
-	mask.style.display='none';
-	if(getStorage('file')){
+if(getStorage('file')){
 		var file=getStorage('file');
 		file.key='file';
 	}
@@ -54,7 +49,18 @@ $.click(ensure,function(){
 		'name': '默认分类()',
 		'children': []
 	})
+		file.push({
+			'name': 'IFE()',
+			children: []
+		})
+		saveStorage(file);
 	}
+	init();
+//自建浮层里的确定操作增加目录或者子目录
+$.click(ensure,function(){
+	var newcatalog=catalog.value;
+	alertDiv.style.display='none';
+	mask.style.display='none';
 	if($('.active')){
 		var ss=$('.active').getElementsByTagName('span');
 		var obj=getStorage('file');
@@ -228,6 +234,7 @@ else{
 		return num;
 	}
 })
+//任务保存操作
 $.click(storage,function(){
 	var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
 	var isdate=reg.exec(inTime.value);
@@ -262,6 +269,18 @@ $.click(storage,function(){
 		show();
 	}
 })
+//初始化任务
+function initdata(){
+	var indata={};
+	indata.Title='Task0003';
+	indata.timer='2015-05-22';
+	indata.articler='完成但是代码不具有可读性呀';
+	indata.parentname='IFE()';
+	indata.situation='finish';
+	indata.key=indata.timer+indata.Title;
+	saveStorage(indata);
+}
+initdata();
 $.click(remove,remo);
 $.click(remove,empty);
 function saveStorage(obj){	
@@ -292,6 +311,7 @@ function block(){
 	inTime.style.border='1px solid #D8D2D2';
 	inTitle.style.border='1px solid #D8D2D2';
 }
+//主函数 展示中间栏和右边栏
 function show(){
 	var cata=[];
 	if($('.active')){
@@ -315,17 +335,17 @@ function show(){
 			for(var i=0;i<cata.length;i++){
 				if(swith==1){
 			if(cata[i].situation=='finish'){
-			hash[cata[i].timer]+="<dd class='ddfinish'>"+cata[i].Title+'<img src="task0003/img/c5.jpg" class="dddel"></dd>';
+			hash[cata[i].timer]+="<dd class='ddfinish'>"+cata[i].Title+'<img src="img/c5.jpg" class="dddel"></dd>';
 			hash[cata[i].timer]=hash[cata[i].timer].replace('undefined','');
 			}
 			else{
-			hash[cata[i].timer]+="<dd>"+cata[i].Title+'<img src="task0003/img/c5.jpg" class="dddel"></dd>';
+			hash[cata[i].timer]+="<dd>"+cata[i].Title+'<img src="img/c5.jpg" class="dddel"></dd>';
 			hash[cata[i].timer]=hash[cata[i].timer].replace('undefined','');
 			}
 			}
 			else if(swith==2){
 				if(cata[i].situation=='false'){
-			hash[cata[i].timer]+="<dd>"+cata[i].Title+'<img src="task0003/img/c5.jpg" class="dddel"></dd>';
+			hash[cata[i].timer]+="<dd>"+cata[i].Title+'<img src="img/c5.jpg" class="dddel"></dd>';
 			hash[cata[i].timer]=hash[cata[i].timer].replace('undefined','');
 				}
 			}
@@ -351,6 +371,7 @@ function show(){
 	}
 
 }
+//点击目录展示SHOW()函数
 var maincenter=$('#maincenter');
 $.on(maincenter,'click',function(e){
 	e=e||window.e;
@@ -393,6 +414,7 @@ $.click(edit,function(){
 		alert('请选择任务再修改');
 	}
 });
+//完成任务
 $.click($('.finish'),function(){
 	if($('.centeractive')){
 		alert('你确定完成任务吗?');
@@ -407,6 +429,7 @@ $.click($('.finish'),function(){
 		alert('请选择你的任务');
 	}
 })
+//中间栏上面所有 未完成 已完成
 var swith=1;
 $.click($('.newTop'),function(e){
 	e=e||window.e;
