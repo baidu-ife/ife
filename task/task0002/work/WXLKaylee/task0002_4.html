@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style >
+        *{
+            margin: 0;
+            padding:0;
+        }
+        #container{
+            background: url("img/sousuo.jpg") no-repeat;
+            width: 800px;
+            height: 500px;
+            margin: 50px auto;
+            position: relative;
+        }
+        #sou{
+            position: absolute;
+            top:80px;
+            left:200px;
+            width: 400px;
+            height: 34px;
+            /*margin: 80px 200px;*/
+        }
+        #put{
+            width: 300px;
+            height: 30px;
+            font-size: 16px;
+        }
+        #btn{
+            width: 60px;
+            height: 34px;
+            background: blue;
+            color: white;
+            font-size: 18px;
+        }
+        .suggest{
+            display: none;
+            background-color: white;
+            width: 302px;
+            position: absolute;
+            left: 200px;
+            top: 115px;
+            border: 1px solid #999;
+        }
+        .suggest ul{
+            list-style: none;
+        }
+        .suggest ul li{
+            padding: 3px;
+            font-size: 14px;
+            line-height: 25px;
+            cursor: pointer;
+        }
+        .suggest ul li:hover{
+            text-decoration: underline;
+            background-color: #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+    <div id = "container">
+        <div id="sou">
+            <!-- <form action="" target="_blank" method="get"> -->
+                <input  type="text" id="put"/>
+                <input  id="btn" type="submit" value="搜索" />
+            <!-- </form> -->
+        </div>   
+        <div class="suggest" id="search-suggest">
+            <ul>
+                <li>tishi1</li>
+                <li>tishu2</li>
+                <li>tishi3</li>
+            </ul>
+        </div>  
+    </div>
+    <script type="text/javascript" src="js/task0002_4.js"></script>
+</body>
+</html>

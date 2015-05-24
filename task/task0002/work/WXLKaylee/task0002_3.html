@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>task0002</title>
+        <style>
+            *{
+                margin: 0;
+                padding:0;
+            }
+            #container{
+                width: 682px;
+                height: 346px;
+                margin: 50px auto;
+                position: relative;
+            }
+            #tab{
+                margin-left:20px ;
+                position: absolute;
+                left:300px;
+                top:310px;
+            }
+            #tab li{
+                float: left;
+                width: 20px;
+                height: 20px;
+                color: #fff;
+                margin-left: 2px;
+                cursor: pointer;
+            }
+            #tab .active{
+                color: orange;
+            }
+            #pane img{
+                margin: 3px 4px;
+                width: 674px;
+                height: 340px;
+                display: none;
+            }
+            #pane .active{
+                display: block;
+            }
+            #arrow{
+                position: absolute;
+                left:10px;
+                bottom: 10px;
+            }
+            #arrow span{
+                width: 20px;
+                height: 20px;
+                color: #fff;
+                float: left;
+                margin-right: 2px;
+                text-align: center;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "container">
+            <ul id="tab">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div id="pane">
+                <img src="img/1.jpg" alt=""  class="active">
+                <img src="img/2.jpg" alt="">
+                <img src="img/3.jpg" alt="">
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div id="arrow">
+                <span>&lt;</span>
+                <span>&gt;</span>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/task0002_3.js"></script>
+    </body>
+
+</html>
