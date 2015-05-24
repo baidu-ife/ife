@@ -10,10 +10,10 @@ function getLocalData() {
     },{
         classify : "默认分类",
         task : "task2",
-        date : "2015-5-23",
+        date : "2015-5-20",
         sub : "删除",
-        completed : false,
-        content : ""
+        completed : true,
+        content : "无法在 所有任务中 删除"
     },{
         classify : "默认分类",
         task : "task2",
@@ -33,15 +33,15 @@ function getLocalData() {
         task : "task4",
         date : "2015-5-10",
         sub : "to-do 1",
-        completed : false,
-        content : "打游戏"
+        completed : true,
+        content : "学习"
     },{
         classify : "baidu-",
         task : "task5",
         date : "2015-5-13",
         sub : "to-do 2",
         completed : false,
-        content : "打游戏"
+        content : "学习"
     },{
         classify : "baidu-",
         task : "task6",
@@ -68,7 +68,8 @@ function getVar(temp) {
             x.push($(".classify-list-title"));
             x.push.apply(x, document.getElementsByClassName("classify-title"));
             x.push.apply(x, document.getElementsByClassName("classify-sub"));
-            break;}
+            break;
+        }
         case "subList" : {
             x = [];
             x = uniqArray($(".classify-list").getElementsByClassName("classify-sub"));
@@ -139,11 +140,8 @@ console.log(data)
     }
 
     // 初始化所有任务
-    var subList = getVar("subList")();
+    updateAlltask();
 
-    for(var i = 0;i < subList.length;i++) {
-        addClassifySub(subList[i].name, alltask.parentNode);
-    }
     addEvent(alltask, "click", selected);
     addEvent(alltask, "click", setDisplay);
 
@@ -166,6 +164,21 @@ console.log("end");
 }
 
 //////////////////////////////////////////////////////////////////////
+
+// 更新alltask
+function updateAlltask() {
+    var alltask = $(".alltask"),
+        subList = getVar("subList")(),
+        taskList = alltask.parentNode;
+    while(taskList.lastChild && taskList.lastChild.classList.contains("classify-sub")) {       
+        taskList.removeChild(taskList.lastChild);
+    }
+console.log(taskList)
+    for(var i = 0;i < subList.length;i++) {
+        addClassifySub(subList[i].name, alltask.parentNode);
+    }
+}
+
 
 // 两个btn的初始化
 function initBtn() {
@@ -250,6 +263,7 @@ function modifyData(option, obj) {
     switch(option) {
         case "remove" : {
             if(obj.task) {// 删除子分类
+console.log("子分类")                
                 for(var i = 0;i < data.length;i++) {
                     for(var j = 0;j < data[i].length;j++) {    
                         if(obj.task === data[i][j].task) {
@@ -257,7 +271,7 @@ function modifyData(option, obj) {
                         }
                     }
                 }
-            }else {
+            }else {// 删除分类
                 for(var i = 0;i < data.length;i++) {
                     for(var j = 0;j < data[i].length;j++) {    
                         if(obj.classify === data[i][j].classify) {
@@ -270,9 +284,6 @@ function modifyData(option, obj) {
             data = reviseArr(data);
             saveData(data);
 
-            clearNode($(".alltask-container"));
-            clearNode($(".classify-list"));
-            init();
             break;
         }            
         case "add" : {
@@ -437,10 +448,11 @@ function initTaskList(task) {
 }
 
 // 清除节点下的所有元素
-function clearNode(node) {
-    if(node.firstChild) {
-        node.removeChild(node.firstChild);
-    }
+function clearNode(node, tagName) {
+    var list = node.getElementsByTagName(tagName);
+    for(var i = 0;i < list.length;i++) {
+        node.removeChild(list[i]);
+    } 
 }
 
 
@@ -690,6 +702,7 @@ function setDisplay(event) {
 // 点击后，选中该元素
 function selected(event) {
     var selectList = getVar("selectList")();
+console.log(selectList)    
     if(selectList) {
         for(var i = 0;i < selectList.length;i++) {
             selectList[i].classList.remove("selected");
@@ -795,7 +808,9 @@ function addRemoveImg(ele) {
                 modifyData("remove", obj);
                 obj = {};
 
-                classifyList.removeChild(thisNode);                
+                classifyList.removeChild(thisNode);    
+                updateAlltask();
+                updateNum();
             }else if(this.parentNode.classList.contains("classify-sub")) {
                 obj.classify = this.parentNode.parentNode.name;
                 obj.task = this.parentNode.name;
@@ -804,8 +819,10 @@ console.log(obj.classify+ ":" +obj.task)
                 obj = {};
 
                 this.parentNode.parentNode.removeChild(this.parentNode);                
+                updateAlltask();
+                updateNum();
             }else {
-                console.log("confirm error");
+                alert("confirm error");
             }
         }
     });
