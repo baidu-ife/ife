@@ -18,9 +18,13 @@
  */
 /*if(!localStorage.catalog){
     localStorage.c*/
+
+//console.log(localStorage.getItem("catalog"));
+if(localStorage.getItem("catalog")=="undefined"){
 var defaultCatalog=[
         {
             name:"默认分类",//default catalog
+            task:[],
             todo:[
                 {
                     name:"todo0",
@@ -42,7 +46,7 @@ var defaultCatalog=[
             ],
             todo:[],
             count:0
-        },
+        }/*,
         {
             name:"new2",
             task:[],
@@ -55,10 +59,10 @@ var defaultCatalog=[
                 }
             ],
             count:1
-        }
+        }*/
     ];
-/*}*/
-localStorage.setItem("catalog",JSON.stringify(defaultCatalog));
+    localStorage.setItem("catalog",JSON.stringify(defaultCatalog));
+}
 //console.log(myCatalog[0].task[0].todo[0].date);
 /*console.log(myCatalog.length);
 console.log(myCatalog[1].task.length);*/
@@ -86,14 +90,17 @@ function Todo(name,date,content){
 /**
  * 一些全局变量
  */
-/*countAll  //所有未完成的todo
-*/
+
 
 
 /**
  * 载入所有数据
  */
+//myCatalog
 var myCatalog=JSON.parse(localStorage.getItem("catalog"));
+//console.log(myCatalog);
+
+//catalog栏
 var countAll=myCatalog[0].count;//初始值为默认列表中的未完成的任务
 for(var i=1;i<myCatalog.length;i++){//默认列表不需要重新载入
     //获取分类列表
@@ -121,7 +128,11 @@ for(var i=1;i<myCatalog.length;i++){//默认列表不需要重新载入
     catalogWrap.appendChild(ele);
     countAll+=myCatalog[i].count;
 }
+document.getElementById("default-catalog").getElementsByClassName("unfinished-count")[0].innerHTML=myCatalog[0].count+"";
 document.getElementById("unfinished-count-all").innerHTML=countAll+"";
+
+showTodo();
+
 
 
 
@@ -297,6 +308,8 @@ for(var i=0;i<catalogs.length;i++){//选中分类名.catalog-name,其parentNode�
 }
 
 function chooseItem(event){
+    if(!giveUpTodo())
+        return;
     var item=event.target;
     while(item.getAttribute("data-catalog-no")==null&&
     item.getAttribute("data-task-no")==null){//可能会选中.catalog-name或者[data-task-no]中的子节点
@@ -347,7 +360,8 @@ function chooseItem(event){
  */
 function findChosenInCatalog(){
     var current;
-    if(chosen==null) return {};
+    if(chosen==null)
+        return {};
     if(chosen.getAttribute("data-catalog-no")!=null){//choose catalog
         // if catalog contains todos(suppose catalog can only contains todos or tasks)
         current=myCatalog[chosen.getAttribute("data-catalog-no")];
@@ -396,6 +410,9 @@ function showTodo(arr){
 
         }
     }
+    //输出时会清空chosenTodo
+    //console.log(chosenTodo);
+    //console.log(chosenTodo.getAttribute("data-todo-no"));
 }
 
 /**
@@ -457,17 +474,8 @@ function chooseTodo(event){
 
     //todo:填充新chosenTodo的content栏数据
     content.style.display="block";
-    //console.log(chosen);
-    //console.log(chosenTodo);
-    var current=findChosenInCatalog().todo[chosenTodo.getAttribute("data-todo-no")];//
-    //console.log(current);
+    var current=findChosenInCatalog().todo[chosenTodo.getAttribute("data-todo-no")];
     fillContent(current);
-    /*
-    tip.innerHTML="";
-    todoTitle.value=current.name;
-    todoDate.value=current.date;
-    todoContent.value=current.content;
-    content.setAttribute("data-state",current.state);*/
 }
 
 /**
@@ -476,16 +484,14 @@ function chooseTodo(event){
  * `return true/false
  */
 function giveUpTodo(){
-    if (content.classList.contains("new")) {
+    if (content.classList.contains("new")) {//new edit 正在
         var cfm = confirm("确定放弃本次新增？");
         if (!cfm) {
             return false;
         }
         else {
-            removeClass(content,"edit");
             removeClass(content,"new");
-            console.log("a new todo generate");
-            //todo:更新myCatalog,new一个新的todo
+            removeClass(content,"edit");
         }
     }
     else if (content.classList.contains("edit")) {
@@ -495,16 +501,17 @@ function giveUpTodo(){
         }
         else {
             removeClass(content,"edit");
-            console.log("update myContent");
-            //todo:更新myCatalog，更新当前todo
         }
     }
+    document.getElementById("todo-title").value=todoTitle.value;
+    document.getElementById("todo-date").value=todoDate.value;
+    document.getElementById("todo-content-inner").value=todoContent.value;
     return true;
 }
 //不足:classList不兼容ie8
 
 /**
- * 根据传入的todo对象显示content
+ * 根据传入的todo对象显示content,并清空content的类
  */
 function fillContent(item){
     if(item==null){
@@ -513,7 +520,6 @@ function fillContent(item){
         todoDate.value="";
         todoContent.value="";
         content.setAttribute("data-state","unfinished");
-        console.log("clear");
     }
     else{
         tip.innerHTML="";
@@ -521,8 +527,15 @@ function fillContent(item){
         todoDate.value=item.date;
         todoContent.value=item.content;
         content.setAttribute("data-state",item.state);
-        console.log("use current todo fill content");
+        if(item.state=="finished"){
+            btnOk.src="img/finished.png";
+        }
+        else{
+            btnOk.src="img/unfinished.png";
+        }
     }
+    content.className="";//清空所有的样式类
+    console.log(content);
 }
 
 /**
@@ -535,52 +548,93 @@ addClickEvent(addTask,function(){
         return;
     }
     //初始化一个编辑界面
+    //如果chosen=null，则先处理catalog栏和todo栏的显示
+    if(chosen==null){//如果之前没有选中任何目录，则在默认目录下添加
+        addClass(defaultCatalog,"isChosen");
+        chosen=defaultCatalog;
+        showTodo(findChosenInCatalog().todo);
+    }
+    //content栏变化
     content.style.display="block";
-    /*
-    todoTitle.value="";
-    todoDate.value="";
-    todoContent.value="";
-    tip.innerHTML="";*/
-    fillContent();
-    contentAbled();
+    fillContent();//内容初始化
+    contentAbled();//将content设置成可编辑状态，并为content添加"edit"
     addClass(content,"new");//表明当前在新增任务
 });
-//todo：“所有任务”中保持同步（仅所有未完成数量)
 
 /**
- * 点击btn-save完成新增/编辑todo，并保存
+ * (√)点击btn-save完成新增/编辑todo
+ *   新增：给myCatalog的相应位置新增todo，更新todo栏
+ *   编辑：更新当前todo,更新todo栏
  */
 var btnSave=document.getElementById("btn-save");
-addClickEvent(btnSave,function(){
-    if(!qualified()) return;
-    contentDisabled();
-    //todo:更新todo内容
+addClickEvent(btnSave,saveTodo);
+
+function saveTodo() {
+    /*检验内容是否合格，不合格则无法进行下一步*/
+    if (!qualified())
+        return;
+
+    /*合格*/
+    //myCatalog变化
+    var item=new Todo(document.getElementById("todo-title").value);
+    item.date=document.getElementById("todo-date").value;
+    item.content=document.getElementById("todo-content-inner").value;
+    item.state="unfinished";
+
+    var current=findChosenInCatalog();
+    var i=0;
     if(content.classList.contains("new")){
-        //todo：在任务列表添加新任务
-        var wrap=document.getElementsByClassName("todo-wrap")[0];
-        var item=document.createElement("div");
-        /*wrap.appendChild(item);
-        removeClass(content,"new");*/
+        while(i<current.todo.length && current.todo[i].date<=item.date){
+            i++;
+        }//i是正好日期比item大的todo
+        current.todo.splice(i,0,item);//按时间顺序插入
+
     }
-});
+    else{//编辑而非创建
+        current.todo[Number(chosenTodo.getAttribute("data-todo-no"))]=item;//直接更新该todo
+        i=chosenTodo.getAttribute("data-todo-no");
+    }
+
+    //todo栏变化,会清空chosenTodo
+    showTodo(current.todo);
+
+    //chosenTodo变化
+    chosenTodo=document.querySelector("[data-todo-no='" + i + "']");
+    addClass(chosenTodo,"todo-chosen");
+
+    //catalog栏变化
+    if(content.classList.contains("new")){
+        //所在的分类下
+        chosen.getElementsByClassName("unfinished-count")[0].innerHTML-=(-1);
+        if(chosen.parentNode.getAttribute("data-catalog-no")!=null){//还有父节点，则父节点的unfinished-count也+1
+            chosen.parentNode.getElementsByClassName("unfinished-count")[0].innerHTML-=(-1);
+        }
+        //总分类下
+        document.getElementById("unfinished-count-all").innerHTML-=(-1);
+    }
+
+    //content栏变化
+    contentDisabled();//不可编辑状态
+    content.className="";//清空类列表（即去掉可能存在的.new）
+}
+
+
+
+
 
 /**
  * 点击btn-cancel,取消添加或修改todo（√）
  */
 var btnCancel=document.getElementById("btn-cancel");
-addClickEvent(btnCancel,function(){/*
-    var cfm=confirm("取消当前新增/修改任务？");
-    if(cfm){
-        content.style.display="none";
-    }*/
-    if(giveUpTodo()){
-        content.style.display="none";
+addClickEvent(btnCancel,function(){
+    if (giveUpTodo()){
+        content.style.display = "none";
     }
-    else{
+    else {
         return;
     }
-
 });
+
 
 /**
  * 点击btn-edit,编辑todo（√）
@@ -592,23 +646,62 @@ addClickEvent(btnEdit,contentAbled);
 /**
  * 点击btn-ok按钮完成任务，保存状态
  */
-var state=document.getElementById("todo-content").getAttribute("data-state");
-//console.log(state);
+var todoState;
 var btnOk=document.getElementById("btn-ok");
-addClickEvent(btnOk,function(){
-    if(state=="unfinished"){
+addClickEvent(btnOk,function(event){
+    //content栏变化
+
+    var current=findChosenInCatalog().todo[chosenTodo.getAttribute("data-todo-no")];
+    var unfinishedDiffer;
+    todoState=document.getElementById("todo-content").getAttribute("data-state")
+
+    if(todoState=="unfinished"){
         btnOk.src="img/finished.png";
-        state="finished";
+        todoState="finished";
+
+
+        current.state="finished";//myCatalog变化
+        current.count-=1;
+        findChosenInCatalog().count-=1;
+        console.log(current);
+
+        //catalog栏变化
+        unfinishedDiffer=1;
+
     }
     else{
         btnOk.src="img/unfinished.png";
-        state="unfinished";
+        todoState="unfinished";
+
+        current.state="unfinished";//myCatalog变化
+        current.count+=1;
+        findChosenInCatalog().count+=1;
+        console.log(current);
+
+        //catalog栏变化
+        unfinishedDiffer=-1;
+
     }
-    document.getElementById("todo-content").setAttribute("data-state",state);//暂时先这样
-    //todo:在数据库中更新todo状态
+
+    //todo栏变化
+    showTodo(current.todo);
+
+    //catalog栏变化
+    //所在的分类下
+    chosen.getElementsByClassName("unfinished-count")[0].innerHTML-=(unfinishedDiffer);
+    if(chosen.parentNode.getAttribute("data-catalog-no")!=null){//还有父节点，则父节点的unfinished-count也+1
+        chosen.parentNode.getElementsByClassName("unfinished-count")[0].innerHTML-=(unfinishedDiffer);
+    }
+    //总分类下
+    document.getElementById("unfinished-count-all").innerHTML-=(unfinishedDiffer);
+
+    //完成状态切换
+    document.getElementById("todo-content").setAttribute("data-state",todoState);//暂时先这样
+
+
 });
 addClickEvent(btnOk,contentDisabled);
-
+//不足：没有实时改变
 
 
 
@@ -709,5 +802,13 @@ function contentDisabled(){
     todoContent.disabled="disabled";
     todoDate.disabled="disabled";
     todoTitle.disabled="disabled";
-    removeClass(content,"edit");
+    if(content.classList.contains("edit")){
+        removeClass(content,"edit");
+    }
+}
+
+function checkLeave(){
+    //event.returnValue="a";
+    console.log("save");
+    localStorage.setItem("catalog",JSON.stringify(myCatalog));
 }
