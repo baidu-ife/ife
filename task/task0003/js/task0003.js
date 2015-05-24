@@ -38,7 +38,12 @@ $.click(cancle,function(){
 	alertDiv.style.display='none';
 	mask.style.display='none';
 })
+<<<<<<< HEAD
 if(getStorage('file')){
+=======
+
+	if(getStorage('file')){
+>>>>>>> origin/master
 		var file=getStorage('file');
 		file.key='file';
 	}
@@ -49,10 +54,13 @@ if(getStorage('file')){
 		'name': '默认分类()',
 		'children': []
 	})
+<<<<<<< HEAD
 		file.push({
 			'name': 'IFE()',
 			children: []
 		})
+=======
+>>>>>>> origin/master
 		saveStorage(file);
 	}
 	init();
