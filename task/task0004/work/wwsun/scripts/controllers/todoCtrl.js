@@ -1,6 +1,18 @@
 angular.module('todoApp.controllers', [])
-    .controller('TodoCtrl', [function() {
+    .controller('TodoCtrl', ['StorageService', function(StorageService) {
         var self = this;
 
-        // todo
+        self.categories = [];
+
+        self.activeMenu = function() {
+            $('.collapsible').collapsible();
+        };
+
+        StorageService.loadCategories()
+            .then( function (categories) {
+                self.categories = categories;
+            });
+
+
+
     }]);

@@ -1,1 +1,14 @@
-<p>Hello todo list home</p>
+<div class="row">
+    <ul class="collapsible">
+
+        <li ng-repeat="item in todoCtrl.categories" ng-init="todoCtrl.activeMenu()">
+            <div class="collapsible-header"><i class="mdi-action-list"></i>{{item.name}}</div>
+            <div class="collapsible-body">
+                <div class="collection">
+                    <a href="#!" class="collection-item" ng-repeat="task in item.sub">{{task}}</a>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</div>
