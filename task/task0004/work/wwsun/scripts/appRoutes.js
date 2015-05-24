@@ -9,4 +9,10 @@ angular.module('appRoutes', [])
                 templateUrl: 'views/home.html',
                 controller: 'TodoCtrl as todoCtrl'
             })
+
+            .state('item', {
+                url: '/item',
+                templateUrl: 'views/item.html',
+                controller: ''
+            })
     });
