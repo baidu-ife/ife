@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <title>task0003</title>
+    <link rel="stylesheet" type="text/css" href="css/task0003.css">
+</head>
+<body>
+    <header>
+        <h2>GTD Tools</h2>
+    </header>
+    <div id='content'>
+    	<div id='cate-container'>
+            <p id='all-cate-task'>所有任务（<span class='task-nums'>0</span>）</p>
+            <p>分类列表</p>
+            <ul id='cate-list'>
+                <li class='cate'>
+                    <p>百度IFE项目（<span class='task-nums'>0</span>）</p>
+                        <img src="img/icon-delete.png" class='delete'>
+                    
+                    <ul class='sub-cate-list'>
+                        <li class='sub-cate'>task1（<span class='task-nums'>0</span>）
+                            <img src="img/icon-delete.png" class='delete'>
+                        </li>
+                        <li class='sub-cate'>task2（<span class='task-nums'>0</span>）
+                            <img src="img/icon-delete.png" class='delete'>
+                        </li>
+                    </ul>
+                </li>
+                <!-- <li class='cate'>毕业设计（<span class='task-nums'>0</span>）</li> -->
+                <!-- <li class='cate'>社团活动（<span class='task-nums'>0</span>）</li> -->
+                <!-- <li class='cate'>家庭生活（<span class='task-nums'>0</span>）</li> -->
+                <li id='default'><p>默认分类（<span class='task-nums'>0</span>）</p></li>
+            </ul>
+            <p id='add-new-cate'>
+                <img src="img/icon-add.png" alt='新增分类'>
+                新增分类
+            </p>
+        </div>
+        <div id='task-container'>
+            <div id='task-nav-bar'>
+                <div id='task-nav'>
+                    <span id='all-tasks'>所有</span>
+                    <span id='not-yet'>未完成</span>
+                    <span id='finished'>已完成</span>
+                </div>
+            </div>
+            <div id='task-content'>
+                <ul id='task-list'>
+                    <li class='finished'>to-do 1</li>
+                    <li class='notyet'>to-do 2</li>
+                    <li class='finished'>to-do 3</li>
+                    <li class='finished'>to-do 4</li>
+                    <li class='notyet'>to-do 5</li>
+                    <li class='notyet'>to-do 6</li>
+                </ul>
+            </div>
+            <p id='add-new-task'>
+                <img src="img/icon-add.png" alt='新增任务'>
+                新增任务
+            </p>
+        </div>
+        <div id='data-container'>
+            <div id='task-title'>
+                <input type='text' id='input-title' placeholder='to-do 1'>
+                <img src="img/icon-finish.png" id='finish-task' alt='完成任务'>
+                <img src="img/icon-edit.png" id='edit-task' alt='编辑任务'>
+            </div>
+            <div id='task-date'>
+                <span>任务日期：</span>
+                <input type='text' id='input-date' placeholder='2015-05-22'>
+            </div>
+            <div id='task-data'>
+                <textarea id='input-data'>Bingo!</textarea>
+                <input type='button' id='confirm' value='确认'>
+                <input type='button' id='cancle' value='取消'>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src='js/task0003.js'></script>
+</body>
+</html>

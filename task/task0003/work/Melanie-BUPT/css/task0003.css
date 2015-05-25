@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft Yahei", sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    height: 60px;
+    width: 100%;
+    min-width: 1280px;
+    background-color: #ddd;
+    border: solid 1px #ccc;
+}
+
+header h2 {
+    color: #999;
+    padding: 15px;
+}
+
+#cate-container,
+#task-container {
+    min-width: 230px;
+    min-height: 540px;
+    position: absolute;
+    float: left;
+    top: 60px;
+    bottom: 0;
+    border: solid 1px #ccc;
+}
+
+#cate-container {
+    background-color: #f2f2f2;
+}
+
+#cate-container p {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+#all-cate-task {
+    cursor: pointer;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+#cate-list > li {
+    padding-left: 20px;
+    margin: 5px;
+    list-style: url('../img/icon-folder.png') inside;
+    cursor: pointer;
+}
+
+#cate-list li p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#cate-list li p:hover + img.delete {
+    display: inline-block;
+}
+
+.delete {
+    display: none;
+    position: absolute;
+    right: 15px;
+}
+
+.sub-cate-list li {
+    padding-left: 25px;
+    margin: 5px 0;
+    list-style: url('../img/icon-file.png') inside;
+    cursor: pointer;
+}
+
+li.sub-cate:hover img.delete {
+    display: inline-block;
+}
+
+#cate-list ul > li:hover {
+    background-color: #fff;
+}
+
+div #add-new-cate {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: solid 1px #ccc;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#task-container {
+    background-color: #fff;
+    left: 230px;
+}
+
+#task-nav-bar {
+    width: 100%;
+    height: 40px;
+    border-bottom: solid 1px #ccc;
+    background-color: #f2f2f2;
+}
+
+#task-nav {
+    padding-left: 10px;
+}
+
+#task-nav span {
+    display: inline-block;
+    padding: 9px 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#task-nav span.active {
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    background-color: #fff;
+}
+
+#task-content {
+    background-color: #fff;
+}
+
+#task-list li {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0 20px;
+    line-height: 200%;
+    display: block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#task-list li:hover {
+    color: #238C00;
+    background-color: #F2F2F2;
+}
+
+div #add-new-task {
+    width: 100%;
+    background-color: #f2f2f2;
+    position: absolute;
+    bottom: 0;
+    border-top: solid 1px #ccc;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#data-container {
+    min-width: 820px;
+    min-height: 540px;
+    position: absolute;
+    float: left;
+    top: 60px;
+    bottom: 0;
+    left: 460px;
+    right: 0px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+}
+
+#task-title {
+    width: 100%;
+    height: 60px;
+    background-color: #f2f2f2;
+    border-bottom: solid 1px #ccc;
+
+}
+
+#task-title input {
+    display: inline-block;
+    margin: 10px 20px;
+    border: none;
+    line-height: 300%;
+}
+
+#finish-task {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 90px;
+    cursor: pointer;
+}
+
+#edit-task {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+}
+
+#task-date {
+    width: 100%;
+    height: 60px;
+    background-color: #eee;
+    border-bottom: solid 1px #ccc;
+}
+
+#task-date span {
+    display: inline-block;
+    padding: 20px;
+}
+
+#task-date input {
+    border: none;
+    line-height: 300%;
+}
+
+#task-data textarea {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 120px;
+    bottom: 0;
+    border: none;
+    padding: 20px;
+}
+
+#task-data textarea.edit {
+    bottom: 60px;
+}
+
+#confirm {
+    display: none;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    background-color: #ccc;
+}
+
+#cancle {
+    display: none;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    bottom: 15px;
+    left: 140px;
+    background-color: #ccc;
+}
