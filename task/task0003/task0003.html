@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>task0003</title>
+</head>
+<body>
+    <header>
+        个人任务管理系统
+    </header>
+    <!--container-->
+    <div class="container">
+        <div id="category-list">
+            <p>所有任务(<span id="total">0</span>)</p>
+            <p>分支列表</p>
+            <ul>
+                <!--<li>-->
+                    <!--<a>百度IFE项目(<span id="ife">0</span>)</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a>默认分类(<span id="default">0</span>)</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a>毕业设计(<span id="graduate">0</span>)</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a>社团活动(<span id="club">0</span>)</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a>家庭生活(<span id="family">0</span>)</a>-->
+                <!--</li>-->
+            </ul>
+            <a>新增分类</a>
+        </div>
+        <div id="task-list">
+            <ul class="task-status">
+                <li class="task-status-list"><a>所有</a></li>
+                <li class="task-status-list"><a>未完成</a></li>
+                <li class="task-status-list"><a>已完成</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <p>2015-05-24</p>
+                    <a>Baidu-Ife</a>
+                </li>
+            </ul>
+            <a>新增任务</a>
+        </div>
+        <div id="task-info">
+            <div class="task-info-show">
+                <div class="task-info-head">
+                    <h4>Baidu-Ife</h4>
+                    <a>Complete</a>
+                    <a>Edit</a>
+                </div>
+                <p>任务时间：<span>2015-05-24</span></p>
+                <article>
+                    Oops
+                </article>
+            </div>
+            <div class="task-info-edit">
+                <div class="task-info-head">
+                    <input type="text" name="" placeholder="输入标题">
+                    <a>Yes</a>
+                    <a>No</a>
+                </div>
+                <div>
+                    任务时间：<input type="text" placeholder="日期格式：2015-04-02">
+                </div>
+                <div>
+                    <textarea cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="task.js"></script>
+<script src="util.js"></script>
+</body>
+</html>

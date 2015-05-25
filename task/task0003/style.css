@@ -1,0 +1,59 @@
+* ,
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+header {
+    background-color: #DDDDDD;
+    color: #939393;
+    font-size: 20px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+ul {
+    list-style: none;
+}
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.task-status {
+    background-color: #EEEEEE;
+    height: 30px;
+}
+.task-status-list {
+    display: inline;
+}
+#category-list {
+    width: 18%;
+    background-color: #F2F2F2;
+    border: 1px solid #CDCDCD;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+}
+#task-list {
+    width: 18%;
+    background-color: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+}
+#task-info {
+    width: 64%;
+    background-color: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+}
