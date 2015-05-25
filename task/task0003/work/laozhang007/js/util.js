@@ -1,412 +1,498 @@
+//2. JavaScript数据类型及语言基础
+// 判断arr是否为一个数组，返回一个bool值
 function isArray(arr) {
-    // your implement
-    return Object.prototype.toString.call(arr) === '[object Array]';
+    return Object.prototype.toString.call(arr).slice(8, -1) === 'Array';
 }
-
+//判断date是否为一个日期对象，返回一个bool值
+function isDate(date){
+    return Object.prototype.toString.call(date).slice(8,-1) === "Date";
+}
+// 判断fn是否为一个函数，返回一个bool值
 function isFunction(fn) {
-    return Object.prototype.toString.call(fn) === "[object Function]";
-}
-function isStr(str) {
-    return Object.prototype.toString.call(str) === "[object String]";
-}
-function isBool(bool) {
-    return Object.prototype.toString.call(bool) === "[object Boolean]";
-}
-function isNum(num) {
-    return Object.prototype.toString.call(num) === "[object Number]";
+    return typeof fn === 'function';
 }
 
-//判断数据类型的方法↑
-// 判断fn是否为一个函数另一种方法，返回一个bool值
-function isFunction(fn) {
-    // your implement
-    return typeof fn == 'function';
-}
-
-function cloneObject(obj) {
-    // your implement
-    var o = obj.constructor === Array ? [] : {};
-    for(var i in obj){
-        if(obj.hasOwnProperty(i)){
-            o[i] = typeof obj[i] === "object" ? cloneObject(obj[i]) : obj[i];
+// 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
+// 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
+function cloneObject(src) {
+    var ret;
+    var i, len,p;
+    if (isArray(src)) {
+        ret = [];        
+        for (i = 0, len = src.length; i < len; i++) {
+            if (typeof src[i] === 'object') {
+                ret[i] = cloneObject(src[i]);
+            }else{
+                ret[i] = src[i];
+            }
         }
+        return ret;
+    }else if(isDate(src)){
+        return new Date(src.getTime());
+    }else if(typeof src === 'object'){
+        ret = {};
+        for(p in src){
+            if(src.hasOwnProperty(p)){
+                ret[p] = cloneObject(src[p]);                
+            }
+        }
+        return ret;
+    }else{
+        return src;
+    }    
+}
+//增加； 类似ES5 Function.prototype.bind功能
+function bind(obj,fn){
+  return function(){
+    fn.apply(obj,arguments);
+  }
+}
+//增加： 扩展对象
+function extend(src){
+  var objArr = [].slice.call(arguments,1);
+  for(var i = 0,p, len = objArr.length; i < len; i++){
+    for(p in objArr[i]){
+      if(objArr[i].hasOwnProperty(p) && typeof src[p] === 'undefined'){
+        src[p] = objArr[i][p];
+      }
     }
-    return o;
+  }
+  return src;
 }
-function cloneObject2(obj) {
-    // your implement
-    var s = JSON.stringify( obj );
-    var o = JSON.parse( s );
-}
-
+// 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr) {
-    // your implement
-    var res = [];
-    var json = {};
-    for(var i = 0; i < arr.length; i++){
-        if(!json[arr[i]]){
-            res.push(arr[i]);
-            json[arr[i]] = 1;
+    var map = {};
+    var retArr = [];
+    var len = arr.length,i;
+    for(i = 0; i < len; i++){
+        if(typeof map[arr[i]] === 'undefined'){
+            retArr.push(arr[i]);
+            map[arr[i]] = 1;
         }
     }
-    return res;
+    return retArr;
 }
 
-// 尝试使用一行简洁的正则表达式完成该题目
+// 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
+// 先暂时不要简单的用一句正则表达式来实现
 function trim(str) {
-    // your implement
-    return str.replace(/^\s+|\s+$/g, "")
-
+    var arr = str.split('');
+    var len = arr.length;
+    var s = '';
+    var start,end;
+    for(var i = 0; i < len; i++){
+        if(+arr[i] !== 0 && arr[i] !== '0'){
+            start = i;
+            break;
+        }
+    }
+    for(i = len - 1; i >= 0; i--){
+        if(+arr[i] !== 0 && arr[i] !== '0'){
+            end = i;
+            break;
+        }
+    }
+    for(i = start; i <= end; i++){
+        s += arr[i];
+    }
+    return s;
 }
 
-// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
+// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参赛传递
 function each(arr, fn) {
-    // your implement
-    for(var x in arr){
-        fn(arr[x],x);
+    if(arr.forEach && arr.forEach === Array.prototype.forEach){
+        arr.forEach(function(item,index){
+            fn.call(null,item,index);
+        });
+    }else{
+        var len = arr.length,i;
+        for(i = 0; i < len; i++){
+            fn.call(null,arr[i],i);
+        }
     }
 }
 
-//使用示例
-function output(item, index) {
-    console.log(index + ': ' + item)
-}
-
+// 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {
     var count = 0;
-    for(var x in obj){
-        //console.log(x);
-        count ++;
+    for(var p in obj){
+        if(obj.hasOwnProperty(p)){
+            count ++;
+        }
     }
     return count;
 }
-
-// 使用示例
-var obj = {
-    a: 1,
-    b: 2,
-    c: {
-        c1: 3,
-        c2: 4
+//增加：返回某元素在一个数组中的位置，若不存在则返回-1；类似ES5中Array.prototype.indexOf
+function indexOf(arr,item,startIndex){
+    var len = arr.length,i;
+    for(i = startIndex | 0; i < len; i++){
+        if(item === arr[i]){
+            return i;
+        }
     }
-};
+    return -1;
+}
+
+//增加：移除数组中指定的元素，返回被成功移除的元素数组
+function removeFromArray(arr,removeItems){
+    var removedItems = [];
+    each(removeItems,function(item,index){
+        var i = indexOf(arr,item);
+        if(i > -1){            
+            arr.splice(i,1);
+            removedItems.push(item);
+        }
+    });
+    return removedItems;
+}
+
+//增加：根据指定函数，过滤数组中的元素，对于数组中的每个元素，fn返回true则移除；返回被移除的元素
+function filterArray(arr,fn){
+    var removeItems = [];
+    each(arr,function(item,index){
+        if(fn.call(null,item) === true){
+            removeItems.push(item);
+        }
+    });    
+    return removeFromArray(arr,removeItems);
+}
 
 // 判断是否为邮箱地址
+// 参考 http://www.w3.org/TR/html5/forms.html#valid-e-mail-address
 function isEmail(emailStr) {
-    // your implement
-    var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
-    return re.test(emailStr);
+    if(typeof emailStr !== 'string'){
+        return false;
+    }
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(emailStr);
 }
 
 // 判断是否为手机号
 function isMobilePhone(phone) {
-    // your implement
-    var re = /^1\d{10}$/;
-    return re.test(phone);
+    if(typeof phone !== 'string'){
+        return false;
+    }
+    var reg = /^1\d{10}$/;
+    return reg.test(phone);
 }
 
-// 为element增加一个样式名为newClassName的新样式
-//查看元素是否已有某个类
-function hasClass(element, newClassName) {
-    return element.className.match(new RegExp('(\\s|^)' + newClassName + '(\\s|$)'));
+//3.DOM
+
+function hide(){
+    var element;
+    if(arguments.length === 1){
+        element = arguments[0];
+        element.style.display = "none";
+    }else if(arguments.length > 1){
+        for(var i = 0,len = arguments.length; i < len; i ++){
+            element = arguments[i];
+            element.style.display = "none";
+        }
+    }
+}
+function show(){
+    var element;
+    if(arguments.length === 1){
+        element = arguments[0];
+        element.style.display = "";
+    }else if(arguments.length > 1){
+        for(var i = 0,len = arguments.length; i < len; i ++){
+            element = arguments[i];
+            element.style.display = "";
+        }
+    }
 }
 
+// 为dom增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
-    if (!this.hasClass(element, newClassName)) element.className += " " + newClassName;
-}
-
-function removeClass(element, newClassName) {
-    if (hasClass(element, newClassName)) {
-        var reg = new RegExp('(\\s|^)' + newClassName + '(\\s|$)');
-        element.className = element.className.replace(reg, ' ');
+    var classStr = element.className;
+    var newClassArr;
+    if(classStr.indexOf(newClassName) >= 0){
+        return false;
+    }else{
+         newClassArr = classStr.split(/\s+/);
+         newClassArr.push(newClassName);
+         element.className = newClassArr.join(' ');
     }
 }
 
+// 移除dom中的样式oldClassName
+function removeClass(element, oldClassName) {
+    var oldClassArr = element.className.split(/\s+/);
+    removeFromArray(oldClassArr,[oldClassName]);
+    element.className = oldClassArr.join(' ');
+}
 
-// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
+function toggleClass(element,className){
+    if(element.className.indexOf(className) >= 0){
+        removeClass(element,className);
+    }else{
+        addClass(element,className);
+    }
+}
+
+// 判断siblingNode和dom是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
-    // your implement
-    return element.parentNode == siblingNode.parentNode;
+    if(element.nodeType !== 1 && element.nodeType !== 3 || siblingNode.nodeType !== 1 && siblingNode.nodeType !== 3){
+        return false;
+    }
+    return element.parentNode === siblingNode.parentNode;
 }
-//获取元素的纵坐标
-function getTop(e){
-    var offset=e.offsetTop;
-    if(e.offsetParent!=null) offset+=getTop(e.offsetParent);
-    return offset;
-}
-//获取元素的横坐标
-function getLeft(e){
-    var offset=e.offsetLeft;
-    if(e.offsetParent!=null) offset+=getLeft(e.offsetParent);
-    return offset;
-}
+
+// 获取dom相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
-    // your implement
-    var pos = {x:0,y:0};
-    pos.x = getLeft(element);
-    pos.y = getTop(element);
-    return pos;
-}
-//在父元素的孩子中查找含有class类的元素 兼容ie低版本
-function getChildrenByClass(oParent,oClass) {
-    var aElem = oParent.getElementsByTagName("*");
-    var arr = [];
-    for (var i = 0; i<aElem.length; i++) {
-        if (aElem[i].className == oClass) {
-            arr.push(aElem[i]);
-        }
+    var position = {x:0,y:0};
+    var origin = element,e;
+    for(e = element; e != null; e = e.offsetParent){
+        position.x += e.offsetLeft;
+        position.y += e.offsetTop;
     }
-    return arr;
+    for(e = element.parentNode; e != null && e.nodeType === 1; e = e.parentNode){
+        position.x -= e.scrollLeft;
+        position.y -= e.scrollTop;
+    }
+    return position;
 }
-//对象扩充，把json1的属性赋给json2并保留json2
+//增加：通过类名查找元素，返回符合条件的元素数组
+function getElementsByClassName(root,className){
+  var ret = [];
+  var _allElements = root.getElementsByTagName('*');
+  for(i = 0; i < _allElements.length; i++){
+      _element = _allElements[i];
+      if(_element.className.indexOf(className) >= 0){
+          ret.push(_element);
+      }
+  }
+  return ret;
+}
 
-$.extend = function(json1, json2) {
-    for (var attr in json1) {
-        json2[attr] = json1[attr];
-    }
-    return json2;
-};
-//获指定元素的指定属性值
-function getAttrByElement(element,attr){
-    if(element.currentStyle){
-        return element.currentStyle[attr];
-    }
-    else{
-        return getComputedStyle(element,false)[attr];
-    }
-}
-// 实现一个简单的Query
-function $(selector,parentNode){
-    var dom =parentNode || document;
-    var first = selector.charAt(0);
-//找到的对象
-    var target;
-    var domAll;
+function _$(root,selector){
     var i;
-    var attr;
-    var attrValue;
-    if(selector.indexOf(" ")!= -1){
-        var arrClass = selector.split(" ");
-        var pNode = this.$(arrClass[0]);
-        for(i=1;i<arrClass.length;i++){
-            target = this.$(arrClass[i],pNode);
-            pNode = target;
-        }
-        return target;
+    var _element;
+    if(selector.indexOf('#') == 0){
+        var _id = /#(.+)/.exec(selector)[1];
+        return root.getElementById(_id);
     }
-    //dom.getElementsByClassName() 这个方法貌似只有火狐支持
-    switch (first){
-        case "#": target = dom.getElementById(selector.substring(1));break;
-        case ".": domAll = dom.getElementsByTagName("*");
-            for( i =0;i<domAll.length;i++){
-                if(domAll[i].getAttribute("class") == selector.substring(1)){
-                    target = domAll[i];
-                    break;
+    else if(/^\w+$/.test(selector)){
+        return root.getElementsByTagName(selector)[0];
+    }
+    else{        
+        if(selector.indexOf('.') == 0){
+            var _allElements = root.getElementsByTagName('*');
+            var _class = /\.(.+)/.exec(selector)[1];
+            for(i = 0; i < _allElements.length; i++){
+                _element = _allElements[i];
+                if(_element.className.indexOf(_class) >= 0){
+                    return _element;
                 }
-            }break;
-        case "[" :
-            var flags = selector.indexOf("=");
-            domAll = dom.getElementsByTagName("*");
-            if( flags== -1){
-                attr = selector.substring(1,selector.length-1);
-                for( i =0;i<domAll.length;i++){
-                    if(domAll[i].getAttribute(attr)){
-                        target = domAll[i];
-                        break;
-                    }
-                }
-
             }
-            else{
-                attr = selector.substring(1,flags);
-                attrValue = selector.substring(flags+1,selector.length-1);
-                for( i =0;i<domAll.length;i++){
-                    if(domAll[i].getAttribute(attr) == attrValue){
-                        target = domAll[i];
-                        break;
-                    }
+        }
+        var _data = /^\[(.+)\]$/.exec(selector);
+        if(_data && _data.length && _data.length > 1){
+            _data = _data[1];
+            var _dataArr = _data.split('=');
+            var _name = _dataArr[0];
+            var _value = _dataArr.length === 2 ? _dataArr[1] || '' : '';
+            var _allElements = root.getElementsByTagName('*');            
+            for(i = 0; i < _allElements.length; i++){
+                _element = _allElements[i];
+                if((_value !== '' &&  _element.getAttribute(_name) === _value) || (_value === '' && _element.getAttribute(_name) !== null)){
+                    return _element;
                 }
-            }break;
-        //通过标签返回的是第一个匹配的tag值
-        default:target = dom.getElementsByTagName(selector)[0];
-
-    }
-    return target;
-
+            }
+        }
+    }    
 }
-// 给一个element绑定一个针对event事件的响应，响应函数为listener
+// 实现一个简单的Query，返回符合条件的一个元素
+function $(selector,_root) {
+    var root = _root || (typeof document === 'undefined' ? null : document);
+    if(!root) return null;
+    var result = null;
+    var arr = selector.split(' ');
+    var len = arr.length,i;
+    var subSelector;
+    for(i = 0; i < len; i++){
+        subSelector = arr[i];
+        result = _$(root,subSelector);
+        root = result;
+    }
+    return result;
+}
+
+
+// 给一个dom绑定一个针对event事件的响应，响应函数为listener
+/*
 function addEvent(element, event, listener) {
-    // your implement
     if(element.addEventListener){
         element.addEventListener(event,listener,false);
-    }
-    else if(element.attachEvent){
-        element.attachEvent('on'+event,listener);
-    }
-    else{
-        element['on'+event] = listener;
+    }else if(element.attachEvent){
+        element.attachEvent('on' + event,listener);
+    }else{
+        element['on' + event] = listener;
     }
 }
-
-// 移除element对象对于event事件发生时执行listener的响应
-function removeEvent(element, event, listener) {
-    // your implement
-    if(element.removeEventListener){
-        element.removeEventListener(event,listener,false);
-    }
-    else if(element.detachEvent){
-        element.detachEvent('on'+event,listener);
-    }
-    else{
-        element['on'+event] = null;
+*/
+//修改后的事件处理方法
+function addEvent(element, event, listener) {
+    if(element.addEventListener){
+        element.addEventListener(event,function(e){
+            var target = e.target;
+            listener.call(target,e);
+        },false);
+    }else if(element.attachEvent){
+        element.attachEvent('on' + event,function(){
+            var event = window.event;
+            var target = event.srcElement;
+            listener.call(target,event);
+        });
+    }else{
+        element['on' + event] = listener;
     }
 }
 // 实现对click事件的绑定
 function addClickEvent(element, listener) {
-    if (element.addEventListener) {
-        element.addEventListener("click", listener, false);
-    }else if (element.attachEvent) {
-        element.attachEvent("onclick", listener);
-    }else {
-        element.onclick = listener;
-    }
+    addEvent(element,'click',listener);
 }
-
 // 实现对于按Enter键时的事件绑定
 function addEnterEvent(element, listener) {
-    if (element.addEventListener) {
-        element.addEventListener("keydown", function (ev) {
-            var oEvent = ev || event;
-            if (oEvent.keyCode == 13) {
-                listener();
-            }
-        }, false);
-    }else if (element.attachEvent) {
-        element.attachEvent("onkeyup", function (ev) {
-            var oEvent = ev || event;
-            if (oEvent.keyCode == 13) {
-                listener();
-            }
-        });
-    }else {
-        element.onkeyup = function (ev) {
-            var oEvent = ev || event;
-            if (oEvent.keyCode == 13) {
-                listener();
-            }
-        };
-    }
-}
-//事件代理的实现,思想就是当事件冒泡到父元素时，查看事件的target（即事件来源），如果是子元素则进行事件响应
-$.delegate = function(element, tag, event, listener) {
-    // console.log(element);
-    addEvent(element, event, function(ev){
-        var ev = ev || event;
-        //兼容处理
-        var target = ev.target || ev.srcElement;
-        //nodeName 标签名字
-        if (target.nodeName.toLowerCase() == tag) {
-            listener();
+    addEvent(element,'keydown',function(e){
+        //var event = e || window.event;
+        var key = e.keyCode;
+        if(key === 13){
+            listener.call(e);
         }
     });
-};
-
-// 接下来我们把上面几个函数和$做一下结合，把他们变成$对象的一些方法
-// addEvent(element, event, listener) -> $.on(element, event, listener);
-
-$.on = function(element, event, listener) {
-    addEvent(element, event, listener);
 }
 
-$.un = function(element, event, listener) {
-    removeEvent(element, event, listener);
+function preventDefault(e){
+    if(e.preventDefault){
+        e.preventDefault();
+    }else{
+        e.returnValue = false;
+    }
 }
-
-$.click = function(element, listener) {
-    $.on(element, 'click', listener);
+function stopPropagation(e){
+    if(e.stopPropagation){
+        event.stopPropagation();
+    }else{
+        e.cancelBubble = true;
+    }
 }
-
-$.enter = function(element, listener) {
-    addEnterEvent(element, listener);
+function getTarget(e){
+    return e.target || e.srcElement;
 }
+//接下来我们把上面几个函数和$做一下结合，把他们变成$对象的一些方法
+$['on'] = addEvent;
+$['un'] = function(element,event,listener){
+    if(element.removeEventListener){
+        element.removeEventListener(event,listener,false);
+    }else if(element.detachEvent){
+        element.detachEvent('on' + event,listener);
+    }else{
+        element['on' + event] = null;
+    }
+}
+$['click'] = addClickEvent;
+$['enter'] = addEnterEvent;
+$['preventDefault'] = preventDefault;
+$['stopPropagation'] = stopPropagation;
+$['getTarget'] = getTarget;
+// 事件代理
+/*
+function delegateEvent(element, tag, eventName, listener) {
+    $.on(element,eventName,function(e){
+        var event = e || window.event;
+        var target = event.target || event.srcElement;
+        if(target.nodeName.toLowerCase() === tag){
+            listener.call(null,event);
+        }
+    });
+}
+*/
+function delegateEvent(element, tag, eventName, listener) {
+    $.on(element,eventName,function(e){
+        if(this.nodeName.toLowerCase() === tag){
+            listener.call(this,e);
+        }
+    });
+}
+$.delegate = delegateEvent;
 
+//5. BOM
 // 判断是否为IE浏览器，返回-1或者版本号
 function isIE() {
-    // your implement
-    var sTr = window.navigator.userAgent;
-    return sTr.toLowerCase().indexOf("ie") != -1;
+    var userAgent = navigator.userAgent;
+    var match = /MSIE ([^;]+)/.exec(userAgent);
+    if(match !== null){
+        return parseFloat(match[1]);
+    }
+    return -1;
 }
+
 // 设置cookie
 function setCookie(cookieName, cookieValue, expiredays) {
-    var exdate = new Date();
-    exdate.setDate(exdate.getDate() + expiredays);
-    document.cookie = cookieName + "=" + escape(cookieValue) + ((expiredays == null) ? "" : ";expires=" + exdate.toUTCString());}
+    var setCookie = encodeURIComponent(cookieName) + '=' + encodeURIComponent(cookieValue) + ';';
+    if(isDate(expiredays)){
+        setCookie += 'expires=' + expiredays.toGMTString() + ';';
+    }
+    document.cookie = setCookie;
+}
+
+// 删除cookie
+function deleteCookie(cookieName){
+    setCookie(cookieName,'',new Date(0));
+}
 
 // 获取cookie值
 function getCookie(cookieName) {
-    if (document.cookie.length > 0) {
-        var c_start = document.cookie.indexOf(cookieName + "=");
-        if (c_start != -1) {
-            c_start = c_start + cookieName.length + 1;
-            var c_end = document.cookie.indexOf(";", c_start);
-            if (c_end ==-1) {
-                c_end = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(c_start, c_end));
+    cookieName = encodeURIComponent(cookieName) + '=';
+    var cookieValue = null;
+    var cookie = document.cookie;
+    var startIndex = cookie.indexOf(cookieName);
+    if(startIndex >= 0){
+        var endIndex = cookie.indexOf(';',startIndex + 1);
+        if(endIndex == -1){
+            endIndex = cookie.length;
+            cookieValue = cookie.substring(startIndex + cookieName.length,endIndex);
         }
-        return "";
     }
+    return cookieValue;
 }
 
-//options是一个对象，里面可以包括的参数为：
-//
-//type: post或者get，可以有一个默认值
-//data: 发送的数据，为一个键值对象或者为一个用&连接的赋值字符串
-//onsuccess: 成功时的调用函数
-//onfail: 失败时的调用函数
+// 学习Ajax，并尝试自己封装一个Ajax方法
+// options: data,onsuccess,timeout,method
+function serialize(data){
+    var args = [];
+    for(var p in data){
+        if(data.hasOwnProperty(p)){
+            args.push(p + '=' + data[p]);
+        }
+    }
+    return args.join('&');
+}
 function ajax(url, options) {
-
-    var userdata = '';
-    //默认情况是‘get’方式
-    options.type = options.type || 'get';
-
-    //创建对象 兼容ie6
-    if (window.XMLHttpRequest) {
-        var xhr = new XMLHttpRequest();
-    } else {
-        var xhr = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-
-    //请求数据的处理 键值对 => 字符串
-    if (typeof options.data === 'object') {
-        for (var attr in options.data) {
-            userdata += attr + '=' + options.data[attr] +'&';
-        }
-        userdata = userdata.substring(0,userdata.length-1);
-    } else {
-        userdata = options.data || '';
-    }
-
-    //'get' 方式 发送数据
-    if (options.type.toLowerCase() == 'get') {
-
-        xhr.open('get', url+'?'+userdata,true);
-        xhr.send();
-        //'post' 方式 发送数据
-    } else {
-        // xhr.setRequestHeader("content-type","application/x-www-form-urlencoded; charset=UTF-8");
-        xhr.open('post', url, true);
-        xhr.send(userdata);
-    }
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
-                options.onsuccess && options.onsuccess(xhr.responseText);
-            } else {
-                options.onfail && options.onfail(xhr.status);
+    var xhr = new XMLHttpRequest();
+    var onsuccess = options.onsuccess || function(){}
+    var method = options.method.toLocaleLowerCase() || 'get';
+    var data = options.data || null;
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            if(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+                onsuccess.call(null,xhr.responseText,xhr);
             }
         }
     }
-
+    xhr.open(method,url,true);
+    if(options.method.toLocaleLowerCase() === 'get'){
+        xhr.send(null);
+    }else{
+        xhr.send(serialize(data));
+    }
 }
+
+
+
+
+
+
+
+
