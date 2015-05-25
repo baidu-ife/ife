@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>task0003</title>
+    <link rel="stylesheet" href="css/task0003.css">
+</head>
+<body>
+<header>
+    <h1>zmiaozzz</h1>
+</header>
+<div class="main-wrapper">
+
+    <aside class="category-list">
+
+        <div class="clist-wrap">
+
+        </div>
+
+        <div class="add-wrap">
+            <div class="add"></div>
+            <span>新增分类</span>
+        </div>
+    </aside>
+
+    <aside class="task-list">
+        <ul class="task-tab">
+            <li class="all-task" id="all">所有</li>
+            <li class="unfinished-task" id="0">未完成</li>
+            <li class="finished-task" id="1">已完成</li>
+        </ul>
+
+        <ul class="tlist-wrap">
+
+        </ul>
+
+        <div class="add-wrap">
+            <div class="add"></div>
+            <span>新增任务</span>
+        </div>
+    </aside>
+
+    <article>
+        <div class="task-info">
+
+            <div class="thead-wrap title-wrap">
+                <span>任务名称：</span>
+                <input class="thead t-title" type="text" autofocus="autofocus">
+            </div>
+
+            <div class="thead-wrap time-wrap">
+                <span>任务时间：</span>
+                <input class="thead t-time" type="datetime" placeholder="日期格式：YYYY-MM-DD">
+            </div>
+
+            <textarea class="task-content" placeholder="请输入任务内容"></textarea>
+
+        </div>
+    </article>
+</div>
+
+<form class="panel">
+    <h1>新增分类</h1>
+    <div class="panel-content">
+        <span>分类名称：</span>
+        <input type="text" placeholder="请输入分类名" autofocus="autofocus">
+    </div>
+    <input class="confirm" type="button" value="确认">
+    <input class="cancel" type="button" value="取消">
+</form>
+
+<script src="js/util.js"></script>
+<script src="js/task0003.js"></script>
+</body>
+</html>

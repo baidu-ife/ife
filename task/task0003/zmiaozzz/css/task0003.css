@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+/********************** header **********************/
+header {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    border: solid 1px #C2C2C2;
+    background-color: #DDD;
+}
+header h1 {
+    margin-left: 20px;
+    color: #939393;
+}
+/********************** main-wrapper **********************/
+.main-wrapper {
+    position: absolute;
+    top: 82px;
+    bottom: 0;
+    width: 100%;
+}
+/* 遮罩层 */
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .3;
+}
+/* 新增面板 */
+.panel {
+    display: none;
+    position: absolute;
+    z-index: 1001;
+    left: 50%;
+    top: 50%;
+    margin-left: -175px;
+    margin-top: -100px;
+    width: 350px;
+    height: 200px;
+    border: solid 2px #DDD;
+    background-color: #FFF;
+}
+.panel h1 {
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: solid 1px #DDD;
+}
+.panel-content {
+    padding: 20px;
+}
+.panel-content span {
+    display: block;
+    margin-bottom: 15px;
+}
+.panel-content input {
+    width: 250px;
+    height: 25px;
+}
+.confirm,
+.cancel {
+    position: absolute;
+    bottom: 10px;
+    width: 50px;
+    height: 25px;
+}
+.confirm {
+    left: 80px;
+}
+.cancel {
+    left: 150px;
+}
+.confirm:hover,
+.cancel:hover {
+    cursor: pointer;
+}
+/* 分类category */
+.category-list {
+    position: absolute;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    border-right: solid 1px #C2C2C2;
+    background-color: #F2F2F2;
+}
+.clist-wrap h2 {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.clist {
+    padding-left: 10px;
+    list-style-type: none;
+    font-size: 16px;
+}
+.clist .active {
+    background-color: #DDD;
+}
+.citem {
+    padding: 5px 0 0 5px;
+}
+.citem a {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 0 5px;
+}
+.citem .cname {
+    display: inline-block;
+    margin-left: 10px;
+}
+.delete {
+    display: none;
+    float: right;
+    width: 16px;
+    height: 16px;
+    background: url(../img/delete.png) no-repeat center;
+    background-size: 16px 16px;
+}
+.folder {
+    display: inline-block;
+    width: 17px;
+    height: 14px;
+    vertical-align: middle;
+    background: url(../img/folder.png) no-repeat center;
+    background-size: 17px 14px;
+}
+.subfolder {
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    vertical-align: middle;
+    background: url(../img/sub-folder.png) no-repeat center;
+    background-size: 12px 14px;
+}
+.unfinished-num {
+    display: inline-block;;
+    margin-left: .5em;
+}
+.citem:hover {
+    cursor: pointer;
+}
+/* 任务列表task-list */
+.task-list {
+    position: absolute;
+    left: 251px;
+    width: 250px;
+    height: 100%;
+    border-right: solid 1px #C2C2C2;
+}
+.task-tab {
+    padding: 10px;
+    font-size: 0;
+    list-style: none;
+    border-bottom: solid 1px #C2C2C2;
+    background-color: #EEE;
+}
+.task-tab li {
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+.task-tab .active {
+    border: solid 1px #DDD;
+    background-color: #FFF;
+}
+.tlist-wrap {
+    list-style-type: none;
+    width: 100%;
+}
+.tlist-wrap span {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 1em;
+    background-color: #FAFAEE;
+}
+.task-wrap {
+    list-style-type: none;
+}
+.task-wrap li {
+    height: 30px;
+    line-height: 30px;
+    text-indent: 2em;
+}
+.task-wrap .active {
+    background: #F2F2F2;
+}
+.unfinished {
+    color: #3D7E20;
+}
+/* 新增按钮 */
+.add-wrap {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    border-top: solid 1px #C2C2C2;
+    background-color: #EEE;
+}
+.add {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-left: 20px;
+    vertical-align: middle;
+    background: url(../img/add.png) no-repeat center;
+    background-size: 22px 22px;
+}
+.add-wrap span {
+    display: inline-block;
+    padding-left: 8px;
+    font-size: 14px;
+}
+
+.task-tab li:hover,
+.task-wrap li:hover,
+.add-wrap:hover {
+    cursor: pointer;
+}
+/* article */
+article {
+    position: absolute;
+    left: 502px;
+    right: 0;
+    height: 100%;
+    font-size: 14px;
+}
+.task-info {
+    display: none;;
+}
+.thead-wrap{
+    position: relative;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 20px;
+    border-bottom: solid 1px #C2C2C2;
+}
+.thead {
+    width: 35%;
+    height: 30px;
+}
+.operate-button {
+    display: inline-block;
+}
+.complete,
+.close,
+.edit {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 31px;
+    height: 31px;
+}
+.complete:hover,
+.close:hover,
+.edit:hover {
+    cursor: pointer;
+}
+.complete {
+    right: 60px;
+    background: url(../img/complete.png) no-repeat center;
+    background-size: 31px 31px;
+}
+.close {
+    right: 20px;
+    background: url(../img/close.png) no-repeat center;
+    background-size: 31px 31px;
+}
+.edit {
+    right: 20px;
+    background: url(../img/edit.png) no-repeat center;
+    background-size: 25px 25px;
+}
+.task-content {
+    position: absolute;
+    top: 142px;
+    bottom: 0;
+    width: 80%;
+    padding: 35px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+.title-warning,
+.time-warning {
+    margin-left: 10px;
+    color: #FE0000;
+}
+.content-warning {
+    position: absolute;
+    left: 40px;
+    top: 150px;
+    color: #FE0000;
+}
+
