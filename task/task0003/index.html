@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>个人任务管理系统</title>
+        <link rel="stylesheet" href="css/layout.css" >
+        <script src="js/storage.js"></script>
+    </head>
+    <body>
+        <!--添加任务分类的弹出框代码-->
+        <div class="overlay" id="addBox">
+            <div class="addClass-prompt">
+                <img src="img/close-icon.png" class="close">
+                <div>
+                    分类名称：
+                    <input type="text" class="add-input" name="taskClassName" id="taskClassName">
+                </div>
+                <div>
+                    是否作为顶层分类：
+                    <input type="radio" name="istop" value="0" checked> 否
+                    <input type="radio" name="istop" value="1" class="sigOpt">是
+                </div>
+                <input type="button" value="确定" id="sureAdd">
+            </div>
+        </div>
+
+
+        <div class="header">
+            <img src="img/logo.jpg">
+        </div><!--header end-->
+        <div class="container">
+            <div class="content">
+                <div class="main-wrap">
+                    <div id="noContent">
+                        <p>您还没有选择任务！请在左边任务栏选择您想查看的任务！</p>
+                    </div>
+
+                    <div id="showBox">
+                        <div class="todo-bar">
+                            <h1>todo 3</h1>
+                            <img src="img/edit.jpg" title="点击此图标编辑任务" id="edit-coin">
+                            <img src="img/competed.jpg" title="点击此图标设置任务状态为完成" id="complete-coin">
+                        </div>
+                        <div class="task-date">
+                            <p>任务日期：2015-04-29</p>
+                        </div>
+                        <div class="task-content">
+                            <p>完成task3编码工作</p>
+                        </div>
+                    </div>
+
+
+                    <div id="editBox" class="editBox">
+                        <form>
+                            <div class="editItem">
+                                <label for="taskName"><span class="hint">*</span>任务名称：</label>
+                                <input type="text" id="taskName" name="taskName" class="edt-input" required = "required">
+                                <!--<span class="hint">*此项为必填项</span>-->
+                            </div>
+                            <div class="editItem">
+                                <label for="taskDate"><span class="hint">*</span>任务日期：</label>
+                                <input type="date" id="taskDate" name="taskDate" class="edt-input" required = "required">
+                                <!--<span class="hint">*此项为必填项</span>-->
+                            </div>
+                            <div class="editItem">
+                                <label for="taskContent"><span class="hint">*</span>任务内容：</label>
+                                <textarea id="taskContent" name="taskContent" class="edt-area" required = "required" placeholder="注意字数不能超过200 "></textarea>
+                                <p class="hint">注意：任务内容的填写字数不能超过200！</p>
+                            </div>
+                            <div class="btnBox">
+                                <input type="button" id="returnBtn" value="返回" class="Btn">
+                                <input type="submit" id="addTaskBtn" value="提交" class="Btn">
+                            </div>
+                            <p class="hint">注意：“*”号标注的是必填项，请务必填写！</p>
+                        </form>
+                    </div>
+                </div>
+
+            </div><!--content end-->
+            <div class="left-side">
+                <div class="left-colunm">
+                    <div class="task-nav">
+                        <h2 id="isAll">所有任务<span id="allCount"></span></h2>
+                        <h2 id="classification">分类列表</h2>
+                        <ul class="task-c">
+                        </ul>
+                    </div><!--task-nav end-->
+                    <div class="add" id="add-class">
+                        <img src="img/add_icon.jpg" class="add-icon">
+                        <p>新增分类</p>
+                    </div>
+                </div><!--left-column end-->
+                <div class="sub-left-colunm">
+                    <div class="todo-nav">
+                        <ul class="todo-class">
+                            <li class="current" id="0">所有</li>
+                            <li id="-1">未完成</li>
+                            <li id="1">已完成</li>
+                        </ul>
+                        <ul class="date-list">
+
+                        </ul>
+                    </div>
+                    <div class="add add-task">
+                        <img src="img/add_icon.jpg" class="add-icon">
+                        <p>新增任务</p>
+                    </div>
+                </div><!--sub-left-column end-->
+            </div>
+        </div><!--container end-->
+        <!--<div class="footer">-->
+
+        <!--</div>-->
+        <!--footer end-->
+        <script src="js/util.js"></script>
+        <script src="js/task0003.js"></script>
+    </body>
+</html>

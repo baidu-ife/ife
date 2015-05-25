@@ -1,0 +1,382 @@
+body {
+	background-color: #FFFFFF;
+	font-family:  "宋体", "Arial Black", Gadget, sans-serif;
+	font-size: 14px;
+	/*min-height: 500px;*/
+	min-width: 980px;
+	position:  relative;
+	}
+.header {
+	height: 60px;
+	width: 100%;
+	background-color: #DDDDDD;
+	border: 1px solid #CCCCCC;
+	}
+.container {
+	/*min-height: 440px;*/
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	}
+.footer {
+	height: 80px;
+	background-color: #CCCCCC;
+	width: 100%;
+	}
+
+
+/*--------------------------------------------添加任务的弹出框内容样式设置开始-----------------------------------------------------*/
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 600px;
+	height: 100%;
+	z-index: 10;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+
+.addClass-prompt {
+	position: absolute;
+	z-index: 11;
+	padding: 50px 30px;
+	border: 2px solid #999999;
+	background-color:  #FFFFFF;
+	width: 300px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	top: 40%;
+	left: 40%;
+}
+.addClass-prompt div {
+	padding-bottom: 20px;
+}
+.close {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 0;
+	right: 0;
+}
+.close:hover {
+	cursor:  pointer;
+	background-color: #CCCCCC;
+}
+#sureAdd {
+	position: absolute;
+	bottom: 30px;
+	right:  30px;
+	cursor:  pointer;
+}
+.sigOpt {
+	margin-left: 30px;
+}
+
+/*--------------------------------------------添加任务的弹出框内容样式设置结束----------------------------------------------------*/
+/*--------------------------------------------container的布局开始-----------------------------------------------------*/
+.left-side {
+	float: left;
+	width: 462px;
+	overflow: hidden;
+	margin-left: -100%;
+	height: 100%;
+	}
+	
+.left-colunm {
+	float: left;
+	width: 230px;
+	background-color: #F2F2F2;
+	height: 100%;
+	margin-bottom:-1000px;
+	padding-bottom: 1000px;
+	}
+	
+.sub-left-colunm {
+	float: left;
+	width: 230px;
+	border: 1px #CCCCCC solid;
+	height: 100%;
+	margin: 0;
+	margin-bottom:-1000px;
+	padding-bottom: 1000px;
+	}
+.content {
+	float: left;
+	width: 100%;
+	margin-bottom:-1000px;
+	padding-bottom: 1000px;
+	}
+
+.main-wrap {
+	margin-left: 462px;
+	min-width: 500px;
+	}
+/*--------------------------------------------container的布局结束-----------------------------------------------------*/
+
+
+/*--------------------------------------------left-column内容样式设置开始-----------------------------------------------------*/
+
+.task-nav{
+	padding-top: 25px;
+	min-height: 576px;
+	height: 100%;
+	}
+.task-nav h2{
+	font-size: 14px;
+	font-weight: 100;
+	margin: 0 0 10px 10px;
+	padding: 0;
+	height: 20px;
+	cursor: pointer;
+	}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+.task-c {
+	width: 100%;
+	}	
+.task-c li {
+	width: 100%;
+	}
+.delete {
+	margin-right: 20px;
+	margin-top: 10px;
+	float: right;
+	display: none;
+	cursor: pointer;
+	}
+.class-name {
+	position: relative;
+	margin-left: 30px;
+	background: url(../img/class_icon.jpg) no-repeat;
+	background-position: 0px 12px;
+	padding: 10px 20px 10px 30px;
+	line-height: 30px;
+	cursor: pointer;
+	}
+.selected {
+	color: #33CC33;
+}
+.task-i {
+	display:  none;
+}
+.task-i > li:hover, .task-i > li.current {
+	background-color: #FFF;
+	}
+.task-name {
+	background: url(../img/task_icon.jpg) no-repeat 0 12px;
+	padding: 10px 20px;
+	line-height: 30px;
+	margin-left: 50px;
+	cursor: pointer;
+	}
+
+
+
+.add {
+	height: 40px;
+	border: 1px solid #CCC;
+	cursor: pointer;
+	background-color: #F2F2F2;
+	margin-top: -42px;
+	/*position: absolute;*/
+	/*bottom: 0;*/
+	/*width: 228px;*/
+	}
+.add p {
+	font-size: 12px;
+	margin-left: 50px;
+	/*cursor: pointer;*/
+	}
+.add-icon {
+	height: 20px;
+	width: 20px;
+	margin: 10px 10px 10px 20px;
+	/*cursor: pointer;*/
+	position: absolute;
+	}
+/*--------------------------------------------left-column内容样式设置结束-----------------------------------------------------*/
+
+
+/*--------------------------------------------sub-left-column内容样式设置结束-----------------------------------------------------*/
+
+.todo-nav {
+	min-height: 600px;
+	height: 100%;
+	/*overflow: scroll;*/
+	}
+.todo-class {
+	padding: 10px 0 10px 10px;
+	list-style: none;
+	font-size: 12px;
+	height: 20px;
+	background-color: #EEEEEE;
+	overflow: hidden;
+	}
+.todo-class li {
+	float:left;
+	padding: 0 10px;
+	height: 20px;
+	line-height: 20px;
+	cursor: pointer;
+	}
+.todo-class li.current, .todo-class li:hover{
+	background-color: #FFF;
+	}
+
+
+.date-list li {
+	width: 100%;
+	}
+.date-list > li {
+	background-color: #FAFAEE;
+	}
+.date {
+	padding: 10px 0 10px 20px;
+	line-height: 30px;
+	}
+	
+.todo-list {
+	background-color: #FFFFFF;
+	cursor: pointer;
+	}
+    /*.todo-item {*/
+		/*cursor: pointer;*/
+	/*}*/
+	.taskItem {
+		height: 30px;
+		}
+	.todo-list li.current {
+		/*color: #3C3;*/
+		background-color: #F7F7F7;
+		/*color: #FF0000;*/
+		font-weight: 700;
+		}
+	.completed {
+		color: #33CC33;
+	}
+	.todo-list li:hover {
+		background-color: #F7F7F7;
+		}
+	.todo-name {
+		line-height: 30px;
+		margin-left: 40px;
+		}
+.add-task {
+	border-left: 0;
+	}
+/*--------------------------------------------sub-left-column内容样式设置结束-----------------------------------------------------*/
+
+
+/*--------------------------------------------content内容样式设置开始-----------------------------------------------------*/
+.todo-bar {
+	height: 50px;
+	background-color: #F0F0F0;
+	}
+.todo-bar h1 {
+	float: left;
+	padding: 0;
+	margin: 0 0 0 30px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	}
+.todo-bar img {
+	float: right;
+	margin-right: 20px;
+	height: 25px;
+	width: 25px;
+	margin-top: 12px;
+	}
+.task-date {
+	height: 50px;
+	background-color: #FAFAEE;
+	}
+.task-date p {
+	margin: 0 0 0 30px;
+	padding: 0;
+	height: 50px;
+	line-height: 50px;
+	}
+.task-content {
+	padding: 10px;
+	}
+.task-content p {
+	margin: 0 0 0 20px;
+	padding: 0;
+	line-height: 170%;
+	}
+
+.editBox {
+	width: 100%;
+	display: none;
+}
+.editItem {
+	width: 400px;
+	margin-left: 100px;
+	padding: 20px;
+}
+.btnBox {
+	width: 400px;
+	/*margin-left: 100px;*/
+	/*padding: 20px;*/
+	text-align: center;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.editItem label {
+	padding: 20px 20px 20px 0;
+	}
+.edt-input {
+	height: 30px;
+	margin-top: 10px;
+}
+.edt-area {
+	margin-left: 100px;
+	width: 300px;
+	height: 150px;
+	display: inline;
+}
+.hint {
+	color: #FF0000;
+}
+.area-hint {
+	margin-left: -100px;
+}
+p.hint {
+	text-align: center;
+}
+.Btn {
+	/*float: right;*/
+	margin-right: 20px;
+	width: 50px;
+	padding: 7px;
+}
+.Btn:hover {
+	background-color: #999999;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+#noContent {
+	text-align:  center;
+}
+#noContent p {
+	color: #FF0000;
+	margin: 200px 0;
+}
+#showBox {
+	display: none;
+}
+/*--------------------------------------------content内容样式设置结束-----------------------------------------------------*/
+
+
+.header img {
+	margin: 20px;
+	}
+
