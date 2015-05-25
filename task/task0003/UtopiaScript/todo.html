@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>ToDo</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="header">
+    <h1>GTD Tools</h1>
+</div>
+
+<div id="container">
+    <div class="group">
+        <ul class="group-wrapper">
+            <li class="all-task"><h2>所有任务</h2></li>
+            <li class="group-list">
+                <h2>分类列表</h2>
+                <ul id="l-group">                   
+                </ul>
+            </li>
+        </ul>
+        <div class="add"><p id="add-group">新增分类</p></div>        
+    </div>
+
+    <div class="list">
+        <div class="nav">
+            <ul>
+                <li>所有</li>
+                <li>已完成</li>
+                <li>为完成</li>
+            </ul>
+        </div>
+        <ul id="list-wrapper"></ul>
+        <div class="add"><p id="add-task">新增任务</p></div>
+    </div>
+
+    <div class="todo">
+        <div class="todo-tittle">
+            任务标题：<span class="show"></span>
+            <input type="text" class="edit input-tittle" placeholder="在此输入任务标题">
+        </div>
+        <div class="todo-date">
+            任务日期：<span class="show"></span>
+            <input type="text" class="edit input-date" placeholder="在此输入任务日期(格式：XXXX-XX-XX)">
+        </div>
+        <div class="todo-content">
+            <span class="show"></span>
+            <textarea type="text" class="edit input-content" placeholder="在此输入任务内容"></textarea>
+            <span id="todo-error"></span>
+            <button class="edit" id="todo-confirm">保&nbsp;存</button>
+            <button class="edit" id="todo-cancel">取&nbsp;消</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop" id="pop">
+    <div class="pop-title">
+        <span class="pop-close"></span>
+        <span class="pop-name">新增分类</span>
+    </div>
+    <div class="pop-content">
+        <p>新分类的名称
+            <input type="text" id="pop-group-name" placeholder="请输入新分类的名称">
+            <span id="pop-error"></span>
+        </p>
+        <p>新分类父节点
+            <select id="pop-s-parent">
+              <option value="-1">无</option>
+            </select>
+        </p>
+        <button id="pop-confirm">确&nbsp;定</button>
+    </div>    
+</div>
+<div id="masklayer"></div>
+
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/todo.js"></script>
+</body>
+</html>
