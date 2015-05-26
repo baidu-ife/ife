@@ -20,7 +20,7 @@
     localStorage.c*/
 
 //console.log(localStorage.getItem("catalog"));
-if(localStorage.getItem("catalog")=="undefined"){
+if(localStorage.getItem("catalog")=="undefined"||localStorage.getItem("catalog")==null){
 var defaultCatalog=[
         {
             name:"默认分类",//default catalog
