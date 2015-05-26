@@ -206,9 +206,7 @@
 
 ### 7.1 任务描述
 
-fork本项目，在`task/task0001/work/`目录中创建一个以自己`Github`账号名称命名的目录，切记！！创建一个以自己`Github`账号名称命名的目录！
-
-在以你的`Github`名称命名的目录下创建以下四个html文件：
+在您自己的Github中建立一个新的仓库，比如命名为`task0001`，在该目录下创建以下四个html文件：
 
 - `index.html`：对应`task0001_1`及`task0001_1_marked`设计稿
 - `blog.html`：对应`task0001_2`及`task0001_2_marked`设计稿
@@ -238,7 +236,7 @@ fork本项目，在`task/task0001/work/`目录中创建一个以自己`Github`�
 - 完成编码后，删掉它们，不留一丝痕迹；
 - 开始重(Chong)构(Xie)，让自己的代码要比第一次有提升，尽可能地让第一次遇到问题和疑惑不再存在；
 - 在blog.html页面中真的写上2-3篇这次学习上的技术总结收获；
-- `Pull Request`你的代码，等待Review。
+- 初级班同学请在[这里](https://github.com/baidu-ife/ife/issues/764)，按要求回复您的task0001的Github地址。
 
 ### 7.2 期望达成
 
