@@ -38,7 +38,7 @@ h2{
 #container{
     position: absolute;
     top: 50px;
-    bottom: 0;
+    bottom: 0;  /*高度自适应*/
     width: 100%;
     min-height: 500px;
     display: -webkit-flex;
@@ -83,6 +83,9 @@ li{
     padding-left: 20px;
     cursor: pointer;
 }
+.add:hover{
+    background-color: #ddd;
+}
 .nav{
     position: absolute;
     top: 0;
@@ -92,12 +95,19 @@ li{
     border-bottom: 1px solid #ddd;
     background-color: #eee;
     line-height: 40px;
-    padding-left: 20px;
+    padding: 5px 15px 0px;
 }
 .nav ul li{
     list-style: none;
     float: left;
-    margin-right: 20px; 
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px; 
+    border: 0;
+    border-radius: 3px;
+}
+.nav ul li:hover{
+    background-color: #ddd;
 }
 #list-wrapper{
     position: absolute;
@@ -107,21 +117,46 @@ li{
 }
 #list-wrapper li{
     list-style: none;
-    margin: 10px 30px;
+    padding: 5px 30px;
+}
+.all-task, .group-list{
+    background-color: #eee;
+    height: 40px;
+    line-height: 40px;
+    list-style-image: url('../img/all.png');
+}
+.all-task:hover{
+    background-color: #e7e7e7;
 }
 .group-wrapper{
     width: 100%;
-    margin-top: 20px;
-    margin-left: 20px;
     line-height: 30px; 
-}
-.group-wrapper ul{
-    margin-left: 20px;
 }
 .group-wrapper li{
     list-style-position: inside;
+    padding-left: 20px;
+    margin-bottom: 3px;
 }
-
+.j-group{
+    list-style-image: url('../img/group.png');
+}
+.j-child-group{
+    list-style-image: url('../img/childgroup.png');
+    position: relative;
+}
+#childGroup-selected, .j-child-group:hover{
+    background-color: #ddd;
+    border: 0;
+    border-radius: 2px;
+}
+#todo-selected, .j-todo:hover{
+    background-color: #f2f2f2;
+}
+#l-group h2{
+    position: relative;
+    display: block;
+    height: 40px;
+}
 .pop{
     position: absolute;
     display: none;
@@ -265,3 +300,23 @@ textarea.input-content{
     display: none;
 }
 #todo-error{color: #ef5350;}
+.j-todo{
+    position: relative;
+}
+.j-todo:hover .del, .j-child-group:hover .del, .j-group h2:hover .del{
+    display: block;
+}
+.del{
+    position: absolute;
+    display: none;
+    top: 15px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #ef5350;
+    border: 0;
+    border-radius: 50%;
+}
+.j-todo .del{
+    top: 10px;
+}
