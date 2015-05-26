@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>task0002_5</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .parent-div {
+            /*border: solid #000000 1px;*/
+            width: 100px;
+            height: 600px;
+            background-color: #999999;
+            display: inline-block;
+            margin-left: 50px;
+        }
+        .child-div {
+            /*border: solid #000000 1px;*/
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*display: inline-block;*/
+            /*position: absolute;*/
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="left-div" class="parent-div">
+        <div class="child-div"></div>
+        <div class="child-div"></div>
+    </div>
+    <div id="right-div" class="parent-div">
+        <div class="child-div"></div>
+        <div class="child-div"></div>
+    </div>
+</div>
+
+<script src="js/util.js"></script>
+<script src="js/task0002_5.js"></script>
+</body>
+</html>
