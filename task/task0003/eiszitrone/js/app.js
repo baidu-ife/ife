@@ -351,6 +351,7 @@ App.prototype.clickCategorySetup = function() {
                     $("#new-category-button").setAttribute("disabled", true);
                     $("#new-task-button").setAttribute("disabled", true);
                     self.displayTaskList();
+                    self.showOneTask(null);
                 }
             };
             $('#cancel').onclick = function() {
