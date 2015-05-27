@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title> eiszitrone's To do list</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="header-title">GTD Tools</h1>
+    </div>
+
+    <div class="container">
+        <!-- left column -->
+        <div class="main-left">
+            <div class="all-task" >
+                <span>All tasks</span>(<span id="all-task-unFinishNum">0</span>)
+            </div>
+            <!-- category tree -->
+            <div id="category-list">
+            </div>
+
+            <div class="left-bottom">
+                <div class="bottom-button">
+                    <button id="new-category-button">
+                    <span class="iconfont">&#xe635;</span>&nbsp;&nbsp;&nbsp;&nbsp;Add category
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- middle column -->
+        <div class="main-middle">
+            <div id="task-state-nav">
+                <button class="active" id="task-all">All</button>
+                <button id="task-unfinished">Unfinished</button>
+                <button id="task-finished">Finished</button>
+            </div>
+            <ul class="middle-task-list" id="task-list">
+                
+            </ul>
+            <div class="middle-bottom">
+                <div class="bottom-button">
+                    <button id="new-task-button">
+                    <span class="iconfont">&#xe635;</span>&nbsp;&nbsp;&nbsp;&nbsp;Add task
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- right column -->
+        <div class="main-right">
+            <div class="right-top-title">
+                <span class="label">Task title: </span>
+                <input type="text" id="title-input">
+                <span id="title-tip"></span>
+                <button class="iconfont" id="task-complete-button" title="complete task">&#xe6db;</button>
+                <button class="iconfont" id="task-edit-button" title="edit task">&#xe66e;</button>
+            </div>
+
+            <div class="right-middle-date">
+                    <span class="label">Task date: </span>
+                    <input type="date" id="date-input">
+                    <span id="date-tip"></span>
+            </div>
+
+            <div class="task-content">
+                <textarea id="task-input">
+                </textarea>
+            </div>
+
+            <div class="right-bottom">
+                <div class="bottom-button ">
+                    <button id="save-button"><span class="iconfont">&#xe635;</span>&nbsp;&nbsp;Save changes</button>
+                </div>
+
+                <div class="bottom-button cancel-edit">
+                    <button id="cancel-button"><span class="iconfont">&#xf0003;</span>&nbsp;&nbsp;Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
