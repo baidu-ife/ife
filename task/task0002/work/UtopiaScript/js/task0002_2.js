@@ -12,8 +12,8 @@ function ShowCountDown(year,month,day,divname)
     var hour=Math.floor((leftsecond-day1*24*60*60)/3600); 
     var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60); 
     var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60); 
-    var cc = document.getElementById(divname); 
-    cc.innerHTML = "UtopiaScript提示距离"+time[0]+"年"+time[1]+"月"+time[2]+"日还有："+day1+"天"+hour+"小时"+minute+"分"+second+"秒"; 
+    var tip = document.getElementById(divname); 
+    tip.innerHTML = "UtopiaScript提示距离"+time[0]+"年"+time[1]+"月"+time[2]+"日还有："+day1+"天"+hour+"小时"+minute+"分"+second+"秒"; 
 } 
  
 function add(obj){
@@ -39,6 +39,7 @@ function check(obj){
 }
 var btn = $("#btn");
 addEvent( btn, "click", btnHandle );
+
 function btnHandle() {
     window.setInterval(function(){ShowCountDown(time[0],time[1],time[2],'tip');}, interval);
 }

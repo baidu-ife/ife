@@ -1,12 +1,15 @@
 *{
-    margin: 0;
-    padding: 0;
     border: none;
+    font-family: "Microsoft Yahei";
 }
-
+h1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
 .search{
     position: relative;   
-    width: 300px;
+    width: 980px;
     margin: 50px auto;
 }
 
@@ -24,10 +27,15 @@
 #s-input:focus{
     border: 1px solid #666;
 }
+.suggest{
+    display: none;
+}
 .suggest ul{
     position: absolute;
-    top: 40px;
+    top: 88px;
     width: 100%;
+    margin: 0;
+    padding: 0;
     list-style: none;
     border: 1px solid #CCC;
 }

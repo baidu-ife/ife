@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>task0002_2倒计时</title>
+    <link href="css/task0002_2.css" rel="stylesheet">
 </head>
 <body>
-<input type="text" id="time" maxlength="10" onkeyup="add(this)" onblur="check(this)"/>
-<input type="submit" id="btn" value="开始计时" />
-<span id="warn"></span>
-<div id="tip"></div> 
+<form>
+	<label for="hobby"><h1>小练习2：倒计时</h1></label>
+	<input type="text" id="time" maxlength="10" onkeyup="add(this)" onblur="check(this)"/>
+	<input type="button" id="btn" value="开始计时" />
+	<span id="warn"></span>
+	<div id="tip"></div>
+</form> 
 <script type="text/javascript" src="js/util.js"></script>
 <script type="text/javascript" src="js/task0002_2.js"></script>
 </body>

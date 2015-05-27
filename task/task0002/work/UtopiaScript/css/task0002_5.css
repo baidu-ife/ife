@@ -1,7 +1,12 @@
+*{font-family: "Microsoft Yahei";}
+h1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
 .wrapper{
     height:400px;
-    width: 600px;
-    background-color: #999;
+    width: 980px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -10,8 +15,9 @@
     float:left; 
     width:150px;
     height:300px; 
-    margin:70px;
-    border: 1px #000 solid;
+    margin-right:70px;
+    padding-right: 2px;
+    border: 1px solid #999;
 }
 
 #drag1, #drag2, #drag3 {
@@ -22,5 +28,5 @@
     -moz-user-select:none;
     cursor:move;
     background-color: red;
-    border: 1px #000 solid;
+    border: 1px solid #000;
 }
