@@ -1,8 +1,11 @@
 *{margin: 0; padding:0;}
-/* body{overflow: hidden;} */
 
 /*index*/
-body{background-color: #E6E6FA;}
+
+body{
+    min-width: 980px;
+    background-color: #E6E6FA;
+}
 *{
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -15,14 +18,14 @@ body{background-color: #E6E6FA;}
     height: 80px;
 }
 .title{
-    max-width: 980px;
+    width: 980px;
     height: 80px;
     padding-top: 45px;
     margin: 0 auto;
 }
 .logo{
     float: left;
-    max-width: 200px;
+    width: 200px;
     height: 30px;
 }
 .nav{
@@ -55,6 +58,11 @@ body{background-color: #E6E6FA;}
     width: 30px;
     height: 34px;
 }
+@media (max-width: 980px) {
+    #github {
+        display: none;
+    }
+}
 .background img{
     width: 100%;
     height: 100%;
@@ -67,7 +75,7 @@ body{background-color: #E6E6FA;}
     position: absolute;
     bottom: 0;
     right: 0;
-    max-width: 400px;
+    width: 400px;
     padding: 10px 10px 30px 10px;
 }
 .section h1{
