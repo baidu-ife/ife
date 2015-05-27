@@ -113,6 +113,7 @@ function creatGroup () {
             var del = document.createElement("span");
             h2.appendChild(del);           
             del.setAttribute("class", "del");
+            del.setAttribute("onclick", "del(event, this)");
         }
 
         if(group[i].child.length!=0){
@@ -135,7 +136,8 @@ function creatGroup () {
                 child_li.setAttribute("class", "j-child-group");
                 child_li.setAttribute("index", childGroup[j].id);   //添加索引序号
                 child_span.setAttribute("class", "child-group-count");  
-                del.setAttribute("class", "del");           
+                del.setAttribute("class", "del");
+                del.setAttribute("onclick", "del(event, this)");           
             }            
         }
     };
@@ -230,6 +232,7 @@ function creatToDo () {
                 var del = document.createElement("span");
                 li.appendChild(del);           
                 del.setAttribute("class", "del");
+                del.setAttribute("onclick", "del(event, this)");
 
                 showToDo();
             }
@@ -317,4 +320,84 @@ function showToDo () {
             show[2].innerHTML = todo[index].text;
         }
     };
+}
+
+//删除节点
+function del(e, ele) {
+    window.event ? window.event.cancelBubble = true : e.stopPropagation();  // 阻止事件冒泡
+
+    var con = confirm("确定要执行删除操作吗？");
+    if (!con) {
+        return;
+    }
+
+    var ele = ele.parentNode;
+    var type = ele.getAttribute("class");
+
+    //var index;
+    //var name = ele.getElementsByTagName('span')[0].innerHTML;
+    switch (type) {
+        case "null":    // 删除一个父分组
+            index = getIndexByKey(cate, 'name', name);
+
+            for (var i = 0; i < cate[index].child.length; i++) {            // 删除该分类下的所有子分类及任务
+                var childIndex = getIndexByKey(childCate, 'id', cate[index].child[i]);
+                for (var j = 0; j < childCate[childIndex].child.length; j ++) {
+                    var taskIndex = getIndexByKey(task, 'id', childCate[childIndex].child[j])
+                    task.splice(taskIndex, 1);
+                }
+                childCate.splice(childIndex, 1);
+            }
+            cate.splice(index, 1);
+            break;
+        case "j-child-group":    // 删除一个子分类
+            index = ele.getAttribute("index");
+            len = creatGroup.length-1;
+
+            for (var i = 0; i < childGroup[index].child.length; i++) {       // 删除该子分类下的所有任务
+                todo.splice(childGroup[index].child[i], 1);
+            }
+            save();
+            
+            var fatherObj = group[childGroup[index].father];  // 删除父节点中的记录
+            fatherObj.child.splice(fatherObj.child.indexOf(childGroup[index].id), 1);
+            
+            childGroup.splice(index, 1);    //删除子分类
+            save();
+            for (var i = Number(index); i < len; i++) {
+                var id = childGroup[i].id;
+                id--;
+                var father = group[childGroup[i].father];  // 修改父节点中的记录
+                father.child.splice(father.child.indexOf(childGroup[i].id), 1, id);
+                childGroup[i].id = id;    //修改剩余子分类id值
+            };
+            save();
+            for (var i = 0; i < todo.length; i++) {
+                var father = childGroup[todo[i].father];  // 修改父节点中的记录
+                console.log(todo.length);
+                father.child.splice(father.child.indexOf(todo[i].id), 1, i);
+                todo[i].id = i;
+            };
+
+            break;
+        case "j-todo":      //删除一个任务
+            index = ele.getAttribute("index");
+            len = todo.length-1;
+
+            var fatherObj = childGroup[todo[index].father];  // 删除父节点中的记录
+            fatherObj.child.splice(fatherObj.child.indexOf(todo[index].id), 1);
+            
+            todo.splice(index, 1);  //删除任务
+
+            for (var i = Number(index); i < len; i++) {
+                var id = todo[i].id;
+                id--;
+                var father = childGroup[todo[i].father];  // 修改父节点中的记录
+                father.child.splice(father.child.indexOf(todo[i].id), 1, id);
+                todo[i].id = id;    //修改剩余任务id值
+            };
+            break;
+    }
+    save();
+    creatGroup();
 }
