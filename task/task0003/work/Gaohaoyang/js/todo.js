@@ -108,8 +108,13 @@ function queryChildCatesByIdArray(idArr) {
     }
 }
 
-var data = JSON.parse(localStorage.cate);
-console.log(data[0].name);
+/**
+ * 查询所有任务
+ * @return {Array} 任务对象数组
+ */
+function queryAllTasks() {
+    return JSON.parse(localStorage.task);
+}
 
 //**********页面控制**************
 
@@ -117,26 +122,57 @@ initCates();
 
 //初始化分类
 function initCates() {
+
     var cate = queryCates(); //查出所有分类
-    var tempStr = '<ul class="level1">';
+    var tempStr = '<ul>';
 
     for (var i = 0; i < cate.length; i++) {
         var liStr = "";
         if (cate[i].child.length === 0) {
-            liStr = '<li><i class="fa fa-folder-open"></i>' + cate[i].name + ' (<span>' + cate[i].child.length + '</span>)</li>';
+            if (i === 0) {
+                liStr = '<li><h2 onclick="clickCate(this)"><i class="fa fa-folder-open"></i><span>' + cate[i].name + '</span> (' + cate[i].child.length + ')</h2></li>';
+            } else {
+                liStr = '<li><h2 onclick="clickCate(this)"><i class="fa fa-folder-open"></i><span>' + cate[i].name + '</span> (' + cate[i].child.length + ')<i class="fa fa-trash-o" onclick="del(event,this)></i></h2></li>';
+            }
         } else {
-            liStr = '<li><i class="fa fa-folder-open"></i>' + cate[i].name + ' (<span>' + cate[i].child.length + '</span>)<ul>';
+            liStr = '<li><h2 onclick="clickCate(this)"><i class="fa fa-folder-open"></i><span>' + cate[i].name + '</span> (' + cate[i].child.length + ')<i class="fa fa-trash-o" onclick="del(event,this)"></i></h2><ul>';
             var childCateArr = queryChildCatesByIdArray(cate[i].child);
             for (var j = 0; j < childCateArr.length; j++) {
                 var innerLiStr = "";
-                innerLiStr = '<li><i class="fa fa-file-o"></i>' + childCateArr[j].name + ' (<span>' + childCateArr[j].child.length + '</span>)</li>';
+                innerLiStr = '<li><h3 onclick="clickCate(this)"><i class="fa fa-file-o"></i><span>' + childCateArr[j].name + '</span> (' + childCateArr[j].child.length + ')<i class="fa fa-trash-o" onclick="del(event,this)"></i></h3></li>';
                 liStr += innerLiStr;
             }
-            liStr+='</ul></li>';
+            liStr += '</ul></li>';
         }
         tempStr += liStr;
     }
     tempStr += '</ul>';
-    console.log(tempStr);
-    $(".list").innerHTML = tempStr;
+    //写入列表内容区
+    $("#listcontent").innerHTML = tempStr;
+    //设置所有任务个数
+    $(".list-title span").innerHTML = queryAllTasks().length;
+}
+
+/**
+ * 点击垃圾桶图标
+ * @param  {[type]} element [description]
+ * @return {[type]}         [description]
+ */
+function del(e,element) {
+    //这里要阻止事件冒泡，待解决
+    window.event? window.event.cancelBubble = true : e.stopPropagation();
+    console.log("=====del======");
+    console.log(element);
+    console.log("element.parentNode");
+    console.log(element.parentNode);
+}
+
+/**
+ * 点击分类
+ * @param  {[type]} element [description]
+ * @return {[type]}         [description]
+ */
+function clickCate(element) {
+    console.log("=======clickCate=======");
+    console.log(element);
 }

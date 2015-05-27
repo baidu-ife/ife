@@ -12,20 +12,26 @@
         </div>
         <div class="main">
             <div class="left">
-                <div class="list-title">
-                    所有任务 (<span>2</span>)
+                <div class="list-title all-tasks active" onclick="clickCate(this)">
+                    所有任务 (<span>7</span>)
                 </div>
                 <div class="list-title">分类列表</div>
-                <div class="list">
-                    <ul class="level1">
-                        <li><i class="fa fa-folder-open"></i>百度IFE项目 (<span>2</span>)
-                            <ul>
-                                <li><i class="fa fa-file-o"></i>task1 (<span>2</span>)</li>
-                                <li><i class="fa fa-file-o"></i>task2 (<span>2</span>)</li>
-                            </ul>
-                        </li>
-                        <li><i class="fa fa-folder-open"></i>默认分类 (<span>0</span>)</li>
-                    </ul>
+                <div id="listcontent" class="list">
+                   <ul>
+                       <li>
+                       <h2 class="active"><i class="fa fa-folder-open"></i><span>百度IFE项目</span> (2)<i class="fa fa-trash-o"></i>
+                       </h2>
+                           <ul>
+                               <li>
+                                   <h3><i class="fa fa-file-o"></i><span>task1</span> (2)<i class="fa fa-trash-o"></i></h3>
+                               </li>
+                               <li>
+                                   <h3 class="active"><i class="fa fa-file-o"></i><span>task2</span> (2)<i class="fa fa-trash-o"></i></h3>
+                               </li>
+                           </ul>
+                       </li>
+                       <li><h2><i class="fa fa-folder-open"></i><span>默认分类</span> (0)<i class="fa fa-trash-o"></i></h2></li>
+                   </ul>
                 </div>
                 <button class="add"><i class="fa fa-plus"></i>新增分类</button>
             </div>

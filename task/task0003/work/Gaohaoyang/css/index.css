@@ -5,15 +5,18 @@
 /**
  * reset
  */
-div, body, h1, ul {
+div, body, h1,h2,h3, ul, li {
     margin: 0;
     padding: 0;
 }
 li {
     list-style-type: none;
 }
-h1 {
+h1,h2,h3 {
     font-weight: normal;
+}
+h2,h3{
+    font-size: 16px;
 }
 
 /**
@@ -52,7 +55,7 @@ h1 {
     top: 60px;
     bottom: 0;
     z-index: 9;
-    padding: 15px 10px 0 15px;
+    line-height: 2;    /*padding: 15px 10px 0 15px;*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -61,18 +64,45 @@ h1 {
     -o-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.35);
     box-shadow: 1px 0 3px rgba(0, 0, 0, 0.35);
 }
-.list-title {
-    margin-bottom: 12px;
+.left .active {
+    background-color: #eee;
 }
-.level1>li {
-    line-height: 1.8;
+.all-tasks {
+    padding-top: 5px;
+    cursor: pointer;
+}
+.list-title {
+    padding-left: 15px;
+}
+.list li{
+    cursor: pointer;
+}
+.list h2{
+    position: relative;
+    padding-left: 15px;
+}
+.list h3{
+    position: relative;
+    padding-left: 30px;
+}
+.list h2:hover,.list h3:hover{
+    background-color: #eee;
+}
+.list h2:hover .fa-trash-o,.list h3:hover .fa-trash-o{
+    display: inline-block;
 }
 .left i {
     margin-right: 5px;
 }
-.level1>li>ul {
-    margin-left: 20px;
+
+.fa-trash-o{
+    display: none;
+    font-size: 18px;
+    position: absolute;
+    right: 5px;
+    top:8px;
 }
+
 .add {
     width: 240px;
     height: 60px;
@@ -155,7 +185,7 @@ h1 {
     padding-left: 10px;
 }
 .task-list ul {
-    padding-left: 20px;    /*background-color: black;*/
+    /*padding-left: 20px;    background-color: black;*/
 }
 .add-task {
     width: 260px;
@@ -181,7 +211,7 @@ h1 {
     line-height: 55px;
     background-color: #dadada;
     overflow: auto;
-    position:relative;
+    position: relative;
     z-index: 5;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -206,12 +236,12 @@ h1 {
     line-height: 55px;
     background-color: #eee;
     padding-left: 15px;
-     position:relative;
+    position: relative;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-.content{
+.content {
     padding: 15px;
 }
