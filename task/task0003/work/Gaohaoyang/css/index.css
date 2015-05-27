@@ -46,7 +46,7 @@ h1 {
  * left
  */
 .left {
-    width: 260px;
+    width: 240px;
     background-color: #DADADA;
     position: absolute;
     top: 60px;
@@ -74,7 +74,7 @@ h1 {
     margin-left: 20px;
 }
 .add {
-    width: 260px;
+    width: 240px;
     height: 60px;
     position: absolute;
     left: 0;
@@ -103,7 +103,7 @@ h1 {
     position: absolute;
     top: 60px;
     bottom: 0;
-    left: 260px;
+    left: 240px;
     z-index: 8;
     padding: 15px 10px 0 15px;
     -webkit-box-sizing: border-box;
@@ -146,20 +146,19 @@ h1 {
     color: #fff;
     cursor: default;
 }
-.task-list{
+.task-list {
     margin-top: 10px;
     line-height: 2;
 }
-.task-list div{
+.task-list div {
     background-color: #E2E2DD;
-    padding-left:10px;
+    padding-left: 10px;
 }
-.task-list ul{
-    padding-left: 20px;
-    /*background-color: black;*/
+.task-list ul {
+    padding-left: 20px;    /*background-color: black;*/
 }
-
 .add-task {
+    width: 260px;
     background-color: #D8D8D8;
 }
 .add-task i {
@@ -174,26 +173,45 @@ h1 {
     top: 60px;
     right: 0;
     bottom: 0;
-    left: 520px;
-    background-color: #fff;
-    /*padding: 15px 10px 0 15px;*/
+    left: 500px;
+    background-color: #fff;    /*padding: 15px 10px 0 15px;*/
 }
-.title{
+.title {
     height: 55px;
     line-height: 55px;
     background-color: #dadada;
     overflow: auto;
+    position:relative;
+    z-index: 5;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-.todo-name{
-    padding-left: 20px;
+.todo-name {
+    padding-left: 15px;
     float: left;
 }
-.manipulate{
+.manipulate {
     font-size: 26px;
     padding-right: 20px;
     float: right;
 }
-.manipulate a{
-    margin-right: 10px;
+.manipulate a {
+    margin-right: 15px;
     cursor: pointer;
+}
+.task-date {
+    height: 55px;
+    line-height: 55px;
+    background-color: #eee;
+    padding-left: 15px;
+     position:relative;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.content{
+    padding: 15px;
 }
