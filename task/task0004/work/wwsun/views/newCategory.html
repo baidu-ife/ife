@@ -1,0 +1,22 @@
+<div class="container">
+    <h5>Add New Category</h5>
+
+    <div class="row">
+
+        <form class="col s12" ng-submit="newCategoryCtrl.add()">
+            <div class="input-field">
+                <input id="category_name" type="text" class="validate"
+                       ng-model="newCategoryCtrl.newCategoryName" required>
+                <label for="category_name">Category Name</label>
+            </div>
+
+            <input type="submit" value="Add" class="btn waves-effect waves-light"/>
+
+            <a class="btn waves-effect waves-light" ui-sref="home">Return
+                <i class="mdi-hardware-keyboard-backspace left"></i>
+            </a>
+        </form>
+    </div>
+</div>
+
+<h1>{{newCategoryCtrl.newCategoryName}}</h1>

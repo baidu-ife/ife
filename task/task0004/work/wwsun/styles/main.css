@@ -12,3 +12,13 @@ body, html {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.corner-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+span.task-date {
+    color: #FFFFFF;
+}

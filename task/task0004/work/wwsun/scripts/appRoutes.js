@@ -15,4 +15,10 @@ angular.module('appRoutes', [])
                 templateUrl: 'views/item.html',
                 controller: ''
             })
+
+            .state('newCategory', {
+                url: '/new/category',
+                templateUrl: 'views/newCategory.html',
+                controller: 'NewCategoryCtrl as newCategoryCtrl'
+            })
     });
