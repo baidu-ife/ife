@@ -4,7 +4,7 @@
             <div class="collapsible-header"><i class="mdi-action-list"></i>{{item.name}}</div>
             <div class="collapsible-body">
                 <div class="collection">
-                    <a ui-sref="item" class="collection-item" ng-repeat="task in item.tasks">{{task}}</a>
+                    <a ui-sref="item" class="collection-item" ng-repeat="task in item.tasks">{{task.title}}</a>
                 </div>
             </div>
         </li>
@@ -13,6 +13,6 @@
 
 <div class="row">
     <div class="corner-btn">
-        <a class="btn-floating btn-large waves-effect waves-light red" ui-sref="newCategory"><i class="mdi-content-add"></i></a>
+        <a class="btn-floating btn-large waves-effect waves-light red" ui-sref="newItem"><i class="mdi-content-add"></i></a>
     </div>
 </div>

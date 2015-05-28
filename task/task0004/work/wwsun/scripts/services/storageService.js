@@ -23,21 +23,45 @@ angular.module('todoApp.services', [])
             return taskArray;
         }
 
+        //function getCategoryById(catId) {
+        //
+        //}
+        //
+        //function getTaskById(taskId) {
+        //
+        //}
+
         return {
             listCategories: getCategoryArray,
 
             listTasks: getTaskArray,
 
-            getCategoryById: function(id) {
+            addNewTask: function(categoryId, task) {
+                task.id = Date.now();
+                var taskArray = getTaskArray();
+                var categoryArray = getCategoryArray();
 
-            },
+                // find category in category array
 
-            getTaskById: function(id) {
+                var i,
+                    n;
 
-            },
+                for (i=0, n=categoryArray.length; i<n; i++) {
+                    if(categoryArray[i].id === categoryId) {
+                        categoryArray[i].tasks.push(task);
+                        localStorage.setItem(categoryId, JSON.stringify(categoryArray[i])); // update category item
+                    }
+                }
 
-            addNewTask: function(category, task) {
+                // update category in category array
+                localStorage.setItem('categoryArray', JSON.stringify(categoryArray));
 
+                // insert new task to task array
+                taskArray.push(task);
+                localStorage.setItem('taskArray', JSON.stringify(taskArray));
+
+                // insert new task in localStorage
+                localStorage.setItem(task.id, JSON.stringify(task));
             },
 
             addNewCategory: function(category) {

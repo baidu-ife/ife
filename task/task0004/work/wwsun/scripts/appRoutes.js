@@ -16,9 +16,20 @@ angular.module('appRoutes', [])
                 controller: ''
             })
 
+            .state('newItem', {
+                url: '/new/item',
+                templateUrl: 'views/newItem.html'
+            })
+
             .state('newCategory', {
                 url: '/new/category',
                 templateUrl: 'views/newCategory.html',
                 controller: 'NewCategoryCtrl as newCategoryCtrl'
             })
+
+            .state('newTask', {
+                url: '/new/task',
+                templateUrl: 'views/newTask.html',
+                controller: 'NewTaskCtrl as newTaskCtrl'
+            });
     });

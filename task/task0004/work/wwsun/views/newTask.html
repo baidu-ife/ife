@@ -1,0 +1,39 @@
+<div class="container">
+    <h5>Add New Task</h5>
+
+    <form ng-submit="newTaskCtrl.add()" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input ng-model="newTaskCtrl.newTask.title" type="text" class="validate" required>
+                <label>Task title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <label>Category</label>
+            <select ng-model="newTaskCtrl.selectCategoryId"
+                    ng-options="c.id as c.name for c in newTaskCtrl.categories"
+                    class="browser-default"></select>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <textarea ng-model="newTaskCtrl.newTask.content" class="materialize-textarea"></textarea>
+                <label>Content</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <label>Due</label>
+            <input ng-model="newTaskCtrl.newTask.due" type="text" class="datepicker"/>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Add" class="btn waves-effect waves-light"/>
+            <a class="btn waves-effect waves-light" ui-sref="newItem">Return
+                <i class="mdi-hardware-keyboard-backspace left"></i>
+            </a>
+        </div>
+
+    </form>
+</div>
