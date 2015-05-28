@@ -26,6 +26,7 @@ var dragItem = {
         this.target.style.top = this.target.offsetTop + "px";
         this.target.style.left = this.target.offsetLeft + "px";
         this.target.onmousemove = function(e){
+			var e = e || window.event;
             oThis.doMove(oThis.target,e);
 
         };
@@ -35,7 +36,7 @@ var dragItem = {
     },
     doMove: function(element, event){
         var oThis = this;
-        var evt = event || window.event;
+        var e = event || window.event;
         element.style.top = (e.clientY - this.disY) + "px";
         element.style.left = (e.clientX - this.disX) + "px";
         if(element.offsetLeft > this.moveRange.mRight ){
@@ -68,10 +69,12 @@ var dragItem = {
     }
 }
 $("#leftContent").onmousedown = function(e){
+	var e = e || window.event;
     dragItem.init(e);
 }
 
 $("#rightContent").onmousedown = function(e){
+	var e = e || window.event;
     dragItem.init(e);
 }
 
