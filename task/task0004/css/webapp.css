@@ -1,0 +1,6 @@
+*{margin:0;padding:0;list-style:none;}
+img{display:block;width:100%;}
+body{width:100%;height:100%;background:red;}
+.demo{height:100%;width:100%;overflow:hidden;}
+.imgList{position:relative;height:500px;background-color:black;width:100%;}
+
