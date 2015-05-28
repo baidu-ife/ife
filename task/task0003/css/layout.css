@@ -183,7 +183,7 @@ ul{
 	border: 1px solid #CCC;
 	cursor: pointer;
 	background-color: #F2F2F2;
-	margin-top: -42px;
+	/*margin-top: -42px;*/
 	/*position: absolute;*/
 	/*bottom: 0;*/
 	/*width: 228px;*/
@@ -336,11 +336,17 @@ ul{
 	height: 30px;
 	margin-top: 10px;
 }
+.edt-input:focus{
+	border: 2px solid #ff0000;
+}
 .edt-area {
 	margin-left: 100px;
 	width: 300px;
 	height: 150px;
 	display: inline;
+}
+.edt-area:focus {
+	border: 2px solid #ff0000;
 }
 .hint {
 	color: #FF0000;
@@ -350,6 +356,10 @@ ul{
 }
 p.hint {
 	text-align: center;
+	display: none;
+}
+p.show {
+	display: block;
 }
 .Btn {
 	/*float: right;*/

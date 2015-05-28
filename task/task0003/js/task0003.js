@@ -43,7 +43,9 @@ getClasses.prototype = {
             $(".task-c").style.display = "block";
             that.getClassNav();
         });
-        addClickEvent($("#addTaskBtn"), function(){
+        addClickEvent($("#addTaskBtn"), function(e){
+            var e = e || window.event;
+            preventDefaultAction(e);
             if(that.addOrEdit == 0){
                 that.addTask();
             }else{
@@ -61,10 +63,6 @@ getClasses.prototype = {
             $("#editBox").style.display = "block";
         });
         addClickEvent($("#add-class"), function(){
-			if(that.curTopClassId == 0){
-				alert("系统不允许为’默认分类‘添加子分类，请选择其他分类作为上层分类！");
-				return;
-			}
             $("#addBox").style.display = "block";
         });
         addClickEvent($(".add-task"), function(){
@@ -72,6 +70,11 @@ getClasses.prototype = {
             $("#taskName").value = "";
             $("#taskDate").value = "";
             $("#taskContent").value = "";
+            //$("#noName", this.todoContainer).style.display = "none";
+            //$("#noDate", this.todoContainer).style.display = "none";
+            //$("#errFormat", this.todoContainer).style.display = "none";
+            //$("#limitedContent", this.todoContainer).style.display = "none";
+            //$("#noTaskContent", this.todoContainer).style.display = "none";
             $("#showBox").style.display = "none";
             $("#noContent").style.display = "none";
             $("#editBox").style.display = "block";
@@ -103,13 +106,67 @@ getClasses.prototype = {
                 that.curStatus = $("#" +  that.statusSelected, that.taskContainer);
                 that.getTaskNav();
                 addClass(that.curStatus, "current");
-                that.selTop.childNodes[1].innerHTML = parseInt(that.selTop.childNodes[1].innerHTML) - 1;
-                that.curClass.childNodes[1].innerHTML = parseInt(that.curClass.childNodes[1].innerHTML) - 1;
+                if(that.curTopClassId != 0){
+                    var count = that.curClass.childNodes[1].innerHTML.match(/\d/);
+                    that.curClass.childNodes[1].innerHTML = "("+(parseInt(count[0])-1)+")";
+                }
+                count = that.curTopClass.childNodes[1].innerHTML.match(/\d/);
+                that.curTopClass.childNodes[1].innerHTML = "("+(parseInt(count[0])-1)+")";
+                var allCount = $("#allCount").innerHTML.match(/\d/);
+                $("#allCount").innerHTML = "("+(parseInt(allCount[0])-1)+")";
             }else{
                 return;
             }
         });
         //addClickEvent();
+        addEvent($("#taskName"), "blur", function(){
+            if($("#taskName").value == ""){
+                $("#taskName").focus();
+                $("#noName", that.todoContainer).style.display = "block";
+            }
+        });
+        addEvent($("#taskName"), "change", function(){
+            if($("#taskName").value != ""){
+                //$("#taskName").focus();
+                $("#noName", that.todoContainer).style.display = "none";
+            }
+        });
+        addEvent($("#taskDate"), "blur", function(){
+            if($("#taskDate").value == ""){
+                $("#taskDate").focus();
+                $("#noDate", that.todoContainer).style.display = "block";
+            }else if($("#taskDate").value.match(/\d{4}-\d{2}-\d{2}/) == null){
+                $("#taskDate").focus();
+                $("#errFormat", that.todoContainer).style.display = "block";
+            }
+        });
+        addEvent($("#taskDate"), "change", function(){
+            if($("#taskDate").value != ""){
+                $("#noDate", that.todoContainer).style.display = "none";
+            }
+            if($("#taskDate").value.match(/\d{4}-\d{2}-\d{2}/) != null){
+                $("#errFormat", that.todoContainer).style.display = "none";
+            }
+        });
+        addEvent($("#taskContent"), "blur", function(){
+            var content = $("#taskContent").value;
+            if(content == ""){
+                $("#taskContent").focus();
+                $("#noTaskContent", that.todoContainer).style.display = "block";
+            }else if(content.length > 200){
+                $("#taskContent").focus();
+                $("#limitedContent", that.todoContainer).style.display = "block";
+            }
+        });
+        addEvent($("#taskContent"), "change", function(){
+            var content = $("#taskContent").value;
+            if(content != ""){
+                $("#noTaskContent", that.todoContainer).style.display = "none";
+            }
+            if(content.length <= 200){
+                $("#limitedContent", that.todoContainer).style.display = "none";
+            }
+        });
     },
     getClassNav: function(){
         this.myClasses = taskClasses.classArr;
@@ -205,7 +262,7 @@ getClasses.prototype = {
                     var curDel = simSelect(".delete", target);
                     curDel.style.display = "inline";
                 });
-                addEvent(topClassItems[i].parentNode, "mouseout", function(){
+                addEvent(topClassItems[i].parentNode, "mouseout", function(e){
                     var e = e || window.event;
                     var target = e.srcElement || e.target;
                     if(target.tagName != "LI"){
@@ -361,32 +418,43 @@ getClasses.prototype = {
         var taskName = $("#taskName").value;
         var date = $("#taskDate").value;
         var content = $("#taskContent").value;
+        if(this.checkInput() == -1){
+            return;
+        }
         mytasks.addTask(taskName, date, content, classId);
         this.statusSelected = -1;
-        this.curStatus.className = "";
+        //this.curStatus.className = "";
+        removeClass(this.curStatus, "current");
         this.curStatus = $("#" +  this.statusSelected, this.taskContainer);
         addClass(this.curStatus, "current");
-        this.selTop.childNodes[1].innerHTML = parseInt(this.selTop.childNodes[1].innerHTML) + 1;
-        this.curClass.childNodes[1].innerHTML = parseInt(this.curClass.childNodes[1].innerHTML) + 1;
+        if(this.curTopClassId != 0){
+            var count = this.curClass.childNodes[1].innerHTML.match(/\d/);
+            this.curClass.childNodes[1].innerHTML = "("+(parseInt(count[0])+1)+")";
+        }
+        count = this.curTopClass.childNodes[1].innerHTML.match(/\d/);
+        this.curTopClass.childNodes[1].innerHTML = "("+(parseInt(count[0])+1)+")";
+        var allCount = $("#allCount").innerHTML.match(/\d/);
+        $("#allCount").innerHTML = "("+(parseInt(allCount[0])+1)+")";
         this.getTaskNav();
         this.selectedTodo = mytasks.getByName(taskName, this.taskArr);
         if(this.curTodo){
-            this.curTodo.className = "";
+            //this.curTodo.className = "";
+            removeClass(this.curTodo, "current");
         }
         this.curTodo = $("#todo" + this.selectedTodo.id, this.taskContainer);
         addClass(this.curTodo, "current");
         this.showTodo();
     },
     editTask: function(){
-        //var classId = this.curClassId;
         var taskName = $("#taskName").value;
         var date = $("#taskDate").value;
         var content = $("#taskContent").value;
+        this.checkInput();
         mytasks.editTask(this.selectedTodo.id, taskName, date,content);
         this.getTaskNav();
         this.selectedTodo = mytasks.getByName(taskName, this.taskArr);
         if(this.curTodo){
-            this.curTodo.className = "";
+            removeClass(this.curTodo, "current");
         }
         this.curTodo = $("#todo" + this.selectedTodo.id, this.taskContainer);
         addClass(this.curTodo, "current");
@@ -420,12 +488,43 @@ getClasses.prototype = {
         $("#taskName", this.todoContainer).value = this.selectedTodo.name;
         $("#taskDate", this.todoContainer).value = this.selectedTodo.date;
         $("#taskContent", this.todoContainer).value = this.selectedTodo.content;
+        //$("#noName", this.todoContainer).style.display = "none";
+        //$("#noDate", this.todoContainer).style.display = "none";
+        //$("#errFormat", this.todoContainer).style.display = "none";
+        //$("#limitedContent", this.todoContainer).style.display = "none";
+        //$("#noTaskContent", this.todoContainer).style.display = "none";
     },
     checkInput: function(){
-
+        var taskName = $("#taskName").value;
+        var date = $("#taskDate").value;
+        var content = $("#taskContent").value;
+        console.log(content.length);
+        if(taskName == ""){
+            $("#taskName").focus();
+            $("#noName", this.todoContainer).style.display = "block";
+            return -1;
+        }else if(date == ""){
+            $("#taskDate").focus();
+            $("#noDate", this.todoContainer).style.display = "block";
+            return -1;
+        }else if(date.match(/\d{4}-\d{2}-\d{2}/) == null){
+            $("#taskDate").focus();
+            $("#errFormat", this.todoContainer).style.display = "block";
+            return -1;
+        }else if(content == ""){
+            $("#taskContent").focus();
+            $("#noTaskContent", this.todoContainer).style.display = "block";
+            return -1;
+        }else if(content.length > 200){
+            $("#taskContent").focus();
+            $("#limitedContent", this.todoContainer).style.display = "block";
+            return -1;
+        }
+        return 1;
     }
 };
 
 var showLeftNav = new getClasses();
 //mystorage.removeItem("taskClass");
 //mystorage.removeItem("tasks");
+//mystorage.clear();

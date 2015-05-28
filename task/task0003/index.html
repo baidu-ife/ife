@@ -54,24 +54,27 @@
                         <form>
                             <div class="editItem">
                                 <label for="taskName"><span class="hint">*</span>任务名称：</label>
-                                <input type="text" id="taskName" name="taskName" class="edt-input" required = "required">
-                                <!--<span class="hint">*此项为必填项</span>-->
+                                <input type="text" id="taskName" name="taskName" class="edt-input">
+                                <p class="hint" id="noName">任务名称不能为空，请填写任务名称</p>
                             </div>
                             <div class="editItem">
                                 <label for="taskDate"><span class="hint">*</span>任务日期：</label>
-                                <input type="date" id="taskDate" name="taskDate" class="edt-input" required = "required">
-                                <!--<span class="hint">*此项为必填项</span>-->
+                                <input type="date" id="taskDate" name="taskDate" class="edt-input" placeholder="格式为yyyy-mm-dd">
+                                <span class="hint" id="dateFormat">格式为yyyy-mm-dd</span>
+                                <p class="hint" id="noDate">任务日期不能为空，请填写任务日期</p>
+                                <p class="hint" id="errFormat">任务日期格式不对，请按照规定格式重新填写</p>
                             </div>
                             <div class="editItem">
                                 <label for="taskContent"><span class="hint">*</span>任务内容：</label>
-                                <textarea id="taskContent" name="taskContent" class="edt-area" required = "required" placeholder="注意字数不能超过200 "></textarea>
-                                <p class="hint">注意：任务内容的填写字数不能超过200！</p>
+                                <textarea id="taskContent" name="taskContent" class="edt-area" placeholder="注意字数不能超过200 "></textarea>
+                                <p class="hint" id="limitedContent">注意：任务内容的填写字数不能超过200！</p>
+                                <p class="hint" id="noTaskContent">注意：任务内容不能为空，请填写任务内容</p>
                             </div>
                             <div class="btnBox">
                                 <input type="button" id="returnBtn" value="返回" class="Btn">
                                 <input type="submit" id="addTaskBtn" value="提交" class="Btn">
                             </div>
-                            <p class="hint">注意：“*”号标注的是必填项，请务必填写！</p>
+                            <p class="hint show">注意：“*”号标注的是必填项，请务必填写！</p>
                         </form>
                     </div>
                 </div>

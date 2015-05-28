@@ -483,11 +483,20 @@ function $$(className, parent){
     }
 }
 
-//组织事件冒泡
+//阻止事件冒泡
 function stopEventBubble(e){
     if (e && e.stopPropagation){
         e.stopPropagation();
     }else{
         e.cancelBubble = true;
+    }
+}
+
+//阻止事件的默认行为
+function preventDefaultAction(e){
+    if(e && e.preventDefault){
+        e.preventDefault();
+    }else{
+        e.returnValue = false;
     }
 }

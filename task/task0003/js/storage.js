@@ -1,7 +1,7 @@
 /**
  * Created by Dottie on 2015/5/14.
  */
-if(window.Storage){
+if(window.localStorage){
     var mystorage = window.localStorage;
 /*------------------------------------------------------本地taskClass处理----------------------------------------------------*/
     var taskClass = function(){
