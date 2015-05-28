@@ -1,8 +1,9 @@
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr){
-    return arr typeof Array;
+    return arr.prototype.toString.call() == "[object Array]";
 }
-//问题在于假定只有一个全局变量
+//Object.prototype.toString.call([])，就是一个Array对象借用了Object对象上的方法。
+//参考资料：js秘密花园类型章节
 //Array.isArray(arr)ECMASript5新方法，通用方法。
 
 // 判断fn是否为一个函数，返回一个bool值
@@ -10,20 +11,18 @@ function isFunction(fn) {
     return typeof fn === "function";
 }
 
-//typeof----undefined/boolean/string/number/object/function
-//instanceof----引用类型-Object / Array / Function / Date ...
 // 使用递归来实现一个深度克隆，可以复制一个目标对象,返回一个完整拷贝
 // 被复制的对象类型会被限制为数字number、字符串string、布尔bool、日期date、数组array、对象Object。
 //不会包含函数、正则对象等
 function cloneObject(src) {
     var result;
-    if(typeof src === Number || String || boolean){
-result=src;//这是一个bug!,没调试出来。。。
-}else if(src instanceof Date||Array||Object){
-    for(var i in src){
-        result[i]=src[i];
-    }
-}return result;
+    if(typeof src === "number" || "string" || "boolean"){
+        result = src;//这是一个bug!,没调试出来。。。
+    }else if(src instanceof Date||Array||Object){
+        for(var i in src){
+            result[i]=src[i];
+        }
+    }return result;
 }
 
 // 正则表达式
