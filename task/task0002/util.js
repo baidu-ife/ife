@@ -1,6 +1,7 @@
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr){
     return arr.prototype.toString.call() == "[object Array]";
+//return Object.prototype.toString.call(obj).slice(8, -1) === Array;
 }
 //Object.prototype.toString.call([])，就是一个Array对象借用了Object对象上的方法。
 //参考资料：js秘密花园类型章节
