@@ -1,7 +1,7 @@
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr){
-    return arr.prototype.toString.call() == "[object Array]";
 //return Object.prototype.toString.call(obj).slice(8, -1) === Array;
+    return arr.prototype.toString.call() == "[object Array]";
 }
 //Object.prototype.toString.call([])，就是一个Array对象借用了Object对象上的方法。
 //参考资料：js秘密花园类型章节
@@ -13,40 +13,38 @@ function isFunction(fn) {
 }
 
 // 使用递归来实现一个深度克隆，可以复制一个目标对象,返回一个完整拷贝
-// 被复制的对象类型会被限制为数字number、字符串string、布尔bool、日期date、数组array、对象Object。
-//不会包含函数、正则对象等
+// 被复制的对象类型会被限制为数字/字符串/布尔/日期/数组/对象。
+// 不会包含函数、正则对象等
 function cloneObject(src) {
-    var result;
-    if(typeof src === "number" || "string" || "boolean"){
-        result = src;//这是一个bug!,没调试出来。。。
-    }else if(src instanceof Date||Array||Object){
-        for(var i in src){
-            result[i]=src[i];
+  var result = {};
+  var type = typeof src[i];
+  for (var i in src) {
+    if (type === 'number' || type === 'string' || type === 'boolean') {
+      result[i] = src[i];
+    } else {
+      result[i] = cloneObject(src[i]);
+    }
+  }
+  return result;
+}
+
+
+// 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
+function uniqArray(arr) {
+    arr.sort();
+    for(var i in arr){
+        for(var j in arr){
+            if(arr[i]==arr[j+1]){arr.splice(j,1);}
         }
-    }return result;
+    }return arr;
 }
-
-// 正则表达式
-function isEmail(emailStr){
-    var reg = /^[\w+\.]*\w+@\w+[\.\w+]+$/;
-    return console.log(reg.exec(emailStr));
-}
-function isMobilePhone(phone){
-    var reg = /^[\+\d{1,4}]?\d{7,11}$/;
-    return console.log(reg.exec(phone));
-}
-//()和[]的用法
-// 邮箱格式：字母数字点组合+@+字母数字+点+字母数字；
-// 电话格式：有时要加上区号，最长11位，最短7位；
-
-
 
 
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr) {
     var arrNew = [];
     for(var i in arr){
-        if (arrNew.indexOf(arr[i]) === -1){
+        if (arrNew.prototype.indexOf(arr[i]) === -1){
             arrNew.push(arr[i]);
         }
     }return arrNew;
@@ -93,6 +91,20 @@ function getObjectLength(obj) {
     }
     return cou;
 }//hasOwnProperty()的使用!!!
+
+// 正则表达式
+function isEmail(emailStr){
+    var reg = /^[\w+\.]*\w+@\w+[\.\w+]+$/;
+    return console.log(reg.exec(emailStr));
+}
+function isMobilePhone(phone){
+    var reg = /^[\+\d{1,4}]?\d{7,11}$/;
+    return console.log(reg.exec(phone));
+}
+//()和[]的用法
+// 邮箱格式：字母数字点组合+@+字母数字+点+字母数字；
+// 电话格式：有时要加上区号，最长11位，最短7位；
+
 
 //3.DOM
 function addClass(element, newClassName){
