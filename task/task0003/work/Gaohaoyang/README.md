@@ -1,4 +1,3 @@
-# 设计思路
+# Task0003
 
-构建一个类似数据库的模拟的表
-
+* [任务要求](https://github.com/baidu-ife/ife/tree/master/task/task0003)
