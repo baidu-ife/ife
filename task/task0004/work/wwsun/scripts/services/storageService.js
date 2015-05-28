@@ -23,14 +23,6 @@ angular.module('todoApp.services', [])
             return taskArray;
         }
 
-        //function getCategoryById(catId) {
-        //
-        //}
-        //
-        //function getTaskById(taskId) {
-        //
-        //}
-
         return {
             listCategories: getCategoryArray,
 
@@ -71,25 +63,4 @@ angular.module('todoApp.services', [])
                 localStorage.setItem('categoryArray', JSON.stringify(categoryArray));
             }
         };
-
-
-        //var categories = [
-        //    {name: 'Default', sub: ['task1', 'task2']},
-        //    {name: 'Baidu-IFE', sub: ['task11', 'task21', 'task31']},
-        //    {name: 'Memo', sub: []}
-        //];
-        //
-        //return {
-        //    loadCategories: function () {
-        //        return $q.when(categories);
-        //    },
-        //
-        //    list: function() {
-        //        return categories;
-        //    },
-        //
-        //    add: function(item) {
-        //        categories.push(item);
-        //    }
-        //};
     }]);

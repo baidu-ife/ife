@@ -9,7 +9,9 @@ angular.module("todoApp.controllers")
 
         self.add = function() {
             StorageService.addNewTask(self.selectCategoryId, self.newTask);
-            $state.go('home'); // go to home view
+            $state.go('item'); // go to home view
+
+            // todo: display the created todo item right now
         };
 
         // active the material date picker control
