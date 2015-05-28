@@ -6,7 +6,7 @@
         <form class="col s12" ng-submit="newCategoryCtrl.add()">
             <div class="input-field">
                 <input id="category_name" type="text" class="validate"
-                       ng-model="newCategoryCtrl.newCategoryName" required>
+                       ng-model="newCategoryCtrl.newCategory.name" required>
                 <label for="category_name">Category Name</label>
             </div>
 
@@ -18,5 +18,3 @@
         </form>
     </div>
 </div>
-
-<h1>{{newCategoryCtrl.newCategoryName}}</h1>

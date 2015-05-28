@@ -1,16 +1,19 @@
 angular.module("todoApp.controllers")
-    .controller('NewCategoryCtrl', ['StorageService', function(StorageService) {
+    .controller('NewCategoryCtrl', ['StorageService','$state', function(StorageService, $state) {
 
         var self = this;
 
-        self.newCategoryName = null;
+        self.newCategory = null;
 
         self.add = function() {
             
-            StorageService.add({
-                name: self.newCategoryName,
-                sub: []
+            StorageService.addNewCategory({
+                id: Date.now(),
+                name: self.newCategory.name,
+                tasks: []
             });
+
+            $state.go('home'); // go to home view
 
         };
 
