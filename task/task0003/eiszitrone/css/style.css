@@ -1,4 +1,4 @@
-/*reset broswer default style*/
+    /*reset broswer default style*/
 body,ul,li,h1,dl,dt,dd,button,input,p {
     padding: 0;
     margin: 0;
@@ -31,13 +31,14 @@ body {
 
 
 .header-title {
-    background-color: #DDDDDD;
+    background-color: #f8f8f8;
     height: 59px;
     line-height: 50px;
     text-indent: 25px;
     font-size: 20px;
     border-bottom: 1px #999999 solid;
     min-width: 940px;
+    color: #009900;
 }
 
 .container {
@@ -55,7 +56,8 @@ body {
     bottom: 0;
     width: 229px;
     border-right: 1px #999999 solid;   
-    background-color: #EEEEEE;
+    background-color: #f8f8f8;
+    color: #009900;
     /*background-color: #ffffff;*/
 }
 
@@ -66,7 +68,7 @@ body {
     left: 230px;
     width: 229px;
     border-right: 1px #999999 solid;
-    background-color: #EEEEEE;
+    background-color: #f8f8f8;
 }
 
 .main-right {
@@ -87,6 +89,7 @@ body {
 
 #category-list div {
     cursor: pointer;
+    padding-left: 1px;
 }
 
 #category-list, #category-list ul{
@@ -113,10 +116,17 @@ body {
     width: 150px;
     margin-left: 10px;
     border: none;
-    background-color: Transparent;
+    background-color: transparent;
     outline: none;
     font-size: 14px;
     cursor: pointer;
+}
+
+button {
+    color: #009900;
+}
+button:disabled {
+    color: #57ad68;
 }
 
 .category {
@@ -128,11 +138,14 @@ body {
 #task-state-nav .active,
 #task-state-nav button:hover 
 {
-    background-color: white;
+    background-color: #009900;
     border: 1px #999999 solid;
+    color: #fff;
 }
+
 .active {
-    background-color: white;
+    background-color: #009900;
+    color: #fff;
 }
 
 #task-state-nav {
@@ -141,7 +154,8 @@ body {
 }
 
 #task-state-nav button {
-    border: none;
+    border: 0;
+    color: #009900;
     background-color: Transparent;
     outline: none;
     cursor: pointer;
@@ -199,6 +213,7 @@ body {
 }
 
 .label {
+    color: #009900;
     height: 30px;
     width: 100px;
     line-height: 30px;
@@ -322,7 +337,8 @@ body {
     cursor: pointer;  
 }
 .task-item:hover {
-    background-color: #fff;
+    background-color: #009900;
+    color: #fff;
 }
 
 .taskFinished {

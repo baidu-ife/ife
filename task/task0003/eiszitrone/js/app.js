@@ -98,6 +98,7 @@ App.prototype.initInput = function() {
 
 // disable the task input section 
 App.prototype.setDisable = function() {
+    $('#title-tip').innerHTML = "";
     $('#title-input').setAttribute("disabled", true);
     $('#date-input').setAttribute("disabled", true);
     $('#task-input').setAttribute("disabled", true);
@@ -293,10 +294,12 @@ App.prototype.addTaskSetup = function() {
     $('#title-input').onblur = function() {
         var value = $('#title-input').value;
         if(value < 1) {
+            $("#save-button").setAttribute("disabled", true);
             $("#title-tip").innerHTML = "Title can't be empty, please input again!"
         }
         else {
             $("#title-tip").innerHTML = "";
+            $("#save-button").removeAttribute("disabled");
         }
     }
     // validate content input
@@ -326,6 +329,8 @@ App.prototype.belongsTo = function(task, category) {
 App.prototype.clickCategorySetup = function() {
     var self = this;
     $("#category-list").onclick = function(ev) {
+        self.setDisable();
+
         ev = ev || window.event;
         var target = ev.target || ev.srcElement;
         var targetName = target.nodeName.toLowerCase();
@@ -365,9 +370,10 @@ App.prototype.clickCategorySetup = function() {
 
         if (key == "defaultCategory") $("#new-category-button").setAttribute("disabled", true);
         else $("#new-category-button").removeAttribute("disabled");
-        $("#new-task-button").setAttribute("disabled", true);
 
         $("#new-task-button").removeAttribute("disabled");
+        if (key == "rootCategory") $("#new-task-button").setAttribute("disabled", true);
+
         if (self.currentCategory == key) {
             self.toggleCategory(key);
         }
