@@ -31,17 +31,6 @@ function cloneObject(src) {
 
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr) {
-    arr.sort();
-    for(var i in arr){
-        for(var j in arr){
-            if(arr[i]==arr[j+1]){arr.splice(j,1);}
-        }
-    }return arr;
-}
-
-
-// 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
-function uniqArray(arr) {
     var arrNew = [];
     for(var i in arr){
         if (arrNew.prototype.indexOf(arr[i]) === -1){
@@ -58,6 +47,7 @@ var i = indexOf(/\S/);
 var j = lastIndexOf(/\S/);
 return str.slice(i,str.length-1);
 }
+
 
 // 尝试使用一行简洁的正则表达式完成该题目
 function trim(str) {
