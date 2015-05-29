@@ -106,16 +106,25 @@ initEvent();
 ```
 
 试试在Chrome下看看什么效果，再看看在IE8下什么效果。是不是有什么区别呢？先不着急寻找答案。
-
+    IE8下报addEventListener()错误
 然后，试着建立一个新的`xxxx.js`的文件，把上面`<script>`里面的内容剪贴过去，在html中引入这个文件。
-
 接下来的课程主要围绕JavaScript自身的一些基础知识，如果你对计算机编程本身还是不够熟悉，那就建议花比别人更多的时间多写点代码。
 
 ## 1.2 期望达成
 
 - 了解JavaScript是什么
+    脚本语言，用于浏览器编写脚本程序，也可以用于服务器如NODE.JS，还有其它功能，如web app;
+
 - 如何在HTML页面加载JavaScript代码
+    页面中嵌入
+    外链接
+
 - 搜索一下，为什么我们让你把`<script>`放在`</body>`前。
+    放在</body>之后，浏览器也会将script脚步加载到</body>前，具体原因？？？？？？？
+    资料：
+        1)为什么把 Script 标签放在 body 结束标签之后 html 结束标签之前？
+          http://www.zhihu.com/question/20027966
+
 
 ## 1.3 参考资料
 
@@ -127,16 +136,16 @@ initEvent();
 
 - 创建一个JavaScript文件，比如`util.js`；
 - 实践判断各种数据类型的方法，并在`util.js`中实现以下方法：
-
+资料：http://www.cnblogs.com/flyjs/archive/2012/02/20/2360504.html
 ```javascript
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr) {
-    // your implement
+    return arr instanceof Array;
 }
 
 // 判断fn是否为一个函数，返回一个bool值
 function isFunction(fn) {
-    // your implement
+    return fn instanceof Function;
 }
 ```
 
@@ -145,8 +154,24 @@ function isFunction(fn) {
 ```javascript
 // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
 // 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
-function cloneObject(src) {
-    // your implement
+function cloneObject(srcObj) {
+    if(srcObj instanceof Object) {
+        var buf={};
+        for(var k in srcObj) {
+            buf[k]=cloneObject(srcObj[k]);
+        }
+        return buf;
+    }
+    else if(srcObj instanceof Array) {
+        var buf=[];
+        for(var i=0;i<buf.length;i++) {
+            buf[i]=cloneObject(srcObj[i]);
+        }
+        return buf;
+    }
+    else {
+        return srcObj;
+    }
 }
 
 // 测试用例：
@@ -175,7 +200,17 @@ console.log(tarObj.b.b1[0]);    // "hello"
 ```javascript
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr) {
-    // your implement
+    function uniqArray(arr) {
+        for(var i=0;i<arr.length;i++) {
+            for(var j=i+1;j<arr.length;j++) {
+                if(arr[j]===arr[i]) {
+                    arr.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        return arr;
+    }
 }
 
 // 使用示例
@@ -195,7 +230,17 @@ function simpleTrim(str) {
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
 // 尝试使用一行简洁的正则表达式完成该题目
 function trim(str) {
-    // your implement
+    function trim(str) {
+        if(str.charAt(0)==' ') {
+            return trim(str.substr(1));
+        }
+        else if(str.charAt(str.length-1)==' ') {
+            return trim(str.substr(0,str.length-2));
+        }
+        else {
+            return str;
+        }
+    }
 }
 
 // 使用示例
@@ -225,7 +270,13 @@ function output(item, index) {
 each(arr, output);  // 0:java, 1:c, 2:php, 3:html
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
-function getObjectLength(obj) {}
+function getObjectLength(obj) {
+    var count=0;
+    for(x in obj) {
+        count++;
+    }
+    return count;
+}
 
 // 使用示例
 var obj = {
@@ -278,33 +329,93 @@ function isMobilePhone(phone) {
 
 ```javascript
 // 为element增加一个样式名为newClassName的新样式
-function addClass(element, newClassName) {
-    // your implement
+function addClass(element,className) {
+    element.className+=className+' ';   //element.className是字符串，各个样式类需要按空格分开；
 }
 
 // 移除element中的样式oldClassName
-function removeClass(element, oldClassName) {
-    // your implement
+function removeClass(element,className) {
+    element.classList.remove(className);
 }
 
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
-function isSiblingNode(element, siblingNode) {
-    // your implement
+function isSiblingNode(element,siblingNode) {
+    return element.parentNode===siblingNode.parentNode;
 }
 
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
-    // your implement
+    var position={
+        x: 0,
+        y: 0
+    }
+    if(element.offsetParent!=null) {
+        position.x=element.offsetLeft+getPosition(element.offsetParent);
+        position.y=element.offsetTop+getPosition(element.offsetParent);
+        return position;
+    }
+    else {
+        return position;
+    }
 }
-// your implement
-```
 
 接下来挑战一个`mini $`，它和之前的`$`是不兼容的，它应该是`document.querySelector`的功能子集，在不直接使用`document.querySelector`的情况下，在你的`util.js`中完成以下任务：
 
 ```javascript
 // 实现一个简单的Query
 function $(selector) {
-    
+    var sTr = selector;
+    if (sTr.search(/\s+/g) == -1) {
+        var firstChart = sTr.charAt(0);
+        switch (firstChart)
+        {
+            case "#":
+                var newStr = sTr.replace(firstChart, "");
+                return document.getElementById(newStr);
+                break;
+
+            case ".":
+                var newStr = sTr.replace(firstChart, "");
+                return getClass(document, newStr)[0];
+                break;
+
+            case "[":
+                console.log(sTr.search(/=/g))
+                if (sTr.search(/=/g) == -1) {
+                    var reg = /^\[|\]$/g;//开头结尾的符号[];
+                    var newStr = sTr.replace(reg, "");
+                    return getAttr(document, newStr)[0];
+                } else {
+                    var reg = /^\[|\]$/g;//开头结尾的符号[];
+                    var newStr = sTr.replace(reg, "");
+                    console.log(newStr)
+                    var arrStr = newStr.split("=");
+                    console.log(arrStr)
+                    var oAttrName = arrStr[0];
+                    var oAttrValue = arrStr[1];
+                    return getAttrValue(document, oAttrName, oAttrValue)[0];
+                }
+                break;
+
+            default:
+                return document.getElementsByTagName(sTr)[0];
+        }
+    } else {
+        var partArr = sTr.split(" ");
+        var sParent = partArr[0].replace(partArr[0].charAt(0), "");
+        if (partArr[1].charAt(0) == ".") {
+            var sSon = partArr[1].replace(partArr[1].charAt(0), "");
+        } else {
+            var sSon = partArr[1];
+        }
+
+        var oParent = document.getElementById(sParent);
+        if (partArr[1].charAt(0) == ".") {
+            return getClass(oParent, sSon)[0];
+        } else {
+            return oParent.getElementsByTagName(sSon)[0];
+        }
+    }
 }
 
 // 可以通过id获取DOM对象，通过#标示，例如
@@ -344,7 +455,12 @@ $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第
 ```javascript
 // 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
-    // your implement
+    if (element.addEventListener) {
+        element.addEventListener(event, listener, false);
+    }
+    else{
+        element.attachEvent('on'+event,listener);
+    }
 }
 
 // 例如：
@@ -355,7 +471,12 @@ addEvent($("#doma"), "click", a);
 
 // 移除element对象对于event事件发生时执行listener的响应
 function removeEvent(element, event, listener) {
-    // your implement
+    if (element.removeEventListener) {
+        element.removeEventListener(event, listener);
+    }
+    else {
+        element.detach('on' + event, listener);
+    }
 }
 ```
 
@@ -363,12 +484,23 @@ function removeEvent(element, event, listener) {
 ```javascript
 // 实现对click事件的绑定
 function addClickEvent(element, listener) {
-    // your implement
+    element.['onclick']=listener;
 }
 
 // 实现对于按Enter键时的事件绑定
 function addEnterEvent(element, listener) {
-    // your implement
+    element['onkeypress']=function(event){
+        var key;
+        if(window.event){
+            key=event.keyCode;
+        }
+        else{
+            key=event.which;
+        }
+        if(key==13){
+            listener();
+        }
+    };
 }
 ```
 
@@ -458,8 +590,16 @@ init();
 
 ```javascript
 // 先简单一些
+//参考资料：http://www.cnblogs.com/silence516/archive/2009/09/03/delegateEvent.html
 function delegateEvent(element, tag, eventName, listener) {
-    // your implement
+    $.on(element, eventName, function (event) {
+        var target = $.getTarget(event);
+        switch (target.nodeName.toLowerCase()) {
+            case tag:
+                listener();
+                break;
+        }
+    });
 }
 
 $.delegate = delegateEvent;
@@ -471,6 +611,7 @@ $.delegate($("#list"), "li", "click", clickHandle);
 
 估计有同学已经开始吐槽了，函数里面一堆$看着晕啊，那么接下来把我们的事件函数做如下封装改变：
 
+//感觉没必要
 ```javascript
 $.on(selector, event, listener) {
     // your implement
@@ -518,12 +659,28 @@ function isIE() {
 
 // 设置cookie
 function setCookie(cookieName, cookieValue, expiredays) {
-    // your implement
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + expiredays)
+    document.cookie = cookieName + "=" + cookieValue + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
 }
 
 // 获取cookie值
-function getCookie(cookieName) {
-    // your implement
+function getCookie(cookieName)
+{
+    if (document.cookie.length>0)
+    {
+        cookieStart=document.cookie.indexOf(cookieName + "=");
+        if (cookieStart!=-1)
+        {
+            cookieStart=cookieStart + cookieName.length+1;
+            cookieEnd=document.cookie.indexOf(";",cookieStart);
+            if (cookieEnd==-1){
+                cookieEnd=document.cookie.length;
+            }
+            return document.cookie.substring(cookieStart,cookieEnd);
+        }
+    }
+    return "";
 }
 
 ```
