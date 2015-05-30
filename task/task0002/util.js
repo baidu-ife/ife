@@ -346,40 +346,6 @@ ajax(
 
 
 
- // } else if (/^\[/.test(selector)) {//属性选择器
- //        console.log('sx');
- //        var value;
- //        var classCon = selector.slice(1, -1);
- //        // console.log(classCon);
- //        var ord = classCon.indexOf("=");
- //        value = classCon.slice(ord+1);
- //        if (ord > 0) {
- //            classCon = classCon.slice(0, ord);
- //        }
- //        console.log(classCon.slice(0, ord));
- //        var matchingElements = [];
- //        var allElements = document.getElementsByTagName('*');
- //        if (ord < 0) {
- //            for (var i = 0; i < allElements.length; i++) {
- //                // console.log(allElements[i].getAttribute(classCon));
- //                if (allElements[i].getAttribute(classCon) !== null) {
- //                    // Element exists with attribute. Add to array.
- //                    matchingElements.push(allElements[i]);
- //                }
- //            }
- //        } else {
- //            for (var i = 0; i < allElements.length; i++) {
- //                // console.log(allElements[i].getAttribute(classCon));
- //                if (allElements[i].getAttribute(classCon) !== null && allElements[i].getAttribute(classCon) === value) {
- //                    // Element exists with attribute. Add to array.
- //                    matchingElements.push(allElements[i]);
- //                }
- //            }
- //            result = matchingElements;
- //        }
- //    }
-
-
 
 
 
