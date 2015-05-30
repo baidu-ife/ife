@@ -34,18 +34,18 @@ function uniqArray(arr) {
     var arrNew = [];
     for(var i in arr){
         if (arrNew.prototype.indexOf(arr[i]) === -1){
+// String.prototype.indexOf.call(arrNew,arr[i])
             arrNew.push(arr[i]);
         }
     }return arrNew;
 }
 
-
 // 实现一个简单的trim函数，用于去除一个字符串，头部和尾部的空白字符
 function simpleTrim(str) {
-// your implement
-var i = indexOf(/\S/);
-var j = lastIndexOf(/\S/);
-return str.slice(i,str.length-1);
+    // your implement
+    var i = indexOf(/\S/);
+    var j = lastIndexOf(/\S/);
+    return str.slice(i,str.length-1);
 }
 
 
@@ -57,10 +57,10 @@ function trim(str) {
 
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
-// your implement
-for(var i in arr){
-    fn(i,arr[i]);
-}
+    // your implement
+    for(var i in arr){
+        fn(i,arr[i]);
+    }
 }
 
 // 其中fn函数可以接受两个参数：item和index
@@ -75,12 +75,12 @@ each(arr, output);  // 0:java, 1:c, 2:php, 3:html
 function getObjectLength(obj) {
     var cou = 0;
     for(var p in obj){
-        if(obj.hasOwnProperty(p)){
             cou ++;
-        }
     }
     return cou;
-}//hasOwnProperty()的使用!!!
+}
+//hasOwnProperty()的使用!!!
+// if(obj.hasOwnProperty(p)){}
 
 // 正则表达式
 function isEmail(emailStr){
@@ -97,6 +97,10 @@ function isMobilePhone(phone){
 
 
 //3.DOM
+$(element).addClass(newClassName);
+$(element).removeClass(newClassName);
+
+// 为element增加一个样式名为newClassName的新样式
 function addClass(element, newClassName){
     if(element.className==""){
         element.className=newClassName;
@@ -104,26 +108,114 @@ function addClass(element, newClassName){
         element.className+=" "+newClassName;
     }
 }
-function removeClass(element, oldClassName){
-    var con = element.getAttribute("class");
-    con.NodeList.remove(oldClassName);
-    return con;
-}
-removeClass("p", "left");
 
+// 移除element中的样式oldClassName
+function removeClass(element, oldClassName){
+    element.classList.remove(oldClassName);
+    return element;
+}
+var p = document.getElementsByTagName('p')[0];
+removeClass(p, "left");
+
+// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode){
     return element.parentNode==siblingNode.parentNode;
 }
+
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
     var ox = element.getBoundingClientRect().left;
     var oy = element.getBoundingClientRect().top;
-    var scrollLeft = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft); 
+    var scrollLeft = Math.max(document.documentElement., document.body.scrollLeft); 
     var scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop); 
     x = ox + scrollLeft;
     y = oy + scrollTop;
 return "{"+x+","+y+"}";//需要考虑滚动条的移动，窗口的大小是会变化的
 }
+
+function getPosition(element) {
+    var x = scrollLeft + scrollWidth;
+    var y = scrollTop + scrollHeight;
+return "{"+x+","+y+"}";//需要考虑滚动条的移动，窗口的大小是会变化的
+}
+// 字符串、indexof寻找空格/splice()、然后在分成第一个第二个元素、然后在分类查找。。。
+// 实现一个简单的Query
+//selector是一个字符串。
+//string.slice(start,end)包括起始，不包括结尾。
+// * . ? + $ ^ [ ] ( ) { } | \ /  正则表达式中需要转义的字符合合集
+function mini$(selector) {
+    var result = undefined;
+    var con = selector.slice(1);
+    if (/^#/.test(selector)){ //ID选择器
+        result = document.getElementById(con);
+    } else if (/^\./.test(selector)) { //类选择器
+        result = document.getElementsByClassName(con);
+    } else if (/^\[/.test(selector)) {//属性选择器
+        var value;
+        var classCon = selector.slice(1, -1);
+        var ord = classCon.indexOf("=");
+        value = classCon.slice(ord+1);
+        if (ord > 0) {
+            classCon = classCon.slice(0, ord);
+        }
+        var matchingElements = [];
+        var allElements = document.getElementsByTagName('*');
+        if (ord < 0) {
+            for (var i = 0; i < allElements.length; i++) {
+                if (allElements[i].getAttribute(classCon) !== null) {
+                    matchingElements.push(allElements[i]);
+                }
+            }
+        } else {
+            for (var i = 0; i < allElements.length; i++) {
+                if (allElements[i].getAttribute(classCon) !== null && allElements[i].getAttribute(classCon) === value) {
+                    matchingElements.push(allElements[i]);
+                }
+            }
+        }
+        result = matchingElements;
+        } else {
+            result = document.getElementsByTagName(selector);
+        } //标签选择器
+        return result;
+        }
+
+function $(selector) {
+    var stop = selector.indexOf(" ");
+    var reSelector;
+    if (stop != -1) {
+        //分成两部分，当做两个筛选条件
+        var selector1 = selector.slice(0, stop);
+        var selector2 = selector.slice(stop + 1);
+        var re1 = mini$(selector1);
+        var re2 = mini$(selector2);
+        reSelector = [];
+        for (var i=0;i<re2.length;i++) {
+            if (re2[i].parentNode === re1) {
+                reSelector.push(re2[i]);
+            }
+        }
+    } else {
+        reSelector = mini$(selector);
+    }
+    return reSelector;
+}
+// 可以通过id获取DOM对象，通过#标示，例如
+$("#adom"); // 返回id为adom的DOM对象
+
+// 可以通过tagName获取DOM对象，例如
+$("a"); // 返回第一个<a>对象
+
+// 可以通过样式名称获取DOM对象，例如
+$(".classa"); // 返回第一个样式定义包含classa的对象
+
+// 可以通过attribute匹配获取DOM对象，例如
+$("[data-log]"); // 返回第一个包含属性data-log的对象
+
+$("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
+
+// 可以通过简单的组合提高查询便利性，例如
+$("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
 
 
 //$选择器，事件部分还不是太会，正在学习，以后一定好好练习补上完整代码的，请求导师的谅解.....
@@ -166,10 +258,10 @@ listener.call(en);//.call()？
 // 判断是否为IE浏览器，返回-1或者版本号
 function isIE() {
 // your implement
-var AppName = navigator.appName;
-if(AppName == "IE"){
-    return navigator.appVersion;
-}else return -1;
+    var AppName = navigator.appName;
+    if(AppName == "IE"){
+        return navigator.appVersion;
+    }else return -1;
 }
 
 // 设置cookie
@@ -252,6 +344,45 @@ ajax(
         }
     }
     );
+
+
+
+ // } else if (/^\[/.test(selector)) {//属性选择器
+ //        console.log('sx');
+ //        var value;
+ //        var classCon = selector.slice(1, -1);
+ //        // console.log(classCon);
+ //        var ord = classCon.indexOf("=");
+ //        value = classCon.slice(ord+1);
+ //        if (ord > 0) {
+ //            classCon = classCon.slice(0, ord);
+ //        }
+ //        console.log(classCon.slice(0, ord));
+ //        var matchingElements = [];
+ //        var allElements = document.getElementsByTagName('*');
+ //        if (ord < 0) {
+ //            for (var i = 0; i < allElements.length; i++) {
+ //                // console.log(allElements[i].getAttribute(classCon));
+ //                if (allElements[i].getAttribute(classCon) !== null) {
+ //                    // Element exists with attribute. Add to array.
+ //                    matchingElements.push(allElements[i]);
+ //                }
+ //            }
+ //        } else {
+ //            for (var i = 0; i < allElements.length; i++) {
+ //                // console.log(allElements[i].getAttribute(classCon));
+ //                if (allElements[i].getAttribute(classCon) !== null && allElements[i].getAttribute(classCon) === value) {
+ //                    // Element exists with attribute. Add to array.
+ //                    matchingElements.push(allElements[i]);
+ //                }
+ //            }
+ //            result = matchingElements;
+ //        }
+ //    }
+
+
+
+
 
 
 
