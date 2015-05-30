@@ -1,13 +1,18 @@
 *{margin: 0; padding: 0; }
 
+/*======首页======*/
+/*======首页======*/
 body{
     background-color: lightgrey;
 }
 
-.realwidth{
+.mainbody{
     width: 980px;
+    margin: 0 auto;
 }
 
+
+/*头部*/
 header{
     width: 100%;
     background-color: purple; 
@@ -16,7 +21,6 @@ header{
 
 .headerwrap{
     height: 80px;
-    margin: 0 auto;
     position: relative;
 }
 
@@ -60,6 +64,7 @@ header{
     }
 }
 
+/*身体*/
 .bannerwrap{
     position: relative;
 }
@@ -175,6 +180,7 @@ h2{
     text-indent: 2em;
 }
 
+/*底部*/
 footer{
     background-color: black;
     width: 100%;
@@ -204,7 +210,6 @@ footer{
 }
 
 .bottomlink{
-    margin: 0 auto;
     margin-top: 40px;
     text-align: left;
 }
@@ -239,4 +244,37 @@ footer{
     display: block;
     width: 30px;
     margin: 0 auto;
+}
+
+/*======博客======*/
+/*======博客======*/
+.blogwrap{
+    position: relative;
+    margin-top: 10px;
+}
+
+.blogleft{
+    width: 710px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.blogleft h1{
+    color: purple;
+    font-size: 16px;
+}
+
+.blogleft h2{
+    color: #666;
+    font-size: 12px;
+}
+
+.blogright{
+    width: 260px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
