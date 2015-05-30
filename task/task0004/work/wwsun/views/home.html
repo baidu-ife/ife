@@ -4,7 +4,9 @@
             <div class="collapsible-header"><i class="mdi-action-list"></i>{{item.name}}</div>
             <div class="collapsible-body">
                 <div class="collection">
-                    <a ui-sref="item" class="collection-item" ng-repeat="task in item.tasks">{{task.title}}</a>
+                    <a ui-sref="item" class="collection-item" ng-repeat="task in item.tasks"
+                            data-taskid="{{task.id}}" ng-click="todoCtrl.taskClickHandler($event)">
+                        {{task.title}}</a>
                 </div>
             </div>
         </li>

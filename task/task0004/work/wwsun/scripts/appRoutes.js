@@ -13,7 +13,7 @@ angular.module('appRoutes', [])
             .state('item', {
                 url: '/item',
                 templateUrl: 'views/item.html',
-                controller: ''
+                controller: 'ItemCtrl as itemCtrl'
             })
 
             .state('newItem', {

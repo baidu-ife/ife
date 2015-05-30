@@ -29,7 +29,7 @@ angular.module('todoApp.services', [])
             listTasks: getTaskArray,
 
             addNewTask: function(categoryId, task) {
-                task.id = Date.now();
+                //task.id = Date.now();
                 var taskArray = getTaskArray();
                 var categoryArray = getCategoryArray();
 

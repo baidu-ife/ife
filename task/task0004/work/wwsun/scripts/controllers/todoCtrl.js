@@ -8,4 +8,9 @@ angular.module('todoApp.controllers', [])
 
         self.categories = StorageService.listCategories();
 
+        self.taskClickHandler = function (event) {
+            var taskId = event.target.dataset.taskid;
+            localStorage.setItem("currentItem", taskId);
+        }
+
     }]);

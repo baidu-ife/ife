@@ -8,10 +8,11 @@ angular.module("todoApp.controllers")
         self.selectCategoryId = self.categories[0].id;
 
         self.add = function() {
+            self.newTask.id = Date.now();
             StorageService.addNewTask(self.selectCategoryId, self.newTask);
-            $state.go('item'); // go to home view
 
-            // todo: display the created todo item right now
+            localStorage.setItem('currentItem', self.newTask.id);
+            $state.go('item'); // go to home view
         };
 
         // active the material date picker control
