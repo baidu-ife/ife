@@ -138,6 +138,7 @@ function getPosition(element) {
     var y = scrollTop + scrollHeight;
 return "{"+x+","+y+"}";//需要考虑滚动条的移动，窗口的大小是会变化的
 }
+
 // 字符串、indexof寻找空格/splice()、然后在分成第一个第二个元素、然后在分类查找。。。
 // 实现一个简单的Query
 //selector是一个字符串。
@@ -217,8 +218,6 @@ $("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的�
 // 可以通过简单的组合提高查询便利性，例如
 $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
 
-
-//$选择器，事件部分还不是太会，正在学习，以后一定好好练习补上完整代码的，请求导师的谅解.....
 
 //事件。
 function addEvent(element,event,listener){
