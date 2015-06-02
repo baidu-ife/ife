@@ -196,7 +196,7 @@ function $(selector) {
                 reSelector.push(re2[i]);
             }
         }
-    } else {
+    }else {
         reSelector = mini$(selector);
     }
     return reSelector;
@@ -219,6 +219,8 @@ $("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的�
 $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
 
 
+
+
 //事件。
 function addEvent(element,event,listener){
     if(element.addEventListener){
@@ -227,6 +229,7 @@ function addEvent(element,event,listener){
         element.attachEvent("on"+event,listener);
     }
 }
+
 function removeEvent(element,event,listener){
     if(element.removeEventListener){
         element.removeEventListener(event,listener,false);    
@@ -234,23 +237,72 @@ function removeEvent(element,event,listener){
         element.detachEvent("on"+event,listener);
     }
 }
+
 // 实现对click事件的绑定
 function addClickEvent(element, listener) {
-// your implement
-addEvent(element,"click",listener);
+    addEvent(element,"click",listener);
 }
 
 // 实现对于按Enter键时的事件绑定
 function addEnterEvent(element, listener) {
-// your implement
+    addEvent(element,"keydown",function(en){
+        var key = en.keyCode;
+        if(key === 13){
+            listener.call(en);// .call() .apply()是为了动态的改变this的值而产生的。
+        }
+    });
+}
 
-addEvent(element,"keydown",function(en){
-    var key = en.keyCode;
-    if(key === 13){
-listener.call(en);//.call()？
+
+// 事件代理、事件委托
+function delegateEvent(element, tag, eventName, listener) { 
+    addEvent(element, eventName, function(event) {
+        var e = event || window.event;
+        var target = event.target || event.srcElement;
+        if (target.nodeName.toLowerCase() == tag.toLowerCase()) {
+            listener(e);
+        }
+    });
 }
-});
+$.delegate = delegateEvent;
+
+// 使用示例
+// 还是上面那段HTML，实现对list这个ul里面所有li的click事件进行响应
+$.delegate($("#list"), "li", "click", clickHandle);
+
+
+
+
+
+接下来我们把上面几个函数和$做一下结合，把他们变成$对象的一些方法
+
+addEvent(element, event, listener) -> $.on(element, event, listener);
+removeEvent(element, event, listener) -> $.un(element, event, listener);
+addClickEvent(element, listener) -> $.click(element, listener);
+addEnterEvent(element, listener) -> $.enter(element, listener);
+
+$.on(selector, event, listener) {
+    // your implement
+    addEvent(selector)
 }
+
+$.click(selector, listener) {
+    // your implement
+}
+
+$.un(selector, event, listener) {
+    // your implement
+}
+
+$.delegate(selector, tag, event, listener) {
+    // your implement
+}
+
+// 使用示例：
+$.click("[data-log]", logListener);
+$.delegate('#list', "li", "click", liClicker);
+
+
 
 
 //BOM部分
@@ -265,29 +317,36 @@ function isIE() {
 
 // 设置cookie
 function setCookie(cookieName, cookieValue, expiredays) {
-// your implement
-var d = new Date();
-d.setTime(d.getTime()+(expiredays*24*60*60*1000));
-var expires = "expiredays"+d.toGMTString();
-document.cookie = cookieName+"="+cookieValue+";"+expires;
+    var d = new Date();
+    d.setTime(d.getTime()+(expiredays*24*60*60*1000));
+    var expires = "expiredays ="+d.toGMTString();
+    document.cookie = cookieName+"="+cookieValue+";"+expires;
 }
+//Cookie的参考  http://www.itxueyuan.org/view/6375.html
+
+// 实例：document.cookie=" name=xiaoming ; path=/ ";
 
 // 获取cookie值
 function getCookie(cookieName) {
-// your implement
-var name = cookieName + "=";
-var ca = document.cookie.split(";");
-for(var i=0;i<ca.length;i++){
-    var c = ca[i].trim();
-    if(c.indexOf(name)==0){
-        return c.substring(name.length,c.length);
+    var name = cookieName + "=";
+    var ca = document.cookie.split(";");
+    for(var i=0;i<ca.length;i++){
+        var c = ca[i].trim();
+        if(c.indexOf(name)==0){
+            return c.substring(name.length,c.length);
+        }
+        else return "none";
     }
-    else return "none";
-}
-}
-
+}//为什么是name.length？？？
 
 //ajax部分
+// "exqmple.php?name1=value1&name2=value2"
+// function addURLParam(url,name,value){
+//     url+=(url.indexOf("?")==-1?"?":"&");
+//     url+=encodeURIComponent(name)+"="+encodeURIComponent(value);
+//     return url;
+// }//序列化字符串
+
 function toUrlstr(data){
     var urlstr="";
     for(var i in data){
@@ -296,43 +355,37 @@ function toUrlstr(data){
     return urlstr.substring(0, urlstr.length-1);
 }//用来序列化参数
 function ajax(url, options) {
-    var xhr;
-    if (window.XMLHttpRequest)
-{// code for IE7+, Firefox, Chrome, Opera, Safari
-    xhr=new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
+    var type = options.type || 'GET';
+    if(options.data === "object"){    //创建一个跨浏览器的ajax对象
+        urlstr = toUrlstr(options.data);
+    }else if(options.data == "string"){
+        urlstr = options.data;
+    }
+    xhr.open(type,"util.php",true);
+    if(type == "POST"){
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send(urlstr);
+    }else if(type="GET"){
+        xhr.send();
+    }
+    xhr.onerror = function(){
+        onfail(xhr.responseText,xhr);//错误情况处理
+    }
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+            if((xhr.status >= 200 && xhr.status <300) || xhr.status == 304){
+                onsuccess(xhr.responseText,xhr);
+            }else{
+                onfail(xhr.responseText,xhr);
+            }
+        }
+    };//相应状态
 }
-else
-{// code for IE6, IE5
-    xhr=new ActiveXObject("Microsoft.XMLHTTP");
-}
-if(options.data === "object"){
-    urlstr = toUrlstr(options.data);
-}else if(options.data == "string"){
-    urlstr = urlstr;
-}
-var type = options.type || 'GET';
-xhr.open(type,"utill.js",true);
-if(type == "post"){
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xhr.send(urlstr);
-}else {
-    xhr.send();
-}
-xhr.onerror = function(){
-onfail(xhr.responseText,xhr);//错误情况处理
-}
-xhr.onreadystatechange=function(){//这个函数用来判断是否成功发送
-    if (xhr.readyState==4)
-    {
-        if(xhr.status > 199 && xhr.status < 300) || xhr.status === 304){
-    onsuccess(xhr.responseText,xhr);
-}else {onfail(xhr.responseText,xhr);}
-};
-}
-}
+
 // 使用示例：
 ajax(
-    'utill.js', 
+    'http://localhost:8080/server/ajaxtest', 
     {
         data: {
             name: 'simon',
@@ -340,17 +393,13 @@ ajax(
         },
         onsuccess: function (responseText, xhr) {
             console.log(responseText);
-        }
+        },
+        tape:'POST'
     }
-    );
+);
 
-
-
-
-
-
-
-
-
-
-
+// options是一个对象，里面可以包括的参数为：
+// type: post或者get，可以有一个默认值
+// data: 发送的数据，为一个键值对象或者为一个用&连接的赋值字符串
+// onsuccess: 成功时的调用函数
+// onfail: 失败时的调用函数
