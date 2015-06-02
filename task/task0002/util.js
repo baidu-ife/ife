@@ -150,7 +150,7 @@ function isSiblingNode(element, siblingNode){
 function getPosition(element) {
     var ox = element.getBoundingClientRect().left;
     var oy = element.getBoundingClientRect().top;
-    var scrollLeft = Math.max(document.documentElement., document.body.scrollLeft); 
+    var scrollLeft = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft); 
     var scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop); 
     x = ox + scrollLeft;
     y = oy + scrollTop;
@@ -162,6 +162,9 @@ function getPosition(element) {
     var y = scrollTop + scrollHeight;
 return "{"+x+","+y+"}";//需要考虑滚动条的移动，窗口的大小是会变化的
 }
+// scrollHeight: 获取对象的滚动高度。 
+// scrollLeft:设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离
+
 
 // 字符串、indexof寻找空格/splice()、然后在分成第一个第二个元素、然后在分类查找。。。
 // 实现一个简单的Query
