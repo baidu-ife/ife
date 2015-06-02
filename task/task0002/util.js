@@ -15,6 +15,8 @@ function isFunction(fn) {
 // 使用递归来实现一个深度克隆，可以复制一个目标对象,返回一个完整拷贝
 // 被复制的对象类型会被限制为数字/字符串/布尔/日期/数组/对象。
 // 不会包含函数、正则对象等
+
+// 方法一：
 function cloneObject(src) {
   var result = {};
   var type = typeof src[i];
@@ -26,6 +28,28 @@ function cloneObject(src) {
     }
   }
   return result;
+}
+
+// 方法二
+//instanceof运算符用来比较两个操作数的构造函数
+function cloneObject(Obj) {
+    var buf;
+    if (Obj instanceof Array) {
+        buf = [];  //创建一个空的数组
+        var i = Obj.length;
+        while (i--) {
+            buf[i] = cloneObject(Obj[i]);
+        }
+        return buf;
+    }else if (Obj instanceof Object){
+        buf = {};  //创建一个空对象
+        for (var k in Obj) {  //为这个对象添加新的属性
+            buf[k] = cloneObject(Obj[k]);
+        }
+        return buf;
+    }else{
+        return Obj;
+    }
 }
 
 
