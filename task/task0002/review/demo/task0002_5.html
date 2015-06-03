@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="task0002_5">
+    <title>task0002_5</title>
+    <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-0-2/esl.js"></script>
+    <style>
+        .main {
+            position: absolute;
+        }
+        .bucket {
+            float: left;
+            position: relative;
+            width: 200px;
+            min-height: 500px;
+            border: 4px solid #333;
+            margin: 30px;
+        }
+        .bucket-right {
+            margin-left: 200px;
+        }
+        .block {
+            position: relative;
+            background: #9a0128;
+            width: 198px;
+            height: 70px;
+            line-height: 70px;
+            font-size: 26px;
+            font-family: Arial;
+            color: #fff;
+            border: 1px solid #fff;
+            cursor: move;
+            text-align: center;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+        .dragged {
+            -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 16px;
+            box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 16px;
+            z-index: 999;
+        }
+        .drag-over {
+            border: 4px dashed #34ED16;
+            width: 192px;
+            height: 64px;
+            line-height: 64px;
+        }
+        .bucket-over {
+            border-color: #34ED16;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="bucket bucket-left">
+            <div class="block">A</div>
+            <div class="block">B</div>
+            <div class="block">C</div>
+            <div class="block">D</div>
+            <div class="block">E</div>
+        </div>
+        <div class="bucket bucket-right">
+            <div class="block">&Pi;</div>
+            <div class="block">&Psi;</div>
+            <div class="block">&Delta;</div>
+            <div class="block">&Theta;</div>
+            <div class="block">&Xi;</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        require(['dragDrop', 'util'], function (dragDrop, util) {
+            dragDrop({
+                containerEl: util.query('main')[0],
+                itemCss: 'block',
+                bucketCss: 'bucket',
+                draggedCss: 'dragged',
+                dragOverCss: 'drag-over',
+                bucketOverCss: 'bucket-over'
+            });
+        });
+    </script>
+
+</body>
