@@ -18,9 +18,10 @@
 
     SObj.prototype = {
         constructor: SObj,
-        _push: function(nObj) {
+        push: function(nObj) {
             this.arrs.push(nObj);
             this.length++;
+            return this;
         },
         get: function(i) {
             return this.domArr[i];
@@ -45,10 +46,10 @@
             var res = new SObj();
             res.length = this.length;
             this.each(function(index, item, arr) {
-                var n = _createDom(item.tagName, item);
+                var n = _cloneDom(item.tagName, item);
                 var htm = item.innerHTML;
                 var n.innerHTML = htm;
-                res._push(item);
+                res.push(item);
             });
             return res;
         },
@@ -64,11 +65,13 @@
                     addClass(item, nclass);
                 })
             }
+            return this;
         },
         toggleClass: function(testClass) {
             this.each(function(index, item, arr) {
                 toggleClass(item, testClass);
-            })
+            });
+            return this;
         },
         hasClass: function(testClass) {
             if (this.length < 1) return;
@@ -87,6 +90,7 @@
                     removeClass(item, nclass);
                 })
             }
+            return this;
         },
         isSiblingNodeWith: function(testNode) {
             if (this.length < 1) return;
@@ -128,22 +132,25 @@
                     _delegateEvent(item, selector, event, listener);
                 });
             }
+            return this;
         },
         off: function(event, listener) {
             var that = this;
             that.each(function(index, item, arr) {
                 _removeEvent(item, event, listener);
             });
+            return this;
         },
         one: function(event, selector, listener) {
-            var that=this;
-            var nlistener=function () {
+            var that = this;
+            var nlistener = function() {
                 listener();
 
                 // 清除事件处理程序
                 that.off(event, nlistener);
             };
             that.on(event, selector, nlistener);
+            return this;
         },
         trigger: function(event) { // ?ques: 怎样传递额外的参数给事件处理程序
             if (isString(event)) {
@@ -161,9 +168,9 @@
                     });
                 } else {
                     alert("你的浏览器不支持自定义dom事件")
-                    return;
                 }
             }
+            return this;
         },
         click: function(listener) {
             if (!isFunction(listener)) {
@@ -171,47 +178,51 @@
                 return;
             }
             this.on("click", listener);
+            return this;
         },
         append: function(dom) {
-            if(isString(dom)) {
-                dom=$(dom);
+            if (isString(dom)) {
+                dom = $(dom);
             }
-            if(dom instanceof SObj) {
-                var len=dom.length;
-                this.each(function (index, item, arr) {
-                    var fragment=doc.createDocumentFragment():
-                    for(var i=0; i<len; i++) {
-                        item.appendChild(dom[i]);
-                    }
+            if (dom instanceof SObj) {
+                var len = dom.length;
+                this.each(function(index, item, arr) {
+                    var fragment = doc.createDocumentFragment():
+                        for (var i = 0; i < len; i++) {
+                            item.appendChild(dom[i]);
+                        }
                 });
             }
+            return this;
         },
         prepend: function(dom) {
-            if(isString(dom)) {
-                dom=$(dom);
+            if (isString(dom)) {
+                dom = $(dom);
             }
-            if(dom instanceof SObj) {
-                var len=dom.length;
-                this.each(function (index, item, arr) {
-                    var fragment=doc.createDocumentFragment(),
+            if (dom instanceof SObj) {
+                var len = dom.length;
+                this.each(function(index, item, arr) {
+                    var fragment = doc.createDocumentFragment(),
                         firstChild;
-                    for(var i=0; i<len; i++) {
+                    for (var i = 0; i < len; i++) {
                         // item.appendChild(dom[i]);
-                        firstChild=item.firstChild;
+                        firstChild = item.firstChild;
                         item.insertBefore(dom[i], firstChild);
                     }
                 });
             }
+            return this;
         },
         html: function(htm) {
-            if(isString(htm)) {
-                this.each(function (index, item, arr) {
-                   item.innerHTML=htm; 
+            if (isString(htm)) {
+                this.each(function(index, item, arr) {
+                    item.innerHTML = htm;
                 });
-            }else{
-                var one=this.get(0);
+            } else {
+                var one = this.get(0);
                 return one.innerHTML;
             }
+            return this;
         },
         find: function(selector) {
             var res = new SObj();
@@ -231,70 +242,214 @@
      * 1. 包装字符串为$对象
      * 2. 包装dom元素为$对象
      * 3. 查询
-     * 
+     *
      * 匹配选择器要逆向思维,从后往前查找，有两个情况列外：
      * 1.第一个选择器是id的时候，他会用byid缩小范围;
      * 2.最后一个是tag的时候会用bytag缩小范围;  其他的情况就是把body里面的东西全拿出来挨个筛选
      */
     function util(selector, context) {
-        if (typeof selector !== "string")
-            return null;
-        selector = trim(selector);
-        // if(typeof document.querySelector ==="function")
-        //     return document.querySelector(selector);// querySelector查询属性选择器是，属性值要用引号/双引号包裹着
-        context = context || document;
-        var reqExpr = /^([^\s]+)\s*/;
-        var matchs = reqExpr.exec(selector);
-        var selItem = (matchs && matchs.length > 0) ? matchs[1] : "";
-        if (selItem === "")
-            return null;
-        var temp = null;
-        if (selItem[0] === "#") {
-            // 还要判断是否包含级联
-            temp = document.getElementById(selItem.substring(1));
-        } else if (selItem[0] === ".") {
-            var selCssName = selItem.substring(1);
-            var temp = getElementsByClassName(context, selCssName);
-            if (temp && temp.length > 0) {
-                temp = temp[0];
+        if (isString(selector)) {
+            if (/^<.+>/.test(selector)) {
+                return pack(selector);
+            } else {
+                return qsa(selector, context);
             }
-        } else if (selItem[0] === "[") {
-            temp = null;
-            var attrSel = selItem.substring(1, selItem.length - 1).split("=");
-            var key = attrSel[0];
-            var val = attrSel.length > 1 ? attrSel[1] : "";
-            var childs = context.getElementsByTagName("*");
-            for (var i = 0, len = childs.length; i < len; i++) {
-                var attr = childs[i].getAttribute(key);
-                if (!attr)
-                    continue;
-                !val ? (temp = childs[i]) : (val === attr ? (temp = childs[i]) : void 0);
-                if (!temp)
-                    continue;
-                else
-                    break;
-            }
-        } else {
-            temp = context.getElementsByTagName(selItem)[0];
-        }
-
-        if (!temp)
-            return null;
-        var nexSel = selector.replace(reqExpr, "");
-        if (!nexSel)
-            return temp;
-        else {
-            temp = $(selector.replace(reqExpr, ""), temp);
-            return temp;
+        } else if (selector instanceof Element || isArray(selector)) {
+            return pack(selector);
         }
     }
-    var $ = util;
-    $.fn = SObj.prototype;
 
     // 根据选择器类别选择方法
-    var qsa=function () {
-        
+    var qsa = function() {
+        if (isFunction(doc.querySelectorAll)) {
+            return function(selector, context) {
+                context = context || doc;
+                var temp = doc.querySelectorAll(selector),
+                    res = new SObj();
+                for (var i = 0, len = temp.length; i < len; i++) {
+                    res.push(temp[i]);
+                }
+                return res;
+                // var len=temp.length,
+                //     flag=!1,
+                //     max=(len/2) === 0 ? len/2 : (flag=!0, (len-1)/2);
+                // for(var i=0; i < max; i++){
+                //     res.push(temp[i]);
+                //     res.push(temp[len-2-i]);
+                // }
+                // // 如果是奇数
+                // if(flag) {
+                //     res.push(temp[len-1]);
+                // }
+                // // 返回的顺序是打乱的
+                // return res;
+            };
+        }
+
+        return _qsa;
+    }();
+
+    var _qsa = function(selector, context) {
+        selector = $.trim(selector.toLowerCase());
+        context = context || doc;
+        var selectorArr = selector.split(/\s+/),
+            idSelector = getLastIdSelector(selectorArr),
+            res = new SObj(),
+            idElem;
+        if (idSelector && idSelector.val !== "") {
+            idElem = doc.getElementById(idSelector.val.substr(1));
+            if (!idElem) return res;
+            context = idElem;
+            if (idSelector.index === (selectorArr.length - 1)) {
+                res.push(context);
+                return res;
+            }
+        }
+
+        var tempResult,
+            LastTagName = lastSelectorIsTag(selectorArr[length - 1]);
+        if (LastTagName) {
+            tempResult = context.getElementsByTagName(selectorArr[length - 1]);
+        } else {
+            tempResult = context.getElementsByTagName("*");
+        }
+        var itemDom,
+            selectorFromIndex = idSelector ? idSelector.index : 0;
+        for (var i = 0, len = tempResult.length; i < len; i++) {
+            itemDom = tempResult[i];
+            if (isMatchAllSelector(itemDom, selectorArr.slice(selectorFromIndex)), context) {
+                res.push(itemDom);
+            }
+        }
+        return res;
     };
+
+    /*
+    * regArr: 选择器分割成的数组
+     */
+    var isMatchAllSelector = function(testDom, regArr, context) {
+        var itemSeletor,
+            len = regArr.length,
+            parNode = testDom;
+        if (!isMatchCascadingSelector(testDom, regArr[len - 1])) return false;
+        for (var i = len - 2; i >= 0; i--) {
+            itemSeletor = regArr[i]; // input[type=text]:checked
+            parNode = parNode.parentNode;
+            var flag = false;
+            while (parNode !== context) {
+                if (isMatchCascadingSelector(parNode, itemSeletor)) {
+                    flag = true;
+                    break;
+                }
+                parNode = parNode.parentNode;
+            }
+            if (!flag) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    var isMatchCascadingSelector = function(testDom, selector) {
+        var re=/([\[\.#:]?)([^\.\[\]#:]+)/g; // 解析出级联规则中的每一项规则，如input[type=text].item -> input和[type=text]和.item
+        var flag=false;
+        while(re.test(selector)) {
+            flag=true;
+            var $1=RegExp.$1,
+                $2=RegExp.$2;
+            if($1===""){
+                if(testDom.tagName.toLowerCase()!==$2) return false;
+            }else if($1==="#"){
+                if(testDom.id!==$2) return false;
+            }else if($1==="."){
+                if(!hasClass($2)) return false;
+            }else if($1===":"){
+                var parDom=testDom.parentNode;
+                if($2==="first-child") {
+                    if(_getFirstElementChild(parDom)!==testDom) return false;
+                }else if($2==="last-child") {
+                    if(_getLastElementChild(parDom)!==testDom) return false;
+                }
+            }else if($1==="["){
+                var attrSel=$2.split("=");
+                var key=attrSel[0];
+                var val=attrSel.length>1?attrSel[1]:null;
+                var resVal=testDom.getAttribute(key);
+                if(resVal == null) return false;
+                if(val && resVal!==val) return false;
+            }
+        }
+        if(flag) return true;
+        else return false;
+    };
+
+    var lastSelectorIsTag = function(testVal) {
+        var r = /^([a-zA-Z])+[^a-zA-Z]?/.exec(testVal);
+        return r ? r[1] : "";
+    };
+
+    var getLastIdSelector = function(arr) {
+        var res = null,
+            temp = "",
+            item;
+        for (var i = arr.length - 1; i >= 0; i--) {
+            item = arr[i];
+            if (item.indexOf("#") !== -1) {
+                temp = /#([a-zA-Z])[\.\:\[>+~]+/.exec(item);
+                temp = res[1];
+                return {
+                    index: i,
+                    val: temp
+                };
+            }
+        }
+        return null;
+    };
+
+    // 包装为$对象
+    var pack = function(dom) {
+        var res = new SObj();
+        if (dom instanceof Element) {
+            dom = [dom];
+        }
+        if (isArray(dom)) {
+            for (var i = 0, len = dom.length; i < len; i++) {
+                res.push(dom[i]);
+            }
+        } else if (isString(dom)) {
+            // var re=/^<(\/?)([a-zA-Z]+)([^/>]*)>([\s\S]*)/; // 匹配html字符串
+            var re = /^<([a-zA-Z]+)([^/>]*)>/; // 匹配开始标签
+            var matchs = re.exec(dom);
+            if (matchs && matchs[1] !== "") { // 存在开始标签
+                var tempPar = createDom("div");
+                tempPar.innerHTML = dom;
+                var child = tempPar.firstChild;
+                res.push(child);
+            } else {
+                re = /<\/([a-zA-Z]+)\s*>$/; // 匹配结束标签
+                re.test(dom) && res.push(createDom(RegExp.$1));
+            }
+        }
+        return res;
+    };
+
+    var createDom = function(tagName, attrs) {
+        var n = doc.createElement(tagName);
+        if (!attrs) return n;
+        for (var i in attrs) {
+            if (attrs.hasOwnProperty(i)) {
+                if (i === "style") {
+                    n.style.cssText = attrs.style;
+                } else {
+                    n[i] = attrs[i];
+                }
+            }
+        }
+        return n;
+    };
+
+    var $ = util;
+    $.fn = SObj.prototype;
 
 
     // 保存正则匹配规则，字符串形式
@@ -308,7 +463,37 @@
 
     // 私有方法
     // ==================================================
-    function _createDom(tagName, srcDom) {
+    function _getFirstElementChild (parDom) {
+        if(doc.firstElementChild) {
+            return parDom.firstElementChild;
+        }else {
+            var temp=parDom.firstChild;
+            while(temp) {
+                if(temp.nodeType===1){
+                    return temp;
+                }
+                temp=temp.nextSibling;
+            }
+            return null;
+        }
+    }
+
+    function _getLastElementChild (parDom) {
+        if(doc.lastElementChild) {
+            return parDom.lastElementChild;
+        }else {
+            var temp=parDom.lastChild;
+            while(temp) {
+                if(temp.nodeType===1){
+                    return temp;
+                }
+                temp=temp.previousSibling;
+            }
+            return null;
+        }
+    }
+
+    function _cloneDom(tagName, srcDom) {
         var n = doc.createElement(tagName);
         for (var i in srcDom) {
             if (srcDom.hasOwnProperty(i)) {
@@ -320,21 +505,6 @@
             }
         }
         return n;
-    }
-
-    function _getElementsByClassName(context, selCssName) {
-        var temp = [];
-        if (context.getElementsByClassName) {
-            temp = context.getElementsByClassName(selCssName);
-        } else {
-            var nodes = context.getElementsByTagName("*");
-            for (var i = 0, len = nodes.length; i < len; i++) {
-                if (hasClass(nodes[i], selCssName)) {
-                    temp.push(nodes[i]);
-                }
-            }
-        }
-        return temp;
     }
 
     // 对事件对象做封装处理
@@ -477,7 +647,7 @@
         return res;
     }
 
-    // 事件委托，需完善
+    // 事件委托，?ques: 需完善
     function _delegateEvent(element, tag, eventName, listener) {
         element = element || document.body;
         _addEvent(element, eventName, function(e) {
@@ -539,8 +709,8 @@
     $.isArray = isArray;
 
     // 判断arr是否为一个数组，返回一个bool值
-    function isString(arr) {
-        return (typeof fn).toLowerCase() === "string";
+    function isString(str) {
+        return (typeof str).toLowerCase() === "string";
     }
     $.isString = isString;
 
@@ -1063,10 +1233,10 @@
             var _type = "get";
             if (resOpts.type.toLowerCase() === "get") {
                 _type = "get";
-                xhr.open(addUrlParam(resOpts.url, uploadDataStr), resOpts.async);
+                xhr.open("get", addUrlParam(resOpts.url, uploadDataStr), resOpts.async);
             } else if (resOpts.type.toLowerCase() === "post") {
                 _type = "post";
-                xhr.open("post", url);
+                xhr.open("post", url, resOpts.async);
                 // xhr.setRequestHeader的调用要在open之后send之前
                 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             }
@@ -1132,12 +1302,12 @@
     };
 
     // ?ques: 定义tap事件
-    (function ($) {
-        var oldOn=$.fn.on;
-        $.fn.on=function (event, selector, listener) {
-            if(event === "tap") {
+    (function($) {
+        var oldOn = $.fn.on;
+        $.fn.on = function(event, selector, listener) {
+            if (event === "tap") {
 
-            }else {
+            } else {
                 oldOn.call(this, event, selector, listener);
             }
         };
