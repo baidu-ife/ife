@@ -2,8 +2,6 @@
  * util.js
  *
  * @author: ych
- * 更新说明:
- * 1.所有函数改为以$为命名空间
  */
 
 (function() {
@@ -325,7 +323,7 @@
     };
 
     /*
-    * regArr: 选择器分割成的数组
+     * regArr: 选择器分割成的数组
      */
     var isMatchAllSelector = function(testDom, regArr, context) {
         var itemSeletor,
@@ -351,35 +349,35 @@
     };
 
     var isMatchCascadingSelector = function(testDom, selector) {
-        var re=/([\[\.#:]?)([^\.\[\]#:]+)/g; // 解析出级联规则中的每一项规则，如input[type=text].item -> input和[type=text]和.item
-        var flag=false;
-        while(re.test(selector)) {
-            flag=true;
-            var $1=RegExp.$1,
-                $2=RegExp.$2;
-            if($1===""){
-                if(testDom.tagName.toLowerCase()!==$2) return false;
-            }else if($1==="#"){
-                if(testDom.id!==$2) return false;
-            }else if($1==="."){
-                if(!hasClass($2)) return false;
-            }else if($1===":"){
-                var parDom=testDom.parentNode;
-                if($2==="first-child") {
-                    if(_getFirstElementChild(parDom)!==testDom) return false;
-                }else if($2==="last-child") {
-                    if(_getLastElementChild(parDom)!==testDom) return false;
+        var re = /([\[\.#:]?)([^\.\[\]#:]+)/g; // 解析出级联规则中的每一项规则，如input[type=text].item -> input和[type=text]和.item
+        var flag = false;
+        while (re.test(selector)) {
+            flag = true;
+            var $1 = RegExp.$1,
+                $2 = RegExp.$2;
+            if ($1 === "") {
+                if (testDom.tagName.toLowerCase() !== $2) return false;
+            } else if ($1 === "#") {
+                if (testDom.id !== $2) return false;
+            } else if ($1 === ".") {
+                if (!hasClass($2)) return false;
+            } else if ($1 === ":") {
+                var parDom = testDom.parentNode;
+                if ($2 === "first-child") {
+                    if (_getFirstElementChild(parDom) !== testDom) return false;
+                } else if ($2 === "last-child") {
+                    if (_getLastElementChild(parDom) !== testDom) return false;
                 }
-            }else if($1==="["){
-                var attrSel=$2.split("=");
-                var key=attrSel[0];
-                var val=attrSel.length>1?attrSel[1]:null;
-                var resVal=testDom.getAttribute(key);
-                if(resVal == null) return false;
-                if(val && resVal!==val) return false;
+            } else if ($1 === "[") {
+                var attrSel = $2.split("=");
+                var key = attrSel[0];
+                var val = attrSel.length > 1 ? attrSel[1] : null;
+                var resVal = testDom.getAttribute(key);
+                if (resVal == null) return false;
+                if (val && resVal !== val) return false;
             }
         }
-        if(flag) return true;
+        if (flag) return true;
         else return false;
     };
 
@@ -463,31 +461,31 @@
 
     // 私有方法
     // ==================================================
-    function _getFirstElementChild (parDom) {
-        if(doc.firstElementChild) {
+    function _getFirstElementChild(parDom) {
+        if (doc.firstElementChild) {
             return parDom.firstElementChild;
-        }else {
-            var temp=parDom.firstChild;
-            while(temp) {
-                if(temp.nodeType===1){
+        } else {
+            var temp = parDom.firstChild;
+            while (temp) {
+                if (temp.nodeType === 1) {
                     return temp;
                 }
-                temp=temp.nextSibling;
+                temp = temp.nextSibling;
             }
             return null;
         }
     }
 
-    function _getLastElementChild (parDom) {
-        if(doc.lastElementChild) {
+    function _getLastElementChild(parDom) {
+        if (doc.lastElementChild) {
             return parDom.lastElementChild;
-        }else {
-            var temp=parDom.lastChild;
-            while(temp) {
-                if(temp.nodeType===1){
+        } else {
+            var temp = parDom.lastChild;
+            while (temp) {
+                if (temp.nodeType === 1) {
                     return temp;
                 }
-                temp=temp.previousSibling;
+                temp = temp.previousSibling;
             }
             return null;
         }
@@ -538,19 +536,19 @@
         if (isFunction(element.addEventListener)) {
             callbacks.push(listener);
             element.addEventListener(event, function(e) {
-                e = _extendEvent(e);
+                e = _extendEvent(e || window.event);
                 listener.call(this, e);
             });
         } else if (isFunction(element.attachEvent)) {
             callbacks.push(listener);
             element.attachEvent("on" + event, function(e) {
-                e = _extendEvent(e);
+                e = _extendEvent(e || window.event);
                 listener.call(this, e);
             });
         } else {
             callbacks.push(listener);
             element["on" + event] = function(e) {
-                e = _extendEvent(e);
+                e = _extendEvent(e || window.event);
                 for (var i = 0; i < callbacks.length; i++) {
                     callbacks[i].call(this, e);
                 }
@@ -647,46 +645,15 @@
         return res;
     }
 
-    // 事件委托，?ques: 需完善
-    function _delegateEvent(element, tag, eventName, listener) {
+    // 事件委托
+    function _delegateEvent(element, selector, eventName, listener) {
         element = element || document.body;
         _addEvent(element, eventName, function(e) {
             var target = e.target;
-            var filters = tag.split(" "); //要考虑多个选择器时怎么办
-            for (var i = filters.length - 1; i >= 0; i--) {
-                var temp = filters[i].replace(/[#\.\[\]]/g, "");
-                var selectorType = _getSelectorType(filters[i]);
-                if (selectorType.tagSelector === 1) {
-                    if (target.nodeName.toLowerCase() !== temp.toLowerCase()) {
-                        return;
-                    }
-                    listener.call(target, e);
-                } else if (selectorType.idSelector === 1) {
-                    if (target.getAttribute("id") !== temp) {
-                        return;
-                    }
-                    listener.call(target, e);
-                } else if (selectorType.classSelector === 1) {
-                    if (!hasClass(target, temp)) {
-                        return;
-                    }
-                    // if(target.getAttribute("className")!==temp){
-                    //     return;
-                    // }
-                    listener.call(target, e);
-                } else if (selectorType.attrSelector === 1) {
-                    temp = temp.split("=");
-                    var key = temp[0],
-                        val = temp.length > 1 ? temp[1] : "";
-                    if (val && val === target.getAttribute(key)) {
-                        listener.call(target, e);
-                    } else if (!val && target.getAttribute(key)) {
-                        listener.call(target, e);
-                    }
-                    return;
-                }
+            if (isMatchAllSelector(testDom, selector, element)) {
+                listener.call(target, e);
             }
-        })
+        });
     }
 
 
