@@ -1,0 +1,210 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+li{list-style: none;}
+.content{
+	width: 980px;
+	position: relative;
+	margin: 0 auto;
+}
+/*head*/
+#header{
+	position: relative;
+	width: 100%;
+	min-width: 980px;
+	height: 80px;
+	background-color: #522a5c;
+}
+#head-content{
+	height: 80px;
+	width: 980px;
+}
+
+#log{
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	font: 18px "微软雅黑","microsoft yahei";
+	color: white;
+}
+.head-menu{
+	position: absolute;
+	bottom: 5px;
+	right: 0;
+}
+.menu>a{
+	display: inline-block;
+	margin-left: 28px;
+}
+.menu>a:first-child{
+	margin-left: 0px;
+}
+.menu li{
+	font: 14px "宋体","songti";
+}
+#github{
+	position: absolute;
+	right: 10px;
+	bottom: 0;
+}
+@media (max-width: 1100px){
+	#github{
+		display: none;
+	}
+}
+/*body*/
+.body{
+	background-color: #eeeeee;
+}
+	/*banner*/
+.banner img{
+	width: 100%;
+	min-width: 980px;
+	margin: 0 auto;
+}
+.banner>div{
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+}
+.banner .banner-text{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 360px;
+	height: 120px;
+	background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.2) 75%,rgba(255,255,255,0));
+	padding: 10px 10px 30px;
+	color: #fff;
+}
+.banner h2{
+	font-size: 14px;
+	text-align: right;
+	margin-bottom: 12px;
+}.banner p{
+	font-size: 12px;
+	line-height: 1.5;
+	text-indent: 2em;
+}
+/*picture*/
+.body .content{
+	overflow: hidden;
+	margin-bottom: 110px;
+}
+.topic{
+	width: 320px;
+	float: left;
+	background-color: white;
+	margin-bottom:-10000px;
+	padding-bottom:10000px;
+}
+.topic-1,.topic-2{
+	margin-right: 10px;
+}
+.clearfix:after{
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+.topic img{
+	margin: 10px 10px 0 10px;
+}
+.topic div{
+	margin: 15px 30px 25px;
+}
+.topic p{
+	font-size: 12px;
+	line-height: 1.7;
+	margin: ;
+	text-indent:2em;
+}
+
+#information{
+	background-color: white;
+	width: 100%;
+	min-width: 980px;
+	margin: 0 auto;
+	text-align: center;
+}
+#portrait{
+	width: 160px;
+	margin: -50px auto 50px auto;
+	border-radius: 50%;
+}
+#information h2{
+	font-size: 20px;
+	font-family: "Century Gothic";
+	color: black;
+}
+#information p{
+	width: 600px;
+	margin: 40px auto;
+	margin-bottom: 180px;
+	font-size: 14px;
+	line-height: 25px;
+	font-family: "宋体";
+	color: black;
+	text-align: left;
+	text-indent: 2em;
+}
+
+/*foot*/
+.foot{
+	background-color: black;
+	color: white;
+	font-size: 12px;
+}
+
+.foot-nav{
+	width: 220px;
+	height: 35px;
+	margin: 0 auto;
+}
+.foot-nav>.menu a{
+	font-size: 12px;
+	margin: 11px 14px 12px 0;
+}
+.foot hr{
+	border-bottom: 1px solid #333333;
+}
+.foot .links{
+	height: 300px;
+}
+.links{
+	width: 980px;
+	margin: 0 auto;
+}
+.link-item{
+	width: 180px;
+	margin-left: 16px;
+	float: left;
+}
+.links h2{
+	color: white;
+	font-size: 12px;
+	padding:40px 0px 20px;
+}
+.links a{
+	font-size: 12px
+}
+.links a:hover{
+	text-decoration: underline;
+}
+.links li{
+	height: 20px;
+}
+.copyright{
+	text-align: center;
+}
+.copyright img{
+	margin-top: 20px;
+}
+
