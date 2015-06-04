@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <title>ToDo</title>
+        <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>ToDo</h1>
+        </div>
+        <div class="main">
+            <div class="left">
+                <div class="list-title all-tasks active" onclick="clickCate(this)">
+                    所有任务 (<span>7</span>)
+                </div>
+                <div class="list-title">分类列表</div>
+                <div id="listcontent" class="list">
+                   <ul>
+                       <li>
+                       <h2 class="active"><i class="fa fa-folder-open"></i><span>百度IFE项目</span> (2)<i class="fa fa-trash-o"></i>
+                       </h2>
+                           <ul>
+                               <li>
+                                   <h3><i class="fa fa-file-o"></i><span>task1</span> (2)<i class="fa fa-trash-o"></i></h3>
+                               </li>
+                               <li>
+                                   <h3 class="active"><i class="fa fa-file-o"></i><span>task2</span> (2)<i class="fa fa-trash-o"></i></h3>
+                               </li>
+                           </ul>
+                       </li>
+                       <li><h2><i class="fa fa-folder-open"></i><span>默认分类</span> (0)<i class="fa fa-trash-o"></i></h2></li>
+                   </ul>
+                </div>
+                <button class="add" onclick="clickAddCate()"><i class="fa fa-plus"></i>新增分类</button>
+            </div>
+            <div class="mid">
+                <div class="status">
+                    <button class="active">所有</button>
+                    <button>未完成</button>
+                    <button>已完成</button>
+                </div>
+                <div class="task-list">
+                    <div>2015-06-05</div>
+                    <ul>
+                        <li>todo-1</li>
+                        <li>todo-2</li>
+                    </ul>
+                    <div>2015-06-05</div>
+                    <ul>
+                        <li>todo-1</li>
+                        <li>todo-2</li>
+                    </ul>
+                </div>
+                <button class="add-task add"><i class="fa fa-plus"></i>新增任务</button>
+            </div>
+            <div class="right">
+                <div class="title">
+                    <div class="todo-name">todo-1</div>
+                    <div class="manipulate">
+                        <a><i class="fa fa-check-square-o"></i></a>
+                        <a><i class="fa fa-pencil-square-o"></i></a>
+                    </div>
+                </div>
+                <div class="task-date">
+                    任务日期：<span>2015-06-05</span>
+                </div>
+                <div class="content">
+                    finish task 3
+                </div>
+            </div>
+    </div>
+
+    <div class="modal">
+        modal
+    </div>
+
+    <script src="js/util.js"></script>
+    <script src="js/todo.js"></script>
+</body>
+</html>

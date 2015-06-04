@@ -1,0 +1,268 @@
+.test {
+    background-color: red;
+}
+
+/**
+ * reset
+ */
+div, body, h1,h2,h3, ul, li {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+h1,h2,h3 {
+    font-weight: normal;
+}
+h2,h3{
+    font-size: 16px;
+}
+
+/**
+ * commen
+ */
+body, button {
+    font-family: 'Microsoft YaHei', 'SimHei', 'STHeiti', sans-serif;
+}
+body{
+    min-width: 700px;
+    min-height: 400px;
+}
+/**
+ * header
+ */
+.header {
+    height: 60px;
+    background-color: #5D6684;
+    position: relative;
+    z-index: 10;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+h1 {
+    color: #fff;
+    line-height: 60px;
+    margin-left: 15px;
+}
+
+/**
+ * left
+ */
+.left {
+    width: 240px;
+    background-color: #DADADA;
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    z-index: 9;
+    line-height: 2;    /*padding: 15px 10px 0 15px;*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.35);
+    -o-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.35);
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.35);
+}
+.left .active {
+    background-color: #eee;
+}
+.all-tasks {
+    padding-top: 5px;
+    cursor: pointer;
+}
+.list-title {
+    padding-left: 15px;
+}
+.list li{
+    cursor: pointer;
+}
+.list h2{
+    position: relative;
+    padding-left: 15px;
+}
+.list h3{
+    position: relative;
+    padding-left: 30px;
+}
+.list h2:hover,.list h3:hover{
+    background-color: #eee;
+}
+.list h2:hover .fa-trash-o,.list h3:hover .fa-trash-o{
+    display: inline-block;
+}
+.left i {
+    margin-right: 5px;
+}
+
+.fa-trash-o{
+    display: none;
+    font-size: 18px;
+    position: absolute;
+    right: 5px;
+    top:8px;
+}
+
+.add {
+    width: 240px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 16px;
+    background-color: #CACACA;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s ease;
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+}
+.add:hover {
+    background-color: #C1C3DE;
+    color: #343521;
+}
+
+/**
+ * mid
+ */
+.mid {
+    width: 260px;
+    background-color: #eee;
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 240px;
+    z-index: 8;
+    padding: 15px 10px 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
+}
+.status {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #A6A6A6;
+}
+.status button {
+    width: 60px;
+    height: 30px;
+    margin: 0 5px;
+    background-color: #D8D8D8;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s ease;
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+}
+.status button:hover {
+
+    /*         -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        -o-box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6); */
+    background-color: #A8AAC5;
+    color: #fff;
+}
+.status .active {
+    background-color: #A8AAC5;
+    color: #fff;
+    cursor: default;
+}
+.task-list {
+    margin-top: 10px;
+    line-height: 2;
+}
+.task-list div {
+    background-color: #E2E2DD;
+    padding-left: 10px;
+}
+.task-list ul {
+    /*padding-left: 20px;    background-color: black;*/
+}
+.add-task {
+    width: 260px;
+    background-color: #D8D8D8;
+}
+.add-task i {
+    margin-right: 5px;
+}
+
+/**
+ * right
+ */
+.right {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 500px;
+    background-color: #fff;    /*padding: 15px 10px 0 15px;*/
+}
+.title {
+    height: 55px;
+    line-height: 55px;
+    background-color: #dadada;
+    overflow: auto;
+    position: relative;
+    z-index: 5;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.todo-name {
+    padding-left: 15px;
+    float: left;
+}
+.manipulate {
+    font-size: 26px;
+    padding-right: 20px;
+    float: right;
+}
+.manipulate a {
+    margin-right: 15px;
+    cursor: pointer;
+}
+.task-date {
+    height: 55px;
+    line-height: 55px;
+    background-color: #eee;
+    padding-left: 15px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.content {
+    padding: 15px;
+}
+/**
+ * ================modal==============
+ */
+.modal{
+    width: 300px;
+    height: 200px;
+    background-color: #eee;
+    margin-left: -150px;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+     -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    -o-box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+}

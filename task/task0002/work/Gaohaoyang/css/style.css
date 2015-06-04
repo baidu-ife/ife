@@ -1,0 +1,165 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;    /*text-align: center;*/
+}
+.warn {
+    display: none;
+    background-color: #DEE8EF;
+    width: 290px;
+    padding: 5px;
+    color: #B32D2D;
+    font-weight: bold;
+}
+textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+.show {
+    margin-top: 10px;
+}
+
+body{
+    font-family: 'Microsoft YaHei', 'SimHei', 'STHeiti', sans-serif;
+}
+.small-title{
+    font-size: 16px;
+    margin-left: 100px;
+    font-weight: normal;
+}
+h1{
+    font-weight: normal;
+}
+.index-content{
+    max-width: 600px;
+    border-bottom: 1px dashed #aaa;
+}
+.index-content a{
+    display:block;
+    margin: 10px;
+    text-decoration: none;
+    color: #274E70;
+}
+.index-content a:hover，.other-info a:hover{
+    color: #5D809E;
+}
+.other-info{
+    padding: 10px;
+    line-height: 1.5;
+}
+.other-info a{
+    text-decoration: none;
+    color: #274E70;
+}
+
+/**
+ * 轮播图
+ */
+.imgRotation {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+.img-list {
+    width: 2500px;
+    font-size: 0;
+    position: absolute;
+}
+.circle {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    margin-left: -45px;
+}
+.circle a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+.active {
+    background-color: #fff;
+    cursor: default;
+}
+
+/* 输入框提示 */
+.input-hint input {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    border: 1px solid #888;
+    outline: none;
+    padding: 3px 5px;
+    margin: 0;
+}
+.input-hint ul {
+    display: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.input-hint li {
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.input-hint li span{
+    color: #A73535;
+}
+
+.input-hint .active {
+    background: #eee;
+}
+
+/**
+ * 界面拖拽交互
+ */
+.drag-block{
+    position:relative;
+}
+.block{
+    width: 200px;
+    height: 479px;
+    border:1px solid #333;
+    float: left;
+    /* position: relative; */
+}
+.move{
+    width: 200px;
+    height: 59px;
+    background-color: #929BDD;
+    border-bottom:1px solid #333;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    line-height: 59px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: move;
+}
+/*.block .active{
+    border:1px solid #333;
+    opacity: 0.5;
+    
+}*/
+.right-block{
+    margin-left: 300px;
+}
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
