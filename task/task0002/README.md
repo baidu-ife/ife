@@ -155,7 +155,8 @@ var srcObj = {
     b: {
         b1: ["hello", "hi"],
         b2: "JavaScript"
-    }
+    },
+    c: 
 };
 var abObj = srcObj;
 var tarObj = cloneObject(srcObj);
@@ -183,17 +184,8 @@ var a = [1, 3, 5, 7, 5, 3];
 var b = uniqArray(a);
 console.log(b); // [1, 3, 5, 7]
 
-// 中级班同学跳过此题
-// 实现一个简单的trim函数，用于去除一个字符串，头部和尾部的空白字符
-// 假定空白字符只有半角空格、Tab
-// 练习通过循环，以及字符串的一些基本方法，分别扫描字符串str头部和尾部是否有连续的空白字符，并且删掉他们，最后返回一个完成去除的字符串
-function simpleTrim(str) {
-    // your implement
-}
-
-// 很多同学肯定对于上面的代码看不下去，接下来，我们真正实现一个trim
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
-// 尝试使用一行简洁的正则表达式完成该题目
+// 先暂时不要简单的用一句正则表达式来实现
 function trim(str) {
     // your implement
 }
@@ -203,26 +195,17 @@ var str = '   hi!  ';
 str = trim(str);
 console.log(str); // 'hi!'
 
-// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
+// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参赛传递
 function each(arr, fn) {
     // your implement
 }
 
-// 其中fn函数可以接受两个参数：item和index
-
-// 使用示例
-var arr = ['java', 'c', 'php', 'html'];
-function output(item) {
-    console.log(item)
-}
-each(arr, output);  // java, c, php, html
-
 // 使用示例
 var arr = ['java', 'c', 'php', 'html'];
 function output(item, index) {
-    console.log(index + ': ' + item)
+    console.log(item)
 }
-each(arr, output);  // 0:java, 1:c, 2:php, 3:html
+each(arr, output);  // java, c, php, html
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {}
@@ -277,29 +260,29 @@ function isMobilePhone(phone) {
 先来一些简单的，在你的`util.js`中完成以下任务：
 
 ```javascript
-// 为element增加一个样式名为newClassName的新样式
+// 为dom增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
     // your implement
 }
 
-// 移除element中的样式oldClassName
+// 移除dom中的样式oldClassName
 function removeClass(element, oldClassName) {
     // your implement
 }
 
-// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
+// 判断siblingNode和dom是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
     // your implement
 }
 
-// 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
+// 获取dom相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
     // your implement
 }
 // your implement
 ```
 
-接下来挑战一个`mini $`，它和之前的`$`是不兼容的，它应该是`document.querySelector`的功能子集，在不直接使用`document.querySelector`的情况下，在你的`util.js`中完成以下任务：
+接下来挑战一个`mini $`，它和之前的`$`是不兼容的，它应该是`document.querySelector`的功能子集。继续在你的`util.js`中完成以下任务：
 
 ```javascript
 // 实现一个简单的Query
@@ -342,7 +325,7 @@ $("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第
 我们来继续用封装自己的小jQuery库来实现我们对于JavaScript事件的学习，还是在你的`util.js`，实现以下函数
 
 ```javascript
-// 给一个element绑定一个针对event事件的响应，响应函数为listener
+// 给一个dom绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
     // your implement
 }
@@ -353,7 +336,7 @@ function clicklistener(event) {
 }
 addEvent($("#doma"), "click", a);
 
-// 移除element对象对于event事件发生时执行listener的响应
+// 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
 function removeEvent(element, event, listener) {
     // your implement
 }
@@ -445,7 +428,7 @@ function renderList() {
 }
 
 function init() {
-    each($("#list").getElementsByTagName('li'), function(item) {
+    each($("#list li"), function(i, item) {
         $.click(item, clickListener);
     });
 
@@ -611,7 +594,7 @@ options是一个对象，里面可以包括的参数为：
 
 - 界面首先有一个文本输入框，允许按照特定的格式`YYYY-MM-DD`输入年月日；
 - 输入框旁有一个按钮，点击按钮后，计算当前距离输入的日期的00:00:00有多少时间差
-- 在页面中显示，距离YYYY年MM月DD日还有XX天XX小时XX分XX秒
+- 在页面中显示，距离YYYY年MM月DD日还有XXXX年XX月XX日XX小时XX分XX秒
 - 每一秒钟更新倒计时上显示的数
 - 如果时差为0，则倒计时停止
 
