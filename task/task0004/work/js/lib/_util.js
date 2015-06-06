@@ -17,7 +17,7 @@
     SObj.prototype = {
         constructor: SObj,
         push: function(nObj) {
-            this.arrs.push(nObj);
+            this.domArr.push(nObj);
             this.length++;
             return this;
         },
@@ -46,7 +46,7 @@
             this.each(function(index, item, arr) {
                 var n = _cloneDom(item.tagName, item);
                 var htm = item.innerHTML;
-                var n.innerHTML = htm;
+                n.innerHTML = htm;
                 res.push(item);
             });
             return res;
@@ -185,7 +185,7 @@
             if (dom instanceof SObj) {
                 var len = dom.length;
                 this.each(function(index, item, arr) {
-                    var fragment = doc.createDocumentFragment():
+                    var fragment = doc.createDocumentFragment();
                         for (var i = 0; i < len; i++) {
                             item.appendChild(dom[i]);
                         }
@@ -229,6 +229,23 @@
                 t && res.push(t);
             });
             return res;
+        },
+        css: function (key, val) { // 设置样式时，样式有单位的需要带上单位
+            var obj={};
+            if(isString(key)) {
+                if(val == null) {
+                    if (this.length < 1) return;
+                    var elem = this.domArr[0];
+                    return _getElemCss(elem, key);
+                }
+                obj[key]=val;
+            }else if(isObject(key)) {
+                obj=key;
+            }
+            this.each(function (index, item, arr) {
+                _setElemCss(item, obj);
+            });
+            return this;
         }
     };
 
@@ -259,7 +276,7 @@
 
     // 根据选择器类别选择方法
     var qsa = function() {
-        if (isFunction(doc.querySelectorAll)) {
+        if (!isFunction(doc.querySelectorAll)) { // @test
             return function(selector, context) {
                 context = context || doc;
                 var temp = doc.querySelectorAll(selector),
@@ -274,35 +291,34 @@
         return _qsa;
     }();
 
-    var _qsa = function(selector, context) {
+    function _qsa (selector, context) {
         selector = $.trim(selector.toLowerCase());
         context = context || doc;
         var selectorArr = selector.split(/\s+/),
             idSelector = getLastIdSelector(selectorArr),
             res = new SObj(),
-            idElem;
+            selectorArrLength=selectorArr.length;
+
         if (idSelector && idSelector.val !== "") {
-            idElem = doc.getElementById(idSelector.val.substr(1));
+            var idElem = doc.getElementById(idSelector.val.substr(1));
             if (!idElem) return res;
             context = idElem;
-            if (idSelector.index === (selectorArr.length - 1)) {
+            if (idSelector.index === (selectorArrLength - 1)) {
                 res.push(context);
                 return res;
             }
         }
 
         var tempResult,
-            LastTagName = lastSelectorIsTag(selectorArr[length - 1]);
-        if (LastTagName) {
-            tempResult = context.getElementsByTagName(selectorArr[length - 1]);
-        } else {
-            tempResult = context.getElementsByTagName("*");
-        }
+            lastTagName = lastSelectorIsTag(selectorArr[selectorArrLength - 1]);
+        tempResult = context.getElementsByTagName(lastTagName || "*");
+        
         var itemDom,
             selectorFromIndex = idSelector ? idSelector.index : 0;
         for (var i = 0, len = tempResult.length; i < len; i++) {
             itemDom = tempResult[i];
-            if (isMatchAllSelector(itemDom, selectorArr.slice(selectorFromIndex)), context) {
+            // 只校验id选择器及之后的selector
+            if (isMatchAllSelector(itemDom, selectorArr.slice(selectorFromIndex), context)) {
                 res.push(itemDom);
             }
         }
@@ -316,10 +332,10 @@
             parNode = testDom;
         if (!isMatchCascadingSelector(testDom, regArr[len - 1])) return false;
         for (var i = len - 2; i >= 0; i--) {
-            itemSeletor = regArr[i]; // input[type=text]:checked
+            itemSeletor = regArr[i];
             parNode = parNode.parentNode;
             var flag = false;
-            while (parNode !== context) {
+            while (parNode !== doc && parNode !== context.parentNode) {
                 if (isMatchCascadingSelector(parNode, itemSeletor)) {
                     flag = true;
                     break;
@@ -345,21 +361,22 @@
             } else if ($1 === "#") {
                 if (testDom.id !== $2) return false;
             } else if ($1 === ".") {
-                if (!hasClass($2)) return false;
+                if (!hasClass(testDom, $2)) return false;
             } else if ($1 === ":") {
                 var parDom = testDom.parentNode;
                 if ($2 === "first-child") {
                     if (_getFirstElementChild(parDom) !== testDom) return false;
                 } else if ($2 === "last-child") {
                     if (_getLastElementChild(parDom) !== testDom) return false;
+                }else if($2==="checked") {
+                    if(!testDom.checked) return false;
                 }
             } else if ($1 === "[") {
                 var attrSel = $2.split("=");
                 var key = attrSel[0];
                 var val = attrSel.length > 1 ? attrSel[1] : null;
-                var resVal = testDom.getAttribute(key);
-                if (resVal == null) return false;
-                if (val && resVal !== val) return false;
+                if(!testDom.hasAttribute(key)) return false;
+                if (val && testDom.getAttribute(key) !== val) return false;
             }
         }
         if (flag) return true;
@@ -367,8 +384,8 @@
     };
 
     var lastSelectorIsTag = function(testVal) {
-        var r = /^([a-zA-Z])+[^a-zA-Z]?/.exec(testVal);
-        return r ? r[1] : "";
+        var r = /^[a-zA-Z]+/.exec(testVal);
+        return r ? r[0] : "";
     };
 
     var getLastIdSelector = function(arr) {
@@ -378,8 +395,8 @@
         for (var i = arr.length - 1; i >= 0; i--) {
             item = arr[i];
             if (item.indexOf("#") !== -1) {
-                temp = /#([a-zA-Z])[\.\:\[>+~]+/.exec(item);
-                temp = res[1];
+                temp = /#([a-zA-Z-_]+)/.exec(item);
+                temp = temp[0];
                 return {
                     index: i,
                     val: temp
@@ -490,110 +507,47 @@
         return n;
     }
 
-    // 对事件对象做封装处理
-    function _extendEvent(srcEvent) {
-        srcEvent = srcEvent || window.event;
-        var res = {};
-        extend(res, srcEvent);
-        res.target = srcEvent.target || srcEvent.srcElement;
-        res.preventDefault = function() {
-            if (srcEvent.preventDefault) {
-                srcEvent.preventDefault();
-            } else {
-                srcEvent.returnValue = false;
-            }
-        };
-        res.stopPropagation = function() {
-            if (srcEvent.stopPropagation) {
-                srcEvent.stopPropagation();
-            } else {
-                srcEvent.cancelBubble = true;
-            }
+    // 参数node：将要获取其计算样式的元素节点
+    function _getCurrentStyle(node) {
+        var style = null;
+        
+        if(window.getComputedStyle) {
+            style = window.getComputedStyle(node, null);
+        }else{
+            style = node.currentStyle;
         }
-        res.srcEvent = srcEvent;
-        return srcEvent;
+        
+        // 返回CSSStyleDeclaration对象，代表了CSS键值对的集合
+        // 就算没有显示的设置值，也会返回一个默认的样式值
+        return style; 
     }
 
-    // 给一个dom绑定一个针对event事件的响应，响应函数为listener
-    // ie6,7,8支持attactEvent。第三种情况已经很少了
-    function _addEvent(element, event, listener) {
-        var handlers = element.handlers || (element.handlers = {});
-        var callbacks = handlers[event] || (handlers[event] = []);
-        callbacks.push(listener);
-        if (isFunction(element.addEventListener)) {
-            element.addEventListener(event, function(e) {
-                e = _extendEvent(e || window.event);
-                listener.call(this, e);
-            });
-        } else if (isFunction(element.attachEvent)) {
-            element.attachEvent("on" + event, function(e) {
-                e = _extendEvent(e || window.event);
-                listener.call(this, e);
-            });
-        } else {
-            element["on" + event] = function(e) {
-                e = _extendEvent(e || window.event);
-                for (var i = 0; i < callbacks.length; i++) {
-                    callbacks[i].call(this, e);
-                }
-            };
-        }
+    function _getElemCss (elem, cssName) {
+        var style=_getCurrentStyle(elem);
+        return style[cssName];
     }
 
-    // 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
-    function _removeEvent(element, event, listener) {
-        var handlers,
-            callbacks;
-        if (!(handlers = element.handlers) || !(callbacks = handlers[event])) return;
-
-        if (listener) {
-            var index = -1,
-                i;
-            for (i = 0; i < callbacks.length; i++) {
-                if (callbacks[i] === listener) {
-                    index = i;
-                    break;
-                }
-            }
-            index !== -1 && callbacks.splice(index, 1);
-
-            if(isFunction(element.removeEventListener)) {
-                element.removeEventListener(event, listener);
-            }else if(isFunction(element.detachEvent)) {
-                element.detachEvent("on" + event, listener);
-            }else {
-                element["on" + event] = function(e) {
-                    e = e || window.event;
-                    for (var i = 0; i < callbacks.length; i++) {
-                        callbacks[i].call(this, e);
-                    }
-                };
-            }
-        }else {
-            var i;
-            for (i = 0; i < callbacks.length; i++) {
-                if(isFunction(element.removeEventListener)) {
-                    element.removeEventListener(event, callbacks[i]);
-                }else if(isFunction(element.detachEvent)) {
-                    element.detachEvent("on" + event, callbacks[i]);
+    function _setElemCss (elem, props) {
+        var elemStyle=elem.style;
+        for(var i in props) {
+            if(props.hasOwnProperty(i)) {
+                if(props[i] == null) {
+                    _delStyleCss(elem, i);
                 }else {
-                    element["on" + event] = null;
-                    break;
+                    elemStyle[i]=props[i];
                 }
             }
-            handlers[event] = [];
         }
     }
 
-    // 事件委托
-    function _delegateEvent(element, selector, eventName, listener) {
-        element = element || document.body;
-        _addEvent(element, eventName, function(e) {
-            var target = e.target;
-            if (isMatchAllSelector(testDom, selector, element)) {
-                listener.call(target, e);
-            }
-        });
+    // 删除元素的style的某个属性
+    function _delStyleCss(elem, cssName) {
+        var elemStyle = elem.style;
+        if(elemStyle.removeProperty){
+            elemStyle.removeProperty(cssName);
+        }else{
+            elemStyle[cssName] = ""; 
+        }
     }
 
 
@@ -633,7 +587,7 @@
     // 判断fn是否为一个Object，返回一个bool值
     // typeof null = "object"
     function isObject(obj) {
-        return Object.prototype.toString.call(fn) == "[object Object]";
+        return Object.prototype.toString.call(obj) == "[object Object]";
     }
     $.isObject = isObject;
 
@@ -737,6 +691,7 @@
     // 获取一个对象里面第一层元素的数量，返回一个整数
     // 在for in的时候，在IE9以下，有枚举bug。a = {toString:1}时，for in不出toString这个key。
     var getObjectLength = function(obj) {
+        "use strict"; // 为什么要用严格模式???
         var hasOwnProperty=Object.prototype.hasOwnProperty,
             hasEnumBug=!({
                 toString: null
@@ -817,7 +772,7 @@
         } else {
             var oldClassName=element.className;
             oldClassName=oldClassName.split(/\s+/);
-            for(var i=0, len=oldClassName.length; i++) {
+            for(var i=0, len=oldClassName.length; i<len; i++) {
                 if(oldClassName[i]===testClassName) {
                     return true;
                 }
@@ -956,6 +911,132 @@
     $.extend = extend;
 
 
+    // 事件
+    // ==================================================
+    
+    // 对事件对象做封装处理
+    function _extendEvent(srcEvent) {
+        srcEvent = srcEvent || window.event;
+        var res = {};
+        extend(res, srcEvent);
+        res.target = srcEvent.target || srcEvent.srcElement;
+        res.preventDefault = function() {
+            if (srcEvent.preventDefault) {
+                srcEvent.preventDefault();
+            } else {
+                srcEvent.returnValue = false;
+            }
+        };
+        res.stopPropagation = function() {
+            if (srcEvent.stopPropagation) {
+                srcEvent.stopPropagation();
+            } else {
+                srcEvent.cancelBubble = true;
+            }
+        }
+        res.srcEvent = srcEvent;
+        return srcEvent;
+    }
+
+    // 给一个dom绑定一个针对event事件的响应，响应函数为listener
+    // ie6,7,8支持attactEvent。第三种情况已经很少了
+    function _addEvent(element, event, listener) {
+        var handlers = element.handlers || (element.handlers = {});
+        var callbacks = handlers[event] || (handlers[event] = []);
+        callbacks.push(listener);
+        if (isFunction(element.addEventListener)) {
+            element.addEventListener(event, function(e) {
+                e = _extendEvent(e || window.event);
+                listener.call(this, e);
+            });
+        } else if (isFunction(element.attachEvent)) {
+            element.attachEvent("on" + event, function(e) {
+                e = _extendEvent(e || window.event);
+                listener.call(this, e);
+            });
+        } else {
+            element["on" + event] = function(e) {
+                e = _extendEvent(e || window.event);
+                for (var i = 0; i < callbacks.length; i++) {
+                    callbacks[i].call(this, e);
+                }
+            };
+        }
+    }
+
+    // 移除dom对象对于event事件发生时执行listener的响应，当listener为空时，移除所有响应函数
+    function _removeEvent(element, event, listener) {
+        var handlers,
+            callbacks;
+        if (!(handlers = element.handlers) || !(callbacks = handlers[event])) return;
+
+        if (listener) {
+            var index = -1,
+                i;
+            for (i = 0; i < callbacks.length; i++) {
+                if (callbacks[i] === listener) {
+                    index = i;
+                    break;
+                }
+            }
+            index !== -1 && callbacks.splice(index, 1);
+
+            if(isFunction(element.removeEventListener)) {
+                element.removeEventListener(event, listener);
+            }else if(isFunction(element.detachEvent)) {
+                element.detachEvent("on" + event, listener);
+            }else {
+                element["on" + event] = function(e) {
+                    e = e || window.event;
+                    for (var i = 0; i < callbacks.length; i++) {
+                        callbacks[i].call(this, e);
+                    }
+                };
+            }
+        }else {
+            var i;
+            for (i = 0; i < callbacks.length; i++) {
+                if(isFunction(element.removeEventListener)) {
+                    element.removeEventListener(event, callbacks[i]);
+                }else if(isFunction(element.detachEvent)) {
+                    element.detachEvent("on" + event, callbacks[i]);
+                }else {
+                    element["on" + event] = null;
+                    break;
+                }
+            }
+            handlers[event] = [];
+        }
+    }
+
+    // 事件委托
+    function _delegateEvent(element, selector, eventName, listener) {
+        element = element || document.body;
+        _addEvent(element, eventName, function(e) {
+            var target = e.target;
+            if (isMatchAllSelector(testDom, selector, element)) {
+                listener.call(target, e);
+            }
+        });
+    }
+
+    // 创建事件
+    $.Event = function(type, options) {
+        var ne;
+        isObject(options) || (options = {});
+        if (isArray(doc.createEvent)) {
+            ne = doc.createEvent("Events");
+        } else if (isArray(doc.createEventObject)) {
+            ne = doc.createEventObject();
+        }
+        ne.type = type;
+        ne.bubbles = true;
+        ne.cancelable = true;
+        extend(ne, options);
+        return ne;
+    };
+
+
     // 平台检测, 参考《javascript高级程序设计》
     // ==================================================
     $.os = function() {
@@ -979,7 +1060,7 @@
 
         // 检测移动设备平台
         s.iphone = ua.indexOf("iphone") > -1;
-        s.ipad = ua.index("iphone") > -1;
+        s.ipad = ua.indexOf("ipad") > -1;
         if (/android (\d+\.\d+)/.test(ua)) {
             s.android = 1;
             s.ver = parseFloat(RegExp.$1);
@@ -997,7 +1078,7 @@
         if (window.opera) {
             o.opera = 1;
             o.ver = window.opera.version();
-        } else if (/applewebkit\s(\S+)/.test(ua)) {
+        } else if (/applewebkit\s*(\S+)/.test(ua)) {
             if (/chrome\/(\S+)/.test(ua)) {
                 o.chrome = 1;
                 o.ver = RegExp["$1"];
@@ -1283,38 +1364,176 @@
 
     // 动画
     // ==================================================
-    $.animate = function() {
+    (function ($) {
+        var defOpts={
+            duration: 500,// 单位：ms
+            complete: function(){},
+            easing: "linear",
+            loop: false
+        };
 
-    };
+        var raf=window.requestAnimationFrame
+            || window.webkitRequestAnimationFrame
+            || window.mozRequestAnimationFrame
+            || window.oRequestAnimationFrame
+            || function (callback) {
+                return setTimeout(callback, 1000/60);
+            };
 
+        var caf=window.cancelAnimationFrame
+            || window.webkitCancelAnimationFrame
+            || window.mozCancelAnimationFrame
+            || window.oCancelAnimationFrame
+            || function (id) {
+                return clearTimeout(id, 1000/60);
+            };
 
-    // 创建Dom事件
-    // ==================================================
-    $.Event = function(type, options) {
-        var ne;
-        isObject(options) || (options = {});
-        if (isArray(doc.createEvent)) {
-            ne = doc.createEvent("Events");
-        } else if (isArray(doc.createEventObject)) {
-            ne = doc.createEventObject();
-        }
-        ne.type = type;
-        ne.bubbles = true;
-        ne.cancelable = true;
-        extend(ne, options);
-        return ne;
-    };
-
-    // @ques: 定义tap事件
-    (function($) {
-        var oldOn = $.fn.on;
-        $.fn.on = function(event, selector, listener) {
-            if (event === "tap") {
-
-            } else {
-                oldOn.call(this, event, selector, listener);
+        // 缓动函数，改变precent
+        var easing = {
+            linear: function (t) {
+                return t;
+            },
+            ease: function (t) {
+                
             }
         };
-    })(util)
+
+        var relase=function (item) {
+            var timerId=item._rafId;
+            (timerId != null) && (caf(timerId), delete item._rafId);
+        };
+
+        var update=function (elem, props, easingType, percent) {
+            var easingFn=easing[easingType] || "";
+            if(easingFn) {
+                percent=easingFn(percent);
+            }
+
+            draw(elem, props, percent);
+        };
+
+        var draw=function (elem, props, percent) {
+            var elemStyle=elem.style;
+            var intialCssVal=elem.intialCssVal;
+            for(var cssName in props) {
+                if(props.hasOwnProperty(cssName)) {
+                    var from=intialCssVal[cssName];
+                    var to=props[cssName];
+                    var hasPX=from.indexOf("px") !== -1 ? "px" : "";
+                    from=parseFloat(from);
+                    to=parseFloat(to);
+                    var delta=(to-from)*percent;
+                    
+                    elemStyle[cssName]=from+delta+hasPX;
+                }
+            }
+        };
+
+        var setIntialCss=function (elem, props) {
+            var temp= (elem.intialCssVal={});
+            var $elem=$(elem);
+            for(var cssName in props) {
+                if(props.hasOwnProperty(cssName)) {
+                    temp[cssName]=$elem.css(cssName);
+                }
+            }
+        };
+
+        var switchStatus=function (elem, props) {
+            var temp=props;
+            props=elem.intialCssVal;
+            elem.intialCssVal=temp;
+            return props;// @ques: 引用作为参数的问题，props的值不会改变，所以要返回一个值赋给props。这是为什么
+        };
+
+        // 样式有单位的需要带上单位
+        $.fn.animate=function (props, opt) {
+            if(this.length<1) return;
+            var that=this;
+            if($.getObjectLength(props) < 1) return;
+            opt=$.extend({}, defOpts, opt);
+
+            this.each(function (index, item, arr) {
+                setIntialCss(item, props);
+
+                var startTime=new Date();
+                function mainLoop () {
+                    var now=new Date();
+                    var elapsedTime=now-startTime;
+                    if(elapsedTime >= opt.duration) {
+                        update(item, props, opt.easing, 1);
+                        // that.stop(); // stop会直接取消所有元素的动画，所以可能会发生有的元素还没执行完酒停止了
+                        relase(item);
+                        opt.complete.call(item);
+
+                        if(opt.loop){ }
+                    }else {
+                        update(item, props, opt.easing, elapsedTime/opt.duration);
+                        item._rafId=raf(mainLoop);
+                    }
+                }
+
+                if(!item._rafId){
+                    item._rafId=raf(mainLoop);
+                }
+            });
+        };
+
+        $.fn.hide=function (_speed, _complete) {
+            var opt={
+                duration: _speed || 500,
+                complete: function(){
+                    $(this).css("display", "none");
+                    _complete && _complete.call($(this));
+                }
+            };
+            var props={
+                opacity: 0
+            };
+            this.animate(props, opt);
+        };
+
+        $.fn.show=function (_speed, _complete) {
+            var opt={
+                duration: _speed || 500,
+                complete: function(){
+                    _complete && _complete.call($(this));
+                }
+            };
+            var props={
+                opacity: 1
+            };
+            this.css({
+                opacity: 0,
+                display: null
+            }).animate(props, opt);
+        };
+
+        $.fn.stop=function () {
+            if(this.length<1) return;
+            this.each(function (index, item, arr) {
+                relase(item);
+            })
+        };
+    })(util);
+
+
+    // 暴露util
+    // ==================================================
+    window.util=$
+    window.$=$;
+
+
+    // @ques: 定义tap事件
+    // (function($) {
+    //     var oldOn = $.fn.on;
+    //     $.fn.on = function(event, selector, listener) {
+    //         if (event === "tap") {
+
+    //         } else {
+    //             oldOn.call(this, event, selector, listener);
+    //         }
+    //     };
+    // })(util)
 
 })();
