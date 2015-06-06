@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.css-transition(@pro:all, @time:1s) {
+    transition: @pro @time;
+    -moz-transition: @pro @time;
+    -webkit-transition: @pro @time; 
+    -o-transition: @pro @time;
+}
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+body {
+    font-size: 1.4rem;
+    height: 100%;
+}
+
+#category {
+    width: 100%;
+    min-height: 100%;
+    background-color: #f23;
+    position: absolute;
+}
+
+#task {
+    width: 100%;
+    min-height: 100%;
+    background-color: #2f4;
+    position: absolute;
+    left: 100%;
+    .css-transition;
+}
+
+#task-detail {
+    width: 100%;
+    min-height: 100%;
+    background-color: #23f;
+    position: absolute;
+    left: 200%;
+}

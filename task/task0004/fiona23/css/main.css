@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+body {
+    font-size: 1.4rem;
+    height: 100%;
+}
+
+#section-cate{
+    position: relative;
+    overflow: hidden;
+}
+#category {
+    width: 100%;
+    min-height: 100%;
+    background-color: #f23;
+    position: absolute;
+    left: 0;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s; 
+    -o-transition: all 0.4s;
+}
+
+#task {
+    width: 100%;
+    min-height: 100%;
+    background-color: #2f4;
+    position: absolute;
+    left: 100%;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s; 
+    -o-transition: all 0.4s;
+}
+
+#task-detail {
+    width: 100%;
+    min-height: 100%;
+    background-color: #23f;
+    position: absolute;
+    left: 200%;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s; 
+    -o-transition: all 0.4s;
+}

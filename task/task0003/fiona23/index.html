@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo list</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!--[if lt IE9]> 
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+ <header>
+     <h1>GTD Tools</h1>
+ </header>
+<div id="content">
+ <aside oncontextmenu="return false;">
+    <p>所有任务(<span id="all-task-num"></span>)</p>
+    <p>分类列表</p>
+    <ul id="category-level1-list">
+        <li class="category-level1 category0">默认分类
+        </li>
+
+    </ul>
+    <ul id="right-mouse-btn">
+        <li id="add-category-level2">添加子分类</li>
+        <li id="delet-category-level2">删除子分类</li>
+    </ul>
+    <p class="add-category"><img id="add-category" src="img/add.png" alt="">新加分类</p>
+ </aside>
+ <section>
+     <p id="codes-line"><span id="all-btn" class="codes active">所有</span>
+        <span id="pending-btn" class="codes">未完成</span>
+        <span id="completed-btn" class="codes">已完成</span>
+    </p>
+     <div class="task-wrapper">
+         <div id="pending"></div>
+         <div id="completed"></div>
+     </div>
+     <div id="sure-cancle">
+         <p id="sure" class="task-btn">确认</p>
+        <p id="cancle" class="task-btn">取消</p>
+     </div>
+     <p class="add-task"><img id="add-task" src="img/add.png" alt="">新加任务</p>
+ </section>
+ <article>
+
+    <div id="task-header-line">
+        <input id="task-name" type="text" disabled="disabled" placeholder="请输入任务名称">
+        <img id="complete" src="img/check.png" alt="complete">
+        <img id="edit" src="img/edit.png" alt="edit">
+    </div>
+    <div id="date-line">
+        <label for="">任务日期</label><input type="text" id="datepicker" disabled="disabled" placeholder="请输入日期，格式YYYY/MM/DD">
+    </div>
+    <textarea id="task-description" disabled="disabled"></textarea>
+
+ </article>
+    
+</div>
+
+<div id="add-category-overlay" class="overlay">
+    <div class="black">
+        <div class="cancle">X</div>
+        <div class="overlay-content">
+            <p>新建分类</p>
+            <label class="name-label" for="">分类名称</label>
+            <input class="name-input" id="add-category-name" type="text">
+            <input class="sub-input" id="add-category-submit" type="submit" value="确认">
+        </div>
+    </div>
+</div>
+<div id="add-category-level2-overlay" class="overlay">
+    <div class="black">
+        <div class="cancle">X</div>
+        <div class="overlay-content">
+            <p>新建分类</p>
+            <label class="name-label" for="">分类名称</label>
+            <input class="name-input" id="add-category-level2-name" type="text">
+            <input class="sub-input" id="add-category-level2-submit" type="submit" value="确认">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/util.js"></script>  
+<script type="text/javascript" src="js/todo.js"></script> 
+</body>
+</html>
+
