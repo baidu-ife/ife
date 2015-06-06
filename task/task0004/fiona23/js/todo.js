@@ -86,18 +86,50 @@
     }
     var init = new Init();
     init.showCategory();
-    $.delegate('#category', 'li', 'click', function () {
+    $.delegate('#category', 'li', 'touchstart', function () {
         init.showTask(target)
     })
-    $.delegate('#task', 'li', 'click', function () {
+    $.delegate('#task', 'li', 'touchstart', function () {
         init.showTaskDetail(target)
     })
-    $.on('#side-cate', 'click', function (e) {
+    $.on('#side-cate', 'touchstart', function () {
             init.backToCategory()
     })
-    $.on('#side-task', 'click', function (e) {
-console.log('a')
+    $.on('#side-task', 'touchstart', function () {
             init.backToTask()
     })
+    gesture();
+    function gesture () {
+        var startPosX;
+        var endPosX;
+        var isMove = false;
+        $.on('#section-task','touchstart', function (event) {
+        var touch = event.touches[0];
+        startPosX = touch.pageX;
+    })
 
+    function swip (ele, func) {
+        $.on(ele,'touchmove', function (event) {
+            isMove = true;
+        })
+        var timer = setInterval(function () {
+            if (isMove) {
+                clearInterval(timer);
+                $.on(ele,'touchend', function (event) {
+                    var touch = event.changedTouches[0];
+                    endPosX = touch.pageX;
+                    console.log(endPosX)
+                    if (endPosX > startPosX) {
+                            func();
+                    }
+                })
+            }
+        },1)
+    }
+    
+    swip('#section-task', init.backToCategory);
+    swip('#section-detail', init.backToTask)
+
+    }
+    
 })()
