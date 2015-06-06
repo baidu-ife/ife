@@ -150,7 +150,7 @@
             that.on(event, selector, nlistener);
             return this;
         },
-        trigger: function(event) { // ?ques: 怎样传递额外的参数给事件处理程序
+        trigger: function(event) { // @ques: 怎样传递额外的参数给事件处理程序
             if (isString(event)) {
                 event = $.Event(event);
             }
@@ -268,19 +268,6 @@
                     res.push(temp[i]);
                 }
                 return res;
-                // var len=temp.length,
-                //     flag=!1,
-                //     max=(len/2) === 0 ? len/2 : (flag=!0, (len-1)/2);
-                // for(var i=0; i < max; i++){
-                //     res.push(temp[i]);
-                //     res.push(temp[len-2-i]);
-                // }
-                // // 如果是奇数
-                // if(flag) {
-                //     res.push(temp[len-1]);
-                // }
-                // // 返回的顺序是打乱的
-                // return res;
             };
         }
 
@@ -322,9 +309,7 @@
         return res;
     };
 
-    /*
-     * regArr: 选择器分割成的数组
-     */
+    // regArr: 选择器分割成的数组
     var isMatchAllSelector = function(testDom, regArr, context) {
         var itemSeletor,
             len = regArr.length,
@@ -453,8 +438,8 @@
     // 保存正则匹配规则，字符串形式
     // ==================================================
     var re = {
-        email: "^[a-zA-Z\\d_-]+@[a-zA-Z\\d_-]+\\.com$",
-        mobile: "^1[3|4|5|8][0-9]\\d{4,8}$"
+        email: /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/,
+        mobile: /^1\d{10}$/
     };
     $.re = re;
 
@@ -530,23 +515,22 @@
     }
 
     // 给一个dom绑定一个针对event事件的响应，响应函数为listener
+    // ie6,7,8支持attactEvent。第三种情况已经很少了
     function _addEvent(element, event, listener) {
         var handlers = element.handlers || (element.handlers = {});
         var callbacks = handlers[event] || (handlers[event] = []);
+        callbacks.push(listener);
         if (isFunction(element.addEventListener)) {
-            callbacks.push(listener);
             element.addEventListener(event, function(e) {
                 e = _extendEvent(e || window.event);
                 listener.call(this, e);
             });
         } else if (isFunction(element.attachEvent)) {
-            callbacks.push(listener);
             element.attachEvent("on" + event, function(e) {
                 e = _extendEvent(e || window.event);
                 listener.call(this, e);
             });
         } else {
-            callbacks.push(listener);
             element["on" + event] = function(e) {
                 e = _extendEvent(e || window.event);
                 for (var i = 0; i < callbacks.length; i++) {
@@ -562,87 +546,43 @@
             callbacks;
         if (!(handlers = element.handlers) || !(callbacks = handlers[event])) return;
 
-        if (isFunction(element.removeEventListener)) {
-            if (listener) {
+        if (listener) {
+            var index = -1,
+                i;
+            for (i = 0; i < callbacks.length; i++) {
+                if (callbacks[i] === listener) {
+                    index = i;
+                    break;
+                }
+            }
+            index !== -1 && callbacks.splice(index, 1);
+
+            if(isFunction(element.removeEventListener)) {
                 element.removeEventListener(event, listener);
-                var index = -1,
-                    i;
-                for (i = 0; i < callbacks.length; i++) {
-                    if (callbacks[i] === listener) {
-                        index = i;
-                        break;
-                    }
-                }
-                index !== -1 && callbacks.splice(index, 1);
-            } else {
-                var i;
-                for (i = 0; i < callbacks.length; i++) {
-                    element.removeEventListener(event, callbacks[i]);
-                }
-                handlers[event] = null;
-            }
-        } else if (isFunction(element.detachEvent)) {
-            if (listener) {
+            }else if(isFunction(element.detachEvent)) {
                 element.detachEvent("on" + event, listener);
-                var index = -1,
-                    i;
-                for (i = 0; i < callbacks.length; i++) {
-                    if (callbacks[i] === listener) {
-                        index = i;
-                        break;
-                    }
-                }
-                index !== -1 && callbacks.splice(index, 1);
-            } else {
-                var i;
-                for (i = 0; i < callbacks.length; i++) {
-                    element.detachEvent("on" + event, callbacks[i]);
-                }
-                handlers[event] = null;
-            }
-        } else {
-            if (listener) {
-                var index = -1,
-                    i;
-                for (i = 0; i < callbacks.length; i++) {
-                    if (callbacks[i] === listener) {
-                        index = i;
-                        break;
-                    }
-                }
-                index !== -1 && callbacks.splice(index, 1);
+            }else {
                 element["on" + event] = function(e) {
                     e = e || window.event;
                     for (var i = 0; i < callbacks.length; i++) {
                         callbacks[i].call(this, e);
                     }
                 };
-            } else {
-                element["on" + event] = null;
-                handlers[event] = null;
             }
+        }else {
+            var i;
+            for (i = 0; i < callbacks.length; i++) {
+                if(isFunction(element.removeEventListener)) {
+                    element.removeEventListener(event, callbacks[i]);
+                }else if(isFunction(element.detachEvent)) {
+                    element.detachEvent("on" + event, callbacks[i]);
+                }else {
+                    element["on" + event] = null;
+                    break;
+                }
+            }
+            handlers[event] = [];
         }
-    }
-
-    // 判断一个选择器是什么类别
-    function _getSelectorType(selector) {
-        var res = {
-            idSelector: 0,
-            classSelector: 0,
-            attrSelector: 0,
-            tagSelector: 0
-        };
-        trim(selector);
-        if (selector[0] === "#") {
-            res.idSelector = 1;
-        } else if (selector[0] === ".") {
-            res.classSelector = 1;
-        } else if (selector[0] === "[") {
-            res.attrSelector = 1;
-        } else {
-            res.tagSelector = 1;
-        }
-        return res;
     }
 
     // 事件委托
@@ -681,22 +621,34 @@
     }
     $.isString = isString;
 
-    // 判断fn是否为一个函数，返回一个bool值
+    /*
+     * 判断fn是否为一个函数，返回一个bool值
+     * 旧版本chrome下'function' == typeof /a/ 为true.所以使用Object.prototype.toString
+     */ 
     function isFunction(fn) {
-        return (typeof fn).toLowerCase() === "function";
+        return Object.prototype.toString.call(fn) == "[object Function]";
     }
     $.isFunction = isFunction;
 
     // 判断fn是否为一个Object，返回一个bool值
+    // typeof null = "object"
     function isObject(obj) {
-        return (typeof obj).toLowerCase() === "object";
+        return Object.prototype.toString.call(fn) == "[object Object]";
     }
     $.isObject = isObject;
 
     // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
     function cloneObject(src) {
-        if (typeof src === "undefined") return;
-        if (isArray(src)) {
+        var res;
+        if(src instanceof Number
+            || src instanceof String
+            || src instanceof Boolean){
+            res=new src.constructor (src.valueof());
+            return res;
+        }else if(src instanceof Date) {
+            res=new Date(src.getTime());
+            return res;
+        }else if (isArray(src)) {
             var res = [];
             for (var i = 0, len = src.length; i < len; i++) {
                 res[i] = cloneObject(src[i]);
@@ -714,33 +666,25 @@
                 }
             }
             return res;
-        } else {
-            return src;
         }
+        return src;
     }
     $.cloneObject = cloneObject;
 
     // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
     function uniqArray(arr) {
-        //temp使用对象，1.防止arr中的某些项的值过大  2.如果是字符串的不能用字符串来当索引
         var temp = {},
             res = [];
         for (var i = 0; i < arr.length; i++) {
-            var val = arr[i];
-            if (!val) {
+            var key = arr[i],
+                val=key;
+            if (!key) {
                 continue;
             }
-            if (typeof val === "string") {
-                temp[val] = "1";
-            } else if (typeof val === "number") {
-                temp[val] = 1;
-            }
-        }
-        for (var prop in temp) {
-            if (typeof temp[prop] === "string") {
-                res.push(prop);
-            } else if (typeof temp[prop] === "number") {
-                res.push(parseInt(prop));
+            isString(key) && (key="_"+key);
+            if(!temp[key]){
+                res.push(val);
+                temp[key]=true;
             }
         }
         return res;
@@ -748,7 +692,7 @@
     $.uniqArray = uniqArray;
 
     // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串。先暂时不要简单的用一句正则表达式来实现
-    function trim(str) {
+    function simpleTrim (str) {
         var isSpaceChar = function(achar) {
             // 空白符：\f,\n,\r,\t,\v," "
             var reqArr = [' ', '\f', '\n', '\r', '\t', '\v'];
@@ -764,20 +708,21 @@
             index = 0;
         for (var i = 0; i < str.length; i++) {
             if (!isSpaceChar(str[i])) {
-                index = i;
                 break;
             }
         }
-        res = res.substring(index, res.length);
-        index = res.length;
-        for (var i = res.length - 1; i >= 0; i--) {
-            if (!isSpaceChar(res[i])) {
-                index = i + 1;
+
+        for (var j = res.length - 1; j >= 0; j--) {
+            if (!isSpaceChar(res[j])) {
                 break;
             }
         }
-        res = res.substring(0, index);
-        return res;
+        return res.substring(i, j);
+    }
+    function trim(str) {
+        // 正则中的\s匹配几乎所有空白符，但是低版本下 \s 等价于 [ \f\n\r\t\v]。 所以为了兼容，还要加上中文空格 和 &nbsp; 。其中\u3000: 中文空格（全角）的unicode字符表示 
+        var trimer = new RegExp("(^[\\s\\t\\xa0\\u3000]+)|([\\u3000\\xa0\\s\\t]+\x24)", "g");
+        return String(str).replace(trimer, "");
     }
     $.trim = trim;
 
@@ -790,28 +735,56 @@
     $.each = each;
 
     // 获取一个对象里面第一层元素的数量，返回一个整数
-    function getObjectLength(obj) {
-        var total = 0;
-        for (var prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                total++;
+    // 在for in的时候，在IE9以下，有枚举bug。a = {toString:1}时，for in不出toString这个key。
+    var getObjectLength = function(obj) {
+        var hasOwnProperty=Object.prototype.hasOwnProperty,
+            hasEnumBug=!({
+                toString: null
+            }).propertyIsEnumerable('toString'),
+            dontEnums = [
+                'toString',
+                'toLocaleString',
+                'valueOf',
+                'hasOwnProperty',
+                'isPrototypeOf',  // 判断一个对象是否在另一个对象的原型上
+                'propertyIsEnumerable', // 返回一个布尔值，表明指定的属性名是否是当前对象可枚举的自身属性
+                'constructor'
+            ],
+            dontEnumsLength = dontEnums.length;
+
+        return function (obj) {
+            if(!isObject(obj) && !isFunction(obj)) {
+                throw new TypeError("this function called on object or function");
             }
-        }
-        return total;
-    }
+
+            var total = 0;
+            for (var prop in obj) {
+                if (hasOwnProperty.call(obj, prop)) {
+                    total++;
+                }
+            }
+            if(hasEnumBug) {
+                for(var i=0; i<dontEnumsLength; i++){
+                    if(hasOwnProperty.call(obj, dontEnums[i])) {
+                        total++;
+                    }
+                }
+            }
+            return total;
+        };
+    }();
     $.getObjectLength = getObjectLength;
 
     // 判断是否为邮箱地址
     function isEmail(emailStr) {
-        var regex = new RegExp(re.email);
-        return regex.test(emailStr);
+        return re.email.test(emailStr);
     }
     $.isEmail = isEmail;
 
     // 判断是否为手机号
+    // 简单判断 不考虑 (+86) 185 xxxx xxxx
     function isMobilePhone(phone) {
-        var regex = new RegExp(re.mobile);
-        return regex.test(phone);
+        return re.mobile.test(phone);
     }
     $.isMobilePhone = isMobilePhone;
 
@@ -820,10 +793,8 @@
         if (element.classList) {
             element.classList.add(newClassName);
         } else {
-            var oldClassName = element.className;
-            var regex = new RegExp("\\b" + newClassName + "\\b", "g");
-            if (!regex.test(oldClassName)) {
-                element.className = oldClassName + " " + newClassName;
+            if(!hasClass(newClassName)) {
+                element.className=element.className ? [element.className, newClassName].join(" ") : newClassName;
             }
         }
     }
@@ -844,9 +815,18 @@
         if (element.classList) {
             return element.classList.contains(testClassName);
         } else {
-            var oldClassName = element.className;
-            var regex = new RegExp("\\b" + testClassName + "\\b", "g");
-            return regex.test(oldClassName);
+            var oldClassName=element.className;
+            oldClassName=oldClassName.split(/\s+/);
+            for(var i=0, len=oldClassName.length; i++) {
+                if(oldClassName[i]===testClassName) {
+                    return true;
+                }
+            }
+            return false;
+            // or
+            // var oldClassName = element.className;
+            // var regex = new RegExp("\\b" + testClassName + "\\b", "g");
+            // return regex.test(oldClassName);
         }
     }
     $.hasClass = hasClass;
@@ -856,11 +836,17 @@
         if (element.classList) {
             element.classList.remove(delClassName);
         } else {
-            var oldClassName = element.className;
-            var regex = new RegExp("\\b" + delClassName + "\\b\\s*", "g");
-            if (regex.test(oldClassName)) {
-                element.className = oldClassName.replace(regex, "");;
+            if(delClassName && hasClass(element, delClassName)) {
+                var oldClassName=element.className.split(/\s+/);
+                for(var i=0, len=oldClassName.length; i<len; i++) {
+                    if(oldClassName[i] === delClassName) {
+                        oldClassName.splice(i, 1);
+                        break;
+                    }
+                }
+                element.className=oldClassName.join(" ");
             }
+
         }
     }
     $.removeClass = removeClass;
@@ -880,13 +866,12 @@
             y: 0
         };
         var temp = element;
-        while (temp.offsetParent !== null && temp.offsetParent !== document.body) {
+        while (temp !== null) { // body.offsetParent=null
             res.x += temp.offsetLeft;
             res.y += temp.offsetTop;
             temp = temp.offsetParent;
         }
-        res.x += temp.offsetLeft;
-        res.y += temp.offsetTop;
+        
         return res;
     }
     $.getPosition = getPosition;
@@ -897,7 +882,10 @@
             return curDom.nextElementSibling;
         } else {
             var res = curDom.nextSibling;
-            while (res !== null && res.nodeType !== 1) {
+            while (res !== null) {
+                if(res.nodeType === 1) {
+                    return res;
+                }
                 res = res.nextSibling;
             }
             return res;
@@ -923,7 +911,7 @@
     function setCookie(cookieName, cookieValue, expiredays) {
         var res = "";
         if (!cookieName || !cookieValue) return;
-        res += encodeURIComponent(cookieName) + encodeURIComponent(cookieValue);
+        res += encodeURIComponent(cookieName) + "=" + encodeURIComponent(cookieValue);
         if (expiredays instanceof Date) {
             res += "; expires=" + expiredays.toGMTString();
         }
@@ -1157,7 +1145,7 @@
 
         $.ajax = function(options) {
             var xhr;
-            if (!(xhr = getXHR)) return;
+            if (!(xhr = getXHR())) return;
             var resOpts = $.extend({}, defOpts, options);
 
             // 触发请求发送前的ajaxBeforeSend的全局事件
@@ -1175,27 +1163,7 @@
             var uploadDataStr = (resOpts.data && $.param(resOpts.data)) || "";
 
             // 绑定回调函数
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) {
-                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-                        if (resOpts.dataType.toLowerCase() === "json") {
-                            try {
-                                var jsonRes = JSON.parse(xhr.responseText);
-                                resOpts.success(jsonRes);
-                            } catch (err) {
-                                resOpts.error(xhr, err);
-                            }
-                        } else {
-                            resOpts.success(xhr.responseText);
-                        }
-                    } else {
-                        resOpts.error(xhr, {
-                            message: "状态码错误或其他原因"
-                        });
-                    }
-                    resOpts.complete(xhr);
-                }
-            };
+            xhr.onreadystatechange = stateChangeHandler;
 
             var _type = "get";
             if (resOpts.type.toLowerCase() === "get") {
@@ -1207,6 +1175,7 @@
                 // xhr.setRequestHeader的调用要在open之后send之前
                 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             }
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
             // HTTP Basic Authentication认证
             if (resOpts.username && resOpts.password) {
@@ -1214,6 +1183,74 @@
             }
 
             xhr.send(_type === "get" ? null : uploadDataStr);
+
+            return xhr;
+
+            function stateChangeHandler () {
+                var stat;
+                if (xhr.readyState === 4) {
+                    try {
+                        stat=xhr.status;
+                    }catch(err) {
+                        // 在请求时，如果网络中断，Firefox会无法取得status
+                        fire("error");
+                        return;
+                    }
+
+                    fire(stat); //触发每个状态
+
+                    // IE error sometimes returns 1223 when it should be 204, so treat it as success
+                    if ((stat >= 200 && stat < 300) 
+                        || stat === 304
+                        || stat === 1223) {
+                        fire("success");
+                    } else {
+                        fire('error');
+                    }
+
+                    fire('complete');
+
+                    /*
+                     * NOTE: Testing discovered that for some bizarre reason, on Mozilla, the
+                     * JavaScript <code>XmlHttpRequest.onreadystatechange</code> handler
+                     * function maybe still be called after it is deleted. The theory is that the
+                     * callback is cached somewhere. Setting it to null or an empty function does
+                     * seem to work properly, though.
+                     *
+                     * On IE, there are two problems: Setting onreadystatechange to null (as
+                     * opposed to an empty function) sometimes throws an exception. With
+                     * particular (rare) versions of jscript.dll, setting onreadystatechange from
+                     * within onreadystatechange causes a crash. Setting it from within a timeout
+                     * fixes this bug (see issue 1610).
+                     *
+                     * End result: *always* set onreadystatechange to an empty function (never to
+                     * null). Never set onreadystatechange from within onreadystatechange (always
+                     * in a setTimeout()).
+                     */
+                    window.setTimeout(function() {
+                        xhr.onreadystatechange = new Function();
+                        xhr = null;
+                    }, 0);
+                }
+            }
+
+            function fire (type) {
+                var handler=resOpts[type];
+                if(!$.isFunction(handler)) return;
+                if(type !== "success") { // error | complete
+                    handler(xhr);
+                }else {
+                    //处理获取xhr.responseText导致出错的情况,比如请求图片地址.???
+                    try {
+                        xhr.responseText;
+                    }catch(err) {
+                        return handler(xhr);
+                    }
+                    var response=xhr.responseText;
+                    (resOpts.dataType.toLowerCase() === "json") && (response = JSON.parse(xhr.responseText));
+                    handler(response);
+                }
+            }
         };
 
         $.get = function(url, data, callback, dataType) {
@@ -1268,7 +1305,7 @@
         return ne;
     };
 
-    // ?ques: 定义tap事件
+    // @ques: 定义tap事件
     (function($) {
         var oldOn = $.fn.on;
         $.fn.on = function(event, selector, listener) {

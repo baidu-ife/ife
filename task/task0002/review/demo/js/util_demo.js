@@ -154,6 +154,7 @@ function $(selector) {
             }
         }
 
+        // ych: 优先级问题
         return parts[0] && result[0] ? filterParents(parts, result) : result;
     }
 
@@ -592,6 +593,7 @@ simpleTrim(' \t trimed   ')
  */
 function trim(str) {
 
+    // \u3000: 中文空格（全角）的unicode字符表示 (@ych)
     var trimer = new RegExp("(^[\\s\\t\\xa0\\u3000]+)|([\\u3000\\xa0\\s\\t]+\x24)", "g");
 
     return String(str).replace(trimer, "");
@@ -635,23 +637,24 @@ function output(item, index) {
  * @return {number} 元素长度
  */
 var getObjectLength = (function() {
-    'use strict';
+    'use strict'; // 为什么要用严格模式(@ych)
     var hasOwnProperty = Object.prototype.hasOwnProperty,
         hasDontEnumBug = !({
             toString: null
-        }).propertyIsEnumerable('toString'),
+        }).propertyIsEnumerable('toString'), 
         dontEnums = [
             'toString',
             'toLocaleString',
             'valueOf',
             'hasOwnProperty',
-            'isPrototypeOf',
-            'propertyIsEnumerable',
+            'isPrototypeOf',  // 判断一个对象是否在另一个对象的原型上
+            'propertyIsEnumerable', // 返回一个布尔值，表明指定的属性名是否是当前对象可枚举的自身属性
             'constructor'
         ],
         dontEnumsLength = dontEnums.length;
 
     return function(obj) {
+        // 如果obj=null，应该扔出来一个错误还是继续执行下去???
         if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
             throw new TypeError('getObjectLength called on non-object');
         }
@@ -659,7 +662,7 @@ var getObjectLength = (function() {
         var result = [],
             prop, i;
 
-        for (prop in obj) {
+        for (prop in obj) { // for in 只循环可枚举的属性
             if (hasOwnProperty.call(obj, prop)) {
                 result.push(prop);
             }
@@ -778,6 +781,7 @@ function $(selector) {
  * @return {boolean}          结果
  */
 function isEmail(emailStr) {
+    // \w不是已经包含 '_' 了吗 (@ych)
     return /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/.test(emailStr);
 }
 
@@ -812,8 +816,9 @@ function isMobilePhone(phone) {
 // 这是传统的userAgent + documentMode方式的ie版本判断。
 // 这在大多数对老IE问题进行hack的场景下有效果。
 function isIE() {
+    // document.documentMode是IE8之后出现的属性，IE8之后支持改变文档的兼容模式，document.documentMode代表的是实际使用的文档渲染模式(@ych)
     return /msie (\d+\.\d+)/i.test(navigator.userAgent)
-        ? (document.documentMode || + RegExp['\x241']) : undefined;
+        ? (document.documentMode || + RegExp['\x241']) : undefined; // question: 为什么不直接用$1,而用'\x241'
 }
 
 

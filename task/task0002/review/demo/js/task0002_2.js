@@ -64,7 +64,7 @@ function format(source, opts) {
  * @returns {Date} 转换后的日期对象
  */
 function dateParse(source) {
-    var reg = new RegExp("^\\d+(\\-|\\/)\\d+(\\-|\\/)\\d+\x24");
+    var reg = new RegExp("^\\d+(\\-|\\/)\\d+(\\-|\\/)\\d+\x24"); // \x24=& (@ych)
     if ('string' == typeof source) {
         if (reg.test(source) || isNaN(Date.parse(source))) {
             var d = source.split(/ |T/),

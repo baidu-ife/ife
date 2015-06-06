@@ -90,7 +90,7 @@ function step3(e) {
         return showErr('输入不能空');
     }
 
-    var arr = input.split(/[，,、；\s\t\n]/);
+    var arr = input.split(/[，,、；\s\t\n]/); // @ques: \s包含\t,\n了的吧？(@ych)
 
     arr = uniqArray(arr);
     arr = filterArray(arr);

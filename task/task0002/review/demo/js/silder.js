@@ -45,9 +45,14 @@ function contains(node1, node2) {
         return false;
     }
     if (node1.contains) {
-        return node1.contains(node2);
+        return node1.contains(node2); // 如果  node1 和  node2 相一致，.contains() 将返回 true(@ych)
     }
-    return !!(node1.compareDocumentPosition(node2) & 16);
+    /*
+    * (@ych) 
+    * compareDocumentPosition返回的是节点关系的和值（1，2，4，8，16，32），16表示node1包含node2，和值如果包含16则与16进行位操作仍然返回16
+    * 想要判断哪个关系，就把返回的结果与这个关系对应的值进行&运算，看看结果是不是这个关系对应的值
+    */ 
+    return !!(node1.compareDocumentPosition(node2) & 16); // 16: 
 }
 
 // 判断mouseover/mouseout是否跨元素边界
@@ -64,6 +69,11 @@ function crossElementBoundary(e) {
     return true;
 }
 
+/*
+* @ych 
+* 具体的效果实现和业务逻辑分开
+*/
+
 /**
  * 轮播
  *
@@ -74,7 +84,7 @@ var Slider = function (options) {
     this.prefix = 'slider';
     this.itemClass = 'slider-item';
     this.index = 0;
-    this.interval = 2000;
+    this.interval = 2000; // 切换的时间
     this.loop = 1;
     this.effect = null;
 
@@ -178,7 +188,7 @@ Slider.prototype.goTo = function (index) {
     }
 
     // update index
-    this.lastIndex = this.index;
+    this.lastIndex = this.index; // 记录上一次的index(@ych)
     this.index = index;
 
     this._setCurrent();
@@ -282,12 +292,12 @@ Animation.prototype.stop = function () {
     this._done && this._done();
 };
 
-Animation.prototype.tick = function (percent) {
+Animation.prototype.tick = function (percent) { // percent: 只表示在duration下进行了多少时间的百分比(@ych)
     var easingFn = this.easingName ? easing[this.easingName] : '';
     if (easingFn) {
         percent = easingFn(percent);
     }
-    this.draw(percent);
+    this.draw(percent); // 实际的绘制工作(@ych)
 };
 
 Animation.prototype.transition = function (from, to, cb) {
