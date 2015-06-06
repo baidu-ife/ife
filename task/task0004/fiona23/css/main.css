@@ -10,44 +10,63 @@ html {
 body {
     font-size: 1.4rem;
     height: 100%;
-}
-
-#section-cate{
-    position: relative;
+    width: 100%;
     overflow: hidden;
 }
-#category {
-    width: 100%;
-    min-height: 100%;
-    background-color: #f23;
+
+section {
+    width: 105%;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s; 
+    -o-transition: all 0.4s;
+    height: inherit;
+    display: table;
+}
+aside {
+    width: 5%;
+    display: table-cell;
+}
+#section-cate{
     position: absolute;
     left: 0;
-    transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -webkit-transition: all 0.4s; 
-    -o-transition: all 0.4s;
-}
+    z-index: 3;
+    overflow: hidden;
+    background-color: #f23;
 
-#task {
-    width: 100%;
-    min-height: 100%;
-    background-color: #2f4;
+}
+    #category {
+        width: 95%;
+        float: left;
+        
+    }
+
+#section-task {
     position: absolute;
     left: 100%;
-    transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -webkit-transition: all 0.4s; 
-    -o-transition: all 0.4s;
+    z-index: 2;
+    overflow: hidden;
+    background-color: #2f4;
 }
+    #task {
+        width: 95%;
+        float: left;
+        padding-left: 7%;
+        box-sizing: border-box;
+    }
 
-#task-detail {
-    width: 100%;
-    min-height: 100%;
-    background-color: #23f;
+#section-detail{
     position: absolute;
     left: 200%;
-    transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -webkit-transition: all 0.4s; 
-    -o-transition: all 0.4s;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #23f;
 }
+
+    #task-detail {
+        width: 95%;
+        padding-left: 7%;
+        position: absolute;
+        float: left;
+        box-sizing: border-box;
+    }

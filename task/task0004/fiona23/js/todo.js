@@ -43,11 +43,12 @@
                     li.id = tasks[task].id;
                     TaskList.appendChild(li)
                 }
-                categoryList.style.left = '-98%';
-                TaskList.style.left = '2%';
-                TaskDetail.style.left = '102%';
+                $('#section-cate').style.left = '-100%';
+                $('#section-task').style.left = '0';
+                $('#section-detail').style.left = '100%';
             },
             showTaskDetail: function (clickTask) {
+                TaskDetail.innerHTML=''
                 var task = taskdata[clickTask.id];
                 var dateExist = ''
                 for (var taskDetail in task) {
@@ -65,20 +66,21 @@
                     var newTaskDetail = document.createElement('li');
                     newTaskDetail.innerHTML = task[taskDetail].name;
                     dateTask.getElementsByTagName('ol')[0].appendChild(newTaskDetail);
-                    categoryList.style.left = '-198%';
-                    TaskList.style.left = '-98%';
-                    TaskDetail.style.left = '2%';
+                    $('#section-cate').style.left = '-200%';
+                    $('#section-task').style.left = '-100%';
+                    $('#section-detail').style.left = '0';
                 }
             },
             backToTask: function () {
-                categoryList.style.left = '-98%';
-                TaskList.style.left = '2%';
-                TaskDetail.style.left = '102%';
+                console.log('a')
+                $('#section-cate').style.left = '-100%';
+                $('#section-task').style.left = '0';
+                $('#section-detail').style.left = '100%';
             },
             backToCategory: function () {
-                categoryList.style.left = '0';
-                TaskList.style.left = '100%';
-                TaskDetail.style.left = '200%';
+                $('#section-cate').style.left = '0';
+                $('#section-task').style.left = '100%';
+                $('#section-detail').style.left = '200%';
             }
         }
     }
@@ -90,14 +92,12 @@
     $.delegate('#task', 'li', 'click', function () {
         init.showTaskDetail(target)
     })
-    $.on('#category', 'click', function (e) {
-        if (this.style.left !== '0' || '2%') {
-            init.backToTask()
-        };
-    })
-    $.on('#category', 'click', function (e) {
-        if (this.style.left !== '0' || '2%') {
+    $.on('#side-cate', 'click', function (e) {
             init.backToCategory()
-        };
     })
+    $.on('#side-task', 'click', function (e) {
+console.log('a')
+            init.backToTask()
+    })
+
 })()
