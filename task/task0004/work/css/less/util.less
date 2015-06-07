@@ -1,0 +1,78 @@
+/*
+ * reset.less
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before {
+    display: table;
+    content: "";
+    height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.z-hide {
+  display: none;
+}
+
+.z-opacity-hide {
+  opacity: 0;
+}
+
+.z-show {
+  display: block;
+}
+
+.z-opacity-show {
+  opacity: 1;
+}
+
+.z-invisible {
+  visibility: hidden;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+
+// 配合这个网站的通用的模块，不知道怎么分类了。。。
+.btn {
+  display: inline-block;
+}
+
+.fade {
+  .transition(opacity .4s)
+}
+
+.fade.in.out {
+  opacity: 1;
+}
+
+.fade.out {
+  opacity: 0;
+}
+
+.tip {
+  background-color: rgba(0,0,0,0.5);
+  padding: 5px 15px;
+  color: #fff;
+  font-size: 12px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  border-radius: 2px;
+  left: 50%;
+
+  .translateX(-50%);
+}
+

@@ -1,0 +1,96 @@
+/*
+ * categoryList.less
+ */
+
+ .category-list {
+   background-color: #f2f2f2;
+   margin-left: -460px;
+ }
+
+ .category-list .hd {
+   font-size: 16px;
+   padding: 18px 10px 0;
+ }
+
+ .category-list .bd {
+   padding-top: 42px;
+   
+   .user-select(none);
+ }
+
+ .category-list .bd .title {
+   padding: 7px 10px;
+   font-size: 16px;
+ }
+
+ .categorys .level {
+   line-height: 1.9;
+   overflow: hidden;
+   white-space: nowrap;
+   position: relative;
+   font-size: 16px;
+ }
+
+ .categorys .level.has-sub-category .level {
+   font-size: 14px;
+ }
+
+ .categorys .level:hover > .del {
+   /*ie8需要声明ddt才能使用直接选择器*/
+   display: block;
+ }
+
+ .categorys .level .del {
+   position: absolute;
+   right: 5px;
+   top: 3px;
+   font-size: 18px;
+   display: none;
+   cursor: pointer;
+   line-height: normal;
+   font-weight:bold;
+   padding: 0 5px;
+ }
+
+ .categorys .level.has-sub-category .sub-category .del {
+   top: 1px;
+ }
+
+ .categorys .level.z-active {
+   background-color: #fff;
+ }
+
+ .categorys .category-name {
+   position: relative;
+   padding-left: 25px;
+   margin-left: 15px;
+   display: block;
+   cursor: default;
+ }
+
+ .categorys .category-name:before {
+   content: "";
+   display: block;
+   height: 22px;
+   width: 22px;
+   position: absolute;
+   top: 50%;
+   left: 0;
+   margin-top: -11px;
+   background: url(../img/icons.png) no-repeat;
+   background-position: -55px -1px;
+ }
+
+ .categorys .sub-category {
+   padding-bottom: 5px;
+   padding-left: 15px;
+   display: none;
+ }
+
+ .level.z-open > .sub-category {
+   display: block;
+ }
+
+ .categorys .sub-category .category-name:before {
+   background-position: -51px -44px;
+ }
