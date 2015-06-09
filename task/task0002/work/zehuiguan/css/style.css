@@ -1,0 +1,153 @@
+/*-- reset --*/
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input { margin: 0; padding: 0; }
+body { font-size: 12px; font-family: "宋体", "san-serif"; }
+img { border: none; }
+ul, ol { list-style: none; }
+textarea { resize: none; }
+a { text-decoration: none; }
+/*.clearfix:after { content: ""; display: block; clear: both; }
+.clearfix { zoom: 1; }/**/
+.clearfix { overflow: hidden; zoom: 1; }
+body { font-family: 'Microsoft YaHei', 'SimHei', 'STHeiti', sans-serif; }
+
+
+/*公共部分*/
+.container {
+    max-width: 800px;
+    margin: 0 auto;    /*text-align: center;*/
+}
+h1 {
+    padding: 10px 10px 10px 0;
+}
+p {
+    line-height: 1.2;
+    padding-bottom: 10px;
+}
+
+/*输入兴趣爱好*/
+.warn {
+    display: none;
+    background-color: #000;
+    width: 310px;
+    padding: 5px;
+    color: #f00;
+    font-weight: bold;
+}
+textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+.show {
+    margin-top: 10px;
+}
+
+/*轮播图*/
+.img-circle {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+.img-circle .img-wrap {
+    width: 3600px;
+    height: 300px;
+    left: 0;
+    position: absolute;
+}
+.img-circle .img-wrap li {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    float: left;
+}
+.img-circle .point {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    margin-left: -45px;
+}
+.img-circle .point a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+.img-control {
+    margin-top: 10px;
+}
+.active {
+    background-color: #fff;
+    cursor: default;
+}
+
+/* 输入框提示 */
+.tablet input {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    border: 1px solid #888;
+    outline: none;
+    padding: 3px 5px;
+    margin: 0;
+}
+.tablet ul {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.tablet ul li {
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.tablet ul li span{
+    color: #A73535;
+}
+
+.tablet-active {
+    background: #eee;
+}
+
+/**
+ * 界面拖拽交互
+ */
+.drag-block{
+    position:relative;
+    background: #EEE;
+    width: 600px;
+    height: 530px;
+}
+.block{
+    width: 225px;
+    height: 479px;
+    border:1px solid #333;
+    float: left;
+}
+.block-left{
+    position: absolute;
+    left: 25px;
+    top: 25px;
+}
+.block-right{
+    position: absolute;
+    top: 25px;
+    left: 350px;
+}
+.box{
+    width: 225px;
+    height: 79px;
+    background-color: #929BDD;
+    border-bottom:1px solid #333;
+    position: absolute;
+    cursor: move;
+}
