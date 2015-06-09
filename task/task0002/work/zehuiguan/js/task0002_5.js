@@ -84,6 +84,7 @@ function dragEvent(event) {
     };
 
     function upHandler(e) {
+
         if (document.removeEventListener) { // DOM event model
             document.removeEventListener("mouseup", upHandler, false);
             document.removeEventListener("mousemove", moveHandler, false);
@@ -95,14 +96,19 @@ function dragEvent(event) {
         var e = e || window.event;
         var target = e.target || e.srcElement;
 
+        var leftArea = BlockArea(e, leftBlock);
+        var rightArea = BlockArea(e, rightBlock);
+
         target.style.border = "none";
         target.style.borderBottom = "1px solid #333";
         target.style.opacity = 1;
 
-        if (BlockArea(e, leftBlock)) {
-            leftBlock.appendChild(target);
-        } else if (BlockArea(e, rightBlock)) {
-            rightBlock.appendChild(target);
+        if (leftArea.mode) {
+            leftBlock.insertBefore(target, leftBlock.children[leftArea.n]);
+            console.log(leftArea);
+        } else if (rightArea.mode) {
+            rightBlock.insertBefore(target, rightBlock.children[rightArea.n]);
+            console.log(rightArea);
         } else {
             parent.appendChild(target);
             console.log(parent, target);      
@@ -140,5 +146,10 @@ function BlockArea(e, block) {
     var x = getPosition(e.target).x;
     var y = getPosition(e.target).y;
 
-    return (x > x0 && x < x1 && y > y0 && y < y1) || (e.clientX > x0 && e.clientX < x1 && e.clientY > y0 && e.clientY < y1); 
+    var offset = leftBlock.offsetTop + $(".drag-block").offsetTop;
+
+    return {
+        mode: (x > x0 && x < x1 && y > y0 && y < y1) || (e.clientX > x0 && e.clientX < x1 && e.clientY > y0 && e.clientY < y1),
+        n: Math.floor((e.clientY -offset) / 80)
+    };
 }
