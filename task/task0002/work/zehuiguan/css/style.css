@@ -150,4 +150,8 @@ textarea {
     border-bottom:1px solid #333;
     position: absolute;
     cursor: move;
+
+    line-height: 79px;
+    text-align: center;
+    font-size: 18px;
 }
