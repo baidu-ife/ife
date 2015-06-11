@@ -1,144 +1,258 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<title>polandeme</title>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1" />
-
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="UTF-8">
+	<title>blog</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="header">
-		<div class="header-content">
-			<div class="header-bottom">
-				<h1 div class="logo">Polande</h1>
-				<ul class="list">
-					<li><a href="index.html">关于</a></li>
-					<li><a href="index.html">作品</a></li>
-					<li><a href="index.html">文章</a></li>
-					<li><a href="index.html">首页</a></li>
+	<!-- 头部 -->
+	<div id="header">
+		<div class="content" id="head-content">
+			<div id="log">Sun's Logo</div>
+			<div class="head-menu menu">
+				<ul class="menu">
+					<a href="index.html"><li>首页</li></a>
+					<a href="blog.html"><li>文章</li></a>
+					<a href="gallery.html"><li>作品</li></a>
+					<a href="about.html"><li>关于</li></a>
 				</ul>
+			</div>
+		</div>
+		<div id="github">
+			<a href="https://github.com/suen427"  target="_blank"><img id="github" src="img/icon-github.png" alt="github"></a>
+		</div>
+	</div>
+	<!-- 文章 -->
+	<div class="blog">
+		<div class="content">
+			<div class="main">
+				<div class="artical">
+					<div class="art-side">
+						<div class="art-side-1">6.05</div>
+						<div class="art-side-2">CSS</div>
+					</div>
+					<h2>这是标题</h2>
+					<h4>这是副标题</h4>
+					<p>这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！</p>
+					<p>sun 发表于&nbsp;2015年6月5日</p>
+				</div>
+				<div class="artical">
+					<div class="art-side">
+						<div class="art-side-1">6.05</div>
+						<div class="art-side-2">CSS</div>
+					</div>
+					<h2>这是标题</h2>
+					<h4>这是副标题</h4>
+					<p>这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！</p>
+					<p>sun 发表于&nbsp;2015年6月5日</p>
+				</div>
+				<div class="artical">
+					<div class="art-side">
+						<div class="art-side-1">6.05</div>
+						<div class="art-side-2">CSS</div>
+					</div>
+					<h2>这是标题</h2>
+					<h4>这是副标题</h4>
+					<p>这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！这里是正文！</p>
+					<p>sun 发表于&nbsp;2015年6月5日</p>
+				</div>
+				<div class="pagelist">
+					<ul>
+						<li><a href="#">第一页</a></li>
+						<li><a href="#">上一页</a></li>
+						<li><a href="#">1</a></li>
+						<li class="unavilable"><a href="#">2</a></li>
+						<li class="unavilable"><a href="#">3</a></li>
+						<li class="unavilable"><a href="#">4</a></li>
+						<li class="unavilable"><a href="#">...</a></li>
+						<li class="unavilable"><a href="#">下一页</a></li>
+						<li class="unavilable"><a href="#">最后页</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="side">
+				<div class="search">
+					<form action="#" class="search-form">
+						<input class="search-keywd" type="text" name="keyword" >
+						<input class="submit" type="submit" value="GO">
+					</form>
+				</div>
+
+				<div class="side-artlist">
+					<a href="#">
+						<div class="selected">前端</div>
+					</a>
+					<a href="#">
+						<div>HTML</div>
+					</a>
+					<a href="#">
+						<div>CSS</div>
+					</a>
+					<a href="#">
+						<div>JavaScript</div>
+					</a>
+				</div>
+				<div class="side-calendar">
+					<table class="calendar">
+						<tr>
+							<td>&lt;</td>
+							<td></td>
+							<td colspan="3">2015.06</td>
+							<td></td>
+							<td>&gt;</td>
+						</tr>
+						<tr >
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td>S</td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td class="today">5</td>
+							<td>6</td>
+							<td>7</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td>14</td>
+						</tr>
+						<tr>
+							<td>15</td>
+							<td>16</td>
+							<td>17</td>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+							<td>21</td>
+						</tr>
+						<tr>
+							<td>22</td>
+							<td>23</td>
+							<td>24</td>
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+							<td>28</td>
+						</tr>
+						<tr>
+							<td>29</td>
+							<td>30</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="side-tags">
+					<h4>Tags</h4>
+					<p>
+						<span class="tag-1">JavaScript</span>
+						<span class="ta-2">CSS</span>
+						<span class="tag-4">flex</span>
+						<span class="tag-3">WebGL</span>
+						<span class="tag-1">HTML</span>
+						<span class="tag-3">Canvas</span>
+						<span class="tag-3">prototype</span>
+						<span class="tag-2">HTML5</span>
+						<span class="tag-4">grid</span>
+						<span class="tag-3">nodeJS</span>
+						<span class="tag-3">css3</span>
+						<span class="tag-2">jQuery</span>
+						<span class="tag-2">ECharts</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="wrap">
-		<div class="artical">
 
-			<div class="section">
-				<div class="info">
-					<div class="cate">
-						CSS
-					</div>
-					<div class="date">4.12 </div>
-				</div>
-				<h3>布局方式的问题</h3>
-				<h4>常用的布局方式</h4>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<div class="artical-info">
-						<span class="author">polandeme</span> 发表于
-						<span class="time">2015年4月16日</span>
-					</div>
-			</div>
-			<div class="section">
-				<div class="info">
-					<div class="cate">
-						CSS
-					</div>
-					<div class="date">4.12 </div>
-				</div>
-				<h3>布局方式的问题</h3>
-				<h4>常用的布局方式</h4>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<div class="artical-info">
-						<span class="author">polandeme</span> 发表于
-						<span class="time">2015年4月16日</span>
-					</div>
-			</div>
 
-			<div class="section"> 
-				<div class="info">
-					<div class="cate">
-						CSS
-					</div>
-					<div class="date">4.12 </div>
-				</div>
-				<h3>布局方式的问题</h3>
-				<h4>常用的布局方式</h4>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						float方式居中好麻烦，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<div class="artical-info">
-						<span class="author">polandeme</span> 发表于
-						<span class="time">2015年4月16日</span>
-					</div>
-			</div>
-			<ul class="page">
-				<li class="pecial first-page">第一页</li>
-				<li class="pecial pre-page">上一页</li>
-				<li class="active"><a href="#" >1</a></li>
-				<li>2</li>
-				<li>2</li>
-				<li>2</li>
-				<li>2</li>
-				<li>2</li>
-				<li>2</li>
-				<li class="pecial next-page">下一页</li>
-				<li class="pecial last-page">最后页</li>
+	<!-- 底部 -->
+	<div class="foot">
+		<div class="foot-nav">
+			<ul class="menu">
+				<a href="index.html"><li>首页</li></a>
+				<a href="blog.html"><li>文章</li></a>
+				<a href="gallery.html"><li>作品</li></a>
+				<a href="about.html"><li>关于</li></a>
 			</ul>
 		</div>
-		<div class="aside">
-			<div class="search">
-				<input class="search-input" type="text" placeholder="Keywords">
-				<span class="submit btn">GO</span>
-			</div>
-			<div class="category">
+		<hr>
+		<div class="links">
+			<div class="link-item">
+				<h2>学习资料</h2>
 				<ul>
-					<li class="active">
-						<a href="#">HTML</a>
-					</li>
-					<li>
-						<a href="#">CSS</a>
-					</li>
-					<li>
-						<a href="#">Javascript</a>
-					</li>
-					<li>
-						<a href="#">其他文章</a>
-					</li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
 				</ul>
 			</div>
-			<div class="calendar">
-        <div class="cal-content">
-          <div class="cal-header">
-            <span class="pre-month"></span>
-            <span class="cur-month"></span>
-            <span class="next-month"></span>
-          </div>
-        </div>
-      </div>
+			<div class="link-item">
+				<h2>友情链接</h2>
+				<ul>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+				</ul>
+			</div>
+			<div class="link-item">
+				<h2>学习资料</h2>
+				<ul>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+				</ul>
+			</div>
+			<div class="link-item">
+				<h2>学习资料</h2>
+				<ul>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+				</ul>
+			</div>
+			<div class="link-item">
+				<h2>学习资料</h2>
+				<ul>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+					<li><a href="https://github.com/suen427">suen427</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>  
+		<div class="copyright">
+			<p>版权信息</p>
+			<img src="img/icon-github.png">
+		</div>
+	</div>
 </body>
 </html>
