@@ -1,0 +1,202 @@
+.container {
+    width: 980px;
+    margin: 20px auto 200px;
+}
+.main {
+    width: 710px;
+    float: left;
+}
+/*选项卡*/
+.tabs-header li {
+    float: left;
+    position: relative;
+}
+.tabs-header a {
+    padding: 15px 20px;
+    display: block;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-top: 4px solid #dfc6e6;
+    color: #000;
+    background: #fff;
+}
+.tabs-header a.active,
+.tabs-header a:hover {
+    border-bottom-color: #fff;
+    border-top-color: #522a5c;
+}
+.tabs-content {
+    width: 680px;
+    padding: 20px 10px 20px 20px;
+    background: #fff;
+    position: relative;
+}
+.items-content-left,
+.items-content-right {
+    width: 340px;
+    float: left;
+}
+.tabs-content li {
+    width: 170px;
+    float: left;
+}
+.tabs-content .items {
+    padding: 0 10px 10px 0;
+    float: left;
+}
+
+.items-content {
+    width: 95px;
+    background: #522a5c;
+    padding: 12px 15px 15px 50px;
+    position: relative;
+}
+.itmes-large {
+    width: 265px;
+}
+.items-content h6 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    line-height: 20px;
+}
+.items-content p {
+    width: 95px;
+    line-height: 21px;
+    color: #fff;
+}
+.items-content span {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 27px;
+    height: 27px;
+    background: url(../img/icon-circle.png);
+    text-align: center;
+    line-height: 27px;
+    color: #fff;
+}
+.items1 {
+    background: #d9a300;
+}
+.itmes2 {
+    background: #522a5c;
+}
+.items3 {
+    background: #5900b2;
+}
+.items4 {
+    background: #8c2300;
+}
+
+/*查看更多*/
+.get-more {
+    width: 710px;
+    height: 50px;
+    margin-top: 10px;
+    background: #fff;
+    text-align: center;
+}
+.get-more a {
+    display: inline-block;
+    width: 110px;
+    height: 50px;
+    background: url(../img/get-more.png) no-repeat;
+    text-indent: 30px;
+    line-height: 50px;
+    color: #666666;
+}
+
+/* 侧边栏*/
+.sidebar {
+    margin-top: 53px;
+    width: 260px;
+    float: right;
+}
+.search {
+    background: #fff;
+    padding: 19px;
+}
+.search-text {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 49px;
+    border: 1px solid #ddd;
+    outline: none;
+    color: #999999;
+    background: url(../img/icon-search.png) no-repeat 8px 6px;
+}
+.search-text:focus + .search-submit {
+    background: #999;
+}
+.search-submit {
+    width: 51px;
+    height: 42px;
+    background: #ddd;
+    outline: none;
+    border: none;
+    color: #fff;
+    line-height: 42px;
+    cursor: pointer;
+}
+.rank {
+    margin-top: 10px;
+    padding: 20px 13px 30px;
+    background: #fff;
+}
+.rank h3 {
+    height: 40px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #666666;
+    text-indent: 2px;
+}
+.rank li {
+    height: 30px;
+    vertical-align: top;
+}
+.rank li span {
+    float: left;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+    background: url(../img/icon-circlle2.png) no-repeat;
+}
+.rank li strong {
+    font-weight: normal;
+    font-size: 10px;
+    float: left;
+    height: 18px;
+    line-height: 18px;
+}
+.rank .progress-bar {
+    width: 100px;
+    height: 16px;
+    border: 1px solid #532b5d;
+    float: left;
+    margin:0 10px 0 12px;
+} 
+.progress-bar-100,
+.progress-bar-80,
+.progress-bar-60,
+.progress-bar-40,
+.progress-bar-20 {
+    width: 100%;
+    height: 100%;
+    background: #532b5d;
+}
+.progress-bar-80 {
+    width: 80%;
+}
+.progress-bar-60 {
+    width: 60%;
+}
+.progress-bar-40 {
+    width: 40%;
+}
+.progress-bar-20 {
+    width: 20%;
+}

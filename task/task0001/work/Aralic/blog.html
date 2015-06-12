@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <title>BLOG</title>
+</head>
+<body>
+<!-- 头部区域 -->
+<div id="header">
+    <div class="header-content">
+        <h1><a href="#"><img src="img/logo.png" alt="logo" class="logo"></a></h1>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="blog.html">文章</a></li>
+            <li><a href="gallery.html">作品</a></li>
+            <li><a href="about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="header-right">
+        <a href="http://github.com"><img src="img/icon-github.png" alt="right-logo"></a>
+    </div>
+</div>
+<!-- 内容区域 -->
+<div class="container clearfix">
+    <!-- 主内容区 -->
+    <div class="main">
+        <div class="article">
+            <h2 class="article-title">任务1心得</h2>
+            <h3 class="article-second-title">--感谢百度前端技术学院</h3>
+            <div class="article-content">
+                <p>挺意外的，看到那么多人报名，以为自己没机会了。没想到自己也会运气爆发一次，嘿嘿。在这里感谢百度提供这次公益培训。废话不多扯了。。。上正文。</p>
+                <p>从上个学期开始接触到了网页开发（当前不知道有前端这个词），后来看书，教程，写了一些零零碎碎的功能，比如轮播图，选项卡等等最基础。但是一直没有机会好好系统巩固一下所学的琐碎知识点。这次机会真的来之不易，而且对我而言，更像是一场及时雨。</p>
+                <p>说实话，看到把设计稿实现成网页真的很开心。通过这次训练，发现自己对布局有了更加深入的理解，以前练习的时候布局总是在ie低版本塌陷。或者出现bug总是调不好的情况，出现的原因有很多，比如浮动，定位层级，margin边距等等。在这次四张设计稿中，重新学到了不少布局知识。最后感谢感谢祖明大大。么么哒。</p>
+            </div>
+            <div class="article-info">
+                <span class="author">Aralic</span>发表于<span class="article-time">2015-4-14</span>
+            </div>
+            <div class="article-nav">
+                <div class="article-nav-time">4.14</div>
+                <div class="article-nav-type">任务1</div>
+            </div>
+        </div>
+        <div class="article">
+            <h2 class="article-title">瀑布流的实现</h2>
+            <h3 class="article-second-title">--真是一场艰难的布局路</h3>
+            <div class="article-content">
+                <p>千辛万苦写到第三张设计图，一看瀑布流，这以前做过，宽度固定，分栏就行，然后用js动态添加内容到每栏。当时以为不是很难。好吧，我就知道哪有这么好的事情等着我。</p>
+                <p>细看设计稿，第一张图是其他图的两倍，要求里面也没有详细说明。考虑半天，如果中间还有这大图怎么办，考虑结果你懂的，就我这智商哪想得出来。</p>
+                <p>没办法咯，只能把第一张图当做特殊情况处理,不考虑后续还有大图了。</p>
+                <dl>
+                    <dt>考虑方案1：</dt>
+                    <dd>给所有内容模块浮动，好吧敲完代码，傻眼了，每个模块的高度不一定，直接导致浮动不过去，不能完好的镶嵌。不知道是不是自己水平不够，想了半天，放弃这个方案了。</dd>
+                    <dt>考虑方案2：</dt>
+                    <dd>把第一张图定位出来，脱离文档流，然后用4个li承载每栏内容，对li浮动。给第一栏和第二栏的第一个模块特殊处理，让这两个模块向上的外边距等于大图的高度。结果出来，好像是ok了。好吧，事情还没有这么顺利。我把大图内容修改一下，高度就变化了，因为特殊处理的两个模块向上边距写死在样式里面了。导致出现了很大间隙。因为不能使用js获取大图模块高度，然后给外边距。这个方案又失败了。</dd>
+                    <dt>考虑方法3：</dt>
+                    <dd>结合以上两个方案，这次把整个瀑布流当做两栏处理，左边大图占据两列，右边占据两列，对这两栏浮动，然后对每栏区分出来两列，大图特殊处理，不在这两列里面。结构是div>( div.l>div.large-pic+ul>li*2{模块内容} )+( ul.r>li*2{模块内容} )</dd>
+                </dl>
+                <dl>
+                    <dt>总结：</dt>
+                    <dd>虽然最后还是实现了这个布局需求，但是感觉这个方案还是欠佳。实践出真知，只能多踩踩坑锻炼自己了。等过两天看看其他同学是怎么实现的，好好学习一下。</dd>
+                </dl>
+
+            </div>
+            <div class="article-info">
+                <span class="author">Aralic</span>发表于<span class="article-time">2015-4-13</span>
+            </div>
+            <div class="article-nav">
+                <div class="article-nav-time"><strong>4.14</strong></div>
+                <div class="article-nav-type"><strong>瀑布流</strong></div>
+            </div>
+        </div>
+        <div class="article">
+            <h2 class="article-title">小结</h2>
+            <h3 class="article-second-title">--五天时间的一个小结</h3>
+            <div class="article-content">
+                <p>
+                    从开始任务1到现在已经是第五天，感觉时间过得真快啊。
+                </p>
+                <p>
+                    在这五天里，感受到了和大家一起完成相同任务的乐趣。大家的集思广益也让我学到更多以前没学到的东西。
+                </p>
+                <dl>
+                    <dt>成果:</dt>
+                    <dd>1、最大的成果恐怕就是git了，第一次报名的时候捣鼓了半天，才交上名。然后利用这次的机会，我好好学习了一下github到底是啥玩意。总算是学会了最简单的git入门使用。学会了fork一个项目，克隆一个项目，pull requeest，本地push到origin，静态页面部署到个人github主页上。</dd>
+                    <dd> 2、我觉得周围小伙伴一个超屌，为什么我这么挫（此处cry）。比如首页头部右侧github图标在浏览器宽度980px时隐藏，我用的是媒体查询，但是别人想到用定位层级的方法实现兼容到了低版本ie。然后再导师review别人的时候，指出最好是把图标缩进到不在可视区访问，利于seo。好吧，此处我是直接display：none了。</dd>
+                    <dd>3、日历控件本来打算用表格实现，但是下边框实现不出来，不得已放弃了表格，用div了。不过内心感觉还是表格好一点，待会扒一扒别人的代码看看。</dd>
+                </dl>
+                <dl>
+                    <dt>期望：</dt>
+                    <dd>明天又开始新的任务了，好期待，加油！努力追上别人的脚步。</dd>
+                </dl>
+            </div>
+            <div class="article-info">
+                <span class="author">Aralic</span>发表于<span class="article-time">2015-4-17</span>
+            </div>
+            <div class="article-nav">
+                <div class="article-nav-time"><strong>4.17</strong></div>
+                <div class="article-nav-type"><strong>小结</strong></div>
+            </div>
+        </div>
+        <div class="list-page">
+            <a href="#" class="first-page">第一页</a><a href="#" class="prev-page">上一页</a><a href="" class="active">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">...</a><a href="" class="next-page">下一页</a><a href="" class="last-page">最后一页</a>
+        </div>
+    </div>
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <div class="search">
+            <form action="#">
+                <input type="text" value="Keywords" class="search-input"><input type="submit" value="GO" class="search-submit">
+            </form> 
+        </div>
+        <ul class="bar-sort">
+            <li><a href="#"><span></span>HTML</a></li>
+            <li><a href="#" class="active"><span></span>CSS</a></li>
+            <li><a href="#"><span></span>JavaScript</a></li>
+            <li class="last-bar-sort"><a href="#"><span></span>其他文章</a></li>
+        </ul>
+        <div class="calendar">
+            <table border="0" cellpadding="0" cellspacing="0" rules="none">
+                <caption><a href="#" class="prev">&lt;</a><a href="#"><strong>2015.04</strong></a><a href="#" class="next">&gt;</a></caption>
+                <tr>
+                    <th>S</th>
+                    <th>M</th>
+                    <th>T</th>
+                    <th>W</th>
+                    <th>T</th>
+                    <th>F</th>
+                    <th>S</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="#">1</a></td>
+                    <td><a href="#">2</a></td>
+                    <td><a href="#">3</a></td>
+                    <td><a href="#">4</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">5</a></td>
+                    <td><a href="#">6</a></td>
+                    <td><a href="#">7</a></td>
+                    <td><a href="#">8</a></td>
+                    <td><a href="#">9</a></td>
+                    <td><a href="#">10</a></td>
+                    <td><a href="#">11</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">12</a></td>
+                    <td><a href="#">13</a></td>
+                    <td><a href="#">14</a></td>
+                    <td><a href="#">15</a></td>
+                    <td><a href="#" class="active">16</a></td>
+                    <td><a href="#">17</a></td>
+                    <td><a href="#">18</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">19</a></td>
+                    <td><a href="#">20</a></td>
+                    <td><a href="#">21</a></td>
+                    <td><a href="#">22</a></td>
+                    <td><a href="#">23</a></td>
+                    <td><a href="#">24</a></td>
+                    <td><a href="#">25</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">26</a></td>
+                    <td><a href="#">27</a></td>
+                    <td><a href="#">28</a></td>
+                    <td><a href="#">29</a></td>
+                    <td><a href="#">30</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tags">
+            <h3>Tags</h3>
+            <a href="#" class="tags-l">JavaScript</a>
+            <a href="#" class="tags-m">CSS</a>
+            <a href="#" class="tags-s">flex</a>
+            <a href="#" class="tags-s">WebGL</a>
+            <a href="#" class="tags-l">HTML</a>
+            <a href="#" class="tags-s">Canvas</a>
+            <a href="#" class="tags-s">prototype</a>
+            <a href="#" class="tags-m">HTML5</a>
+            <a href="#" class="tags-s">gridnodeJS</a>
+            <a href="#" class="tags-s">css3</a>
+            <a href="#" class="tags-m">JQuery</a>
+            <a href="#" class="tags-m">ECharts</a>
+        </div>
+    </div>
+</div>
+    <!-- 页面底部 -->
+    <div id="footer">
+        <h3 class="footer-nav">
+            <a href="index.html">主页</a><a href="blog.html">文章</a><a href="gallery.html">作品</a><a href="about.html">关于</a>
+        </h3>
+        <div class="foo-content">
+            <dl>
+                <dt>学习资料</dt>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">Hover时样式</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+            </dl>
+            <dl>
+                <dt>友情链接</dt>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">Hover时样式</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+            </dl>
+            <dl>
+                <dt>学习资料</dt>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">Hover时样式</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+            </dl>
+            <dl>
+                <dt>友情链接</dt>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">Hover时样式</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+            </dl>
+            <dl>
+                <dt>学习资料</dt>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">Hover时样式</a></dd>
+                <dd><a href="#">LINK</a></dd>
+                <dd><a href="#">LINK</a></dd>
+            </dl>
+        </div>
+        <div class="copy-right">
+            <span>版权信息</span>
+            <img src="img/icon-github.png" alt="copyRight">
+        </div>
+    </div>
+</body>
+</html>
