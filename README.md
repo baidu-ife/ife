@@ -4,6 +4,8 @@
 
 # 最新公告
 
+[任务3已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0003)，初级班的任务时间是从5月7日至5月18日，中级班为4月30日至5月10日。
+
 [任务2已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0002)，初级班的任务时间是从4月24日至5月7日，中级班为4月18日至4月27日。
 
 [任务1已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0001)，初级班Review提交截止时间为**4月23日**，中级班为**4月16日**。
