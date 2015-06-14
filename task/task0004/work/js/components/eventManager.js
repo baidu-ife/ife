@@ -40,6 +40,13 @@ define(function (require, exports, module) {
                 }
             }
         }
+
+        listenTo: function (obj, event, callback) {
+            
+        },
+        stopListen: function (obj, event) {
+            
+        }
     };
 
     module.exports=EventManager;    

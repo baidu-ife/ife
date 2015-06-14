@@ -1,0 +1,29 @@
+/*
+ * list.less
+ */
+
+ .list {
+  position: relative;
+  overflow: hidden;
+}
+
+.inline {
+  list-style: none;
+  font-size: @default-font-size;
+  *zoom: 1;
+}
+
+.inline .item {
+  float: left;
+}
+
+.inline:before,
+.inline:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.inline:after {
+  clear: both;
+}

@@ -198,12 +198,14 @@
     user-select: @val;
 }
 
+
 // full size of parent
 // ==================================================
 .full-size-of-parent() {
     height: 100%;
     width: 100%;
 }
+
 
 // algin center
 // ==================================================
@@ -249,5 +251,13 @@
     left: 50%;
     top: 50;
     .translate(-50%, -50%);
+}
+
+
+// opacity
+// ==================================================
+.opacity(@val) {
+    opacity: @val/100;
+    filter: alpha(opacity=@val);
 }
 

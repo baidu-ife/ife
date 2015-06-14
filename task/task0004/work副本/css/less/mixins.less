@@ -1,0 +1,253 @@
+// mixins.less
+
+// animation
+// ==================================================
+.animation(@val) {
+    -webkit-animation: @val;
+    -o-animation: @val;
+    animation: @val;
+}
+
+.animation-duration(@val) {
+    -webkit-animation-duration: @val;
+    -o-animation-duration: @val;
+    animation-duration: @val;
+}
+
+.animation-timing-function(@val) {
+    -webkit-animation-timing-function: @val;
+    -o-animation-timing-function: @val;
+    animation-timing-function: @val;
+}
+
+.animation-delay(@val) {
+    -webkit-animation-delay: @val;
+    -o-animation-delay: @val;
+    animation-delay: @val;
+}
+
+.animation-fill-mode(@val) {
+    -webkit-animation-fill-mode: @val;
+    -o-animation-fill-mode: @val;
+    animation-fill-mode: @val;
+}
+
+.animation-name(@val) {
+    -webkit-animation-name: @val;
+    -o-animation-name: @val;
+    animation-name: @val;
+}
+
+.animation-direction(@val) {
+    -webkit-animation-direction: @val;
+    -o-animation-direction: @val;
+    animation-direction: @val;
+}
+
+.animation-iteration-count(@val) {
+    -webkit-animation-iteration-count: @val;
+    -o-animation-iteration-count: @val;
+    animation-iteration-count: @val;
+}
+
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden`
+// ==================================================
+.backface-visibility(@val) {
+    -webkit-backface-visibility: @val;
+    -moz-backface-visibility: @val;
+    -o-backface-visibility: @val;
+    backface-visibility: @val;
+}
+
+
+// box-shadow
+// ==================================================
+.box-shadow(@val) {
+    -webkit-box-shadow: @val;
+    -moz-box-shadow: @val;
+    -ms-box-shadow: @val;
+    box-shadow: @val;
+}
+
+
+// box-sizing
+// ==================================================
+.box-sizing(@val) {
+    -webkit-box-sizing: @val;
+    -moz-box-sizing: @val;
+    -ms-box-sizing: @val;
+    box-sizing: @val;
+}
+
+
+// placeholder
+// ==================================================
+.placeholder(@val: lighten(@gray, 20%)) {
+    &::-moz-placeholder {
+        color: @val;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: @val; // Internet Explorer 10+
+    }
+    &::-webkit-input-placeholder {
+        color: @val; // Safari and Chrome
+    }
+}
+
+
+// transform
+// ==================================================
+.transform(@val) {
+    -webkit-transform: @val;
+    -ms-transform: @val;
+    -o-transform: @val;
+    transform: @val;
+}
+
+.transform(@x, @y) {
+    -webkit-transform-origin: @x @y;
+    -moz-transform-origin: @x @y;
+    -ms-transform-origin: @x @y;
+    -o-transform-origin: @x @y;
+    transform-origin: @x @y;
+}
+
+.rotate(@val) {
+    .transform(rotate(@val));
+}
+
+.scale(@val) {
+    .transform(scale(@val));
+}
+
+.skew(@x, @y) {
+    .transform(skew(@x, @y));
+}
+
+.translate3d(@x, @y, @z) {
+    .transform(translate3d(@x, @y, @z));
+}
+
+.translate(@x, @y) {
+    .transform(translate(@x, @y));
+}
+
+.translateX(@val) {
+    .transform(translateX(@val));
+}
+
+.translateY(@val) {
+    .transform(translateY(@val));
+}
+
+.translateZ(@val) {
+    .transform(translateZ(@val));
+}
+
+
+// transition
+// ==================================================
+.transition(@val) {
+    -webkit-transition: @val;
+    -o-transition: @val;
+    transition: @val;
+}
+
+.transition-property(@val) {
+    -webkit-transition-property: @val;
+    -o-transition-property: @val;
+    transition-property: @val;
+}
+
+.transition-delay(@val) {
+    -webkit-transition-delay: @val;
+    -o-transition-delay: @val;
+    transition-delay: @val;
+}
+
+.transition-duration(@val) {
+    -webkit-transition-duration: @val;
+    -o-transition-duration: @val;
+    transition-duration: @val;
+}
+
+.transition-timing-function(@val) {
+    -webkit-transition-timing-function: @val;
+    -o-transition-timing-function: @val;
+    transition-timing-function: @val;
+}
+
+.transition-transform(@val) {
+    -webkit-transition: -webkit-transform @val;
+    -moz-transition: -moz-transform @val;
+    -o-transition: -o-transform @val;
+    transition: transform @val;
+}
+
+
+// User select
+// ==================================================
+.user-select(@val) {
+    -webkit-user-select: @val;
+    -moz-user-select: @val;
+    -ms-user-select: @val;
+    user-select: @val;
+}
+
+// full size of parent
+// ==================================================
+.full-size-of-parent() {
+    height: 100%;
+    width: 100%;
+}
+
+// algin center
+// ==================================================
+.position-center(@type) when (@type = vertical) {
+    margin-top:auto;
+    margin-bottom:auto;
+    position:absolute;
+    top:0;
+    bottom:0;
+}
+
+.position-center(@type) when (@type = horizontal) {
+    margin-left:auto;
+    margin-right:auto;
+    position:absolute;
+    left:0;
+    right:0;
+}
+
+.position-center() {
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.transition-center(@type) when (@type = vertical) {
+    position:absolute;
+    top:50%;
+    .translateY(-50%);
+}
+
+.transition-center(@type) when (@type = horizontal) {
+    position:absolute;
+    left:50%;
+    .translateX(-50%);
+}
+
+.transition-center() {
+    position: absolute;
+    left: 50%;
+    top: 50;
+    .translate(-50%, -50%);
+}
+

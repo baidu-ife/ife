@@ -45,9 +45,8 @@ define(function(require, exports, module) {
         createElement: function(txt) {
             var div = doc.createElement("div");
             div.innerHTML = txt;
-            addClass(div, "tip");
-            addClass(div, "fade");
-            addClass(div, "out");
+            var wid=txt.length*12+30; // 12: 字体大小，30: 左右padding， box-sizing: border-box
+            $(div).addClass("popup-tip fade out").css("width", wid);
             return div;
         }
     };

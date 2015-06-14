@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <!--[if lt ie 9]>
         <script src="./js/lib/html5shiv.js"></script>
     <![endif]-->
@@ -16,15 +17,15 @@
 
             var userAgent=navigator.userAgent;
             if(/mobile/.test(userAgent.toLowerCase())){
-                var link=document.createElement("link");
-                link.rel="stylesheet";
-                link.onload=function () {
-                    console.log("success");
-                }
-                link.href="./css/responsive.css?ver=1.2";
+                // var link=document.createElement("link");
+                // link.rel="stylesheet";
+                // link.onload=function () {
+                //     console.log("success");
+                // }
+                // link.href="./css/responsive.css?ver=1.2";
 
-                var head=document.head || document.getElementsByTagName('head')[0];
-                head.appendChild(link);
+                // var head=document.head || document.getElementsByTagName('head')[0];
+                // head.appendChild(link);
 
                 os.phone=1;
             }
@@ -35,13 +36,13 @@
 </head>
 <body>
     <header class="web-hd">
-        GTD Tools
+        <span>GTD Tools</span>
     </header>
 
     <div class="web-bd">
         <div class="inner">
             <!-- 左侧 -->
-            <div id="categoryList" class="category-list">
+            <div id="categoryList" class="category-list z-active">
                 <header class="hd">
                     所有任务 (<span id="allTaskNum" class="num">0</span>)
                 </header>
@@ -119,6 +120,9 @@
         </div>
     </div>
 
+    <script src="./js/lib/underscore.js"></script>
+    <script src="./js/lib/backbone.js"></script>
+    <script src="./js/lib/backbone.localStorage.js"></script>
     <script src="./js/lib/util.js"></script>
     <script src="./js/init.js"></script>
 </body>
