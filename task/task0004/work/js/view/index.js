@@ -3,9 +3,11 @@
  */
 
 define(function(require, exports, module) {
+    var CategoryItemView=require("./categoryItem");
 
+    var curView;
     var mainTmpl = ['<header class="hd">',
-        '                    所有任务 (<span id="allTaskNum" class="num"><%= allTaskNum%></span>)',
+        '                    所有任务 (<span class="all-task-num num">0</span>)',
         '                </header>',
         '                <section class="bd">',
         '                    <h4 class="title">分类列表</h4>',
@@ -21,72 +23,104 @@ define(function(require, exports, module) {
         '                </footer>'
     ].join("");
 
-    var cateTmpl = ['<li data-autoid="<%= autoId %>" class="level level-<%= level %>">',
-        '    <a class="category-name" data-autoid="<%= autoId%>"><%= name %>(<span class="num"><%= num %></span>)</a>',
-        '    <a class="del" data-autoid="<%= autoId%>">×</a>',
-        '</li>'
-    ].join("");
-
-    var CateItem = Backbone.View.extend({
-        template: _.template(cateTmpl),
-        events: {
-            "tap .del": "remove"
-        },
-
-        initialize: function () {
-            
-        },
-        render: function () {
-            var htm=this.template(this.model);
-            
-        }
-    });
+    var _events={};
+    _events[touchEve.endEvent+" .add-category"]="toastInputPopup";
 
     var Index = Backbone.View.extend({
         tagName: "div",
         id: "categoryList",
         className: "category-list",
-        events: {
-            "tap .category-name": "showTaskList",
-            "tap .add-category": "addCategory"
-        },
+        events: _events,
 
-        template: _.template(tmpl),
+        template: _.template(mainTmpl),
         initialize: function() {
             this.listenTo(Global_CategoryList, "add", this.addCategory);
-            this.listenTo(Global_CategoryList, "sync", this.resetAllCategory);
-
-            this.render();
+            this.listenTo(Global_TaskList, "all", this.updateTaskNum);
         },
         render: function() {
-            var htm = this.template({
-                allTaskNum: Global_CategoryList.length
-            });
+            var htm = this.template();
             this.$el.html(htm);
+            
             this.categorysEl = this.$(".categorys");
+            this.allTaskNumEl=this.$(".all-task-num");
+            this.updateTaskNum();
 
-            this.resetAllCategory();
+            return this;
         },
-        showTaskList: function(e) {
-
+        updateTaskNum: function (e) {
+            this.allTaskNumEl.html(Global_TaskList.length);
+        },
+        toastInputPopup: function () {
+            var _name=window.prompt("添加分类");
+            if(_name == "" || _name == null) return;
+            var attr={ name: _name };
+            var nmodel=Global_CategoryList.addCategory(attr)[0];
         },
         addCategory: function(item) {
-
+            var v=new CategoryItemView({ model: item});
+            this.categorysEl.append(v.render().$el);
         },
         resetAllCategory: function() {
-            Global_CategoryList.each(function(item) {
-                this.addCategory();
-            });
+            this.categorysEl.html("");
+            Global_CategoryList.each(this.addCategory, this);
         }
-    });
+    }, { viewId: "index-view" });
+
+    function createData () {
+        if(localStorage["isNotFirstIn"] != null) return;
+        localStorage["isNotFirstIn"]=1;
+
+        setTimeout(function () {
+            Global_CategoryList.addCategory([{ name: "默认分类" }, { name: "百度ife项目" }]);
+            
+            Global_TaskList.addTask([{
+                header: "测试1",
+                content: "测试1 content",
+                status: 0,
+                time: "2015-5-11",
+                categoryId: 1
+            }, {
+                header: "测试2",
+                content: "测试2 content",
+                status: 1,
+                time: "2015-5-12",
+                categoryId: 1
+            }]);
+            
+        });
+    }
+
+    function clearData () {
+        localStorage.clear();
+    }
 
     Index.initUI = function() {
+        // clearData();
+        createData();
+        if(!curView) {
+            curView=new Index();
+            curView.render();
+        }
+        AppManager.pageIn($("#container"), curView.$el, "right");
 
+        // @ques: 什么时候fetch
+        Global_TaskList.fetch();
+        Global_CategoryList.fetch();
     };
 
     Index.release = function() {
-
+        curView && curView.remove();
     };
 
-    module.exports = index;
+    Index.cache=function (pageOut) {
+        if(pageOut === true) {
+            AppManager.pageOut(curView.$el, "right", function () {
+                curView && curView.$el.remove();
+            });
+        }else {
+            curView && curView.$el.remove();
+        }
+    };
+
+    module.exports = Index;
 });

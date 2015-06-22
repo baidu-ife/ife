@@ -7,58 +7,152 @@
 
 seajs.config({
     // preload: "app",  // Sea.js 2.1之后已经删了
-    map: [
-        [/^(.*\.(?:css|js))(.*)$/i, '$1?'+Date.now()]
-    ]
+    // map: [
+    //     [/^(.*\.(?:css|js))(.*)$/i, '$1?'+Date.now()]
+    // ]
 });
+
+var touchEve=function () {
+    // 不能直接 touchstart in window，没有定义事件处理程序则为false，无法检测
+    var hasTouch="ontouchstart" in window;
+    var me={};
+    me.startEvent = hasTouch ? 'touchstart' : 'mousedown';
+    me.moveEvent = hasTouch ? 'touchmove' : 'mousemove';
+    me.endEvent = hasTouch ? 'touchend' : 'mouseup';
+    me.cancelEvent = hasTouch ? 'touchcancel' : 'mouseup';
+
+    return me;
+}();
 
 var AppRouter=Backbone.Router.extend({
     routes: {
         "": "loadIndex",
         "category/:query": "loadTaskList",
-        "task/:query": "loadTaskDetail"
+        "task/:query": "loadTaskInfo",
+        "newtask/:query": "loadAddNewTask"
     },
     loadIndex: function () {
         seajs.use("view/index", function (index) {
-            AppManager.releaseBeforeView()
+            AppManager.beforeViewCache=AppManager.mainViewCache;
             AppManager.mainViewCache=index;
+            // AppManager.releaseBeforeView();
 
             index.initUI();
-            console.log("load: view/index");
         });
     },
-    loadTaskList: function () {
-        console.log("tasks");
-        seajs.use("view/tasks", function (tasks) {
-            AppManager.releaseBeforeView()
+    loadTaskList: function (categoryId) {
+        seajs.use("view/taskList", function (tasks) {
+            // AppManager.cacheBeforeView();
+            // AppManager.mainViewCache=tasks;
+
+            AppManager.beforeViewCache=AppManager.mainViewCache;
             AppManager.mainViewCache=tasks;
 
-            index.initUI();
-            console.log("load: view/index");
+            tasks.initUI(categoryId);
         });
     },
-    loadTaskDetail: function () {
-        seajs.use("view/taskDetail", function (taskDetail) {
-            AppManager.releaseBeforeView()
-            AppManager.mainViewCache=taskDetail;
+    loadTaskInfo: function (taskId) {
+        seajs.use("view/taskInfo", function (taskInfo) {
+            // AppManager.cacheBeforeView();
 
-            index.initUI();
-            console.log("load: view/index");
+            AppManager.beforeViewCache=AppManager.mainViewCache;
+            AppManager.mainViewCache=taskInfo;
+
+            taskInfo.initUI(taskId, false);
+        });
+    },
+    loadAddNewTask: function (categoryId) {
+        seajs.use("view/taskInfo", function (taskInfo) {
+            // AppManager.cacheBeforeView();
+            AppManager.mainViewCache=taskInfo;
+
+            taskInfo.initUI(categoryId, true);
         });
     }
 });
 
 var AppManager={
     mainViewCache: null,
+    beforeViewCache: null,
     appRouter: null,
+    queueView: [],
 
+    exist: function (viewid) {
+        var queue=this.queueView;
+        if($.isFunction(queue.indexOf)) {
+            return queue.indexOf(viewid);
+        }
+        for(var i=0; i<queue.length; i++) {
+            if(queue[i] === viewid) {
+                return i;
+            }
+        }
+        return -1;
+    },
     releaseBeforeView: function () {
-        var beforeView=this.mainViewCache;
+        var beforeView=this.beforeViewCache;
         if(beforeView && $.isFunction(beforeView.release)) {
             beforeView.release();
         }
-
         return this;
+    },
+    cacheBeforeView: function (pageOut) {
+        var beforeView=this.beforeViewCache;
+        if(beforeView && $.isFunction(beforeView.cache)) {
+            beforeView.cache(pageOut);
+        }
+        return this;
+    },
+    pageIn: function (parEl, viewEl, drection) {
+        var that=this,
+            mainViewId=that.mainViewCache.viewId,
+            viewIndex=-1;
+
+        if(that.beforeViewCache == null) {
+            parEl.append(viewEl);
+            that.queueView.push(mainViewId);
+            return;
+        }
+        if((viewIndex=that.exist(mainViewId)) === -1) {
+            // one程序有问题
+            // viewEl.addClass("pageshow-anim").one("transitionend", function (e) {
+            //     that.cacheBeforeView();
+            //     var delClass="pageshow-anim "+drection+"-in "+drection+"-posi";
+            //     $(this).removeClass(delClass);
+            // });
+            viewEl.addClass("pageshow-anim").css("z-index", 99);
+            setTimeout(function () {
+                that.cacheBeforeView();
+                var delClass="pageshow-anim "+drection+"-in "+drection+"-in-posi";
+                viewEl.removeClass(delClass).css("z-index", null);
+            }, 520);
+            viewEl.addClass(drection+"-in-posi");
+
+            parEl.append(viewEl);
+            viewEl.get(0).clientLeft;
+            viewEl.addClass(drection+"-in");
+
+            that.queueView.push(mainViewId);
+        }else if(viewIndex != -1 && viewIndex <= (that.queueView.length-1)) {
+            parEl.append(viewEl);
+            that.cacheBeforeView(true);
+
+            var delNum=this.queueView.length-viewIndex;
+            this.queueView.splice(viewIndex+1, delNum);
+        }
+        
+    },
+    pageOut: function (viewEl, drection, callback) {
+        viewEl.addClass("pageshow-anim").css("z-index", 100);
+        setTimeout(function () {
+            var delClass="pageshow-anim "+drection+"-out "+drection+"-out-posi";
+            viewEl.removeClass(delClass);
+            viewEl.css("css", null);
+            callback();
+        }, 520);
+        viewEl.addClass(drection+"-out-posi");
+        viewEl.get(0).clientLeft;
+        viewEl.addClass(drection+"-out");
     }
 };
 
@@ -73,7 +167,6 @@ function startRoute () {
 $(window).on("DOMContentLoaded", function(e) {
     // startRoute(); 
     seajs.use("app", function(app) {
-        console.log("preload: app");
         startRoute();
     });
 });

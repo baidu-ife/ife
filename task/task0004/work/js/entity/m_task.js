@@ -1,8 +1,21 @@
 /*
-* model-task.js
+ * model-task.js
  */
 
-define(function (require, exports, module) {
+define(function(require, exports, module) {
+
+    Date.prototype.parse = function(pattern) {
+        var y = this.getFullYear();
+        var m = this.getMonth() + 1;
+        var d = this.getDate();
+
+        var res = pattern;
+        res = res.replace("yyyy", y);
+        res = res.replace("mm", m);
+        res = res.replace("dd", d);
+
+        return res;
+    };
 
     /**
      * 任务模型
@@ -16,19 +29,23 @@ define(function (require, exports, module) {
      * @property {int} categoryId 属于的类别ID
      */
     var Task = Backbone.Model.extend({
-        defaults: function () {
+        defaults: function() {
             return {
-                autoId: Global_TaskList.getNextAutoId(),
-                header: "no header",
+                autoId: -1,
+                header: "",
                 status: 0,
-                time: new Date(),
-                content: "no content",
+                time: (new Date()).parse("yyyy-mm-dd"),
+                content: "",
                 categoryId: -1
             };
+        },
+        completeTask: function() {
+            this.set("status", 1);
+            this.save();
         }
     });
 
 
-    module.exports=Task;
+    module.exports = Task;
 
 });

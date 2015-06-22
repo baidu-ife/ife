@@ -61,15 +61,10 @@
             return res;
         },
         addClass: function(nclass) {
-            if (isArray(nclass)) {
-                for (var i = 0; i < nclass.length; i++) {
-                    this.each(function(index, item, arr) {
-                        addClass(item, nclass[i]);
-                    })
-                }
-            } else {
+            nclass=nclass.split(/\s+/);
+            for (var i = 0; i < nclass.length; i++) {
                 this.each(function(index, item, arr) {
-                    addClass(item, nclass);
+                    addClass(item, nclass[i]);
                 })
             }
             return this;
@@ -86,15 +81,10 @@
             return hasClass(one, testClass);
         },
         removeClass: function(delClass) {
-            if (isArray(nclass)) {
-                for (var i = 0; i < nclass.length; i++) {
-                    this.each(function(index, item, arr) {
-                        removeClass(item, nclass[i]);
-                    })
-                }
-            } else {
+            delClass=delClass.split(/\s+/);
+            for (var i = 0; i < delClass.length; i++) {
                 this.each(function(index, item, arr) {
-                    removeClass(item, nclass);
+                    removeClass(item, delClass[i]);
                 })
             }
             return this;
@@ -148,13 +138,17 @@
             });
             return this;
         },
+        // @ques: 有问题
         one: function(event, selector, listener) {
             var that = this;
-            var nlistener = function() {
-                listener();
-
+            if(isFunction(selector)) {
+                listener=selector;
+                selector=null;
+            }
+            var nlistener = function(e) {
                 // 清除事件处理程序
                 that.off(event, nlistener);
+                listener.apply(this, arguments);
             };
             that.on(event, selector, nlistener);
             return this;
@@ -219,15 +213,17 @@
             return this;
         },
         html: function(htm) {
-            if (isString(htm)) {
+            if (htm != null) {
                 this.each(function(index, item, arr) {
                     item.innerHTML = htm;
                 });
+                return this;
             } else {
                 var one = this.get(0);
-                return one.innerHTML;
+                if(one) {
+                    return one.innerHTML;
+                }
             }
-            return this;
         },
         find: function(selector) {
             var res = new SObj();
@@ -247,9 +243,10 @@
             var obj={};
             if(isString(key)) {
                 if(val == null) {
-                    if (this.length < 1) return;
-                    var elem = this.get(0);
-                    return _getElemCss(elem, key);
+                    this.each(function (index, item, arr) {
+                        _delStyleCss(item, key);
+                    });
+                    return;
                 }
                 obj[key]=val;
             }else if(isObject(key)) {
@@ -259,6 +256,50 @@
                 _setElemCss(item, obj);
             });
             return this;
+        },
+        attr: function (key, val) {
+            var attrs={}, that=this;
+            var setAttr=function () {
+                that.each(function (index, item, arr) {
+                    for(var prop in attrs) {
+                        if(attrs.hasOwnProperty(prop)) {
+                            item.setAttribute(prop, attrs[prop]);
+                        }
+                    }
+                });
+            };
+            var getAttr=function () {
+                if (that.length<1) return null;
+                var fir=that.get(0);
+                return fir.getAttribute(key);
+            };
+
+            if($.isString(key)) {
+                if(val == null) return getAttr();
+                attrs[key]=val;
+            }else if($.isObject(key)) {
+                attrs=key;
+            }
+            setAttr.call(this, null);
+
+            return this;
+        },
+        remove: function () {
+            this.each(function (index, item, arr) {
+                var parEl=item.parentNode;
+                parEl.removeChild(item);
+            });
+            return this;
+        },
+        val: function (val) {
+            if(val == null) {
+                if (this.length < 1) return null;
+                var one = this.domArr[0];
+                return one.value;
+            }
+            this.each(function (index, item, arr) {
+                item.value=val;
+            });
         }
     };
 
@@ -308,7 +349,7 @@
     }();
 
     function _qsa (selector, context) {
-        selector = $.trim(selector.toLowerCase());
+        selector = $.trim(selector);
         context = context || doc;
         var selectorArr = selector.split(/\s+/),
             idSelector = getLastIdSelector(selectorArr),
@@ -316,6 +357,7 @@
             selectorArrLength=selectorArr.length;
 
         if (idSelector && idSelector.val !== "") {
+            // 注意：这里是doc.getElementById,所以一定要添加到文档中的才会被找到
             var idElem = doc.getElementById(idSelector.val.substr(1));
             if (!idElem) return res;
             context = idElem;
@@ -962,22 +1004,31 @@
 
     // 给一个dom绑定一个针对event事件的响应，响应函数为listener
     // ie6,7,8支持attactEvent。第三种情况已经很少了
+    // 
+    // @mark: 命名空间没有实现
     function _addEvent(element, event, listener) {
         var handlers = element.handlers || (element.handlers = {});
         var callbacks = handlers[event] || (handlers[event] = []);
         callbacks.push(listener);
+
+        var parts=event.split(/\./),
+            ename, ns;
+
+        ename=parts[0];
+        parts.length>1 && (ns=parts[1]);
+
         if (isFunction(element.addEventListener)) {
-            element.addEventListener(event, function(e) {
+            element.addEventListener(ename, function(e) {
                 e = _extendEvent(e || window.event);
                 listener.call(this, e);
             });
         } else if (isFunction(element.attachEvent)) {
-            element.attachEvent("on" + event, function(e) {
+            element.attachEvent("on" + ename, function(e) {
                 e = _extendEvent(e || window.event);
                 listener.call(this, e);
             });
         } else {
-            element["on" + event] = function(e) {
+            element["on" + ename] = function(e) {
                 e = _extendEvent(e || window.event);
                 for (var i = 0; i < callbacks.length; i++) {
                     callbacks[i].call(this, e);
@@ -996,7 +1047,7 @@
             var index = -1,
                 i;
             for (i = 0; i < callbacks.length; i++) {
-                if (callbacks[i] === listener) {
+                if (callbacks[i] == listener) {
                     index = i;
                     break;
                 }
@@ -1036,7 +1087,8 @@
         element = element || document.body;
         _addEvent(element, eventName, function(e) {
             var target = e.target;
-            if (isMatchAllSelector(testDom, selector, element)) {
+            var selectorArr = selector.split(/\s+/);
+            if (isMatchAllSelector(target, selectorArr, element)) {
                 listener.call(target, e);
             }
         });

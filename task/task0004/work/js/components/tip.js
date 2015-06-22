@@ -22,7 +22,8 @@ define(function(require, exports, module) {
                 clearTimeout(timer1);
             }
             timer1 = setTimeout(function() {
-                addClass(that.tipDom, "in");
+                // addClass(that.tipDom, "in");
+                $(that.tipDom).addClass("in");
             }, 10);
             if (timer2) {
                 clearTimeout(timer2);
@@ -33,7 +34,8 @@ define(function(require, exports, module) {
         },
         hide: function() {
             var that = this;
-            removeClass(that.tipDom, "in");
+            // removeClass(that.tipDom, "in");
+            $(that.tipDom).removeClass("in");
             if (timer3) {
                 clearTimeout(timer3);
             }
@@ -46,7 +48,7 @@ define(function(require, exports, module) {
             var div = doc.createElement("div");
             div.innerHTML = txt;
             var wid=txt.length*12+30; // 12: 字体大小，30: 左右padding， box-sizing: border-box
-            $(div).addClass("popup-tip fade out").css("width", wid);
+            $(div).addClass("tip fade out").css("width", wid);
             return div;
         }
     };

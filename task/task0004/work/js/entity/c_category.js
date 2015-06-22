@@ -26,7 +26,8 @@ define(function(require, exports, module) {
         removeCategory: function(categoryId) {
             this._removeCategory(categoryId);
 
-            Global_TaskList.removeByCategoryId(categoryId);
+            // @ques: 删除任务放在这里不是耦合了吗
+            // Global_TaskList.removeByCategoryId(categoryId);
             
             this.sync();
         },
@@ -40,6 +41,20 @@ define(function(require, exports, module) {
                 this.removeCategory(subCateIds[i]);
             }
             this.remove(curCate);
+        },
+        addCategory: function (attrs) {
+            var res=[];
+            var arr=attrs;
+            if(!$.isArray(attrs)) {
+                arr=[attrs];
+            }
+            for(var i=0; i<arr.length; i++) {
+                var temp=arr[i];
+                temp.autoId=this.getNextAutoId();
+                var n=this.create(temp);
+                res.push(n);
+            }
+            return res;
         }
     });
 
