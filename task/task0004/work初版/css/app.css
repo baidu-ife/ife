@@ -469,11 +469,6 @@ blockquote {
   width: 100%;
   color: #666;
   z-index: 999;
-  font-family: cursive;
-}
-.web-hd small {
-  font-size: 12px;
-  margin-left: 10px;
 }
 .web-bd {
   height: 100%;
@@ -736,18 +731,23 @@ blockquote {
   transform: translateX(0);
 }
 
-.left-out-posi {
+.right-out-posi {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
 }
 
-.left-out {
+.right-out {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
   transform: translateX(100%);
 }
+
+.inner .z-now {
+  z-index: 99;
+}
+
 
 

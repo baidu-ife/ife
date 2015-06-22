@@ -8,24 +8,24 @@ define(function(require, exports, module) {
         TaskModel = require("../entity/m_task"),
         Tip = require("../components/tip");
 
-    var _events = {};
-    _events[touchEve.endEvent + " #completeTask"] = "completeTask";
-    _events[touchEve.endEvent + " #editTask"] = "editTask";
-    // 事件直接绑定在taskInfo视图上是因为：点击后要切换到另一个视图，但这两个视图没有联系的，所以绑定在父视图上
-    _events[touchEve.endEvent + " #sure"] = "saveChange";
-    _events[touchEve.endEvent + " #cancel"] = "cancelChange";
-    _events["change input"] = "valueChange";
-    _events["change textarea"] = "valueChange";
+    var curView = null;
 
-    var TaskInfoView = Backbone.MView.extend({
+    var _events={};
+    _events[touchEve.endEvent+" #completeTask"]="completeTask";
+    _events[touchEve.endEvent+" #editTask"]="editTask";
+    // 事件直接绑定在taskInfo视图上是因为：点击后要切换到另一个视图，但这两个视图没有联系的，所以绑定在父视图上
+    _events[touchEve.endEvent+" #sure"]="saveChange";
+    _events[touchEve.endEvent+" #cancel"]="cancelChange";
+    _events["change input"]="valueChange";
+    _events["change textarea"]="valueChange";
+
+    var TaskInfoView = Backbone.View.extend({
         tagName: "div",
         id: "taskInfo",
         className: "task-info",
         events: _events,
 
         initialize: function(opts) {
-            opts=opts || {};
-            this.order=3;
             this.curTaskId = opts.curTaskId || -1;
             this.curCategoryId = opts.curCategoryId || -1;
             this.hasChange = false;
@@ -34,25 +34,26 @@ define(function(require, exports, module) {
             this.editView = null;
         },
         render: function() {
-            var _model, isNew = false;
+            var _model;
             if (this.curTaskId == -1 && this.curCategoryId != -1) {
-                isNew = true;
-                _model = this.model = new TaskModel({
+                this.model = new TaskModel({
                     categoryId: this.curCategoryId
                 });
             } else {
-                _model = this.model = Global_TaskList.getTask(this.curTaskId);
+                this.model = Global_TaskList.getTask(this.curTaskId);
             }
 
+            _model = this.model;
             this.detailView = new TaskDetailView({
                 model: _model
             });
-            this.editView = new TaskEditView(); // 编辑视图不绑定模型，操作简单点
+            this.editView = new TaskEditView();
 
             this.$el.append(this.detailView.render().$el)
                 .append(this.editView.render().$el);
 
-            this.setEditViewStatus(isNew); // 如果是新增则直接显示编辑按钮
+            this.setEditViewStatus(this.curTaskId == -1); // 如果是新增则直接显示编辑按钮
+
             return this;
         },
         valueChange: function() {
@@ -128,19 +129,56 @@ define(function(require, exports, module) {
                 this.setEditViewStatus(false);
             }
         },
-        setOptions: function(id, isNew) {
-            id = parseInt(id);
-            this.curTaskId = -1;
-            this.curCategoryId = -1;
+        refresh: function(id, isNew) {
+            // 重置初始化
+            this.curTaskId = isNew ? -1 : id;
+            this.curCategoryId = isNew ? id : -1;
             this.hasChange = false;
 
-            isNew ? (this.curCategoryId = id) : (this.curTaskId = id);
+            this.detailView.remove();
+            this.editView.remove();
+
+            this.render();
         },
         setEditViewStatus: function(type) {
             var data = _.clone(this.model.attributes);
             this.editView.setActive(type, data);
         }
-    });
+    }, { viewId: "task-info-view" });
+
+    TaskInfoView.initUI = function(id, isNew) {
+        id = parseInt(id);
+        var opt={};
+
+        if(!isNew) {
+            Global_TaskList.fetch();
+            opt.curTaskId=id;
+        }else{
+            opt.curCategoryId=id;
+        }
+
+        if (curView) {
+            curView.refresh(id, isNew);
+            // $("#container").append(curView.$el);
+        } else {
+            curView = new TaskInfoView(opt);
+            curView.render();
+            // $("#container").append(curView.$el);
+        }
+        AppManager.pageIn($("#container"), curView.$el, "right");
+    };
+    TaskInfoView.release = function() {
+        curView && curView.remove();
+    };
+    TaskInfoView.cache = function(pageOut) {
+        if(pageOut === true) {
+            AppManager.pageOut(curView.$el, "right", function () {
+                curView && curView.$el.remove();
+            });
+        }else {
+            curView && curView.$el.remove();
+        }
+    };
 
     module.exports = TaskInfoView;
 });

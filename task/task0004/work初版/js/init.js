@@ -12,18 +12,6 @@ seajs.config({
     // ]
 });
 
-
-// backbone
-// ==================================================
-Backbone.MView=Backbone.View.extend({
-    detach: function () {
-        this.$el.empty().detach();
-        return this;
-    }
-});
-
-// 事件选择
-// ==================================================
 var touchEve=function () {
     // 不能直接 touchstart in window，没有定义事件处理程序则为false，无法检测
     var hasTouch="ontouchstart" in window;
@@ -36,8 +24,6 @@ var touchEve=function () {
     return me;
 }();
 
-// 路由对象
-// ==================================================
 var AppRouter=Backbone.Router.extend({
     routes: {
         "": "loadIndex",
@@ -45,100 +31,133 @@ var AppRouter=Backbone.Router.extend({
         "task/:query": "loadTaskInfo",
         "newtask/:query": "loadAddNewTask"
     },
-    currentView: null, /*路由对象为全局对象，只有一个，所以直接定义为原型属性*/
-
-    initialize: function (opts) {
-        this.containerEl=opts.containerEl;
-
-        this.indexView=null;
-        this.taskListView=null;
-        this.taskInfoView=null;
-        this.headerView=new HeaderView();
-    },
-    setHeaderView: function (isIndex, title) {
-        this.headerView.setOptions(isIndex, title).render();
-    },
-    switchView: function (view) {
-        var isIn, that=this;
-        var callback=function(){
-            that.currentView=view;
-        };
-        
-        if(this.currentView) {
-            callback=function () {
-                that.currentView.detach();
-                that.currentView=view;
-            };
-            this.currentView.order > view.order ? (isIn=false) : (isIn=true);
-        }
-
-        // @ques: render(), 每次都会执行，会不会影响性能？
-        view.render();
-        this.containerEl.append(view.$el);
-
-        if(isIn === true) {
-            view.$el.slideIn("right", callback);
-        }else if(isIn === false) {
-            this.currentView.$el.slideOut("left", callback);
-        }else if(isIn === undefined) {
-            callback();
-        }
-    },
     loadIndex: function () {
-        var that=this;
         seajs.use("view/index", function (index) {
-            if(!this.indexView) {
-                this.indexView=new index();
-            }
-            that.switchView(this.indexView);
-            that.setHeaderView(true);
+            AppManager.beforeViewCache=AppManager.mainViewCache;
+            AppManager.mainViewCache=index;
+            // AppManager.releaseBeforeView();
+
+            index.initUI();
         });
     },
     loadTaskList: function (categoryId) {
-        var that=this;
         seajs.use("view/taskList", function (tasks) {
-            if(!this.taskListView) {
-                this.taskListView=new tasks();
-            }
-            this.taskListView.setOptions(categoryId);
-            that.switchView(this.taskListView);
-            that.setHeaderView(false);
+            // AppManager.cacheBeforeView();
+            // AppManager.mainViewCache=tasks;
+
+            AppManager.beforeViewCache=AppManager.mainViewCache;
+            AppManager.mainViewCache=tasks;
+
+            tasks.initUI(categoryId);
         });
     },
     loadTaskInfo: function (taskId) {
-        var that=this;
         seajs.use("view/taskInfo", function (taskInfo) {
-            if(!this.taskInfoView) {
-                this.taskInfoView=new taskInfo();
-            }
-            this.taskInfoView.setOptions(taskId, false);
-            that.switchView(this.taskInfoView);
-            that.setHeaderView(false);
+            // AppManager.cacheBeforeView();
+
+            AppManager.beforeViewCache=AppManager.mainViewCache;
+            AppManager.mainViewCache=taskInfo;
+
+            taskInfo.initUI(taskId, false);
         });
     },
     loadAddNewTask: function (categoryId) {
-        var that=this;
         seajs.use("view/taskInfo", function (taskInfo) {
-            if(!this.taskInfoView) {
-                this.taskInfoView=new taskInfo();
-            }
-            this.taskInfoView.setOptions(categoryId, true);
-            that.switchView(this.taskInfoView);
-            that.setHeaderView(false);
+            // AppManager.cacheBeforeView();
+            AppManager.mainViewCache=taskInfo;
+
+            taskInfo.initUI(categoryId, true);
         });
     }
 });
 
-// 全局app对象
-// ==================================================
 var AppManager={
-    appRouter: null
+    mainViewCache: null,
+    beforeViewCache: null,
+    appRouter: null,
+    queueView: [],
+
+    exist: function (viewid) {
+        var queue=this.queueView;
+        if($.isFunction(queue.indexOf)) {
+            return queue.indexOf(viewid);
+        }
+        for(var i=0; i<queue.length; i++) {
+            if(queue[i] === viewid) {
+                return i;
+            }
+        }
+        return -1;
+    },
+    releaseBeforeView: function () {
+        var beforeView=this.beforeViewCache;
+        if(beforeView && $.isFunction(beforeView.release)) {
+            beforeView.release();
+        }
+        return this;
+    },
+    cacheBeforeView: function (pageOut) {
+        var beforeView=this.beforeViewCache;
+        if(beforeView && $.isFunction(beforeView.cache)) {
+            beforeView.cache(pageOut);
+        }
+        return this;
+    },
+    pageIn: function (parEl, viewEl, drection) {
+        var that=this,
+            mainViewId=that.mainViewCache.viewId,
+            viewIndex=-1;
+
+        if(that.beforeViewCache == null) {
+            parEl.append(viewEl);
+            that.queueView.push(mainViewId);
+            return;
+        }
+        if((viewIndex=that.exist(mainViewId)) === -1) {
+            // one程序有问题
+            // viewEl.addClass("pageshow-anim").one("transitionend", function (e) {
+            //     that.cacheBeforeView();
+            //     var delClass="pageshow-anim "+drection+"-in "+drection+"-posi";
+            //     $(this).removeClass(delClass);
+            // });
+            viewEl.addClass("pageshow-anim").css("z-index", 99);
+            setTimeout(function () {
+                that.cacheBeforeView();
+                var delClass="pageshow-anim "+drection+"-in "+drection+"-in-posi";
+                viewEl.removeClass(delClass).css("z-index", null);
+            }, 520);
+            viewEl.addClass(drection+"-in-posi");
+
+            parEl.append(viewEl);
+            viewEl.get(0).clientLeft;
+            viewEl.addClass(drection+"-in");
+
+            that.queueView.push(mainViewId);
+        }else if(viewIndex != -1 && viewIndex <= (that.queueView.length-1)) {
+            parEl.append(viewEl);
+            that.cacheBeforeView(true);
+
+            var delNum=this.queueView.length-viewIndex;
+            this.queueView.splice(viewIndex+1, delNum);
+        }
+        
+    },
+    pageOut: function (viewEl, drection, callback) {
+        viewEl.addClass("pageshow-anim").css("z-index", 100);
+        setTimeout(function () {
+            var delClass="pageshow-anim "+drection+"-out "+drection+"-out-posi";
+            viewEl.removeClass(delClass);
+            viewEl.css("css", null);
+            callback();
+        }, 520);
+        viewEl.addClass(drection+"-out-posi");
+        viewEl.get(0).clientLeft;
+        viewEl.addClass(drection+"-out");
+    }
 };
 
-// 其他
-// ==================================================
 function startRoute () {
-    AppManager.appRouter=new AppRouter({ containerEl: $("#container") });
+    AppManager.appRouter=new AppRouter();
 
     Backbone.history.start({
         pushState: false
@@ -146,6 +165,7 @@ function startRoute () {
 }
 
 $(window).on("DOMContentLoaded", function(e) {
+    // startRoute(); 
     seajs.use("app", function(app) {
         startRoute();
     });

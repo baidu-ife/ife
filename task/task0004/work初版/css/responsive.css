@@ -38,14 +38,14 @@
     }
 
     .segue-view-btn {
+        padding: 10px;
         cursor: pointer;
-        margin: 0 5px;
     }
 
     .segue-view-btn:before {
         content: "";
-        height: 11px;
-        width: 11px;
+        height: 12px;
+        width: 12px;
         border-radius: 1px;
         display: inline-block;
         border-top: 3px solid;

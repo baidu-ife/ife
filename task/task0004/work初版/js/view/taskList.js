@@ -4,23 +4,28 @@
 
 define(function(require, exports, module) {
     var TaskItemView = require("./taskItem");
-    var mainTmpl = ['<header class="hd">',
-        '                        <ul class="task-status-nav inline">',
-        '                            <li class="inline-item item z-active"><a class="filter-item" data-status="-1">所有</a></li>',
-        '                            <li class="inline-item item"><a class="filter-item" data-status="0">未完成</a></li>',
-        '                            <li class="inline-item item"><a class="filter-item" data-status="1">已完成</a></li>',
-        '                        </ul>',
-        '                    </header>',
-        '                    <section class="bd tasks">',
-        '                        ',
-        '                    </section>',
-        '                    <footer class="ft">',
-        '                        <a class="btn add-task">',
-        '                            <i class="icon icon-add"></i>',
-        '                            新增任务',
-        '                        </a>',
-        '                    </footer>'
+
+    var curView;
+
+    var mainTmpl = [
+        '            <header class="hd">',
+        '                <ul class="task-status-nav inline">',
+        '                    <li class="inline-item item z-active"><a class="filter-item" data-status="-1">所有</a></li>',
+        '                    <li class="inline-item item"><a class="filter-item" data-status="0">未完成</a></li>',
+        '                    <li class="inline-item item"><a class="filter-item" data-status="1">已完成</a></li>',
+        '                </ul>',
+        '            </header>',
+        '            <section class="bd tasks">',
+        '                ',
+        '            </section>',
+        '            <footer class="ft">',
+        '                <a class="btn add-task">',
+        '                    <i class="icon icon-add"></i>',
+        '                    新增任务',
+        '                </a>',
+        '            </footer>'
     ].join("");
+
 
     var TimeGroup = function(el) {
         this.sectionList = {};
@@ -56,12 +61,12 @@ define(function(require, exports, module) {
         this.sectionList = {};
     };
 
-    var _events = {};
-    _events[touchEve.endEvent + " .filter-item"] = "statusChange";
-    _events[touchEve.endEvent + " .add-task"] = "showAddTaskView";
+    var _events={};
+    _events[touchEve.endEvent+" .filter-item"]="statusChange";
+    _events[touchEve.endEvent+" .add-task"]="showAddTaskView";
 
     // @ques: TaskListView只需要Global_TaskList的一部分，这怎么搞
-    var TaskListView = Backbone.MView.extend({
+    var TaskListView = Backbone.View.extend({
         tagName: "div",
         id: "taskList",
         className: "task-list",
@@ -69,8 +74,6 @@ define(function(require, exports, module) {
 
         template: _.template(mainTmpl),
         initialize: function(opts) {
-            opts = opts || {};
-            this.order = 2;
             this.curStatus = -1;
             this.curCategoryId = opts.curCategoryId || -1;
 
@@ -84,7 +87,6 @@ define(function(require, exports, module) {
 
             this.tasksEl = this.$(".tasks");
             this.taskGroup = new TimeGroup(this.tasksEl);
-
             this.filterByCategoryId();
 
             return this;
@@ -139,10 +141,42 @@ define(function(require, exports, module) {
 
             this.taskGroup.append(t, v.render().$el);
         },
-        setOptions: function(curCateId) {
-            this.curCategoryId = parseInt(curCateId);
+        setCurCategoryId: function(id) {
+            this.curCategoryId = id;
+            this.filterByCategoryId();
         }
-    });
+    }, { viewId: "task-list-view" });
+
+    TaskListView.initUI = function(curCateId) {
+        Global_TaskList.fetch();
+
+        if (curView) {
+            curView.setCurCategoryId(parseInt(curCateId));
+            // $("#container").append(curView.$el);            
+        } else {
+            curView = new TaskListView({
+                curCategoryId: parseInt(curCateId)
+            });
+            curView.render();
+            // $("#container").append(curView.$el);
+        }
+
+        AppManager.pageIn($("#container"), curView.$el, "right");
+    };
+
+    TaskListView.release = function() {
+        curView && curView.remove();
+    };
+
+    TaskListView.cache = function(pageOut) {
+        if(pageOut === true) {
+            AppManager.pageOut(curView.$el, "right", function () {
+                curView && curView.$el.remove();
+            });
+        }else {
+            curView && curView.$el.remove();
+        }
+    };
 
     module.exports = TaskListView;
 

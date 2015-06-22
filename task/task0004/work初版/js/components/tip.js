@@ -47,11 +47,11 @@ define(function(require, exports, module) {
         createElement: function(txt) {
             var div = doc.createElement("div");
             div.innerHTML = txt;
-            var wid = txt.length * 12 + 30; // 12: 字体大小，30: 左右padding， box-sizing: border-box
+            var wid=txt.length*12+30; // 12: 字体大小，30: 左右padding， box-sizing: border-box
             $(div).addClass("tip fade out").css("width", wid);
             return div;
         }
     };
 
     module.exports = tip;
-});
+})

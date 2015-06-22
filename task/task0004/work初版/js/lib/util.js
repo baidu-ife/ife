@@ -242,14 +242,11 @@
         css: function (key, val) { // 设置样式时，样式有单位的需要带上单位
             var obj={};
             if(isString(key)) {
-                if(val === null) {
+                if(val == null) {
                     this.each(function (index, item, arr) {
                         _delStyleCss(item, key);
                     });
                     return;
-                }else if (val === undefined) {
-                    if(this.length<1) return null;
-                    return _getElemCss(this.get(0), key);
                 }
                 obj[key]=val;
             }else if(isObject(key)) {
@@ -287,15 +284,7 @@
 
             return this;
         },
-        // 需要移除事件处理程序，不完整
         remove: function () {
-            this.each(function (index, item, arr) {
-                var parEl=item.parentNode;
-                parEl.removeChild(item);
-            });
-            return this;
-        },
-        detach: function () {
             this.each(function (index, item, arr) {
                 var parEl=item.parentNode;
                 parEl.removeChild(item);
@@ -311,12 +300,6 @@
             this.each(function (index, item, arr) {
                 item.value=val;
             });
-        },
-        empty: function () {
-            this.each(function (index, item, arr) {
-                item.innerHTML="";
-            });
-            return this;
         }
     };
 
