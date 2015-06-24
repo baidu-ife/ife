@@ -32,6 +32,7 @@ gulp.task("stylesheets", ["build-less"], function() {
 gulp.task('build-seajs-module', function () {
     var steam=gulp.src('./js/app.js')
         .pipe(seajsCombo())
+        .pipe(rename("app.debug.js"))
         .pipe(gulp.dest('./build/js/'));
 
     return steam;
@@ -42,15 +43,13 @@ gulp.task('javascripts', ['build-seajs-module'], function() {
     //     .pipe(uglify())
     //     .pipe(gulp.dest("./build/js/"));
 
-    gulp.src("./build/js/app.js")
+    gulp.src("./build/js/app.debug.js")
         .pipe(uglify({
             mangle: {
                 except: ["require", "exports", "module"]
             }
         }))
-        .pipe(rename({
-            suffix: ".min"
-        }))
+        .pipe(rename("app.js"))
         .pipe(gulp.dest("./build/js/"));
 });
 
