@@ -9,7 +9,7 @@ define(function(require, exports, module) {
         Tip = require("../components/tip");
 
     var _events = {};
-    _events[touchEve.endEvent + " #completeTask"] = "completeTask";
+    _events[touchEve.startEvent + " #completeTask"] = "completeTask";
     _events[touchEve.endEvent + " #editTask"] = "editTask";
     // 事件直接绑定在taskInfo视图上是因为：点击后要切换到另一个视图，但这两个视图没有联系的，所以绑定在父视图上
     _events[touchEve.endEvent + " #sure"] = "saveChange";

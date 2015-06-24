@@ -1034,22 +1034,23 @@
         ename=parts[0];
         parts.length>1 && (ns=parts[1]);
 
+        listener.proxy=function (e) {
+            e = _extendEvent(e || window.event);
+            listener.call(this, e);
+        }
+
         if (isFunction(element.addEventListener)) {
-            element.addEventListener(ename, function(e) {
-                e = _extendEvent(e || window.event);
-                listener.call(this, e);
-            });
+            // 注意addEventListener绑定的并不是listener，实际上是在listener外又包了一层匿名函数，所以移除事件处理程序时不能直接移除listener
+            element.addEventListener(ename, listener.proxy);
         } else if (isFunction(element.attachEvent)) {
-            element.attachEvent("on" + ename, function(e) {
-                e = _extendEvent(e || window.event);
-                listener.call(this, e);
-            });
-        } else {
+            element.attachEvent("on" + ename, listener.proxy);
+        } else { // 这种模式不需要使用listener.proxy，根据_removeEvent可以知道，用上也没事的应该
             element["on" + ename] = function(e) {
                 e = _extendEvent(e || window.event);
                 for (var i = 0; i < callbacks.length; i++) {
                     callbacks[i].call(this, e);
                 }
+                listener.call(this, e);
             };
         }
     }
@@ -1072,9 +1073,9 @@
             index !== -1 && callbacks.splice(index, 1);
 
             if(isFunction(element.removeEventListener)) {
-                element.removeEventListener(event, listener);
+                element.removeEventListener(event, listener.proxy);
             }else if(isFunction(element.detachEvent)) {
-                element.detachEvent("on" + event, listener);
+                element.detachEvent("on" + event, listener.proxy);
             }else {
                 element["on" + event] = function(e) {
                     e = e || window.event;

@@ -22,7 +22,8 @@ define(function(require, exports, module) {
     ].join("");
 
     var _events = {};
-    _events[touchEve.endEvent + " .add-category"] = "toastInputPopup";
+    // @ques: 换成touchend事件时，因为会弹出系统弹窗阻塞进程，导致会发生两次touchend事件，这是为什么？填了内容点击“好”又不会啊
+    _events[touchEve.startEvent + " .add-category"] = "toastInputPopup";
 
     var Index = Backbone.MView.extend({
         tagName: "div",
@@ -61,9 +62,9 @@ define(function(require, exports, module) {
             this.categorysEl.html("");
             Global_CategoryList.each(this.addCategory, this);
         },
-        toastInputPopup: function() {
+        toastInputPopup: function(e) {
             var _name = window.prompt("添加分类");
-            if (_name == "" || _name == null) return;
+            if (_name == "" || _name == null) return false;
             var attr = {
                 name: _name
             };

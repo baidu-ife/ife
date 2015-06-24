@@ -71,7 +71,7 @@ define(function (require, exports, module) {
             
         });
     }
-    // createData();
+    createData();
     
     function clearData () {
         localStorage.clear();
