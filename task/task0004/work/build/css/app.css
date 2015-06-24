@@ -313,10 +313,6 @@ button,
 input,
 select,
 textarea {
-  margin: 0;
-  outline: 0;
-  -webkit-font-smoothing: inherit;
-  background-image: none;
   border-color: #777;
 }
 blockquote {
@@ -472,7 +468,7 @@ blockquote {
   transform: translateX(100%);
 }
 .left-out-posi,
-.right-in.right-in-posi {
+.right-in-posi.right-in {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);

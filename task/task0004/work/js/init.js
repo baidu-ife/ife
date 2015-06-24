@@ -7,9 +7,10 @@
 
 seajs.config({
     // preload: "app",  // Sea.js 2.1之后已经删了
-    // map: [
-    //     [/^(.*\.(?:css|js))(.*)$/i, '$1?'+Date.now()]
-    // ]
+    map: [
+        // ["view/", ""],
+        // [/^(.*\.(?:css|js))(.*)$/i, '$1?'+Date.now()]
+    ]
 });
 
 

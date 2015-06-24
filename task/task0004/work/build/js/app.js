@@ -186,7 +186,7 @@ define('taskInfo',['taskDetail','taskEdit','m_task','tip'],function(require, exp
         Tip = require('tip');
 
     var _events = {};
-    _events[touchEve.endEvent + " #completeTask"] = "completeTask";
+    _events[touchEve.startEvent + " #completeTask"] = "completeTask";
     _events[touchEve.endEvent + " #editTask"] = "editTask";
     // 事件直接绑定在taskInfo视图上是因为：点击后要切换到另一个视图，但这两个视图没有联系的，所以绑定在父视图上
     _events[touchEve.endEvent + " #sure"] = "saveChange";
@@ -387,7 +387,7 @@ define('taskEdit',function(require, exports, module) {
 
 define('taskDetail',function(require, exports, module) {
     var tmpl = ['<header class="hd">',
-        '                <h4 class="header"><%= header %></h4>',
+        '                <h4 class="header"><%- header %></h4>',
         '                <% if(status == 0) { %>',
         '                    <div class="operates">',
         '                        <a href="javascript:void(0);" id="completeTask" class="icon icon-done btn btn-done"></a>',
@@ -396,11 +396,11 @@ define('taskDetail',function(require, exports, module) {
         '                <% } %>',
         '            </header>',
         '            <div class="task-time">',
-        '                任务时间：<span class="time"><%= time %></span>',
+        '                任务时间：<span class="time"><%- time %></span>',
         '            </div>',
         '            <div class="bd">',
         '                <article class="content">',
-        '                    <%= content %>',
+        '                    <%- content %>',
         '                </article>',
         '            </div>'
     ].join("");
@@ -450,7 +450,8 @@ define('index',['categoryItem'],function(require, exports, module) {
     ].join("");
 
     var _events = {};
-    _events[touchEve.endEvent + " .add-category"] = "toastInputPopup";
+    // @ques: 换成touchend事件时，因为会弹出系统弹窗阻塞进程，导致会发生两次touchend事件，这是为什么？填了内容点击“好”又不会啊
+    _events[touchEve.startEvent + " .add-category"] = "toastInputPopup";
 
     var Index = Backbone.MView.extend({
         tagName: "div",
@@ -489,9 +490,9 @@ define('index',['categoryItem'],function(require, exports, module) {
             this.categorysEl.html("");
             Global_CategoryList.each(this.addCategory, this);
         },
-        toastInputPopup: function() {
+        toastInputPopup: function(e) {
             var _name = window.prompt("添加分类");
-            if (_name == "" || _name == null) return;
+            if (_name == "" || _name == null) return false;
             var attr = {
                 name: _name
             };
@@ -535,7 +536,7 @@ define('header',function(require, exports, module) {
     var tmpl = ['<% if(isIndex) { %>',
         '            <span>GTD Tools</span><small>@by ych</small>',
         '        <% }else { %>',
-        '            <a class="pull-left segue-view-btn back"><%= title %></a>',
+        '            <a class="pull-left segue-view-btn back"><%- title %></a>',
         '        <% } %>'
     ].join("");
 
@@ -586,9 +587,9 @@ define('header',function(require, exports, module) {
 define('categoryItem',function(require, exports, module) {
 
     var cateTmpl = [
-        '    <a class="category-name" href="<% print(\'#category/\' + autoId) %>" data-autoid="<%= autoId%>"><%= name %>(<span class="num"><%= num %></span>)</a>',
+        '    <a class="category-name" href="<% print(\'#category/\' + autoId) %>" data-autoid="<%- autoId%>"><%- name %>(<span class="num"><%- num %></span>)</a>',
         '    <% if(name != "默认分类"){ %>',
-        '        <a class="del" data-autoid="<%= autoId%>">×</a>',
+        '        <a class="del" data-autoid="<%- autoId%>">×</a>',
         '    <% } %>'
     ].join("");
 
@@ -656,30 +657,68 @@ define('categoryItem',function(require, exports, module) {
  */
 
 define('slidePage',function(require, exports, module) {
+    var render=function () {
+        var arr=["oT", "mozT", "webkitT", "msT", "t"],
+            len=arr.length,
+            domStyle=document.body.style;
+
+        for(var i=0; i<len; i++) {
+            var temp=arr[i]+"ransition";
+            if(temp in domStyle) {
+                return arr[i].substr(0, arr[i].length-1);
+            }
+        }
+
+        return false;
+    }();
+
+    var transitionEndEve=function () {
+        if(render === false) return false;
+        if(render !== "") {
+            var res=render+"TransitionEnd";
+            if(("on"+res).toLowerCase() in window) return res;
+        }else{
+            if("ontransitionend" in window) return "transitionEnd";
+        }
+        return false;
+    }();
+
     $.fn.slideIn=function (drection, doneCallback) {
         that=this;
         that.css("z-index", 99).addClass("pageshow-anim");
-        setTimeout(function () {
-            var delClass="pageshow-anim "+drection+"-in "+drection+"-in-posi";
-            that.removeClass(delClass).css("z-index", null);
-            doneCallback();
-        }, 520);
+        if(transitionEndEve !== false) {
+            that.one(transitionEndEve, endHandler);
+        }else{
+            setTimeout(endHandler, 520);
+        }        
         that.addClass(drection+"-in-posi");
         that.get(0).clientLeft;
         that.addClass(drection+"-in");
+
+        function endHandler (e) {
+            var delClass="pageshow-anim "+drection+"-in "+drection+"-in-posi";
+            that.removeClass(delClass).css("z-index", null);
+            doneCallback();
+        }
     };
 
     $.fn.slideOut=function (drection, doneCallback) {
         that=this;
         that.addClass("pageshow-anim").css("z-index", 99);
-        setTimeout(function () {
-            var delClass="pageshow-anim "+drection+"-out "+drection+"-out-posi";
-            that.removeClass(delClass).css("z-index", null);
-            doneCallback();
-        }, 520);
+        if(transitionEndEve !== false) {
+            that.one(transitionEndEve, endHandler);
+        }else{
+            setTimeout(endHandler, 520);
+        }
         that.addClass(drection+"-out-posi");
         that.get(0).clientLeft;
         that.addClass(drection+"-out");
+
+        function endHandler (e) {
+            var delClass="pageshow-anim "+drection+"-out "+drection+"-out-posi";
+            that.removeClass(delClass).css("z-index", null);
+            doneCallback();
+        }
     };
 });
 /*
@@ -1034,7 +1073,7 @@ define('app',['m_category','c_category','m_task','c_task','tip','slidePage','cat
             
         });
     }
-    // createData();
+    createData();
     
     function clearData () {
         localStorage.clear();

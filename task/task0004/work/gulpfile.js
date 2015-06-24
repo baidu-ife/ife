@@ -55,9 +55,18 @@ gulp.task('javascripts', ['build-seajs-module'], function() {
 });
 
 gulp.task('buildlib', function () {
+    gulp.src("./js/init.js")
+        .pipe(gulp.dest("./build/js/"));
+
     gulp.src("./js/lib/*.js")
         .pipe(uglify())
         .pipe(gulp.dest("./build/js/lib/"));
+
+    gulp.src("./index.html")
+        .pipe(gulp.dest("./build/"));
+
+    gulp.src("./img/**")
+        .pipe(gulp.dest("./build/img/"))
 });
 
 gulp.task('develop', function(){
@@ -75,3 +84,7 @@ gulp.task("clean", function () {
 gulp.task('default', ["clean"], function () {
     gulp.run('develop');
 });
+
+// gulp.task('default', function () {
+//     gulp.run('stylesheets');
+// });
