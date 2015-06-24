@@ -5,12 +5,14 @@
 define(function(require, exports, module) {
 
     var cateTmpl = [
-        '    <a class="category-name" href="<% print(\'#category/\' + autoId) %>" data-autoid="<%= autoId%>"><%= name %>(<span class="num"><%= num %></span>)</a>',
-        '    <a class="del" data-autoid="<%= autoId%>">×</a>'
+        '    <a class="category-name" href="<% print(\'#category/\' + autoId) %>" data-autoid="<%- autoId%>"><%- name %>(<span class="num"><%- num %></span>)</a>',
+        '    <% if(name != "默认分类"){ %>',
+        '        <a class="del" data-autoid="<%- autoId%>">×</a>',
+        '    <% } %>'
     ].join("");
 
-    var _events={};
-    _events[touchEve.endEvent+" .del"]="removeItem"; // 不要直接使用视图的remove，应该通过删除模型触发事件告诉模型对应的视图，然后视图在删除自己
+    var _events = {};
+    _events[touchEve.endEvent + " .del"] = "removeItem"; // 不要直接使用视图的remove，应该通过删除模型触发事件告诉模型对应的视图，然后视图在删除自己
 
     var CateItem = Backbone.View.extend({
         tagName: "li",

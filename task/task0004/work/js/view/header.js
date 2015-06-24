@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     var tmpl = ['<% if(isIndex) { %>',
         '            <span>GTD Tools</span><small>@by ych</small>',
         '        <% }else { %>',
-        '            <a class="pull-left segue-view-btn back"><%= title %></a>',
+        '            <a class="pull-left segue-view-btn back"><%- title %></a>',
         '        <% } %>'
     ].join("");
 

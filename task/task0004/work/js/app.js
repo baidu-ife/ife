@@ -5,6 +5,27 @@
  */
 
 define(function (require, exports, module) {
+    // 加载所有依赖，方便gulp合并
+    // var app=require("./app"), //app模块自己不用在加载
+    // var _m_category=require('m_category'),
+    //     _c_category=require('c_category'),
+    //     _m_task=require('m_task'),
+    //     _c_task=require('c_task'),
+
+    //     _tip=require('tip'),
+    //     _slidePage=require('slidePage'),
+
+    //     _categoryItem=require('categoryItem'),
+    //     _header=require('header'),
+    //     _index=require('index'),
+    //     _taskDetail=require('taskDetail'),
+    //     _taskEdit=require('taskEdit'),
+    //     _taskInfo=require('taskInfo'),
+    //     _taskItem=require('taskItem'),
+    //     _taskList=require('taskList');
+
+
+    // ==================================================
     var CategoryList=require("./entity/c_category"),
         TaskList=require("./entity/c_task"),
         HeaderView=require("./view/header"),

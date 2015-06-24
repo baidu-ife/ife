@@ -4,7 +4,7 @@
 
 define(function(require, exports, module) {
     var tmpl = ['<header class="hd">',
-        '                <h4 class="header"><%= header %></h4>',
+        '                <h4 class="header"><%- header %></h4>',
         '                <% if(status == 0) { %>',
         '                    <div class="operates">',
         '                        <a href="javascript:void(0);" id="completeTask" class="icon icon-done btn btn-done"></a>',
@@ -13,11 +13,11 @@ define(function(require, exports, module) {
         '                <% } %>',
         '            </header>',
         '            <div class="task-time">',
-        '                任务时间：<span class="time"><%= time %></span>',
+        '                任务时间：<span class="time"><%- time %></span>',
         '            </div>',
         '            <div class="bd">',
         '                <article class="content">',
-        '                    <%= content %>',
+        '                    <%- content %>',
         '                </article>',
         '            </div>'
     ].join("");
