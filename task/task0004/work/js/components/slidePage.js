@@ -22,6 +22,7 @@ define(function(require, exports, module) {
     var transitionEndEve=function () {
         if(render === false) return false;
         if(render !== "") {
+            // @ques: 检测时都是小写onwebkittansitionend，绑定时又变成"webkitTansitionEnd"
             var res=render+"TransitionEnd";
             if(("on"+res).toLowerCase() in window) return res;
         }else{

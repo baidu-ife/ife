@@ -7,22 +7,22 @@
 define(function (require, exports, module) {
     // 加载所有依赖，方便gulp合并
     // var app=require("./app"), //app模块自己不用在加载
-    var _m_category=require('./entity/m_category'),
-        _c_category=require('./entity/c_category'),
-        _m_task=require('./entity/m_task'),
-        _c_task=require('./entity/c_task'),
+    // var _m_category=require('./entity/m_category'),
+    //     _c_category=require('./entity/c_category'),
+    //     _m_task=require('./entity/m_task'),
+    //     _c_task=require('./entity/c_task'),
 
-        _tip=require('./components/tip'),
-        _slidePage=require('./components/slidePage'),
+    //     _tip=require('./components/tip'),
+    //     _slidePage=require('./components/slidePage'),
 
-        _categoryItem=require('./view/categoryItem'),
-        _header=require('./view/header'),
-        _index=require('./view/index'),
-        _taskDetail=require('./view/taskDetail'),
-        _taskEdit=require('./view/taskEdit'),
-        _taskInfo=require('./view/taskInfo'),
-        _taskItem=require('./view/taskItem'),
-        _taskList=require('./view/taskList');
+    //     _categoryItem=require('./view/categoryItem'),
+    //     _header=require('./view/header'),
+    //     _index=require('./view/index'),
+    //     _taskDetail=require('./view/taskDetail'),
+    //     _taskEdit=require('./view/taskEdit'),
+    //     _taskInfo=require('./view/taskInfo'),
+    //     _taskItem=require('./view/taskItem'),
+    //     _taskList=require('./view/taskList');
 
 
     // ==================================================
