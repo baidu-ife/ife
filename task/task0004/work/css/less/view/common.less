@@ -1,0 +1,67 @@
+/*
+ * common.less
+ */
+
+ .category-list,
+ .task-list {
+   height: 100%;
+   float: left;
+   width: 229px;
+   border-right: 1px solid #ccc;
+   margin-left: -230px;
+   position: relative;
+   overflow: hidden;
+ }
+
+ .category-list .ft,
+ .task-list .ft {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #eee;
+   height: 40px;
+   line-height: 40px;
+   color: #333;
+   padding: 0 15px;
+   .box-sizing(border-box);
+   border-top: 1px solid #ccc;
+ }
+
+ .category-list .bd,
+ .task-list .bd {
+   overflow-y: auto;
+   padding-bottom: 40px;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   .box-sizing(border-box);
+ }
+
+ .add-category,
+ .add-task {
+   display: block;
+   cursor: pointer;
+   position: relative;
+ }
+
+
+ /*animation*/
+ .pageshow-anim {
+   z-index: 999;
+   .transition-transform(.3s ease)
+ }
+
+ .right-in-posi,
+ .left-out-posi.left-out {
+   .translateX(100%);
+ }
+
+ .left-out-posi,
+ .right-in-posi.right-in {
+   .translateX(0);
+ }
+
+

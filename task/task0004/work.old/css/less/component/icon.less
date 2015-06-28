@@ -1,0 +1,66 @@
+/*
+ * icon.less
+ */
+
+.icon {
+   display: inline-block;
+   height: 24px;
+   width: 24px;
+   vertical-align: middle;
+   background-repeat: no-repeat;
+}
+
+.icon {
+    background-image: url(../img/icons.png);
+}
+
+.icon-add {
+   height: 20px;
+   width: 20px;
+   background-image: none;
+   position: relative;
+   margin-right: 7px;
+}
+
+.icon-add:before,
+.icon-add:after {
+   content: "";
+   position: absolute;
+   background-color: #333;
+   display: block;
+
+
+}
+
+.icon-add:before {
+   height: 100%;
+   width: 4px;
+   top: 0;
+   left: 50%;
+
+   .translateX(-50%);
+}
+
+.icon-add:after {
+   width: 100%;
+   height: 4px;
+   top: 50%;
+   left: 0;
+   
+   .translateY(-50%);
+}
+
+.icon-done,
+.icon-edit {
+   height: 27px;
+   width: 27px;
+}
+
+.icon-done {
+   background-position: -5px -48px;
+}
+
+.icon-edit {
+   background-position: -7px -6px;
+}
+

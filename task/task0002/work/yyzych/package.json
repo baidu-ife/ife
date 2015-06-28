@@ -1,0 +1,12 @@
+{
+    "name":"task0002",
+    "version":"0.0.1",
+    "description":"run a server",
+    "scripts":{
+        "prestart":"npm install",
+        "start":"http-server -p 8888"
+    },
+    "devDependencies":{
+        "http-server":"^0.7.3"
+    }
+}

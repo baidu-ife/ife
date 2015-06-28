@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <title>task0002</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            position: relative;
+            width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .wrap .bd {
+            position: relative;
+            height: 300px;
+        }
+        .wrap .item{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            display: none;
+        }
+        .wrap .item img{
+            height: 300px;
+            width: 100%;
+            vertical-align: middle;
+        }
+        .wrap .ft{
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .wrap .squre {
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: .5;
+            filter:alpha(opacity=50);
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .wrap .squre:hover,
+        .wrap .squre.z-current {
+            opacity: 1;
+            filter:alpha(opacity=100);
+        }
+        .item.z-active,
+        .item.z-current {
+            display: block;
+        }
+        .operation {
+            text-align: center;
+        }
+        input,
+        select {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bd">
+            <div class="item"><img src="./img/1.jpg" alt=""></div>
+            <div class="item"><img src="./img/2.jpg" alt=""></div>
+            <div class="item"><img src="./img/3.jpg" alt=""></div>
+            <div class="item"><img src="./img/4.jpg" alt=""></div>
+        </div>
+    </div>
+    <br><br>
+    <div class="operation">
+        <label for="">顺序</label>
+        <select name="" id="direction">
+            <option value="1">正序</option>    
+            <option value="0">逆序</option>
+        </select>
+        <label for="">循环</label>
+        <select name="" id="isLoop">
+            <option value="1">是</option>    
+            <option value="0">否</option>
+        </select>
+        <label for="">间隔</label>
+        <input type="text" id="duration" >毫秒
+        <input type="button" value="确定" id="sure">
+    </div>
+    <script src="./js/util.js"></script>
+    <script src="./js/task0002_3.js"></script>
+</body>
+</html>

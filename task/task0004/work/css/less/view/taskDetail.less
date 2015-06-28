@@ -1,0 +1,86 @@
+/*
+ * taskDetail.less
+ *
+ * @desc: 任务详情和任务编辑样式
+ */
+
+ .task-info {
+   height: 100%;
+   position: relative;
+   background-color: #fff;
+ }
+
+ .task-info .detail-bd,
+ .task-info .edit-bd {
+   .position-center();
+ }
+
+ .task-info .edit-bd {
+   display: none;
+   overflow: hidden;
+   z-index: 2;
+ }
+
+ .task-info .edit-bd.z-show {
+   display: block;
+   background-color: #fff;
+ }
+
+ .task-info .hd,
+ .task-info .task-time {
+   height: 50px;
+   line-height: 50px;
+   background-color: #f2f2f2;
+   border-bottom: 1px solid #ccc;
+   padding: 0 120px 0 15px;
+   font-size: 18px;
+   position: relative;
+   z-index: 2;
+ }
+
+ .task-info .task-time {
+   background-color: #fafaee;
+   font-size: 16px;
+   padding-right: 15px;
+ }
+
+ .task-info .operates :first-child {
+   margin-right: 15px;
+ }
+
+ .task-info .bd {
+   height: 100%;
+   padding-top: 102px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+
+   .box-sizing(border-box);
+ }
+
+ .task-info .content {
+   height: 100%;
+   overflow-y: auto;
+   padding: 10px 15px;
+
+   .box-sizing(border-box);
+ }
+
+ .task-info input,
+ .task-info textarea {
+   border: none;
+   background-color: transparent;
+ }
+
+ .task-info #inputHeader,
+ .task-info #inputContent {
+   .full-size-of-parent();
+ }
+
+ .task-info .operates {
+   position: absolute;
+   right: 15px;
+   top: 0;
+   font-size: @large-font-size;
+ }

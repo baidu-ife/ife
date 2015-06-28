@@ -141,7 +141,7 @@ define(function (require) {
             // drop到targetItem处
             var dropTargetItem = dragDropIns.dropTargetItem;
             var dropTargetBucket = dragDropIns.dropTargetBucket;
-            if (dropTargetItem) {
+            if (dropTargetItem) { // 如果有dropTargetItem就一定在桶内(@ych)
                 util.removeClass(dropTargetItem, dragDropIns.dragOverCss);
                 dragDropIns.dropTargetItem = null;
                 util.insertBefore(draggedObject, dropTargetItem);

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="./css/app.css">
+    <!--[if lt ie 9]>
+        <script src="./js/lib/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header class="web-hd">
+        GTD Tools
+    </header>
+
+    <div class="web-bd">
+        <!-- 左侧 -->
+        <div id="categoryList" class="category-list">
+            <header class="hd">
+                所有任务 (<span class="num">0</span>)
+            </header>
+            <section class="bd">
+                <h4 class="title">分类列表</h4>
+                <ul class="categorys">
+                    
+                </ul>
+            </section>
+            <footer class="ft">
+                <a class="btn add-category">
+                    <i class="icon icon-add">+</i>
+                    新增分类
+                </a>
+            </footer>
+        </div>
+
+        <!-- 中间 -->
+        <div id="taskList" class="task-list">
+            <header class="hd">
+                <ul class="task-status-nav inline">
+                    <li class="inline-item fileter-item z-active" data-value="all"><a href="">所有</a></li>
+                    <li class="inline-item fileter-item" data-value="undone"><a href="">未完成</a></li>
+                    <li class="inline-item fileter-item" data-value="done"><a href="">已完成</a></li>
+                </ul>
+            </header>
+            <section class="bd tasks">
+                
+            </section>
+            <footer class="ft">
+                <a href="javascript:void(0);" class="btn add-task">
+                    <i class="icon icon-add">+</i>
+                    新增任务
+                </a>
+            </footer>
+        </div>
+
+        <!-- 右侧 -->
+        <div class="task-info">
+            <div id="taskDetail" class="detail-bd">
+                <header class="hd">
+                    <h4 class="header"></h4>
+                    <div class="operates">
+                        <a href="javascript:void(0);" id="completeTask" class="icon icon-done btn btn-done"></a>
+                        <a href="javascript:void(0);" id="editTask" class="icon icon-edit btn btn-edit"></a>
+                    </div>
+                </header>
+                <div class="task-time">
+                    任务时间：<span class="time"></span>
+                </div>
+                <div class="bd">
+                    <article class="content">
+                    </article>
+                </div>
+            </div>
+
+            <div id="taskEdit" class="edit-bd">
+                <header class="hd">
+                    <input type="text" name="" placeholder="输入标题" id="inputHeader">
+                    <div class="operates">
+                        <a href="javascript:void(0);" id="sure" class="btn btn-sure">确认</a>
+                        <a href="javascript:void(0);" id="cancel" class="btn btn-cancel">取消</a>
+                    </div>
+                </header>
+                <div class="task-time">
+                    任务时间：<input type="text" placeholder="日期格式：2015-04-02" name="" id="inputTime">
+                </div>
+                <div class="bd">
+                    <div class="content">
+                        <textarea name="" id="inputContent" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹窗 -->
+
+    <script src="./js/lib/util.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/define.js"></script>
+    <script src="./js/view/categoryList.js"></script>
+</body>
+</html>

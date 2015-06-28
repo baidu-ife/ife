@@ -1,0 +1,57 @@
+/*
+ * responsive.css
+ */
+
+
+/*去掉了 and (max-width: 768px)*/
+@media screen {
+    html,
+    body {
+        min-width: 320px;
+    }
+
+    .web-bd {
+        padding-left: 0;
+    }
+
+    .category-list,
+    .task-list {
+        margin-left: 0;
+        float: none;
+    }
+
+    .category-list,
+    .task-list,
+    .task-info {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        /*display: none;*/
+    }
+
+    .category-list.z-active,
+    .task-list.z-active,
+    .task-info.z-active {
+        z-index: 3;
+        display: block;
+    }
+
+    .segue-view-btn {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .segue-view-btn:before {
+        content: "";
+        height: 12px;
+        width: 12px;
+        border-radius: 1px;
+        display: inline-block;
+        border-top: 3px solid;
+        border-left: 3px solid;
+        border-color: #666;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+}

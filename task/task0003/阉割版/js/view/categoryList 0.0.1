@@ -1,0 +1,105 @@
+/**
+ * 分类列表
+ */
+
+/**
+ * 类别模型
+ * @Model {Category}
+ *
+ * @property {int} id 唯一ID
+ * @property {string} name 分类名称
+ * @property {int} taskCount 一个分类下的任务数量
+ * @property {int} subId 下一级的分类ID
+ * @property {init} parId 父级分类ID
+ */
+var Category = Model.extend({});
+
+
+/**
+ * 存储所有类别的集合,可以直接使用默认的集合
+ * @List {categoryList}
+ */
+var categoryList = new List({
+    model: Category
+});
+
+
+/**
+ * 类别列表视图a
+ * @View {categoryListView}
+ */
+var CategoryListView = View.extend({
+    model: Category,
+    addCategoryItem: function(cateItem) {
+        if (!(cateItem instanceof this.model)) {
+            cateItem = new this.model(cateItem);
+        }
+        var li = document.createElement("li");
+        addClass(li, "level");
+        li.innerHTML = '<a class="category-name" data-id="' + cateItem.get("id") + '">' + cateItem.get("name") + '(<span class="num">' + cateItem.get("number") + '</span>)</a>';
+        this.$(".categorys").appendChild(li)
+    }
+})
+var categoryListView = new CategoryListView($("#categoryList"), {
+    id: 1,
+    events: {
+        "click .add-category": "addCategoryHandler",
+        "click .remove-category": "removeCategoryItemHandler"
+    },
+    handlers: {
+        addCategoryHandler: function(e) {
+            var nItem = new this.model({
+                id: 4,
+                name: "lihua",
+                number: 0
+            });
+            categoryList.addItem(nItem);
+            categoryList.save("CategoryRecord");
+        },
+        removeCategoryItemHandler: function(e) {
+            console.log("occur model");
+        }
+    }
+});
+
+
+$.on(window, "load", function(e) {
+    categoryList.on("change", function(e) {
+        categoryListView.$(".categorys").innerHTML = "";
+        for (var i in this.records) {
+            if (this.records.hasOwnProperty(i)) {
+                categoryListView.addCategoryItem(this.records[i]);
+            }
+        }
+    });
+
+
+    if (localStorage["CategoryRecord"]) {
+        categoryList.fetch("CategoryRecord");
+    } else {
+        categoryList.addItem(new Category({
+            id: 0,
+            name: "默认分类",
+            number: 0
+        }));
+        categoryList.addItem(new Category({
+            id: 1,
+            name: "百度ife项目",
+            number: 10
+        }));
+        categoryList.addItem(new Category({
+            id: 2,
+            name: "毕业设计",
+            number: 2
+        }));
+        categoryList.addItem(new Category({
+            id: 3,
+            name: "社团活动",
+            number: 0
+        }));
+
+        categoryList.save("CategoryRecord");
+    }
+
+
+})

@@ -1,0 +1,27 @@
+<!-- @view task-list -->
+<div class="task-list">
+    <header class="hd">
+        <ul class="task-status-nav inline">
+            <li class="inline-item all z-active"><a href="">所有</a></li>
+            <li class="inline-item undone"><a href="">未完成</a></li>
+            <li class="inline-item done"><a href="">已完成</a></li>
+        </ul>
+    </header>
+    <section class="bd">
+        <!-- @insert-view task-time-node -->
+    </section>
+    <footer class="ft">
+        <a href="" class="btn add-category">
+            <i class="icon icon-add">+</i>
+            新增任务
+        </a>
+    </footer>
+</div>
+
+
+<!-- @view task-time-node -->
+<section class="time-node">
+    <p class="title">2015-04-28</p>
+    <a href="" class="item done">td do 1</a>
+    <a href="" class="item">td do 2</a>
+</section>

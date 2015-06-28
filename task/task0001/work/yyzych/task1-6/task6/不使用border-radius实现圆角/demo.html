@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .wrap {
+            position: relative;
+            padding: 17px;
+            background-color: #6b6666;
+            color: #fff;
+            margin: 100px;
+        }
+        .corner {
+            position: absolute;
+            height: 17px;
+            width: 17px;
+            background-image: url(./sprite.jpg);
+        }
+        .left-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-position: 0 0;
+        }
+        .left-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-position: 0 -17px;
+        }
+        .right-top {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-position: -17px 0;
+        }
+        .right-bottom {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-position: -17px -17px;
+        }
+
+
+        .wrap.type2 {
+            background-color: transparent;
+            border: 17px solid #6b6666;
+            padding: 10px;
+            color: #333;
+            min-height: 100px;
+        }
+        .wrap.type2 .left-top {
+            top: -17px;
+            left: -17px;
+        }
+        .wrap.type2 .left-bottom {
+            bottom: -17px;
+            left: -17px;
+        }
+        .wrap.type2 .right-top {
+            top: -17px;
+            right: -17px;
+        }
+        .wrap.type2 .right-bottom {
+            bottom: -17px;
+            right: -17px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <p>有背景</p>
+        <div class="corner left-top"></div>
+        <div class="corner left-bottom"></div>
+        <div class="corner right-top"></div>
+        <div class="corner right-bottom"></div>
+    </div>
+
+    <div class="wrap type2">
+        <p>没有背景</p>
+        <div class="corner left-top"></div>
+        <div class="corner left-bottom"></div>
+        <div class="corner right-top"></div>
+        <div class="corner right-bottom"></div>
+    </div>
+</body>
+</html>
