@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GTD Tools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontello.css">
+</head>
+
+<body>
+    <header>
+        <h1>GTD Tools</h1>
+    </header>
+    <div class="main">
+        <div class="type">
+            <ul class="type-wrap">
+                <li>
+                    <h2 id="type-all" class="choose" onclick = "typeClick(this)">
+                        <i class="icon-menu"></i>
+                        <span>所有任务</span>
+                    </h2>
+                </li>
+                <li>
+                    <h2>
+                        <i class="icon-menu"></i>
+                        <span>分类列表</span>
+                    </h2>
+                    <ul class="item-wrap"></ul>
+                </li>                
+            </ul>
+            <div class="add" onclick="newType()">
+                <i class="icon-plus"></i>
+                <span>新增分类</span>
+            </div>
+        </div>
+        <div class="list">
+            <div class="list-menu">
+                <ul>
+                    <li class="choose">所有</li>
+                    <li>未完成</li>
+                    <li>已完成</li>
+                </ul>
+            </div>
+            <ul class="list-wrap"></ul>
+            <div class="add" onclick="newTask()">
+                <i class="icon-plus"></i>
+                <span>新增任务</span>
+            </div>
+        </div>
+        <div class="task">
+            <div class="task-title">
+                任务标题：
+                <span></span>
+                <input type="text" id="title-edit" placeholder="在此输入任务标题">
+                <div class="task-status">
+                    <i class="icon-ok-circled2 task-finish" onclick="finishTask()"></i>
+                    <i class="icon-edit task-edit" onclick="editTask()"></i>                    
+                </div>
+            </div>
+            <div class="task-date">
+                任务时间：
+                <span></span>
+                <input type="text" id="date-edit" placeholder="在此输入任务日期（格式：2015-10-01）">
+            </div>
+            <div class="task-content">
+                <span></span>
+                <textarea id="content-edit" placeholder="在此输入任务内容"></textarea>
+                <p class="task-error"></p>
+                <button class="mybutton btn4" onclick="cancelAdd()">取消</button>
+                <button class="mybutton btn3">确定</button>       
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="box">
+        <div class="box-title">
+            <div class="box-name"></div>
+            <div class="box-close" onclick="closeBox()"></div>
+        </div>
+        <div class="box-main"></div>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/gtd.js"></script>
+</body>
+</html>

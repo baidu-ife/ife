@@ -1,0 +1,430 @@
+/*-- reset --*/
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", "san-serif";
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+img {
+    border: none;
+}
+ul, ol {
+    list-style: none;
+}
+input, select, textarea {
+    outline: none;
+    border: none;
+    background: #FFF;
+}
+textarea {
+    resize: none;
+}
+a {
+    text-decoration: none;
+}
+.clearfix {
+    overflow: hidden;
+    zoom: 1;
+}
+/*-- reset End --*/
+
+/*-- header --*/
+header {
+    height: 58px;
+    background: #ddd ;
+    border: 1px solid #ccc;
+}
+header h1 {
+    margin-left: 12px;
+    font-size: 25px;
+    line-height: 58px;
+    color: #999;
+}
+/*-- header End--*/
+
+/*-- main --*/
+.main {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    width: 100%;
+}
+
+/*-- main End --*/
+
+/*-- type --*/
+.type {
+    width: 229px;
+    height: 100%;
+    background: #f2f2f2;
+    border-right: 1px solid #ccc;
+}
+.type-wrap {
+    position: absolute;
+    top: 17px;
+    bottom: 40px;
+    width: 229px;
+    overflow: scroll;
+    border-bottom: 1px solid #ccc;
+}
+.add {
+    width: 211px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    background: #eee;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.type-wrap h2 {
+    font-size: 16px;
+    line-height: 34px;
+    padding-left: 12px;
+}
+.type-wrap h3 {
+    font-size: 14px;
+    line-height: 30px;
+    padding-left: 19px;
+}
+.type-wrap h4 {
+    font-size: 14px;
+    line-height: 28px;
+    padding-left: 44px;
+}
+.type .choose {
+    background: #fff;
+}
+#type-all, h3, h4 {
+    cursor: pointer;
+}
+.type-delete {
+    float: right;
+    line-height: 30px;
+    font-size: 14px;
+    display: none;
+}
+.type h3:hover .type-delete {
+    display: inline;
+}
+.type h4:hover .type-delete {
+    display: inline;
+}
+.type .unhover h3 .type-delete {
+    display: none;
+}
+.type .unhover h4 .type-delete {
+    display: none;
+}
+/*-- type End --*/
+
+/*-- list --*/
+.list {
+    position: absolute;
+    left: 230px;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+.list-menu {
+    position: absolute;
+    top: 0;
+    width: 230px;
+    height: 40px;
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+}
+.list-menu ul {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.list-menu li{
+    float: left;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0 9px;
+    border: 1px solid #eee;
+}
+.list-wrap {
+    position: absolute;
+    top: 41px;
+    bottom: 40px;
+    width: 230px;
+    overflow: scroll;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.list-wrap h5 {
+    font-size: 14px;
+    line-height: 27px;
+    background: #fafaee;
+    padding-left: 20px;
+}
+.list-wrap h6 {
+    font-size: 14px;
+    line-height: 26px;
+    padding-left: 35px;
+}
+.list-menu .choose {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.list-wrap .choose {
+    background: #f2f2f2;
+}
+.list h5 {
+    cursor: default;
+}
+.list h6, .list-menu li {
+    cursor: pointer;
+}
+.list-delete {
+    float: right;
+    line-height: 30px;
+    font-size: 12px;
+    display: none;
+}
+.list h6:hover .list-delete {
+    display: inline;
+}
+.list-finish {
+    text-decoration: line-through;
+}
+/*-- list End --*/
+
+/*-- task --*/
+.task {
+    position: absolute;
+    top: 0;
+    left: 461px;
+    right: 0;
+    height: 100%;
+    overflow: scroll;
+}
+.task-title {
+    font-size: 16px;
+    line-height: 50px;
+    padding-left: 15px;
+    border-bottom: 1px solid #ccc;
+    background: #f2f2f2;
+}
+.task-date{
+    line-height: 50px;
+    font-size: 16px;
+    padding-left: 15px;
+    background: #fafaee;
+    border-bottom: 1px solid #ccc;
+}
+.task-content {
+    top: 100px;
+    bottom: 0;        
+    padding: 15px;
+}
+.task-content span {
+    display: block;
+    font-size: 16px;
+}
+.task-status {
+    float: left;
+    display: block;
+}
+.task-status .task-finish {
+    position: absolute;
+    right: 70px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.task-status .task-edit {
+    position: absolute;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.task #title-edit {
+    display: none;
+    width: 300px;
+    margin-left: 10px;
+    padding: 5px 7px;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+    font-size: 14px;
+}
+.task #date-edit {
+    display: none;
+    width: 300px;
+    margin-left: 10px;
+    padding: 5px 7px;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+    font-size: 14px;    
+}
+.task #content-edit {
+    display: none;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 14px;
+    -webkit-border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.task-content .btn3 {
+    display: none;
+    float: right;
+    margin-top: 10px;
+}
+.task-content .btn4 {
+    display: none;
+    float: right;
+    margin-top: 10px;
+}
+.task-error {
+    display: inline;
+    visibility: hidden;
+    color: #d50000;
+    font-size: 15px;
+    line-height: 2.5;
+}
+/*-- task End --*/
+
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+
+/*-- box -- */
+.box{
+    display: none;
+    position: relative;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    height: 200px;
+    background: #fff;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.box-title {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background: #ddd;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.box-title .box-name {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    font-size: 14px;
+    line-height: 30px;
+}
+.box-title .box-close {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    background: #999;
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+}
+.box-title .box-close:hover {
+    background: #666;
+}
+
+.box-main {
+    padding: 10px;
+    font-size: 15px;
+    line-height: 2.5;   
+}
+.box-main .new-type {
+    width: 200px;
+    margin-left: 17px;    
+    padding: 5px 7px;
+    outline: none;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+    font-size: 14px;
+}
+
+.box-main .new-type:hover {
+    border: 1px solid #b9b9b9;
+    border-top-color: #a0a0a0;
+}
+
+.box-main .new-type:focus {
+    border: 1px solid #4d90fe;
+}
+
+.box-main .type-select {
+    width: 200px;
+    font-size: 16px;
+    margin-left: 3px;
+    border: 1px solid #d9d9d9;
+    border-top-color: #c0c0c0;
+}
+.box-main .type-select:hover {
+    border: 1px solid #b9b9b9;   
+    border-top-color: #a0a0a0;
+}
+
+.box-main .type-select:focus {
+    border: 1px solid #4d90fe;
+}
+
+.mybutton {
+    width: 80px;
+    height: 28px;
+    background-color: #aaa;
+    border-radius: 6px;
+    color: #fff;
+    padding: 6px 24px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.mybutton:hover {
+    background-color: #777;
+}
+
+.box-main .btn1 {
+    position: absolute;
+    bottom: 15px;
+    right: 130px;
+}
+.box-main .btn2 {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}
+.error {
+    color: #d50000;
+}
+/*-- box end --*/
