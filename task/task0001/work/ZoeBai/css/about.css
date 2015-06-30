@@ -1,0 +1,117 @@
+.content-wrapper {
+    width: 100%;
+    min-width: 980px;
+    padding-top: 100px;
+    padding-bottom: 25px;
+    background-color: #eee;
+}
+.main {
+    position: relative;
+    width: 980px;
+    height: 1400px;
+    margin: 0px auto;
+    background-color: #fff;
+}
+.column {
+    width: 5px;
+    height: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eee;
+}
+
+.main .section {
+    position: absolute;
+    width: 505px;
+    left: 355px;
+}
+.section h2 {
+    padding-right: 100px;
+    font: 20px/1.5 simsun, serif;
+} 
+.introduction {   
+    top: 120px;
+}
+.introduction p {
+    width: 310px;
+    padding-left: 18px;
+    font: 14px/1.5 simsun, serif;
+    text-indent: 2em;
+}
+.contact {   
+    top: 380px;
+}
+.contact li {
+    font: 14px/1.5 Courier new, sans-serif;
+    white-space: pre;
+}
+.edu-exp {
+    top: 620px;
+}
+.edu-exp h3,
+.intern-exp h3 {
+    position: relative;
+    width: 50px;
+    left: -82px;
+    border: 5px solid #eee;
+    border-radius: 10px;
+    font: 14px/1.5 courier new, sans-serif;
+    text-align: center;
+    background-color: #fff;
+}
+.edu-exp li:nth-child(2) h3 {
+    top: 10px;
+}
+.edu-exp p,
+.intern-exp p {
+    position: relative;
+    top: -27px;
+    font: 14px/1.5 simsun, sans-serif;
+}
+.edu-exp li:nth-child(3) p {
+    top: -37px;
+}
+
+.intern-exp {
+    top: 960px;
+}
+.section > * {
+    display: inline-block;
+    vertical-align: top;
+}
+.avatar {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    left: 400px;
+    top: -70px;
+    border: 10px solid #eee;
+    border-radius: 90px;
+}
+.contact-me {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 435px;
+    top: 260px;
+    border: 5px solid #eee;
+    border-radius: 55px;
+}
+.edu {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 435px;
+    top: 490px;
+    border: 5px solid #eee;
+    border-radius: 55px;
+}
+.intern {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 435px;
+    top: 830px;
+    border: 5px solid #eee;
+    border-radius: 55px;
+}
