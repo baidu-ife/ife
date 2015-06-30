@@ -2,18 +2,68 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-    <link href="css/style.css" rel="stylesheet">
-    <script src="js/task0002_2.js"></script>
+    <title>任务2.2</title>
+    <style>
+        body,div,p,input {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-size: 17px;
+            font-family: "Microsoft Yahei";
+        }
+        .container {
+            width: 500px;
+            height: 300px;
+            margin: 200px auto 0;
+        }
+        .container p {
+          margin-bottom: 30px;
+
+        }
+        input {
+            width: 500px;
+            height: 30px;
+            display: block;
+            margin-bottom: 30px;
+        }
+        button {
+            width: 60px;
+            height: 30px;
+            background: #17B4B4;
+            border-radius: 5px;
+            color: #fff;
+        }
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            color:    #17B4B4;
+            font-size: 16px;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    #17B4B4;
+            font-size: 16px;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    #17B4B4;
+            font-size: 16px;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:    #17B4B4;
+            font-size: 16px;
+        }
+        #show {
+            margin-top: 30px;
+            color: #17B4B4;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <input id="inputbox" type="text" class="inputbox" placeholder="按照格式YYYY-MM-DD输入年月日" /><br />
-        <button onclick="showtime()">开始</button>
-        <div id="show">
-           <p id="pp"></p>
-        </div>
-    </div>
+      <div class="container">
+          <p>请输入一个日期(按照规定的格式输入)：</p>
+          <input type="text" placeholder="YYYY-MM-DD输入年月日" id="endtime"/>
+          <button onclick="showtime()">提交</button>
+          <div id="show"></div>
+      </div>
 
+      <script src="js/task0002_2.js"></script>
 </body>
 </html>

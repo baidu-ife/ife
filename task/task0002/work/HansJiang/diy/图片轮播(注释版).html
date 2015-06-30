@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding-top: 50px;
+            padding-left: 250px;
+        }
+        a {
+            text-decoration: none;
+        }
+        #container {              /*外部大容器，图片显示处*/
+            width: 690px;          /*显示区域宽度*/
+            height: 460px;         /*显示区域高度*/
+            border: 1px solid #333;
+            overflow: hidden;
+            position: relative;
+        }
+        #list {
+            width: 4140px;       /*轮播图片总长度 690*数量=总长度*/
+            height: 460px;
+            position: absolute;
+            z-index: 1;
+        }
+        #list img {
+            float: left;
+        }
+        #buttons {
+            position: absolute;
+            height: 10px;
+            width: 100px;
+            z-index: 2;
+            left: 250px;
+            bottom: 20px;
+        }
+        #buttons span {           /*图片小圆点设置*/
+            cursor: pointer;
+            float: left;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: #333;
+            margin-right: 5px;
+        }
+        #buttons .on {          /*小圆点点击后时的情况*/
+            background: orangered;
+        }
+        .arrow {            /*左右箭头样式*/
+            cursor: pointer;
+            display: none;
+            line-height: 40px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: normal;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 2;
+            top: 180px;
+            background-color: rgba(0,0,0,.3);
+            color: #fff;
+        }
+        .arrow:hover {     /*左右箭头点击样式*/
+            background-color: rgba(0,0,0,.7);
+        }
+        #container:hover .arrow {       /*点击大容器出现左右箭头*/
+            display: block;
+        }
+        #prev {                   /*右箭头位置*/
+            left: 20px;
+        }
+        #next {               /*右箭头位置*/
+            right: 20px;
+
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="list" style="left:-690px;" >      <!--显示第一张图片，初始位置-->
+        <img src="img/4.jpg" alt="">    <!--无限轮播小技巧，添加首尾图的副图-->
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/1.jpg" alt="">
+    </div>
+    <div id="buttons">                         <!--下方小按钮-->
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+    </div>
+    <a href="#" class="arrow" id="prev">&lt;</a>     <!--左右箭头-->
+    <a href="#" class="arrow" id="next">&gt;</a>
+</div>
+
+<script>
+    window.onload=function() {
+        var contanier = document.getElementById('container');
+        var list = document.getElementById("list");
+        var buttons = document.getElementById("buttons").getElementsByTagName("span");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var index = 1;
+        var animated = false;
+        var timer;
+        function showButton() {
+            for(var i = 0;i < buttons.length; i++) {
+                if(buttons[i].className == 'on') {
+                    buttons[i].className = '';
+                    break;
+                }
+            }
+            buttons[index - 1].className = 'on';
+        }
+        function animate(offset) {
+            animated = true;
+            var newLeft = parseInt(list.style.left) + offset;
+            var time = 300;//位移总时间
+            var interval = 10;//位移间隔
+            var speed = offset/(time/interval); //每次位移量
+            function go() {
+                if ((speed < 0 && parseInt(list.style.left) > newLeft) || (speed > 0 && parseInt(list.style.left) < newLeft)) {
+                    list.style.left = parseInt(list.style.left) + speed + 'px';
+                    setTimeout(go, interval);  //为了移动够距离，要多次调用go函数
+                }
+                else {   //距离够了，然后在调用一次，把距离赋给他，如果移动到副图了，就移动到真是位置去
+                    animated = false;
+                    list.style.left = newLeft + 'px';
+                    if (newLeft > -690) {
+                        list.style.left = -2760 + 'px';
+                    }
+                    if (newLeft < -2760) {
+                        list.style.left = -690 + 'px';
+                    }
+                }
+
+            }
+            go();
+        }
+        function play() {   //自动轮播
+            timer = setInterval(function(){
+                next.onclick();
+            },3000);
+        }
+        function stop() {   //清楚定时器
+            clearInterval(timer);
+        }
+        next.onclick = function() {
+            if (index == 4) {
+                index = 1;
+            }
+            else {
+                index += 1;
+            }
+            showButton();
+            if(!animated) {
+                animate(-690);
+            }
+        }
+        prev.onclick = function() {
+            if (index == 1) {
+                index = 4;
+            }
+            else {
+                index -= 1;
+            }
+            showButton();
+            if(!animated) {
+                animate(690);
+            }
+        }
+        for (var i = 0; i < buttons.length; i++) {   //点击下方的小按钮来控制移动
+            buttons[i].onclick = function() {
+                if(this.className == 'on') {
+                    return;
+                }
+                else {
+                    var myIndex = parseInt(this.getAttribute('index'));
+                    var offset = -690 *(myIndex - index);
+                    if(!animated) {
+                        animate(offset);
+                    }
+                    index = myIndex;
+                    showButton();
+                }
+
+            }
+        }
+        contanier.onmouseover = stop;
+        contanier.onmouseout = play;
+        play();   //自动轮播调用
+    }
+
+</script>
+</body>
+</html>

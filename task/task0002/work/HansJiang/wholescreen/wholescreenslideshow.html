@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全屏轮播</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="slider">
+        <div class="main" id="template_main">
+            <div class="main-i {{css}}" id="main_{{index}}">
+                <div class="caption">
+                    <h2>{{h2}}</h2>
+                    <h3>{{h3}} </h3>
+                </div>
+                <img src="images/{{index}}.jpg" class="picture" />
+            </div>
+        </div>
+        <div class="ctrl" id="template_ctrl">
+            <a class="ctrl-i" id="ctrl_{{index}}" href="javascript:switchSlider({{index}});">
+                <img src="images/{{index}}.jpg" />
+            </a>
+        </div>
+    </div>
+    <script src="1/1.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>

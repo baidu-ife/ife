@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        padding-top: 50px;
+        padding-left: 250px;
+    }
+    a {
+        text-decoration: none;
+    }
+    #container {
+        width: 690px;
+        height: 460px;
+        border: 1px solid #333;
+        overflow: hidden;
+        position: relative;
+    }
+    #list {
+        width: 4140px;
+        height: 460px;
+        position: absolute;
+        z-index: 1;
+    }
+    #list img {
+        float: left;
+    }
+    #buttons {
+        position: absolute;
+        height: 10px;
+        width: 100px;
+        z-index: 2;
+        left: 250px;
+        bottom: 20px;
+    }
+        #buttons span {
+            cursor: pointer;
+            float: left;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: #333;
+            margin-right: 5px;
+        }
+        #buttons .on {
+            background: orangered;
+        }
+        .arrow {
+            cursor: pointer;
+            display: none;
+            line-height: 40px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: normal;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 2;
+            top: 180px;
+            background-color: rgba(0,0,0,.3);
+            color: #fff;
+        }
+        .arrow:hover {
+            background-color: rgba(0,0,0,.7);
+        }
+        #container:hover .arrow {
+            display: block;
+        }
+        #prev {
+            left: 20px;
+        }
+        #next {
+            right: 20px;
+
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="list" style="left:-690px;" >
+        <img src="img/4.jpg" alt="">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/1.jpg" alt="">
+    </div>
+    <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+    </div>
+    <a href="#" class="arrow" id="prev">&lt;</a>
+    <a href="#" class="arrow" id="next">&gt;</a>
+</div>
+
+<script>
+    window.onload=function() {
+        var contanier = document.getElementById('container');
+        var list = document.getElementById("list");
+        var buttons = document.getElementById("buttons").getElementsByTagName("span");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var index = 1;
+        var animated = false;
+        var timer;
+        function showButton() {
+            for(var i = 0;i < buttons.length; i++) {
+                if(buttons[i].className == 'on') {
+                buttons[i].className = '';
+                break;
+                }
+            }
+            buttons[index - 1].className = 'on';
+        }
+         function animate(offset) {
+             animated = true;
+             var newLeft = parseInt(list.style.left) + offset;
+             var time = 300;//位移总时间
+             var interval = 10;//位移间隔
+             var speed = offset/(time/interval); //每次位移量
+             function go() {
+                 if ((speed < 0 && parseInt(list.style.left) > newLeft) || (speed > 0 && parseInt(list.style.left) < newLeft)) {
+                     list.style.left = parseInt(list.style.left) + speed + 'px';
+                     setTimeout(go, interval);
+                 }
+                 else {
+                     animated = false;
+                     list.style.left = newLeft + 'px';
+                     if (newLeft > -690) {
+                         list.style.left = -2760 + 'px';
+                     }
+                     if (newLeft < -2760) {
+                         list.style.left = -690 + 'px';
+                     }
+                 }
+
+             }
+             go();
+         }
+        function play() {
+            timer = setInterval(function(){
+              next.onclick();
+            },3000);
+        }
+        function stop() {
+            clearInterval(timer);
+        }
+        next.onclick = function() {
+            if (index == 4) {
+                index = 1;
+            }
+            else {
+            index += 1;
+            }
+            showButton();
+            if(!animated) {
+                animate(-690);
+            }
+        }
+        prev.onclick = function() {
+            if (index == 1) {
+                index = 4;
+            }
+            else {
+                index -= 1;
+            }
+            showButton();
+            if(!animated) {
+                animate(690);
+            }
+        }
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = function() {
+                if(this.className == 'on') {
+                    return;
+                }
+                else {
+                var myIndex = parseInt(this.getAttribute('index'));
+                var offset = -690 *(myIndex - index);
+                if(!animated) {
+                    animate(offset);
+                }
+                index = myIndex;
+                showButton();
+                }
+
+            }
+        }
+        contanier.onmouseover = stop;
+        contanier.onmouseout = play;
+        play();
+    }
+
+</script>
+</body>
+</html>

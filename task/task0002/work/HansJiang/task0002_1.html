@@ -1,35 +1,136 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <html meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-    <link href="css/style.css" rel="stylesheet">
-    <Script src="js/task0002.js"></Script>
-    <Script src="js/task0002_1.js"></Script>
-    <Script src="js/util.js"></Script>
+    <meta charset="UTF-8">
+    <title>任务2.1</title>
+    <script src="js/task2.js"></script>
+    <style type="text/css">
+        body,div,span,h1 {
+            margin: 0;
+            padding: 0
+        }
+        .container {
+            width: 600px;
+            height: 100px;
+            margin:  50px auto 0;
+            background: #e0def5;
+            padding: 20px;
+            color: #17B4B4;
+        }
+        .container1 {
+            width: 600px;
+            height: 100px;
+            margin:  30px auto 0;
+            background: #e0def5;
+            padding: 20px;
+            color: #17B4B4;
+        }
+        .container2 {
+            width: 600px;
+            height: 100px;
+            margin:  30px auto 100px;
+            background: #e0def5;
+            padding: 20px;
+            color: #17B4B4;
+        }
+        button {
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+    <script>
+        function level1show() {
+            console.log(r);
+            var str = document.getElementById("content1").value;
+            var r = [];
+            r = str.split(/,/);
+            console.log(r);
+            r = uniqArray(r);
+            console.log(r);
+            var a =document.createTextNode(r);
+            var element = document.createElement("div");
+            element.appendChild(a);
+            document.getElementById("container").appendChild(element);
+            element.setAttribute("id","div1");
+        };
+        function clean() {
+            var element = document.getElementById("div1");
+            document.getElementById("container").removeChild(element);
+        }
+        function level2show() {
+            console.log(r);
+            var str = document.getElementById("content2").value;
+            var r = [];
+            r = str.split(/[，,\n\s、；;]/);
+            console.log(r);
+            r = uniqArray(r);
+            console.log(r);
+            var a =document.createTextNode(r);
+            var element = document.createElement("div");
+            element.appendChild(a);
+            document.getElementById("container1").appendChild(element);
+            element.setAttribute("id","div2");
+        };
+        function clean1() {
+            var element = document.getElementById("div2");
+            document.getElementById("container1").removeChild(element);
+        }
+
+        function level3show() {
+
+            console.log(r);
+            var str = document.getElementById("content3").value;
+            if(str=="") {
+
+                document.getElementById("error").style.color = "red";
+                document.getElementById("error").innerHTML = "不能为空";
+            }
+            else {
+                document.getElementById("error").innerHTML = "";
+            var r = [];
+            r = str.split(/[，,\n\s、；;]/);
+            console.log(r);
+            r = uniqArray(r);
+            console.log(r);
+                var len = r.length;
+                var i = 0;
+                for(;i<len;i++)
+                {
+            var a = document.createElement("label");
+            var b = document.createTextNode(r[i]);
+                    a.appendChild(b);
+                    a.setAttribute("for","x"+i);
+
+            var element = document.createElement("input");
+                 element.setAttribute("id","x"+i);
+            document.getElementById("container2").appendChild(element);
+            document.getElementById("container2").appendChild(a);
+            element.setAttribute("type","checkbox");
+                }
+            }
+        };
+
+    </script>
 </head>
 <body>
-    <div  class="container">
-        <p>阶段1:</p>
-        <textarea id="text1"  placeholder="输入兴趣爱好" cols="40" rows="1"></textarea><br />
-        <button id="submit1"  onclick="level1_show()">提交</button>
-        <button onclick="deletenode() ">删除</button>
-        <div id="level1">
-        </div>
-        <p>阶段2:</p>
-        <textarea id="text2"  placeholder="输入兴趣爱好" cols="40" rows="2"></textarea><br />
-        <button id="submit2"  onclick="level2_show()">提交</button>
-        <button onclick="deletenode1() ">删除</button>
-        <div id="level2">
-        </div>
-        <p>阶段3:</p>
-        <textarea id="text3"  placeholder="输入兴趣爱好" cols="40" rows="3"></textarea>
-        <span id="warning"></span><br />
-        <button id="submit3"  onclick="level3_show()">提交</button>
-        <button onclick="deletenode2() ">删除</button>
-        <p>兴趣爱好</p>
-        <div id="level3">
-        </div>
+    <div class="container" id="container">
+        <h1>阶段1</h1>
+        <span>请输入您的兴趣爱好:</span> <input type="text" id="content1"/><button onclick="level1show()">test</button>
+        <button onclick="clean()">RESET</button>
+    </div>
+
+    <div class="container1" id="container1">
+        <h1>阶段2</h1>
+        <span>请输入您的兴趣爱好:</span> <input type="text" id="content2"/><button onclick="level2show()">test</button>
+        <button onclick="clean1()">RESET</button>
+    </div>
+
+    <div class="container2" id="container2">
+        <h1>阶段3</h1>
+        <span>请输入您的兴趣爱好:</span> <input type="text" id="content3"/><button onclick="level3show()">test</button> &nbsp;<span id="error"></span>
+    <br/>
     </div>
 </body>
 </html>
+

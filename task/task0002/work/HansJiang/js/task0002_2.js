@@ -1,84 +1,62 @@
 /**
- * Created by jp on 2015/5/7.
+ * Created by jp on 2015/6/27.
  */
-function showtime()
-{
-    var dateset=document.getElementById("inputbox").value.split("-");
-    console.log(dateset);
-    var myDate=new Date();
-    myDate.setFullYear(dateset[0],dateset[1],dateset[2]);
-    console.log( myDate);
-    var today=new Date();
-    if (myDate<today)
-    {
-        alert("±ØÐë´óÓÚ½ñÈÕ");
-    }
+function isLeapYear(year) {
+    if((year%4 == 0)&&(year%100 != 0)||(year%400 == 0))
+        return 1;
     else
-    {
-        var y=myDate.getFullYear();
-        var m=myDate.getMonth();
-        var d=myDate.getDay();
-        console.log( d);
+        return 0;
+}
+function showtime() {
+    var endTime = document.getElementById("endtime").value.split(/-/);
+    var endTime = new Date(endTime[0],endTime[1]-1,endTime[2]);
+    var nowTime = new Date();
+    console.log(endTime);
+    if(endTime<nowTime)
+       alert("å¿…é¡»è¾“å…¥å¤§äºŽä»Šå¤©çš„æ—¥æœŸ!");
+    else {
+      var endTimeYear = endTime.getFullYear();
+      //var noWTimeYear = nowTime.getFullYear();
+      //var leapyear = 0;
+      //for(var i = noWTimeYear+1;i<=endTimeYear;i++) {
+      //    if (isLeapYear(i))
+      //        leapyear++;
+      //}
+      //  //æ–¹ä¾¿è®¡ç®—æŠŠæ—¶é—´æŽ¨åˆ°å‰ä¸€å¤©çš„æœ€åŽä¸€ç§’
+        var endTimeMonth = endTime.getMonth();
 
-        var yn=today.getFullYear();
-        var mn=today.getMonth();
-        var dn=today.getDay();
-        var h=today.getHours();
-        var m1=today.getMinutes()
-        var s=today.getSeconds();
-
-        var yc=y-yn;
-        var mc1=m-mn;
-        var dc=d-1-dn;
-
-        var hc=23-h;
-        var mc=59-m1;
-        var sc=60-s;
-        var run=0;
-        if(yc)
-        {
-            for(var i=2015;i<=y;i++)
-            if(i%4==0)
-             run++;
-        }
-         dc+=yc*365+run+mc1*30-1;
-
-        if(hc<=0)
-        {
-            if(dc==0)
-            hc==0;
-            else
-            {
-            dc--;
-            hc+=24;
-            }
-        }
-        if(mc<=0)
-        {
-            if(hc==0)
-                mc==0;
-            else
-            {
-                hc--;
-                mc+=60;
-            }
-        }
-        if(sc<=0)
-        {
-            if(mc==0)
-                sc==0;
-            else
-            {
-                mc--;
-                sc+=60;
-            }
-        }
-
-
-        var p = document.getElementById("pp");
-        p.innerHTML= "¾àÀë"+y+"Äê"+m+"ÔÂ"+d+"ÈÕ"+"»¹ÓÐ"+dc+"Ìì"+hc+"Ð¡Ê±"+mc+"·Ö"+sc+"Ãë";
-
+        var endTimeDay = endTime.getDate();
+      //  var endTimeHour = 23;
+      //  var endTimeMinute = 60;
+      //  var endTimeSecond = 60;
+      //  var nowTimeMonth = nowTime.getMonth()+1;
+      //  var nowTimeDay = nowTime.getDate();
+      //  var nowTimeHour = nowTime.getHours();
+      //  var nowTimeMinute = nowTime.getMinutes();
+      //  var nowTimeSecond = nowTime.getSeconds();
+      //
+      //  var yearSub =  endTimeYear-noWTimeYear;
+      //  var monthSub =yearSub*12+ endTimeMonth-nowTimeMonth;
+      //  var daySub =
+      var leftTime = endTime - nowTime;
+      var leftSecond = leftTime/1000;
+      var leftDay = Math.floor(leftSecond/(24*60*60));
+      var leftHour = Math.floor((leftSecond-leftDay*24*60*60)/3600);
+      var leftMinute = Math.floor((leftSecond-leftDay*24*60*60-leftHour*3600)/60);
+      var leftSecond = Math.floor(leftSecond-leftDay*24*60*60-leftHour*3600-leftMinute*60);
+        document.getElementById("show").innerHTML ="è·ç¦»"+endTimeYear+"å¹´"+(endTimeMonth+1)+"æœˆ"+endTimeDay+"æ—¥"
+        +"è¿˜æœ‰"+leftDay+"å¤©"+leftHour+"å°æ—¶"+leftMinute+"åˆ†é’Ÿ"+leftSecond+"ç§’"+"äº†ï¼";
     }
-    setInterval(showtime(), 1000);
+    if(leftTime)
+    {
+    var a = setTimeout("showtime()",1000);
+    }
+    if(leftTime==0)
+    { clearTimeout(a);
+    alert("æ—¶é—´åˆ°äº†");
+    }
+
+
+
 }
 
