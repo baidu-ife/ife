@@ -1,0 +1,640 @@
+/*
+Baidu Ife Task0003 rewrite
+write by simmer 6/23/2015
+*/
+/*css reset*/
+body,
+span,
+p,
+img,
+ul,
+li,
+h3,
+input,
+option {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+    min-height: 300px;
+}
+body {
+    font: 14px/1.5 "Microsoft YaHei",Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+@font-face {
+    font-family: "icon";
+    src: url(../fonts/icomoon.eot) format("embedded-opentype")
+         ,url(../fonts/icomoon.woff) format("woff")
+         ,url(../fonts/icomoon.svg) format("svg")
+         ,url(../fonts/icomoon.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.icon {
+    font-family: "icon";
+    font-weight: normal;
+}
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    height: 0;
+    display: block;
+    clear: both;
+    *zoom: 1;
+}
+.wraper {
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+/*----header stylesheet----*/
+.header {
+    height: 60px;
+    width: 100%;
+    background: #376956;       
+}
+.header p {
+    line-height: 60px;
+    font-size: 20px;
+    margin-left:20px; 
+    color: #ffffff;
+}
+/*--------contend stylesheet------------*/
+.contend {
+    min-height:340px;
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+/*---------left div stylesheet-----------------------------*/
+
+.classify {
+    float: left;
+    min-width: 250px;
+    min-height:340px;
+    width: 24%;
+    height: 100%;
+    position: relative;
+    background: #ffffe4;
+    overflow-x: hidden;
+    overflow-y: auto;
+    *overflow: scroll;
+}
+.classify h3 {
+    margin: 10px 0;
+}
+.classify-cont {
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+.all-task:before {
+    content:"\e9c9";
+    font-family: 'icon';
+    margin-right: 6px;
+}
+.all-task-list:before {
+    content:"\ea77";
+    font-family: 'icon';
+    margin-right: 6px;
+}
+.delete-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    font-family: "icon";
+    margin-right: 6px;
+    font-weight: 600;
+    display: none;
+
+}
+.delete-icon:hover {
+    color: #000000;
+}
+.main-item {
+    margin-top: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    overflow-x: hidden; 
+    text-overflow: ellipsis; 
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    transition: color 0.3s ,background 0.3s;
+}
+.main-item:before {
+    content: "\e930";
+    font-family: "icon";
+    margin: 0 4px;
+
+}
+.main-item:hover{
+    color: #fafafa;
+    background: #626c83;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+.main-item:hover .delete-icon {
+    display: block;
+}
+.child-item {
+    margin-left: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 8px;
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    transition: color 0.3s ,background 0.3s;
+    display: none;
+}
+.child-item:before {
+    content: "\e926";
+    font-family: "icon";
+    margin: 0 4px;
+}
+.child-item:hover {
+    color: #fafafa;
+    background: #626c83;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+.child-item:hover .delete-icon {
+    display: block;
+}
+.btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    width: auto;
+    background: #aeb3be;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+    padding-left: 50px;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+.btn:hover {
+    color: #ffffff;
+}
+.active {
+    color: #fafafa;
+    background: #626c83;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+.active .delete-icon {
+    display: block;
+}
+/*---------middle div stylesheet-----------------------------*/
+.task-list {
+    float: left;
+    min-height:340px;
+    min-width: 248px;
+    width: 24%;
+    height: 100%;
+    border-left: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd; 
+    position: relative;
+    overflow: hidden;
+    background: #CCFFCC； 
+}
+.task-btn {
+    height: 40px;
+    border-bottom: 1px solid #ccccce;  
+    background: #69ffff;
+}
+.task-btn a {
+    display: inline-block;
+    height: 28px;
+    padding: 0 2%;
+    line-height: 28px;
+    color: #3e3e3e;
+    margin: 5px 6%;  
+}
+.task-list .click {
+    background: #f1fcfc;
+    color: #000000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; 
+}
+.task-list .task-btn a:hover {
+    background: #f1fcfc;
+    color: #000000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; 
+}
+.task-list-cont {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.task-box {
+    overflow-x: hidden;
+}
+.task-date {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10%;
+    background: #b3fdfd;
+}
+.task-date:before {
+    content: '\e950';
+    font-family: 'icon';
+    padding-right: 4px;
+}
+.item {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    padding-left: 10%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-bottom: 1px solid #dddddd; 
+    text-overflow:ellipsis ; 
+}
+.task-doing {
+    color: #e1a3a3; 
+}
+.task-doing:hover {
+    color: #ff6464; 
+}
+.task-done {
+    color: #d0d0d0;
+}
+.task-done:hover {
+    color: #828282;
+}
+/*---------right div stylesheet-----------------------------*/
+
+
+.task-detail {
+    float: left;
+    min-height:340px;
+    min-width: 500px;
+    width: 50%;
+    height: 100%;
+    overflow-y: auto; 
+    overflow-x: hidden;  
+}
+/*--------------task detail stylesheet------------------------------*/
+.detail {
+    display: block;
+    position: relative;
+    height: 90%;
+    overflow: hidden;
+}
+.btns {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.btns a {
+    background: #eb5b17;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+.btns a:hover {
+    background: #ea4107;
+}
+.detail-title {
+    font-size: 22px;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    border-bottom: 1px solid #dddddd;
+}
+.detail-title:before {
+    content: "\e946";
+    font-family: "icon";
+    margin-right: 10px;
+}
+.detail-date {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid #dddddd;
+}
+.detail-date:before {
+    content: "\e953";
+    font-family: "icon";
+    margin-right: 10px;
+}
+.detail-cont {
+    padding: 2%;
+    height: 80%;
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+.task-oprate {
+    position: absolute;
+    font-family: 'icon';
+    right: 30px;
+    top: 0;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+.doing .task-oprate {
+    display: block;
+}
+#task-done-btn,#task-modification-btn {
+    display: inline-block;
+    height: 50px;
+    width: 60px;
+    line-height: 50px;
+    text-align: center;
+    margin: 10px;
+    color: #FF6633;
+    line-height: 30px;
+    transition: font-size 0.5s;
+}
+#task-done-btn:hover,#task-modification-btn:hover {
+    font-size: 30px;
+}
+/*--------------task edit stylesheet------------------------------*/
+.edit {
+    position: relative;
+    height: 100%;
+    overflow-y: auto; 
+    display: none;
+}
+.edit-title {
+    height: 60px;
+    border-bottom: 1px solid #dddddd;
+    line-height: 60px;
+    font-size: 22px;
+} 
+.tips {
+    padding-left: 20px;
+}
+#title {
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0;
+    width: 200px;
+    outline: none;
+    font-size: 24px;
+    border: none;
+}
+#title:focus {
+    border-bottom: 2px solid #f55877;
+}
+.edit-date {
+    height: 40px;
+    border-bottom: 1px solid #dddddd;
+    line-height: 40px;
+    font-size: 20px;
+}
+#date {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    margin: 5px 0;
+    border: none;
+    outline: none;
+}
+
+
+.edit-cont {
+    padding: 2%; 
+    height: 80%;
+    overflow-x: hidden; 
+    overflow-y: auto;
+}
+#task-main-cont {
+    width: 100%;
+    height: 80%;
+    border: none;
+    overflow: hidden;
+    outline: none;
+}
+.edit-cont-tips {
+    margin: 20px 0; 
+    color: #eb5b17;
+}
+
+/*--------window stylesheet----------------*/
+.window {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0; 
+    left: 0;
+    display: none;
+}
+.window-mask {
+    background: #2e2e2e;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+}
+.window-contend {
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    background: #ffffff;
+    margin-left: -200px;
+    margin-top: -100px;
+    top: 50%;
+    left: 50%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+/*-------新增分类按钮弹窗样式--------*/
+.window-contend-addclass {
+    padding: 10px;
+    display: block;
+}
+.window-contend-addclass p {
+    text-align: center;
+}
+.addclass-line {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+}
+
+#class-select,#class-name {
+    display: inline-block;
+    overflow: hidden;
+    width: 160px;
+    height: 20px;
+    line-height: 20px;
+    outline: none;
+    border: 2px solid #2e2e2e;
+}
+#class-select {
+    height: 24px;
+}
+#class-select  option {
+    width: 120px;
+}
+.window-tips {
+    color: #999999;
+}
+.btn-inner {
+    margin-top: 20px;
+}
+#addclass-btn {
+    display: inline-block;
+    height: 36px;
+    width: 94px;
+    line-height: 36px;
+    background: #eb5b17;
+    color: #ffffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#addclass-btn:hover {
+    background: #ea4107; 
+}
+.close {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+}
+.close:hover {
+    color: #FF3366;
+    border: 2px solid #FF3366;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.close-icon {
+    font-family: 'icon';
+}
+/*--------alert弹窗样式--------------*/
+.window-contend-alert {
+    padding: 10px;
+    margin-top: 30px;
+    display: none;
+}
+.window-contend-alert p {
+    line-height: 60px;
+    text-align: center;
+}
+#alert-btn {
+    display: inline-block;
+    height: 36px;
+    width: 94px;
+    line-height: 36px;
+    background: #eb5b17;
+    color: #ffffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#alert-btn:hover {
+    background: #ea4107;
+}
+
+/*
+初次访问时刻弹窗样式
+*/
+.alert-tips .first-line {
+    line-height: 30px;
+}
+.alert-tips .first-tips {
+    line-height: 30px;
+}
+.tips-1,.tips-2,.tips-3,.tips-4,.tips-5,.tips-6 {
+    padding: 0 20px;
+}
+.tips-1:before {
+    content: "\ea0a";
+    font-family: 'icon';
+    color: #000000;
+    padding-right: 20px;
+}
+.tips-2:before {
+    content: "\e930";
+    font-family: 'icon';
+    color: #000000;
+    padding-right: 20px;
+}
+.tips-3:before {
+    content: "\e926";
+    font-family: 'icon';
+    color: #000000;
+    padding-right: 20px;
+}
+.tips-4:before {
+    content: "\e9ac";
+    font-family: 'icon';
+    color: #000000;
+    padding-right: 20px;
+}
+.tips-5:before {
+    content: "\e905";
+    font-family: 'icon';
+    color: #000000;
+    padding-right: 20px;
+}
+.tips-6:before {
+    content: "\ea10";
+    font-family: 'icon';
+    color: #000000;
+    padding-right: 20px;
+}

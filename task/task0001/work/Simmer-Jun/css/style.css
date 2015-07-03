@@ -1,5 +1,19 @@
 /*---------CSS reset 全站统一样式-----------*/
-body,h1,h2,h3,h4,img,input,table,ul,li,ol,p,button,span {
+
+body,
+h1,
+h2,
+h3,
+h4,
+img,
+input,
+table,
+ul,
+li,
+ol,
+p,
+button,
+span {
 	padding: 0;
 	margin: 0;
 }

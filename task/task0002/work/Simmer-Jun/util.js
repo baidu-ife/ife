@@ -353,16 +353,19 @@ var $={
             return xml;
 	   }
 	   xml = getXml();
+       if (options.method == 'GET' || options.method == 'get') {
+        xml.open('GET',options.url + '?' +);
+       }
+       xml.send();
 	   xml.onreadystatechange = function () {
-	   	if (xml.readyState == 4 && xml.status == 200) { // 如果顺利发送数据并成功应答
-	   	    options.onsuccess();// 调用options的onsuccess方法
+        if (xml.readyState == 4) {
+            if (xml.status == 200) {// 如果顺利发送数据并成功应答
+               options.onsuccess();// 调用options的onsuccess方法  
+            } else {
+               options.onfail();// 数据发送失败
+            }
+        }
 	   	}
-	   	else if (xml.readyState == 4) {
-	   	    options.onfail();// 数据发送失败
-	   	}
-
-	   	}
-	   }
 	}
 
 

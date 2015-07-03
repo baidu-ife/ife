@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>Tools-Simmer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Toto 你的应用"/>
+    <meta name="keywords" content="个人任务管理,Wep App">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="simmer,alixsimmer@gmail.com"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <link rel="shourtcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body>
+<div class="wraper">
+    <div class="header">
+        <p>GTD Tools (Simmer)</p>
+    </div>
+    <div class="contend clearfix">
+        <div class="classify">
+            <div class="classify-cont">
+                <h3 class="all-task">所有任务（<span class="number">11</span>）</h3>
+                <h3 class="all-task-list">分类列表</h3>
+                <div class="class-cont">
+                </div>
+            </div>
+            <div class="btn" id="creatclass" title="点击新增分类"> <b>+</b> 新增分类</div>
+        </div>
+        <div class="task-list">
+            <div class="task-btn">
+                <a href="###" class="click" id="all-task" title="点击查看所有的任务">所 有</a><a href="###" id="unfinished-task" title="点击查看未完成的任务">未完成</a><a href="###" id="done-task" title="点击查看已完成的任务">已完成</a>
+            </div>
+            <div class="task-list-cont">
+            </div>
+            <div class="btn" id="creattask" title="点击新增任务"> <b>+</b> 新增任务</div>
+        </div>
+        <div class="task-detail">
+            <div class="detail done">
+                <h3 class="detail-title">开始你的Todo</h3>
+                <div class="detail-date">2015-07-01</div>
+                <div class="detail-cont">这是新的开始，一切的改变都从你执行他开始！</div>
+                <div class="task-oprate"><a id="task-done-btn" title="点击完成任务">&#xea10;</a><a id="task-modification-btn" title="点击编辑任务">&#xe905;</a></div>
+            </div>
+            <div class="edit">
+                <div class="btns">
+                    <a href="###" id="save" title="点击保存">保存</a>
+                    <a href="###" id="cancel" title="取消更改">取消</a>
+                </div>
+                <div class="edit-title">
+                    <span class="tips">标题：</span><input type="text" id="title" placeholder="输入标题">
+                </div>
+                <div class="edit-date">
+                    <span class="tips">任务日期：</span><input type="date" id="date">
+                </div>
+                <div class="edit-cont">
+                    <textarea name="task-cont" id="task-main-cont" placeholder="请在此次输入任务内容" cols="30" rows="10"></textarea>
+                    <p class="edit-cont-tips">字数限制在5000字哦~</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="window">
+    <div class="window-mask"></div>
+    <div class="window-contend">
+        <div class="close">
+                <span class="close-icon" title="close">&#xea0f;</span>
+            </div>
+        <div class="window-contend-addclass">
+            <p><span class="addclass-line">创建分类于：<select name="class-select" id="class-select" >
+                <option value="新建主分类" selected="selected" >新建主分类</option>
+            </select></span></p>
+            <p><span class="addclass-line">
+                输入分类名：<input id="class-name" length="30">
+            </span></p>
+            <p class="window-tips">请输入的字段在10个以内！</p>
+            <p class="btn-inner"><span id="addclass-btn" title="点击创建">确定</span></p>
+        </div>
+        <div class="window-contend-alert">
+            <p class="alert-tips">任务还未保存，确定退出编辑？</p>
+            <p><span id="alert-btn">确定</span></p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/require.js" data-main="js/main"></script>
+</body>
+</html>
