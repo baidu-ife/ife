@@ -1,0 +1,11 @@
+#first, #second, #third {
+    margin: 10px;
+}
+
+#textarea1, #textarea2 {
+    height: 80px;
+}
+
+#error {
+    color: #ff0000;
+}

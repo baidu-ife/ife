@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.search{
+    margin: 5px auto 5px auto;
+    width: 200px;
+    position: relative;
+}
+#input{
+    width: 200px;
+    height: 20px;
+}
+#suggestion_ul{
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: 24px;
+    list-style: none;
+    border-left: solid 2px #cacaca;
+    border-right: solid 2px #cacaca;
+}
+#suggestion_ul li{
+    cursor: pointer;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: solid 1px #cacaca;
+    color: red;
+}
+#suggestion_ul li:hover,.suggestion_li_active{
+    background-color: #cacaca;
+}
