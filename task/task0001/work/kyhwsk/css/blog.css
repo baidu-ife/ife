@@ -1,0 +1,113 @@
+
+.main-content-box h1{
+    font-size: 16px;
+    color: #a660b7;
+    line-height: 1.8;
+    font-weight: bold;
+}
+.main-content-box h2{
+    font-size: 12px;
+    line-height: 1.6;
+    color:#666;
+    font-weight: bold;
+}
+div.content-para{
+    padding: 10px 0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+.main-content-box p{
+    text-indent: 2em;
+}
+.article-other{
+    /*any-style*/
+    color:#777;
+    font-size: 14px;
+}
+.pull-right{
+    float:right;
+}
+.content-tag-label{
+    color: #ffffff;
+    font-size: 16px;
+    height: 40px;
+    width: 50px;
+    position: absolute;
+    left: -50px;
+    top:20px;
+    padding:10px;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+div.content-tag-label.time{
+    background-color: #533474;
+}
+div.content-tag-label.cate{
+    background-color: #a660b7;
+    top:60px;
+}
+div.page-num-wrap{
+    text-align: center;
+}
+.page-num li{
+   display: inline-block;
+    zoom: 1;
+    margin: 0 5px;
+}
+
+.page-num a{
+    font-size: 12px;
+    line-height: 40px;
+    display: block;
+    height: 40px;
+    padding: 0px 15px;
+}
+.page-num a.active{
+    background-color: #fff;
+    color: #000;
+}
+.page-num a.unactive{
+    background-color: #fff;
+    color: #ccc;
+    cursor: default;
+}
+.page-num a.cur{
+    color: #fff;
+    background-color: #a660b7;
+}
+
+
+/*side col --- start*/
+
+/*tag-cloud*/
+.tag-cloud{
+    padding: 10px 20px;
+    width: 230px;
+    line-height: 2;
+    overflow: hidden;
+}
+.tag-cloud span{
+    font-size: 1.2px;
+    line-height: 1.2px;
+}
+.tag-cloud a{
+    float: left;
+    line-height: 2rem;
+    color:#533474;
+    padding: 0 5px;
+}
+.tag-cloud a.rank-5{
+    font-size: 1.6rem;
+}
+.tag-cloud a.rank-4{
+    font-size: 1.4rem;
+}
+.tag-cloud a.rank-3{
+    font-size: 1rem;
+}
+.tag-cloud a.rank-2{
+    font-size: 0.8rem;
+}
+.tag-cloud a.rank-1{
+    font-size: 0.6rem;
+}

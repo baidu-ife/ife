@@ -1,0 +1,94 @@
+.main-wrap.left{
+    margin-right: 485px;
+    text-align: right;
+}
+.side-col.right{
+    width: 480px;
+    margin-left: -480px;
+    background-color: #fff;
+}
+.main-content-box,.side-col{
+    padding-bottom: 2000px;
+    margin-bottom: -2000px;
+}
+.center.center-content{
+    padding-top: 100px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.side-content-box{
+    padding: 20px 140px  20px 30px;
+}
+
+li[cate]{
+
+    padding: 20px 30px;
+    position: relative;
+    padding-top: 100px;
+}
+
+li[cate]>div{
+
+    border-radius: 50%;
+    background-color: #fff;
+
+}
+li[cate]>div{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:-20px;
+    left: -87px;
+    border: 5px solid #eee;
+    background-image: url("../img/avatar.jpg");
+    background-size: contain;
+}
+
+li[cate="profile"]>div{
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top:-100px;
+    left: -120px;
+    border: 10px solid #eee;
+}
+
+
+.side-content-box h1{
+    position: absolute;
+    left: -140px;
+}
+.side-content-box p{
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+li.contact li{
+    padding-left: 60px;
+}
+ul.time div{
+    position: absolute;
+    left: -65px;
+    height: 30px;
+    line-height: 30px;
+    width: 60px;
+    border-radius: 20%;
+    background-color: #fff;
+    border: 5px solid #eee;
+    text-align: center;
+}
+ul.time{
+    padding-bottom: 30px;
+}
+ul.time li{
+   padding-top: 30px;
+}
+
+ul.time h2{
+    font-size: 14px;
+    line-height: 1.7;
+}
+ul.time p{
+    font-size: 12px;
+    line-height: 1.7;
+}
