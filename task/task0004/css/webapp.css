@@ -1,0 +1,12 @@
+*{margin:0;padding:0;list-style:none;}
+.main{width:100%;position:absolute;top:0;bottom:0;display:inline-block;}
+.container >li:nth-of-type(2),
+.container >li:nth-of-type(3){display:none;}
+.title-container{width:100%;background:#4D7AFF;position:relative;}
+.title{font-weight:normal;text-align:center;color:white;}
+.returnBtn{width:40px;height:25px;position:absolute;left:10px;bottom:0;color:white;}
+.list-container{display:block;}
+.ele{width:100%;border-bottom:1px solid #BBBBBB;
+	padding-left:15px;display:block;font-weight:normal;-webkit-box-sizing:border-box;}
+.main p{-webkit-box-sizing:border-box;padding:15px;}	
+

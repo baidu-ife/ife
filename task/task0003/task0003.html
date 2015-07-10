@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head len="zh-CN">
+    <meta charset="utf-8">
+    <title>task0003</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link href="css/task0003.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">GTD Tools</div>
+    <div class="main">
+        <!--分类栏-->
+        <div class="list-container">
+                <dl class="alltask-container"><dt class="alltask">所有任务 (<span class="title-num">0</span>)</dt></dl>    
+                <dl class="classify-list">
+                    <dt class="classify-list-title">分类列表</dt>
+                </dl>
+            <div class="bottom">
+                <div class="add addClassify">
+                    <img src="img/add.png"><span>新增分类</span>
+                </div>
+            </div>
+        </div>
+        <!--任务栏-->
+        <div class="list-container bac-white">
+            <ul class="option-container">
+                <li class="task-option option-left option-selected">所有</li>
+                <li class="task-option">未完成</li>
+                <li class="task-option">已完成</li>
+            </ul>
+                <ul class="task-list"></ul>
+            <div class="bottom">
+                <div class="add addTask">
+                    <img src="img/add.png"><span>新增任务</span>
+                </div>
+            </div>
+        </div>
+        <!--正文栏-->
+        <div class="content-container">
+            <div class="content-title">
+                <input class="title" type="text" disabled="disabled" placeholder="标题" autocomplete="off" >
+                <img src="img/write.png" class="btn" title="编辑任务">
+                <img src="img/complete.png" class="btn" title="完成任务">
+            </div>
+            <div class="content-date">
+                任务日期：<input class="date" type="text" placeholder="年-月-日" disabled="disabled" autocomplete="off">
+            </div>
+            <div class="textarea-container">
+                <textarea class="content" disabled="disabled" autocomplete="off"></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="js/util.js" type="text/javascript"></script>
+    <script src="js/task0003.js" type="text/javascript"></script>
+</body>
+</html>
