@@ -1,0 +1,75 @@
+/**
+ * @file slider
+ * @author hushicai02(hushicai02@baidu.com)
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.slider-inner {
+    height: 100%;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* position: relative; */
+}
+
+.slider-item {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+
+.slider-item:nth-child(1) {
+    background: red;
+}
+.slider-item:nth-child(2) {
+    background: green;
+}
+.slider-item:nth-child(3) {
+    background: blue;
+}
+
+.slider-item-selected,
+.slider-item-next {
+    display: block;
+}
+
+.slider-item-selected {
+    left: 0;
+}
+
+   .slider-item-next {
+       left: 100%;
+   }
+
+.slider-control {
+    line-height: normal;
+}
+
+.slider-control i {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+}
+.slider-control .slider-control-selected {
+    background: blue;
+    border-color: blue;
+}

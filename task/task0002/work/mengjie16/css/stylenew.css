@@ -1,0 +1,102 @@
+*{ margin: 0;
+    padding: 0;
+}
+#myCarousel{
+    height: 400px;
+    margin-bottom: 60px;
+    position: relative;
+}
+.carousel-indicators {
+    bottom: 20px;
+    position: absolute;
+    left: 50%;
+    z-index: 15;
+    width: 60%;/*百分比统一相对父元素*/
+    padding-left: 0;
+    margin-left: -30%;/*60的一半30，正好是正中间靠到左边，然后left:50%就可以了*/
+    text-align: center;
+    list-style: none;
+    background: #000;
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+  /*  text-indent: -999px;*/
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.carousel-indicators .active{
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background: #fff;
+}
+.arrleft{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.arrright{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.arrright:hover{
+    background: rgba(0,0,0,0.1);
+}
+.arrleft:hover{
+    background: rgba(0,0,0,0.1);
+}
+/*开始改图片*/
+.carousel-inner{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+#myCarousel .item{
+    height: 400px;
+    background-color: #3A90BA;
+}
+
+/*.carousel-inner > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: .6s ease-in-out left;
+    transition: .6s ease-in-out left;}
+*/.carousel-inner > .active {
+    left: 0;
+    display: block;
+}
+.carousel-inner >.next{
+    position: absolute;
+    top:0;
+    width: 100%;
+}
+.carousel-inner > .active.left{
+    left: -100%;
+}
+.carousel-inner > .next.left{
+    left: 0;
+}
