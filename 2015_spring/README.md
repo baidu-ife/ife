@@ -1,19 +1,6 @@
-![百度Web前端技术学院](asset/github.jpg)
+# 2015 春季学期
 
 手机访问的同学不要忘记请点击下方的“View all of README.md”查看完整信息。
-
-# 最新公告
-
-[任务3已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0003)，初级班的任务时间是从5月7日至5月18日，中级班为4月30日至5月10日。
-
-[任务2已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0002)，初级班的任务时间是从4月24日至5月7日，中级班为4月18日至4月27日。
-
-[任务1已经发布](https://github.com/baidu-ife/ife/tree/master/task/task0001)，初级班Review提交截止时间为**4月23日**，中级班为**4月16日**。
-
-高级班同学会在4月13日晚上8点前邮件大家题目列表供选择。
-
-百度Web前端技术学院正式开学，第一期学员已经确定，见[名单](https://github.com/baidu-ife/ife/blob/master/studentlist/201501.md)。大家可以开始做一些[准备工作](https://github.com/baidu-ife/ife/blob/master/task/preparation.md)
-
 
 ## 目录
 
