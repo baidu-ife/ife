@@ -31,4 +31,4 @@
 ## 学习材料
 
 - [Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/)
-- [通过GitHub Pages建立个人站点](http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html)
+- [Pages.Github](https://pages.github.com/)
