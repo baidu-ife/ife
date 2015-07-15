@@ -26,7 +26,7 @@
 
 - 每个队员都需要有代码提交
 - 尝试进行组内的交叉Code Review，尽量保证队伍内部代码风格一致
-- 要求最后页面通过Automatic page generator可以直接访问
+- 要求网站可访问，[参考](https://pages.github.com/)
 
 ## 学习材料
 
