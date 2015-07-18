@@ -1,19 +1,26 @@
-# WebAPP启航班任务一：个人知识管理工具
+# RIA扬帆班任务一：图片网站
 
 ## 任务描述：
 
-实现一个个人知识笔记管理网站
+实现一个个人图片展示网站，包括展现及后台管理
 
-![示例图](../asset/webapp_qihang_task1_01.png)
+![示例图](../asset/ria_yangfan_task1_01.png)
+
+![示例图](../asset/ria_yangfan_task1_03.png)
+
+![示例图](../asset/ria_yangfan_task1_02.png)
 
 以上图仅作参考，大家可以随意按照自己的喜欢进行界面设计。
 
 ## 任务要求：
 
 * 团队协作完成
-* 支持Markdown格式的编辑及预览
-* 除了jQuery、Markdown解析以外，不允许使用任何框架
-* 功能可自定义，做得越多收获越多
+* 支持在管理端拖拽图片来改变图片的分类，以及图片在展示页面的排列顺序
+* 支持在管理端通过拖拽分类来改变分类在展示页面的排序
+* 支持在管理端上传图片，上传功能可以使用第三方组件，比如[WebUploader](http://github.com/fex-team/webuploader/)
+* 除了jQuery及WebUploader，不允许使用其他框架类库
+* 不需要登陆注册等功能
+* 如果需要使用Server端，不限制语言，Server端框架使用不限制
 
 ## 任务时间
 
