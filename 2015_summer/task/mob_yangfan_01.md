@@ -4,11 +4,11 @@
 
 实现一个在移动端浏览器访问的个人记账软件
 
-![示例图](../asset/mob_yangfan_task1_01.jpg)
+![示例图](../asset/mob_yangfan_task1_01.png)
 
-![示例图](../asset/mob_yangfan_task1_02.jpg)
+![示例图](../asset/mob_yangfan_task1_02.png)
 
-![示例图](../asset/mob_yangfan_task1_03.jpg)
+![示例图](../asset/mob_yangfan_task1_03.png)
 
 以上图仅作参考，大家可以随意按照自己的喜欢进行界面设计。
 
