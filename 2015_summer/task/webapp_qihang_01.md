@@ -4,7 +4,7 @@
 
 实现一个个人知识笔记管理网站
 
-![示例图](../asset/webapp_qihang_task1_01.jpg)
+![示例图](../asset/webapp_qihang_task1_01.png)
 
 以上图仅作参考，大家可以随意按照自己的喜欢进行界面设计。
 
