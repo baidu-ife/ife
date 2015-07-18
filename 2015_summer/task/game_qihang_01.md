@@ -23,20 +23,20 @@
 
 * [教学视频](http://pan.baidu.com/s/1mgxh8XM)，密码: beag
 
-* HTML
+## HTML
 
 - [知乎上的一些Web基本概念介绍](http://www.zhihu.com/question/22689579)
 - [慕课网HTML+CSS基础课程](http://www.imooc.com/learn/9)
 - [w3school html教程](http://w3school.com.cn/html/index.asp)
 - [MDN HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Introduction)
 
-* CSS
+## CSS
 
 - [MDN CSS](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started)
 - [w3school css](http://w3school.com.cn/css/index.asp)
 - [慕课网HTML+CSS基础课程](http://www.imooc.com/learn/9)
 
-* JavaScript
+## JavaScript
 
 - [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
 - [慕课网JavaScript入门](http://www.imooc.com/learn/36)
