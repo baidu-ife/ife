@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>task0002_1</title>
+        <script src="js/util.js"></script>
+        <link rel="stylesheet" href="css/task0002_1.css">
+    </head>
+    <body>
+        <h1>TASK0002_1</h1>
+        <div class="step1">
+            <h2>STEP 1</h2>
+            <pre>
+在页面中，有一个单行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用半角逗号来作为不同爱好的分隔。
+当点击按钮时，把用户输入的兴趣爱好，按照上面所说的分隔符分开后保存到一个数组，过滤掉空的、重复的爱好，在按钮下方创建一个段落显示处理后的爱好。
+            </pre>
+            <hr>
+            <input type="text" class="ife-input">
+            <input type="button" class="ife-btn" value="爱好">
+        </div>
+        <div class="step2">
+            <h2>STEP 2</h2>
+            <pre>
+单行变成多行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。
+当点击按钮时的行为同上
+            </pre>
+            <hr>
+            <textarea class="ife-input" cols="30" rows="10"></textarea>
+            <input type="button" class="ife-btn" value="爱好">
+        </div>
+        <div class="step3">
+            <h2>STEP 3</h2>
+            <pre>
+用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。
+同时，当点击按钮时，不再是输出到一个段落，而是每一个爱好输出成为一个checkbox，爱好内容作为checkbox的label。
+            </pre>
+            <hr>
+            <textarea class="ife-input" cols="30" rows="10"></textarea>
+            <div class="ife-err"></div>
+            <input type="button" class="ife-btn" value="爱好">
+        </div>
+
+        <script src="js/task0002_1.js"></script>
+    </body>
+</html>
