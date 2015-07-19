@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+@import "ku";// 导入less
+@import (less)"ku.css";// 导入css
+
+@text_width:300px;
+
+body{
+	width:@text_width;
+	height:@text_width;
+	background: yellow;
+}
+
+// 带参数的混合
+.border(@text_width){
+	border: @text_width solid pink;
+}
+
+// 默认带值
+.border02s(@text_width:20px){
+	border: @text_width solid pink;
+}
+
+// 兼容
+.border_radius(@radius:3px){
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	border-radius:@radius;
+}
+.test{
+	.border(20px);
+	.border_radius();
+}
+
+.sanjiao{
+
+}
+
+// 匹配模式
+.triangle(top,@w:5px,@c:#ccc){
+	border-width: @w;
+	border-color: transparent transparent @c transparent;
+	border-style: dashed dashed solid dashed;
+}
+
+.triangle(bottom,@w:5px,@c:#ccc){
+	border-width: @w;
+	border-color: @c transparent transparent transparent;
+	border-style: solid dashed dashed dashed;
+}
+
+.triangle(right,@w:5px,@c:#ccc){
+	border-width: @w;
+	border-color: transparent transparent transparent @c;
+	border-style: dashed dashed dashed solid;
+}
+
+// 无论匹配了哪个，都会被调用
+.triangle(@_,@w:5px,@c:#ccc){
+	width:0;
+	height:0;
+	overflow:hidden;
+}
+
+.sanjiao{
+	.triangle(top);
+}
+
+// 嵌套
+.list{
+	width:10px;
+	height: 20px;
+	margin:0 auto;
+
+	li{
+
+	}
+
+	a{
+		color:red;
+		// &代表它的上一层选择器
+		&:hover{
+			color:blue;
+		}
+	}
+
+}
+
+// @arguments将参数全部传入
+.arg(@w:5px,@st:solid,@xx:#ccc){
+	border:@arguments;
+}
+
+// 避免编译
+.test{
+	width:~'calc(300px-2px)';
+}
+
+// !important
+.test_important{
+	.border(2px) !important;
+}
+
+
+
+
