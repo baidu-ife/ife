@@ -3,36 +3,43 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+ <link rel="stylesheet" type="text/css" href="./css/style.css"> 
 <title>My HomePage</title>
 </head>
 <body>
-	<header class="header">
-		<h1 class="logo">
+	<header >
+        <div class="clearfix"id="header-container">
+		<h1 id="logo">
            YourLOGO
 		</h1>
-		<nav>
-            <ul>
+		<nav id="menu">
+            <ul >
                 <li>首页</li>
                 <li>文章</li>
                 <li>作品</li>
                 <li>关于</li>
             </ul>	
 		</nav>
-	<figure class="cat">
+        </div>
+	<figure id="top-cat">
 		<a href="http://www.github.com"  target="_blank">
 		<img src="./img/icon-github.png">
 	    </a>
 	</figure>
-	<article class="banner">				
-        <!-- <img  src="./img/banner-bg.jpg"> -->
-		<section class="main_banner">
-			<h1 class="banner_right">标题1</h1>
-			<p >这里做的有问题，后面的banner是当做图片插入的，导致这个白框定位不准（我不知道如何定位，求指导）这里做的有问题，后面的banner是当做图片插入的，导致这个白框定位不准（我不知道如何定位，求指导） </p>
-		</section>
+</header>
+	<article id="banner">				
+        <img src="./img/banner-bg.jpg">
+        <div class="container">
+            <section id="banner-label">
+            <h1>标题1</h1>
+            <p >这里做的有问题，后面的banner是当做图片插入的，导致这个白框定位不准（我不知道如何定位，求指导）这里做的有问题，后面的banner是当做图片插入的，导致这个白框定位不准（我不知道如何定位，求指导） </p>
+        </section>
+        </div>
+ 
+		
 	</article>
-    </header>
-	<article class="main">
+
+	<article class="clearfix" id="picture-show">
 		<section class="content">
 		<figure>
 			<img src="./img/text1.jpg" width="300px" height="180px">
@@ -47,16 +54,17 @@
 		</figure>
 
 	</section>
+    <section class="content">
+        <figure>
+            <img src="./img/text1.jpg" width="300px" height="180px">
+            <p>这里如果不用table是否可以达到三个文本框一样高？这里如果不用table是否可以达到三个文本框一样高？</p>
+        </figure>
+    </section>
 
-	<section class="content">
-		<figure>
-			<img src="./img/text1.jpg" width="300px" height="180px">
-			<p class="content_text">这里如果不用table是否可以达到三个文本框一样高？这里如果不用table是否可以达到三个文本框一样高？</p>
-		</figure>
-	</section>
+	
 	</article>
-	<article class="banner">
-		<figure class="circle">
+	<article id="self-conduction">
+		<figure id="head-picture">
             <img src="./img/head.jpg" width="160px" height="160px">
         </figure>		
 		<h1>Hi,I'm dodosophia~!</h1>
@@ -66,7 +74,7 @@
 	</article>
 	
     <footer class="footer">
-    	<nav>
+    	<nav class="clearfix">
     		<ul>
                 <li>首页</li>
                 <li>文章</li>
@@ -74,38 +82,48 @@
                 <li>关于</li>
             </ul>
     	</nav>
+        <div id="link"class="clearfix">
 
         <ul>
-            <li>学习资料</li>
-            <li>学习资料</li>
-            <li>学习资料</li>
-            <li>学习资料</li>
-            <li>学习资料</li>
+            <li class="link-title">学习资料</li>
+            <li>hover样式</li>
+            <li>LINK</li>
+            <li>LINK</li>
+            <li>LINK</li>
+            <li>LINK</li>
         </ul>
 
     	<ul>
-            <li>LINK</li>
+            <li class="link-title">学习资料</li>
             <li>hover样式</li>
             <li>LINK</li>
             <li>LINK</li>
             <li>LINK</li>
         </ul>
     	<ul>
-            <li>LINK</li>
+            <li class="link-title">学习资料</li>
             <li>hover样式</li>
             <li>LINK</li>
             <li>LINK</li>
             <li>LINK</li>
         </ul>
     	<ul>
-            <li>LINK</li>
+            <li class="link-title">学习资料</li>
             <li>hover样式</li>
             <li>LINK</li>
             <li>LINK</li>
             <li>hover样式</li>
         </ul>
+        <ul>
+            <li class="link-title">学习资料</li>
+            <li>hover样式</li>
+            <li>LINK</li>
+            <li>LINK</li>
+            <li>hover样式</li>
+        </ul>
+        </div>
         <p>版权信息</p>
-        <img style="padding-top:20px;"src="./img/icon-github.png">
+        <img src="./img/icon-github.png">
     </footer>
 
 </body>
