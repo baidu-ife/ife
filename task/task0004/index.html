@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TODO-LIST</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div class="page" id="categories">
+            a
+        </div>
+        <div class="page two-col" id="tasks">
+            <div class="main">b</div>
+            <div class="left-bar"></div>
+        </div>
+        <div class="page two-col" id="todos">
+            <div class="main"></div>
+            <div class="left-bar"></div>
+        </div>
+    </div>
+    <script src="http://zeptojs.com/zepto.min.js"></script>
+    <script src="lib/js/touch.js"></script>
+    <script src="lib/js/spine.js"></script>
+    <script>
+        function pageContainer($container){
+            var container={};
+            var numPage=$container.find(".page").length;
+            var curPage=0;
+            function displayPage(pageIndex){
+                $container.css("margin-left", "-"+(pageIndex*100)+"%");
+            }
+            container.next=function () {
+                if(curPage<numPage-1) {
+                    curPage++;
+                    displayPage(curPage);
+                }
+            };
+            container.prev=function () {
+                if(curPage>0) {
+                    curPage--;
+                    displayPage(curPage);
+                }
+            };
+
+            return container;
+        }
+        function CategoriesList() {
+
+        }
+        $(function (){
+            var container=pageContainer($("#container"));
+            $("#container .page").swipeRight(function (){
+                container.prev();
+            }).click(function (){
+                container.next();
+            });
+            $("#container .left-bar").click(function (e){
+                container.prev();
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>

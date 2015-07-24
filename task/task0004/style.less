@@ -1,0 +1,53 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.page {
+  height: 100%;
+  width: 33.33%;
+  float: left;
+  box-sizing: border-box;
+}
+#container {
+  width: 300%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: 200ms;
+}
+#categories {
+  background: #4D7AFF;
+}
+#tasks {
+  background: #00B22D;
+}
+#todos {
+  background: #FF9326;
+}
+
+.two-col {
+  @left-bar-width: 30px;
+  padding-left: @left-bar-width;
+  .left-bar {
+    height: 100%;
+    float: left;
+    width: @left-bar-width;
+    margin-left: -100%;
+    position: relative;
+    left: -@left-bar-width;
+  }
+  .main {
+    float: left;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+#tasks .left-bar {
+  background: #4D7AFF;
+}
+#todos .left-bar {
+  background: #00B22D;
+}
