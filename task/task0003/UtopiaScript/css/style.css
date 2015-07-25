@@ -320,3 +320,10 @@ textarea.input-content{
 .j-todo .del{
     top: 10px;
 }
+
+#btn-done, #btn-edit{
+    float: right;
+    margin-top: 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}

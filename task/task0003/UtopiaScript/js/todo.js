@@ -245,9 +245,12 @@ function newToDo () {
     var show = document.getElementsByClassName("show");
     var edit = document.getElementsByClassName("edit");
     var add_task = document.getElementById("add-task");
+    var btn_edit = document.getElementById("btn-edit");
     var cancel = document.getElementById("todo-cancel");
     var confirm = document.getElementById("todo-confirm");
-    var error = document.getElementById("todo-error");
+    var error = document.getElementById("todo-error");   
+    
+    var flag = 0;
     //显示编辑框，隐藏现有任务内容
     add_task.onclick = function(){
         for (var i = 0; i < show.length; i++) {
@@ -257,6 +260,26 @@ function newToDo () {
             edit[i].style.display = "inline";
         };
     }
+
+    //编辑任务    
+    btn_edit.onclick = function(){
+        var todo_selected = document.getElementById("todo-selected");
+        if(todo_selected){
+            console.log(index);
+            var index = todo_selected.getAttribute("index");
+            for (var i = 0; i < show.length; i++) {
+                show[i].style.display = "none";
+            };
+            for (var i = 0; i < edit.length; i++) {
+                edit[i].style.display = "inline";
+            };
+            edit[0].value = todo[index].name;
+            edit[1].value = todo[index].date;
+            edit[2].value = todo[index].text;
+            flag = 1;
+        }
+    }
+    
     //取消编辑
     cancel.onclick = function() {
         for (var i = 0; i < show.length; i++) {
@@ -288,12 +311,21 @@ function newToDo () {
         };
         for (var i = 0; i < edit.length; i++) {
             edit[i].style.display = "none";
-        };   
-        var father_item = document.getElementById("childGroup-selected");
-        var father = father_item.getAttribute("index"); //通过索引关联父子关系
-        var newtodo = new ToDo(todo.length, edit[0].value, father, false, edit[1].value, edit[2].value);
-        childGroup[father].child.push(todo.length);
-        todo.push(newtodo);
+        }; 
+
+        if(flag){
+            var todo_selected = document.getElementById("todo-selected");
+            var index = todo_selected.getAttribute("index");
+            todo[index].name = edit[0].value
+            todo[index].date = edit[1].value
+            todo[index].text = edit[2].value;
+        } else{
+            var father_item = document.getElementById("childGroup-selected");
+            var father = father_item.getAttribute("index"); //通过索引关联父子关系
+            var newtodo = new ToDo(todo.length, edit[0].value, father, false, edit[1].value, edit[2].value);
+            childGroup[father].child.push(todo.length);
+            todo.push(newtodo);
+        }        
         save();
         count();
         addGroup();
