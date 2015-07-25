@@ -16,16 +16,6 @@ html, body {
   overflow: hidden;
   -webkit-transition: 200ms;
 }
-#categories {
-  background: #4D7AFF;
-}
-#tasks {
-  background: #00B22D;
-}
-#todos {
-  background: #FF9326;
-}
-
 .two-col {
   @left-bar-width: 30px;
   padding-left: @left-bar-width;
@@ -45,9 +35,37 @@ html, body {
 
 }
 
-#tasks .left-bar {
-  background: #4D7AFF;
+#task-detail {
+  background: #FF9326;
+  .left-bar {
+    background: #00B22D;
+  }
+  .main div {
+    margin: 20px 10px;
+  }
 }
-#todos .left-bar {
+ul.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#categories {
+  background: #4D7AFF;
+  .items li {
+      padding: 10px 20px;
+      background: white;
+      opacity: 0.7;
+      margin: 5px;
+  }
+}
+#tasks {
   background: #00B22D;
+  .items li {
+    padding: 10px 20px;
+    background: #00E83A;
+    margin: 5px;
+  }
+  .left-bar {
+    background: #4D7AFF;
+  }
 }

@@ -8,60 +8,194 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="container">
-        <div class="page" id="categories">
-            a
-        </div>
-        <div class="page two-col" id="tasks">
-            <div class="main">b</div>
-            <div class="left-bar"></div>
-        </div>
-        <div class="page two-col" id="todos">
-            <div class="main"></div>
-            <div class="left-bar"></div>
-        </div>
+<div id="container">
+    <div class="page" id="categories">
+        <ul class="items">
+        </ul>
     </div>
-    <script src="http://zeptojs.com/zepto.min.js"></script>
-    <script src="lib/js/touch.js"></script>
-    <script src="lib/js/spine.js"></script>
-    <script>
-        function pageContainer($container){
-            var container={};
-            var numPage=$container.find(".page").length;
+    <div class="page two-col" id="tasks">
+        <div class="main">
+            <ul class="items">
+            </ul>
+        </div>
+        <div class="left-bar"></div>
+    </div>
+    <div class="page two-col" id="task-detail">
+        <div class="main">
+            <div id="name"></div>
+            <div id="date"></div>
+            <div id="description">
+            </div>
+        </div>
+        <div class="left-bar"></div>
+    </div>
+</div>
+<script src="lib/js/zepto.min.js"></script>
+<script src="lib/js/touch.js"></script>
+<script src="lib/js/spine.js"></script>
+<script>
+    $(function ($){
+        window.Category=Spine.Model.setup("Category", ["name", "tasks"]);
+    });
+    $(function ($){
+        window.PageController=Spine.Controller.create((function (){
             var curPage=0;
-            function displayPage(pageIndex){
-                $container.css("margin-left", "-"+(pageIndex*100)+"%");
+            var numPage=3;
+            return {
+                "elements": {
+                    "#container": "container"
+                },
+                "events": {
+                    "click .left-bar": "goback",
+                    "swipeRight .main": "goback"
+                },
+                gotoPage: function (pageIndex){
+                    this.container.css("margin-left", "-"+(pageIndex*100)+"%");
+                },
+                nextPage: function (){
+                    if(curPage<numPage-1) {
+                        curPage++;
+                        this.gotoPage(curPage);
+                    }
+                },
+                prevPage: function (){
+                    if(curPage>0) {
+                        curPage--;
+                        this.gotoPage(curPage);
+                    }
+                },
+                init: function (){
+                    Spine.bind("next-page", this.proxy(this.nextPage));
+                    Spine.bind("prev-page", this.proxy(this.prevPage));
+                },
+                goback: function (){
+                    this.prevPage();
+                }
             }
-            container.next=function () {
-                if(curPage<numPage-1) {
-                    curPage++;
-                    displayPage(curPage);
+        })());
+    });
+    $(function ($){
+        window.CategoriesController=Spine.Controller.create({
+            elements: {
+                ".items": "itemsList"
+            },
+            events: {
+                "click li": "clickItem"
+            },
+            render: function (){
+                this.itemsList.html("");
+                for(var i=0; i<this.items.length; i++){
+                    this.itemsList.append($("<li>"+this.items[i].name+"</li>"));
                 }
-            };
-            container.prev=function () {
-                if(curPage>0) {
-                    curPage--;
-                    displayPage(curPage);
-                }
-            };
-
-            return container;
-        }
-        function CategoriesList() {
-
-        }
-        $(function (){
-            var container=pageContainer($("#container"));
-            $("#container .page").swipeRight(function (){
-                container.prev();
-            }).click(function (){
-                container.next();
-            });
-            $("#container .left-bar").click(function (e){
-                container.prev();
-                e.stopPropagation();
-            });
+            },
+            clickItem: function (e){
+                var target=$(e.target);
+                Spine.trigger("show-tasks", this.items[target.index()]);
+                Spine.trigger("next-page");
+            },
+            init: function (){
+                this.items=Category.all();
+                this.render();
+            }
         });
-    </script>
+    });
+    $(function ($){
+        window.TaskController=Spine.Controller.create({
+            elements: {
+                ".items": "itemsList"
+            },
+            events: {
+                "click li": "clickItem"
+            },
+            clickItem: function (e){
+                var target= $(e.target);
+                Spine.trigger("show-task-detail", this.currentCategory.tasks[target.index()]);
+                Spine.trigger("next-page");
+            },
+            render: function (){
+                var tasks=this.currentCategory.tasks;
+                this.itemsList.html("");
+                for(var i=0; i<tasks.length; i++){
+                    this.itemsList.append($("<li>"+tasks[i].name+"</li>"));
+                }
+            },
+            init: function (){
+                Spine.bind("show-tasks", this.proxy(function (category){
+                    this.currentCategory=category;
+                    this.render();
+                }));
+            }
+        });
+    });
+    $(function ($){
+        window.TaskDetailController=Spine.Controller.create({
+            elements: {
+                "#name": "name",
+                "#date": "date",
+                "#description": "description"
+            },
+            render: function (){
+                console.log(this.currentTask);
+                this.name.html(this.currentTask.name);
+                this.date.html(this.currentTask.date);
+                this.description.html(this.currentTask.description);
+            },
+            init: function (){
+                Spine.bind("show-task-detail", this.proxy(function (task){
+                    console.log(task);
+                    this.currentTask=task;
+                    this.render();
+                }));
+            }
+        });
+    });
+    $(function ($){
+        (function (){
+            var data = [
+                {
+                    name: "分类1",
+                    tasks: [
+                        {
+                            name: "任务1",
+                            date: "2015-7-27",
+                            description: "描述1"
+                        }
+                    ]
+                },
+                {
+                    name: "分类2",
+                    tasks: [
+                        {
+                            name: "2. 任务1",
+                            date: "2015-7-27",
+                            description: "描述1"
+                        },
+                        {
+                            name: "2. 任务2",
+                            date: "2015-7-27",
+                            description: "描述2"
+                        }
+                    ]
+                }
+            ];
+            for(var i=0; i<data.length; i++){
+                var item=Category.create();
+                item.updateAttributes(data[i]);
+            }
+        })();
+        new PageController({
+            el: "body"
+        });
+        new CategoriesController({
+            el: "#categories"
+        });
+        new TaskController({
+            el: "#tasks"
+        });
+        new TaskDetailController({
+            el: "#task-detail"
+        });
+    });
+</script>
 </body>
 </html>
