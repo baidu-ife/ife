@@ -4,9 +4,9 @@
 
 实现一个简单的网页游戏，2048游戏，示例如下：
 
-[示例1](http://www.3366.com/flash/106550.shtml)
+[点击查看示例1](http://www.3366.com/flash/106550.shtml)
 
-[示例2](http://www.7k7k.com/swf/129167.htm)
+[点击查看示例2](http://www.7k7k.com/swf/129167.htm)
 
 以上两个仅作参考，大家可以随意按照自己的喜欢进行游戏界面设计。
 

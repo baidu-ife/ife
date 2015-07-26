@@ -4,7 +4,7 @@
 
 实现一个较为复杂的空气质量数据仪表盘，如下图
 
-![示例图](../asset/vis_yangfan_task2.png)
+![示例图](../asset/vis_yangfan_task2.jpg)
 
 [参考数据](../asset/aqidata.xlsx)
 

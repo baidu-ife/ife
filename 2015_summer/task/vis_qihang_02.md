@@ -4,11 +4,11 @@
 
 实现一个复杂的，有多个可以交互的元素的新闻页面
 
-[示例](http://echarts.baidu.com/doc/example/topic/aqi-china/index.html)
+[点击查看示例](http://echarts.baidu.com/doc/example/topic/aqi-china/index.html)
 
-[示例](http://echarts.baidu.com/doc/example/topic/10-me-china/index.html)
+[点击查看示例](http://echarts.baidu.com/doc/example/topic/10-me-china/index.html)
 
-[示例](http://echarts.baidu.com/doc/example/topic/sino-japanese-war-1895/index.html)
+[点击查看示例](http://echarts.baidu.com/doc/example/topic/sino-japanese-war-1895/index.html)
 
 以上图仅作参考，大家可以随意按照自己的喜欢进行界面设计。
 

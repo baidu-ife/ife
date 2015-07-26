@@ -4,13 +4,13 @@
 
 实现一个多页的个人（或其他）宣传页面，支持手指滑动翻页，有漂亮的动画效果
 
-![示例图](../asset/mob_qihang_task2_01.jpg)
+![示例图](../asset/mob_qihang_task2_01.png)
 
-![示例图](../asset/mob_qihang_task2_02.jpg)
+![示例图](../asset/mob_qihang_task2_02.png)
 
-![示例图](../asset/mob_qihang_task2_03.jpg)
+![示例图](../asset/mob_qihang_task2_03.png)
 
-![示例图](../asset/mob_qihang_task2_04.jpg)
+![示例图](../asset/mob_qihang_task2_04.png)
 
 以上图仅作参考，大家可以随意按照自己的喜欢进行界面设计。
 
