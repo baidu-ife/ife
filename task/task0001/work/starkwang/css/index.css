@@ -1,0 +1,122 @@
+
+.banner{
+	width: 100%;
+	height: auto;
+
+}
+.banner>img{
+	width: 100%;
+}
+
+.banner .text{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	height: auto;
+	width: 200px;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(225,225,225,0.5) 75%, rgba(225,225,225,0.0) 100%);
+	padding-left: 10px;
+	padding-right:10px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+.banner h1{
+	float: right;
+	font-size: 14px;
+	margin-bottom: 12px;
+	color: #ffffff;
+}
+.banner p{
+	float: left;
+	font-size: 12px;
+	line-height: 150%;
+	color: #ffffff;
+}
+.maintext{
+	display: table;
+	width: 980px;
+	margin:0 auto;
+	height: auto;
+	padding-top: 10px;
+	overflow:hidden;
+	padding-bottom: 200px;
+}
+
+.maintext > .showblock{
+	display: table-cell;
+	width: 320px;
+	height: auto;
+	float: right;
+	background: #ffffff;
+}
+
+#block-3 , #block-2{
+	margin-right: 10px;
+}
+
+.showblock > img{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.showblock > p{
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 15px;
+	font-size: 12px;
+	line-height: 150%;
+}
+
+.maintext  .isolate{
+	width: 10px;
+}
+.maintext .showblock{
+	background: #ffffff;
+	position: relative;
+	vertical-align:top;
+	width: 320px;
+}
+
+.introduce{
+	width: 100%;
+	height: 500px;
+	background: #ffffff;
+}
+
+.introduce .icon{
+	width: 160px;
+	height: 160px;
+	border-radius: 80px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top:-80px !important;
+}
+#icon-float{
+	float: left;
+	width: 100%;
+	margin-bottom:50px;
+}
+.icon>img{
+	width: 160px;
+}
+
+.introduce > .introducetext{
+	margin: 0 auto;
+	width: 600px;
+	line-height: 150%;
+}
+.introducetext > h1{
+	font-size: 20px;
+	font-family: "Century Gothic";
+	margin-bottom: 50px;
+	text-align: center;
+}
+.introducetext > p{
+	font-size: 14px;
+}
+
+
+
+
+
+

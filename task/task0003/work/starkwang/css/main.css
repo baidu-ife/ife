@@ -1,0 +1,317 @@
+html,body{
+	height: 100%;
+}
+body *{
+	transition: all 0.4s;
+}
+#header{
+	width: 100%;
+	height: 100px;
+	background: rgb(221,221,221);
+	position: absolute;
+	z-index: 200;
+	font-size: 60px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	box-sizing:border-box;
+	padding: 20px;
+	color: #ffffff;
+}
+#category{
+	width: 200px;
+	height: 100%;
+	background:rgb(242,242,242);
+	box-sizing:border-box;
+	padding-top: 120px !important;
+	float: left;
+	position: relative;
+	border: 1px solid rgb(206,206,206);
+}
+#category .category-item,#category-alltask,#category-alltask+div{
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+.category-item,.category-task{
+	cursor: pointer;
+}
+.category-item,#category-alltask{
+	font-size: 15px;
+	padding: 10px;
+	box-sizing:border-box;
+}
+#category-alltask{
+	position: absolute;
+	top: 100px;
+}
+#category-list{
+	height: 100%;
+	padding-bottom: 50px;
+	padding-top: 80px;
+	box-sizing:border-box;
+	overflow: auto;
+}
+.category-task{
+	height: 50px;
+	box-sizing:border-box;
+	padding: 20px;
+	position: relative;
+}
+.category-task-clicked{
+	background: #ffffff;
+}
+#task{
+	width: 200px;
+	height: 100%;
+	background:#ffffff;
+	box-sizing:border-box;
+	padding-top: 100px;
+	float: left;
+	border: 1px solid rgb(206,206,206);
+	border-left: 0px !important;
+	position: relative;
+}
+#content{
+	margin-left: 400px;
+	padding-top: 100px;
+	height: 100%;
+	background:#ffffff;
+	box-sizing:border-box;
+	position: relative;
+}
+.category-tasklist{
+	height: 0px;
+	overflow: hidden;
+	transition:0.4s;
+}
+.category-tasklist-clicked{
+	height:auto;
+}
+.category-item-clicked{
+	background: #aaaaaa;
+}
+.divbutton{
+	cursor:pointer;
+	border-radius: 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+.divbutton:hover{
+	background: #aaaaaa;
+}
+#category-footer{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height:50px;
+	background: rgb(238,238,238);
+	border-top: 1px solid rgb(206,206,206);
+}
+#addCategory{
+	position: absolute;
+	bottom: 20px;
+	width: auto;
+	left: 20px;
+}
+#addTask{
+	position: absolute;
+	bottom: 20px;
+	width: auto;
+	right: 20px;
+}
+#prompt,#prompt2{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	z-index: 9999;
+	background: rgba(0,0,0,0.5);
+	display: none;
+}
+#prompt-window,#prompt2-window{
+	margin-top: 300px !important;
+	margin: 0 auto;
+	width: 300px;
+	height: 200px;
+	background: #eeeeee;
+	border-radius: 20px;
+	overflow: hidden;
+}
+#prompt-header,#prompt2-header{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	text-align: center;
+}
+#prompt-cancel,#prompt2-cancel,#prompt-yes,#prompt2-yes{
+	position: absolute;
+	top: 15px;
+	font-size: 20px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	color: #079243;
+}
+#prompt-cancel:hover,#prompt-yes:hover,#prompt2-cancel:hover,#prompt2-yes:hover{
+	color: #39c878;
+}
+#prompt-cancel,#prompt2-cancel{
+	left: 20px;
+}
+#prompt-yes,#prompt2-yes{
+	right: 20px;
+}
+#prompt-title,#prompt2-title{
+	padding-top: 10px;
+	font-size: 25px;
+	font-family: "微软雅黑";
+}
+#prompt-body,#prompt2-body{
+	background: #cccccc;
+	height: 100%;
+}
+
+#prompt-body > p,#prompt2-body > p{
+	font-size: 15px;
+	padding-top: 30px;
+	padding-left: 10px;
+	color: #666666;
+}
+
+#prompt-input,#prompt2-input{
+	width: 100%;
+	height: 50px;
+	font-size: 20px;
+	padding-left: 10px
+}
+
+.childtask{
+	width: 100%;
+	height: 50px;
+	cursor: pointer;
+	box-sizing:border-box;
+	padding: 20px;
+}
+.childtask:hover{
+	color: green;
+}
+.childtask-clicked{
+	color: green;
+	background: #eeeeee;
+}
+.childtask-date{
+	background: rgb(243,243,216);
+	height: 50px;
+	width: 100%;
+	box-sizing:border-box;
+	padding: 20px;
+}
+#task-header{
+	position: absolute;
+	height: 50px;
+	background: rgb(238,238,238);
+}
+#task-header>div{
+	float: left;
+	height: auto;
+	box-sizing:border-box;
+	margin: 15px 12px;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.task-header-clicked{
+	background: #aaaaaa;
+}
+#task-body{
+	height: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	box-sizing:border-box;
+	width: inherit;
+	overflow: auto;
+}
+#task-footer{
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid rgb(206,206,206);
+	background: rgb(242,242,242);
+}
+#addChildTask{
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+#content-header1{
+	width: 100%;
+	height: 60px;
+	background: rgb(242,242,242);
+	box-sizing:border-box;
+	border-bottom: 1px solid rgb(206,206,206);
+	padding: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+}
+#taskComplete,#taskSave{
+	position: absolute;
+	top: 113px;
+	right: 80px;
+	font-size: 30px;
+	cursor: pointer;
+	z-index: 99;
+}
+#taskComplete:hover , #taskEdit:hover , #taskSave:hover{
+	color: #aaaaaa;
+}
+#taskEdit{
+	position: absolute;
+	top: 115px;
+	right: 20px;
+	font-size: 30px;
+	cursor: pointer;
+	z-index: 99;
+}
+#content-header2{
+	width: 100%;
+	height: 60px;
+	background: rgb(250,250,238);
+	border-bottom: 1px solid rgb(206,206,206);
+	box-sizing:border-box;
+	padding: 20px;
+	font-size: 15px;
+}
+#content-body{
+	width: 100%;
+	height: auto;
+	box-sizing:border-box;
+	padding: 20px;
+	font-size: 15px;
+}
+.delete{
+	position: absolute;
+	right: 10px;
+	display: none;
+}
+.category-task:hover > .delete , .category-item:hover > .delete{
+	display: inline;
+}
+.complete{
+	color: #abf26d;
+	font-weight: bold;
+}
+#childtask-title-count,#childtask-time-alert{
+	float: left;
+	margin-left: 20px;
+	font-size: 15px;
+	color: #aaaaaa;
+	margin-top: 5px;
+}
+#childtask-title,#childtask-time{
+	float: left;
+}
+#content-body-count{
+	float: left;
+	margin: 20px;
+	color:#aaaaaa;
+}

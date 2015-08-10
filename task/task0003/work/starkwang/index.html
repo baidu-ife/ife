@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+	</head>
+	<body>
+		<div id="header">GTD Tools by Starkwang</div>
+		<div id="prompt">
+			<div id="prompt-window" class="category-input">
+				<div id="prompt-header">
+					<p id="prompt-cancel">取消</p>
+					<p id="prompt-title">新建分类</p>
+					<p id="prompt-yes">完成</p>
+				</div>
+				<div id="prompt-body">
+					<p>分类名称</p>
+					<input id="prompt-input">
+				</div>
+			</div>
+		</div>
+		<div id="prompt2">
+			<div id="prompt2-window" class="category-input">
+				<div id="prompt2-header">
+					<p id="prompt2-cancel">取消</p>
+					<p id="prompt2-title">新建子分类</p>
+					<p id="prompt2-yes">完成</p>
+				</div>
+				<div id="prompt2-body">
+					<p>分类名称</p>
+					<input id="prompt2-input">
+				</div>
+			</div>
+		</div>
+		<div id="category">
+			<div id="category-alltask">所有任务({{count}})</div>
+			<div style="font-size: 15px;padding: 10px;box-sizing:border-box;position:absolute;top:150px;">分类列表</div>
+			<div id="category-list"></div>
+			<div id="category-footer">
+				<div class="divbutton" id="addCategory"><i class="iconfont" style="margin-right:0">&#xe6b9;</i>新增分类</div>
+				<div class="divbutton" id="addTask"><i class="iconfont" style="margin-right:0">&#xe6b9;</i>新增子分类
+				</div>
+			</div>
+		</div>
+		<div id="task">
+			<div id="task-header">
+				<div id="task-header-all">全部</div>
+				<div id="task-header-no">未完成</div>
+				<div id="task-header-yes">已完成</div>
+			</div>
+			<div id="task-body">
+			</div>
+			<div id="task-footer">
+				<div class="divbutton" id="addChildTask"><i class="iconfont" style="margin-right:0">&#xe6b9;</i>新增任务</div>
+			</div>
+		</div>
+		<div id="content">
+			<i class="iconfont" id="taskComplete" title="完成任务">&#xe6b1;</i>
+			<i class="iconfont" id="taskSave" style="display:none" title="保存任务">&#xe6ab;</i>
+			<i class="iconfont" id="taskEdit" title="编辑任务">&#xe6b2;</i>
+			<div id="content-header1">
+				
+			</div>
+			<div id="content-header2">
+			</div>
+			<div id="content-body">
+			</div>
+			<div id="content-body-count" style="display:none">还可输入200字</div>
+		</div>
+
+		<script type="text/javascript" src="js/util.js" ></script>
+
+		<script type="text/javascript" src="js/main.js" ></script>
+
+	</body>
+</html>
