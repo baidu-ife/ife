@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Yet Another TODO App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>GTD Tools</h1>
+    </div>
+    <div class="main">
+        <div class="todo">
+            <div class="todo-title">
+                <h2>to-do 6</h2>
+                <ul>
+                    <li class="todo-confirm"></li>
+                    <li class="todo-edit"></li>
+                </ul>
+            </div>
+            <div class="todo-date">
+                <p>任务日期：<input class="todo-date-data" disabled value="2015-04-30"></p>
+            </div>
+            <div class="todo-content">
+                <textarea class="todo-content-data" disabled>完成task3的编码</textarea>
+            </div>
+        </div>
+        <div class="cate">
+            <div class="cate-sum">
+                <p>所有任务（<span>11</span>）</p>
+            </div>
+            <ul class="cate-list">
+                <h2>分类列表</h2>
+                <li>百度IFE项目（<span>10</span>）<span class="cate-del-icon">&#x2715;</span>
+                    <ul>
+                        <li class="cate-list-toggle">task1 （<span>6</span>）<span class="cate-del-icon">&#x2715;</span> </li>
+                        <li>task2 （<span>4</span>）<span class="cate-del-icon">&#x2715;</span> </li>
+                    </ul>
+                </li>
+                <li>毕业设计 （<span>1</span>）<span class="cate-del-icon">&#x2715;</span>
+                    <ul>
+                        <li>task1<span class="cate-del-icon">&#x2715;</span></li>
+                    </ul>
+                </li>
+                <li>社团活动 （<span>0</span>）<span class="cate-del-icon">&#x2715;</span>
+                    <ul>
+                    </ul>
+                </li>
+                <li>家庭生活 （<span>0</span>）<span class="cate-del-icon">&#x2715;</span>
+                    <ul>
+                    </ul>
+                </li>
+                <li id="cate-default">默认分类 （<span>0</span>）<span class="cate-del-icon">&#x2715;</span>
+                    <ul>
+                    </ul>
+                </li>
+            </ul>
+            <div class="cate-add">
+                <p>新增分类</p>
+            </div>
+        </div>
+        <div class="task">
+            <div class="task-status">
+                <ul>
+                    <li class="task-status-select">完成</li>
+                    <li>未完成</li>
+                    <li>已完成</li>
+                </ul>
+            </div>
+            <div class="task-list">
+                <ul>
+                    <li><p class="task-list-date">2015-04-28</p>
+                        <ul>
+                            <li class="task-list-finished task-list-item">to-do 1<span class="task-del-icon">&#x2715;</span></li>
+                            <li class="task-list-item">to-do 2<span class="task-del-icon">&#x2715;</span></li>
+                        </ul>
+                    </li>
+                    <li><p class="task-list-date">2015-04-29</p>
+                        <ul>
+                            <li class="task-list-item">to-do 3<span class="task-del-icon">&#x2715;</span></li>
+                            <li class="task-list-item">to-do 4<span class="task-del-icon">&#x2715;</span></li>
+                        </ul>
+                    </li>
+                    <li><p class="task-list-date">2015-04-30</p>
+                        <ul>
+                            <li class="task-list-item">to-do 5<span class="task-del-icon">&#x2715;</span></li>
+                            <li class="task-list-toggle task-list-item">to-do 6<span class="task-del-icon">&#x2715;</span></li>
+                        </ul>
+                    </li>
+                    <li><p class="task-list-date">2015-05-04</p>
+                        <ul>
+                            <li class="task-list-item">to do 7<span class="task-del-icon">&#x2715;</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="task-add">
+                <p>新增任务</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    
+    </div>
+    <script src="js/util.js"></script>
+</body>
+</html>

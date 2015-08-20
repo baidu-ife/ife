@@ -1,0 +1,275 @@
+/*总体*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    list-style-type: none;
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.woff') format('woff');
+}
+
+html, body {
+    height: 100%;
+    color: #333333;
+}
+
+h1 {
+    line-height: 60px;
+    color: #999999;
+    font-family: SimHei, serif;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    text-indent: 1em;
+    background-color: #dddddd;
+    min-width: 800px;
+}
+
+.main {
+    padding-left: 460px;
+    padding-top: 60px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    min-height: 600px;
+    min-width: 800px;
+}
+
+.todo {
+    float: left;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.cate {
+    float: left;
+    width: 230px;
+    height: 100%;
+    margin-left: -100%;
+    padding-top: 15px;
+    position: relative;
+    left: -460px;
+    background-color: #f2f2f2;
+    border: 1px solid #cccccc;
+    border-right: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.task {
+    float: left;
+    width: 230px;
+    margin-left: -100%;
+    position: relative;
+    left: -230px;
+    height: 100%;
+    border: 1px solid #cccccc;
+    border-right: none;
+    box-sizing: border-box;
+}
+
+/* cate */
+.cate-sum {
+    height: 35px;
+    line-height: 35px;
+    text-indent: 1em;
+}
+
+.cate-list {
+    line-height: 28px;
+    height: 28px;
+}
+
+.cate-list h2 {
+    font-size: 1em;
+    font-weight: normal;
+    display: block;
+    line-height: 35px;
+    text-indent: 1em;
+}
+
+.cate-list > li {
+    text-indent: 1em;
+}
+
+.cate-list > li:before {
+    content: "\f07c";
+    font-family: FontAwesome;
+    margin: 1em;
+}
+
+.cate-list > li > ul{
+    text-indent: 2em;
+}
+
+.cate-list > li > ul > li:before {
+    content: "\f016";
+    font-family: FontAwesome;
+    margin: 1em;
+}
+
+/*.cate-list > li > ul > li:hover:after {*/
+    /*content: "\f00d";*/
+    /*font-family: FontAwesome;*/
+    /*position: absolute;*/
+    /*right: 1em;*/
+/*}*/
+.cate-del-icon, 
+.task-del-icon {
+    font-family: FontAwesome;
+    display: none;
+    position: absolute;
+    right: 1em;
+    cursor: pointer;
+}
+
+.cate-list li:hover > span.cate-del-icon,
+.task-list li:hover > span.task-del-icon {
+    display: inline;
+}
+
+.cate-list-toggle {
+    background: #ffffff;
+}
+
+.cate-add,
+.task-add {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    line-height: 60px;
+    text-indent: 1em;
+    border-top: 1px solid #cccccc;
+    width: 100%;
+    background: #eeeeee;
+}
+
+.cate-add p:before,
+.task-add p:before {
+    content: "\f067";
+    font-family: FontAwesome;
+    margin: 1em;
+}
+
+/* task */
+.task-status {
+    height: 40px;
+    border-bottom: 1px solid #cccccc;
+    background: #eeeeee;
+}
+
+.task-status ul {
+    height: 100%;
+    line-height: 40px;
+    padding-left: 1em;
+}
+
+.task-status li {
+    display: inline-block;
+    line-height: 1.0;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.task-status-select {
+    border: 1px solid #cccccc;
+    background: #ffffff;
+}
+
+.task-list p {
+    text-indent: 1em;
+    background: #fafaee;
+    height: 28px;
+    line-height: 28px;
+}
+
+.task-list-item {
+    text-indent: 2em;
+    height: 28px;
+    line-height: 28px;
+}
+
+.task-list-finished {
+    color: #238c00;
+}
+
+.task-list-toggle {
+    background: #eeeeee;
+}
+
+/* todo */
+
+.todo {
+    overflow: hidden;
+}
+
+.todo-title {
+    height: 50px;
+    line-height: 50px;
+    text-indent: 1em;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #cccccc;
+}
+
+.todo-title ul {
+  top: 60px;
+  right: 0;
+  position: absolute;
+}
+
+.todo-title ul > li {
+    display: inline-block;
+    width: 50px;
+    font-size: 30px;
+}
+
+.todo-edit:before {
+    content: "\f044";
+    font-family: FontAwesome;
+    margin-right: 1em;
+}
+
+.todo-confirm:before {
+    content: "\f046";
+    font-family: FontAwesome;
+    margin-right: 1em;
+}
+
+.todo-date {
+    height: 52px;
+    line-height: 52px;
+    text-indent: 1em;
+    background: #fafaee;
+    border-bottom: 1px solid #cccccc;
+}
+
+.todo-date-data {
+    background: none;
+    border: none;
+}
+
+.todo-content {
+    padding: 1em;
+    overflow: hidden;
+    height: 100%;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+}
+
+.todo-content-data {
+    border: none;
+    resize: none;
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+}
