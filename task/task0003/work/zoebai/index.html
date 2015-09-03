@@ -5,31 +5,36 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <title>GTD-Tools</title>
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <h1>GTD Tools</h1>
         <div id = "content">
-            <div id = "catagories">
-                <h2>所有任务</h2>
-                <ul>分类列表
-                    <li>默认分类</li>
+            <div id = "categories" class="active_category">
+                <h2>所有任务 (<i class = "counter1">0</i>)</h2>
+                <h2>分类列表</h2>
+                <ul id = "default">
+                    <h3> 默认分类 (<i class = "counter2">0</i>)</h3>
+                    <li> 使用说明</li>
                 </ul>
-                <p>新增分类</p>
+                <p id = "addCategoryBtn"><span class="lnr lnr-plus-circle"></span>新增分类</p>
             </div>
             <div id = "tasks">
                 <h2>
-                    <span>所有</span>
-                    <span>未完成</span>
-                    <span>已完成</span>
+                    <span data-name="all" class="selected">所有</span>
+                    <span data-name="unfinished">未完成</span>
+                    <span data-name="finished">已完成</span>
                 </h2>
-                <p>新增任务</p>
+                <div id = "taskList"></div>
+                <p id = "addTaskBtn"><span class="lnr lnr-plus-circle"></span>新增任务</p>
             </div>
             <div id = "details">
-                <h2></h2>
+                <h2><span></span><i></i><i></i></h2>
                 <h3>任务日期</h3>
                 <p></p>
             </div>
         </div>
-        <script src = "js/util.js"></script>
+        <script src = "js/util.js?ver = 1"></script>
+        <script src = "js/todo.js"></script>
     </body>
 </html>
