@@ -62,6 +62,9 @@ h1 {
 #categories  .active_category h3 {
     background-color: #8EA1E8;
 }
+#categories  .active_default h3 {
+    background-color: #8EA1E8;
+}
 #categories  li {
     line-height: 30px;
     padding-left: 13px;
@@ -88,13 +91,18 @@ h1 {
 .hidden{
     display: none;
 }
-#categories .lnr-cross{
+b.lnr-cross{
     float: right;
     height: 28px;
     line-height: 28px;
     margin-right: 15px;
     font-size: 20px;
     font-weight: 800;
+    display: none;
+}
+li:hover .lnr-cross,
+h3:hover .lnr-cross{
+    display: block;
 }
 #categories  #addCategoryBtn,
 #tasks #addTaskBtn {
@@ -238,6 +246,18 @@ span.selected{
     border-radius: 15px;
     background-color: #fff;
 }
+#comfirmWindow,
+#comfirmFinished {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    z-index: 200;
+    height: 200px;
+    width: 400px;  
+    margin-left: -200px;
+    border-radius: 15px;
+    background-color: #fff;
+}
 .windowHeader {
     height: 60px;  
     border-top-left-radius: 15px;
@@ -263,10 +283,8 @@ span.selected{
     left: 55%;
     line-height: 40px;   
 }
-#promptWindow .cancel {
+.cancel {
     display: inline-block;
-    position: relative;
-    left: 5%;
     width: 100px;
     height: 50px;
     margin: 20px;
@@ -276,18 +294,22 @@ span.selected{
     background-color: #ccc; 
     cursor: pointer;   
 }
-#comfirmAddBtn {
+#comfirmAddBtn,
+#comfirmDeleteBtn {
     display: inline-block;
-    position: relative;
-    left: 10%;
     width: 100px;
     height: 50px;
-    margin: 20px;
+    margin: 10px 20px;
     line-height: 50px;    
     text-align: center;
-    font-size: 16px;
-    background-color: #eee; 
+    font-size: 16px; 
     cursor: pointer;  
+}
+#promptWindow p,
+#comfirmWindow p,
+#comfirmFinished p
+{
+    text-align: center;
 }
 #content h3.lnr:before {
     font-size: 24px;

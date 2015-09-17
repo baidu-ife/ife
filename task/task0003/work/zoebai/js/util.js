@@ -5,6 +5,20 @@ function isArray(arr) {
             ? true : false;
        
 }
+//判断两个数组是否相等
+function isEqualArray(arr1, arr2){
+    if(arr1.length != arr2.length){
+        return false;
+    }
+    arr1.sort();
+    arr2.sort();
+    for(var i = 0, len = arr1.length; i< len; i++){
+        if(arr1[i] != arr2[i]){
+            return false;
+        }
+    }
+    return true;
+}
 
 // 判断arr是否为一个日期对象，返回一个bool值
 function isDate(arr) {
@@ -131,6 +145,12 @@ function removeClass(element, oldClassName) {
     classStr = classStr.replace(match,"");
     element.setAttribute("class", classStr);
     return false;
+}
+//
+function hasClass(element, className){
+    var classStr = element.getAttribute("class");
+    var match = new RegExp("(?:[\\x20\\t\\r\\n\\f]*" + className + "[\\x20\\t\\r\\n\\f]*)");
+    return match.test(classStr);
 }
 
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
@@ -571,12 +591,38 @@ function getLocalStorage(){
 }
     
 Array.prototype.getArrayIndex = function ( value ) {
-    var index = -1;
     for (var i = 0; i < this.length; i++) {
-        if (this[i] == value) {
-            index = i;
-            break;
-        }
+        switch (typeof value){
+            case "number":
+            case "string":
+            case "boolean":
+                if (this[i] == value) {
+                    return i;
+                }
+                break;
+            case "object":
+                if(Object.getOwnPropertyNames(value).length != Object.getOwnPropertyNames(this[i]).length){
+                    return -1;
+                }
+                var flag = true;
+                for(var item in value){
+                    if(value.hasOwnProperty(item)){
+                        if(isArray(value[item]) && isArray(this[i][item])){
+                            flag = isEqualArray(value[item], this[i][item]);
+                        }else if (value[item] != this[i][item]){
+                            flag = false;                           
+                        }
+                        if (flag == false) {break;}
+                    }
+                }
+                if(flag == true){return i;}
+        }        
     }
-    return index;
+    return -1;
+}
+Array.prototype.remove = function(val){
+    var index = this.getArrayIndex(val);
+    if (index > -1){
+        this.splice(index, 1);
+    }
 }
