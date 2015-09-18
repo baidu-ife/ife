@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>GTD-Tools</title>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>GTD Tools</h1>
+        <div id = "content">
+            <div id = "categories">
+                <h2>所有任务 (<i class = "counter1">0</i>)</h2>
+                <h2>分类列表</h2>
+                <ul id = "default" class="active_default">
+                    <h3> 默认分类 (<i class = "counter2">0</i>)</h3>
+                </ul>
+                <p id = "addCategoryBtn"><span class="lnr lnr-plus-circle"></span>新增分类</p>
+            </div>
+            <div id = "tasks">
+                <h2>
+                    <span data-name="all" class="selected">所有</span>
+                    <span data-name="unfinished">未完成</span>
+                    <span data-name="finished">已完成</span>
+                </h2>
+                <div id = "taskList"></div>
+                <p id = "addTaskBtn"><span class="lnr lnr-plus-circle"></span>新增任务</p>
+            </div>
+            <div id = "details">
+                <h2><span></span><i></i><i></i></h2>
+                <h3>使用说明</h3>
+                <p>欢迎使用ToDo!以下是功能简介: <br><br>分类列表支持两级分类；除默认分类，其余分类支持删除与添加，统计功能。<br><br>--新增: 选中默认分类，可新建一级分类；选中一级分类，新増分类为其添加子分类；<br><br>--删除: 点击要删除分类的右侧x按键删除分类；<br><br>--统计: 每个分类名字后显示数字为该分类下未完成的任务数；<br><br>
+                任务支持新增、编辑、按状态筛选及状态修改功能；<br><br>--新增任务: 任务包括标题、完成日期、任务内容， 默认添加到当前选中的分类中；<br><br>--按状态筛选: 中间列为任务列表，上方的任务筛选项可在任务列表中显示所有任务或者只显示已完成或未完成任务；<br><br>--标记完成: 完成后的任务仅能浏览，不能修改</p>
+            </div>
+        </div>
+        <script src = "js/util.js?ver = 1"></script>
+        <script src = "js/todo.js"></script>
+    </body>
+</html>

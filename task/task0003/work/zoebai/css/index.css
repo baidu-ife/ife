@@ -1,0 +1,319 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: 400 normal 16px Arial, SimSun, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    cursor: pointer;
+}
+
+html,
+body {
+    min-width: 980px;
+    width: 100%;
+    height: 100%;
+}
+h1 {
+    position: absolute;
+    width:100%;
+    min-width: 980px;
+    padding-left: 10px;
+    border-bottom: 1px solid #cdcdcd;
+    font-size: 20px;
+    line-height: 60px;
+    color: #9a9a9a;   
+    background-color: #ddd;   
+}
+#content {
+    height: 100%;
+    padding-top: 60px;
+}
+#categories  {
+    float: left;
+    width: 250px;
+    height: 100%;
+    padding-top: 15px;
+    border-right: 1px solid #cdcdcd;
+    background-color: #eee;
+}
+
+#categories  h2 {
+    padding: 15px 0px 10px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+#categories  ul {
+    text-indent: 20px;
+    font-size: 14px; 
+}
+
+#categories  h3 {
+    line-height: 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#categories  .active_category h3 {
+    background-color: #8EA1E8;
+}
+#categories  .active_default h3 {
+    background-color: #8EA1E8;
+}
+#categories  li {
+    line-height: 30px;
+    padding-left: 13px;
+    font-size: 14px; 
+}
+#categories .active_subcategory {
+    background-color: #D2D8F0;
+}
+#tasks p{
+    line-height: 35px;
+    text-indent: 20px;
+    background-color: #fafaee;
+}
+#tasks li {
+    line-height: 35px;
+    text-indent: 30px;
+}
+[data-status="finished"] {
+    color: #2AA371;
+}
+.active_task {
+    background-color: #F0E2E2;
+}
+.hidden{
+    display: none;
+}
+b.lnr-cross{
+    float: right;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    display: none;
+}
+li:hover .lnr-cross,
+h3:hover .lnr-cross{
+    display: block;
+}
+#categories  #addCategoryBtn,
+#tasks #addTaskBtn {
+    position: absolute;
+    bottom: 0;
+    line-height: 40px;
+    padding-left: 45px;
+    width: 250px;
+    border-top: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+    background-color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+}
+p span.lnr {
+    font-size: 24px;
+    line-height: 40px;
+    vertical-align: middle;
+    position: absolute;
+    left: 20px;
+}
+
+#tasks {
+    float: left;
+    width: 250px;
+    height: 100%;
+    border-right: 1px solid #cdcdcd;
+}
+
+
+
+#tasks h2 {
+    padding-left: 10px; 
+    /*text-align: center;*/
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #cdcdcd;
+    background-color: #eee; 
+}
+
+#tasks h2 span {
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+span.selected{
+    background-color: #fff;
+    border: 1px solid #cdcdcd;
+}
+
+#details {
+    height: 100%;
+    margin-left: 500px;
+    min-width: 480px;
+}
+
+#details h2 {
+    height: 60px;
+    border-bottom: 1px solid #cdcdcd;
+    background-color: #eee;
+    vertical-align: middle;
+    line-height: 30px;
+    padding: 15px 20px;
+}
+
+#details h3 {
+    height: 50px;
+    border-bottom: 1px solid #cdcdcd;
+    line-height: 50px;
+    font-size: 16px;
+    
+    padding-left: 20px;
+    background-color: #fafaee; 
+}
+#details p {
+    min-height: 200px;
+    padding: 20px;
+}
+#details h3 input {
+    height: 28px;
+    border: 1px solid #a9a9a9;
+    border-radius: 5px;
+    line-height: 28px;
+    font-size: 14px;
+    text-indent: 0.5em;
+}
+#details h2 input {
+    height: 30px;
+    border: 1px solid #a9a9a9;
+    border-radius: 5px;
+    line-height: 30px;
+    font-size: 20px;
+    outline: none;
+}
+#details textarea {
+    margin: 0px;
+    padding: 10px;
+    width: 460px;
+    height: 200px;
+    resize: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 10px;
+}
+#details #done{
+    font-weight: 800;
+    color: #d83030; 
+}
+#non-edit{
+    display: none;
+}
+
+#details h2 i {
+    float: right;
+    padding: 0 10px;
+    margin-left: 10px;
+    font-size: 28px;
+    line-height: 28px;
+    color: #3E3E42;
+    cursor: pointer;    
+}
+
+#mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    min-width: 980px;
+    background-color: #000;
+    opacity: 0.65;
+}
+#promptWindow {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    z-index: 200;
+    height: 250px;
+    width: 400px;  
+    margin-left: -200px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+#comfirmWindow,
+#comfirmFinished {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    z-index: 200;
+    height: 200px;
+    width: 400px;  
+    margin-left: -200px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+.windowHeader {
+    height: 60px;  
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    line-height: 60px;
+    font-size: 28px;
+    text-indent: 1em;
+    background-color: #dcd;
+}
+.windowHeader span {
+    float: right;
+    position: relative;
+    padding-right: 20px;
+    font-size: 48px;
+    cursor: pointer;
+}
+#promptWindow input {
+    display: block;
+    width: 90%;
+    margin-left: -50%;
+    margin-top: 30px;
+    position: relative;
+    left: 55%;
+    line-height: 40px;   
+}
+.cancel {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    margin: 20px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #ccc; 
+    cursor: pointer;   
+}
+#comfirmAddBtn,
+#comfirmDeleteBtn {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    margin: 10px 20px;
+    line-height: 50px;    
+    text-align: center;
+    font-size: 16px; 
+    cursor: pointer;  
+}
+#promptWindow p,
+#comfirmWindow p,
+#comfirmFinished p
+{
+    text-align: center;
+}
+#content h3.lnr:before {
+    font-size: 24px;
+    line-height: 28px;
+    vertical-align: top;
+}
