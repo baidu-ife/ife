@@ -118,7 +118,6 @@
                 $.on(ele,'touchend', function (event) {
                     var touch = event.changedTouches[0];
                     endPosX = touch.pageX;
-                    console.log(endPosX)
                     if (endPosX > startPosX) {
                             func();
                     }
