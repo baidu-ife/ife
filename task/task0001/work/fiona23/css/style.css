@@ -8,6 +8,8 @@ article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
 .container{
 	width: 980px;
 	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
 }
 .center{
 	text-align: center;
@@ -23,103 +25,100 @@ p{
 	text-indent: 20px;
 }
 
-nav#nav{
+header{
 	width: 100%;
-	min-width: 980px;
-	height: 80px;
-	background-color: #522a5c;
+	height: 600px;
+	background: url(../img/new-banner.jpg) no-repeat;
 	position: relative;
 }
-nav#nav .container{
-	overflow: hidden;
+
+#nav{
+	width: 100%;
+	height: 60px;
+	background-color: #000;
+	opacity: 0.4;
+	position: relative;
 }
-	nav#nav #logo{
+	#logo{
 		position: absolute;
 		bottom: 0;
 	}
 
 
-	nav#nav ul{
+	#nav-list{
 		float: right;
-		padding: 59px 0 0 0;
-		margin: 0;
-		right: 0;
+		height: 50px;
+		margin-top: 10px;
 	}
-		nav#nav ul li{
+		#nav-list li{
 			float: left;
 			margin-left: 20px;
 			padding: 0;
+			line-height: 60px;
 		}
 
-			nav#nav ul li a:link, a:visited, a:hover{
-				color: #fff;
-			}
-	nav#nav .gitcat{
+	#nav a:link, a:visited, a:hover{
+		color: #444;
+	}
+
+	.gitcat{
 		position: absolute;
 		right: 10px;
 		bottom: 0;
 	}
 
-		@media (max-width: 980px) {
-  		nav#nav .gitcat {
-   			 display: none;
-  		}
+	.describe-wrapper {
+		width: 980px;
+		margin: 0 auto;
+		height: 540px;
+		position: relative;
 	}
 
-header{
-	width: 100%;
-	min-width: 980px;
-	height: 800px;
-	background: url(../img/banner-bg.jpg) no-repeat;
-	position: relative;
-}
-	header .container{
-		position: relative;
-		overflow: hidden;
-		height: 800px;
-	}
-	header .describe{
+	.describe{
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		overflow: hidden;
 		width: 360px;
-		right: 0;
 		padding: 10px 10px 30px 10px;
-		background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0));
+		color: #efefef;
+		/*background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0));
 		background:-webkit-linear-gradient(bottom, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.7));
 		background:linear-gradient(bottom, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.7));
+		filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=#fff,gradientType=1);
+   	   -ms-filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=#fff,gradientType=1);*/
+   	   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0));
+		background:-webkit-linear-gradient(bottom, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
+		background:linear-gradient(bottom, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7));
 		filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=#fff,gradientType=1);
    	   -ms-filter:alpha(opacity=100 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=#fff,gradientType=1);
 	}
 
-		header .describe h1{
-			font-size: 14px;
-			font-weight: normal;
-			float: right;
-			padding: 0 0 12px 0;
-		}
-		header .describe .content{
-			font-size: 12px;
-			line-height: 150%;
-			float: left;
-		}
+	.describe h1{
+		font-size: 14px;
+		/*font-weight: normal;*/
+		float: right;
+		padding: 0 0 12px 0;
+	}
+	.describe p{
+		font-size: 12px;
+		line-height: 150%;
+		float: left;
+	}
 
-section#mainbody{
+
+#mainbody{
 	width: 100%;
-	min-width: 980px;
 	background-color: #eeeeee;
 	padding-bottom: 100px;
 }
-	section#mainbody #content-wrapper{
-		width: 1000px;
-		overflow: hidden;
-	}
-	section#mainbody #content-wrapper .container{
-		overflow: hidden;
-	}
 
-	section#mainbody #content-wrapper .content{
+	.card-wrapper{
+		margin: 0 -5px;
+		width: 990px;
+		margin: 0 auto;
+		overflow: hidden;
+	}	
+	.card{
 		width: 300px;
 		background-color: #fff;
 		float: left;
@@ -128,7 +127,7 @@ section#mainbody{
 		padding-bottom:5000px;
 	}
 
-	section#mainbody #content-wrapper .content p{
+	.card p{
 		padding: 15px 20px 20px 25px;
 		box-sizing:border-box;
 		width: 300px;
@@ -139,6 +138,8 @@ section#mainbody{
 #self-intro{
 	position: relative;
 	padding-bottom: 200px;
+	width: 980px;
+	margin: 0 auto;
 }
 
 	#self-intro img{
@@ -164,56 +165,46 @@ section#mainbody{
 
 	#self-intro p{
 		font-size: 14px;
-		width: 600px;
+		padding:0 150px;
 		margin: 0 auto;
 		line-height: 150%;
 	}
 
 footer{
 	width: 100%;
-	min-width: 980px;
 	background-color: #000;
 }
-	footer ul#footer-nav{
+	.footer-nav-wrapper{
+		border-bottom: 1px solid #333;
 	}
 
-	footer ul#footer-nav li{
+	.footer-nav-wrapper li{
 		line-height: 38px;
 		display: inline-block;
 		padding-left: 20px;
 	}
-	footer ul#footer-nav a:link, a:visited, a:hover{
+	.footer-nav-wrapper a:link, a:visited, a:hover{
 		color: #fff;
 	}
 
-	footer hr{
-		width: 100%;
-		height: 0;
-		color: #333333;
-		border: 1px solid #333333;
-	}
 
-	footer .container{
-		overflow: hidden;
-	}
-
-	footer .footer-list{
+	.footer-list{
 		float: left;
 		box-sizing:border-box;
 		-mox-box-sizing:border-box;
 		width: 20%;
 		line-height: 200%;
-		padding-bottom: 100px;2
+		padding-bottom: 100px;
 	}
 
-		footer .footer-list .footer-list-head{
+		.footer-list-head{
 			color: #fff;
 			padding: 100px 0 50px 0;
 		}
-		footer .footer-list a:link, a:visited{
+		.footer-list a:link, a:visited{
 			color: #fff;
 		}
-		footer .footer-list a:hover{
+		.footer-list a:hover{
 			text-decoration: underline;
 		}
 	footer p{
@@ -221,18 +212,26 @@ footer{
 		color: #fff;
 		padding: 10px;
 	}
-div.blog{
+
+
+
+/*blog*/
+.blog{
 	background-color: #eeeeee;
 	overflow: hidden;
 }
 
-	section.blog-list{
+.blog-container {
+	width: 980px;
+	margin: 0 auto;
+}
+	.blog-list{
 		box-sizing:border-box;
 		-moz-box-sizing:border-box;
 		width: 710px;
 		float: left;
 	}
-		section.blog-list .blog-content-wrapper{
+		.blog-content-wrapper{
 			background-color: #fff;
 			font-size: 12px;
 			margin: 10px 10px 10px 0;
@@ -241,109 +240,109 @@ div.blog{
 			position: relative;
 		}
 
-		section.blog-list .blog-content-wrapper h1{
+		.blog-content-wrapper h1{
 			color: #a660b7;
 			font-size: 16px;
 			line-height: 200%;
 		}
-		section.blog-list .blog-content-wrapper h2{
+		.blog-content-wrapper h2{
 			color: #666;
 			font-size: 12px;
 			line-height: 200%;
 			padding-bottom: 10px;
 		}
 
-		section.blog-list .blog-content-wrapper p{
+		.blog-content-wrapper p{
 			line-height: 200%;
 		}
 
-		section.blog-list .blog-content-wrapper p.author{
+		.author{
 			position: absolute;
 			right: 15px;
 			bottom: 15px;
 			color: #999;
 		}
 
-	section.blog-list .label{
+	.label{
 		position: absolute;
 		width: 45px;
 		top: 20px;
 		right: 700px;
 		color: #fff;
 	}
-		section.blog-list .label p{
+		.label p{
 			text-indent: 0;
 			text-align: center;
 			line-height: 30px;
 		}
-		section.blog-list .label .time{
+		.time{
 			background-color: #522a5c;
 		}
 
-		section.blog-list .label .category{
+		.category{
 			background-color: #a660b7;
 		}
-	section div.pages {
+	.pages {
 		margin: 10px;
 		overflow: hidden;
 	}
 
-	section div.pages a{
+	.pages a{
 		display: inline-block;
 		padding: 10px 15px 10px 15px;
 		background-color: #fff;
 		margin: 10px;
 	}
 
-		section div.pages a:link, a:visited, a:hover{
+		.pages a:link, a:visited, a:hover{
 			color: #000;
 		}
 
-		section div.pages a.no-click:link, a.no-click:visited, a.no-click:hover{
+		.pages a.no-click:link, a.no-click:visited, a.no-click:hover{
 			color: #999;
 			cursor: default;
 		}
 
-	section div.pages a.active{
+	.pages a.active{
 		background-color:#a660b7;
 	}
 
-	section div.pages a.active:link, a.active:visited{
+	.pages a.active:link, a.active:visited{
 		color: #fff;
 	}
 
-aside.blog-rightside{
+.blog-rightside{
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	width: 260px;
 	float: left;
 }
 
-	aside.blog-rightside div{
+	.blog-rightside div{
 		background-color: #fff;
 		margin: 10px 0 0 0px;
 	}
 
-	aside .search{
+	 .search{
 		overflow: hidden;
 		padding: 20px;
 		position: relative;
 	}
 
-	aside .search img{
+	 .search img{
 		position: absolute;
 		left: 22px;
 		width: 39px;
 		top: 22px;
 	}
-	aside .search form{
+	 .search {
 		width: 220px;
 		float: left;
 		height: 40px;
 		box-sizing:border-box;
 		-moz-box-sizing:border-box;	
 	}
-	aside .search form input[type="text"]{
+	 .search input[type="text"]{
 		height: 40px;
 		border: none;
 		width: 158px;
@@ -358,13 +357,13 @@ aside.blog-rightside{
 		border-left: 1px solid #eee;
 	}
 
-	aside .search form input[type="text"]:focus{
+	 .search input[type="text"]:focus{
 		border-top: 1px solid #000;
 		border-bottom: 1px solid #000;
 		border-left: 1px solid #000;
 	}
 
-	aside .search form input[type="submit"]{
+	 .search input[type="submit"]{
 		width: 50px;
 		background:url(../img/go.png);
 		border: none;
@@ -375,7 +374,7 @@ aside.blog-rightside{
 		cursor: pointer;
 	}
 
-	aside.blog-rightside div.category ul li{
+	.category ul li{
 		border-left: 4px solid #dfc6e6;
 		line-height: 48px;
 		border-top: 1px solid #eee;
@@ -383,25 +382,28 @@ aside.blog-rightside{
 		padding-left: 10px;
 	}
 
-	aside.blog-rightside div.category ul li.active{
+	.category ul li.active{
 		border-left: 4px solid #522a5c;
 	}
-	aside.blog-rightside div.category ul li:hover{
+	.category ul li:hover{
 		border-left: 4px solid #522a5c;
 	}
-
-	aside.blog-rightside div.category ul li a:link, a:hover, a:visited{
+	.category ul li a:link, a:hover, a:visited{
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
 		color: #666;
 	}
 	
-	aside.blog-rightside div.calender{
+	.calender{
 		padding: 15px;
 	} 
 
-		aside.blog-rightside div.calender table{
+		.calender table{
 			width: 100%;
 		}
-			aside.blog-rightside div.calender table tr td{
+			.calender table tr td{
 				border-bottom: 1px solid #eee;
 				box-sizing:border-box;
 				-moz-box-sizing:border-box;
@@ -410,43 +412,43 @@ aside.blog-rightside{
 				color: #999;
 			}
 
-			aside.blog-rightside div.calender table tr td.active{
+			.calender table tr td.active{
 				background-color: #522a5c;
 				
 			}
 
-			aside.blog-rightside div.calender table tr td a:link, a:visited{
+			.calender table tr td a:link, a:visited{
 				color: #999;
 			}
 
-			aside.blog-rightside div.calender table tr td.active a:link{
+			.calender table tr td.active a:link{
 				color: #fff;
 			}
 
-			aside.blog-rightside div.calender p{
+			.calender p{
 				text-indent: 0;
 				padding: 15px;
 			}
 
-				aside.blog-rightside div.calender p a.left{
+				.calender p a.left{
 					display: block;
 					float: left;
 				}
 
-				aside.blog-rightside div.calender p a.right{
+				.calender p a.right{
 					display: block;
 					float: right;
 				}
-	aside.blog-rightside div.tags{
+	.tags{
 		padding: 15px;
 	}
-		aside.blog-rightside div.tags h3{
+		.tags h3{
 			font-size: 14px;
 			color: #999;
 			font-weight: normal;
 		}
 
-		aside.blog-rightside div.tags p{
+		.tags p{
 			font-size: 14px;
 			color: #773c88;
 			text-indent: 0;
@@ -454,11 +456,11 @@ aside.blog-rightside{
 			word-spacing: 10px;
 		}
 
-		aside.blog-rightside div.tags p span.level-1{
+		.tags p span.level-1{
 			font-size: 20px;
 		}
 
-		aside.blog-rightside div.tags p span.level-2{
+		.tags p span.level-2{
 			font-size: 18px;
 		}
 
@@ -958,3 +960,72 @@ div.about{
 			text-align: center;
 			line-height: 25px;
 		}
+
+@media (max-width: 980px) {
+
+	.container, header, footer, .describe-wrapper, #self-intro, .blog-list{
+		width: 100%;
+	}
+
+
+	.gitcat {
+		 display: none;
+	}
+
+	.card-wrapper {
+		width: 100%;
+
+	}
+
+	.card {
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 10px;
+		margin: 10px;
+		overflow: hidden;
+	}
+
+	.card img {
+		width: 30%;
+		float: left;
+	}
+	.card p{
+		box-sizing: border-box;
+		padding: 10px;
+		width: 70%;
+		float: left;
+	}
+}
+
+@media (max-width: 782px) {
+	#self-intro p {
+		padding: 20px;
+	}
+
+	header{
+		height: 300px;
+	}
+
+	.describe-wrapper {
+		height: 240px;
+	}
+
+
+
+}
+
+@media (max-width: 627px){
+	.card img {
+		width: 100%;
+	}
+	.card p {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px){
+	.describe {
+		width: 100%;
+	}
+}
