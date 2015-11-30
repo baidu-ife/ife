@@ -463,50 +463,52 @@ footer{
 		}
 
 /*gallery*/
-div.gallery{
+.gallery{
 	background-color: #eee;
 }
 
-div.gallery .container{
+.container{
 	overflow: hidden;
 	
 }
-	div.gallery div.tab{
+	.tab{
 		overflow: hidden;
 		background-color: #fff;
 		margin-top: 30px;
 		display: inline-block;
 		margin-bottom: -4px;
 	}
-	div.gallery div.tab ul li{
+	.tab ul li{
 		float: left;
 		padding: 20px;
 		padding-top: 15px;
 		border-left: 1px #eee solid;
+		opacity: 0.4;
 	}
 
-	div.gallery div.tab ul li.all.no-active{
+	.tab ul li.active{
 		border-top:4px solid #dfc6e6;
 		border-bottom: 1px #eee solid;
+		opacity: 1;
 	}
 
-		div.gallery div.tab ul li.all{
-			border-top: 4px solid #522a5c;
+		.tab-all{
+			border-top: 4px solid #5BA67B;
 		}
 
-		div.gallery div.tab ul li.jsf{
-			border-top: 4px solid #522a5c;
+		.tab-jsf{
+			border-top: 4px solid #5BA67B;
 		}
-		div.gallery div.tab ul li.uic{
-			border-top: 4px solid #5900b2;
+		.tab-uic{
+			border-top: 4px solid #ECF2B4;
 		}
-		div.gallery div.tab ul li.frame{
-			border-top: 4px solid #8c2300;
+		.tab-frame{
+			border-top: 4px solid #B7BF84;
 		}
-		div.gallery div.tab ul li.app{
-			border-top: 4px solid #d9a300;
+		.tab-app{
+			border-top: 4px solid #8C716C;
 		}
-div.gallery div.more{
+div.more{
 	background-color: #fff;
 	width: 710px;
 	box-sizing:border-box;
@@ -516,7 +518,7 @@ div.gallery div.more{
 	padding: 20px;
 }
 
-section.waterfall{
+.waterfall{
 	background-color: #fff;
 	width: 710px;
 	box-sizing:border-box;
@@ -525,52 +527,41 @@ section.waterfall{
 	margin-right: 10px;
 	padding: 20px;
 }
-	section.waterfall div.row-2{
+	.waterfall .row-2{
 		display: inline-block;
 		font-size:0;
 		position: relative;
 		width: 340px;
 	}
-	section.waterfall div.row-2 .row-2-2 .gallery-describe{
-		box-sizing:border-box;
-		-moz-box-sizing:border-box;
+
+	.waterfall .row-2-2{
 		width: 330px;
+	}
+
+	.waterfall .row-2-2 .gallery-describe{
 		color: #fff;
-		background-color: #522a5c;
+		background-color: #5BA67B;
 		position: relative;
 		margin-bottom: 10px;
 		margin-top: -4px;
 	}
 
-	section.waterfall div.row-2 .row-2-2.jsf:before{
-			content: "J";
-			font-size: 25px;
-			width: 30px;
-			height: 30px;
-			border: 1px solid #fff;
-			color: #fff;
-			border-radius: 50%;
-			position: absolute;
-			top: 170px;
-			left: 10px;
-			text-align: center;
-			z-index: 1;
-		}
-	section.waterfall div.row-2 .row-2-2 p{
+
+	.waterfall .row-2-2 p{
 		text-indent: 0;
 	}
-	section.waterfall div.row-1{
+	.waterfall .row-1{
 		display: inline-block;
 		vertical-align: top;
 		margin-right: 10px;
 	}
 
-	section.waterfall div.row-1.end{
+	.waterfall .row-1.end{
 		margin-right: 0px;
 		margin-right: -10px;
 	}
 
-	section.waterfall div.row-1 div.gallery-describe-wrapper{
+	.waterfall .row-1 .gallery-describe-wrapper{
 		box-sizing:border-box;
 		-moz-box-sizing:border-box;
 		width: 160px;
@@ -579,10 +570,10 @@ section.waterfall{
 		margin-bottom: 10px;
 	}
 	
-	section.waterfall div.row-1 div.gallery-describe-wrapper.jsf{
-		background-color: #522a5c;
+	.jsf{
+		background-color: #5BA67B;
 	}
-		section.waterfall div.row-1 div.gallery-describe-wrapper.jsf:before{
+	.jsf:before{
 			content: "J";
 			font-size: 25px;
 			width: 30px;
@@ -594,29 +585,35 @@ section.waterfall{
 			top: 120px;
 			left: 10px;
 			text-align: center;
+			z-index: 1;
 		}
-	section.waterfall div.row-1 div.gallery-describe-wrapper.uic{
-		background-color: #5900b2;
-	}
-		section.waterfall div.row-1 div.gallery-describe-wrapper.uic:before{
-			content: "U";
-			font-size: 25px;
-			width: 30px;
-			height: 30px;
-			border: 1px solid #fff;
-			color: #fff;
-			border-radius: 50%;
+
+		.row-2-2.jsf:before{
 			position: absolute;
-			top: 120px;
-			left: 10px;
-			text-align: center;
+			top: 170px;
 		}
-
-	section.waterfall div.row-1 div.gallery-describe-wrapper.app{
-		background-color: #d9a300;
+	.uic{
+		background-color: #ECF2B4;
+	}
+	.uic:before{
+		content: "U";
+		font-size: 25px;
+		width: 30px;
+		height: 30px;
+		border: 1px solid #fff;
+		color: #fff;
+		border-radius: 50%;
+		position: absolute;
+		top: 120px;
+		left: 10px;
+		text-align: center;
 	}
 
-		section.waterfall div.row-1 div.gallery-describe-wrapper.app:before{
+	.app{
+		background-color: #8C716C;
+	}
+
+		.app:before{
 			content: "A";
 			font-size: 25px;
 			width: 30px;
@@ -630,10 +627,10 @@ section.waterfall{
 			text-align: center;
 		}
 
-	section.waterfall div.row-1 div.gallery-describe-wrapper.frame{
-		background-color: #8c2300;
+	.gallery-describe-wrapper.frame{
+		background-color: #B7BF84;
 	}
-		section.waterfall div.row-1 div.gallery-describe-wrapper.frame:before{
+		.frame:before{
 			content: "F";
 			font-size: 25px;
 			width: 30px;
@@ -646,102 +643,102 @@ section.waterfall{
 			left: 10px;
 			text-align: center;
 		}
-	section.waterfall div.gallery-describe{
+	.gallery-describe{
 		padding: 10px 10px 10px 50px;
 		line-height: 200%;
 
 	}
-	section.waterfall div.row-1 div.gallery-describe-wrapper p{
+	.gallery-describe-wrapper p{
 		text-indent: 0;
 	}
 
-	section.waterfall div.more{
+	.waterfall .more{
 		margin-top: 10px;
 
 	}
 
-aside.waterfall-aside{
+.waterfall-aside{
 	width: 260px;
 	float: left;
 }
 
-aside.waterfall-aside div{
+.waterfall-aside div{
 	background-color: #fff;
 	margin: 0px 0 10px 0px;
 }
 
-div.rank{
+.rank{
 	padding: 10px;
 	background-color: #fff;
 }
-	div.rank h3{
+	.rank h3{
 		color: #999;
 		font-size:20px;
 		font-weight: normal;
 	}
 
-	div.rank ul li{
+	.rank ul li{
 		position: relative;
 		text-align: right;
 		margin: 10px;
 	}
-	div.rank ul li:before{
+	.rank ul li:before{
 		display: inline-block;
 		line-height: 18px;
 		color: #fff;
 		text-align: center;
 		width: 18px;
 		height: 18px;
-		background-color: #522a5c;
+		background-color: #5BA67B;
 		border-radius: 50%;
 		position: absolute;
 		left: 0px;
 	}
 
-		div.rank ul li.rank-1:before{
+		.rank ul li.rank-1:before{
 		content: "1"
 	}
 
-		div.rank ul li.rank-2:before{
+		.rank ul li.rank-2:before{
 		content: "2"
 	}
 
-		div.rank ul li.rank-3:before{
+		.rank ul li.rank-3:before{
 		content: "3"
 	}
 
-	div.rank ul li.rank-4:before{
+	.rank ul li.rank-4:before{
 		content: "4"
 	}
-	div.rank ul li.rank-5:before{
+	.rank ul li.rank-5:before{
 		content: "5"
 	}
 
-	div.rank ul li:after{
+	.rank ul li:after{
 		content: "";
 		height: 18px;
 		display: inline-block;
-		background-color: #522a5c;
+		background-color: #5BA67B;
 		position: absolute;
 		left: 25px;
 	}
-	div.rank ul li.rank-1:after{
+	.rank ul li.rank-1:after{
 		width: 100px;
 		
 	}
 
-	div.rank ul li.rank-2:after{
+	.rank ul li.rank-2:after{
 	width: 80px;
 	}
 
-	div.rank ul li.rank-3:after{
+	.rank ul li.rank-3:after{
 	width: 60px;
 	}
 
-	div.rank ul li.rank-4:after{
+	.rank ul li.rank-4:after{
 		width: 40px;
 		}
-	div.rank ul li.rank-5:after{
+	.rank ul li.rank-5:after{
 		width: 10px;
 
 	}
