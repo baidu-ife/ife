@@ -57,8 +57,8 @@ header{
 			line-height: 60px;
 		}
 
-	#nav a:link, a:visited, a:hover{
-		color: #444;
+	#nav a:link, #nav a:visited, #nav a:hover{
+		color: #fff;
 	}
 
 	.gitcat{
@@ -166,13 +166,13 @@ header{
 	#self-intro p{
 		font-size: 14px;
 		padding:0 150px;
-		margin: 0 auto;
-		line-height: 150%;
+		margin: 15px auto;
+		line-height: 200%;
 	}
 
 footer{
 	width: 100%;
-	background-color: #000;
+	background-color: #222;
 }
 	.footer-nav-wrapper{
 		border-bottom: 1px solid #333;
@@ -183,7 +183,7 @@ footer{
 		display: inline-block;
 		padding-left: 20px;
 	}
-	.footer-nav-wrapper a:link, a:visited, a:hover{
+	.footer-nav-wrapper a:link, .footer-nav-wrapper a:visited, .footer-nav-wrapper a:hover{
 		color: #fff;
 	}
 
@@ -201,7 +201,7 @@ footer{
 			color: #fff;
 			padding: 100px 0 50px 0;
 		}
-		.footer-list a:link, a:visited{
+		.footer-list a:link, .footer-list a:visited{
 			color: #fff;
 		}
 		.footer-list a:hover{
@@ -294,7 +294,7 @@ footer{
 		margin: 10px;
 	}
 
-		.pages a:link, a:visited, a:hover{
+		.pages a:link, .pages a:visited, .pages a:hover{
 			color: #000;
 		}
 
@@ -327,6 +327,10 @@ footer{
 		overflow: hidden;
 		padding: 20px;
 		position: relative;
+		width: 260px;
+		height: 80px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;	
 	}
 
 	 .search img{
@@ -335,14 +339,8 @@ footer{
 		width: 39px;
 		top: 22px;
 	}
-	 .search {
-		width: 220px;
-		float: left;
-		height: 40px;
-		box-sizing:border-box;
-		-moz-box-sizing:border-box;	
-	}
-	 .search input[type="text"]{
+
+	 .search-form input[type="text"]{
 		height: 40px;
 		border: none;
 		width: 158px;
@@ -357,13 +355,13 @@ footer{
 		border-left: 1px solid #eee;
 	}
 
-	 .search input[type="text"]:focus{
+	 .search-form input[type="text"]:focus{
 		border-top: 1px solid #000;
 		border-bottom: 1px solid #000;
 		border-left: 1px solid #000;
 	}
 
-	 .search input[type="submit"]{
+	 .search-form input[type="submit"]{
 		width: 50px;
 		background:url(../img/go.png);
 		border: none;
@@ -388,7 +386,7 @@ footer{
 	.category ul li:hover{
 		border-left: 4px solid #522a5c;
 	}
-	.category ul li a:link, a:hover, a:visited{
+	.category ul li a:link, .category ul li a:hover, .category ul li a:visited{
 		display: block;
 		width: 100%;
 		height: 100%;
@@ -417,11 +415,11 @@ footer{
 				
 			}
 
-			.calender table tr td a:link, a:visited{
+			.calender a:link, .calender a:link, .calender a:visited{
 				color: #999;
 			}
 
-			.calender table tr td.active a:link{
+			.calender table tr td.active a:link, .calender table tr td.active a:hover, .calender table tr td.active a:visited{
 				color: #fff;
 			}
 
@@ -749,221 +747,91 @@ div.rank{
 	}
 
 /*about*/
-div.about{
+.about{
 	background-color: #eee;
 	padding-top: 100px;
 
 }
 
-	div.about img{
+	.about img{
 		border: 5px solid #eee;
 		border-radius: 50%;
-	}
-
-	div.about div.container{
 		background-color: #fff;
 		position: relative;
-		height: 1500px;
 	}
 
-	div.about div.container::before{
+	.about-container{
+		background-color: #fff;
+		position: relative;
+		width: 980px;
+		margin: 0 auto;
+	}
+
+	.about-container::before{
 		content: "";
 		height: 100%;
 		width: 10px;
 		position: absolute;
-		left: 50%;
-		color: #eee;
+		left: 485px;
+		background-color: #eee;
 		top:0;
 	}
-	div.about img.fiona{
+
+	.about-container > section {
+		padding-bottom: 35px;
+	}
+
+	.about-container > section h2{
+		font-size: 20px;
+		position: relative;
+		right: 105px;
+		top: 20px;
+	}
+
+	img.fiona{
 		border: 10px solid #eee;
 		border-radius: 50%;
 		position: relative;
 		top: -50px;
 	}
 
-	div.about div.self-intro h2{
-		font-weight: normal;
-		font-size: 20px;
-		position: absolute;
-		right: 560px;
-	}
-	div.about div.self-intro p{
+	 .axis-right{
 		width: 320px;
-		position: absolute;
-		left: 550px;
+		margin: 0 auto;
+		position: relative;
+		left: 280px;
+		top: -45px;
 		padding: 20px;
 		text-align: left;
 		padding-left: 0;
 	}
 
-	div.about div.content{
-		text-align: left;
-	}
-	div.about div.contact h2{
-		font-weight: normal;
-		font-size: 20px;
-		position: absolute;
-		right: 560px;
-		top: 400px;
+	.axis-right h3 {
+		margin: 10px 0;
 	}
 
-	div.about div.contact ul{
-		position: absolute;
-		left: 550px;
-		top: 400px;
+	.about p {
+		line-height: 200%;
+	}
+	.contact ul li{
+		line-height: 200%;
 	}
 
-		div.about div.contact ul li{
-			line-height: 200%;
-		}
-
-	div.about div.contact img{
-		position: absolute;
-		top: 300px;
-		left: 430px;
+	.about time {
+		border: 5px solid #eee;
+		border-radius: 8px;
+		padding: 3px 10px;
+		position: relative;
+		z-index: 1;
+		background-color: #fff;
 	}
 
-	div.about div.education h2{
-		font-weight: normal;
-		font-size: 20px;
-		position: absolute;
-		right: 560px;
-		top: 650px;
-		padding-top: 40px;
+	.education-dur p, .intern-dur p{
+		text-indent: 0;
 	}
-	div.about div.education{
-		text-align: left;
-	}
-	div.about div.education div.education-dur{
-		position: absolute;
-		left: 550px;
-		top: 680px;
-	}
-		div.about div.education div.education-dur div.education-level{
-			padding: 15px 0 15px 0;
-		}
-
-		div.about div.education div.education-dur div.education-level.high{
-			padding-bottom: 40px;
-		}
-
-		div.about div.education div.education-dur div.education-level.high:before{
-			content: "2008";
-			width: 60px;
-			height: 25px;
-			border: 5px solid #eee;
-			border-radius: 10px;
-			position: absolute;
-			left: -100px;
-			text-align: center;
-			line-height: 25px;
-		}
-
-		div.about div.education div.education-dur div.education-level.uni:before{
-			content: "2010";
-			width: 60px;
-			height: 25px;
-			border: 5px solid #eee;
-			border-radius: 10px;
-			position: absolute;
-			left: -100px;
-			text-align: center;
-			line-height: 25px;
-		}
-
-		div.about div.education div.education-dur div.education-level.gra:before{
-			content: "2015";
-			width: 60px;
-			height: 25px;
-			border: 5px solid #eee;
-			border-radius: 10px;
-			position: absolute;
-			left: -100px;
-			text-align: center;
-			line-height: 25px;
-		}
-
-		div.about div.education div.education-dur p{
-			text-indent: 0;
-			line-height: 200%;
-		}
-
-		div.about div.education div.education-dur h3{
-			font-size: 15px;
-			font-weight: normal;
-		}
-
-	div.about div.education img{
-		position: absolute;
-		top: 550px;
-		left: 430px;
-
-	}
-	div.about div.intern{
-		text-align: left;
-	}
-	div.about div.intern h2{
-		font-weight: normal;
-		font-size: 20px;
-		position: absolute;
-		right: 560px;
-		top: 1000px;
-		padding-top: 40px;
-	}
-
-	div.about div.intern div.intern-dur{
-		position: absolute;
-		left: 550px;
-		top: 1000px;
-	}
-		div.about div.intern div.intern-dur p{
-			text-indent: 0;
-			line-height: 200%;
-		}
-	div.about div.intern img{
-		position: absolute;
-		top: 900px;
-		left: 430px;
-	}
-
-		div.about div.intern div{
-			padding: 20px 0 20px 0;
-		}
-
-		div.about div.intern div h3{
-			font-weight: normal;
-			font-size: 16px;
-			
-		}
-
-		div.about div.intern div.intern-1:before{
-			content: "2014";
-			width: 60px;
-			height: 25px;
-			border: 5px solid #eee;
-			border-radius: 10px;
-			position: absolute;
-			left: -100px;
-			text-align: center;
-			line-height: 25px;
-		}
-
-		div.about div.intern div.intern-2:before{
-			content: "2015";
-			width: 60px;
-			height: 25px;
-			border: 5px solid #eee;
-			border-radius: 10px;
-			position: absolute;
-			left: -100px;
-			text-align: center;
-			line-height: 25px;
-		}
-
 @media (max-width: 980px) {
 
-	.container, header, footer, .describe-wrapper, #self-intro, .blog-list{
+	.container, header, footer, .describe-wrapper, #self-intro, .blog-list, .blog-container{
 		width: 100%;
 	}
 
@@ -996,6 +864,10 @@ div.about{
 		width: 70%;
 		float: left;
 	}
+
+	.label {
+		display: none;
+	}
 }
 
 @media (max-width: 782px) {
@@ -1010,8 +882,6 @@ div.about{
 	.describe-wrapper {
 		height: 240px;
 	}
-
-
 
 }
 
