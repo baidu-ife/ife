@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> 原生轮播图 </title>
+
+<style type = "text/css" >
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #slider-box {
+        width: 80%;
+        height: 400px;
+        margin: 50px auto;
+        position: relative;
+    }
+    .slider-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .slider-item {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 99;
+        top: 100%;
+    }
+    .slider-item img {
+        width: 100%;
+        min-height: 400px;
+    }
+    .slider-item.active {
+        z-index: 100;
+        top: 0;
+    }
+    .slider-controler {
+        position: absolute;
+        width: 50%;
+        height: 30px;
+        left: 50%;
+        bottom: 10px;
+        margin-left: -25%;
+        text-align: center;
+        z-index: 101;
+    }
+    .slider-controler i {
+        display: inline-block;
+        margin: 2%;
+        height: 12px;
+        width: 12px;
+        border-radius: 12px;
+        background: #fff;
+        cursor: pointer;
+        transition: background-color 0.6s;
+    }
+    .slider-controler .active {
+        background: #000;
+    }
+    .slider-controler i:hover {
+        background: #000;
+    }
+    .control-zone {
+        width: 80%;
+        height: 200px;
+        margin: 30px auto;
+        border: 1px solid pink;
+    }
+    form {
+        width: 100%;
+        text-align: center;
+    }
+    form p{
+        padding: 10px 0;
+    }
+    p input {
+        margin-left: 20px;
+    }
+</style>
+</head>
+<body>
+<div id="slider-box">
+    <div class="slider-inner">
+        <div class="slider-item active"><img src="img/demo1.jpg"></div>
+        <div class="slider-item"><img src="img/demo2.jpg"></div>
+        <div class="slider-item"><img src="img/demo3.jpg"></div>
+        <div class="slider-item"><img src="img/demo4.jpg"></div>
+        <div class="slider-item"><img src="img/demo5.jpg"></div>
+    </div>
+</div>
+<div class="control-zone">
+    <form id = "slider-form" name = "forms">
+        <p>是否循环轮播:<input  type = "radio" name = "loop" value = "true" checked="check"> 是 <input type = 'radio' name = "loop" value = "false"> 否 </p>
+        <p>轮播方向:<input  type = "radio" name = "direction" value = "left" checked="check"> 左 <input type = "radio" name = "direction" value = "right"> 右 </p>
+        <p>动画时间(单位ms):<input name="animateTime" type = "number" value = "800"> </p>
+        <p>轮播间隔(单位ms): <input name = "intervalTime" type = "number" value = "2000"></p>
+        <button type="submit">提交更改</button>
+    </form>
+</div>
+<script type="text/javascript" defer = "defer">
+if(!window.define) {
+    var script = document.createElement('script');
+    script.setAttribute('src', '../slider.js');
+    document.body.appendChild(script);
+    (function trySomething() {
+        try{
+            var slider = new window.Slider({itemClassname: "slider-control", loop: true, direction: 'left'});
+            document.getElementById("slider-form").onsubmit = function(e) {
+            e = e || window.event;
+            e.preventDefault;
+            e.returnValue = false;
+            var target = e.target || e.srcElement;
+            var loopValue = target.loop.value;
+            var direction = target.direction.value;
+            var sliderTime = target.animateTime.value;
+            var intervalTme = target.intervalTime.value;
+            if(loopValue === 'true') {
+                slider.stop();
+                slider.loop =  true;
+                slider.Interval(); // 重新开始定时轮播
+            } else {
+                slider.stop();
+                slider.loop =  false; 
+            }
+            if(sliderTime !== slider.interval) {
+                slider.interval = intervalTme;
+                slider.stop();
+                slider.Interval();
+            }
+            slider.direction = direction;
+            }
+    } catch (e) {
+        setTimeout(arguments.callee,1000);
+    }
+    })();
+    
+    var slider = new window.Slider({itemClassname: "slider-control", loop: true, direction: 'left'});
+ 
+}
+
+</script>
+</body>
+</html>
