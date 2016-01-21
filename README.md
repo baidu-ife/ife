@@ -13,7 +13,7 @@
 
 欢迎在项目的<a href="https://github.com/baidu-ife/ife/issues" target="_blank">issue</a>中提问，我们会在那里进行回答。
 
-如果有不方便公开讨论的问题，可以通过邮件 ife(at)baidu.com 联系我们。
+如果有不方便公开讨论的问题，可以通过邮件 ife(at)baidu.com 
 
 更加欢迎关注我们的<a href="http://weibo.com/baiduife" target="_blank">微博 weibo.com/baiduife</a>
 
