@@ -1,0 +1,34 @@
+{
+  "name": "ife",
+  "version": "1.0.0",
+  "description": "ife's coding work by simmer",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-preset-es2015": "^6.3.13",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simmer-Jun/ife.git"
+  },
+  "keywords": [
+    "ife",
+    "test",
+    "javascript"
+  ],
+  "author": "simmer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Simmer-Jun/ife/issues"
+  },
+  "homepage": "https://github.com/Simmer-Jun/ife#readme"
+}
