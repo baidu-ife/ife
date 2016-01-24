@@ -4,13 +4,13 @@
 在线[demo地址](http://hisimmer.com/ife/)
 
 任务要求：
- * [task0001](old/task/task0001/README.md)
+ * [task0001](old/task/task0001/README.md) 
  * [task0002](old/task/task0002/README.md)
  * [task0003](old/task/task0003/README.md)
  * [task0004](https://github.com/baidu-ife/ife/blob/master/2015_spring/task/task0004/README.md)
 
 ## task0001
-
+ 
 安静的做一个切图仔。
 
 ## task0002
@@ -37,9 +37,7 @@ See code [here](https://github.com/Simmer-Jun/React-Todo)
 兼容移动端 － [在线预览demo](##)
 See code [here](##)
 
-## 测试
-选用`Mocha`对任务代码进行测试进行测试，使用了`chai`断言库。
-详细的测试教程可以移步到阮一峰大神的[测试框架－Mocha介绍](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
+
 
 ## Ole version(旧的版本)
 
@@ -48,5 +46,5 @@ See code [here](##)
 
  * [task0003代码在线预览](http://todu.sinaapp.com/)
 
-## LICENSE
+## LICENSE 
 The MIT [LICENSE](./LICENSE)
