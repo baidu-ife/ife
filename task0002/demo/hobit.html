@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hobit-兴趣爱好</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 600px;
+        margin: 100px auto;
+
+    }
+    section {
+        min-height: 400px;
+        margin: 50px;
+        border: 1px solid #2e2e2e;
+    }
+    section h2 {
+        text-align: center;
+        margin: 30px 0;
+        color: #4c9da0;
+    }
+    section p {
+        text-align: center;
+        font-size: 16px;
+        margin: 6px 0;
+    }
+    section ul {
+        margin-left: 50px;
+    }
+    #ione {
+        display: block;
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 auto;
+    }
+    #itwo,#itree {
+        display: block;
+        height: 80px;
+        width: 200px;
+        margin: 20px auto;
+    }
+    #tips {
+        color: red;
+    }
+    footer {
+        text-align: center;
+        font-size: 16px;
+        margin: 20px auto;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+    <section class="one">
+        <h2>第一阶段</h2>
+        <div class="cont">
+            <p>请输入您的爱好：（使用半角逗号作为爱好的分隔符）</p>
+            <p><input type="text" id="ione"></p>
+            <p><input type="submit" id="btn1"></p>
+            <p>您输入的爱好是：</p>
+            <ul id="resultone"></ul> 
+        </div>
+    </section>
+    <section class="two">
+        <h2>第二阶段</h2>
+        <div class="cont">
+            <p>请输入您的爱好：（使用半角逗号/空格/逗号作为爱好分隔符）
+                <select name="hobit" id="hobitone" default=",">
+                    <option value=",">半角逗号作为分隔符</option>
+                    <option value="，">全角逗号作为分隔符</option>
+                    <option value=" ">半角空格作为分隔符</option>
+                    <option value=" ">全角空格作为分隔符</option>
+                    <option value="、">顿号作为分隔符</option>
+                    <option value=";">半角分号作为分隔符></option>
+                    <option value="；">全角分号作为分隔符</option>
+                </select>
+            </p>
+            <p><textarea id="itwo"></textarea></p>
+            <p><input type="submit" id="btn2"></p>
+            <p>您输入的爱好是：</p>
+            <ul id="resulttwo"></ul> 
+        </div>
+    </section>
+    <section class="tree">
+        <h2>第三阶段</h2>
+        <div class="cont">
+            <p>请输入您的爱好：（使用半角逗号作为爱好的分隔符） 选用分隔符: 
+                <select name="hobit" id="hobittwo" default=",">
+                    <option value=",">半角逗号作为分隔符</option>
+                    <option value="，">全角逗号作为分隔符</option>
+                    <option value=" ">半角空格作为分隔符</option>
+                    <option value=" ">全角空格作为分隔符</option>
+                    <option value="、">顿号作为分隔符</option>
+                    <option value=";">半角分号作为分隔符></option>
+                    <option value="；">全角分号作为分隔符</option>
+                </select>
+            </p>
+            <p><textarea id="itree"></textarea></p>
+            <p><input type="submit" id="btn3"></p>
+            <p><span id="tips"></span></p>
+            <p>您输入的爱好是：</p>
+            <ul id="resulttree"></ul> 
+        </div>
+    </section>
+</div>
+<footer>
+    © 2015 - 2016 <a href="http://hisimmer.com" target="_blank">Simmer</a>
+</footer>
+<script type="text/javascript" src="../util.js" charset="utf-8"></script>
+<script type="text/javascript" defer="defer" >
+    window.onload = function () { 
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+        var resultOne = document.getElementById('resultone');
+        var resultTwo = document.getElementById('resulttwo');
+        var resultTree = document.getElementById('resulttree')
+
+        var optionOne = document.getElementById('hobitone');
+        var optionTwo = document.getElementById('hobittwo')
+
+        var tips = document.getElementById('tips');
+        // stage one
+        btn1.onclick = function( ) {
+            resultOne.innerHTML ="";
+            var source = document.getElementById('ione').value;
+            source = uniqArray(trims(source).split(','));
+            for(var i = 0, len = source.length; i < len; i ++) 
+            resultOne.innerHTML += "<li>你输入的爱好是: " + source[i] + "</li>";
+
+        }
+        // stage two
+        btn2.onclick = function( ) {
+            resultTwo.innerHTML = "";
+            var source = document.getElementById('itwo').value;
+            var splitString = optionOne.value;
+            source = uniqArray(trims(source).split(splitString));
+            for(var i = 0, len = source.length; i < len; i ++) 
+            resultTwo.innerHTML += "<li>你输入的爱好是: " + source[i] + "</li>";
+
+        }
+        // stage tree
+        var area = document.getElementById('itree');
+        area.onchange = function() {
+            var source = this.value;
+            var splitString = optionTwo.value;
+            source = uniqArray(trims(source).split(splitString));
+            var len = source.length;
+            if(!len || (len > 9)) {
+                resultTree.innerHTML = "";
+                tips.innerText = "当前的分隔符为 '" + splitString + "' 请确保输入至少1个至多10个爱好！" ;
+                btn3.onclick = null;
+            } else {
+                tips.innerText = "";
+                btn3.onclick = handler;
+            }
+        };
+        function handler() {
+            resultTree.innerHTML = "";
+            var source = area.value;
+            var splitString = optionTwo.value;
+            source = uniqArray(trims(source).split(splitString));
+            for(var i = 0, len = source.length; i < len; i ++) 
+            resultTree.innerHTML += "<li>你输入的爱好是: " + source[i] + "</li>";
+        }
+        btn3.onclick = handler;
+    }
+</script>
+</body>
+</html>
