@@ -1,144 +1,163 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-	<title>polandeme</title>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1" />
+	<meta charset="UTF-8">
+	<title>盒模型及定位</title>
+	<style>
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+		.center1{
+			background-color: red;
+			max-width: 960px;
+			margin: auto;
+		}
+
+		 .t6111container{
+			text-align: center;
+		}
+		.center2{
+			background-color: red;
+			display: inline-block;
+			text-align: left;
+			width: 960px;
+			max-width:100%;
+		}
+
+		.t613container1{
+			border: 1px solid #000;
+		}
+		.left1{
+			background-color: red;
+			width: 150px;
+			float: left;
+		}
+		.right1{
+			background-color: blue;
+			margin-left:150px; 
+		}
+		.buttom1{
+			background-color: yellow;
+			clear: both;
+		}
+		
+		#task614wrap1{
+			float: left;
+			width: 100%;
+			background-color: gray;
+		}
+		#task614left1{
+			width: 200px;
+			background-color: green;
+			float: left;
+			/*拉回上一行，需要用到负边距*/
+			margin-left: -100%;
+		}
+		#task614right1{
+			width: 200px;
+			background-color: red;
+			float: left;
+			margin-left: -200px;
+		}
+		#task614center1{
+			margin: 0 200px;
+		}
+		#task614left2{
+			float: left;
+			background-color: green;
+			width: 200px;
+		}
+		#task614right2{
+			float: right;
+			background-color: red;
+			width: 200px;
+		}
+		#task614center2{
+			background-color: gray;
+			margin: 0 200px;
+		}
+		.item{
+			width: 100px;
+			height: 100px;
+			background-color: gray;
+			float: left;
+			margin: 10px;
+		}
+		.clearfloat{
+			overflow: auto;
+		}
+		.item2{
+			width: 100px;
+			height: 100px;
+			background-color: gray;
+			display: inline-block;
+			margin: 8px;
+		}
+	</style>
 </head>
 <body>
-	<div class="header">
-		<div class="header-content">
-			<div class="header-bottom">
-				<h1 div class="logo">Polande</h1>
-				<ul class="list">
-					<li><a href="index.html">关于</a></li>
-					<li><a href="index.html">作品</a></li>
-					<li><a href="index.html">文章</a></li>
-					<li><a href="index.html">首页</a></li>
-				</ul>
-			</div>
-		</div>
+
+	 <h3>6.1.1用两种方法来实现一个背景色为红色、宽度为960px的&lt;div&gt;在浏览器中居中</h3>
+
+	 <div class="center1">这个是max-width + margin:atuo 的居中，写这么长，是为了测试max-width的效果！！！！！！</div>
+	 <br>
+	 <div  class="t6111container">
+	 	<div class="center2">
+		 	这个是父容器text-align+子元素inline-block居中，这个用的是width，会产生水平滚动条。
+		 </div>
+		<br><br>
+	 </div>
+	 <p>实现效果：无论是div是定宽还是百分比都是响应式效果</p>
+	 <hr>
+
+	<h3>6.1.3用两种不同的方法来实现一个两列布局，其中左侧部分宽度固定、右侧部分宽度随浏览器宽度的变化而自适应变化 </h3>
+	<div class="t613container1">
+		<div class="left1">DIV-A</div>
+		<div class="right1">DIV-B</div>
+		<div class="buttom1">DIV-C</div>
 	</div>
-	<div class="wrap">
-		<div class="artical">
+	<br>
 
-			<div class="section">
-				<div class="info">
-					<div class="cate">
-						CSS
-					</div>
-					<div class="date">4.12 </div>
-				</div>
-				<h3>布局方式的问题</h3>
-				<h4>常用的布局方式</h4>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<div class="artical-info">
-						<span class="author">polandeme</span> 发表于
-						<span class="time">2015年4月16日</span>
-					</div>
+	<h3>6.1.4用两种不同的方式来实现一个三列布局，其中左侧和右侧的部分宽度固定，中间部分宽度随浏览器宽度的变化而自适应变化</h3>
+	<ul>
+		<li>方案一(双飞翼)</li>
+			<div id="task614wrap1">
+				<div id="task614center1">中</div>
 			</div>
-			<div class="section">
-				<div class="info">
-					<div class="cate">
-						CSS
-					</div>
-					<div class="date">4.12 </div>
-				</div>
-				<h3>布局方式的问题</h3>
-				<h4>常用的布局方式</h4>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<div class="artical-info">
-						<span class="author">polandeme</span> 发表于
-						<span class="time">2015年4月16日</span>
-					</div>
-			</div>
+			<div id="task614left1">左</div>
+			<div id="task614right1">右</div>
+			<div style="clear: both;"></div>
+		<li>方案二（左边左浮动，右边右浮动,，中间设置margin）</li>
+		<div id="task614left2">左</div>
+		<div id="task614right2">右</div>
+		<div id="task614center2">中</div>
+		<div style="clear: both;"></div>
+	</ul>
 
-			<div class="section"> 
-				<div class="info">
-					<div class="cate">
-						CSS
-					</div>
-					<div class="date">4.12 </div>
-				</div>
-				<h3>布局方式的问题</h3>
-				<h4>常用的布局方式</h4>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						float方式居中好麻烦，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<p>
-						父元素不包括子元素解决办法，一般是用position布局吗？使用background还是background-color设置背景颜色？reset.css如何更好的利用?论盒子模型的重要性
-					</p>
-					<div class="artical-info">
-						<span class="author">polandeme</span> 发表于
-						<span class="time">2015年4月16日</span>
-					</div>
-			</div>
-			<ul class="page">
-				<li class="pecial first-page">第一页</li>
-				<li class="pecial pre-page">上一页</li>
-				<li class="active"><a href="#" >1</a></li>
-				<li>2</li>
-				<li>2</li>
-				<li>2</li>
-				<li>2</li>
-				<li>2</li>
-				<li>2</li>
-				<li class="pecial next-page">下一页</li>
-				<li class="pecial last-page">最后页</li>
-			</ul>
+	<hr>
+	<h3>6.1.5实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化 </h3>
+	<ul>
+		<li>方案一(float)</li>
+		<div class="clearfloat">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
 		</div>
-		<div class="aside">
-			<div class="search">
-				<input class="search-input" type="text" placeholder="Keywords">
-				<span class="submit btn">GO</span>
-			</div>
-			<div class="category">
-				<ul>
-					<li class="active">
-						<a href="#">HTML</a>
-					</li>
-					<li>
-						<a href="#">CSS</a>
-					</li>
-					<li>
-						<a href="#">Javascript</a>
-					</li>
-					<li>
-						<a href="#">其他文章</a>
-					</li>
-				</ul>
-			</div>
-			<div class="calendar">
-        <div class="cal-content">
-          <div class="cal-header">
-            <span class="pre-month"></span>
-            <span class="cur-month"></span>
-            <span class="next-month"></span>
-          </div>
-        </div>
-      </div>
-		</div>
-	</div>  
+		<li>方案二(inline-block)</li>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+	</ul>
+
 </body>
 </html>
