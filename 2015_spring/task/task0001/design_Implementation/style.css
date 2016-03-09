@@ -1,0 +1,173 @@
+html body{
+	min-width: 960px;
+}
+p{
+	text-indent: 2em;
+	margin-bottom: 10px;
+}
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* header */
+header{
+	background-color: rgb(82,42,92);
+	color: white;
+	position: relative;
+}
+.center{
+	width: 960px;
+	margin: 0 auto;
+}
+header .wrap{
+	position: relative;
+	height: 80px;
+	overflow: auto;
+}
+#logo{
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+}
+header nav{
+	position: absolute;
+	bottom: 5px;
+	right: 0;
+}
+header nav ul{
+	float: right;
+}
+ nav ul li{
+	display: inline;
+	margin-left: 20px;
+	list-style-type: none;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+.github-icon{
+	 position: absolute;
+	 right: 10px;
+	 bottom: 0;
+}
+@media  (max-width: 960px){
+	.github-icon{
+		display: none;
+	}
+}
+
+
+/* banner */
+.banner .wrap{
+	color: white;
+	position: relative;
+}
+.banner img{
+	width: 100%;
+	height: 450px;
+}
+.banner h2{
+	direction: rtl;
+}
+.banner .description{
+	position: absolute;
+	width: 300px;
+	right: 0;
+	bottom: 0;
+	 background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+   	 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(75%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* IE10+ */
+       background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+      padding: 10px 10px 30px;
+}
+
+/*  grid images */
+.hidden{
+	overflow: hidden;
+}
+.gray{
+	background-color: rgb(238,238,238);
+}
+.fontsz0{
+	font-size: 0;
+}
+.grid{
+	font-size: 16px;
+	display: inline-block;
+	width: 29.33%;
+	margin: 1%;
+	padding: 1%;
+	background-color: white;
+	/* 等高布局 */
+	vertical-align:top;
+  	padding-bottom:9999px;
+  	margin-bottom:-9999px;
+
+  	text-align: justify;
+}
+.grid_bottom{
+	height: 100px;
+}
+
+/*个人信息*/
+.personnal_infomation{
+	width: 600px;
+	margin:0 auto;
+	padding-bottom: 50px;
+}
+.name{
+	text-align: center;
+	margin: 30px;
+}
+.face{
+	width: 200px;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	left: 0;
+	top: -30px;
+	border-radius:50%;
+}
+
+/*底部*/
+footer{
+	background-color: #000;
+	padding-bottom: 100px;
+	color: white;
+}
+footer nav{
+	padding: 5px;
+	text-align: center;
+	border-bottom: 1px solid white;
+}
+.link{
+	font-size: 0;
+}
+.link>li{
+	font-size: 20px;
+	display: inline-block;
+	vertical-align:top;
+  	padding-bottom:9999px;
+  	margin-bottom:-9999px;
+	width: 10%;
+	margin-top:20px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.link>li>ul{
+	list-style:none;
+}
+.link>li>ul a{
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+}
+.link>li>ul a:hover{
+	border-bottom: 1px solid white;
+}
