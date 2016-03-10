@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒模型及定位</title>
+	<style>
+
+		.center1{
+			background-color: red;
+			max-width: 960px;
+			margin: auto;
+		}
+
+		 .t6111container{
+			text-align: center;
+		}
+		.center2{
+			background-color: red;
+			display: inline-block;
+			text-align: left;
+			width: 960px;
+			max-width:100%;
+		}
+
+		.t613container1{
+			border: 1px solid #000;
+		}
+		.left1{
+			background-color: red;
+			width: 150px;
+			float: left;
+		}
+		.right1{
+			background-color: blue;
+			margin-left:150px; 
+		}
+		.buttom1{
+			background-color: yellow;
+			clear: both;
+		}
+		
+		#task614wrap1{
+			float: left;
+			width: 100%;
+			background-color: gray;
+		}
+		#task614left1{
+			width: 200px;
+			background-color: green;
+			float: left;
+			/*拉回上一行，需要用到负边距*/
+			margin-left: -100%;
+		}
+		#task614right1{
+			width: 200px;
+			background-color: red;
+			float: left;
+			margin-left: -200px;
+		}
+		#task614center1{
+			margin: 0 200px;
+		}
+		#task614left2{
+			float: left;
+			background-color: green;
+			width: 200px;
+		}
+		#task614right2{
+			float: right;
+			background-color: red;
+			width: 200px;
+		}
+		#task614center2{
+			background-color: gray;
+			margin: 0 200px;
+		}
+		.item{
+			width: 100px;
+			height: 100px;
+			background-color: gray;
+			float: left;
+			margin: 10px;
+		}
+		.clearfloat{
+			overflow: auto;
+		}
+		.item2{
+			width: 100px;
+			height: 100px;
+			background-color: gray;
+			display: inline-block;
+			margin: 8px;
+		}
+	</style>
+</head>
+<body>
+
+	 <h3>6.1.1用两种方法来实现一个背景色为红色、宽度为960px的&lt;div&gt;在浏览器中居中</h3>
+
+	 <div class="center1">这个是max-width + margin:atuo 的居中，写这么长，是为了测试max-width的效果！！！！！！</div>
+	 <br>
+	 <div  class="t6111container">
+	 	<div class="center2">
+		 	这个是父容器text-align+子元素inline-block居中，这个用的是width，会产生水平滚动条。
+		 </div>
+		<br><br>
+	 </div>
+	 <p>实现效果：无论是div是定宽还是百分比都是响应式效果</p>
+	 <hr>
+
+	<h3>6.1.3用两种不同的方法来实现一个两列布局，其中左侧部分宽度固定、右侧部分宽度随浏览器宽度的变化而自适应变化 </h3>
+	<div class="t613container1">
+		<div class="left1">DIV-A</div>
+		<div class="right1">DIV-B</div>
+		<div class="buttom1">DIV-C</div>
+	</div>
+	<br>
+
+	<h3>6.1.4用两种不同的方式来实现一个三列布局，其中左侧和右侧的部分宽度固定，中间部分宽度随浏览器宽度的变化而自适应变化</h3>
+	<ul>
+		<li>方案一(双飞翼)</li>
+			<div id="task614wrap1">
+				<div id="task614center1">中</div>
+			</div>
+			<div id="task614left1">左</div>
+			<div id="task614right1">右</div>
+			<div style="clear: both;"></div>
+		<li>方案二（左边左浮动，右边右浮动,，中间设置margin）</li>
+		<div id="task614left2">左</div>
+		<div id="task614right2">右</div>
+		<div id="task614center2">中</div>
+		<div style="clear: both;"></div>
+	</ul>
+
+	<hr>
+	<h3>6.1.5实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化 </h3>
+	<ul>
+		<li>方案一(float)</li>
+		<div class="clearfloat">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		</div>
+		<li>方案二(inline-block)</li>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+		<div class="item2"></div>
+	</ul>
+
+</body>
+</html>
