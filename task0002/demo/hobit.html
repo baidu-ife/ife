@@ -166,7 +166,7 @@
             var splitString = optionTwo.value;
             source = uniqArray(trims(source).split(splitString));
             for(var i = 0, len = source.length; i < len; i ++) 
-            resultTree.innerHTML += "<li>你输入的爱好是: " + source[i] + "</li>";
+            resultTree.innerHTML += "<li>你输入的爱好是: " + "<input type='checkbox' id=" + source[i]+ "/>" + "<lable for="+ source[i] + ">" + source[i] + "</lable>"  + "</li>";
         }
         btn3.onclick = handler;
     }
