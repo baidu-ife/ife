@@ -2,21 +2,35 @@
 <html lang="zh">
 <head>
 <title>My First Web Site</title>
+<style>
+	ul.oceans, ul.province {width: 400px;}
+	li.open {list-style: circle;}
+	li.close {list-style: disc;}
+	ul.ocean {border: 0.5em blue solid;}
+	ul.province {float:left;}
+</style>
 </head>
 <body>
-
+	<br/>
+	<div style="width:960px; height:20px; background-color: red;display:block;margin-left: 100px"></div>
 	<div style="border:2px dashed blue; width:600px; height:500px">
 		<div>hello world</div>
-		<div style="text-indent: 20px;">hello world, with text-indent</div>
+		<!--缩进-->
+		<div style="text-indent: 20%;">hello world, with text-indent</div>
+		<span style="text-indent: 4em">inlineObj with text-indent, no effect</span>
 		<div style="color:#ccc;">hello world, with color</div>
-		<div style="text-align: right;">hello world, with text-align</div>
+		<!--对齐-->
+		<div style="text-align: center;">hello world, with text-align</div>
 		<div style="font-size: 34px;">hello world, with font-Size 34px</div>
 		<div style="font-family: monospace;">hello world, with font-family</div>
 		<div style="font-weight: bolder;">hello world, with font-weight bolder</div>
 		<div style="font-weight: lighter;">hello world, with font-weight lighter</div>
+		<!--文本装饰-->
 		<div style="text-decoration: underline;">hello world, with text-decoration underline</div>
-		<div style="text-decoration: inherit;">hello world, with text-decoration inherit??</div>
-		<div>hello world</div>
+		<div style="text-decoration: blink;">hello world, with text-decoration blink</div>
+		<div style="text-decoration: line-through;">hello world, with text-decoration line-through</div>
+		<!--字符转换-->
+		<div style="text-transform: capitalize;">hello world, WITH text transform</div>
 
 	</div>
 
