@@ -1,0 +1,427 @@
+*{
+	padding: 0;
+	margin: 0;
+	
+}
+
+ul,li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+body{
+	background: #E2E2E2;
+}
+/*
+ *blog page code for header 
+ */
+.header{
+	position: relative;
+	width: 100%;
+	height: 80px;
+	margin-bottom: 20px;
+	background: #999;
+}
+
+.header-wrap{
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+	height: 80px;
+}
+
+.header-wrap
+.your-logo{
+	position: absolute;
+	bottom: 0px;
+	font: 25px/1.5 "century gothic";
+}
+
+.header-wrap
+.header-nav{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.header-wrap
+.header-nav
+li{
+	float: left;
+	margin: 5px 10px;
+}
+
+.header-wrap
+.header-nav
+a{
+	font: 15px/1.5 "century gothic";
+	color: #000;
+}
+
+.header
+.github-icon{
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+}
+
+.blog-center{
+	margin: 0 auto;
+	width: 980px;
+	
+}
+
+.blog-content{
+	width: 700px;
+	float: left;
+	margin-bottom: 50px;
+}
+
+.blog-content
+.blog-post{
+	padding: 20px;
+	margin-bottom: 15px;
+	background-color:#fff ;
+	position: relative;
+}
+
+.blog-content
+.blog-post
+h1{
+	font: 16px/1.5 "century gothic";	
+	color: burlywood;
+}
+
+.blog-content
+.blog-post
+h2{
+	font: 14px/1.5 "century gothic";	
+	margin-bottom: 15px;
+}
+
+.blog-content
+.blog-post
+p{
+	font: 12px/1.5 "century gothic";
+}
+
+.blog-content
+.blog-post
+section{
+	margin-top: 20px ;
+	font-size: 12px;
+	text-align: right;
+	color: #888;
+}
+
+.blog-content
+.blog-post
+.post-tag{
+	position: absolute;
+	top: 30px;
+	left: -50px;
+	width: 50px;
+	height: 80px;
+	
+	text-align: center;
+	background: #888;
+}
+
+.blog-content
+.blog-post
+.tag-data{
+	height: 40px;
+	line-height:40px ;
+	font-size: 14px;
+	background-color: burlywood;
+	cursor: pointer;
+}
+
+.blog-content
+.blog-post
+.tag-type{
+	height: 40px;
+	line-height:40px ;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.blog-center
+.number-wrap{
+	text-align: center;
+	
+}
+
+.blog-center
+ul{
+	position: relative;
+	float: left;
+	left: 50%;
+}
+
+.blog-center
+.number-wrap
+li{
+	position: relative;
+	float: left;
+	margin: 0 5px;
+	right: 50%;
+	padding:10px 15px;
+	background: #fff;
+}
+
+.blog-center
+.number-wrap
+li:hover{
+	background-color:darkkhaki ;
+}
+
+.blog-center
+.number-wrap
+a{
+	font: 14px/1.5 "微软雅黑";
+	color: #000;
+}
+
+.blog-center
+.number-wrap
+.number-invalid
+a{
+	color: #888;
+}
+
+.sidebar{
+	float: right;
+	width:260px;
+}
+
+.side-search{
+	padding: 25px;
+	background-color: #fff;
+	margin-bottom:15px ;
+}
+
+.search-box{
+	position: relative;
+	border: 1px solid #E2E2E2;
+	height: 40px;
+	
+}
+
+.search-box:hover{
+	border-color: #000;
+}
+
+.search-box
+.search-text{
+	height: 40px;
+	width: 163px;
+	border: none;
+	outline: none;
+	background: url(../img/search.png) no-repeat;
+}
+
+.search-box
+.search-text:focus{
+	background-image: none;
+}
+
+.search-box
+.search-icon{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50px;
+	height: 40px;
+	border: none;
+	background-color: #E2E2E2;
+}
+
+.search-box
+.search-icon:hover{
+	background-color: #888;
+}
+
+.side-type{
+	margin-bottom: 15px;
+}
+
+.side-type
+a{
+	text-indent: 2em;
+	display: block;
+	width: 254px;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+	border-width:0 0 1px 5px;
+	border-color: aquamarine;
+	border-style: solid;
+	background-color: #fff;
+}
+
+.side-type
+#type-invalid{
+	border-bottom-width: 0px;
+	
+}
+
+.side-type
+a:hover{
+	color: #666;
+	border-left-color: #888888;
+}
+
+.side-calendar{
+	background-color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.side-calendar
+table{
+	border-collapse: collapse;
+}
+
+.side-calendar
+tr{
+	width: 260px;
+	
+	font: 13px/1.5 "微软雅黑";
+	color:#999;;
+}
+
+.side-calendar
+td{
+	width: 30px;
+	height: 35px;
+}
+.calendar-bottom{
+	
+	border-bottom: 1px solid #E2E2E2;
+}
+
+.side-calendar
+.calendar-dark{
+	color: #999;
+	font-weight: bold;
+}
+
+.calendar-bg{
+	background-color: #DEB887;
+	color: #fff;
+}
+
+.calendar-now{
+	color:#DEB887 ;
+	font-weight: bold;
+}
+
+.side-tag{
+	margin-top: 15px;
+	padding: 20px;
+	background-color: #fff;
+	font: 13px/1.5 "微软雅黑";
+	color: #DEB887;
+}
+
+.side-tag
+h1{
+	font: 15px/1.2 "微软雅黑";
+	margin-bottom: 10px;
+	color: #666;
+}
+
+.side-tag
+.tag-more{
+	font: 25px/1.5 "微软雅黑";
+	color: #DEB887;
+	font-weight: bold;
+}
+
+.side-tag
+.tag-less{
+	font: 20px/1.5 "微软雅黑";
+	
+}
+
+.footer{
+	margin-top: 50px;
+	clear: both;
+	background-color: black;
+	overflow: hidden;
+}
+
+.footer-nav{
+	width: 100%;
+	border-bottom: 1px solid #fff;
+	overflow: hidden;
+}
+
+.footer-nav
+ul{
+	
+	position: relative;
+	left: 50%;
+	float: left;
+}
+
+.footer-nav
+li{
+	float: left;
+	position: relative;
+	margin:10px 0 10px 15px;
+	right: 50%;
+	
+}
+
+.footer-nav
+a{
+	font: 12px/1.5 "微软雅黑";
+	color: #fff;
+	cursor: pointer;
+}
+
+.footer-link{
+	clear: both;
+	margin: 0 auto;
+	width: 980px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.footer-link
+h2{
+	margin-bottom: 20px;
+	color: #fff;
+	font: 12px/1.5 "微软雅黑";
+	cursor: pointer;
+}
+
+.footer-link
+a{
+	cursor: pointer;
+	color: #fff;
+	font: 12px/1.5 "微软雅黑";
+}
+
+.link-item{
+	width: 200px;
+	float: left;
+	margin: 30px 20px 40px 20px;
+}
+
+.footer
+.copyright{
+	text-align: center;
+}
+
+.footer
+.copyright
+P{
+	margin-bottom: 20px;
+	font: 14px/1.5 "century gothic";
+	color: #fff;
+}
