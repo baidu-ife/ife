@@ -1,0 +1,305 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//0.1   basic var
+	/*
+	var test;
+	alert(test);  //alert undefined
+	alert(test1); //reference error
+
+	var num1 = Number("123");
+	var num2 = Number("011");
+	var num3 = Number("88DD");
+	var num4 = Number(true);
+	var num5 = Number(false);
+	var num6 = Number("0xA");
+
+	var p_num11 = parseInt("22.2");
+	var p_num2 = parseInt("111dd");
+	var p_num3 = parseInt("0xF");
+
+	//character represented by hexadecimal code nn
+	console.log("this is character: \x61");
+
+	var result1 = ("55" == 55); //equal type conversion
+	var result2 = ("55" === 55); //identically equal: no conversion
+	*/
+
+//0.2 arguements
+	/*
+	for(propName in window)
+	{
+		console.log(propName);
+	}
+	
+
+	function howManyArgs()
+	{
+		alert(arguments.length);
+	}
+
+	howManyArgs("hello", "world");
+
+	function addParas(arg1, arg2)
+	{
+		alert("arguments:" + arguments[0] + " " +arguments[1]);
+		alert("name arg:" + arg1+ " " + arg2);
+	}
+
+	//addParas("hello","world");
+	//addParas("hello","","third");
+
+	function addAndUpdate(arg1, arg2)
+	{
+		console.log("arguments:" + arguments[0] + " " +arguments[1]);
+
+		console.log("name arg:" + arg1+ " " + arg2);
+
+		console.log("arg1 changed to new");
+
+		arg1 = "new";
+
+		console.log("arguments:" + arguments[0] + " " +arguments[1]);
+
+		console.log("name arg:" + arg1+ " " + arg2);
+
+		console.log("arguments[1] changed to new2");
+
+		arguments[1] = "new2"
+
+		console.log("arguments:" + arguments[0] + " " +arguments[1]);
+
+		console.log("name arg:" + arg1+ " " + arg2);
+	}
+	var input1 = "first";
+	var input2 = "second";
+	addAndUpdate(input1, input2);
+	console.log("original input: " + input1 + " " + input2);
+	//conclusion
+	//arguments and name arguement指向相同内存地址，一改俱改
+	//值传递，不改变原有传入参数
+	*/
+
+//0.3 typeof
+	/*
+	var myName = "qijian";
+	var myEmpty =  null;
+	var myUndefine;
+	var myNum = 12.33;
+	console.log(typeof myName);
+	console.log(typeof myEmpty);
+	console.log(typeof myUndefine);
+	console.log(typeof myNew);
+	console.log(typeof myNum);
+	*/
+
+//0.4 Array
+
+/*
+	// basic points
+	var colors = ["red","bule","","green"];
+	console.log("color length: " + colors.length);
+
+	var colors2 = new Array("balck","white","yellow");
+	console.log("color length: " + colors2.length);
+
+	console.log("colors[0]: " + colors[0]);
+	colors[0] = "newcolor";
+	for(var i = 0; i < colors.length; i++)
+	{
+		console.log("colors: " + colors[i]);
+	}
+	colors.length = 1;
+	console.log("after cutdown to 1:");
+	for(var i = 0; i < colors.length; i++)
+	{
+		console.log("colors: " + colors[i]);
+	}
+	console.log("returen to 3:");
+	colors.length = 3;
+	for(var i = 0; i < colors.length; i++)
+	{
+		console.log("colors: " + colors[i]);
+	}
+
+	//conclusion:
+	//数组长度被截短后，其后的数据丢失，不能通过恢复长度来找回原有数据
+	var empty = [];
+	var empty2 = new Array();
+	var empty3 = new Array(5);
+
+	console.log("empty 1 2 3: " + empty.length + " " + empty2.length +" "+empty3.length);
+
+	//judge the type of array
+	var typeArray1 = new Array();  //true, object
+	var typeArray2 = [];  //true , object
+	var type3 = function(){};  //false function
+	var type4 = null;  //false object
+	var type5 = new Object();
+	console.log("instance of: " + typeArray1 instanceof Array);  //wrong method
+	console.log("judege is the type of Array: " + Array.isArray(typeArray1) + " type is: " + typeof typeArray1);
+	//conclusion:
+	//user the method: Array.isArray(targetObj)
+
+	//toString, valueof
+	var array1 = ["hello",,"world"];
+	var array2 = [12306, 12308, 119];
+	console.log(array1.toString() + " | " + array1.valueOf());
+	console.log(array2.toString() + " | " + array2.valueOf());
+	//默认方法，将每一项输出（字符串形式），以逗号分隔
+
+	console.log("by join() " + array1.join("|"));
+
+	//stack operation
+	var stack = ["num1","num2","num3"];
+	console.log(stack.join());
+	stack.push("last");
+	console.log("after push(): " + stack.join() + " with length: " + stack.length);
+	stack.pop();
+	var lastSecond = stack.pop();
+	console.log("last two element: " + lastSecond + " with stack: " + stack.join());
+
+	//queue mothod
+	//shitf(), unshift(), push()
+	var queue = ["num1","num2","num3"];
+	console.log("origin: " + queue.join());
+	queue.push("new last");
+	console.log("after push: " + queue.join());
+	console.log("after shift: " + queue.shift() + " with length: " + queue.length + " as " + queue.toString());
+	queue.unshift("newhead");
+	console.log("after unshift with length: " + queue.length + " as " + queue.toString());
+
+
+	//sort,reverse
+	var sort = [123, 1, 7, 18];
+	console.log("before reverse: " + sort.toString());
+	sort.reverse();
+	console.log("after reverse: " + sort.toString());
+	
+	sort.sort();
+	console.log("after sort: " + sort.toString());
+	sort.reverse();
+	console.log("after reverse: " + sort.toString());
+
+	var advSort = [123, 1, 7, 18, 299];
+	var cmp = function(v1, v2){
+		return v1-v2;
+	}
+	console.log("before sort: " + advSort.toString());
+	advSort.sort(cmp); //define a function to guide sort
+	console.log("after sort: " + advSort.toString());
+	//conclude:
+	//默认使用字符顺序排序，可以通过指定排序函数来实现按数值排序
+
+
+	//concat, slice
+	//均不回影响原来的数组，而是构造返回新数组
+	var concats = ["yellow", "blue", "green"];
+	console.log(concats.concat("new 1", "new 2", ["group1", "gropu2", "group3"])); //allow unit element or another array
+	console.log("after concat(): " + concats);
+
+	console.log(concats.slice(0,2)); //begin and end position(not include, [) )
+	console.log("after slice(): " + concats);
+
+	//splice
+	//删除，插入，替换，返回被删除或替换的元素
+	var data1 = [1, 2, 3, 4, 5];
+	var res;
+	res = data1.splice(1,2); //begin position and length, two params: for delete
+	console.log("after splice(): " + data1 + " with delete: " + res);
+	var data2 = [1, 2, 3, 4, 5];
+	res = data2.splice(1,3,"new1","new2",["g1","g2"]); //more than 2 params: for insert or replace, according to second param, if == 0: insert, if > 0: replace
+	console.log("after splice(): " + data2 + " with delete: " + res);
+	//conclude:
+	//需要根据参数个数来决定函数的功能，2个参数为删除，3个以上参数为插入或替换
+	//注意，第一个参数为起始位置，第二个参数为删除的项数
+
+	//get the postion
+	var data3 =[1, 2, 3, 4, 5, 4, 3, 2, 1];
+	console.log(data3.indexOf(4));
+	console.log("wrong type: " + data3.indexOf("4")); //strict equals, -1:not found
+	console.log("with a start position: " + data3.indexOf(4, 4)); //set a start position, search from start
+	console.log("lastIndexOf: " + data3.lastIndexOf(4));
+	console.log("lastIndexOf with a start position: " + data3.lastIndexOf(4, 2)); //set a start position, search from end
+	//conclusion:
+	//搜索指定的内容(严格匹配)，找到则返回所在下标，找不到则返回－1
+	//indexof：从前向后搜索（可以指定起始位置）
+	//lastindexof：从后向前搜索，同样可以指定起始位置
+
+	//迭代
+	var data4 = [1,2,3,4,5,4,3,2,1];
+	var everyResult = data4.every(function(item, index, array){
+		//every item in array return true, the whole method return true
+
+		//item = array[index];
+		console.log("NO: " + index + " with value: " + item +" use index: " + array[index]);
+		return (item > 2);
+	});
+	console.log("everyResult: " + everyResult);
+	//conclusion:
+	// every(): 类似于and操作，所有项均为true时，返回true
+	// 当某一项出现false时，迭代结束，不再进行
+
+	var someResult = data4.some(function(item, index, array){
+		//any item in array return true, the whole method return true
+
+		//item = array[index];
+		console.log("NO: " + index + " with value: " + item +" use index: " + array[index]);
+		return (item > 2);
+	});
+	//conclusion:
+	// some(): 类似于or操作，任意一项均为true时，返回true
+	// 当某一项出现true时，迭代结束，不再进行
+
+	console.log("someResult: " + someResult);
+
+	var filterResult = data4.filter(function(item, index, array){
+		console.log("NO: " + index + " with value: " + item +" use index: " + array[index]);
+		return (item > 2);
+	});
+	console.log("Result: " + filterResult.toString());
+	//conclusion:
+	//filter():  返回由true结构对应数组项构成的新数组
+	//每一个数组项的处理函数均会执行
+
+	var mapResult = data4.map(function(item, index, array){
+		console.log("NO: " + index + " with value: " + item +" use index: " + array[index]);
+		return (item + 10);
+	});
+	console.log("Result: " + mapResult.toString());
+	//conclusion:
+	//map: 返回每个数组项函数执行结果构成的新数组，
+	//每个数组项对应的处理函数均会执行
+
+	//forEach():对每个数组项执行处理函数，无返回值
+	//每个数组项对应的处理函数均会执行
+
+	//缩小方法
+	//reduce(), reduceRight()
+	var data5 = [1,2,3,5,6];
+	var sum = data5.reduce(function(pre, cur, index , array){
+		//
+		return pre + cur;
+	});
+	var product = data5.reduceRight(function(pre, cur, index, array){
+		return pre * cur;
+	});
+	console.log("sum: " + sum);
+	console.log("prod: " + product);
+	//conclusion:
+	//从第二项开始逐个执行处理函数，pre为上一个执行函数的返回值，cur为当前数组项
+	//reduceRight为从右向左执行
+
+*/
+
+//0.5 Date
+	
+	</script>
+</body>
+</html>
