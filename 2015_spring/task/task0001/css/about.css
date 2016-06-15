@@ -72,14 +72,14 @@ a{
  */
 
 .content{
-	margin: 0 auto;
+	margin: 60px auto 0px;
 	width: 980px;
 }
 
 .content-left{
 	float: left;
 	width: 485px;
-	height: 1072px;
+	height: 1330px;
 	background: #fff;
 }
 
