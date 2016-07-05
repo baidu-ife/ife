@@ -3,29 +3,114 @@
 <head>
 	<title>Task 0001A</title>
 	<style type="text/css">
-	body {width:800px;}
-	#oceans, #province {border: 0.5em blue solid; width: 200px;padding-left: 2em;}
-	#province {float: left;}
+		#t1m1 {
+			width:960px;
+			margin:0 auto;
+			background-color: red;
+		}
+
+		#sm1 , #sm1_left, #sm1_right {
+			min-height: 100px;
+			position: relative;
+			float: left;
+		}
+
+		#sm1 {
+			padding: 0 0 0 200px;
+		}
+
+		#sm1_right {
+			width:100%;
+			background-color: red;
+		}
+
+		#sm1_left {
+			width:200px;
+			margin-left: -100%;
+			left:-200px;
+			background-color: blue;
+		}
+		#sm1_buttom {
+			background-color: #ccc;
+			clear:both;
+			width:100%;
+		}
+
+		#sm2, #sm2_right, #sm2_left {
+			float:left;
+			min-height: 100px;
+		}
+
+		#sm2_right {
+			width:100%;
+			background-color: red;
+		}
+
+		#sm2_left {
+			width: 200px;
+			margin-left: -100%;
+			background-color: blue;
+		}
+
+		#sm2_right_content {
+			padding-left: 200px;
+		}
+
+		#sm2_buttom {
+			background-color: #ccc;
+			clear: both;
+		}
+
+		#dynaDiv {
+			background-color: red;
+		}
+		.dyna {
+			background-color: blue;
+			width:220px;
+			height:180px;
+			margin:10px 10px;
+			float:left;
+		}
 	</style>
 </head>
-<body>
+<body> 
+<h1>task1 method 1</h1>
+<div id="t1m1">hello world</div>
+<div id="t1m2">how to set div at center</div>
 
-	<h3 >The oceans</h3>
-	<div id="oceans">
-	<ul class="ocean">
-  	<li class="open">Lorem ipsum</li>
-  	<li class="closed">Dolor sit</li>
-  	<li class="closed">Amet consectetuer</li>
-  	<li class="open">Magna aliquam</li>
-  	<li class="closed">Autem veleum</li>
-	</ul>
-	</div>
+<hr/>
+<hr/>
+<h3>left solid right dynamic</h3>
+<div id="sm1">
+	<div id="sm1_right">right right right right right right right right right right right right</div>
+	<div id="sm1_left">left left</div>
+</div>
+<div id="sm1_buttom">footer</div>
 
-	<h3>The provice</h3>
-	<div id="province">
-	<p>Fujian</p>
-	<p>Sichuan</p>
-	<p>Hunan</p>
+<hr/>
+<hr/>
+<h3>left solid right dynamic -taobao method</h3>
+<div id="sm2">
+	<div id="sm2_right">
+		<div id="sm2_right_content">
+		right right right right right right right right right right right right
+		</div>
 	</div>
+	<div id="sm2_left">left left</div>
+</div>
+<div id="sm2_buttom">footer</div>
+
+<hr/>
+<hr/>
+<div id="dynaDiv">
+	<div class="dyna">hello</div>
+	<div class="dyna">wrold</div>
+	<div class="dyna">you</div>
+	<div class="dyna">are</div>
+	<div class="dyna">my</div>
+	<div class="dyna">love</div>
+	<div class="dyna">lvoe</div>
+	<div class="dyna">levo</div>
+</div>
 </body>
 </html>

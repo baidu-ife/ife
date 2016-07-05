@@ -1,0 +1,197 @@
+strong { color: red; }
+.carrot { color: orange; }
+.spinach { color: green; }
+#first { font-style: italic; }
+#second,#first {color:blue;}
+
+a.homepage:link, a.homepage:visited {
+  padding: 1px 10px 1px 10px;
+  color: #fff;
+  background: #555;
+  border-radius: 3px;
+  border: 1px outset rgba(50,50,50,.5);
+  font-family: georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+  text-decoration: none;
+}
+
+a.homepage:hover, a.homepage:focus, a.homepage:active {
+  background-color: green;
+}
+
+div.menu-bar ul ul {
+  display: none;
+}
+
+div.menu-bar li:hover > ul {
+  display: block;
+}
+
+.ref:before {
+  font-weight: bold;
+  color: navy;
+  content: "This is new Add content: ";
+}
+
+.ref:after{
+	color: red;
+	content: " this is after type!";
+}
+
+h3.numbered {counter-reset: mynum;}
+ 
+p.numbered:before {
+  content: counter(mynum) ": ";
+  counter-increment: mynum;
+  font-weight: bold;
+}
+
+#oceans {
+	counter-reset: myct;
+}
+
+#oceans +ul li:before{
+	content: "("counter(myct, lower-roman)")";
+	counter-increment: myct;
+}
+
+h3 {border-top: 1px solid gray;}
+
+li {
+	margin-bottom: 8px;
+}
+
+h3 + ul{
+	border: 5px #77e solid;
+	margin-left: 30px;
+	padding-left: 30px;
+}
+
+#numbered {
+  font-size: 30px;
+  border: 1em solid #69b;
+  border-left: 10px solid red;
+  padding-right:1em;
+}
+
+#test_align {
+  border-top: 1px solid gray;
+  text-align: center;
+}
+
+#parent-div {
+  position: relative;
+  top: 0px;
+  left:0px;
+  font: bold 200% sans-serif;
+}
+
+#forward {
+  color: blue;
+}
+
+#back {
+  color: red;
+}
+
+#forward, #back {
+  position: absolute;
+  margin:0px; /* no margin around the elements */
+  top: 0px; /* distance from top */
+  left: 0px; /* distance from left */
+}
+
+
+#demo-table {
+  font: 100% sans-serif;
+  background-color: #efe;
+  border-collapse: collapse;
+  empty-cells: show;
+  border: 1px solid #ccc;
+}
+
+#demo-table > caption {
+  text-align: right;
+  font-weight: bold;
+  font-size: 200%;
+  border-top: .2em solid #4ca;
+  margin-top: .5em;
+  caption-side: bottom;
+}
+/* header */
+#demo-table > thead > tr:first-child > th {
+  text-align: left;
+  color: blue;
+}
+
+#demo-table > thead > tr + tr > th {
+  font-style: italic;
+  text-align: left;
+  color: gray;
+}
+
+/* fix size of superscript */
+#demo-table  sup {
+  font-size: 75%;
+}
+
+#demo-table > thead th {
+	border: 1px solid #ccc;
+}
+
+/* body */
+#demo-table td {
+  text-align: right
+  background-color: #cef;
+  padding:.5em .5em .5em 3em;
+}
+
+#demo-table tbody th:after {
+  content: ":";
+}
+
+#demo-table tbody th{
+	text-align:left;
+	border: 1px solid #ccc;
+}
+
+#demo-table tbody td {
+	  border: 1px solid green;
+}
+/* footer */
+#demo-table tfoot {
+  font-weight: bold;
+}
+
+#demo-table tfoot th {
+	text-align:left;
+  color: blue;
+  border: 1px solid #ccc;
+}
+
+#demo-table tfoot th:after {
+  content: ":";
+}
+
+#demo-table tfoot tr:last-child th:after{
+	content:"";
+}
+
+#demo-table > tfoot > tr:last-child td{
+	border:none;
+	background-color: #efe;
+}
+
+#demo-table > tfoot > tr:last-child th{
+	border-right:none;
+}
+
+#demo-table > tfoot td {
+  background-color: #cee;
+  border: 1px solid #ccc;
+}
+
+#demo-table > tfoot > tr:first-child td {
+  border-top: .2em solid #7a7;
+}

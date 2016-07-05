@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+   		body{min-width: 700px;}
+   		.header,
+    	.footer{ 
+       		 border: 1px solid #333;
+        	background: #aaa;
+        	text-align: center;
+    	}
+
+    	/*
+    		两侧固定宽度，中间随流浪器大小变化
+   			圣杯
+   			1、设置middle，left，right为float left，三者的父元素居中区域；
+   			2、首先将middle的宽度设为100%；
+   			3、其次，将left通过margin－left：－100％将left放到中间区域左靠齐，再用position：relative  left:-宽度 将其移动至左侧空白区域；
+   			4、再次，将right通过margin－left放在中间区域右靠齐，在用position relative right:-宽度 将其移动至右侧空白区域
+   			
+    	*/
+    	.middle, .left, .right {
+    		position: relative;
+    		float: left;
+    		min-height: 130px;
+    	}
+
+    	.container{
+        	padding:0 220px 0 200px;
+        	overflow: hidden;
+    	}
+    	.middle {
+    		background-color: red;
+    		width:100%;
+    		float:left;
+    	}
+
+    	.left {
+    		background-color: #ccc;
+    		width:200px;
+    		margin-left:-100%;
+    		left:-200px;
+    	}
+
+    	.right {
+    		background-color: green;
+    		width:220px;
+    		margin-left:-220px;
+    		right:-220px;
+    	}
+    	 .footer{ 
+       		clear: both;
+   		}
+
+   		/* 
+   			两侧固定宽度，中间随流浪器大小变化
+   			淘宝－双飞翼
+   			1、首先main（中间）占100%；
+   			2、其次，将sub放到左边，margin－left：100％；
+   			3、再次，将extra放到右边，margin－left：－宽度；
+   			4、最后，因为main的左右两侧被sub，extra占据，因此给其增加一个内部子元素，
+   				子元素通过padding：0 右宽 0 左宽 来调整内容范围
+   				*/
+   		.main, .sub, .extra {
+   			float:left;
+   			min-height: 100px;
+   		}
+
+   		.main {
+   			width:100%;
+   			background-color: blue;
+   		}
+
+   		.sub {
+   			margin-left:-100%;
+   			background-color: red;
+   			width:200px;
+   		}
+
+   		.extra {
+   			width: 220px;
+   			margin-left:-220px;
+   			background-color: green;
+   		}
+
+   		.main .mainContent {
+   			padding: 0 220px 0 200px;
+   		}
+	</style>
+</head>
+<body> 
+<div class="header">
+    <h4>header</h4>
+</div>
+<div class="container">
+    <div class="middle">
+        <h4>middle</h4>
+        <p>MianContentMianContentMianContentMianContent
+        MianContentMianContentMianContentMianContentMianContent
+        MianContentMianContent
+        </p>
+    </div>
+    <div class="left">
+    <h4>left</h4>
+        <p>oooooooooooooo
+        0000000000000000
+        00000000000000000
+        ooooooooooooooo
+        ooooooooooooooo
+    </p>
+    </div>
+    <div class="right">
+    <h4>right</h4>
+        <p>BBBBBBBBBBBBBB
+        888888888888888888
+        BBBBBBBBBBBBBBBBBB
+        88888888888888888888</p>
+    </div>
+    </div>
+    <div class="footer">
+        <h4>footer</h4>
+    </div>
+
+    <hr/>
+    <hr/>
+    <div class="main">
+    	<div class="mainContent">Main Main Main Main Main Main Main Main Main</div>
+    </div>
+    <div class="sub">sub sub sub sub sub sub sub sub sub</div>
+    <div class="extra">extra extra extra extra extra extra </div>
+</body>
+</html>
