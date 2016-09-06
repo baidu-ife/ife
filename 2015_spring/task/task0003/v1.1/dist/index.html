@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Aralic's To do list</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="header-title">Aralic's To Do List</h1>        
+    </div>
+    <div class="container">
+        <div class="type" id="root">
+            <h3 class="catalog-all">所有任务<span>(0)</span></h3>
+            <h4 class="catalog-items">分类列表</h4>
+            <ul class="catalog" id="catalog">
+            </ul>
+            <div class="add-catalog1">
+                <div>
+                    <i class="iconfont">&#xe600;</i><button>新增分类</button>
+                </div>
+            </div>
+        </div>
+        <!-- 中间栏 -->
+        <div class="task">
+            <div class="tab-head">
+                <button class="active">所有</button>
+                <button>未完成</button>
+                <button>已完成</button>
+            </div>
+            <div class="tab-con">
+                <div class="items active" id="allTaskList"></div>
+                <div class="items" id="unDoneTaskList"></div>
+                <div class="items" id="doneTaskList"></div>
+            </div>
+            <div class="add-new-task">
+                <div>
+                    <i class="iconfont">&#xe600;</i><button>新增任务</button>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="details">
+            <div class="right-top">
+                <input class="task-title" type="text" disabled>
+                <button class="iconfont task-done" title="完成任务">&#xe604;</button>
+                <button class="iconfont task-edit" title="修改任务">&#xe601;</button>
+                <div class="task-btn hide">
+                    <div class="confirm-save">
+                        <i class="iconfont">&#xe604;</i><button>保存任务</button>
+                    </div>
+                    <div class="cancel-save">
+                        <i class="iconfont">&#xe60d;</i><button>取消修改</button>
+                    </div>
+                </div>
+            </div>
+            <div class="task-date">
+                <label>任务日期</label>
+                <input type="text" disabled>
+                <p class="task-error-tip"></p>
+            </div>
+            <div class="task-content">
+                <textarea class="task-input" disabled></textarea>
+            </div>
+            
+        </div>
+    </div>
+    <!-- 右键自定义菜单 -->
+    <div class="context-menu hide">
+        <button class="add-catalog2">添加分类</button>
+        <button class="remove-catalog2">删除分类</button>
+    </div>
+   
+    <div id="dialog" class="hide">
+        <p class="dialog-title">请输入您添加类目的名称</p>
+        <input type="text" id="input-text">
+        <button id="confirm">确认</button>
+        <button id="cancel">取消</button>
+    </div>
+    <div id="mask" class="hide"></div>
+
+    <script type="text/javascript" src="js/require.js" data-main="js/main"></script>
+</body>
+</html>

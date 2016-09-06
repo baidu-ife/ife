@@ -1,0 +1,588 @@
+/*reset*/
+body,ul,li,h1,dl,dt,dd,p {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+    font: 14px/1.8 "宋体";
+    min-width: 800px;
+    min-height: 600px;
+}
+
+img {
+    vertical-align: top;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+/* icon小图标 */
+@font-face {font-family: 'iconfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*show hide*/
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 58px;
+}
+/*header*/
+.header-title {
+    color: #999;
+    font:16px/58px "Arial";
+    text-indent: 26px;
+    border: 1px solid #789cd6;
+    color: #2251a3;
+    background: #8dbcf0;
+}
+
+.container { 
+    position: absolute;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.type,
+.task {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 229px;
+    background: #f2f2f2;
+}
+
+.type {
+    background: #cee4fb;
+    margin-left: 1px;
+}
+
+.task {
+    left: 230px;
+    border-left: 1px solid #8699aa;
+    border-right: 1px solid #8699aa;
+    background: #cee4fb;
+}
+
+.details {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 461px;
+    background: #fff;
+}
+
+/*左侧目录*/
+.all-task {
+    height: 34px;
+    margin-top: 17px;
+}
+.type .catalog-all,
+.type .catalog-items {
+    color: #000;
+    font-size: 14px;
+    font-weight: normal;
+    text-indent: 10px;
+}
+
+.catalog-items {
+    height: 14px;
+    line-height: 14px;
+    margin-bottom: 12px;
+}
+
+.catalog {
+    text-indent: 10px;
+}
+
+.catalog1 {
+    cursor: pointer;
+}
+
+.catalog1 .iconfont {
+    color: #000a6b;
+}
+
+.catalog1 ul,
+.catalog1 li {
+    padding-left: 5px;
+
+}
+
+.catalog .active>div,
+.list-item:hover {
+    background-color: #fff;
+}
+
+.list-item:hover >.arrow {
+    display: inline;
+}
+
+
+.list-item .title {
+    padding: 0 10px;
+}
+.arrow {
+    display: none;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-color: #000 transparent transparent transparent;
+    border-style: solid;
+    float: right; 
+    margin: 10px 10px 0 0;
+}
+
+
+.add-catalog1,
+.add-new-task {
+    width: 229px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #ccc;
+}
+
+.add-catalog1 div,
+.add-new-task div{   
+    height: 22px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.add-catalog1 button,
+.add-new-task button{
+    font-size: 16px;
+}
+
+/*中间部分*/
+.tab-head { 
+    height: 40px;
+    line-height: 40px;
+}
+
+.tab-head button {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 8px;
+}
+
+.tab-head .active,
+.tab-head button:hover {
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.tab-con {
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #7c93a1;
+    background: #fff;
+}
+
+.tab-con .items {
+    display: none;
+}
+
+.tab-con .active {
+    display: block;
+}
+
+.tab-con dt {
+    background: #e8f6f7;
+}
+.tab-con dt,
+.tab-con dd{
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    text-indent: 20px;
+}
+
+.tab-con dd {
+    text-indent: 34px;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.tab-con dd:hover {
+    background: #1bacd6;
+    cursor: pointer;
+}
+
+.tab-con dd.on {
+    background: #1bacd6;
+}
+
+.tab-con .done {
+    color: #0ef10e;
+}
+
+/*右侧*/
+.details .right-top {
+    height: 51px;
+    border-bottom: 1px solid #ccc;
+    background: #cee4fb;
+}
+.task-title {
+    width: 360px;
+    height: 30px;
+    text-indent: 16px;
+    font: 16px/30px 700;
+    margin: 10px 0 0 20px;
+}
+
+.task-title:focus {
+    background: #fff;
+}
+
+.task-done,
+.task-edit {
+    width: 26px;
+    height: 26px;
+    float: right;
+    margin-right: 20px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.editing {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.task-date {
+    height: 51px;
+    line-height: 51px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 16px;
+    background: #eaf6f6;
+}
+
+.task-date input {
+    width: 160px;
+    height: 30px;
+    font: 16px/30px 700;
+    margin-left: 20px;
+}
+
+.task-date input:focus {
+    border: 1px solid #7d999d;
+}
+
+.task-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 104px;
+    bottom: 41px;
+}
+
+.task-input {
+    width: 96%;
+    height: 90%;
+    margin: 20px;
+    background: #fff;
+    border: none;
+    outline: none;
+}
+
+.task-error-tip {
+    float: right;
+    padding-right: 100px;
+    line-height: 51px;
+    color: red;
+    font-size: 14px;
+}
+
+/*保存任务，取消保存两个按钮 默认隐藏*/
+.task-btn {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    width: 200px;
+    height: 50px;
+    bottom: 0;
+    line-height: 50px;
+    background: #cee4fb;
+}
+
+.task-btn button {
+    font-size: 16px;
+}
+
+.confirm-save {
+    float: left;
+}
+
+.cancel-save {
+    float: right;
+}
+
+/*弹窗透明遮罩*/
+#mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.4;
+    filter:alpha(opacity=40);
+    z-index: 2333;
+}
+
+#dialog {
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -200px;
+    z-index: 9999;
+    text-align: center;
+    border-radius: 10px;
+    background: #8dbcf0;
+}
+
+.dialog-title {
+    height: 50px;
+    font: 140px/50px;
+    color: #fff;
+}
+
+#input-text {
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    margin-left: -100px;
+    background: #fff;
+}
+
+#confirm,
+#cancel {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+#confirm {
+    left: 100px;
+    bottom: 10px;
+}
+
+#cancel {
+    right: 100px;
+    bottom: 10px;
+}
+
+/*右键自定义菜单*/
+.context-menu {
+    width: 70px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #8dbcf0;
+}
+
+.add-catalog2,
+.remove-catalog2 {
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.context-menu button:hover {
+    color: #000;
+    background: #c0def8;
+}
+
+
+/* 动画库 from mobilebone 参考自@DIYgod*/
+.slide.out, .slide.in {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 400ms;
+}
+ 
+.slide.in {
+    -webkit-animation-name: slideinfromright;
+}
+ 
+.slide.out {
+    -webkit-animation-name: slideouttoleft;
+}
+ 
+.slide.reverse.out {
+    -webkit-animation-name: slideouttoright;
+}
+ 
+.slide.reverse.in {
+    -webkit-animation-name: slideinfromleft;
+}
+ 
+/* keyframes for slidein from sides */
+@-webkit-keyframes slideinfromright {
+    from {
+        -webkit-transform: translate3d(100%, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+ 
+@keyframes slideinfromright {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+    to {
+        -webkit-transform: translateX(0);
+    }
+}
+ 
+@-webkit-keyframes slideinfromleft {
+    from {
+        -webkit-transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+ 
+@keyframes slideinfromleft {
+    from {
+        -webkit-transform: translateX(-100%);
+    }
+    to {
+        -webkit-transform: translateX(0);
+    }
+}
+ 
+/* keyframes for slideout to sides */
+@-webkit-keyframes slideouttoleft {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(-100%, 0, 0);
+    }
+}
+ 
+@keyframes slideouttoleft {
+    from {
+        -webkit-transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+    }
+}
+ 
+@-webkit-keyframes slideouttoright {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(100%, 0, 0);
+    }
+}
+ 
+@keyframes slideouttoright {
+    from {
+        -webkit-transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(100%);
+    }
+}
+
+@media (max-width: 640px){
+    .type,
+    .task,
+    .details {
+        width: 100%;
+        left: 0;
+        display: none;
+    }
+
+    .type {
+        display: block;
+    }
+    
+    /*不显示菜单三角形*/
+    .list-item:hover >.arrow {
+        display: none;
+    }
+
+    html, body {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    /*保存任务，取消保存两个按钮 默认隐藏*/
+    .task-btn {
+        right: 0;
+        width: 150px;
+    }
+}
