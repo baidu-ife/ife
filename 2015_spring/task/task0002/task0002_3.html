@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			.imgRotation{
+				position: relative;
+				width: 500px;
+				height: 300px;
+				overflow: hidden;
+			}
+			
+			.img-list{
+				width: 2500px;
+				position: absolute;
+				font-size: 0;
+			}
+			
+			.circle{
+				position: absolute;
+				left: 50%;
+				bottom: 5px;
+				margin-left:-40px ;
+			}
+			
+			.circle a{
+				width: 10px;
+				height: 10px;
+				display: inline-block;
+				border-radius: 50%;
+				
+				border: 1px solid #fff;
+				
+			}
+			.circle .active{
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>轮播图</h1>
+			<div class="imgRotation">
+				<div class="img-list">
+					<img src="img/1.jpg" alt="img1">
+					<img src="img/2.jpg" alt="img2">
+					<img src="img/3.jpg" alt="img3">
+					<img src="img/4.jpg" alt="img4">
+					<img src="img/5.jpg" alt="img5">
+				</div>
+				<div class="circle">
+					<a href="javascript:;" class="active"></a>
+					<a href="javascript:;"></a>
+					<a href="javascript:;"></a>
+					<a href="javascript:;"></a>
+					<a href="javascript:;"></a>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/util.js"></script>
+		<script src="js/task0002_3.js"></script>
+	</body>
+</html>

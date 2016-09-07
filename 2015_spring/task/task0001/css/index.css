@@ -1,0 +1,255 @@
+*{
+	padding: 0;
+	margin: 0;
+	
+}
+a{
+	text-decoration: none;
+	
+}
+ul, li{
+	list-style: none;
+}
+
+body {
+    min-width: 980px;
+    background: #e2e2e2;
+}
+
+.nav-wrap{
+	width: 100%;
+	height: 80px;
+	background-color: #999;
+}
+
+.nav{
+	position: relative;
+	margin: 0 auto;
+	width: 980px;
+	height: 80px;
+	overflow: hidden;
+	
+}
+
+.nav
+h1{
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	font: 20px/1.5 "微软雅黑";
+}
+
+.nav
+ul{
+	position: absolute;
+	bottom: 5px;
+	float: right;
+	right: 0;
+}
+
+.nav
+li{
+	float: right;
+	margin-left:28px ;
+	font: 14px/1.5 "微软雅黑";
+	cursor: pointer;
+}
+
+.nav-wrap
+.github-icon{
+	position: fixed;
+	right: 10px;
+	top: 45px;
+}
+
+@media (max-width:1000px) {
+	.github-icon{
+		display: none;
+	}
+}
+
+.banner{
+	overflow: hidden;
+}
+
+.banner-img{
+	width: 100%;
+	height: 400px;
+}
+
+.banner-wrap{
+	position: relative;
+	margin: 0 auto;
+	width: 980px;
+}
+.banner-text{
+	position: absolute;
+	width: 300px;
+	bottom: 5px;
+	right: 0px;
+	background:-moz-linear-gradient(top,rgba(255,255,255,0.7)0%,rgba(255,255,255,0.5)75%,rgba(255,255,255,0)100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(75%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    padding: 10px 10px 30px;
+}
+.banner-text
+h2{
+	margin:0 10px 12px 0;
+	font: 14px/1.5 "微软雅黑";
+	text-align: right;
+}
+
+.banner-text
+p{
+	
+	text-indent: 2em;
+	font: 12px/1.5 "微软雅黑";
+}
+
+.index-centent{
+	margin: 0 auto;	
+	width: 980px;
+	overflow: hidden;
+	
+}
+
+.index-centent
+.index-img{
+	width: 320px;
+	float: left;
+	margin: 10px 0 -1000px;
+    background: #fff;
+    padding-bottom: 1000px;
+	
+}
+.index-centent
+.img-left{
+	margin-left: 10px;	
+}
+
+.index-centent
+.index-img
+img{
+	width:300px;
+	height: 180px;
+	margin: 10px 10px 15px 10px;
+}
+
+.index-centent
+.index-img
+p{
+	margin: 0 30px 10px;
+	text-indent: 2em;
+	font: 12px/1.7 "微软雅黑";
+}
+
+.introduction{
+	width: 100%;
+	height: 400px;
+	margin-top: 100px;
+	background-color: #fff;
+	text-align: center;
+}
+
+.introduction
+img{
+	margin-top: -50px;
+	margin-bottom: 50px;
+	border-radius: 50%;
+}
+.introduction
+h2{
+	font: 20px/1.5 "century gothic";
+	margin-bottom: 50px;
+}
+
+.introduction
+p{
+	width: 600px;
+	margin: 0 auto;
+	text-indent: 2em;
+	text-align: left;
+	font: 14px/1.7 "微软雅黑";
+	
+}
+
+.footer{
+	background-color: black;
+	overflow: hidden;
+}
+
+.footer-nav{
+	width: 100%;
+	border-bottom: 1px solid #fff;
+	overflow: hidden;
+}
+
+.footer-nav
+ul{
+	
+	position: relative;
+	left: 50%;
+	float: left;
+}
+
+.footer-nav
+li{
+	float: left;
+	position: relative;
+	margin:10px 0 10px 15px;
+	right: 50%;
+	
+}
+
+.footer-nav
+a{
+	font: 12px/1.5 "微软雅黑";
+	color: #fff;
+	cursor: pointer;
+}
+
+.footer-link{
+	clear: both;
+	margin: 0 auto;
+	width: 980px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.footer-link
+h2{
+	margin-bottom: 20px;
+	color: #fff;
+	font: 12px/1.5 "微软雅黑";
+	cursor: pointer;
+}
+
+.footer-link
+a{
+	cursor: pointer;
+	color: #fff;
+	font: 12px/1.5 "微软雅黑";
+}
+
+.link-item{
+	width: 200px;
+	float: left;
+	margin: 30px 20px 40px 20px;
+}
+
+.footer
+.copyright{
+	text-align: center;
+}
+
+.footer
+.copyright
+P{
+	margin-bottom: 20px;
+	font: 14px/1.5 "century gothic";
+	color: #fff;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" >
+		<meta charset="utf-8">
+		<title>task0002_5</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.container{
+				margin: 0 auto;
+				width: 800px;
+			}
+			.drag-block{
+				position: relative;
+			}
+			.left{
+				border: 1px solid #333;
+				float: left;
+				width: 198px;
+				height: 480px;
+			}
+			.right{
+				border: 1px solid #333;
+				float: left;
+				margin-left:200px;
+				width: 198px;
+				height: 482px;
+			}
+			.move{
+				 width: 198px;
+			    height: 59px;
+			    background-color: #929BDD;
+			    border-bottom:1px solid #333;
+			    position: absolute;
+			    cursor: move;
+			}
+			.clearfix:after{
+				content: "\200B";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			.clearfix{
+				*zoom: 1;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="drag-block clearfix">
+				<div class="left block">
+					<div class="move"></div>
+					<div class="move"></div>
+					<div class="move"></div>
+					<div class="move"></div>
+				</div>
+				<div class="right block">
+					<div class="move"></div>
+					<div class="move"></div>
+					<div class="move"></div>
+					<div class="move"></div>
+				</div>
+			</div>			
+		</div>
+		<script src="js/util.js"></script>
+		<script src="js/task0002_5.js"></script>
+	</body>
+</html>
