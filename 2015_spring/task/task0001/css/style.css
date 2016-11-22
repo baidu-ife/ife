@@ -1,0 +1,230 @@
+* {margin: 0; padding: 0;}
+
+body {width: 100%;}
+
+.header {
+	position: relative;
+	width:100%;
+	height:80px;
+	background-color:rgb(83,43,89);
+}
+
+#header_content {
+	width:980px;
+	height:80px;
+	margin:0 auto;
+	//border:1px solid red;
+}
+
+#header_github {
+	position: absolute;
+	right: 10px;
+	bottom: 0px;
+	width: 35px;
+	height: 35px;
+}
+#header_github img {
+	width:100%;
+	height: 100%;
+}
+
+#header_content_logo {
+	float:left;
+	padding: 40px 0 0 0;
+	color: white;
+	font-size:22px;
+	font-family: Georgia;
+}
+
+#header_content_nav {
+	float:right;
+	padding: 48px 0 0 0;
+	color: white;
+}
+
+#header_content_nav span {
+	margin: 0 0 0 20px;
+}
+
+.content #content_pic {
+	width: 100%;
+	height: 530px;
+	background-image: url(../img/banner-bg.jpg);
+	background-size: 100% 100%;
+}
+
+#content_pic_desc {
+	position: relative;
+	width:980px;
+	height:530px;
+	margin:0 auto;
+	//border:1px solid blue;
+}
+
+#content_pic_desc_box{
+	position: absolute;
+	right:0px;
+	bottom:0px;
+	width:320px;
+	height:120px;
+	padding:10px 10px 30px 10px;
+	//background-color: blue;
+}
+
+#content_pic_desc_box p {
+	font-size: 14px;
+	color: white;
+}
+
+#content_content {
+	width:100%;
+	height:480px;
+	background-color: rgb(238,238,238);
+}
+
+#content_columns {
+	width:980px;
+	height:360px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#content_columns div {
+	width:320px;
+	height:360px;
+	margin-top:10px;
+	float:left;
+	background-color: white;
+}
+
+#content_columns_mid, #content_columns_right {
+	margin-left: 10px;
+} 
+
+#content_columns .content_columns_pic {
+	width: 300px;
+	height: 180px;
+	margin:10px 10px;
+}
+
+#content_columns .content_columns_text {
+	width: 260px;
+	height: 140px;
+	margin: 5px 30px 25px 30px;
+	font-size: 12px;
+	line-height: 170%;
+}
+
+#content_columns .content_columns_text p {
+	text-indent: 2em;
+}
+
+#content_me {
+	position: relative;
+	width:100%;
+	height: 520px;
+	background-color: white;
+}
+
+#content_me_pic {
+	position: relative;
+	width:160px;
+	height:160px;
+	top: -60px;
+	margin: 0 auto;
+}
+
+#content_me_pic img {
+	width:160px;
+	height:160px;
+}
+
+#content_me_introduce {
+	width: 600px;
+	height: 240px;
+	margin: 0 auto;
+	//sbackground-color: red;
+}
+
+#content_me_introduce h3 {
+	text-align: center;
+	font-size: 20px;
+}
+
+#content_me_introduce p {
+	text-indent: 2em;
+	font-size: 14px;
+	line-height: 180%;
+	padding-top: 10px;
+}
+
+#footer {
+	width: 100%;
+	height: 390px;
+	background-color: black;
+	color: white;
+	font-size: 12px;
+}
+
+#footer_content {
+	width: 980px;
+	margin: 0 auto;
+}
+
+#footer hr {
+	height: 1px;
+}
+#footer_nav {
+	//background-color: red;
+	padding:10px 0;
+	text-align: center;
+	font-size: 14px;
+}
+
+#footer_nav span {
+	//padding-top: 5px;
+	margin: 10 10px;
+}
+
+#footer_content_link {
+	margin-top: 40px;
+	margin-bottom: 90px;
+	font-size:12px;
+}
+
+#footer_content_link thead {
+	font-size: 14px;
+	height:40px;
+	vertical-align: top;
+	text-align: left;
+}
+
+#footer_content_link th, #footer_content_link td{
+	width:196px;
+}
+
+#footer_content_link tbody tr {
+	height:20px;
+	vertical-align: top;
+	text-align: left;
+}
+
+#footer_content_link tbody tr:first-child + tr {
+	text-decoration: underline;
+}
+
+//为什么无效
+#footer_content_link tbody tr.footer_hover {
+	background-color: black;
+}
+
+#footer_end p {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+#footer_github {
+	text-align: center;
+	width:100%;
+	height:100%;
+}
