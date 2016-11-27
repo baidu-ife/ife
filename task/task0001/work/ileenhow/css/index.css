@@ -1,0 +1,90 @@
+.banner{
+    width: 100%;
+    min-width: 980px;
+    height: 525px;
+    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+.banner-inside{
+    width: 980px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+.poet{
+    width: 330px;
+    padding: 10px 10px 30px 10px; 
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    color: #fff;
+}
+.poet h2{
+    text-align: right;
+    font-size: 14px;
+    padding-bottom: 12px;
+}
+.poet p{
+    font-size: 12px;
+    line-height: 150%;
+}
+.gallery{
+    min-width: 980px;
+}
+.gallery-inside{
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 110px;
+}
+.gallery ul{
+    width: 980px;
+    overflow: hidden;
+}
+.gallery li{
+    background-color: #fff;
+    width: 320px;
+    float: left;
+    padding-bottom: 5000px;
+    margin-bottom: -5000px;
+}
+.mid-photo{
+    margin: 0 10px;
+}
+.gallery img{
+    display: block;
+    width: 300px;
+    height: 180px;
+    margin: 10px 10px 15px 10px;
+}
+.gallery p{
+    font-size: 12px;
+    font-family: "Microsoft Yahei";
+    line-height: 170%;
+    margin: 0 30px 25px;
+}
+.intro{
+    background-color: #fff;
+    min-width: 980px;
+    font-family: "Century Gothic";
+}
+.intro img{
+    display: block;
+    border-radius: 80px;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+}
+.intro h3{
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+}
+.intro p{
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px 0 150px;
+    font-size: 14px;
+    line-height: 150%;
+}

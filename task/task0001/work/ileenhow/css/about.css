@@ -1,0 +1,59 @@
+.main{
+    display: table;
+    width: 980px;
+    margin: 80px auto 30px;
+    background: url(../img/bg-line.png) repeat-y top center;
+    background-color: #fff;
+}
+.main img{
+    display: block;
+    margin: auto;
+    border-radius: 100px;
+    border: 8px solid #eee;
+}
+img[alt="avatar"]{
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+}
+.info{
+    margin: 20px 0;
+    overflow: hidden;
+}
+.info h2,.info>p,.info ul{
+    width: 490px;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+.info h2{
+    float: left;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 70px;
+}
+.info>p,.info ul{
+    float: right;
+    font-size: 14px;
+    line-height: 150%;
+    padding: 0 40px;
+}
+.info li{
+    display: table;
+    margin-bottom: 20px; 
+}
+.info h3,.info ul p{
+    float: left;
+}
+.info h3{
+    width: 60px;
+    height: 20px;
+    margin-left: -75px;
+    border-radius: 8px;
+    border: 5px solid #eee;
+    background-color: #fff;
+    line-height: 20px;
+    text-align: center;
+}
+.info ul p{
+    margin-left: 30px;
+}
