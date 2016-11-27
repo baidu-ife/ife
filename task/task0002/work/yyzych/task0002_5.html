@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <title>task0002</title>
+    <style>
+        body {
+            user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none;
+        }
+        .wrap {
+            width: 150px;
+            border: 1px solid #666;
+            min-height: 400px;
+            display: inline-block;
+            margin: 0 50px;
+            vertical-align: top;
+        }
+        .item {
+            background-color: red;
+            border-bottom: 1px solid #666;
+            height: 40px;
+            width: 150px;
+            text-align: center;
+            line-height: 40px;
+            cursor: default;
+        }
+        .placeholder {
+            position: fixed;
+            z-index: 9999;
+            cursor: move;
+            opacity: .5;
+            filter:alpha(opacity=50);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <!-- <div class="item">4</div> -->
+    </div>
+    <div class="wrap">
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+    </div>
+    <div class="wrap">
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+    </div>
+    <script src="./js/util.js"></script>
+    <script src="./js/task0002_5.js"></script>
+</body>
+</html>
