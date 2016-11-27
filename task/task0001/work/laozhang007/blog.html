@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>博客</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+    <a class="github-icon" href="https://github.com/laozhang007" target="_blank"><img src="img/icon-github.png" alt="github-icon" border="0"></a>
+    <div class="header-content">
+        <h2>Laozhang007</h2>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="blog.html">文章</a></li>
+            <li><a href="gallery.html">作品</a></li>
+            <li><a href="about.html">关于</a></li>
+        </ul>
+    </div>
+</div>
+    <div class="blog-wrap">
+        <div class="blog-content">
+            <div class="blog-list">
+                <h1>这里是标题</h1>
+                <h2>定宽元素水平居中方法总结</h2>
+                <p>任务六中要用两种方法实现定宽元素水平居中，我用到的方法总结如下：1.第一种方法：外边距上下为零，左右auto。
+                margin: 0 auto;width: 960px;2.第二种方法：采用相对定位，左边距原始位置50%，然后外边距向左拉回一半宽度。
+                position: relative;width: 960px;height: 300px;left: 50%; margin-left: -480px;
+                </p>
+                <div class="blog-commit">Laozhang 发表于 2015年4月20日</div>
+                <div class="blog-tag">
+                    <div class="blog-tag-date">4.20</div>
+                    <div class="blog-tag-type">CSS</div>
+                </div>
+            </div>
+            <div class="blog-list">
+                <h1>这里是标题</h1>
+                <h2>首页中三栏内容等高方法</h2>
+                <p>在首页中有三个包含图片和文字的栏目，每个栏目文字内容字数不同，要求栏目高度一致。除了直接设定每个栏目高度相同的数值的方法，还可以采用
+                将三个栏目的父元素overflow属性设为hidden，再将每个栏目的padding-bottom设为150px（也可以更大），同样再用margin-bottom: -150px将多出的
+                    内边距折回来，这个方法感觉也挺巧妙，还是对负外边距的应用。</p>
+                <div class="blog-commit">Laozhang 发表于 2015年4月20日</div>
+                <div class="blog-tag">
+                    <div class="blog-tag-date">4.20</div>
+                    <div class="blog-tag-type">CSS</div>
+                </div>
+            </div>
+            <div class="blog-list">
+                <h1>这里是标题</h1>
+                <h2>这里是副标题</h2>
+                <p>这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。</p>
+                <div class="blog-commit">Laozhang 发表于 2015年4月20日</div>
+                <div class="blog-tag">
+                    <div class="blog-tag-date">4.20</div>
+                    <div class="blog-tag-type">CSS</div>
+                </div>
+            </div>
+            <ol class="blog-list-number">
+                <li><a href="">第一页</a></li>
+                <li><a href="javascript:void(0)" id="noclick">上一页</a></li>
+                <li><a href="" id="selected">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">下一页</a></li>
+                <li><a href="">最后页</a></li>
+            </ol>
+        </div>
+
+        <div class="blog-sidebar">
+            <div class="blog-sidebar-item">
+                <form >
+                    <input id="keyword" type="text" placeholder="Keywords"/>
+                    <input id="submit" type="submit" value="GO"/>
+                </form>
+            </div>
+            <div class="blog-sidebar-item">
+                <a href=""><div class="blog-sidebar-type">Javascript</div></a>
+                <a href=""><div class="blog-sidebar-type">HTML</div></a>
+                <a href=""><div class="blog-sidebar-type">CSS</div></a>
+                <a href=""><div class="blog-sidebar-type">其他文章</div></a>
+            </div>
+            <div class="blog-sidebar-item">
+                <table class="blog-siderbar-calendar">
+                    <tr class="sidebar-calendar-bold" style="border-bottom: none;">
+                        <td><</td>
+                        <td></td>
+                        <td colspan="3">2015.04</td>
+                        <td></td>
+                        <td>></td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>W</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td class="sidebar-calendar-bold">2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td >18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td class="sidebar-calendar-current">20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td >23</td>
+                        <td>24</td>
+                        <td class="sidebar-calendar-bold">25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="blog-sidebar-item sidebar-tag">
+                <p class="sidebar-tag-title">Tags</p>
+                <p class="sidebar-tag-item">
+                    <span class="sidebar-tag-big">JavaScript </span>
+                    <span class="sidebar-tag-less">CSS </span>
+                    flex WebGL
+                    <span class="sidebar-tag-big">HTML </span>
+                    Canvas prototype
+                    <span class="sidebar-tag-small">HTML5 </span>
+                    grid nodeJS css3
+                    <span class="sidebar-tag-small">jQuery </span>
+                    <span class="sidebar-tag-small">ECharts </span>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-nav">
+            <a href="index.html">主页</a>
+            <a href="blog.html">文章</a>
+            <a href="gallery.html">作品</a>
+            <a href="about.html">关于</a>
+        </div>
+
+        <div class="link-list">
+            <div class="link-list-item">
+                <p class="link-list-title">学习资料</p>
+                <ul class="link-list-content">
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                </ul>
+            </div>
+            <div class="link-list-item">
+                <p class="link-list-title">友情链接</p>
+                <ul class="link-list-content">
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                </ul>
+            </div>
+            <div class="link-list-item">
+                <p class="link-list-title">学习资料</p>
+                <ul class="link-list-content">
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                </ul>
+            </div>
+            <div class="link-list-item">
+                <p class="link-list-title">友情链接</p>
+                <ul class="link-list-content">
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                </ul>
+            </div>
+            <div class="link-list-item">
+                <p class="link-list-title">学习资料</p>
+                <ul class="link-list-content">
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                    <li><a href="">LINK</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>版权信息</p>
+            <a href="https://github.com/laozhang007" target="_blank"><img src="img/icon-github.png"></a>
+        </div>
+    </div>
+
+
+</body>
+</html>
