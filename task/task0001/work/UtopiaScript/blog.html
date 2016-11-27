@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>UtopiaScript</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <div class="logo">
+                <h1><a href="index.html"><img src="img/logo.png"></a></h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="gallery.html">作品</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="https://github.com/UtopiaScript">
+            <img id="github" src="img/icon-github.png">
+        </a>
+    </div>
+    <div class="mainbody">
+        <div class="main">
+            <div class="blog-wrap">
+                <div class="blog-article">
+                    <div class="blog-tag">
+                        <div class="blog-date">
+                        <span>4.12</span>
+                        </div>
+                        <div class="blog-type">
+                        <span>CSS</span>
+                        </div>
+                    </div>
+                    <div class="blog-page">
+                        <h1>CSS文档流</h1>
+                        <h2>绝对定位、相对定位、文档流</h2>
+                        <p>
+                        HTMl的布局机制就是文档流模型，即块元素(block)独占一行，内联元素(inline)不独占一行。
+                        </p>
+                        <p>
+                        <strong>"position:relative"</strong>
+                        相对定位是相对于元素自己本身来定位。用left right top bottom进行定位后，
+                        元素会根据原来的位置进行移动，但由于position:relative这个属性并没有脱离文档流，
+                        所以元素本身所占的位置仍会保留。
+                        </p>
+                        <p>
+                        <strong>"position:absolute"</strong>
+                        绝对定位是相对于该元素的第一个有position，且positon不能为static的祖先元素
+                        (position:absolute/position:relative)来绝对定位的。
+                        position:absolute这个属性是脱离文档流的，所以重新定位后的元素不会占着原来的位置。
+                        </p>
+                        <h3>UtopiaScript发表于2015年4月12日</h3>
+                    </div>
+                    
+                </div>
+                <div class="blog-article">
+                    <div class="blog-tag">
+                        <div class="blog-date">
+                        <span>4.12</span>
+                        </div>
+                        <div class="blog-type">
+                        <span>CSS</span>
+                        </div>
+                    </div>
+                    <div class="blog-page">
+                        <h1>CSS清除浮动</h1>
+                        <h2>float、clear、overflow、:after</h2>
+                        <p>
+                        <strong>方法一：使用带clear属性的空元素</strong>
+                        在浮动元素后使用一个空元素并在CSS中赋予clear:both属性即可清理浮动。
+                        优点：简单，代码少，浏览器兼容性好。
+                        缺点：需要添加大量无语义的html元素，代码不够优雅，后期不容易维护。
+                        </p>
+                        <p>
+                        <strong>方法二：使用CSS的overflow属性</strong>
+                        给浮动元素的容器添加overflow:hidden或overflow:auto可以清除浮动，
+                        另外在IE6中还需要触发hasLayout，例如为父元素设置容器宽高或设置zoom:1。
+                        在添加overflow属性后，浮动元素又回到了容器层，把容器高度撑起，达到了清理浮动的效果。
+                        </p>
+                        <p>
+                        <strong>方法三：给浮动的元素的容器添加浮动</strong>
+                        给浮动元素的容器也添加上浮动属性即可清除内部浮动，但是这样会使其整体浮动，影响布局，不推荐使用。
+                        </p>
+                        <p>
+                        <strong>方法四：使用邻接元素处理</strong>
+                        什么都不做，给浮动元素后面的元素添加clear属性。
+                        </p>
+                        <p>
+                        <strong>方法五：使用CSS的:after伪元素</strong>
+                        结合:after伪元素（注意这不是伪类，而是伪元素，代表一个元素之后最近的元素）和 IEhack，
+                        可以完美兼容当前主流的各大浏览器，这里的IEhack指的是触发hasLayout。
+                        </p>
+                        <p>
+                        在网页主要布局时使用:after伪元素方法并作为主要清理浮动方式；
+                        在小模块如ul里使用overflow:hidden（留意可能产生的隐藏溢出元素问题）；
+                        如果本身就是浮动元素则可自动清除内部浮动，无需格外处理；
+                        正文中使用邻接元素清理之前的浮动。
+                        </p>
+                        <h3>UtopiaScript发表于2015年4月12日</h3>
+                    </div>
+                </div>
+                <div class="blog-article">
+                    <div class="blog-tag">
+                        <div class="blog-date">
+                        <span>4.12</span>
+                        </div>
+                        <div class="blog-type">
+                        <span>CSS</span>
+                        </div>
+                    </div>
+                    <div class="blog-page">
+                        <h1>HTML节点居中</h1>
+                        <h2>margin:0 auto、vertical-align:center、text-aligh:center</h2>
+                        <p>
+                        1. width:auto 属性， 如果标签没有固定的宽度，那么width:auto已经足够了；
+                        如果固定宽度了，就加上margin:0 auto 或者margin-left:auto; margin-right:auto。
+                        </p>
+                        <p>
+                        2. 如果是img图片居中，那么可能的使用text-align:center加上垂直居中vertical-align:center,
+                        但是在使用它时要注意，有时会影响你的文字布局。
+                        </p>
+                        <p>
+                        3. 文字居中或者子元素居中text-aligh:center，有时还要结合display=inline。
+                        </p>
+                        <h3>UtopiaScript发表于2015年4月12日</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="page-turning"> 
+                <span class="disabled">第一页</span>
+                <a href="#?page=2">上一页</a>
+                <a href="#?page=1">1</a>
+                <a href="#?page=2">2</a>
+                <span class="current">3</span>
+                <a href="#?page=4">4</a>
+                <span class="more">···</span>
+                <a href="#?page=4">下一页</a>
+                <a href="#">最后页</a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="search">
+                <form class="form-wrapper" action="http://www.baidu.com/baidu">
+                    <input type="text" name="word" placeholder="Keywords">
+                    <button type="submit" class="search-button">GO</button>
+                </form>
+            </div>
+            <div class="classify">
+                <div class="classify-list"><a href="#">HTML</a></div>
+                <div class="classify-list"><a href="#">CSS</a></div>
+                <div class="classify-list"><a href="#">JavaScript</a></div>
+                <div class="classify-list"><a href="#">其他文章</a></div>
+            </div>
+            <div class="calendar">
+                <table cellspacing="5">
+                    <tr class="year">
+                        <td>&lt;</td>
+                        <td colspan="5">2015·04</td>
+                        <td>&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>W</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td class="today">5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td class="mark">9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td class="mark">20</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>30</td>
+                        <td colspan="5"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tags">
+                <div class="tags-title"><a href="#">Tags</a></div>
+                <a href="#" class="tag-l">JavaScript</a>
+                <a href="#" class="tag-m">CSS</a>
+                <a href="#" class="tag-s">flex</a>
+                <a href="#" class="tag-s">WebGL</a>
+                <a href="#" class="tag-l">HTML</a>
+                <a href="#" class="tag-s">Canvas</a>
+                <a href="#" class="tag-s">prototype</a>
+                <a href="#" class="tag-m">HTML5</a>
+                <a href="#" class="tag-s">grid</a>
+                <a href="#" class="tag-s">nodeJS</a>
+                <a href="#" class="tag-s">CSS3</a>
+                <a href="#" class="tag-m">jQurey</a>
+                <a href="#" class="tag-m">ECharts</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">文章</a></li>
+                <li><a href="gallery.html">作品</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+        <div class="link">
+            <ul>
+                <li class="link-nav">友情链接</li>
+                <li><a href="#">百度 EFE</a></li>
+                <li><a href="#">百度 LAMP</a></li>
+                <li><a href="#">百度 MWEB</a></li>
+                <li><a href="#">淘宝 UED</a></li>              
+                <li><a href="#">腾讯 ISUX</a></li>
+                <li><a href="#">腾讯 AlloyTeam</a></li>
+            </ul>
+            <ul>
+                <li class="link-nav">学习资料</li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">PHP</a></li>
+            </ul>
+            <ul>
+                <li class="link-nav">学习资料</li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+            </ul>
+            <ul>
+                <li class="link-nav">我的项目</li>
+                <li><a href="#">project</a></li>
+                <li><a href="#">project</a></li>
+                <li><a href="#">project</a></li>
+                <li><a href="#">project</a></li>
+                <li><a href="#">project</a></li>
+                <li><a href="#">project</a></li>
+            </ul>
+            <ul>
+                <li class="link-nav">联系我</li>
+                <li><a href="https://github.com/UtopiaScript">GitHub</a></li>
+                <li><a href="http://weibo.com/qiufengmanyu/">Weibo</a></li>
+                <li><a href="#">WeChat</a></li>
+                <li><a href="#">Email</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <span>&copy2015&nbsp;UtopiaScript</span>
+        </div>
+        <div class="ft">
+            <img src="img/icon-github.png">
+        </div>
+    </div>
+</body>
+</html>
