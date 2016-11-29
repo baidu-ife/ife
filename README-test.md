@@ -1,6 +1,6 @@
 ![百度Web前端技术学院](asset/github.jpg)
 
-# 学院介绍
+# 学院介绍test test
 
 ## 这是一个什么样的学院
 
