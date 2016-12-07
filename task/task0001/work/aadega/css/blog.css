@@ -1,0 +1,175 @@
+/* 
+* blog.css
+*/
+
+body { background:#dddddd; }
+
+.content {
+    overflow:visible;
+    width:980px;
+    margin:20px auto 70px;
+}
+
+.main {
+    float:left;
+    width:710px;
+}
+
+/*blog */
+.blog {
+    position:relative;
+    background:#fff;
+    padding:30px 20px;
+    margin-bottom:16px;
+}
+.blog_title {
+    font-size:16px;
+    color:#a660b7;
+}
+.blog_subtitle {
+    font-size:12px;
+    color:#666;
+    margin:12px 0 20px;
+}
+.blog p {
+    line-height:150%;
+}
+.blog_post {
+    position:absolute;
+    bottom:10px; 
+    right:20px;
+    font-size:10px;
+    color:#999;
+}
+.blog_label {
+    position:absolute;
+    top:20px; 
+    left:-52px;
+}
+.blog_label span {
+    display:block;
+    color:#fff;
+    width:52px; 
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    background:#522a5c;
+}
+.blog_label .date {
+    background:#a660b7;
+}
+/*blog end*/
+
+/* page*/
+.page {
+    text-align:center;
+}
+.page span {
+    display:inline-block;
+    text-align:center;
+    padding:10px 18px;
+    color:#000;
+    background:#fff;
+}
+#blog_active {
+    background:#a660b7;
+    color:#fff;
+}
+/* page end */
+
+/*sidebar */
+.sidebar {
+    float:right;
+    width:260px;
+}
+
+.sidebar_search {
+    height:80px;
+    background:#fff;
+    text-align:center;
+}
+.sidebar_search .search {
+    margin-top:20px;
+}
+
+.sidebar_category {
+    margin:10px auto;
+}
+.sidebar_category a {
+    display:block;
+    background:#dfc6e6;
+}
+.sidebar_category a:hover {
+    background:#522a5c;
+}
+.sidebar_category p {
+    margin:1px 0 1px 4px;
+    background:#fff;
+    height:50px;
+    line-height:50px;
+    color:#666666;
+    padding-left:18px;
+}
+
+.sidebar_calender {
+    color:#999999;
+}
+.sidebar_calender table {
+    background:#fff;
+    width:260px;
+}
+.sidebar_calender caption {
+    overflow:hidden;
+    padding:10px;
+    font-weight:bold;
+    color:#ce7ee1;
+}
+.sidebar_calender .prev {
+    float:left;
+    color:#ce7ee1;
+}
+.sidebar_calender .next {
+    float:right;
+    color:#ce7ee1;
+}
+.sidebar_calender td {
+    padding:10px;
+    font-size:12px;
+    text-align:center;
+    background:#ce7ee1;
+    color:#fff;
+}
+.sidebar_calender .today {
+    padding:10px;
+    font-size:12px;
+    text-align:center;
+    background:#ddd;
+    color:#ce7ee1;
+}
+
+.sidebar_tag {
+    width:220px;
+    background:#fff;
+    margin-top:10px;
+    padding:10px 20px;
+}
+.sidebar_tag h1 {
+    color:#999999;
+    padding-bottom:10px;
+}
+.sidebar_tag p {
+    line-height:2em;
+    font-weight:bold;
+    color:#773c88;
+}
+.sidebar_tag .js {
+    font-size:24px;
+}
+.sidebar_tag .css {
+    font-size:18px;
+    font-weight:normal;
+}
+.sidebar_tag .webgl {
+    font-weight:normal;
+}
+/* sidebar end */

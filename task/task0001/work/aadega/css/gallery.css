@@ -1,0 +1,153 @@
+    /* 
+* @gallery.css
+*/
+
+.content {
+    overflow:hidden;
+    width:980px;
+    margin:30px auto 70px;
+}
+
+/*main */
+.main {
+    float:left;
+    width:710px;
+}
+
+.main_nav {
+    margin-bottom:1px;
+}
+.main_nav a {
+    display:inline-block;
+    background:#dfc6e6;
+    color:#000;
+    margin:0 1px;
+}
+.main_nav a:hover {
+    background:#522a5c;
+}
+.main_nav span {
+    display:inline-block;
+    line-height:46px;
+    margin-top:4px;
+    padding:0 20px;
+    background:#fff;
+}
+
+/* main_waterfall */
+.main_waterfall {
+    width:670px;
+    -webkit-column-width:160px;
+    -webkit-column-gap:10px;
+    -moz-column-width:160px;
+    -moz-column-gap:10px;
+    -ms-column-width:160px;
+    -ms-column-gap:10px;
+    -o-column-width:160px;
+    -o-column-gap:10px;
+    column-width:160px;
+    column-gap:10px;
+    background:#fff;
+    padding:20px;
+}
+.main_box {
+    position:relative;
+    width:160px;
+    margin:10px 0;
+}
+.pic_wrap img {
+    width:100%;
+    height:auto;
+}
+.text_wrap {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#522a5c;
+    color:#fff;
+}
+.text_wrap p {
+    margin:0 10px 0 50px;
+}
+.text_logo {
+    position:absolute;
+    top:10px; 
+    left:10px;
+    font-weight:normal;
+    font-size:16px;
+    line-height:30px;
+    width:30px;
+    height:30px;
+    border:1px solid #fff;
+    border-radius:50%;
+    text-align:center;
+}
+.text_title {
+    line-height:2em;
+}
+.text_body {
+    font-size:12px;
+    line-height:1.5em;
+}
+/* main_waterfall end */
+
+.main_more {
+    width:710px;
+    background:#fff;
+    margin-top:30px;
+    line-height:50px;
+    text-align:center;
+    color:#777;
+}
+
+/*main end*/
+
+/* sidebar */
+.sidebar {
+    float:right;
+}
+
+.sidebar_search {
+    padding:20px;
+    background:#fff;
+}
+
+.sidebar_rank {
+    margin-top:10px;
+    width:230px;
+    background:#fff;
+    padding:20px 10px 30px 20px;
+}
+.sidebar_rank p {
+    padding:5px 0;
+    line-height:1.4em;
+}
+.sidebar_rank span {
+    display:inline-block;
+}
+.rank_title {
+    color:#666;
+    font-weight:normal;
+    line-height:30px;
+}
+.rank_sort {
+    width:1.5em; 
+    height:1.5em;
+    border:1px solid #522a5c;
+    border-radius:50%;
+    background:#522a5c;
+    color:#fff;
+    text-align:center;
+}
+.rank_wrap {
+    width:7em;
+    height:1.4em;
+    border:0.1em solid #522a5c;
+}
+.rank_bar {
+    width:3em;
+    height:1.4em;
+    background:#522a5c;
+}
+/* sidebar end*/

@@ -1,0 +1,141 @@
+/* 
+* general style
+*/
+
+body,html,ul,ol,li,p,h1,h2,h3,h4,h5,h6,img,form,input {
+    margin:0; padding:0;
+}
+body {
+    font-size:14px;
+    width:100%;
+    background:#eee;
+}
+img,input {
+    border:0;
+    outline:0;
+}
+li { list-style:none; }
+a { 
+    text-decoration:none;
+    color:#fff;
+}
+
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* header */
+.header { 
+    position:relative;
+    width:100%;
+    height:80px;
+    background:#522a5c;
+    color:#fff;
+ }
+
+.header_nav {
+    position:relative;
+    width:980px;
+    height:100%;
+    margin:0 auto;
+}
+.header_nav h1 {
+    position:absolute;
+    bottom:0; 
+    left:0;
+}
+.header_nav ul {
+    overflow:hidden;
+    position:absolute;
+    right:0; 
+    bottom:5px;
+}
+.header_nav li {
+    float:left;
+    margin-left:28px;
+}
+
+.header img {
+    position:absolute;
+    right:10px; 
+    bottom:0;
+}
+/* header end */
+
+/* footer */
+.footer {
+    width:100%;
+    background:#000;
+    color:#fff;
+}
+
+.footer_nav {
+    height:36px;
+    line-height:36px;
+    border-bottom:1px solid #fff;
+}
+.footer_nav ul {
+    overflow:hidden;
+    width:258px;
+    margin:0 auto;
+}
+.footer_nav li {
+    float:left;
+    margin-left:26px;
+    font-size:14px;
+}
+
+.footer_source {
+    width:950px;
+    overflow:hidden;
+    margin:0 auto;
+}
+.footer_source ul {
+    float:left;
+    margin-right:120px;
+}
+.footer_source ul h3 {
+    line-height:70px;
+    font-weight:normal;
+    font-size:14px;
+}
+.footer_source ul li {
+    line-height:26px;
+    font-size:12px;
+}
+
+.footer_copyright {
+    text-align:center;
+}
+.footer_copyright p {
+    margin:70px auto 30px;
+}
+/* footer end*/
+
+/*search*/
+.search {
+    overflow:hidden;
+    display:inline-block;
+    border:1px solid #dddddd;
+}
+.search .ipt {
+    float:left;
+    width:122px; 
+    height:40px;
+    line-height:40px;
+	background:#fff url(../img/search_bg.png) no-repeat left;
+    padding-left:48px;
+    font-size:16px;
+    color:#999999;
+}
+.search .btn {
+    float:left;
+    width:50px;
+    height:40px;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+}
+/*search end*/

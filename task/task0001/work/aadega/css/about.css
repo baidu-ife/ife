@@ -1,0 +1,65 @@
+/* 
+* aboutme.css
+*/
+
+.content_wrap {
+    overflow:hidden;
+    margin-bottom:70px;
+}
+.content {
+    position:relative;
+    width:980px;
+    margin:100px auto -930px;
+}
+
+.key, .words {
+    width:487px;
+    background:#fff;
+    padding-bottom:1000px;
+}
+.key {
+    float:left;
+    font-size:20px;
+}
+.key p {
+    text-align:right;
+    padding-right:74px;
+    margin-top:230px;
+}
+
+.words {
+    float:right;
+    font-size:14px;
+}
+.words p {
+    padding:0 74px;
+    margin-top:204px;
+}
+
+.pic {
+    position:absolute;
+    top:0;
+    right:50%;
+}
+.myname img, .phone img, .school img, .job img {
+    position:relative;
+    right:-50%;
+    display:block;
+    width:100%;
+    height:100%;
+    border:8px solid #eee;
+    border-radius:50%;
+    box-sizing:border-box;
+}
+.myname img {
+    top:-50px;
+}
+.phone img {
+    top:150px;
+}
+.school img {
+    top:250px;
+}
+.job img {
+    top:350px;
+}
