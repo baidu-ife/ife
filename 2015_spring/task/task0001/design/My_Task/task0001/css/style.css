@@ -14,17 +14,19 @@ span {
 	color: #ffffff;
 }
 #header {
+	position: relative;
 	width: 1080px;
 	height: 80px;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: #522a5c;
-	position: relative;
 }
 #header-content {
+	position: relative;
 	width: 980px;
 	height: 100%;
-	margin: 0 auto;
-	position: relative;
+	margin-left: auto;
+	margin-right: auto;
 }
 #logo {
 	position: absolute;
@@ -50,15 +52,16 @@ span {
 }
 #content {
 	width: 1080px;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: #eeeeee;
 }
 #big-image {
+	position: relative;
 	width: 100%;
 	height: 474px;
 	background: url("../img/banner-bg.jpg");
 	background-size: contain;
-	position: relative;
 }
 #big-image-text {
 	position: absolute;
@@ -70,10 +73,10 @@ span {
 	background-color: rgba(255,255,255,0.3);
 }
 #big-image-text h1 {
+	margin-bottom: 12px;
 	text-align: right;
 	color: #ffffff;
 	font-size: 14px;
-	margin-bottom: 12px;
 }
 #big-image-text p {
 	line-height: 150%;
@@ -82,18 +85,21 @@ span {
 	text-indent: 24px;
 }
 #content-main-content {
-	width: 980px;
-	margin: 10px auto 40px;
 	overflow: hidden;
+	width: 980px;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	margin-left: auto;
+	margin-right: auto;
 }
 #content-main-content .main-content {
-	width: 320px;
-	float: left;
-	margin-right: 10px;
-	background-color: #ffffff;
 	overflow: hidden;
+	float: left;
+	width: 320px;
+	margin-right: 10px;
 	padding-bottom: 200px;
 	margin-bottom: -200px;
+	background-color: #ffffff;
 }
 #content-main-content .main-content.last {
 	margin-right: 0;
@@ -104,16 +110,17 @@ span {
 	margin: 10px 10px 15px 10px;
 }
 #content-main-content .main-content p {
-	font-size: 12px;
 	line-height: 170%;
 	padding: 0 30px 25px 30px;
+	font-size: 12px;
 }
 #introduction {
+	position: relative;
 	width: 1080px;
 	background-color: #ffffff;
-	position: relative;
 }
 #my-photo {
+	overflow: hidden;
 	position: absolute;
 	left: 50%;
 	margin-left: -80px;
@@ -122,7 +129,6 @@ span {
 	height: 160px;
 	border-radius: 50%;
 	background-color: red;
-	overflow: hidden;
 }
 #my-photo img {
 	width: 160px;
@@ -130,29 +136,30 @@ span {
 }
 #introduction h1 {
 	padding-top: 160px;
-	text-align: center;
-	font: bold 20px Century,Gothic;
 	margin-top: 160px;
+	text-align: center;
+	font: bold 20px Century, Gothic;
 }
 #introduction p {
-	font-size: 14px;
-	color: #000000;
+	padding-bottom: 200px;
 	width: 600px;
 	margin: 30px auto;
 	line-height: 140%;
-	padding-bottom: 200px;
+	font-size: 14px;
+	color: #000000;
 }
 #footer {
-	width: 1080px;
-	background-color: #000000;
-	margin: 0 auto;
 	position: relative;
+	width: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #000000;
 }
 #footer #footer-firstpart {
+	overflow: hidden;
 	width: 100%;
 	height: 35px;
 	border-bottom: 1px solid #ffffff;
-	overflow: hidden;
 }
 #footer #about-link {
 	position: absolute;
@@ -172,17 +179,17 @@ span {
 	color: #ffffff;
 }
 #about .about-about {
-	width: 172px;
 	float: left;
+	width: 172px;
 	margin-bottom: 30px;
 }
 #about .about-about h1 {
-	font-size: 16px;
 	padding-bottom: 36px;
+	font-size: 16px;
 }
 #about .about-about li {
-	font-size: 14px;
 	padding: 4px;
+	font-size: 14px;
 }
 #about-copyright {
 	position: absolute;
