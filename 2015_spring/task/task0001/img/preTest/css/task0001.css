@@ -1,0 +1,91 @@
+h1 {
+	color: blue;
+	text-transform: uppercase;
+	/*h1 {text-transform:uppercase}
+	h2 {text-transform:capitalize}
+	p {text-transform:lowercase}*/
+}
+h2 {
+	font-size: 14px;
+}
+p {
+	font-size: 12px;
+	color: yellow;
+	background-color: black;
+	/*h1 {text-align:center}
+	h2 {text-align:left}
+	h3 {text-align:right}*/
+	word-spacing: 12px;
+}
+img {
+	border: 2px solid red;
+}
+ul {
+	text-decoration: none;
+/*	h1 {text-decoration:overline}
+	h2 {text-decoration:line-through}
+	h3 {text-decoration:underline}
+	h4 {text-decoration:blink}*/
+}
+.word-spacing {
+	word-spacing: 12px;
+	/*对中文无效*/
+
+	/*white-space: 
+	normal	默认。空白会被浏览器忽略。
+	pre	空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+	nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+	pre-wrap	保留空白符序列，但是正常地进行换行。
+	pre-line	合并空白符序列，但是保留换行符。
+	inherit	规定应该从父元素继承 white-space 属性的值。*/
+}
+#firstOne {
+	background-color: red;
+	width: 960px;
+	height: 300px;
+	margin: 0 auto;
+}
+#secondOne {
+	margin-top: 1px;
+	background-color: red;
+	width: 960px;
+	height: 300px;
+	position: relative;
+	left: 50%;
+	margin-left: -480px;
+}
+#A1 {
+	background-color: red;
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-left: -100%;
+	position: relative;
+	left: -100px;
+}
+#B1 {
+	background-color: blue;
+	float: left;
+	width: 100%;
+	height: 100px;
+	margin-left: 100px;
+}
+#C1 {
+	background-color: yellow;
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+}
+#container {
+	background-color: red;
+	width: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+#id1, #id2, #id3, #id4, #id5, #id6, #id7, #id8, #id9 {
+	float: left;
+	background-color: blue;
+	height: 100px;
+	width: 200px;
+	margin:10px 10px;
+}
