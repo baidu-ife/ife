@@ -1,0 +1,36 @@
+body {
+
+}
+*{
+	margin:0 0;
+}
+#main{
+	width: 1280px;
+	margin:0 auto;
+	overflow: hidden;
+}
+#main #contain{
+	width:7680px;
+	position:relative;
+}
+#main img{
+	float:left;
+}
+#listul{
+	position:relative;
+	top:-50px;
+	left:50%;
+	margin-left:-80px;
+}
+.list{
+	list-style-type: circle;
+	float:left;
+	margin-left:15px;
+	cursor: pointer;
+}
+.list_high{
+	list-style-type: disc;
+	float:left;
+	margin-left:15px;
+	cursor: pointer;
+}
