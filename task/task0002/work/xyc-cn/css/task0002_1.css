@@ -1,0 +1,9 @@
+.first,.second,.three{
+    margin: 10px;
+}
+#textarea,#textarea_3{
+    height: 80px;
+}
+.err{
+    color: red;
+}
