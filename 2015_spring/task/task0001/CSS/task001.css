@@ -1,0 +1,29 @@
+h1 {
+    color:blue;
+}
+
+h2 {
+    font-size: 14px;
+    text-indent: 1ch;
+}
+
+
+p {
+    font-size: 18px;
+    color: red;
+    background-color: lightblue;
+    text-transform: capitalize;
+    text-align: center;
+    word-spacing: initial;
+    white-space: normal;
+    line-height: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+
+img{
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+}
