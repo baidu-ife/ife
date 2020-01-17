@@ -1,0 +1,244 @@
+*{
+    padding:0;
+}
+
+ul li{
+    list-style: none;
+}
+
+body{
+    font-family: "SimSun", "SimHei", 'Times New Roman', Times, serif;
+}
+
+header{
+    position: relative;
+    background-color: purple;
+    width: 100%;
+    height: 80px;
+}
+
+menu{
+    position: absolute;
+    left: 10%;
+    width:80%;
+    height: 80px;
+    margin: 0 0;
+    padding: 0px;
+    display: inline-flex;
+    flex-direction:row ;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+menu > div{
+    color:white;
+    margin:5px 0px;
+}
+
+
+.logo{
+    font-family: Arial, Helvetica, sans-serif;   
+    font-size: larger;
+    font-weight: 400;
+}
+
+.menul{
+    list-style: none;
+    font-size: large;
+    font-weight: 400;
+}
+
+.menul > li{
+    float: left;
+    margin: 0 5px;
+}
+
+
+.icon{
+    position: absolute;
+    right: 0;
+    margin: auto 10px;
+    bottom: -4px;
+}
+
+.banner{
+    position: relative;
+    width:100%;
+    height: 600px;
+    background-image: url("../design/banner-bg.jpg");
+    background-size: cover;
+}
+
+.box{
+    position: absolute;
+    background: rgba(255,255,255,0) linear-gradient(to bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.5), rgba(255,255,255,0));
+    left: 60%;
+    right: 10%;
+    bottom: 0;
+    text-align: right;
+    color: white;
+    padding: 10px 10px 30px;
+}
+
+.box h2{
+    font-size: 14px;
+}
+
+.box p{
+    font-size: 12px;
+    line-height: 150%;
+}
+
+.main{
+    padding: 10px;
+    width:100%;
+    height: 450px;
+    background-color: lightgray;    
+}
+
+.main .square{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.main .block{
+    padding:10px;
+    margin: 0px 5px;
+    width: 320px;
+    background-color: white;
+    float: left;
+}
+
+.main .block .pic{
+    width: 300px;
+    height: 180px;
+    background-color: aquamarine;
+    margin: 10px ;
+}
+
+.main .block p {
+    margin: 15px 30px 25px;
+}
+
+.introduction{
+    width: 100%;
+    height: 500px;
+}
+
+.photo{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: bisque;
+    margin: -50px auto 50px;
+}
+
+.name{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    font-family:Century Gothic,serif;;
+    color:black;
+}
+
+
+.more{
+    margin: 20px auto;
+    text-align: center;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    width: 600px;
+}
+
+
+
+.bottom{
+    position: relative;
+    background-color: black;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 500px;
+}
+
+.bottom .menul{
+    text-align: center;
+    border: 1px solid white;
+    width: 100%;
+    height: 30px;
+    margin: 5px auto;
+}
+
+.bottom .menul ul{
+    margin: 0 auto;
+}
+
+.bottom .menul>ul li{
+    display: inline;
+    margin: 0 5px;
+
+}
+
+.grid{
+    width: 80%;
+    margin: 50px 10% 80px ;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr 2em) 1fr;
+}
+
+
+.grid li{
+    width: 100%;
+    margin: 5px 0px;
+    text-align: left;
+}
+
+
+.grid li:nth-child(1){
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.grid li:nth-child(3):hover{
+    color: red;
+}
+
+.element1{
+    grid-column: 1;
+}
+
+.element2{
+    grid-column: 3;
+}
+
+.element3 {
+    grid-column: 5;
+}
+
+.element4 {
+    grid-column: 7;
+}
+
+.element5{
+    grid-column: 9;
+}
+
+
+.end{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.end .text{
+    text-align: center;
+}
+
+.end .link{
+    width: 34px;
+    margin: 0 auto;
+}
+
