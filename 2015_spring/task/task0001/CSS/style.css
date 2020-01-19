@@ -62,6 +62,9 @@ overflow 非 visible
     padding:0;
 }
 
+body{
+    background-color: rgba(211, 211, 211, 1);
+}
 ul li{
     list-style: none;
 }
@@ -72,7 +75,7 @@ body{
 
 header{
     position: relative;
-    background-color: purple;
+    background-color:rgba(82,42,92,1);
     width: 100%;
     height: 80px;
 }
@@ -155,6 +158,16 @@ menu > div{
 .box h2{
     font-size: 14px;
 }
+
+/*
+[建议] line-height 在定义文本段落时，应使用数值。
+解释：
+
+将 line-height 设置为数值，浏览器会基于当前元素设置的 font-size 进行再次计算。在不同字号的文本段落组合中，能达到较为舒适的行间间隔效果，避免在每个设置了 font-size 都需要设置 line-height。
+
+当 line-height 用于控制垂直居中时，还是应该设置成与容器高度一致。
+
+*/
 
 .box p{
     font-size: 12px;
@@ -266,14 +279,52 @@ menu > div{
 }
 
 
+/*
+[强制] font-family 按「西文字体在前、中文字体在后」、
+「效果佳 (质量高/更能满足需求) 的字体在前、效果一般的字体在后」的顺序编写，
+最后必须指定一个通用字体族( serif / sans-serif )。
+
+[强制] font-family 不区分大小写，但在同一个项目中，同样的 Family Name 大小写必须统一
+
+[强制] 需要在 Windows 平台显示的中文内容，其字号应不小于 12px。
+
+
+
+[建议] 需要在 Windows 平台显示的中文内容，不要使用除 normal 外的 font-style。其他平台也应慎用。
+解释：
+由于中文字体没有 italic 风格的实现，所有浏览器下都会 fallback 到 obilique 实现 (自动拟合为斜体)，
+小字号下 (特别是 Windows 下会在小字号下使用点阵字体的情况下) 显示效果差，造成阅读困难。
+
+[强制]font-weight 属性必须使用数值方式描述。
+解释：
+
+CSS 的字重分 100 – 900 共九档，但目前受字体本身质量和浏览器的限制，实际上支持 400 和 700 两档，分别等价于关键词 normal 和 bold。
+
+浏览器本身使用一系列启发式规则来进行匹配，在 <700 时一般匹配字体的 Regular 字重，>=700 时匹配 Bold 字重。
+
+但已有浏览器开始支持 =600 时匹配 Semibold 字重 (见此表)，故使用数值描述增加了灵活性，也更简短。
+
+
+*/
+
 .grid li:nth-child(1){
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Cambria", "Cochin", serif;
     font-size: 20px;
     margin-bottom: 20px;
 }
 
+
+
+/*
+[强制] RGB颜色值必须使用十六进制记号形式 #rrggbb。不允许使用 rgb()
+[强制] 颜色值可以缩写时，必须使用缩写形式。
+[强制] 颜色值不允许使用命名色值。???
+[建议] 颜色值中的英文字符采用小写。如不用小写也需要保证同一项目内保持大小写一致。
+*/
+
 .grid li:nth-child(3):hover{
-    color: red;
+/*  color:red; */
+    color: rgba(255, 0, 0, 1);
 }
 
 .element1{
@@ -313,5 +364,171 @@ menu > div{
 }
 
 /* 博客页面 */
+
+
+/*
+2D 位置
+[强制] 必须同时给出水平和垂直方向的位置。
+*/
+
+.wrap{
+    /*这个地方一定需要重构*/
+    position: relative;
+    display: grid;
+    grid-template-columns: 800px 180px;
+    width: 980px;
+    margin-top: 10px;
+    left: 10%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 780px;
+    margin-bottom: 8px;
+    
+    padding: 0 5px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255,255,255,1);
+    color: #000;
+
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.info {
+    position: absolute;
+    left: -80px;
+    width: 80px;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cate {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(82,42,92,1);
+}
+
+.date {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(166, 96, 183, 1);
+}
+
+.section h3 {
+    margin-bottom: .5em;
+    margin-top: 1em;
+    color: rgba(166, 96, 183, 1);
+    font-size: 16px;
+}
+
+.section h4 {
+    margin: .5em 0;
+    color: #666;
+    font-size: 12px;
+}
+
+.section p {
+    margin: .5em 0;
+    font-size: 12px;
+}
+
+.artical-info {
+    display: table-cell;
+    vertical-align: text-bottom;
+    text-align: end;
+    color: #666;
+    font-size: 12px;
+}
+
+.page{
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page a{
+    /* 有问题*/
+    text-align: center;
+    margin: 0 4px;
+    padding: 0.5em 0.5em;
+    background-color: #fff;
+}
+
+.page li :hover {
+    /* 有问题 */
+    color: #fff;
+    background-color: rgba(166, 96, 183, 1);
+}
+
+
+.search {
+    display: grid;
+    grid-template-columns: 120px 50px;
+    background-color: #fff;
+}
+
+
+.search-input {
+    width: 100px;
+    height: 34px;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 0px;
+    border: 1px solid #ccc;
+}
+
+.search .btn {
+    width: 40px;
+    height: 22px;
+    margin: 10px;
+    margin-left: 0px;
+    background-color: #ccc;
+    text-align: center;
+    padding:  7px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+
+}
+
+
+.category ul {
+    display: grid;
+    grid-template-rows: repeat(4,40px);
+    
+    width:180px;
+
+    background-color: #fff;
+}
+
+.category ul li {
+    line-height: 40px;
+    padding-left: 15px;
+    border-bottom: 1px solid rgba(211, 211, 211, 1);
+    border-left: 4px solid rgba(166, 96, 183, 1); 
+}
+
+.category ul li:hover {
+    border-left: 4px solid rgba(82,42,92,1);
+}
+
+
+
+
+
+
+
+
+
+
 
 
