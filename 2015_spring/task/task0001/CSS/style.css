@@ -502,27 +502,180 @@ CSS 的字重分 100 – 900 共九档，但目前受字体本身质量和浏览
 
 
 .category ul {
-    display: grid;
-    grid-template-rows: repeat(4,40px);
-    
+    display: flex;
+    flex-direction: column;
     width:180px;
-
     background-color: #fff;
 }
 
-.category ul li {
+.category ul a {
+    display: block;
     line-height: 40px;
     padding-left: 15px;
     border-bottom: 1px solid rgba(211, 211, 211, 1);
     border-left: 4px solid rgba(166, 96, 183, 1); 
 }
 
-.category ul li:hover {
+.category ul a:hover {
     border-left: 4px solid rgba(82,42,92,1);
 }
 
+/* 相簿内容 */
+
+/* 标签内容 */
+/* 激活样式？？？*/
+
+.ablum{
+    position: relative;
+    margin-top: 0;
+}
+
+.mainside {
+    border-left: 1px solid #fff;
+}
+
+.label ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    left: 10%;
+}
 
 
+.label ul li {
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: #fff;
+    border: 1px solid rgba(211, 211, 211, 1);
+}
+
+.label ul li:nth-child(1){
+    border-top: 3px solid  rgba(223, 198, 230, 1);
+}
+
+.label ul li:nth-child(2) {
+    border-top: 3px solid rgba(82,42,92,1);
+}
+
+.label ul li:nth-child(3) {
+    border-top: 3px solid rgba(89, 0, 178,1);
+}
+
+.label ul li:nth-child(4) {
+    border-top: 3px solid rgba(140, 35, 0,1);
+}
+
+.label ul li:nth-child(5) {
+    border-top: 3px solid rgba(217, 163, 0,1);
+}
+
+
+.label ul li:hover {
+    border-bottom: 1px solid #fff ;
+}
+
+
+.mainside .picture-fall{
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: 168px 168px 192px 192px;
+    grid-auto-rows: minmax(50px, auto);
+    width: 770px;
+    padding-left:20px;
+    padding-top: 15px;
+    color: #fff;
+    background-color: #fff;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+
+/* 模块 */
+.picture-fall img {
+    width: 100%;
+}
+/* 背景色 */
+.picture-fall .JavaScript-util-functions {
+    background-color: rgba(82,42,92,1);
+}
+
+.picture-fall .UI-components {
+    background-color: rgba(166, 96, 183, 1);
+}
+
+.picture-fall .framework {
+    background-color: rgba(140, 35, 0,1);
+}
+
+.picture-fall .application {
+    background-color: rgba(217, 163, 0,1);
+}
+
+/* 圆圈 */
+
+
+.picture-fall .picture >div {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    line-height: 35px;
+}
+
+
+.picture-fall > div:nth-child(1) {
+    grid-row: 1 ;
+    grid-column: 1 / 3;
+  }
+  
+  .picture-fall > div:nth-child(2) {
+    grid-row: 1 ;
+    grid-column: 3;
+  }
+  
+  .picture-fall > div:nth-child(3) {
+    grid-row: 1 ;
+    grid-column: 4;
+  }
+  
+
+  .picture-fall > div:nth-child(4) {
+    grid-row: 2 ;
+    grid-column: 1;
+  }
+  
+  .picture-fall > div:nth-child(5) {
+     grid-row: 2 ;
+    grid-column: 2;
+  }
+
+  .picture-fall > div:nth-child(6) {
+    grid-row: 2 ;
+    grid-column: 3;
+  }
+  
+  .picture-fall > div:nth-child(7) {
+    grid-row: 2 ;
+    grid-column: 4;
+  }
+  
+  .picture-fall > div:nth-child(8) {
+     grid-row: 3 ;
+    grid-column: 1;
+  }
+
+  .picture-fall > div:nth-child(9) {
+    grid-row: 3 ;
+   grid-column: 2;
+ }
+
+ .picture-fall > div:nth-child(10) {
+    grid-row: 3 ;
+   grid-column: 3;
+ }
 
 
 
