@@ -1,0 +1,214 @@
+/* 常规初始化 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 含义 */
+    height: 100vh;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+/* 基础 card 样式 */
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 
+                0 2px 2px 0 rgba(0, 0, 0, .14),
+                0 1px 5px 0 rgba(0,0,0,0.12) ;
+    
+    /* 观测用 */
+    border: 1px dashed darkorange;
+}
+
+/* 结构 */
+.card-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 35%;
+    color: #fff;
+    background-color: #134857;
+    overflow: hidden;
+
+}
+
+/* 内部 */
+.header-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    padding: 6px 14px;
+    /* rem 不受父对象影响 */
+    font-size: 2rem;
+    background-color: rgba(0,0,0,.17);
+}
+
+.header-title {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    font-size: 0.6rem;
+}
+
+.title-sub {
+    padding-top: 6px;
+    font-size: 1.2rem;
+}
+
+
+.card-article {
+    width: 100%;
+    height: 65%;
+    background-color: #fff;
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    border-top: none;
+    padding: 10px;
+}
+
+
+
+/* card时间线 调整 .cards和 .card大小 利用伪元素增加中间线 通过一个固定位置的边框 */
+
+.cards {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    /* 观测用 */
+    border: 1px solid #000;
+}
+
+.cards::after {
+    z-index: 9;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 1px solid rgba(200, 200, 200, 0.5) ;
+}
+
+.card {
+    width: 46%;
+}
+
+/* card 分列两侧 */
+
+.card:nth-child(odd){
+    align-self: flex-start;
+}
+
+.card:nth-child(even){
+    align-self: flex-end;
+}
+
+/* 增加三角标识 通过伪类after*/
+
+.card:nth-child(odd) .card-header::after {
+    position: absolute;
+    left: 100%;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 18px;
+    /* 再看一看 */
+    border-color: transparent transparent transparent  #134857;
+}
+
+.card:nth-child(even) .card-header::after {
+    position: absolute;
+    /* ?? */
+    right: 100%;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 18px 10px 0;
+    /* 再看一看 */
+    border-color: transparent #134857 transparent transparent  ;
+}
+
+
+/* 中间线上增加表标识点 */
+
+.card:nth-child(odd) .card-header::before {
+    z-index: 10;
+    position: absolute;
+    left: calc(108% - 2.5px);
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #bdbdbd;
+    box-shadow: 0 0 2px 6px #fff;
+}
+
+.card:nth-child(even) .card-header::before {
+    z-index: 10;
+    position: absolute;
+    right: calc(108% - 2.5px);
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #bdbdbd;
+    box-shadow: 0 0 2px 6px #fff;
+}
+
+/* 赋予header 不同颜色*/
+
+/* 设置默认色 */
+
+:root {
+    --bg-color: #10aec2;
+}
+
+.card-header {
+    background-color: var(--bg-color);
+}
+
+.card:nth-child(odd) .card-header::after {
+    border-color: transparent transparent transparent var(--bg-color);
+}
+
+.card:nth-child(even) .card-header::after {
+    border-color: transparent var(--bg-color) transparent transparent;
+}
+
+
+.card:nth-child(4n) {
+--bg-color: #10aec2;
+}
+.card:nth-child(4n+1) {
+--bg-color: #fbc82f;
+}
+.card:nth-child(4n+2) {
+--bg-color: #74759b;
+}
+.card:nth-child(4n+3) {
+--bg-color: #346c9c;
+}
+
+h1 {
+margin-bottom: 10px;
+}
+
+.cards {
+padding: 10px 16px;
+}
