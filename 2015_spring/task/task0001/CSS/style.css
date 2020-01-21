@@ -59,8 +59,21 @@ overflow 非 visible
 
 
 *{
-    padding:0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    /* 含义 */
+    height: 100vh;
+}
+
+
+h1 {
+    text-align: center;
+}
+
 
 body{
     background-color: rgba(211, 211, 211, 1);
@@ -82,18 +95,17 @@ header{
 
 /* [强制] 长度为 0 时须省略单位。 (也只有长度单位可省) */
 menu{
-    position: absolute;
+    position: relative;
     left: 10%;
     
-    display: inline-flex;
-    flex-direction:row ;
+    display: flex;
+    flex-direction:row;
     justify-content: space-between;
     align-items: flex-end;
 
     width:80%;
     height: 80px;
-    margin: 0 0;
-    padding: 0;
+
 }
 
 
@@ -110,13 +122,15 @@ menu > div{
 }
 
 .menu-ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     list-style: none;
     font-size: large;
     font-weight: 400;
 }
 
 .menu-ul > li{
-    float: left;
     margin: 0 5px;
 }
 
@@ -134,10 +148,12 @@ menu > div{
 建议：url() 函数中的绝对路径可省去协议名。
 示例：
 */
+
 .banner{
+    /* cover显示全部 */
     position: relative;
     width:100%;
-    height: 600px;
+    height: 100%;
     background-image: url(../design/banner-bg.jpg);
     background-size: cover;
 }
@@ -175,47 +191,74 @@ menu > div{
 }
 
 .main{
-    width:100%;
-    height: 450px;
-    padding: 10px;
-    background-color: lightgray;    
+    position: relative;
+    height: 400px;
+    width: 80%;
+    left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 10px;  
 }
 
-.main .square{
-    width: 1100px;
-    margin: 0 auto;
-}
+
 
 .main .block{
     width: 320px;
-    padding:10px;
     margin: 0 5px;
     background-color: white;
-    float: left;
 }
 
 .main .block .pic{
     width: 300px;
     height: 180px;
     background-color: aquamarine;
-    margin: 10px ;
+    margin: 10px;
 }
 
 .main .block p {
+    display: block;
     margin: 15px 30px 25px;
 }
 
 .introduction{
+    position: relative;
     width: 100%;
     height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
 }
 
-.photo{
+
+.introduction::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    top: 120px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+
+.photo {
+    width: 100%;
+    height: 200px;
+
+}
+
+.photo .picture{
+    z-index: 10;
     width: 160px;
     height: 160px;
-    margin: -50px auto 50px;
+    margin: 20px auto ;
     border-radius: 50%;
     background-color: bisque;
+    border: 5px solid rgba(211, 211, 211, 1);
 }
 
 .name{
@@ -240,31 +283,30 @@ menu > div{
 .bottom{
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
     font-family:Arial, Helvetica, sans-serif;
     background-color: black;
     color:white;
 }
 
-.bottom .menu-ul{
+.bottom .menu{
     border: 1px solid white;
-    margin: 5px auto;
+    margin: 0 auto;
     width: 100%;
     height: 30px;
     text-align: center;
 }
 
-.bottom .menu-ul ul{
-    margin: 0 auto;
+.bottom .menu-ul li{
+    margin: 0 15px;
 }
 
-.bottom .menu-ul>ul li{
-    display: inline;
-    margin: 0 5px;
 
-}
 
 .grid{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr 2em) 1fr;
     width: 80%;
@@ -349,8 +391,8 @@ CSS 的字重分 100 – 900 共九档，但目前受字体本身质量和浏览
 
 
 .end{
-    width: 100%;
     position: absolute;
+    width: 100%;
     bottom: 0;
 }
 
@@ -679,22 +721,6 @@ CSS 的字重分 100 – 900 共九档，但目前受字体本身质量和浏览
 
 
 /* timeline */
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    /* 含义 */
-    height: 100vh;
-}
-
-
-h1 {
-    text-align: center;
-}
 
 
 .cards {
