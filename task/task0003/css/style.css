@@ -1,0 +1,209 @@
+/*global*/
+.clearFix:after,.clearFix:before{
+	display: table;
+	content: ''
+}
+.clearFix:after{
+	clear: both;
+}
+.green_font,.first_select,.status_0{
+	color: green;
+}
+.hidden{
+	display: none;
+}
+footer,header{
+	display:block;
+}
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	max-width: 100%;
+	min-width: 980px;
+	overflow: hidden;
+}
+#header{
+	height: 49px;
+	line-height: 49px;
+	width: 100%;
+	background-color: #cacaca;
+	border-bottom:  solid 1px #cacaca;
+
+}
+#header h1{
+	text-align: left;
+	padding-left: 30px;
+	width: 30%;
+	font-weight: normal;
+}
+.main{
+	position: relative;
+	top: -50px;
+	padding-top: 50px;
+	height: 100%;
+}
+.task_type_wrap,.task_item_wrap{
+	float: left;
+	width: 330px;
+	height: 100%;
+}
+.task_type_wrap{
+	background-color: #eeeeee;
+}
+.task_item_wrap{
+	position: relative;
+	border-left: solid 1px #cacaca;
+}
+.task_info{
+	height: 100%;
+	overflow: scroll;
+	border-left: solid 1px #cacaca;
+}
+.task_type_wrap h2{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.task_type_wrap h2,
+.task_type_wrap p{
+	padding-left: 10px;
+	font-weight: normal;
+}
+
+.task_type_wrap li{
+	text-indent: 10px;
+	-webkit-user-select: none;
+}
+.task_type_inner_ul li{
+	text-indent: 30px;
+	-webkit-user-select: none;
+	color: #000000;
+}
+.task_type_active{
+	background-color: white;
+}
+.task_type_inner_ul li{
+	position: relative;
+	cursor: pointer;
+}
+.delete_type{
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 0;
+}
+.task_type_wrap_ul li{
+	position: relative;
+	cursor: pointer;
+}
+.task_type_wrap_ul li:hover >.delete_type{
+	display: inline-block;
+}
+.task_add_type,
+.task_add_task{
+	position: absolute;
+	bottom: 50px;
+	left: 10px;
+	cursor: pointer;
+}
+.task_item_wrap_nav{
+	width: 100%;
+	height: 50px;
+	background-color: #eeeeee;
+}
+.task_item_wrap_nav li{
+	cursor: pointer;
+	float: left;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	margin: 10px 0 0 30px;
+	text-align: center;
+}
+.task_item_wrap_nav_active{
+	background-color: white;
+}
+.task_item_inner_ul li{
+	cursor: pointer;
+}
+.task_item_ul>li{
+	text-indent: 30px;
+}
+.task_item_inner_ul>li{
+	text-indent: 50px;
+}
+.task_info_title,
+.task_info_time{
+	width: 100%;
+	position: relative;
+	background-color: #eeeeee;
+	border-bottom: solid 1px #cacaca;
+	height: 50px;
+}
+.task_info_time{
+	background-color: white;
+}
+.task_info_title input,
+.task_info_time input{
+	width: 60%;
+	background: transparent;
+	line-height: 50px;
+	padding: 0 0 0 10px;
+	height: 50px;
+	border: none;
+	outline:none;
+}
+.task_info_save{
+	position: absolute;
+	right: 10px;top: 10px;
+}
+.task_info_time label{
+	margin-left: 10px;
+}
+.task_info_content{
+	width: 100%;
+}
+.task_info_content textarea{
+	padding-top: 10px;
+	width: 98%;
+	padding-left: 2%;
+	min-height: 500px;
+	border: none;
+	outline: none;
+}
+.task_info_end{
+	width: 28px;
+	position: absolute;
+	right: 50px;
+	top: 10px;
+	height: 30px;
+	border: none;
+	background:url(../img/end.png);
+}
+.task_info_editor{
+	top: 10px;
+	height: 30px;
+	width: 28px;
+	position: absolute;
+	right: 10px;
+	border: none;
+	background:url(../img/editor.png);
+}
+.addTaskType_wrap{
+	position: absolute;
+	top: 80px;
+	width: 300px;
+	left: 50%;
+	margin-left: -150px;
+	background-color: white;
+	border: solid 1px #666666;
+	padding: 10px;
+}
+.addTaskType_wrap input{
+	margin-bottom: 10px;
+	width: 80%;
+}
+.task_active{
+	background-color: #eeeeee;
+}
