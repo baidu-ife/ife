@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <title>task0002</title>
+    <style>
+        .wrap {
+            margin: 100px auto;
+            text-align: center;
+            width: 500px;
+            position: relative;
+        }
+        .tip {
+            border: 1px solid #D5D5D5;
+            position: absolute;
+            left: 0;
+            display: none;
+            margin-top: -1px;
+            text-align: left;
+        }
+        .tip.z-show {
+            display: block;
+        }
+        .tip .item {
+            line-height: 30px;
+            white-space: nowrap;
+            padding: 0 20px 0 10px;
+        }
+        .tip .item:hover,
+        .tip .item.z-active {
+            background-color: #7DBEFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        .tip .match {
+            color: red;
+        }
+        #inputTxt {
+            font-size: 16px;
+            padding: 4px 5px;
+            outline: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <input type="text" name="" id="inputTxt" placeholder="运行node服务器，输入data.json中的字符串测试">
+    </div>
+    <div class="content">
+        
+    </div>
+    <script src="./js/util.js"></script>
+    <script src="./js/task0002_4.js"></script>
+</body>
+</html>
