@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    position: relative;
+    width: 900px;
+    margin: 90px auto 0 auto;
+    height: 700px;
+}
+#first_wrap, #second_wrap{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    list-style: none;
+    vertical-align: top;
+    border: solid 1px #cacaca;
+    height: 600px;
+    text-align: center;
+}
+#first_wrap li,#second_wrap li{
+    height: 30px;
+    margin: 5px;
+    width: 390px;
+    background-color: red;
+    color: white;
+}
+.active{
+    opacity: 0.5;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    position: absolute;
+}
