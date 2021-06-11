@@ -1,0 +1,120 @@
+div#task li.selected {
+    background-color: lightblue;
+}
+
+div#edit-task {
+
+    box-sizing: border-box;
+    display: inline-block;
+    
+    position: absolute;
+    right: -35%;
+    top: 1%;
+    width: 35%;
+    /*垂直居中*/
+    height: 98%;
+    /*margin-top: -49%;*/
+    background-color: white;
+    
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    text-shadow: 0 1px 0 #fff;
+    
+    border-radius: 5px 5px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+
+}
+
+div#edit-task div.bd {
+    min-height: 24px;
+    /*overflow: hidden;*/
+    padding: 25px 20px 25px 20px;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    text-shadow: 0 1px 0 #fff;
+    word-wrap: break-word;
+
+    height: 60%;
+}
+
+div#edit-task div.bd textarea#editor {
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: bold;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    
+    color: #186ab2;
+
+    box-shadow: none;
+    resize:none;
+    outline:none;
+    border: 1px solid #7E7E7E;
+    border-radius: 5px;
+
+    height: 80%;
+    width: 85%;
+
+    padding: 10px;
+    overflow:auto;
+}
+
+div#edit-task div.date{
+    margin: 10px 5px;
+    padding: 10px 10px;
+    border-radius: 3px;
+    border: 2px solid #eee;
+}
+div#edit-task div.ft a.back {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #8AB3D7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+div#edit-task div.ft a.delete {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #EE3344;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+div#edit-task div.ft a.checkbox {
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.26);
+      background: -webkit-linear-gradient(top, rgba(217,217,215,0), rgba(217,217,215,0.26));
+  background: -moz-linear-gradient(top, rgba(217,217,215,0), rgba(217,217,215,0.26));
+  background: -o-linear-gradient(top, rgba(217,217,215,0), rgba(217,217,215,0.26));
+  background: -ms-linear-gradient(top, rgba(217,217,215,0), rgba(217,217,215,0.26));
+  background: linear-gradient(to bottom, rgba(217,217,215,0), rgba(217,217,215,0.26));
+}
+
+div#edit-task div.ft a.starred {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}

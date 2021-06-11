@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" type="text/css" href="style/demo.css">
+</head>
+<body>
+	<aside>
+		<header id="profile_and_operations">
+			<span id="personal_profile">BAIDU</span>
+			<!--<img src="images/sousuo.png"  alt="搜素" tilte="搜索" />
+			<img src="images/guanli.png"  alt="批量管理" tilte="批量管理" />
+			<input id="search_input" type="search" placeholder="搜索…" />-->
+		</header>
+		<ul id="list_lists">
+			
+		</ul>
+		<footer id="add_list">
+			<img src="images/tianjia.png" alt="添加清单" title="添加清单">
+		</footer>
+	</aside>
+	<!-- 任务列表区域 -->
+	<section>
+	<div id="task" class="col">
+        <input type="text" placeholder="请输入任务名称" id="newtask">
+        <input type="date" id="taskdate">
+        <ul id="tasklist">
+        </ul>
+        <div id="showcomplete">
+            <a>
+                <text rel="settings_show_completed_tasks_mobile">已完成任务</text>
+            </a>
+        </div>
+        <ul id="completetask" class="checked">
+        </ul>
+    </div>
+    <div id="edit-task">
+                <div class="bd">
+                	<h4>任务内容</h4>
+                    <textarea id="editor" ></textarea>
+                </div>
+                <div class="date">
+                    <label>到期日期 <input id="date" type="date"></label>
+                </div>
+
+                <div class="ft">
+                    <a href="javascript:;" class="back">确定</a>
+                    <a href="javascript:;" class="delete">删除</a>
+                </div>
+                
+            </div>
+    </section>
+	<!-- 定义添加清单弹出框 -->
+	<div id="add_list_dialog" class="dialog_wrapper" hidden>
+ 		<div class="dialog_content">
+ 			<div class="content-header" tabindex="0"> 	
+ 				<h3 class="center"><text rel="label_new_list">创建新清单</text></h3> 
+ 				<div> 
+ 					<input class="login_input" type="text" maxlength="255" value="" placeholder="清单名称"> 
+ 				</div>
+ 			</div> 
+ 	 		<div class="content-footer"> 
+ 	 			<div class="cols"> </div> 
+ 	 			<div class="col-30"><button class="full close"><text rel="button_cancel">取消</text></button></div> 
+ 	 			<div class="col-30"><button class="full submit">保存</button></div> 
+ 	 		</div> 
+ 		</div> 
+	</div>
+	<!-- 定义编辑清单弹出框 -->
+	<div id="edit_list_dialog" class="dialog_wrapper" hidden>
+ 		<div class="dialog_content">
+ 			<div class="content-header" tabindex="0"> 
+ 				<h3 class="center"><text rel="label_new_list">修改清单/删除清单</text></h3> 
+ 				<div> 
+ 					<input class="login_input" type="text" maxlength="255" value="" placeholder="清单名称"> 
+ 				</div>
+ 			</div> 
+ 	 		<div class="content-footer"> 
+ 	 			<div class="cols"> </div> 
+ 	 			<div class="col-30"><button class="full close"><text rel="button_cancel">取消</text></button></div> 
+ 	 			<div class="col-30"><button class="full delete">删除</button></div> 
+ 	 			<div class="col-30"><button class="full submit">保存</button></div> 
+ 	 		</div> 
+ 		</div> 
+	</div>
+	<script type="text/javascript" src="script/Util.js"></script>
+	<script type="text/javascript" src="script/index.js"></script>
+	<script type="text/javascript" src="script/edit-task.js"></script>
+</body>
+</html>

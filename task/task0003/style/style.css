@@ -1,0 +1,385 @@
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft YaHei, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    cursor: default;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+span {
+    display: inline-block;
+}
+aside {
+	width: 250px;
+	box-sizing: border-box;
+	border-right: 1px solid #7e7e7e;
+	background-color: #fcfcfc;
+	height: 100%;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	float: left;
+}
+#profile_and_operations {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	border-bottom: 1px solid #7e7e7e;
+	height: 30px;
+	padding: 0px;
+}
+#personal_profile {
+	display: inline-block;
+	box-sizing: border-box;
+	background-color: #186AB2;
+	color: #fff;
+	font-size: 10px;
+	line-height: 16px;
+	border-radius: 3px;
+	margin: 2px;
+	padding: 5px;
+	height: 26px;
+	max-width: 60px;
+	overflow: none;
+}
+#profile_and_operations img{
+	width: 18px;
+	height: 18px;
+	float: right;
+	margin: 6px 6px 6px 0px;
+}
+#search_input {
+	box-sizing: border-box;
+	height: 24px;
+	margin: 3px 6px 3px 0px;
+	width: 160px;
+	float: right;
+	border: 1px solid #c6c6c6;
+	padding: 0px 5px;
+	border-radius: 5px;
+}
+#list_lists {
+	position: absolute;
+	top: 31px;
+	bottom: 45px;
+	list-style: none;
+	height: auto;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+}
+#list_list::-webkit-scrollbar/*整体部分*/
+{
+width: 10px;
+height:20px;
+}
+
+
+#list_lists li {
+	height: 24px;
+	line-height: 24px;
+	font-size: 13px;
+	padding: 0px 5px 0px 5px;
+	margin: 5px 5px 0px 5px;
+	border-radius: 5px;
+	transition: background-color 2s;/* 定义过渡样式，当鼠标悬浮在li上时，从当前样式过渡到悬浮样式*/
+	-moz-transition: background-color 2s;
+	-webkit-transition: background-color 2s;
+	-o-transition: background-color 2s;
+	
+}
+#list_lists li:hover {
+	background-color: #186AB2;
+}
+#list_lists li:hover a{
+	padding-left: 16px;
+	background-image: url(../images/liebiao_fff.png);
+	background-repeat: no-repeat;
+	background-size: 13px 13px;	
+	color: #fff;
+}
+#list_lists li:hover span {
+	display: inline-block;
+}
+#list_lists li a {
+	text-decoration: none;
+	color: #7e7e7e;
+	font-size: 13px;
+	line-height: 13px;
+	height: 13px;
+	width: 70%;
+	background-image: url(../images/liebiao_7e7e7e.png);
+	background-repeat: no-repeat;
+	background-size: 13px 13px;
+	background-origin: border-box;
+	padding: 0px;
+	margin: 5px 0px 6px 0px;
+	padding-left: 16px;
+	display: inline-block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	transition: color 0.2s;/* 定义过渡样式，当鼠标悬浮在li上时，从当前样式过渡到悬浮样式*/
+	-moz-transition: color 0.2s;
+	-webkit-transition: color 0.2s;
+	-o-transition: color 0.2s;
+}
+#list_lists li span {
+	display: hidden;
+	line-height: 16px;
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/bianji.png);
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	padding: 4px;
+	margin: 0px;
+	float: right;
+	background-origin: content-box;
+	border-left: 1px solid #fff;
+	cursor: pointer;
+}
+#list_lists .list_selected {
+	background-color: #186AB2;
+}
+#list_lists .list_selected a{
+	padding-left: 16px;
+	background-image: url(../images/liebiao_fff.png);
+	background-repeat: no-repeat;
+	background-size: 13px 13px;
+	color: #fff;
+}
+#list_lists .list_selected span {
+	display: inline-block;
+}
+#add_list {
+	position: absolute;
+	bottom: 0px;
+	height: 44px;
+	width: 100%;
+	border-top: 1px solid #7e7e7e;
+	text-align: center;
+}
+#add_list img {
+	margin: 6px auto;
+}
+
+body section {
+	overflow-x: hidden;
+    height: 100%;
+    /*padding: 30px;*/
+    /*margin-left: -400px;*/
+    background-color: #C4E8E3;
+    box-sizing: border-box;
+    position: relative;
+    background-image: url(../images/background/19.jpg);
+}
+
+
+#task {
+    width: 100%;
+    
+    background-size: cover;
+}
+
+/* left */
+#type {
+    width: 200px;
+    margin-left: -100%;
+    background-color: #009900;
+    left: -200px;
+}
+
+/* right */
+#details {
+    width: 250px;
+    margin-left: -250px;
+    background-color: #B8DBFF;
+    right: -250px;
+    display: none;
+}
+.col {
+    position: relative;
+    float: left;
+    /*height: 100%;*/
+}
+
+#tasklist li, #completetask li {
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    line-height: 1.5em;
+}
+#newtask{
+	margin: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    line-height: 1.5em;
+    width: 80%;
+}
+
+
+
+#taskdate {
+    position: absolute;
+    right: 20%;
+    top: 15px;
+}
+
+.tasktime {
+	margin-top: 5px;
+    float: right;
+}
+
+.checkbox {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    display: inline-block;
+    background: -webkit-linear-gradient(top, rgba(217, 217, 215, 0), rgba(217, 217, 215, 0.26));
+    background: -moz-linear-gradient(top, rgba(217, 217, 215, 0), rgba(217, 217, 215, 0.26));
+    background: -o-linear-gradient(top, rgba(217, 217, 215, 0), rgba(217, 217, 215, 0.26));
+    background: -ms-linear-gradient(top, rgba(217, 217, 215, 0), rgba(217, 217, 215, 0.26));
+    background: linear-gradient(to bottom, rgba(217, 217, 215, 0), rgba(217, 217, 215, 0.26));
+    position: relative;
+    cursor: pointer;
+}
+
+.checked {
+    opacity: .6;
+}
+
+.checked span.taskname {
+    text-decoration: line-through;
+}
+
+.taskname {
+    vertical-align: text-bottom;
+}
+
+#showcomplete {
+    margin-left: 20px;
+}
+
+#showcomplete a {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-weight: 400;
+    display: inline-block;
+    box-sizing: border-box;
+    line-height: 16px;
+}
+
+
+/*定义弹出框样式*/
+.dialog_wrapper{
+  	position: absolute;
+  	top:0;
+  	left:0;
+  	right:0;
+  	bottom:0;
+  	z-index: 1099;
+  	background: rgba(0,0,0,0.25);
+  }
+
+  .dialog_content{
+  	width:392px;
+  	height:200px;
+  	margin:100px auto;
+  	padding:20px;
+  	border:4px solid #FCFCFC;
+  	background:#fcfcfc;
+  	border-radius:5px;
+	text-align:center;
+  }
+
+  .center{
+	font-size: 1.17em;
+	font-weight: bold;
+	color:#262626;
+  	} 
+
+  	.login_input{
+  		width:100%;
+  		height:36px;
+  		border-radius: 4px;
+  		cursor: auto;
+  		padding:0 5px;
+  		margin:20px 0;
+  		font-family: "Lato","Helvetica Neue",Helvetica,"Arial",sans-serif;
+  		font-weight: 500;
+  		font-size: 14px;
+  		color: #262626;
+  		border: none;
+		box-shadow: inset 0 0 1px rgba(0,0,0,0.11),inset 0 0 0 1px rgba(0,0,0,0.2);
+  	}
+
+	.cols{
+		width:100%;
+		height:1px;
+		margin:20px 0;
+		background:#E0E0DF;
+	}
+
+	.col-30{
+		width:100px;
+		height:30px;
+		display:inline-block;
+	}
+
+	.full{
+		cursor: pointer;
+  		font-weight: bold;
+  		font-size: 13px;
+  		line-height: 13px;
+		width:100px;
+		height:30px;
+		border:0;
+		border-radius:4px;
+		background:#fff;
+	}
+
+	.close{ 
+  		color: #737272; 
+		border:1px solid #ddd;
+	}
+	.delete {
+		color: #fff; 
+		background-color: #ee3344;
+	}
+	.submit{
+		color: #fff; 
+		background:#8AB3D7;
+	}

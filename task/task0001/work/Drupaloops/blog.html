@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+<div class="wrapper">
+	<!--header-->
+	<div class="header">
+		<h1 class="logo">
+			<img src="img/Koala.jpg" />
+			<a href="#" hidefocus="ture">Oops</a>
+		</h1>
+		<ul class="ul_nav">
+			<li><a href="blog.html">BLOG</a></li>
+			<li><a href="gallery.html">GALLERY</a></li>
+			<li><a href="about.html">ABOUT US</em></a></li>
+		</ul>
+		<form class="search">
+			<input type="text" placeholder="用户/博文/长廊" value=""  onmouseover="this.style.backgroundColor='#3FACAC'" onmouseout="this.style.backgroundColor='#ffffff'" />
+			<input type="submit" value=""  style="background:url('img/search.png') no-repeat;width:14px;"/>
+		</form>
+		<ul class="ul_user">
+			<li><a href="#">登陆</a></li>
+			<li><a href="#">注册</a></li>
+		</ul>
+	</div>
+	<!--slide-->
+	<div class="slides">
+		<ul style="width:100%;height:300px;">
+			<li><a href="#" title="Whoops" target="_blank">
+			    <img style="width:100%;height:300px;" src="img/banner-bg.jpg" alt="slides2.jpg" draggable="false" /></a>
+			   </li>
+		</ul>	
+	</div>
+	<div class="content">
+		<h1>实践总结</h1>
+		<div class="content_txt">
+		<p>通过这次实践的机会较为系统地学习了一下HTML和CSS的基础知识，以前都是用到什么看什么，真正遇到问题的时候Baidu一下，只是一知半解地解决了问题，这样并不是很好。我自己对HTML5和CSS3的了解也不够多。这次实践我还是使用了比较熟悉的Div+CSS，并没有较多地使用这些新的标签和特性等等，以后我会加强学习。</p>
+		<p>这次任务过程中我遇到了几个问题和新的认识:</p>
+		<p>1.滥用div：第一次做完之后感觉太臃肿了，有些div完全可以删掉，如果使用html5的一些新标签的话也会稍微简洁一点。</p>
+		<p>2.css代码规范问题：这个实例由于是静态页面，涉及的页面信息还比较少。正常的话应该在编写css代码时注意规范，提高可重用性。这个例子是让我们写在style.css中，更好的方式应该是按照页面结构和功能分类，分开来编码。</p>
+		<p>3.float使用太过无脑:布局过程中,我使用了大量的float,这也给我后面的布局带来很大困扰。在修改过程中，我发现之前的根节点没有规范地书写，会对后面子节点产生很大影响。在后来的练习中，我谨慎的使用float，完成了任务。</p>
+		<p>4.选择器的使用：个人感觉，使用类选择器和元素选择器比较好，在根节点特定功能的时候再选择id选择器比较好。</p>
+		</div>
+	</div>
+	<div class="footer">
+			<p>&copyCopyright&nbspDrupaloops&nbsp2015</p>
+			<img src="img/Koala.jpg"/>
+			<p>欢迎来到Oops</p>
+	</div>
+</div>
+</body>
+</html>

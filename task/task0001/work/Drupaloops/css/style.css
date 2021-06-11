@@ -1,0 +1,162 @@
+/************************** basic element *****************/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	line-height: 1.88889;
+	color: #555753;
+	background: #BE7B9C;
+	margin: 0; 
+	padding: 0;
+	width: 100%;
+}
+p { 
+	margin-top: 0; 
+	text-align: justify;/*两端对齐*/
+	}
+ul {
+	float: left;
+	list-style-type: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+form{
+	display: inline;
+	float: left;
+}
+input{
+	border: 0 solid #FFFAFA;
+	font-size: 16px;
+}
+li{
+	display: inline;
+}
+a:link,a:visited{
+	font-family:  Verdana,'微软雅黑','Microsoft YaHei',Helvetica,Arial;
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #B7A5DF;
+}
+a:hover,a:active,a:focus{
+	text-decoration: none; 
+	color: #9685BA;
+	background-color: #0D8BA1;
+}
+/*************************** specific divs:Header,Footer ******************************/
+.wrapper{
+	padding: 0;  
+	margin: 0 auto; 
+	position: relative;
+
+}
+.header{
+	margin: 0px auto;
+	padding: 0px;
+	height: 70px;
+	background-color: snow;
+}
+.logo img{	
+	margin-top: 10px;
+	width: 40px;
+	height: 40px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	float: left;
+}
+.search{
+	margin-top: 20px;
+}
+.logo{
+	display: inline;
+	float: left;
+}
+.ul_nav{
+	margin-left: 40px;
+	float: left;
+	padding: 20px;
+}
+.ul_nav a em{
+	float: left;
+	height: 70px;
+	padding-left: 20px;
+}
+.ul_user{
+	padding: 20px;
+	float: right;
+}
+.footer{
+	font-family:  Verdana,'微软雅黑','Microsoft YaHei',Helvetica,Arial;
+	background-color: #134347;
+	text-align: center;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.footer img{
+	width: 50px;
+	height: 50px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+.footer p{
+	text-align: center;
+}
+/*************************** specific divs:Slide,Content ******************************/
+.content{
+	margin:0 auto; 
+	text-align: center;
+	width: 980px;
+	height: auto;
+}
+.content_main{
+	width: 70%;
+	background-color: gray;
+	height: auto;
+	float: left;
+}
+.content_gallery>img{
+	width: 320px;
+	height: 181px;
+}
+.content_txt{
+	text-align: left;
+}
+.section{
+	border: 5px solid blue;
+}
+.session_nav ul {	
+	display: block;
+}
+.session_content ul li{
+	display: inline-block;
+}
+#section1{
+	height: 490px;
+	background-color: gray;
+}
+#section2{
+	height:495px;
+	background-color: silver;
+}
+#section3{
+	height: 490px;
+	background-color: pink;
+}
+.content_slides{
+	width:30%; 
+	background-color: blue;
+	height: auto;
+	float: right;
+}
+#slide1{
+	height: 500px;
+	background-color: red;
+}
+#slide2{
+	height: 500px;
+	background-color: green;
+}
+#slide3{
+	height: 500px;
+	background-color: yellow;
+}
+
