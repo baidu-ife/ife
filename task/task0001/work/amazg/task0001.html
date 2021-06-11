@@ -1,0 +1,112 @@
+<html>
+<head>
+ 	<meta charset="UTF-8">
+	<title>task0001</title>
+	<style type="text/css">
+
+	body{
+	margin: 0;
+	}
+	#A {
+	background-color: red;
+	padding: 10;
+	float: left;
+	}
+	#B {
+	background-color: blue;
+	padding: 10;
+	}
+	#C {
+	background-color: yellow;
+	padding: 10;
+	}
+
+	#X {
+	background-color: red;
+	padding: 10;
+	display: inline-block;
+	}
+	#Y {
+	background-color: blue;
+	padding: 10;
+	position: absolute;
+	left:60px;
+	top: 158px;
+	width: 100%;
+	}
+	#Z {
+	background-color: yellow;
+	padding: 10;
+	}
+
+	#one{
+	display: -webkit-flex;
+	display: flex;
+
+	}
+	#one1{
+	-webkit-flex:none;
+	flex:none;
+	width: 200px;
+	background-color: blue;
+	margin: 1em;
+	height: 60px;
+	}
+	#one2{
+	-webkit-flex:initial;
+	flex:initial;
+	width: 800px;
+	min-width: 0px;
+	background-color: blue;
+	margin: 1em;
+	height: 60px;
+	}
+	#one3{
+	-webkit-flex:none;
+	flex:none;
+	width: 200px;
+	background-color: blue;
+	margin: 1em;
+	height: 60px;
+	}
+	#all{
+	background-color: red;
+	}
+	</style>
+</head>
+<body>
+<h1>TASK0001 #6</h1>
+<hr>
+<div id="A"><p>DIV-A</p></div>
+<div id="B"><p>DIV-B</p></div>
+<div id="C"><p>DIV-C</p></div>
+
+<hr>
+
+<div id="X"><p>DIV-A</p></div>
+<div id="Y"><p>DIV-B</p></div>
+<div id="Z"><p>DIV-C</p></div>
+
+<hr>
+<div id="all">
+<div id="one">
+<div id="one1">1</div>
+<div id="one2">2</div>
+<div id="one3">3</div>
+</div>
+<div id="one">
+<div id="one1">1</div>
+<div id="one2">2</div>
+<div id="one3">3</div>
+</div>
+<div id="one">
+<div id="one1">1</div>
+<div id="one2">2</div>
+<div id="one3">3</div>
+</div>
+</div>
+<p>这里我使用了display:-webkit-flex;具体可以查看<a href="http://zh.learnlayout.com/flexbox.html">CSS-flexbox</a></p>
+<hr>
+
+</body>
+</html>
