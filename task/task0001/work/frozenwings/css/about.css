@@ -1,0 +1,88 @@
+.bg-white{
+    background-color:#ffffff;
+}
+.section-avatar{
+    position:relative;
+    margin-top:100px;
+    height:110px;
+}
+.section-avatar img{
+    position:absolute;
+    left:50%;
+}
+.bg-180{
+    top:-70px;
+    margin-left:-90px;
+}
+.img-avatar{
+    top:-60px;
+    margin-left:-80px;
+}
+.table{
+    color:#000000;
+    border-collapse: separate;
+    border-spacing: 5px;
+    width:990px;
+    margin-left:-6px;
+    margin-top:-5px;
+}
+.cell{
+    background-color:#ffffff;
+    position:relative;
+    width:487px;
+    line-height:150%;
+}
+.left-column{
+    font-size: 20px;
+    padding-right:4em;
+    text-align: right;
+
+}
+.right-column{
+    font-size:14px;
+    text-align: left;
+}
+.right-column .short{
+    position:relative;
+    width:25em;
+    padding:2em 0 2em 4em;
+}
+.short .year{
+    position:absolute;
+    display:block;
+    height:33px;
+    width:68px;
+    background: url("../img/bg-year.png");
+    font-size:14px;
+    text-align:center;
+    line-height:33px;
+    left:0;
+    top:50%;
+    margin-left:-37px;
+    margin-top:-16px;
+}
+.line{
+    width:100%;
+    position:relative;
+    height:110px;
+    background-color: #ffffff;
+    margin-top:-5px;
+}
+.line img{
+    position:absolute;
+    left:50%;
+}
+.line .bg-110{
+    margin-left:-55px;
+}
+.line .img-circle{
+    top:5px;
+    margin-left:-50px;
+}
+.last-line{
+    margin-top:-10px;
+    margin-bottom:25px;
+}
+.last-line .cell{
+    height:10em;
+}

@@ -1,0 +1,207 @@
+/*左侧文章区域*/
+.main{
+    width:710px;
+    float:left;
+}
+.aside{
+    width:260px;
+    float:right;
+}
+.aside > div{
+    margin-bottom:10px;
+}
+.clear{
+    clear:both;
+}
+/*主要部分：瀑布流*/
+.main{
+}
+.main > div{
+    margin-bottom:10px;
+}
+.waterfall{
+    background-color:#ffffff;
+    padding:20px 10px 20px 20px;
+}
+.works{
+    position:relative;
+}
+.work{
+    position:absolute;
+    margin:0 10px 10px 0;
+    color:#ffffff;
+}
+.sz-1 img{
+    display:block;
+    width:160px;
+}
+.sz-2 img{
+    display:block;
+    width:330px;
+}
+.sz-1 .work-text{
+    width:100px;
+}
+.sz-2 .work-text{
+    width:270px;
+}
+.work-desc{
+    position:absolute;
+    left:0;
+    bottom:0;
+    padding:10px;
+    overflow:hidden;
+}
+.work-tag{
+    width:40px;
+    height:100%;
+    font-size:14px;
+    float:left;
+    text-align:center;
+    margin:5px 0;
+}
+.work-tag span{
+    display:block;
+    width:20px;
+    height:20px;
+    line-height:20px;
+    margin:0 auto;
+    background-image: url("../img/tag-bg.png");
+}
+.work-text{
+    float:right;
+}
+.work-desc h2{
+    font-size:14px;
+    margin:5px 0;
+}
+.work-desc p{
+    font-size:12px;
+    line-height:1.5;
+    margin:0;
+}
+
+.more{
+    background-color:#ffffff;
+    text-align:center;
+    height:50px;
+    line-height:50px;
+}
+
+.more a{
+    display: inline-block;
+    padding-left:25px;
+    background: url("../img/more.png") 0 17px no-repeat;
+    color:#666666;
+    text-decoration: none;
+    font-size:14px;
+}
+.more a:hover{
+    color:#5900b2;
+}
+/*主要部分：瀑布流结束*/
+/*导航*/
+.works-nav{
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+}
+.works-nav ul{
+    overflow:hidden;
+    float:left;
+    margin-top:20px;
+    background-color:#ffffff;
+}
+.works-nav li{
+    float:left;
+    border-right:1px solid #eeeeee;
+}
+.works-nav li:last-child{
+    border-right: none;
+}
+.works-nav li.active{
+    border-bottom:1px solid #eeeeee;
+}
+.works-nav a{
+    display:block;
+    height:47px;
+    color:#000000;
+    text-decoration: none;
+    font-size:12px;
+    padding:15px 20px 20px 20px;
+}
+.nav-1{border-top:4px solid #dfc6e6;} .nav-1:hover>a{background-color:#dfc6e6;color:#ffffff;}
+.nav-2{border-top:4px solid #522a5c;} .nav-2:hover>a{background-color:#522a5c;color:#ffffff;}
+.nav-3{border-top:4px solid #5900b2;} .nav-3:hover>a{background-color:#5900b2;color:#ffffff;}
+.nav-4{border-top:4px solid #8c2300;} .nav-4:hover>a{background-color:#8c2300;color:#ffffff;}
+.nav-5{border-top:4px solid #d9a300;} .nav-5:hover>a{background-color:#d9a300;color:#ffffff;}
+.work-bg-1 .work-desc{background-color:#dfc6e6;}
+.work-bg-2 .work-desc{background-color:#522a5c;}
+.work-bg-3 .work-desc{background-color:#5900b2;}
+.work-bg-4 .work-desc{background-color:#8c2300;}
+.work-bg-5 .work-desc{background-color:#d9a300;}
+/*导航结束*/
+/*人气排行*/
+.rank{
+    font-family: Arial, sans-serif;
+    background-color:#ffffff;
+    padding:20px 12px;
+}
+.rank h2{
+    color:#666666;
+    font-size:14px;
+    margin-bottom:20px;
+}
+.rank-item{
+    margin-bottom:12px;
+    padding-left:28px;
+    height:18px;
+    position:relative;
+}
+.rank-figure{
+    width:102px;
+    height:18px;
+    border:1px solid #522a5c;
+    background-color:#ffffff;
+}
+.rank-20{
+    width:20px;
+}
+.rank-40{
+    width:40px;
+}
+.rank-60{
+    width:60px;
+}
+.rank-80{
+    width:80px;
+}
+.rank-100{
+    width:100px;
+}
+.rank-figure>div{
+    background-color:#522a5c;
+    height:16px;
+}
+.rank-num{
+    color:#ffffff;
+    text-align:center;
+    display:block;
+    position:absolute;
+    left:1px;
+    top:1px;
+    height:16px;
+    width:16px;
+    line-height:16px;
+    font-size:12px;
+    background:url("../img/rank-bg.png");
+}
+.rank-name{
+    position:absolute;
+    display:block;
+    height:18px;
+    line-height:18px;
+    top:0;
+    left:138px;
+    color:#000000;
+    cursor: pointer;
+}
