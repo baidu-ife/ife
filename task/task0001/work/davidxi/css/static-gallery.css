@@ -1,0 +1,152 @@
+.gallery-container {
+    padding-top: 20px;
+}
+/**
+ * gallery nav tabs
+ */
+.gallery-nav-tabs {
+    background: none;
+    height: 60px;
+    margin-bottom: 0;
+}
+.gallery-nav-tabs ul {
+    margin: 0;
+}
+.gallery-nav-tabs ul li {
+    border: 1px solid #ddd;
+    background: #fff;
+    margin: 0 -1px 0 0;
+}
+.gallery-nav-tabs ul li.color-violet {
+    border-top: 5px solid #DFC7E6;
+}
+.gallery-nav-tabs ul li.color-indigo {
+    border-top: 5px solid #562f60;
+}
+.gallery-nav-tabs ul li.color-purple {
+    border-top: 5px solid #5900b2;
+}
+.gallery-nav-tabs ul li.color-crimson {
+    border-top: 5px solid #8c2300;
+}
+.gallery-nav-tabs ul li.color-gold {
+    border-top: 5px solid #d9a300;
+}
+.gallery-nav-tabs ul li.active {
+    border-bottom: none;
+}
+.gallery-nav-tabs ul li a {
+    display: block;
+    padding: 15px 20px 20px 20px;
+    color: #000;
+    text-decoration: none;
+}
+.gallery-nav-tabs ul li a:hover {
+    color: #fff;
+}
+.gallery-nav-tabs ul li.color-violet a:hover {
+    background: #DFC7E6;
+}
+.gallery-nav-tabs ul li.color-indigo a:hover {
+    background: #562f60;
+}
+.gallery-nav-tabs ul li.color-purple a:hover {
+    background: #5900b2;
+}
+.gallery-nav-tabs ul li.color-crimson a:hover {
+    background: #8c2300;
+}
+.gallery-nav-tabs ul li.color-gold a:hover {
+    background: #d9a300;
+}
+/**
+ * gallery story cards
+ */
+.flow-feature-box {
+    width: 50%;
+    position: absolute;
+}
+.flow-box-column {
+    width: 25%;
+    float: left;
+}
+.flow-box {
+    position: relative;
+    min-height: 1px;
+}
+.gallery-cards-flow {
+    margin: 0 0 20px 0;
+    padding-top:10px;
+    position: relative;
+}
+.gallery-card {
+    padding: 5px;
+    color: #fff;
+}
+.gallery-card-content {
+    padding: 10px;
+}
+.gallery-card-content:before,
+.gallery-card-content:before {
+    content: "";
+    display: table;
+}
+.color-violet .gallery-card-content {
+    background: #DFC7E6;
+}
+.color-indigo .gallery-card-content {
+    background: #562f60;
+}
+.color-purple .gallery-card-content {
+    background: #5900b2;
+}
+.color-crimson .gallery-card-content {
+    background: #8c2300;
+}
+.color-gold .gallery-card-content {
+    background: #d9a300;
+}
+.gallery-card .gallery-card-pic {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+.gallery-card .gallery-card-pic img {
+    width: 100%;
+    height: 100px;
+}
+.gallery-card-content-left {
+    width: 30px;
+    float: left;
+}
+.gallery-card-content-left i {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+.gallery-card-content-right {
+    margin-left: 40px;
+}
+.gallery-card-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+/**
+ * gallery loading more button
+ */
+.gallery-loading-button a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+}
+.gallery-loading-button a:hover {
+    background: #522a5c;
+    color: #fff;
+}

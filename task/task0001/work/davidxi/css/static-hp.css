@@ -1,0 +1,110 @@
+/**
+ * hp banner area
+ */
+.hp-banner {
+    overflow: hidden;
+    position: relative;;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1200px;
+    height: 524px;
+}
+.hp-banner .container {
+    height: 524px;
+}
+.hp-banner .hp-banner-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.hp-banner .hp-banner-info {
+    position: relative;
+    color: #fff;
+    width: 360px;
+    height: 120px;
+    /**
+     * http://www.zhangxinxu.com/wordpress/2010/04/css%E5%AE%9E%E7%8E%B0%E5%85%BC%E5%AE%B9%E6%80%A7%E7%9A%84%E6%B8%90%E5%8F%98%E8%83%8C%E6%99%AFgradient%E6%95%88%E6%9E%9C/
+     */
+    filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=blue,gradientType=0);
+    -ms-filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=blue,gradientType=0);/*IE8*/
+    background: #fff;
+    background:-moz-linear-gradient(top, rgba(255, 255, 255, 0.70), rgba(0, 0, 255, 0));
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(rgba(255, 255, 255, 0.70)), to(rgba(255, 255, 255, 0)));
+    background:-o-linear-gradient(top, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0));
+}
+.hp-banner .hp-banner-title {
+    padding: 10px 10px 6px 10px;
+    font-size: 14px;
+    text-align: right;
+}
+.hp-banner .hp-banner-text {
+    padding: 6px 10px 30px 10px;
+    font-size: 12px;
+    line-height: 150%;
+    text-indent: 2em;
+}
+
+/**
+ * discovery section
+ */
+.discovery-container {
+    padding-top: 10px;
+    padding-bottom: 110px; /* 60 (blank) + 50 (profile pic) */
+}
+.discovery-card {
+    background: #fff;
+    width: 320px;
+    vertical-align: top;
+}
+.discovery-card .discovery-card-pic {
+    padding: 15px 15px 0 15px;
+    overflow: hidden;
+}
+.discovery-card .discovery-card-pic img {
+    width: 290px;
+    margin: 0 auto;
+}
+.discovery-card .discovery-card-text {
+    padding: 15px 30px 20px 30px;
+    font-size: 12px;
+    line-height: 170%;
+    text-indent: 2em;
+}
+
+/**
+ * profile section
+ */
+.profile-container {
+    position: relative;
+}
+.card-profile-picture {
+    width: 160px;
+    height: 160px;
+}
+.card-profile-picture-offset {
+  position: relative;
+  top: -50px;
+  margin-bottom: -50px;
+}
+.hp-profile-pic img {
+    width: 160px;
+    height: 160px;
+}
+.hp-profile-title {
+    margin-top: 50px;
+    font-family: Century Gothic, tahoma, arial,sans-serif;
+    font-size: 20px;
+    color: #000;
+}
+.hp-profile-text {
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    font-size: 14px;
+    width: 600px;
+    color: #000;
+    text-indent: 2em;
+}

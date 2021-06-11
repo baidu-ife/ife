@@ -1,0 +1,86 @@
+/**
+ * articles list
+ */
+.blog-container {
+    padding-top: 20px;
+}
+.article-container {
+    position: relative;
+}
+.article-title {
+    padding: 20px 10px 10px 10px;
+    color: #522a5c;
+    font-size: 16px;
+    font-weight: bold;
+}
+.article-subtitle {
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+.article-text {
+    padding: 10px;
+}
+.article-text p {
+    text-indent: 2em;
+    margin: 0;
+}
+.article-meta {
+    padding: 10px;
+    text-align: right;
+    color: #aaa;
+}
+.article-card {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 0;
+    left: -50px;
+    width: 50px;
+}
+.article-card .article-card-upper {
+    padding: 10px 0 ;
+    background: #522a5c;
+    color: #fff;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.article-card .article-card-lower {
+    padding: 10px 0;
+    background: #a660bc;
+    color: #fff;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+/**
+ * pager
+ */
+.article-pager {
+    margin-bottom: 20px;
+}
+.article-pager ul {
+    width: 570px;
+    margin: 0 auto;
+}
+.article-pager ul li {
+    margin-left: 10px;
+}
+.article-pager ul li a,
+.article-pager ul li.active {
+    display: inline-block;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+.article-pager ul li a{
+    background: #fff;
+    color: #000;
+}
+.article-pager ul li.active,
+.article-pager ul li a:hover {
+    background: #a660b7;
+    color: #fff;
+}

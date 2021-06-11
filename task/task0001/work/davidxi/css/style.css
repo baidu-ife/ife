@@ -1,0 +1,343 @@
+/**
+ * overwrites
+ */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:after,:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+body {
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #565a5c;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+[lang^="zh"] body {
+font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,sans-serif !important
+}
+
+/**
+ * commons
+ */
+.full-width {
+    width: 100%;
+}
+
+.center-block {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* http://www.iyunlu.com/view/css-xhtml/55.html */
+.clearFloat:before,
+.clearFloat:after {
+    content: "";
+    display: table;
+}
+
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.va-container {
+    display: table;
+    position: relative
+}
+
+.va-container-v {
+    height: 100%
+}
+
+.va-container-h {
+    width: 100%
+}
+
+.va-top,.va-middle,.va-bottom {
+    display: table-cell
+}
+
+.va-top {
+    vertical-align: top
+}
+
+.va-middle {
+    vertical-align: middle
+}
+
+.va-bottom {
+    vertical-align: bottom
+}
+
+.tpadding {
+    padding-top: 10px
+}
+
+.media-photo {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    background-color: #cacccd;
+}
+
+.media-round, .img-round {
+    /**
+     * https://css-tricks.com/almanac/properties/b/border-radius/
+     */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/**
+ * grid
+ */
+.row {
+    margin-left: -12.5px;
+    margin-right: -12.5px
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table
+}
+
+.row:after {
+    clear: both
+}
+
+.grid-5-col { /* .col-lg-2.4 */
+    width: 20%;
+    float: left;
+}
+
+.col-lg-8 {
+    margin-right: 270px;
+}
+
+/**
+ * components
+ */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+    width:980px;
+}
+
+.main-section {
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+ul, ol {
+    padding-left: 0;
+}
+ul.list-v li,
+ol.list-v li {
+    list-style: none;
+}
+
+ul.list-h li,
+ol.list-h li {
+    list-style: none;
+    float: left;
+    margin-left: 28px;
+}
+ul.list-h li:first-child,
+ol.list-h li:first-child {
+    margin-left: 0 !important;
+}
+ul.list-h:after,
+ol.list-h:after {
+    clear: both;
+}
+
+.white-links-container a,
+.white-links-container a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+.white-links-container a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.panel {
+    background-color: #fff;
+}
+.panel-dark {
+    background-color: #edefed;
+}
+
+.progressbar-outer {
+    display: inline-block;
+    border: 1px solid #522a5c;
+}
+.progressbar-inner {
+    display: inline-block;
+    background: #522a5c;
+}
+
+/**
+ * navigation bar
+ */
+.navbar {
+    min-width: 980px;
+    background: #522a5c;
+    height: 80px;
+    position: relative;
+}
+.navbar a:hover {
+    text-decoration: none !important;
+}
+.navbar .navbar-container {
+    position: relative;
+    height: 100%;
+}
+.navbar .navbar-github {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('../img/icon-github.png');
+}
+.navbar .navbar-logo {
+    position: absolute;
+    left: 0;
+    display: block;
+    bottom: 5px;
+    font-size: 30px;
+}
+.navbar .list-h  {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    margin: 0; /* overwrite normalize.css */
+    font-family: 'SimSun', tahoma, arial,sans-serif;
+    font-size: 14px;
+}
+
+/**
+ * footer
+ */
+#footer {
+    background: #000;
+    color: #fff;
+}
+#footer h3 {
+    font-size: 14px;
+}
+.footer-container a,
+.footer-container a:hover,
+.footer-container a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+#footer ul {
+    margin: 0;
+}
+.footer-menu {
+    margin: 0 auto;
+    width: 200px;
+    height: 35px;
+    line-height: 35px;
+}
+.footer-content {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+.footer-copyright {
+    margin-top: 70px;
+    text-align: center;
+}
+.footer-copyright img {
+    margin-bottom: -5px;
+}
+.footer-copyright a {
+    display: block;
+    width: 30px;
+    height: 34px;
+    margin: 0 auto;
+    background: url('../img/icon-github.png');
+}
+
+/**
+ * form
+ */
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.input-group .form-control,
+.input-group-addon,.input-group-btn {
+    display: table-cell;
+}
+.form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+}
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    background: #ddd;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/**
+ * font size
+ */
+.ft32 { font-size: 32px; }
+.ft24 { font-size: 24px; }
+.ft16 { font-size: 16px; }
+.ft14 { font-size: 14px; }
+.ft12 { font-size: 12px; }
