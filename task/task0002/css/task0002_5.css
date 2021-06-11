@@ -1,0 +1,32 @@
+div {
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+#left {
+    width: 100px;
+    height: 400px;
+    border: 1px solid #aaaaaa;
+    margin: 20px;
+    float: left;
+}
+
+#right {
+    width: 100px;
+    height: 400px;
+    border: 1px solid #aaaaaa;
+    margin: 20px;
+    float: right;
+}
+
+li {
+    width: 98px;
+    height: 48px;
+    border: 1px solid blue;
+    background: red;
+}
+
+li.move{
+    position: absolute;
+}

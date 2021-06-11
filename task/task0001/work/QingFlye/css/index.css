@@ -1,0 +1,117 @@
+.banner {
+    height: 525px;
+    background: url(img/banner-bg.jpg) no-repeat scroll center center;
+}
+
+.banner .wrapper {
+    height: 525px;
+    position: relative;
+    background: url(img/banner-bg.jpg) no-repeat scroll center center;
+}
+
+.banner-title {
+    width: 320px;
+    height: 95px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 10px 30px;
+    _background: #fff;
+    /*filter: alpha(opacity=70);*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+}
+
+.banner-title h1 {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.banner-title p {
+    font-size: 12px;
+    line-height: 150%;
+}
+
+.blog-1 {
+    margin-right: 10px;
+}
+
+.blog {
+    background: #eee;
+}
+
+.blog .wrapper {
+    background: #eee;
+    padding-bottom: 30px;
+    margin-bottom: 100px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.blog article {
+    width: 320px;
+    background: #fff;
+    margin-top: 10px;
+    float: left;
+    display: inline;
+    padding-bottom: 2000px;
+    margin-bottom: -2000px;
+}
+
+.blog article img {
+    width: 300px;
+    height: 180px;
+    margin: 10px 10px 15px;
+}
+
+.blog article p {
+    padding: 0 30px;
+    text-indent: 2em;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.personal {
+    background: #fff;
+    position: relative;
+}
+.personal .wrapper{
+    background: #ffffff;
+    padding-bottom:200px;
+}
+.personal img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    margin-left: -80px;
+    cursor: pointer;
+}
+
+.personal h1 {
+    font-size: 20px;
+    padding-top: 155px;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace, serif;
+}
+
+.personal .introduce {
+    text-indent: 2em;
+    width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+    padding-top: 30px;
+    line-height: 150%;
+    word-wrap: break-word;
+    word-break: break-all;
+}

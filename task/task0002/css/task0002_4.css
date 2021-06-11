@@ -1,0 +1,26 @@
+fieldset {
+    border: 2px solid #000000;
+    padding: 20px;
+    margin: 20px;
+}
+
+.suggest {
+    position: absolute;
+    border: 1px solid #aaaaaa;
+    margin-bottom: -2px;
+    border-bottom-color: #fff;
+    background: #ffffff;
+    display: none;
+}
+
+.suggest li {
+    border-bottom: 1px solid #aaaaaa;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.suggest li.selected {
+    background: #cccccc;
+}
