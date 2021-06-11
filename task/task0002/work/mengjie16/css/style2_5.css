@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+}
+#drag-content{
+    width: 80%;
+    background: #99FFFF;
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+}
+#drag-leftDiv{
+    width: 100px;
+    border: 1px solid #000000;
+    height: 500px;
+    float: left;
+    position: absolute;
+    left: 120px;
+    top:20px;
+    z-index:5;
+
+}
+#drag-content li{
+    list-style: none;
+}
+#drag-rightDiv{
+    border: 1px solid #000000;
+    width: 100px;
+    height: 500px;
+    float: right;
+    position: absolute;
+    left: 500px;
+    top:20px;
+    z-index:5;
+}
+.item{
+    height: 50px;
+    width: 100px;
+    background: #ff0000;
+    border-bottom: 1px solid #333333;
+    position: absolute;
+    z-index:10;
+}
+.item:hover{
+    cursor: pointer;
+}

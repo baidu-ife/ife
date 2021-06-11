@@ -1,0 +1,954 @@
+/*header and footer*/
+*{
+    margin:0;
+    padding:0;
+}
+*:focus {outline: none;}
+body {
+    background-color: #EEEEEE;
+}
+header {
+    width: 100%;
+    height: 80px;
+    background-color:rgb(82,42,92);
+    position: relative;
+}
+#head {
+    width: 980px;
+    background-color:rgb(82,42,92);/*可以实现浏览器宽度小于980 但是head 还是足够980*/
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+.logo {
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+.nav {
+    position: absolute;
+    right:0;
+    bottom: 5px;
+}
+.nav  li{
+    font-size: 14px;
+    font-family: Simsun;
+    float: left;
+    list-style: none;
+}
+.nav li.column {
+    margin-left: 28px;
+}
+.nav li a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+}
+#github-icon {
+    position: absolute;
+    display: inline-block;
+    right: 5px;
+    bottom:0;
+}
+#github-icon img {
+    border-width: 0;/*IE8 a img边框问题*/
+}
+footer {
+    width: 100%;
+    background-color: #000;
+    min-width: 980px;
+    height: 395px;
+}
+footer .foot-nav {
+    height: 36px;
+    margin: 0 auto;
+    width: 170px;
+}
+.foot-nav li {
+    float: left;
+    list-style: none;
+    height: 100%;
+    line-height: 2em;/*文字居中*/
+}
+.foot-nav li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px;
+}
+.column-foot{
+    margin-left: 24px;
+}
+footer hr {
+    border-top:1px solid #aaaaaa;
+    height: 0;
+}
+footer .foot-link {
+    width: 980px;
+    height: 310px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.foot-link h4 {
+    color: #CCCCCC;
+    font-weight: normal;
+    font-size: 12px;
+    margin-top:44px;
+    margin-bottom: 49px;
+}
+.foot-link div {
+    float: left;
+    margin-right: 140px;
+}
+.foot-link li {
+    list-style: none;
+}
+.foot-link li a {
+    display: inline-block;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.foot-link li a:hover{
+    text-transform: capitalize;
+    text-decoration: underline;
+    cursor: pointer;
+}
+footer p {
+    margin: 0 auto;
+    width: 980px;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+}
+footer .foot-icon {
+    text-align: center;
+    width: 980px;
+    margin: 0 auto;
+}
+/******************index page*****************/
+.banner-bg {
+    width: 100%;
+    height: 524px;
+    min-width: 980px;/*背景设上min-width*/
+    background: url('../img/banner-bg.jpg');
+    background-size: 100% 524px;/*缩放背景图片的属性*/
+}
+.banner-container {
+    width: 980px;
+    height: 524px;
+    margin: 0 auto;
+    position: relative;/*内部元素绝对定位，所以设置为relative*/
+}
+.opacity-container {/*两个DIV一个放透明背景，一个放文字以防止文字透明。用绝对定位，加上宽高即可搞定*/
+    background: #ffffff;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,.5) 75%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(rgba(255,255,255,.3) top,rgba(255,255,255,.5) 75% ,rgba(255,255,255,0) 100%);
+    background: -moz-linear-gradient(top, rgba(255,255,255,.5) 75%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient( top, rgba(255,255,255,.5) 75%, rgba(255,255,255,0) 100%);
+    filter:Alpha(opacity=30);
+    opacity: 0.3;
+    height:120px;
+    position: absolute;
+    width: 354px;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+div.text-container {
+    height: 120px;
+    width: 354px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+div.text-container h4 {
+    margin: 10px 10px 12px 10px;
+    font-size: 14px;
+    text-align: right;
+    color: #ffffff;
+    z-index: 2;
+}
+div.text-container p {
+    margin: 12px 10px 30px 10px;
+    font-size: 12px;
+    line-height: 120%;
+    color: #ffffff;
+    z-index: 2;
+}
+.same-ht {
+    overflow: hidden;
+    width:980px ;
+    margin: 10px auto;
+}
+.column-pic {
+    background-color: #ffffff;
+    width: 320px;
+    float: left;
+    padding-bottom: 2000px;
+    margin-bottom: -2000px;
+}
+.column-pic + .column-pic {
+    margin-left: 10px;
+}
+.column-pic img{
+    width: 300px;
+    height: 180px;
+    display: block;
+    margin: 10px 10px;
+}
+.column-pic p {
+    font-size: 12px;
+    line-height: 170%;
+    margin: 15px 30px 25px;
+}
+#index-main {
+    width: 100%;
+    min-width: 980px;
+    margin-top: 110px;
+    background-color: #ffffff;
+    height: 522px;
+}
+.pic-self {
+    margin: 0 auto;
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+.pic-self img {
+    width: 100%;
+    height: 100%;
+    -moz-border-radius: 80px;
+    -webkit-border-radius: 80px;
+    border-radius: 80px;
+    position: absolute;
+    margin-top: -50px;
+}
+.intro-text {
+    width: 600px;
+    margin: 0 auto;
+}
+.intro-text h4 {
+    text-align: center;
+    font-family:monospace, serif;
+    font-size: 20px;
+    color:#000000;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+.intro-text div {
+    font-size: 14px;
+    color:#000000;
+    text-indent: 2em;
+    line-height: 2em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/************************blog***********************************/
+#blog-main {
+    width: 980px;
+    margin: 20px auto 334px;
+}
+.blog-container {
+    width: 710px;
+    float: left;
+}
+.blog-rightside {
+    width: 260px;
+    margin-left: 10px;
+    float: left;
+}
+.blog-multi {
+    width: 710px;
+}
+.blog-content {
+    background-color: #ffffff;
+    height: 370px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.blog-text {
+    width: 674px;
+    height: 330px;
+    margin:24px 26px 16px 15px;
+    position: absolute;
+}
+.blog-text h2 {
+    font-size: 16px;
+    color: #A660B7;
+}
+.blog-text h3 {
+    font-size: 12px;
+    color: #666;
+}
+.blog-text p {
+    text-indent: 2em;
+    line-height: 2em;
+    font-size: 12px;
+}
+.blog-text h2 {
+    font-size: 16px;
+    color: #A660B7;
+}
+.blog-text h3 {
+    font-size: 12px;
+    color: #666666;
+    margin-top: 11px;
+    margin-bottom: 18px;
+}
+.blog-text p {
+    text-indent: 2em;
+    font-size: 12px;
+    line-height: 1.5em;
+}
+.blog-bar {
+    position: absolute;
+    display: inline-block;
+    height: 80px;
+    width: 50px;
+    margin-top: 24px;
+    margin-left: -50px;
+}
+.blog-bar div {
+    height: 40px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 40px;
+}
+.blog-bar > div {
+    background-color: #522A5C;
+}
+.blog-bar > div + div {
+    background-color: #A660B7;
+}
+.blog-sign {/*在blog-text（absolute） 的内部*/
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.blog-sign span {
+    font-size: 12px;
+    color: #999999;
+}
+.blog-page {
+    margin: 10px auto;
+}
+.blog-page ul {
+    width:572px;
+    margin: 0 auto;
+    height: 40px;
+    overflow: hidden;
+}
+.page-list li {
+    list-style: none;
+    height: 100%;
+    float: left;
+    background-color: #ffffff;
+}
+.blog-page ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+}
+.page-text a {
+    padding: 15px;
+    width: 40px;
+    height: 10px;
+}
+.page-num a {
+    padding: 15px;
+    width: 10px;
+    height: 10px;
+}
+.page-rest a {
+    padding: 15px;
+    width: 22px;
+    height: 10px;
+}
+.blog-page ul li + li {
+    margin-left: 10px;
+}
+#page-now {
+    background-color: #A660B7;
+}
+#page-now a {
+    color: #ffffff;
+}
+.blog-rightside {
+    float: left;
+}
+.search {
+    background-color: #ffffff;
+    height: 80px;
+    position: relative;
+}
+.search-button input {
+    display: inline-block;
+    height: 36px;/*加border上下是2 是40*/
+    padding: 0 0 0 50px;
+    left: 20px;
+    top:20px;
+    position: absolute;
+    width: 166px;
+
+}
+.search-button input:focus {
+    border: 1px solid #000000;
+    color: #000000;
+}
+.search-button input:focus ~.go-btn{
+    background-color: #999999;
+    border-left:1px solid #000 ;
+}
+.go-btn{
+    display: inline-block;
+    background-color: #DDDDDD;
+    color: #ffffff;
+    position: absolute;
+    right: 23px;
+    top:21px;
+    width: 52px;
+    height:36px ;
+    font-size: 16px;
+    line-height: 36px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+.search-button input {
+    background: url("../img/input-btn.jpg") no-repeat;
+    border:solid thin #E1E1E1;
+}
+.blog-category {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse:collapse
+}
+.blog-category tr {
+    height: 45px;
+    background-color: #ffffff;
+}
+.blog-category td {
+    padding-left: 20px;
+    font-size: 16px;
+    border-top: 1px #E1E1E1 solid;
+    border-bottom: 1px #E1E1E1 solid;
+    border-right: 1px #E1E1E1 solid;
+    border-left:4px #DFC6E6 solid;
+}
+.blog-category td:hover {
+    border-left:4px #522A5C solid ;
+    cursor: pointer;
+}
+.blog-category a {
+    text-decoration: none;
+    color: #666;
+    display: inline-block;
+    width: 100%;
+}
+.blog-calender {
+    background-color: #ffffff;
+    width:100% ;
+    height: 240px;
+    margin-top: 10px;
+    position: relative;
+}
+.calender-context {
+    width: 222px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.title-cal {
+    width: 193px;
+    margin: 0 auto;
+    position: relative;
+    height: 20px;
+}
+.title-cal li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+}
+.title-cal li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #773C88;
+    display: inline-block;
+    font-weight: bold;
+}
+.last-month {
+    width:65px;
+}
+.next-month {
+    width:63px;
+    text-align: right;
+}
+.date {
+    width: 100%;
+}
+.date td{
+    height: 33px;
+    border-bottom:solid thin #EEEEEE ;
+    color: #999999;
+    font-size: 12px;
+    text-align: center;
+}
+.date td:hover {
+    background-color: #773C88;
+    color: #ffffff;
+    cursor: pointer;
+}
+.blog-tag {
+    height: 200px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 12px 18px 34px 15px;
+}
+.blog-tag h4 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 16px;
+}
+.tags span {
+    color: #773C88;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    font-family: serif;
+    line-height: 1.5em;
+}
+.tags .small-size {
+    font-size: 8px;
+}
+.tags .middle-size {
+    font-size: 16px;
+    font-weight: bold;
+}
+.tags .large-size {
+    font-size: 28px;
+    font-weight: bold;
+}
+/**********************about.html**********************/
+#about-main {
+    width: 980px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    position: relative;
+}
+.main-container {
+    margin-top: 100px;
+}
+.left-item {
+    width:487px ;
+    background-color: #ffffff;
+    min-height: 1200px;
+    float: left;
+}
+.detail-list {
+    width:487px ;
+    margin-left: 6px;
+    float: left;
+    background-color: #ffffff;
+    min-height: 1200px;
+}
+.touxiang-pic {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 10px solid #EEEEEE;
+    -webkit-border-radius: 90px;
+    border-radius:90px;
+    top: 30px;
+    left:398px ;
+}
+.contact-pic {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 6px solid #EEEEEE;
+    -webkit-border-radius: 56px;
+    border-radius:56px;
+    top: 370px;
+    left:431px;
+}
+.educate-pic {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 6px solid #EEEEEE;
+    -webkit-border-radius: 56px;
+    border-radius:56px;
+    top: 580px;
+    left:431px;
+}
+.intern-pic {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 6px solid #EEEEEE;
+    -webkit-border-radius: 56px;
+    border-radius:56px;
+    top: 850px;
+    left:431px;
+}
+.left-item {
+    font-size: 20px;
+}
+.my-title {
+    margin-top: 130px;
+    margin-left: 360px;
+}
+.ctc-title {
+    margin-top: 250px;
+    margin-left: 340px;
+}
+.edu-title {
+    margin-top: 190px;
+    margin-left: 340px;
+}
+.intern-title {
+    margin-top: 245px;
+    margin-left: 340px;
+}
+.detail-list {
+    font-size: 14px;
+}
+.my-text {
+    margin-top: 130px;
+    margin-left: 50px;
+    height: 150px;
+    text-indent: 2em;
+    line-height: 2em;
+    width: 310px;
+}
+.ctc-text {
+    margin-top: 125px;
+    margin-left: 50px;
+    height: 70px;
+}
+.edu-text {
+    margin-top: 130px;
+    margin-left: 50px;
+    height: 180px;
+
+}
+.intern-text {
+    margin-top: 95px;
+    margin-left: 50px;
+}
+.edu-text li {
+    margin-bottom: 10px;
+    height: 40px;
+    list-style: none;
+    line-height: 1.2em;
+}
+.intern-text li{
+    margin-bottom: 10px;
+    height: 40px;
+    list-style: none;
+    line-height: 1.2em;
+}
+.about-year div {
+    background-color: #ffffff;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 6px solid #EEEEEE;
+    -webkit-border-radius: 2px;
+    border-radius: 12px;
+}
+.educate1 {
+    left: 451px;
+    top:700px;
+    position: absolute;
+}
+.educate2 {
+    left: 451px;
+    top:750px;
+    position: absolute;
+}
+.educate3 {
+    left: 451px;
+    top:800px;
+    position: absolute;
+}
+.intern1 {
+    left: 451px;
+    top:980px;
+    position: absolute;
+}
+.intern2 {
+    left: 451px;
+    top:1030px;
+    position: absolute;
+}
+/*****************************************gallery**********************************/
+#gal-main {
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.gal-leftcol {
+    width: 710px;
+    float: left;
+}
+.gal-content {
+    padding: 20px;
+    width: 670px;
+    background-color: #ffffff;
+}
+.waterfall {
+    height: 750px;
+    width: 670px;
+    margin: 0 auto;
+}
+.pull-more {
+    background-color: #ffffff;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.gal-tab li {
+    background-color: #ffffff;
+    float: left;
+    list-style: none;
+}
+.gal-tab {
+    margin: 20px auto 0;
+    width: 980px;
+}
+.gal-tab ul{
+     overflow: hidden;
+ }
+.gal-tab li a {
+    display: inline-block;
+    border-top:#DFC6E6 solid 4px;
+    border-bottom: solid 1px #EEEEEE;
+    text-decoration: none;
+    font-size: 13px;
+    font-family:sans-serif;
+    color: #000000;
+    padding: 15px 20px 20px 20px;
+}
+.gal-tab li + li {
+    margin-left: 1px;
+}
+.gal-tab a:hover {
+    border-top:#9E5EDE solid 4px;
+    border-bottom: solid 1px #EEEEEE;
+    cursor: pointer;
+    font-size: 14px;
+}
+.tabclk1 a:active{
+    border-top-color: #522A5C;
+}
+.tabclk2 a:active {
+    border-top-color: #5900B2;
+}
+.tabclk3 a:active {
+    border-top-color: #8C2300;
+}
+.tabclk4 a:active {
+    border-top-color: #D9A300;
+}
+.gal-info {
+    float: left;
+    margin-left: 10px;
+    width: 260px;
+}
+.gal-rank {
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 20px 10px;
+}
+.gal-rank > p {
+    font-size: 14px;
+    color: #666666;
+}
+.gal-rank table {
+    vertical-align: middle;
+    margin-top: 10px;
+    border-collapse:separate;
+    border-spacing:1px 10px
+}
+.gal-rank table tr{
+    border: none;
+}
+.circlerank {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-color: #522A5C;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    font-size: 8px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 16px;
+}
+.circlerank + td + td {
+    font-size: 14px;
+    font-family: serif;
+}
+.circlerank + td {
+    width: 110px;
+    border: 1px solid #522A5C;
+
+}
+.rank1 {
+    background-color:#522A5C ;
+    width: 100%;
+    height: 18px;
+}
+.rank2 {
+    background-color:#522A5C ;
+    width: 80%;
+    height: 18px;
+}
+.rank3 {
+    background-color:#522A5C ;
+    width: 60%;
+    height: 18px;
+}
+.rank4 {
+    background-color:#522A5C ;
+    width: 40%;
+    height: 18px;
+}
+.rank5 {
+    background-color:#522A5C ;
+    width: 20%;
+    height: 18px;
+}
+.pull-content {
+    width: 150px;
+    margin:0 auto;
+    font-size: 12px;
+    padding: 0;
+}
+.pull-content > a{
+    display: inline-block;
+    padding-left:40px ;
+    cursor: pointer;
+    text-decoration: none;
+    color: #666666;
+    line-height:50px;
+    margin: 0;
+    background: url("../img/pull.png") no-repeat  10px ;
+}
+
+.waterfall img {
+    margin: 0;
+    display: block;
+}
+.waterfall h4 {
+    color: #ffffff;
+    font-size:14px;
+    line-height: 2em;
+}
+.waterfall p {
+    color: #ffffff;
+    font-size:10px;
+    line-height: 2em;
+}
+.fall1 {
+    width: 330px;
+    float: left;
+}
+.fall2,.fall3 {
+    width: 160px;
+    float: left;
+    margin-left: 10px;
+}
+.fall1_a {
+    background-color: #522A5C;
+    padding: 10px;
+}
+.fall1_b {
+    background-color: #D9A300;
+    padding: 10px;
+}
+.fall1_c {
+    background-color: #522A5C;
+    padding: 10px;
+}
+.fall1_d {
+    background-color: #8C2300;
+    padding: 10px;
+}
+.fall1_e {
+    background-color: #5900B2;
+    padding: 10px;
+}
+.fall2_a{
+    background-color: #5900B2;
+    padding: 10px;
+}
+.fall2_b{
+    background-color: #D9A300;
+    padding: 10px;
+}
+
+.fall3_a{
+    background-color: #D9A300;
+    padding: 10px;
+}
+.fall1_b {
+    background-color: #D9A300;
+    padding: 10px;
+}
+.fallwide-circle,.fall-circle {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    border:1px solid #B8B2BA;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff;
+}
+.fallwide-circle{
+    vertical-align: 15px;
+}
+.fall-circle{
+    vertical-align: top;
+}
+.fall-circle + div {
+    display: inline-block;
+    width: 100px;
+}
+.fallwide-circle + div {
+    display: inline-block;
+}
+.fall1 >div {
+    margin-bottom: 10px;
+}
+.fall2 >div {
+    margin-bottom: 10px;
+}
+.fall3 >div {
+    margin-bottom: 10px;
+}
+.col1-inner {
+    width: 160px;
+    float: left;
+}
+.col1-inner > div {
+    margin-bottom: 10px;
+}
+.col2-inner {
+    width: 160px;
+    float: left;
+    margin-left: 10px;
+}
+.col2-inner > div {
+    margin-bottom: 10px;
+}

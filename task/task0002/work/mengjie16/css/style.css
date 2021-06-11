@@ -1,0 +1,121 @@
+*{ margin: 0;
+    padding: 0;
+}
+#myCarousel{
+    height: 400px;
+    margin-bottom: 60px;
+    position: relative;
+}
+.indi{
+    float:left;/*zan*/
+    position:absolute;
+    z-index: 10;
+    bottom:10px;
+    left: 50%;/*zan*/
+    width: 50%;
+}
+.carousel-indicators{
+       left: -50%;/*zan*/
+       position: relative;/*zan*/
+    text-align: center;/*zan*/
+}
+.carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 1px;
+    background: rgba(0,0,0,0);
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.carousel-indicators .active{
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background: #fff;
+}
+.carousel-inner{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-inner img{
+    margin: 0 auto;
+    width: 100%;
+    min-width: 1280px;
+    height: 400px;
+    position: absolute;
+    display: block;
+}
+.carousel-inner .item {
+    display: none;
+    position: relative;
+
+}
+.carousel-inner .active{
+    display: block;
+    position: relative;
+}
+
+.left{
+    height: 100%;
+    width: 10%;
+    text-align: center;
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    z-index: 11;
+    display: block;
+    background: rgba(0,0,0,0);
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: bold;
+    font-family:sans-serif;
+}
+.left>span{
+    top: 50%;
+    height: 50%;
+    display: inline-block;
+    position: relative;
+}
+.left>span>span{
+    display: inline-block;
+    top: -1em;
+    position: relative;
+}
+.right{
+    height: 100%;
+    width: 10%;
+    position: absolute;
+   right: 0;
+    cursor: pointer;
+    z-index: 11;
+    display: block;
+    background: rgba(0,0,0,0);
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: bold;
+    font-family:sans-serif;
+}
+.right>span{
+    top: 50%;
+    height: 50%;
+    display: inline-block;
+    position: relative;
+}
+.right>span>span{
+    display: inline-block;
+    top: -1em;
+    position: relative;
+}
+.right:hover{
+    background: rgba(0,0,0,0.1);
+}
+.left:hover{
+    background: rgba(0,0,0,0.1);
+}
+
+
+
+/*拖拽页面*/
