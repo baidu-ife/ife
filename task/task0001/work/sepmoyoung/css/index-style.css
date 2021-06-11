@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif, "SimSun";
+}
+body {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+}
+.header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+}
+.nav {
+    position: relative;
+    height: 80px;
+    width: 980px;
+    margin: 0 auto;
+}
+.user-avatar {
+    float: left;
+    height: 80px;
+    width: 80px;
+}
+.user-avatar img {
+    height: 80px;
+    width: 80px;
+}
+.nav-meau {
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+}
+ul {
+    list-style: none;
+}
+.nav-content li {
+    float: left;
+    font-size: 14px;
+    font-family: "simsun";
+    color: #fff;
+    margin-left: 28px;
+}
+#github-logo {
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    width: 30px;
+    height: 34px;
+    background: url(../img/icon-github.png) no-repeat 0 0;
+}
+@media all and (max-width: 980px) {
+    #github-logo {
+        display: none;
+    }
+}
+.container {
+    overflow: hidden;
+    background-color: #eee;
+}
+.banner {
+    position: relative;
+    width: 1200px;
+    height: 525px;
+    background: url(../img/banner-bg.jpg) no-repeat 0 0;
+    background-size: 1200px 525px;
+}
+.text {
+    position: absolute;
+    color: #fff;
+    right: 110px;
+    bottom: 0;
+    width: 340px;
+    height: 100px;
+    padding: 10px 10px 30px 10px;
+
+    filter: progid:dximagetransform.microsoft.gradient(gradienttype=0, startcolorstr='#aaffffff', endcolorstr='#00ffffff');
+    -ms-filter: "progid:dximagetransform.microsoft.gradient (gradienttype=0, startcolorstr=#aaffffff, endcolorstr=#00ffffff)";/*ie8+*/
+    background:
+    -moz-linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.5) 25%, rgba(255, 255, 255, 0.0));
+    background:
+    -webkit-linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.5) 25%, rgba(255, 255, 255, 0.0));
+    background:
+    -ms-linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.5) 25%, rgba(255, 255, 255, 0.0)); 
+}
+.text h2 {
+    text-align: right;
+    font-size: 14px;
+    font-weight: normal;
+}
+.text p {
+    margin-top: 12px;
+    text-indent: 24px;
+    font-size: 12px;
+    line-height: 150%;
+}
+.central-part {
+    margin:0 auto;
+    min-height: 480px;
+    background-color: #eeeeee;
+    overflow: hidden;
+}
+.show-panel {
+    width:980px;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: 110px;
+    margin-right: 110px;
+}
+.show-item {
+    float: left;
+    background-color: #fff;
+    width: 320px;
+    height: 380px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.last-item {
+    margin-right: 0;
+}
+.show-img {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.para {
+    margin: 15px 30px 30px 25px;
+    font-size: 12px;
+    line-height: 170%;
+}
+.para p {
+    text-indent: 24px;
+}
+.self-part {
+    position: relative;
+    height: 520px;
+    background-color: #fff;
+}
+.self-photo {
+    position: relative;
+    top: -50px;
+    margin: auto;
+    width: 160px;
+    height: 160px;
+}
+.self-name {
+    font-size: 20px;
+    font-family: "century gothic", sans-serif;
+    color: #000;
+    text-align: center;
+}
+.self-intro {
+    margin: auto;
+    margin-top: 40px;
+    width: 600px;
+    font-size: 14px;
+    text-indent: 28px;
+}
+.footer {
+    position: relative;
+    height: 400px;
+    background-color: #000;
+}
+.footer-nav {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+}
+.footer-nav span {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 20px;
+    line-height: 35px;
+    text-decoration: none;
+}
+.footer-link {
+    margin: 0 auto;
+    width: 1000px;
+    margin-top: 45px;
+    overflow: hidden;
+}
+.link-item {
+    float: left;
+    width: 200px;
+}
+.link-name {
+    color: #c6c6c6;
+}
+.link-list {
+    color: #fff;
+    margin-top: 30px;
+}
+.link-list li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.copyright {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin-bottom: 45px;
+    color: #fff;
+    text-align: center;
+}
+.footer-logo {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    height: 34px;
+    width: 30px;
+    margin-left: -15px;
+}
+
