@@ -1,0 +1,19 @@
+#data{
+	width: 200px;
+	background-color: white;
+	border:solid;
+	border-width: 1px;
+	border-color: gray;
+	border-collapse:collapse;
+	margin-top: -3px;
+	margin-left: 2px;
+}
+#data td{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+
+}
+#data td:hover{
+	background-color: gray;
+}

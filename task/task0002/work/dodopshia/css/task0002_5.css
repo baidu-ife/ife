@@ -1,0 +1,38 @@
+    body{
+    	background-color: #DDDDDD;
+    }
+    #xixi{
+    	background-color: lightcyan;
+    }
+    #heihei{
+    	background-color: pink;
+    }
+
+
+    .static {
+        width:200px; 
+        height: 50px;
+        border: solid;
+        position: relative;
+        left: 0px;
+        top:0px;
+	    border-width: 1px; 
+        background-color: lightcyan;
+    }
+    #haha {
+        background-color: yellow;
+    }
+    #leftBox{
+	width: 200px;
+	height: 600px;
+	background-color: white;
+	float: left;
+	margin: 100px;
+    }
+    #rightBox{
+	width: 200px;
+	height: 600px;
+	background-color: white;
+	float: left;
+	margin: 100px;
+}

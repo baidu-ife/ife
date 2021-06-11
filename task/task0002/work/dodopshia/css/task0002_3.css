@@ -1,0 +1,58 @@
+body{
+	margin: 0 auto;
+	text-align: center;
+}
+li{
+	list-style-type:none;
+}
+img{
+	width: 800px;
+	height: 500px;
+}
+.piont{
+	width: 8px;
+	height: 8px;
+	border: solid;
+	border-width: 1px;
+	border-color: white;
+	border-radius: 5px;
+}
+.piont_foucs{
+	width: 8px;
+	height: 8px;
+	border: solid;
+	border-width: 1px;
+	border-color: white;
+	border-radius: 5px;
+	background-color: white;
+}
+#lunbo{
+	max-width:800px;
+	height: 500px;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+}
+#imgs{
+	width: 800px;
+	height: 500px;
+}
+
+#imgs li{
+	float:left;
+}
+#num{
+	overflow:auto;
+	position:absolute;
+	right:20px;
+	bottom:0;
+	width: 100px;
+	overflow: hidden;
+}
+#num li{
+	float:left;
+	text-align:center;
+	margin-left:10px;
+	cursor:pointer;
+	z-index:2222;
+}
