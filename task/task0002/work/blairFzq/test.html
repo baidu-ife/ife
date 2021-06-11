@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+    #id{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+    }
+    </style>
+</head>
+<body>
+<div id="id">dafdasdfasdfasdfasdfasdfs</div>
+<script>
+   var d = document.getElementById("id");
+   d.onmousedown = function(){alert("down")};
+   d.onmousemove = function(){alert("onmouseover")};
+</script>
+</body>
+</html>

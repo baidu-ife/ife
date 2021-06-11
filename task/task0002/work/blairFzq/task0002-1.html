@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div id="demo1">
+        <input type="text"/>
+        <button>提交</button>
+    </div>
+    <div id="demo2">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+           <div>
+               <p class="warning"></p>
+               <button>提交</button>
+           </div>
+        <form action="">
+            <label for="1">阅读</label>
+            <input type="checkbox" name="habby" id="1"/>
+            <label for="">电影</label>
+            <input type="checkbox" name="habby"/>
+        </form>
+    </div>
+
+</div>
+<script src="js/unit.js"></script>
+<script>
+    window.onload =function(){
+        var  str ="唱歌；跳舞;走路，不喜欢,喜欢、有人 没人他人";
+        var x = str.split(/[；;,，、、\s*]/g);
+        console.log(x);
+        //1.1
+        unit.addEvent(unit.$("#demo1 button"),"click",function(){
+            var habby = unit.$("#demo1 input").value;
+            //过滤掉重复和空的爱好
+            var habbyArr = unit.uniqArray(habby.split("，"));
+            for(var i=0;i<habbyArr.length;i++){
+                if(habbyArr[i]==" "){habbyArr.splice(i,1)}
+            }
+            console.log(habbyArr);
+            var p = document.createElement("p");
+            p.innerHTML = habbyArr.join(" ");
+            unit.$("#demo1").appendChild(p);
+        });
+         //1.2
+         //1.3动态监测输入是否合理
+         //如何做到输入有误时候，不能继续后面的行为呢，动态设置状态值
+        unit.addEvent(unit.$("#demo2 textarea"),"keyup",function(){
+            var habby = unit.$("#demo2 textarea").value;
+            var habbyArr = unit.uniqArray(habby.split(/[；;,，、、\s*]/g));
+            if(habby == " "){
+                unit.$("#demo2").setAttribute("statues","0");
+                unit.$("#demo2 .warning").innerHTML="爱好不能为空";
+            }
+            else if(habbyArr.length > 10){
+                unit.$("#demo2").setAttribute("statues","0");
+                unit.$("#demo2 .warning").innerHTML="不能输入超过十个爱好";
+            }
+            else{
+                unit.$("#demo2").setAttribute("statues","1");
+                unit.$("#demo2 .warning").innerHTML="";
+            }
+        });
+        unit.addEvent(unit.$("#demo2 button"),"click",function(){
+            //只有在正确输入的时候，才能成功点击
+            if( unit.$("#demo2").getAttribute("statues") == 1){
+                var habby = unit.$("#demo2 textarea").value;
+                //过滤掉重复和空的爱好
+                var habbyArr = unit.uniqArray(habby.split(/[；;,，、、\s*]/g));
+                for(var i=0;i<habbyArr.length;i++){
+                    if(habbyArr[i]==" "){habbyArr.splice(i,1)}
+                }
+                var checkbox="";
+                for(i=0;i<habbyArr.length;i++){
+                    checkbox = "<label for="+i+">"+habbyArr[i]+"</label><input type='checkbox' name='habby' id="+i+"/>"+checkbox;
+                }
+
+                var form = document.createElement("form");
+                form.innerHTML = checkbox;
+                console.log(checkbox);
+                unit.$("#demo2").appendChild(form);
+            }
+        });
+
+
+    }
+</script>
+</body>
+</html>

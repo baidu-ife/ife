@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>轮播图</title>
+    <style>
+     .slider>li{display: none;}
+     .slider{width: 100%;position: relative}
+     .slider .active{display: block}
+     .slider .left{position: absolute;z-index: 99;left: 1220px;display: block;top:0px;}
+     .carousel-indicators>li{float: left;margin:20px;cursor: pointer}
+     .carousel-indicators{position: absolute;left: 50%}
+    </style>
+</head>
+<body>
+<ul class="slider">
+    <li class="active"><a href=""><img src="img/slide-01.png" alt=""/></a></li>
+    <li><a href=""><img src="img/slide-02.png" alt=""/></a></li>
+    <li><a href=""><img src="img/slide-03.png" alt=""/></a></li>
+    <li><a href=""><img src="img/slide-04.png" alt=""/></a></li>
+    <li><a href=""><img src="img/bannerStudy.png" alt=""/></a></li>
+    <li><a href=""><img src="img/bannerStudy.png" alt=""/></a></li>
+    <ul class="carousel-indicators">
+        <li index="0">1</li>
+        <li index="1">2</li>
+        <li index="2">3</li>
+        <li index="3">4</li>
+        <li index="4">5</li>
+        <li index="5">6</li>
+    </ul>
+</ul>
+<script src="js/unit.js"></script>
+<script src="js/task0002_3.js"></script>
+</body>
+</html>

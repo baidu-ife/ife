@@ -1,0 +1,394 @@
+/*通用布局样式*/
+.container{
+    width: 980px;
+    margin: 0 auto;
+}
+.main-left{
+    width: 60%;
+    margin-right: 2%;
+    float: left;
+}
+.main-right{
+    width: 38%;
+    float: left;
+}
+.sider{
+    float: left;
+}
+.lable{
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+/*通用布局样式结束*/
+
+
+
+/*头部开始*/
+.header{
+    background: #522a5c;
+    height: 80px;
+    width: 100%;
+    font-family: SimSun;
+    font-size: 14px;
+    color: #fff;
+}
+.footer .nav{
+    display: inline-block;
+    overflow: hidden;
+    color: #000;
+    float: none;
+    padding: 10px 0px;
+    text-align: center;
+}
+.footer .nav a{
+    color: #fff;
+}
+.nav{
+    float: right;
+
+}
+.nav>li{
+    float: left;
+}
+.nav a{
+    display: inline-block;
+    padding-right: 28px;
+    color:#fff;
+}
+.github{
+    position: fixed;
+    display: inline-block;
+    width: 30px;
+    height: 34px;
+    right: 10px;
+    top:46px;
+    background: url("../img/icon-github.png");
+}
+@media (min-width:980px) {
+    .github{display: none;}
+    body{width: 1304px;}
+}
+/*头部结束*/
+
+/*banner部分开始*/
+.banner{
+    width: 100%;
+    height: 526px;
+    background: url("../img/banner-bg.jpg") no-repeat;
+    -moz-background-size: 100%;
+    -webkit-background-size: 100% ;
+    -o-background-size: 100% ;
+    background-size: 100% ;
+    position: relative;
+}
+.banner .container{
+    height: 100%;
+    position: relative;
+}
+.banner-body{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 10px 10px 30px 10px;
+    background: #000;
+    font-size: 12px;
+}
+.banner-body>h1{
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.banner-body>p{
+    line-height: 150%;
+}
+/*banner部分结束*/
+
+/*主体内容开始*/
+.content{
+    width: 100%;
+    background: #eeeeee;
+}
+.card{
+    float: left;
+    width: 28%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    padding: 1%;
+    background: #fff;
+}
+.card-last{
+    margin-right: 0;
+}
+.card>img{
+    width: 100%;
+    height: 130px;
+}
+.card>p{
+    text-indent:2em;
+}
+
+/*自我介绍部分开始*/
+.introduce{
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+}
+.intro-body{
+    text-align: center;
+}
+.intro-body h1{
+    font-size: 20px;
+}
+.intro-body p{
+    width: 600px;
+    margin: 0 auto;
+    text-indent: 2em;
+}
+.intro-body img{
+    margin-top: -50px;
+    margin-bottom: 50px;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+}
+/*自我介绍部分结束*/
+/*底部开始*/
+.footer{
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+.link{
+    padding: 12px 0px;
+}
+.link a{
+    display: inline-block;
+    margin-top: 32px;
+    margin-right: 150px;
+}
+.link .sm{
+    margin-top: 5px;
+}
+/*底部结束*/
+/*主体内容结束*/
+
+/*博客页面的编写开始*/
+.blog{
+   background: #eeeeee;
+   padding: 10px 0;
+   overflow: hidden;
+}
+.blog-aircle{
+    margin-bottom: 10px;
+    padding: 5px;
+    background: #fff;
+    position: relative;
+}
+.blog-aircle h1{
+    margin-top: 5px;
+    font-size: 16px;
+}
+.blog-aircle h2{
+    font-size: 12px;
+    color: #666;
+    margin:  5px 0;
+}
+.aircle-time{
+    margin-top: 20px;
+    text-align: right;
+    color: #999999;
+    font-size: 12px;
+}
+.blog-aircle .lable{
+    position: absolute;
+    top:20px;
+    left: -50px;
+}
+.blog-aircle .lable2{
+    top:60px;
+}
+
+/*博客左边开始*/
+.search{
+    width: 90%;
+    height: 40px;
+    padding: 5%;
+    background: #fff;
+}
+.search input{
+    display: inline-block;
+    height: 100%;
+    width: 70%;
+    border:1px solid #ccc;
+    text-indent: 2em;
+}
+.search a{
+     display: inline-block;
+     height: 40px;
+     width: 28%;
+     background: #dddddd;
+     color: #fff;
+     float: right;
+     line-height:40px;
+     text-align: center;
+     margin-right: 2px;
+}
+.slider-nav{
+    width: 100%;
+    margin-top: 20px;
+}
+.slider-nav>li{
+    background: #fff;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 4px solid #ccc;
+}
+.slider-nav>li:hover{
+    border-left: 4px solid #000;
+}
+.calendar{
+    width:90%;
+    margin-top: 20px;
+    background: #fff;
+    padding: 5%;
+}
+.calendar table{
+    width: 100%;
+}
+.calendar thead{
+    width: 100%;
+    text-align: center;
+}
+.calendar tr{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.calendar td{
+    padding: 2px;
+}
+.tags{
+    width: 90%;
+    padding: 5%;
+    background: #fff;
+    margin-top: 20px;
+}
+.page{
+    margin-top: 20px;
+    text-align: center;
+}
+.page>a{
+    display: inline-block;
+    padding: 10px;
+    margin-right: 5px;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+/*博客左边结束*/
+/*博客页面的编写结束*/
+
+/*gallery页面开始*/
+.gallery-card1{
+    width: 46%;
+    float: left;
+    margin-right: 2%;
+}
+.gallery-card2{
+    width: 25%;
+    float: left;
+    margin-right: 2%;
+}
+.gallery-card2.last{
+    margin-right: 0;
+}
+.gallery-body{
+    width: 100%;
+}
+
+.gallery-body img{
+    width: 100%;
+    height: 130px;
+}
+.gallery-body-half{
+    width: 49%;
+    margin-right: 2%;
+    float: left;
+}
+.gallery-body-half img{
+    width: 100%;
+    height: 130px;
+}
+.gallery-body-half.last{
+    margin-right: 0px;
+}
+img.h160{
+    height: 160px;
+}
+.rank{
+    margin-top: 20px;
+    background: #fff;
+    width: 90%;
+    padding: 5%;
+}
+.ic-rank{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #222;
+    float: left;
+}
+.progress{
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    background: #222;
+    margin: 0 10px;
+    float: left;
+}
+/*gallery页面结束*/
+
+
+/*常见的工具类名*/
+.line{
+   width: 100%;
+   height: 1px;
+   background: #333333;
+}
+.clear:after{
+    content:"";
+    height:0%;
+    font-size:0;
+    clear:both;
+}
+.overfolw{
+    overflow: hidden;
+}
+.relative{
+    position: relative;
+}
+.mt75{
+   margin-top: 75px;
+}
+.pt58{
+    padding-top: 58px;
+}
+/*渐变的透明度*/
+.grad-trans{
+    background: -webkit-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1)); /* Safari 5.1 - 6 */
+    background: -o-linear-gradient(right,rgba(255,255,255,0),rgba(255,255,255,1)); /* Opera 11.1 - 12*/
+    background: -moz-linear-gradient(right,rgba(255,255,255,0),rgba(255,255,255,1)); /* Firefox 3.6 - 15*/
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)); /* 标准的语法 */
+}
+.b52{
+    background: #522a5c;
+}
+.ba6{
+    background: #a660b7;
+}
+
