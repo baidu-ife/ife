@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Microsoft Yahei", sans-serif;
+	font-size: 14px;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+header {
+	height: 60px;
+	background-color: #CCC;
+	border: 1px #AAA solid;
+}
+
+header h1 {
+	padding-left: 30px;
+	line-height: 300%;
+	color: #666;
+	font-size: 20px;
+}
+
+main {
+	position: absolute;
+	top: 62px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	min-height: 200px;
+}
+
+#content-box {
+	float: left;
+    width: 100%;
+	height: 30px;
+}
+
+#content-wrap {
+    position: relative;
+	margin-left: 462px;
+}
+
+#content-nav {
+	position: relative;
+	min-width: 450px;
+	height: 50px;
+	background-color: #EEE;
+	border-bottom: 1px #AAA solid;
+}
+
+#content-nav h2 {
+	font-weight: normal;
+	padding: 16px 20px;
+}
+
+#complete {
+	position: absolute;
+	right: 55px;
+	top: 5px;
+	display: block;
+	text-align: right;
+	width: 40px;
+	height: 40px;
+	background: url(../img/complete.png) no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+
+#edit {
+	position: absolute;
+	right: 15px;
+	top: 5px;
+	display: block;
+	text-align: right;
+	width: 40px;
+	height: 40px;
+	background: url(../img/edit.png) no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+
+#content-date {
+	padding-left: 20px;
+	min-width: 200px;
+	height: 50px;
+	background-color: #FAFAEE;
+	line-height: 3.5;
+	border-bottom: 1px #AAA solid;
+}
+
+#content-main {
+	padding: 10px;
+}
+
+#task-box {
+    position: relative;
+	float: left;
+	width: 230px;
+	height: 100%;
+	margin-left: -100%;
+	background-color: #EEE;
+}
+
+.task-nav {
+	padding: 20px 10px 0;
+	font-size: 16px;
+}
+
+#task-box p:first-child {
+	cursor: pointer;
+}
+
+#task-box p:first-child:hover span {
+	display: inline-block;
+}
+
+.task-date-add {
+	position: absolute;
+	width: 210px;
+	bottom: 0;
+	padding: 15px 10px;
+	border-top: 1px #AAA solid;
+	background-color: #EEE;
+	font-size: 16px;
+}
+
+.task-date-add span {
+	position: relative;
+	bottom: -5px;
+	height: 16px;
+	font-size: 35px;
+	font-weight: bolder;
+	line-height: 0;
+}
+
+#task-item-box {
+	position: absolute;
+	top: 95px;
+	bottom: 52px;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+}
+
+#task-item-box p {
+	padding: 0 15px 3px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#task-item-box li li {
+	padding: 0 15px 3px 25px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#task-item-box li li:hover span {
+	display: inline-block;
+}
+
+#task-item-box p:hover,
+#task-item-box li li:hover {
+	background-color: #FFF;
+}
+
+.folder {
+	position: relative;
+	right: 2px;
+	bottom: -4px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/folder.png) no-repeat;
+	background-size: cover;
+}
+
+.file {
+	position: relative;
+	bottom: -3px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/file.png) no-repeat;
+	background-size: cover;
+}
+
+.del {
+	position: absolute;
+	display: none;
+	right: 15px;
+	font-size: 20px;
+	line-height: 120%;
+	transform: rotate(45deg);
+}
+
+.delTI {
+	position: absolute;
+	display: none;
+	right: 15px;
+	font-size: 20px;
+	line-height: 120%;
+	transform: rotate(45deg);
+}
+
+#newSub,
+#newTask {
+	cursor: pointer;
+}
+
+#date-box {
+    position: relative;
+    float: left;
+    left: 230px;
+    width: 230px;
+	height: 100%;
+    margin-left: -100%;
+	border-right: 1px #AAA solid;
+	border-left: 1px #AAA solid;
+}
+
+#date-nav {
+	padding: 10px 10px;
+	background-color: #EEE;
+	border-bottom: 1px #AAA solid;
+}
+
+#date-nav li {
+	display: inline-block;
+	padding: 3px 5px;
+	cursor: pointer;
+}
+
+#date-nav li:hover {
+	background-color: #FFF;
+}
+
+#date-nav .selected {
+	background-color: #FFF;
+	padding: 2px 4px;
+	border: 1px #CCC solid;
+}
+
+#date-item-box {
+	position: absolute;
+	top: 45px;
+	bottom: 52px;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+}
+
+.date-item {
+	padding: 5px 20px 3px;
+	cursor: pointer;
+}
+
+.table-item {
+	padding: 3px 30px;
+	cursor: pointer;
+}
+
+.table-item:hover span {
+	display: inline-block;
+}
+
+#date-item-box li:hover {
+	background-color: #FAFAEE;
+}
+
+.completed {
+	color: #384;
+}
+
+cover {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	min-width: 580px;
+	min-height: 200px;
+	background-color: #AAA;
+	padding: 10% 20%;
+}
+
+cover div {
+	position: relative;
+	height: 100%;
+}
+
+cover input{
+	margin: 20px;
+	padding: 6px;
+	border: 0;
+	background-color: #DDD;
+}
+
+cover text {
+	position: absolute;
+	top: 60px;
+	right: 20px;
+	bottom: 0;
+	left: 0;
+	padding: 20px;
+}
+
+cover textarea {
+	width: 100%;
+	height: 100%;
+	padding: 6px;
+	overflow-y: auto;
+	border: 0;
+	background-color: #DDD;
+}
+
+#cover-check{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 60px;
+	bottom: -60px;
+	cursor: pointer;
+}
+
+#cover-cancel{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 8px;
+	bottom: -60px;
+	cursor: pointer;
+}

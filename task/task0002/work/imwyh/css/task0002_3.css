@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft Yahei", sans-serif;
+}
+
+#main {
+	display: table;
+	margin: 10px auto;
+}
+
+#pic {
+	position: relative;
+	overflow: hidden;
+	height: 300px;
+	width: 500px;
+}
+
+#pic li {
+	position: absolute;
+	left: 500px;
+}
+
+#pic li img {
+	height: 300px;
+	width: 500px;
+}
+
+#pic .active {
+}
+
+#ctrl {
+	display: table;
+	position: relative;
+	bottom: 30px;
+	margin: 0 auto;
+	display: table;
+
+}
+
+#ctrl li {
+	display: inline-block;
+	margin: 0 3px;
+	width: 10px;
+	height: 10px;
+	border-radius: 7px;
+	border: 2px #CCC solid;
+	background-color: #000;
+	cursor: pointer;
+}
+
+#ctrl .ctrl_selected {
+	background-color: #CCC;
+}
