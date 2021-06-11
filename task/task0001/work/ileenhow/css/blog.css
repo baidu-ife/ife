@@ -1,0 +1,181 @@
+.content{
+    width: 980px;
+    margin: 20px auto 200px;
+    display: table;
+}
+.main{
+    float: left;
+    width: 700px;
+}
+.article,.side-block{
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.article{
+    position: relative;
+}
+.article h2{
+    padding: 25px 20px 10px 20px;
+    color: #a660b7;
+    font-size: 16px;
+}
+.article h3{
+    padding: 0 20px 15px 20px;
+    color: #666;
+}
+.article p{
+    padding: 0 20px;
+    line-height: 170%;
+    letter-spacing: 1px;
+}
+.post-tag{
+    position: absolute;
+    width: 50px;
+    top: 25px;
+    left: -50px;
+}
+.post-tag span{
+    display: block;
+    text-align: center;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    background-color: #522a5c;
+}
+.post-tag span+span{
+    background-color: #a660b7;
+}
+.post-info{
+    padding: 30px 20px 25px 20px;
+    text-align: right;
+    color: #666;
+}
+.page-nav{
+    text-align: center;
+    font-size: 0;
+}
+.page-nav a{
+    display: inline-block;
+    height: 40px;
+    background-color: #fff;
+    color: #000;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 5px;
+    padding: 0 15px;
+}
+.page-nav a:hover{
+    background-color: #a660b7;
+    color: #fff;
+}
+.sidebar{
+    float: right;
+    width: 270px;
+    margin-left: 10px;
+}
+.search{
+    padding: 20px;
+    display: table;
+}
+.search input{
+    float: left;
+}
+.search input[type="text"]{
+    padding: 0;
+    padding-left: 40px;
+    border: 1px solid #ddd;
+    border-right: none;
+    line-height: 40px;
+    background: url(../img/search.png) no-repeat center left;
+    outline: none;
+}
+.search input[type="submit"]{
+    padding: 0;
+    border: 1px solid #ddd;
+    border-left: none;
+    width: 40px;
+    background-color: #ddd;
+    color: #fff;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.search input[type="text"]:focus{
+    border: 1px solid #000;
+    border-right: none;
+}
+.search input[type="text"]:focus + input{
+    border: 1px solid #000;
+    border-left: none;
+}
+.side-block li{
+    height: 50px;
+    border-bottom: 1px solid #ddd
+}
+.side-block li a{
+    display: block;
+    line-height: 50px;
+    color: #000;
+    padding-left: 30px;
+    border-left: 4px solid #dfc6e6;
+}
+.side-block li a:hover{
+    border-left: 4px solid #522a5c;
+}
+.calendar{
+    padding: 10px 25px 20px 25px;
+}
+.calendar caption{
+    line-height: 35px;
+    color: #773c88;
+    overflow: hidden;
+}
+.calendar a,.calendar span{
+    float: left;
+}
+.calendar a{
+    width: 20px;
+}
+.calendar span{
+    width: 180px;
+}
+.calendar table{
+    width: 100%;
+    text-align: center;
+}
+.calendar tr{
+    color: #999;
+    line-height: 35px;
+    border-bottom: 1px solid #eee;
+}
+.calendar th{
+    font-weight: normal;
+}
+.calendar td:hover{
+    background-color: #773c88;
+    color: #fff;
+}
+.tagcloud{
+    padding: 20px 15px;
+}
+.tagcloud h2{
+    padding-bottom: 20px; 
+    color: #999;
+}
+.tagcloud p{
+    padding-bottom: 10px;
+    color: #773c88;
+}
+.bold{
+    font-weight: bold;
+}
+.maxfs{
+    font-size: 26px;
+}
+.middlefs{
+    font-size: 18px;
+}
+.minfs{
+    font-size: 14px;
+}
