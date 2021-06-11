@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>blog</title>
+    <link rel="icon" type="text/css" href="./img/icon.png">
+    <link rel="stylesheet" type="text/css" href="./css/global.css">
+    <link rel="stylesheet" type="text/css" href="./css/blog.css">
+    <!-- 为了兼容IE -->
+    <script type="text/javascript" src="./js/html5shiv.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <img src="./img/icon.png" class="icon" alt="icon">
+        <ul class="nav header-nav">
+          <li><a href="">首页</a></li
+          ><li><a href="">文章</a></li
+          ><li><a href="">作品</a></li
+          ><li><a href="">关于</a></li>
+        </ul>
+      </div>
+      <a href="http://www.github.com" target="_blank" class="github">
+        <img src="./img/icon-github.png" alt="github">
+      </a>
+    </header>
+
+
+    <div class="contain">
+      <div class="wrap blog-wrap">
+        <div class="blog-left">
+          <section class="blog">
+            <div class="blog-topic">
+              <p class="blog-date">4.12</p>
+              <p class="blog-tag">css</p>
+            </div>
+            <h1 class="blog-title">遇到的困难</h1>
+            <h2 class="blog-subtitile">已解决</h2>
+            <article class="blog-content">
+              <p>1.瀑布流布局</p>
+              <p>关于瀑布流布局，上网查了一下，最简单的似乎就是直接用float了。我是分了三列，第一列宽度为50%,第二列和第三列宽度为25%，然后第一列里面大图特殊处理，之后再分两列。不过这个如果大图在中间，还要动态插入的话我就不知道该怎么办了。</p>
+              <p>2.input里面的图片与文字处理</p>
+              <p>就是search那里。我是在input里面使用了背景图片，然后padding-left设置了对应大小。</p>
+              <p>3.IE兼容问题</p>
+              <p>我在过程中使用了HTML5标签，例如header和footer，测试的时候发现IE8就不兼容。为了兼容，需要手动创建且标签。直接使用html5shiv(和html5shim是一样的东西)。</p>
+              <p>4.两列/三列等高布局</p>
+              <p>我用的FLEX，然而IE9也并不支持。要IE兼容的话，得用那种嵌套好几个div的方式。圣杯布局和双飞翼布局都是不能几列同步高度的。</p>
+              <p>5.待补充</p>
+            </article>
+          </section>
+          <section class="blog">
+            <div class="blog-topic">
+              <p class="blog-date">4.12</p>
+              <p class="blog-tag">css</p>
+            </div>
+            <h1 class="blog-title">遇到的困难</h1>
+            <h2 class="blog-subtitile">QAQ</h2>
+            <article class="blog-content">
+              <p>正文等待补充.</p>
+              <p>正文等待补充.</p>
+              <p>正文等待补充.</p>
+              <p>正文等待补充.</p>
+            </article>
+          </section>
+          <section class="blog">
+            <div class="blog-topic">
+              <p class="blog-date">4.12</p>
+              <p class="blog-tag">css</p>
+            </div>
+            <h1 class="blog-title">遇到的困难</h1>
+            <h2 class="blog-subtitile">QAQ</h2>
+            <article class="blog-content">
+              <p>正文等待补充.</p>
+              <p>正文等待补充.</p>
+              <p>正文等待补充.</p>
+              <p>正文等待补充.</p>
+            </article>
+          </section>
+
+          <div class="page">
+            <ul>
+              <li class="page-item">第一页</li>
+              <li class="page-item">上一页</li>
+              <li class="page-item">1</li>
+              <li class="page-item active">2</li>
+              <li class="page-item">3</li>
+              <li class="page-item">...</li>
+              <li class="page-item">下一页</li>
+              <li class="page-item">最后页</li>
+            </ul>
+          </div>
+        </div>
+        <div class="blog-right">
+          <div class="search">
+            <input type="text"><button>GO</button>
+          </div>
+
+          <ul class="nav-tags">
+            <li>HTML</li>
+            <li>JavaScript</li>
+            <li>CSS</li>
+            <li>html</li>
+          </ul>
+
+          <div class="calendar">
+            <table>
+              <tr>
+                <th> <a href=""><</a> </th>
+                <th colspan="5"><a href="">2015.04</a></th>
+                <th><a href="">></a></th>
+              </tr>
+              <tr>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>S</th>
+              </tr>
+            </table>
+            <table class="time-select">
+              <tr>
+                <th></th>
+                <th></th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+              </tr>
+              <tr>
+                <th>8</th>
+                <th>9</th>
+                <th class="active">3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+              </tr>
+              <tr>
+                <th>18</th>
+                <th>19</th>
+                <th>13</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+              </tr>
+              <tr>
+                <th>8</th>
+                <th>9</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+              </tr>
+              <tr>
+                <th>8</th>
+                <th>9</th>
+                <th>3</th>
+                <th>4</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </table>
+          </div>
+
+          <div class="tags">
+            <h2>tags</h2>
+            <ul class="tags-content">
+              <li>JavaScript</li>
+              <li class="larger">HTML</li>
+              <li>CSS</li>
+              <li class="larger">jQuery</li>
+              <li class="large">Flex box</li>
+              <li>CSS3</li>
+              <li class="larger">HTML5</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <ul class="nav footer-nav">
+          <li><a href="">首页</a></li>
+          <li><a href="">文章</a></li>
+          <li><a href="">作品</a></li>
+          <li><a href="">关于</a></li>
+        </ul>
+      <div class="wrap">
+        
+        <div class="link">
+          <div class="link-wrap">
+            <h5>学习资料</h5>
+            <ul class="link-content">
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+            </ul>
+          </div>
+          <div class="link-wrap">
+            <h5>学习资料</h5>
+            <ul class="link-content">
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+            </ul>
+          </div>
+          <div class="link-wrap">
+            <h5>学习资料</h5>
+            <ul class="link-content">
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+            </ul>
+          </div>
+          <div class="link-wrap">
+            <h5>学习资料</h5>
+            <ul class="link-content">
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+            </ul>
+          </div>
+          <div class="link-wrap">
+            <h5>学习资料</h5>
+            <ul class="link-content">
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+              <li><a href="">LINK</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info">
+          <p>版权信息</p>
+          <img src="./img/icon-github.png" class="" alt="github">
+      </div>
+      </div>
+    </footer>
+  </body>
+</html>

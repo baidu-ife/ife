@@ -1,0 +1,140 @@
+/*reset*/
+@media only screen and (max-width: 980px) {
+  body {
+    width: 980px;
+  }
+  .github {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+ul,li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img,a {
+  border: none;
+  margin:0;
+  padding: 0; 
+}
+
+/*reset end*/
+/*===================================================*/
+
+/*global css*/
+.wrap {
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  overflow: auto;
+  zoom: 1;
+}
+
+.nav a,
+.nav li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.contain {
+  background: #C7BEBE;
+  width: 100%;
+  position: relative;
+}
+/*global end*/
+/*===================================================*/
+
+
+/*header*/
+header {
+  background: purple;
+  color: white;
+  width:100%;
+  height: 80px;
+  position: relative;
+}
+
+.icon {
+  width: auto;
+  height: 50px;
+  position: relative;
+  bottom: -20px;
+}
+
+.header-nav {
+  position: relative;
+  padding: 0;
+  text-align: right;
+}
+
+.header-nav li,
+.header-nav a {
+  color: white;
+  font-size: 14px;
+}
+
+.header-nav li {
+  margin-left: 28px;
+}
+
+.github {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+/*header end*/
+/*===================================================*/
+
+/*footer*/
+footer {
+  background: black;
+  color: white;
+}
+.footer-nav {
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid white;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-nav a {
+  color: white;
+  font-size: 14px;
+  margin: 5px 14px;
+}
+
+.link {
+  position: relative;
+  overflow: auto;
+  zoom: 1;
+}
+
+.link-wrap {
+  float: left;
+  width: 20%;
+}
+.link-content {
+  padding: 0;
+}
+.link-content li,
+.link-content a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin: 5px 0;
+}
+.link-content a:hover {
+  text-decoration: underline;
+}
+.info {
+  text-align: center;
+}
+/*footer end*/
+/*===================================================*/

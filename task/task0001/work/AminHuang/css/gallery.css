@@ -1,0 +1,168 @@
+.gallery-wrap {
+  display: flex;
+  display: -webkit-flex;
+}
+.contain-left {
+  -webkit-flex:2;
+          flex:2;
+}
+.contain-right {
+  -webkit-flex:1;
+          flex:1;
+}
+
+.gallery-tag {
+  margin-top: 10px;
+  display: inline-table;
+}
+.gallery-tag li {
+  display: inline-table;
+  padding: 10px 15px;
+  margin: 0;
+  background: white;
+  border-top: 3px solid rgba(233,123,12,0.7);
+  border-bottom: 1px solid rgba(233,123,12,0.7);
+}
+.gallery-tag .active {
+  border-bottom: 1px solid white;
+}
+.gallery-tag li:hover {
+  background: rgba(233,123,11,0.3);
+  cursor: default;
+}
+.gallery-tag-content {
+  background: white;
+  margin: 0 5px 10px 0;
+  padding: 15px;
+  overflow: auto;
+  zoom: 1;
+}
+
+.more {
+  background: white;
+  margin: 0 5px 10px 0;
+  padding: 15px;
+  width: 650px;
+}
+
+.gallery-tag-content section {
+  margin-bottom: 10px;
+}
+
+.col-1,
+.col-2 {
+  position: relative;
+  float: left;
+  margin: 10px 5px 10px 0;
+}
+
+.col-2 {
+  width: 48%; 
+}
+
+.col-1 {
+  width: 24%;
+}
+.gallery-tag-content article {
+  padding: 10px;
+  color: white;
+}
+
+.gallery-tag-content img {
+  width: 100%;
+}
+
+.sytle {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border: solid 1px white; 
+  border-radius: 100%;
+  text-align: center;
+}
+
+.gallery-text {
+  padding-left: 30px;
+}
+
+.gallery-text > p {
+  font-size: 14px;
+  line-height: 130%;
+  margin: 5px 0;
+}
+
+.gallery-title {
+  margin: 0;
+}
+
+.gallery-style-J {
+  background: rgba(234,123,212,0.7);
+}
+
+.gallery-style-A {
+  background: rgba(24,123,212,0.7);
+}
+
+.gallery-style-B {
+  background: rgba(24,3,212,0.7);
+}
+
+.contain-right .empty {
+  height: 47px;
+}
+/*left end*/
+/*==================================================*/
+
+/*right*/
+.search{
+  background: white;
+  margin: 5px;
+}
+
+.search input {
+  margin: 10px 0 10px 10px;
+  padding: 5px 5px 5px 35px;
+  font-size: 15px;
+  height: 25px;
+  background: url(../img/icon-search.png) no-repeat left center ;
+  border:1px solid rgb(192, 190, 190);
+}
+
+.search button {
+  padding: 5px;
+  width: 37px;
+  height: 37px;
+  background: rgb(192, 190, 190);
+  border:none;
+}
+
+.rank {
+  background: white;
+  padding: 10px;
+  margin: 10px 5px;
+}
+
+.number {
+  display: inline-block;
+  background: rgba(23,23,123,0.6);
+  border-radius: 100%;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.graph {
+  display: inline-block;
+  border: 1px solid rgba(23,23,123,0.6);
+  width: 60%;
+  height: 15px;
+}
+
+.bar {
+  position: relative;
+  text-align: left;
+  display: block;
+  background: rgba(23,23,123,0.6);
+  height: 15px;
+}

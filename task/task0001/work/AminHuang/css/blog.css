@@ -1,0 +1,165 @@
+.blog-wrap {
+  display: flex;
+  display: -webkit-flex;
+  overflow: visible;
+}
+.blog-left {
+  -webkit-flex:2;
+          flex:2;
+
+  margin: 5px 0;
+}
+
+.blog-right {
+  -webkit-flex:1;
+          flex:1;
+
+  margin: 5px;
+}
+
+.blog {
+  background: white;
+  padding:10px;
+  margin: 10px 5px 10px 0;
+}
+
+.blog-topic {
+  width: 50px;
+  margin-left: -60px;
+  float: left;
+}
+
+.blog-date,
+.blog-tag {
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+.blog-date {
+  background: #7512A6;
+}
+
+.blog-tag {
+  background: #3144C7;
+}
+
+.blog-title {
+  color: #7512A6;
+  font-size: 16px;
+}
+
+.blog-subtitile {
+  color: black;
+  font-size: 12px;
+}
+
+.blog-content > p {
+  text-indent: 2em;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.page-item {
+  display: inline-block;
+  padding: 10px 15px;
+  background: white;
+  color: black;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+
+
+/*left end*/
+/*===================================================*/
+
+/*right*/
+.search,
+.nav-tags,
+.calendar,
+.tags {
+  background: white;
+  margin: 5px;
+}
+
+.search-wrap {
+  
+}
+
+.search input {
+  margin: 10px 0 10px 10px;
+  padding: 5px 5px 5px 35px;
+  font-size: 15px;
+  height: 25px;
+  background: url(../img/icon-search.png) no-repeat left center ;
+  border:1px solid rgb(192, 190, 190);
+}
+
+.search button {
+  padding: 5px;
+  width: 37px;
+  height: 37px;
+  background: rgb(192, 190, 190);
+  border:none;
+}
+
+.nav-tags li {
+  padding: 10px;
+  border-left: 3px solid rgba(153, 36, 157, 0.8);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.nav-tags li:hover {
+  border-left: 3px solid #333;
+}
+
+.calendar {
+  padding: 25px;
+}
+
+.calendar table {
+  width: 100%;
+}
+
+.calendar .time-select tr th {
+  font-weight: normal;
+  line-height: 150%;
+  border-bottom: 1px solid rgba(0,5,0,0.2);
+
+}
+.calendar .time-select  {
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+.time-select th:hover {
+  background: #fdf;
+  cursor: default;
+}
+
+.tags {
+  padding: 10px;
+  color: rgba(153, 36, 157, 0.8);
+}
+
+.tags-content li {
+  display: inline-block;
+  padding: 2px;
+  font-weight: bold;
+}
+
+.tags-content .larger {
+  font-weight: bolder;
+  font-size: 1.8em;
+}
+
+.tags-content .large {
+  font-size: 1.4em;
+}
+
+/*right end*/
+
+.active {
+  background: rgba(132, 67, 203, 0.8);
+  color: white;
+}

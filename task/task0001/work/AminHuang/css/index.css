@@ -1,0 +1,106 @@
+/*banner*/
+.banner {
+  width: 100%;
+  background: url(../img/banner-bg.jpg) no-repeat center;
+  background-size: cover;
+  
+}
+
+.banner-wrap {
+  height: 500px;
+}
+
+.banner-content {
+  background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.1) 75%, rgba(255,255,255,0));
+  background: -o-linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.1) 75%, rgba(255,255,255,0));
+  background: -webkit-linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.1) 75%, rgba(255,255,255,0));
+  background: -moz-linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.1) 75%, rgba(255,255,255,0));
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  color: white;
+  padding: 30px 10px;
+}
+
+.banner-title {
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.banner-text {
+  font-size: 12px;
+  line-height: 150%;
+}
+/*banner end*/
+/*===================================================*/
+
+/*show*/
+.show-contain {
+  height: 500px;
+}
+
+.show-warp {
+  display: flex;
+  display: -webkit-flex;
+
+}
+
+.show {
+  -webkit-flex:1;
+          flex:1;
+
+  width: 320px;
+  background: white;
+  margin: 10px 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.show-img {
+  width: 300px;
+  height: 180px;
+}
+
+
+.show-text {
+  font-size: 12px;
+  line-height: 170%;
+  padding: 15px 30px 25px 30px;
+  text-align: left;
+  text-indent: 2em;
+}
+/*show end*/
+/*===================================================*/
+
+/*introduce*/
+.introduce {
+  text-align: center;
+  color: black;
+  margin-bottom: 50px;
+}
+.introduce-avatar {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  top: -50px;
+  margin: 0 auto;
+  border-radius: 100%;
+}
+
+.introduce-title {
+  font-size: 20px;
+  font-family: "Century gothic";
+  
+}
+
+.introduce-text{
+  text-align: left;
+  text-indent: 2em;
+  font-size: 14px;
+  width: 600px;
+  margin: 0 auto;
+}
+/*introduce end*/
+/*===================================================*/
