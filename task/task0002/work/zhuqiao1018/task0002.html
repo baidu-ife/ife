@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+</head>
+<body>
+    <input id="number1" type="text">
+    <input id="number2" type="text">
+    <span id="result"></span>
+    <button id="addbtn">add</button>
+    <ul>
+    	<li id="1">1</li>
+    	<li id="2">2
+    		<ul id="2-1">
+    			<li id="2.1">2.1</li>
+    			<li id="2.2">2.2</li>
+    		</ul>
+    		<ul id="2-2">
+    			<li id="2.3">2.3</li>
+    		</ul>
+    	</li>
+    	<li id="3">3</li>
+    </ul>
+
+    <script type="text/javascript" src="./js/util.js"></script>
+    <script type="text/javascript">
+		var srcObj = {
+		    a: 1,
+		    b: {
+		        b1: ["hello", "hi"],
+		        b2: "JavaScript"
+		    }
+		};
+		var abObj = srcObj;
+		var tarObj = cloneObject(srcObj);
+
+		srcObj.a = 2;
+		srcObj.b.b1[0] = "Hello";
+
+		// console.log(abObj.a);
+		// console.log(abObj.b.b1[0]);
+
+		// console.log(tarObj.a);      // 1
+		// console.log(tarObj.b.b1[0]);    // "hello"
+
+
+		var arr = [2, 5, 7, 7, 7, "ss", 10, 3, 2, 7, 7, "ss"];
+		arr = uniqArray(arr);
+
+		//console.log(arr);
+
+		var todo = function(index, item) {
+			console.log("index:" + index + ",val:" + item + ";");
+		}
+
+		//each(arr, todo);
+
+		var obj = {
+		    a: 1,
+		    b: 2,
+		    c: {
+		        c1: 3,
+		        c2: 4
+		    }
+		};
+		//console.log(getObjectLength(obj)); // 3
+
+		var emailTest = ["23","4@4","@.com", "bupt.bupt@gmail.com", "ruby@bupt.edu.com"];
+
+		var phoneTest = ["12345", "13141274634", "18911269547", "12345678901"];
+
+		var testEmail = function(index, item) {
+			if(isEmail(item))
+				console.log(item + " is email");
+			else
+				console.log(item + " is not email");
+		}
+
+		//each(emailTest, testEmail);
+
+		var testPhone = function(index, item) {
+			if(isMobilePhone(item))
+				console.log(item + " is phone number");
+			else
+				console.log(item + " is not phone number");
+		}
+		//each(phoneTest, testPhone);
+
+		var li2_1 = document.getElementById("2.1");
+		var li2_2 = document.getElementById("2.2");
+		var li1 = document.getElementById("1");
+		var li2_3 = document.getElementById("2.3");
+
+		function madan(){
+			console.log(isSiblingNode(li2_1, li2_3));
+			console.log(getPosition(li2_1));
+			console.log(getPosition(document.getElementsByTagName("body")[0]));
+
+		};
+		window.setTimeout(madan, 3000);
+
+
+    </script>
+</body>
+</html>
