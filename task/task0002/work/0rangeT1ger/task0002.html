@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #inputTips{width: 200px;height: auto;}
+        #halfColRight{text-align: center;-moz-user-select:-moz-none;-webkit-user-select: none}
+        .halfCol{width: 50%;float: left;position: relative;}
+        #imageSlideContainer{width: 600px;height: 350px;position: relative;}
+        .imageSlide{ height: 350px;  width: 4000px;  background-color: black; position: relative; }
+        .dotContainer{;  margin-left: 200px;  text-align: center;  height: 10px;  position: relative;bottom: 14px; }
+        .dot{  height: 8px;  width: 8px;  border-radius: 4px;  background-color: black;  opacity: .3;  float: left;  margin: 0px 5px 0px 5px;  }
+        .dot:hover{opacity: .9}
+        .imgContainer{  float: left;  width: 600px;  height: 350px;  }
+        .dragBox{width: 50px;height: 30px;background-color: red;margin-bottom: 20px;position: relative;z-index: 1;opacity: .5;}
+        .dragBoxContainer{-moz-user-select: none; -khtml-user-select: none; user-select: none;text-align: center; margin: 30px;background-color: #eeeeee;padding:20px;height: 300px; width: 50px;border: solid darkgray 1px;position: relative;float: left}
+    </style>
+</head>
+<body style="margin:0px;padding: 0px;">
+<div class="halfCol">
+    <p id="alert" style="color:red; display: none">你输入的超过十个，或者你没有输入</p>
+    <textarea id="input" style="width: 300px;" class="good bad great worst">请输入您的喜好，用半角逗号隔开</textarea>
+    <button id="submit"> 提交</button>
+    <script src="util.js" async></script>
+    <div id="div1"></div>
+    <div id="parent"></div><br>
+    <p id="alertTimeError"></p>
+    <input id="inputYear" value="2015"><input id="inputMonth" value=4><input id="inputDay" value="24"><button id="startTiming">开始计时</button><br>
+    倒计时：<span id="year"></span>年<span id="month"></span>月<span id="day"></span>天<span id="hour"></span>小时<span id="minute"></span>分钟<span id="second"></span>秒
+
+    <div id="imageSlideContainer" style="overflow: hidden" >
+        <div id="imageSlide" class="imageSlide">
+            <div class="imgContainer" id="imgContainer1" style="background: url(img/doge.jpg);background-size: 100%;background-position: center;"></div>
+            <div class="imgContainer" id="imgContainer2" style="background: url(img/doge2.jpg);background-size: 100%;background-position: center;"></div>
+            <div class="imgContainer" id="imgContainer3" style="background: url(img/doge3.jpg);background-size: 100%;background-position: center;"></div>
+        </div>
+        <article class="dotContainer" id="dotContainer">
+            <div id="dot1" class="dot"></div>
+            <div id="dot2" class="dot"></div>
+            <div id="dot3" class="dot"></div>
+        </article>
+    </div>
+    <input type="search" id="searchBox" value="你想搜索什么？（haha)"/>
+    <div id="inputTips">
+    </div>
+</div>
+<div class="halfCol" id="halfColRight" style="" onselectstart="javascript:return false;" >
+    <p><h3>把左边的二相箔扔到右边的星系中去</h3><br><h4>慢点拖哟~</h4></p>
+    <article class="dragBoxContainer" id="dragBoxContainer1" unselectable="on" onselectstart="return false;" style="-moz-user-select:none;">
+        <div class="dragBox"></div>
+        <div class="dragBox"></div>
+        <div class="dragBox"></div>
+        <div class="dragBox"></div>
+        <div class="dragBox"></div>
+    </article>
+    <div class="dragBoxContainer" id="dragBoxContainer2" unselectable="on" onselectstart="return false;" style="-moz-user-select:none;"></div>
+</div>
+</body>
+</html>
