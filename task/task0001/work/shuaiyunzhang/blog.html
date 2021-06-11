@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>blog</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="wrapper first-wrapper">
+            <a href="#"><img src="img/logo.png" alt="LOGO"></a>
+            <ul class="nav top-nav">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">文章</a></li>
+                <li><a href="#">作品</a></li>
+                <li><a href="#">关于</a></li>
+            </ul>
+        </div>
+        <a href="https://github.com/shuaiyunzhang" target="_blank"><img src="img/icon-github.png" alt="github-icon-top"></a>
+    </div>
+    <div class="content">
+        <div class="wrapper clearfix">
+            <div class="main-content">
+                <div class="blog">
+                    <h1>本次作业的一些问题总结</h1>
+                    <h2>副标题</h2>
+                    <p>1、命名规范，平时写命名时很随性，这次尝试去看规范来写，特别是"必须代表相应模块或部件的内容或功能，不得以样式信息进行命名"这句话让我理解了很久，比如说在左边的附属性质的模块应该用siadebar而不是left，但这个造成了在写之前想某个部分的名字该怎么命名想了很久。</p>
+                    <p>2、语义化。以前我喜欢为了实现效果而随意使用标签，比如特别喜欢用span，因为比较好控制，用css控制可以实现很多效果，我意识到这是一个很严重的问题，不符合语义，所以我尽量提醒自己写标签符合语义，比如如果某部分按照语义应该是标题，就一定要用heading标签。</p>
+                    <p>3、另外就是在数值单位上用的很混乱，可能是最近在努力接触响应式的问题，有时候我会用百分数，有时会用px，没有一个标准，在about.html页面这个问题最突出。</p>
+                    <p>4、兼容问题特别是低版本ie没考虑</p>
+                    <p>5、对于一些细节知识掌握的还不是很熟练，无法解决。在写日历时，我用表格进行布局，按照设计图，每行下面会有一个border，但我进行设置了之后，没有效果，最后将display为block才解决，这里我很疑惑，table和table相关元素应该都是block元素，但为什么需要显式display为block才能出效果，后面我了解到这是因为tr里面的td也是block元素，在这种情况下需要显式display才会有效果。</p>
+                    <p>在写完所有网页我发现，水平方向会出现一点点滚动条，我原本以为是我没设置min-width的原因，但在我设置了之后，还是会出现同样的问题，虽然可以通过overflow-x来禁止它水平滚动，但明显这种解决办法是有问题的，更好的方法没有找到</p>
+                    <p>边框我本来以为两端应该是水平的，但当我将边框变大时，发现两端有一点倾角，再gallery.html里的tab特别明显，找不到解决的方法。</p>
+                    <div class="detail">
+                        <span class="author">Shuaiyun Zhang </span>发表于<span class="date"> 2015年4月12日</span>
+                    </div>
+                    <div class="attachment">
+                        <span>4.12</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <div class="blog">
+                    <h1>这里是这篇文章的标题</h1>
+                    <h2>这里是这篇文章的副标题</h2>
+                    <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+                    <div class="detail">
+                        <span class="author">Shuaiyun Zhang </span>发表于<span class="date"> 2015年4月12日</span>
+                    </div>
+                    <div class="attachment">
+                        <span>4.12</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <div class="blog">
+                    <h1>这里是这篇文章的标题</h1>
+                    <h2>这里是这篇文章的副标题</h2>
+                    <p>这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+                    <div class="detail">
+                        <span class="author">Shuaiyun Zhang </span>发表于<span class="date"> 2015年4月12日</span>
+                    </div>
+                    <div class="attachment">
+                        <span>4.12</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <div>
+                    <span>第一页</span>
+                    <span>上一页</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span class="active">3</span>
+                    <span>4</span>
+                    <span>...</span>
+                    <span>下一页</span>
+                    <span>最后页</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div>
+                    <input type="text" placeholder="Keywords">
+                    <span id="submit"></span>
+                    <img src="img/search.png">
+                </div>
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">其他文章</a></li>
+                </ul>
+                <div id="calendar">
+                    <span><</span>
+                    <h2>2015.04</h2>
+                    <span>></span>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>M</th>
+                                <th>T</th>
+                                <th>W</th>
+                                <th>T</th>
+                                <th>F</th>
+                                <th>S</th>
+                                <th>S</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td class="active">5</td>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="tags">
+                    <h2>Tags</h2>
+                    <p><span class="big">JavaScript</span><span class="middle">CSS</span><span class="smaller">flex</span>
+                    <span class="small">WebGL</span><span class="big">HTML</span><span class="middle">Canvas</span>
+                    <span class="middle">prototype</span><span class="big">HTML5</span><span class"smaller">grid</span><span class="small">nodeJS</span>
+                    <span class="small">CSS3</span><span class="big">jQuery Echarts</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <ul class="nav bottom-nav clearfix">
+                <li><a href="#">主页</a></li>
+                <li><a href="#">文章</a></li>
+                <li><a href="#">作品</a></li>
+                <li><a href="#">关于</a></li>
+            </ul>
+        </div>
+        <div class="wrapper fourth-wrapper clearfix">
+            <ul>
+                学习资料
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul>
+                友情链接
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul>
+                学习资料
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul>
+                学习资料
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul>
+                友情链接
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+        <div id="info">
+            <span>版权信息</span>
+            <img src="img/icon-github.png" alt="github-icon-bottom">
+        </div>
+    </div>
+</body>
+</html>
