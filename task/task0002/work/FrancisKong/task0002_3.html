@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"></meta>
+		<title>轮播图</title>
+		<style>
+			#slide{
+				text-align: center;
+				border: 1px solid #000000;
+				width: 600px;
+				height: 300px;
+				overflow: hidden;
+				position: relative;
+				
+			}
+			.on{
+				background-color: #FF4400 !important; 
+			} 
+			#slide-btn{
+				width: 100px;
+				z-index: 2;
+				display: block;
+				position: absolute;
+				text-align: center;
+				left: 50%;
+				margin-left: -80px;
+				bottom: 5%;
+			}
+			#slide-img{
+				position: absolute;
+				width: 9999px;
+				z-index: 1;
+			}
+			#slide-img img{
+				width: 600px;
+				height: 300px;
+				z-index: 1;
+				float: left;
+			}
+			#slide-btn li{
+				float: left;
+				cursor: pointer;
+				border: 1px solid  #ffffff;
+				border-radius: 100%;
+				height: 10px;
+				width: 10px;
+				background-color: #B9C0C6;
+				list-style: none;
+				margin-left: 10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="slide">
+			<div id="slide-img" >
+				<img src="img/img13.jpg"></img>
+				<img src="img/img14.jpg"></img>
+				<img src="img/img15.jpg"></img>
+			</div>
+			<ul id="slide-btn">
+				
+			</ul>
+		</div>
+	<script type="text/javascript" src="js/task0002_3.js"></script>
+	</body>
+</html>

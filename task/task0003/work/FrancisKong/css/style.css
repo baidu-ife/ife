@@ -1,0 +1,188 @@
+*{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+body{
+	margin: 0;
+	height: 100%;
+	
+}
+.header{
+	width: 100%;
+	height: 100px;
+	background-color: #DDDDDD;
+}
+.title{
+	height: 100px;
+	line-height: 100px;
+	margin: 0 10px;
+	color: #999999;
+}
+.container{
+	/*
+		使用绝对定位实现高度自适应
+	*/
+	position: absolute;
+	top: 100px;
+	bottom: 0;
+	width: 100%;
+	overflow: hidden;
+}
+.sidebar,.tasklist,.content{
+	float: left;
+	border-top: 1px solid #cccccc;
+	height: 100%;
+}
+.sidebar{
+	width: 250px;
+	background-color: #f2f2f2;
+	margin-left: -100%;
+	
+}
+.tasklist{
+	width: 250px;
+	position: relative;
+	left: 250px;
+	margin-left: -100%;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	background-color: #f2f2f2;
+}
+.content{
+	width: 100%;
+	background-color: #f2f2f2;
+	overflow: hidden;
+}
+.add{
+	position: absolute;
+	width: 250px;
+	bottom: 0;
+	height: 50px;
+	line-height: 50px;
+	background-color: #eeeeee;
+	border-top: 1px solid #cccccc;
+	text-indent: 10px;
+}
+/*分类列表样式*/
+.type{
+	width: 100%;
+	position: relative;
+	top: 20px;
+	left: 10px;
+}
+.type dl dd:before{
+	content: url('../images/design_03.png');
+	width: 20px;
+	height: 15px;
+}
+.type dl dd{
+	margin: 10px 0;
+	text-indent: 10px;
+}
+.tasks{
+	position: relative;
+	left: 20px;
+	padding: 0;
+	margin:0;
+	list-style: none;
+	width: 100%
+}
+.tasks li{
+	height: 25px;
+	line-height: 25px;
+}
+.tasks li:hover{
+	background: #fff;
+}
+.tasks li:before{
+	content: url("../images/design_04.png");
+	width: 15px;
+	height: 20px;
+}
+/*任务列表样式*/
+.state{
+	width: 100%;
+	height: 50px;
+	background-color: #eeeeee;
+	border-bottom: 1px solid #cccccc;
+	position: absolute;
+	top: 0;
+	text-align: center;
+}
+.btn{
+	margin: 10px auto;
+	height: 30px;
+	width: auto;
+	background-color: #fff;
+	border: 1px solid #cccccc;
+	font-size: 14px;
+	padding: 5px 10px;
+}
+.tasklist-center{
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+	padding: 50px 0px;
+	position: static;
+}
+.task{
+	margin: 0;
+	width: 100%;
+	height: auto;
+	position: static;
+}
+.task dt{
+	background-color: #fafaee;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 10px;
+}
+.task dd{
+	height: 25px;
+	line-height: 25px;
+	margin: 0;
+	text-indent: 2em;
+}
+/*任务详细样式*/
+.content-header{
+	margin-top: 0;
+	height: 50px;
+	width: auto;
+	line-height: 50px;
+	background-color: #f2f2f2;
+	position: relative;
+}
+.task-name{
+	margin: 0 0 0 510px;
+	padding: 0;
+}
+.task-icon{
+	display: inline;
+	position: absolute;
+	right: 20px;
+	top: 8px;
+}
+.task-icon img{
+	width: 25px;
+	height: 27px;
+	margin: 0 5px;
+}
+.content-center{
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 510px;
+	background-color: #fafaee;
+}
+.content-main{
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+	padding: 10px 10px 10px 510px;
+}
+p{
+	margin: 0;
+	padding: 0;
+}
