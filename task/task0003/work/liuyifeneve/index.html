@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/task3.css" rel="stylesheet" type="text/css" />
+<title>GTD</title>
+</head>
+
+<body>
+    <h1>GTD Tools</h1>
+    <div class='mainframe'>
+        <div id='index'>
+            <ul>
+                <li id="allclass"><div id="addallcls"><span></span><div>
+                   
+                </li>
+                <li id="classify"><span></span> 
+                     
+               </li>
+           </ul>  
+           
+            <div class='addbtn'>
+                <input type='submit' id='addclass' value='new'/>新增分类
+            </div>
+        </div>
+        
+        <div id='middle'>
+            <div id='midbtn'>
+                 <input type='submit' id='alltask' class='midbtn' value='所有'/>
+                 <input type='submit' id='doing' class='midbtn' value='未完成'/>
+                 <input type='submit' id='done' class='midbtn' value='已完成'/>
+            </div>
+            <div id='tasks'>
+              
+            </div>
+            
+             <div class='addbtn'>
+                <input type='submit' id='addtask' value='new'/>新增任务
+            </div>
+        </div>
+         <div id='textright'>
+            <div id='tasktittle'>
+                <span></span><em></em>
+                <input type='image' id='finish' class='editbtn' src="img/finish.png" width='20px'/>
+                <input type='image' id='edit' class='editbtn' src="img/edit.png" width='20px'/>
+                <input type='text' id='edititle' class='edittask'/>
+            </div>
+            <div id='taskdate'>
+                <span></span>
+                <input type='text' id='editdate' class='edittask'/>
+            </div>
+            <div id='tasktext'>
+                <span></span>	
+                <textarea id="edittext" class='edittask'></textarea> 
+                <input type='submit' id='cancel' class='savebtn' value='取消'/>
+                <input type='submit' id='save' class='savebtn' value='保存'/>
+            </div>
+        </div>
+        <div id="popBox">
+            <p>请输入新建分类名称:<p>
+            <input id='newclsname' class='newcls' type="text" value="" />
+            <p>请选择父级分类:<p>
+            <select class='newcls' id='newselect'>
+                <option value="" selected>新建一个一级分类</option>
+            </select>
+            <input class='newbtn' id='newconfirm' type="button" value="确认" />
+            <input class='newbtn' id='newcancel' type="button" value="取消" />
+        </div>   
+    </div>
+    <div id='mask' onselectstart="retrun false">
+    </div>
+    
+<script language="javascript" type="text/javascript" src="js/task3.js"></script>
+</body>
+</html>

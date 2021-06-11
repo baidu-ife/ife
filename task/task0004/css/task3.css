@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0px; padding:0px; text-decoration:none;list-style-type:none;}
+h1{
+	background-color:#90F;
+	color:white;
+	padding:10px;
+	text-align:center;
+}
+.mainclass{
+	font-size:26px;
+}
+.listcls{
+	background-color:white;
+	padding:10px;
+	border-bottom:1px grey solid;
+}
+#tasktext{
+	background-color:white;
+	padding:10px;
+}
+.invis{
+	display:none;
+}
+.return{
+	background-color:#90F;
+	font-size:16px;
+	border:none;
+	color:white;
+	position:absolute;
+	top:30px;
+	left:15px;
+	z-index:10;
+}
+.head{
+	background-color:#90F;
+	width:100%;
+	padding:10px 0;
+	font-size:32px;
+	text-align:center;
+	color:white;
+	position:absolute;
+	top:0px;
+	left:0px;
+}

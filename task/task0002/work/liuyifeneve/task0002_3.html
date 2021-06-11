@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ÂÖ²¥Í¼</title>
+
+<style>
+*{margin:0;padding:0;text-decoration:none;}
+body{margin:0 auto;}
+#slide{width:600px;height:300px;overflow:hidden;position:relative;}
+#slide #imgs{position:absolute;width:4800px;}
+#imgs img{float:left;width:600px;}
+#btns{width:600px;height:20px;line-height:20px;position:absolute;bottom:10px;z-index:11;text-align:center;}
+a{color:orange;text-decoration:}
+#btns a.on{color:#ccc;}
+#prev{float:left;}
+#next{float:right;}
+#left{width:50px;}
+#right{width:50px;}
+</style>
+</head>
+
+<body>
+<div id="slide">
+    <div id="imgs" style="left:-600px">
+    	<img src="img/pic6.jpg" alt="pic6" />
+        <img src="img/pic1.jpg" alt="pic1" />
+        <img src="img/pic2.jpg" alt="pic2" />
+        <img src="img/pic3.jpg" alt="pic3" />
+        <img src="img/pic4.jpg" alt="pic4" />
+        <img src="img/pic5.jpg" alt="pic5" />
+        <img src="img/pic6.jpg" alt="pic6" />
+        <img src="img/pic1.jpg" alt="pic1" />
+    </div>
+    <div id="btns">
+        <a index="0" href="#" class="on">¡ñ</a>
+        <a index="1" href="#">¡ñ</a>
+        <a index="2" href="#">¡ñ</a>
+        <a index="3" href="#">¡ñ</a>
+        <a index="4" href="#">¡ñ</a>
+        <a index="5" href="#">¡ñ</a>
+    </div>
+</div>
+<input type="button" id="left" value="left"/>
+<input type="button" id="right" value="right"/>
+
+<script language="javascript" type="text/javascript" src="js/task0002_3.js"></script>
+</body>
+</html>
