@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>task0002-1</title>
+        <link herf="css/task0002_1.css">
+    </head>
+    <body>
+        <section id="step1">
+            <h1>第一阶段</h1>
+            <p>/*温馨提示*/ 请用半角逗号来作为不同爱好的分隔</p>
+            <form>
+                <span>兴趣爱好： </span>
+                <input type="text" name="interest"/>
+                <input type="button" value="submit"/>
+            </form>
+            <p id="result1"></p>
+        </section>
+        <section id="step2">
+            <h1>第二阶段</h1>
+            <p>/*温馨提示*/ 请用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔</p>
+            <form>
+                <textarea type="text" name="interest"></textarea>
+                <br>
+                <input type="button" value="submit"/>
+            </form>
+            <p id="result2"></p>
+        </section>
+        <section id="step3">
+            <h1>第三阶段</h1>
+            <p>/*温馨提示*/ 请输入最多十个兴趣爱好</p>
+            <form>
+                <textarea type="text" name="interest"></textarea>
+                <p class="warning"></p>
+                <input type="button" value="submit"/>
+            </form>
+            <p id="result3"></p>
+        </section>
+        <script src = "js/util.js"></script>
+        <script src = "js/task0002_1.js"></script>
+    </body>
+</html>
