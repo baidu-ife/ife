@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>输入提示</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#container{
+			width: 980px;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+		#container span input{
+			width: 200px;
+		}
+		#container span input:focus{
+			border-color: #38f;
+		}
+		#container span button{
+			margin-left: 20px;
+		}
+		#sug{
+			display: none;
+			width: 202px;
+			border: 1px solid #999;
+		}
+		.sug-ul{
+			list-style: none;
+		}
+		.sug-ul li{
+			color: #7A77C8;
+		}
+		.select{
+			background-color: #E9EAEA;
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<span><input id="in"></span>
+	<div id = "sug">
+		<ul class ="sug-ul"></ul>
+	</div>
+</div>
+<script src="js/util.js"></script>
+<script src="js/task0002_4.js"></script>
+</body>
+</html>

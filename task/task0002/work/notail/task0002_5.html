@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>拖放</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #ddd;
+		}
+		#wrapper{
+			width: 980px;
+			margin: 0 auto;
+			overflow: hidden;
+			margin-top: 50px;
+		}
+		.drag-con{
+			/*position: relative;*/
+			float: left;
+			width: 300px;
+			height: 600px;
+			border: 1px solid black;
+			margin-right: 200px;
+			background-color: white;
+		}
+		.drag-con:last-child{
+			margin-right: 0;
+		}
+		.drag{
+			/*position: absolute;*/
+			width: 300px;
+			height: 60px;
+			background-color: red;
+			border-bottom: 1px solid black;
+			line-height: 60px;
+			text-align: center;
+		}
+		.dragging{
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+<div id = "wrapper">
+	<div id = "left" class = "drag-con">
+		<div class = "drag">1</div>
+		<div class = "drag">2</div>
+		<div class = "drag">3</div>
+	</div>
+	<div id = "right" class = "drag-con">
+		<div class = "drag">4</div>
+		<div class = "drag">5</div>
+		<div class = "drag">6</div>
+	</div>
+</div>
+<script src = "js/task0002_5.js"></script>
+<script src="js/util.js"></script>
+</body>
+</html>

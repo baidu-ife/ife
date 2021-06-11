@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>task0002</title>
+	<style>
+		#h1{
+			border: 1px solid #999;
+			margin-top: 10px;
+		}
+		.c1{
+			background-color: #eee;
+		}
+		.c2{
+			color: blue;
+		}
+	</style>
+</head>
+
+<body>
+	<input id="number1" type="text">
+	<input id="number2" type="text">
+	<span id="result"></span>
+	<button id ="addbtn">add</button>
+	<div id="h1" class="c1">
+		<h3>利用js增加新的类</h3>
+	</div>
+	<ul id="list">
+	    <li>Simon</li>
+	    <li>Kenner</li>
+	    <li>Erik</li>
+	</ul>
+<!--
+<script>
+	function $(id) {
+	    return document.getElementById(id);
+	}
+
+	function add(num1, num2) {
+	    return num1 + num2;
+	}
+
+	function renderResult(result) {
+	    $("result").innerHTML = result;
+	}
+
+	function addEventHandle() {
+	    var num1 = $("number1").value;
+	    var num2 = $("number2").value;
+	    var result = add(num1, num2);
+	    $("h1").style.backgroundColor = "#999";
+	    renderResult(result);
+	}
+
+	function initEvent() {
+	    $("addbtn").addEventListener("click", addEventHandle, false);
+	    $("addbtn").addEventListener("click",function(){alert("multi");
+	    	$("h1").style.backgroundColor = "green";
+	    },false);//加多个绑定事件，都会出现
+	    $("addbtn").addEventListener("click",function(){alert("duoge")},false);//加多个绑定事件，都会出现
+	}
+
+	initEvent();
+</script>
+-->
+
+<script src="js/util.js"></script>
+</body>
+</html>

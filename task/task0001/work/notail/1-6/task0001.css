@@ -1,0 +1,131 @@
+h1{
+	color: blue;
+	text-transform: none;
+	text-decoration: underline;
+}
+h2{
+	font-size: 14px;
+
+}
+p{
+	font-size: 12px;
+	background-color: black;
+	color: yellow;
+	text-indent: 20px;
+	white-space: normal;    /* 文本自动处理换行。假如抵达容器边界内容会转到下一行 */
+
+}
+img{
+	border:solid red 2px;
+}
+#one{
+	position: relative;
+}
+#center_01{
+	width: 960px;
+	height: 50px;
+	background-color: red;
+	margin: 0 auto;
+}
+#center_02{
+	position: absolute;
+	width: 960px;
+	height: 50px;
+	background-color: yellow;
+	left: 50%;
+	margin-left: -480px; 
+}
+
+#circle{
+	position:absolute;
+	width: 100px;
+	height: 80px;
+	border: solid black 3px;
+	margin: 0 auto;
+}
+#two{
+	position: relative;
+	margin-top: 60px;
+}
+#div-a{
+	position: absolute;
+	left: 0;
+	/*float: left;*/
+	width: 200px;
+	height: 50px;
+	background-color: red;
+	/*margin-top: 80px;*/
+}
+#div-b{
+	height: 50px;
+	background-color: green;
+	margin-left: 200px;
+}
+#div-c{
+	background-color: yellow;
+	height: 50px;
+}
+#three{
+	position: relative;
+}
+#div-e{
+	float: left;
+	width: 200px;
+	height: 50px;
+	background-color: red;
+}
+#div-f{
+	margin-left: 200px;
+	height: 50px;
+	background-color: blue;
+}
+
+#four{
+	position: relative;
+}
+#div-h{
+	background-color: purple;
+	width: 100px;
+	height: 100px;
+	/*position: absolute;*/
+	/*left: 0;*/
+	float: left;
+}
+#div-i{
+	background-color: red;
+	height: 100px;
+	margin-left: 100px;
+	margin-right: 80px;
+}
+#div-j{
+	background-color: blue;
+	width: 80px;
+	height: 100px;
+	/*position: absolute;*/
+	/*right: 0;*/
+	/*top: 0;*/
+	float: right;
+	margin-top: -100px;
+}
+.contain{
+	position: relative;
+	background-color: orange;
+	margin: 10px 10px;
+}
+.box{
+	background-color: blue;
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin: 10px 10px;
+}
+.after-box{
+	clear: left;
+}
+.box2{
+	display: inline-block;
+	background-color: yellow;
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+}
