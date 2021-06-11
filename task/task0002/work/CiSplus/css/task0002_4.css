@@ -1,0 +1,44 @@
+#main-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+    padding: 20px 50px;
+    background-color: #cde6c7;
+    border: 2px solid #78a355;
+    position: relative;
+    overflow: hidden;
+}
+#firstinput {
+    width: 300px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    position: relative;
+}
+#prompt {
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    border: 1px solid #000;
+    background-color: #fff;
+    display: none;
+    position: relative;
+}
+#prompt li {
+    list-style: none;
+}
+#prompt li a {
+    display: block;
+    width: 300px;
+    color: #000;
+    text-decoration: none;
+    /*_width: 97%;*/
+}
+#prompt li a:hover {
+    color: #000;
+    background-color: #ccc;
+    border: none;
+    text-decoration: none;
+}
