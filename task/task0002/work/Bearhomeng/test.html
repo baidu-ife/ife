@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <title></title>
+    <script src="js/util.js"></script>
+</head>
+<body>
+<script>
+    var a = {
+        b:1,
+        c:{d:1},
+        e : [1,2,3],
+        f : function () {
+            console.log("hello world");
+        }
+    }
+
+    console.log(isArray(a.b));
+    console.log(isArray(a));
+    console.log(isArray(a.e));
+    console.log(isFunction(a.f));
+
+    var srcObj = {
+        a: 1,
+        b: {
+            b1: ["hello", "hi"],
+            b2: "JavaScript"
+        }
+    };
+    var abObj = srcObj;
+    var tarObj = cloneObject(srcObj);
+
+    srcObj.a = 2;
+    srcObj.b.b1[0] = "Hello";
+
+    console.log(abObj.a);
+    console.log(abObj.b.b1[0]);
+
+    console.log(tarObj);
+    console.log(tarObj.a);      // 1
+    console.log(tarObj.b.b1[0]);    // "hello"
+
+    // 使用示例
+    var a = [1, 3, 5, 7, 5, 3];
+    var b = uniqArray(a);
+    console.log(a);
+    console.log(b); // [1, 3, 5, 7]
+
+    // 使用示例
+    var str = '     hi!               ';
+    console.log(str);
+    console.log(simpleTrim(str));
+    console.log(trim(str)); // 'hi!'
+
+    // 使用示例
+    var arr = ['java', 'c', 'php', 'html'];
+    function output(item) {
+        console.log(item);
+    }
+    each(arr, output);  // java, c, php, html
+
+    // 使用示例
+    var arr = ['java', 'c', 'php', 'html'];
+    function output(item, index) {
+        console.log(index + ': ' + item)
+    }
+    each(arr, output);  // 0:java, 1:c, 2:php, 3:html
+
+    // 使用示例
+    var obj = {
+        a: 1,
+        b: 2,
+        c: {
+            c1: 3,
+            c2: 4
+        }
+    };
+    console.log(getObjectLength(obj)); // 3
+
+    console.log(isEmail('bearhomeng@gmail.com'));
+
+    console.log(isMobilePhone('13618572314'));
+
+    var ele = document.createElement('p');
+    ele.className='btn';
+    addClass(ele,'btn-primary');
+    addClass(ele,'btn-primary');//重复添加类
+    console.log(ele.className);
+    console.log(ele.classList);
+    removeClass(ele,'btn-primary');
+    console.log(ele.className);
+    console.log(hasClass(ele,'btn'));
+    console.log(hasClass(ele,'btn1'));
+
+    console.log(navigator.userAgent.split(';'));
+    console.log(isIE());
+
+    setCookie('hello','world','2');
+    console.log(getCookie('hello'));
+
+    // 使用示例：
+    ajax(
+            'http://localhost:63341/Bearhomeng/test.html',
+            {
+                data: {
+                    name: 'simon',
+                    password: '123456',
+                    arr:[1,2,3],
+                    obj:{
+                        a:1,
+                        b:2,
+                        c:3
+                    }
+                },
+                type:'POST',
+                onsuccess: function (responseText, xhr) {
+                    console.log(responseText);
+                },
+                onfail:function(statusText,status,xhr){
+                    console.log(statusText);
+                }
+            }
+    );
+
+</script>
+</body>
+</html>

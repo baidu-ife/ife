@@ -1,0 +1,40 @@
+h1{
+    text-align: center;
+}
+.container {
+    width: 900px;
+    background: #eeeeee;
+    margin: auto;
+}
+
+.stack{
+    width: 250px;
+    height: 600px;
+    border: 1px solid #333333;
+}
+
+.stack1{
+    float: left;
+}
+.stack2{
+    float: right;
+}
+.clearfix {
+    *zoom:1;
+}
+.clearfix:after {
+    content: "\200B";
+    clear: both;
+    display:block;
+    height: 0px;
+}
+
+.stone{
+    height: 55px;
+    background: #ee0000;
+    border: 1px solid #eeeeee;
+}
+.stone:hover{
+    cursor: move;
+    opacity: 0.5;
+}

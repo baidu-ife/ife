@@ -1,0 +1,48 @@
+div,ul,li{
+    margin: 0;
+    padding: 0;
+}
+.carousel{
+    position: relative;
+    background-color: #3A90BA;
+    height: 400px;
+}
+
+.carousel-inner{
+    position: relative;
+    top: 0;
+    left: 50%;
+    margin-left: -640px;
+    width: 1280px;
+    height: 400px;
+    overflow: hidden;
+    list-style: none;
+}
+
+.carousel-inner .item {
+    position: absolute;
+    width: 1280px;
+    height: 400px;
+}
+.carousel-inner > .item img {
+    width: 1280px;
+    height: 400px;
+}
+
+.carousel .carousel-control{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+}
+
+.carousel .carousel-control {
+    list-style: none;
+}
+.carousel .carousel-control li{
+    float: left;
+}
+
+.controls {
+    width: 400px;
+    margin: auto;
+}
