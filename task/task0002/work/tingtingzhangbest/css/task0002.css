@@ -1,0 +1,7 @@
+.first,.second,.third{
+	margin:20px;
+}
+#textarea,#textarea_3{
+	height:80px;
+	width: 165px;
+}
