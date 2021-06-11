@@ -1,0 +1,177 @@
+.content-wrap{
+	padding-top: 10px;
+}
+
+.blog-box{
+	background-color: #fff;
+	padding: 20px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.blog-title{
+	font-size: 16px;
+	color: #28ea89;
+}
+.blog-title-second{
+	font-size: 12px;
+	color: #666;
+	line-height: 30px;
+}
+.blog-box p{
+	text-indent: 2em;
+	line-height: 150%;
+}
+.signature{
+	margin-top: 40px;
+	color: #999;
+	text-align: right;
+}
+.label-left{
+	width: 50px;
+	position: absolute;
+	left: -50px;
+	top: 20px;
+	text-align: center;
+
+}
+.label-data,.label-css{
+	line-height: 35px;
+	font-size: 16px;
+	color: #fff;
+}
+.label-data{
+	background-color: #28ea89;
+}
+.label-css{
+	background-color: #cfc;
+}
+/*blog部分end*/
+.page{
+	text-align: center;
+	margin-bottom:100px; 
+}
+.page li{
+	display: inline-block;
+	
+	background-color: #fff;
+	margin: 5px;
+}
+.page a{
+	display: inline-block;
+	padding: 15px;
+	color: #000;
+}
+#noclick{
+	cursor: text;
+	background-color: #eee;
+}
+#selected{
+	color: #fff;
+	background-color: #28ea89;
+}
+/*页码区end*/
+/*右列导航栏 */
+.label-nav{
+	background: #fff;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+.label-nav ul li{
+	
+	border-bottom: 1px solid #ddd;
+}
+.label-bav-first{
+	border-top: 1px solid #ddd;
+}
+.label-nav ul li a{
+	display: inline-block;
+	padding-left: 15px;
+	border-left: 5px solid #CCFFCC;
+	line-height: 50px;
+	color: #666;
+	width: 100%;
+}
+.label-nav ul li a:hover,.label-nav ul li a:active{
+	border-color: #28EA89;
+}
+/*右列导航栏 end*/
+/*右列日历*/
+.data-box{
+	padding: 20px 20px;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+table.calendar{
+	font-size: 8px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: center;
+	color: #999;
+
+}
+.calendar>caption{
+	font-weight: bold;
+	color: #28EA89;
+}
+.calendar caption a[rel="prev"]{
+	float: left;
+	margin-left: 0.2em;
+}
+.calendar caption a[rel="next"]{
+	float: right;
+	margin-right: 0.2em;
+}
+.calendar>caption>a{
+	color: #28EA89;
+}
+.calendar th{
+	font-weight: normal;
+}
+.calendar tbody a{
+	color: #999;
+	display: inline-block;
+	width: 24px;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 3px;
+}
+.calendar tbody a:hover{
+	color: #28EA89;
+	font-weight: bold;
+}
+.calendar tr{
+	border-bottom: 1px solid #ddd;
+	line-height: 30px;
+}
+#today{
+	background-color: #28EA89;
+	color: #fff;
+}
+/*右列日历end*/
+/*标签云*/
+.word-cloud{
+	background-color: #fff;
+	padding: 15px;
+	color: #28EA89;
+	margin-bottom: 10px;
+}
+.word-cloud>h3{
+	color:#666;
+	font-size: 14px;
+	font-weight: normal;
+	margin-bottom: 8px; 
+}
+.max{
+	font-size: 26px;
+}
+.middle{
+	font-size: 15px;
+}
+.min{
+	font-size: 10px;
+}
+.bold{
+	font-weight: bold;
+}
+/*标签云end*/
+

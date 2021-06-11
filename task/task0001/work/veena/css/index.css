@@ -1,0 +1,105 @@
+.banner img{
+	width: 100%;
+	vertical-align: top;
+	margin-top: -80px;
+	z-index: -1;
+}
+
+.header-wrap{
+	background-color: transparent;
+}
+.gradient-wrap{
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+}
+.gradient{
+
+	width: 330px;
+	right: 0;
+	bottom: 0;
+	padding: 10px 10px 30px;
+	color: #fff;
+background: -moz-linear-gradient(top,  rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 25%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.5)), color-stop(25%,rgba(255,255,255,0.3)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.3) 25%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.3) 25%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.3) 25%,rgba(255,255,255,0) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.3) 25%,rgba(255,255,255,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+position: absolute;
+top: -100px;
+right: 0;
+}
+.gradient h2{
+	font-size: 14px;
+	margin-bottom: 12px;
+	text-align: right;
+	font-weight: normal;
+}
+.gradient p{
+	font-size: 12px;
+	line-height: 150%;
+}
+
+/*渐变end*/
+/*三列等高*/
+.content-wrap{
+	padding-top: 10px;
+}
+.pic-item{
+	overflow: hidden;
+	margin-bottom: 200px;
+}
+.pic-item li{
+	width: 300px;
+	float: left;
+	background-color: #fff;
+	font-size: 12px;
+	padding: 10px 10px ;
+	padding-bottom: 1000px;
+	margin-bottom: -1000px;
+}
+.pic-item li~li{
+	margin-left: 10px;
+}
+.pic-item img{
+	width: 300px;
+	height: 180px;
+}
+.pic-item p{
+	padding: 15px 10px;
+}
+/*三列等高end*/
+/*自我介绍*/
+.aboutme-wrap{
+	
+	
+}
+.aboutme{
+	width: 100%;
+	background-color: #fff;
+	text-align: center;
+}
+.head-img{
+	width: 160px;
+	height: 160px;
+	border-radius: 80px;
+	margin-top: -60px;
+	margin-bottom: 50px;
+}
+.aboutme h2{
+	font-size: 20px;
+	letter-spacing: 2px;
+	padding-bottom: 40px;
+}
+.aboutme p{
+	text-indent: 2em;
+	text-align: left;
+	font-size: 14px;
+	width: 600px;
+	margin: 0 auto;
+	line-height: 150%;
+	padding-bottom: 150px;
+}
+/*自我介绍end*/
