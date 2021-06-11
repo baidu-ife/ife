@@ -1,0 +1,199 @@
+*{
+	font-family: "microsoft Yahei"
+}
+h1{
+	color: #00f;
+	font-weight: lighter;
+}
+
+h2{
+	font-size: 14px;
+	
+
+}
+
+p{
+	font-size: 12px;
+	color: #ff0;
+	background-color: #000;
+	text-transform: uppercase;
+}
+
+img.fiona23{
+	border: 2px solid #f00;
+}
+
+a{
+	text-decoration: none;
+}
+
+p.p1{
+	text-indent: 30px;
+	text-transform: capitalize;
+	white-space: pre-wrap;
+}
+
+p.p2{
+	text-align: center;
+	word-spacing: 10px;
+	left: 2px;
+	line-height: 30px;
+}
+p.p3{
+	font-size: 16px;
+	font-family:myFirstFont;
+	text-decoration: line-through;
+}
+
+p.p4{
+	font: italic bold 18px/20px arial;
+	background-color: transparent;
+	color: #454545;
+}
+@font-face
+{
+font-family: myFirstFont;
+src: url('华文细黑.ttf')
+}
+
+div.div1{
+	background-color: #f00;
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+div.div2{
+	background-color: #f00;
+	width: 960px;
+	margin: 20px 0 0 50%;
+	position: relative;
+	left: -480;
+	height: 40px;
+}
+
+div.radius{
+	position: relative;
+}
+
+div.radius div.radius-1:before{
+	content: "";
+	height: 6px;
+	width: 40px;
+	position: absolute;
+	background-color: #000;
+	left: 11px;
+	top: 5px;
+}
+
+div.radius div.radius-2{
+	position: absolute;
+	left: 50px;
+	top: -1px;
+}
+
+div.radius div.radius-2:before{
+	position: absolute;
+	left: 50px;
+	top: -1px;
+}
+
+div.divA{
+	background-color: #f00;
+	float: left;
+	width: 200px;
+}
+div.divB{
+	background-color: #0f0;
+	margin-left: 200px;
+}
+div.divC{
+	background-color: #ff0;
+}
+
+div.container{
+	position: relative;
+}
+
+div.div-ra{
+	background-color: #f00;
+	position: absolute;
+	left: 0;
+	width: 200px;
+}
+div.div-rb{
+	background-color: #0f0;
+	margin-left: 200px;
+}
+div.div-rc{
+	background-color: #ff0;
+}
+
+.three-col {
+	position: relative;
+}
+
+.three-col .main-wrapper{
+	margin: 0 200px 0 200px;
+}
+
+.three-col .main{
+	width: 100%;
+}
+
+.three-col .side-left{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+}
+
+.three-col .side-right{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 200px;
+}
+
+div.db{
+	padding: 0 200px 0 200px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.db .main{
+	float: left;
+	width: 100%;
+	background-color: #cdcdcd;
+}
+
+.db .main-wrapper{
+	margin-right: 200px;
+}
+
+.db .side-left{
+	float: left;
+	width: 200px;
+	background-color: #0f0;
+	margin-left: -100%;
+}
+
+.db .side-right{
+	float: left;
+	width: 200px;
+	background-color: #ff0;
+	margin-left: -200px;
+}
+
+.red-container{
+	overflow: hidden;
+	background-color: #F04F47;
+}
+
+.blue-block{
+	float: left;
+	width: 400px;
+	height: 200px;
+	margin:10px;
+	background-color: #18AEE3;
+}
