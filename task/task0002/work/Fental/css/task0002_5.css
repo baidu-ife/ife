@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    position: relative;
+    /*overflow: hidden;*/
+    height: 100%;
+}
+body:after {
+    content: " ";
+    clear: left;
+}
+.panel {
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 900px;
+    border: 1px solid #000;
+}
+.box {
+    display: block;
+    width: 300px;
+    height: 50px;
+    background-color: #f00;
+    border: 1px solid #000;
+    opacity: 1;
+}
+.box:hover {
+    cursor: move;;
+}
+.box.active {
+    border: 1px solid #fff;
+    opacity: .5;
+}
+.box.dragged {
+    position: absolute;
+    opacity: 0.8;
+    /*opacity: 0;*/
+    /*font-size: 0;*/
+}
+.btn-container {
+    margin: 15px auto;
+}

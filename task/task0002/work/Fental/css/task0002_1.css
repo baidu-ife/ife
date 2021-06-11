@@ -1,0 +1,11 @@
+#btn-3 {
+    position: relative;
+}
+#tips {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    width: 200px;
+    text-align: left;
+    color: #f00;
+}
