@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0
+}
+li {
+	list-style-type: none
+}
+#contain {
+	margin: 0 auto;
+	width: 800px;
+	height: 800px;
+	position: relative
+}
+.wrap {
+	width: 200px;
+	height: 800px;
+	border: 1px solid #000
+}
+#left {
+	float: left
+}
+#right {
+	float: right
+}
+.list {
+	width: 200px;
+	height: 80px;
+	border: 1px solid #000;
+	background: red;
+	line-height: 80px;
+	font-style: 16px;
+	text-align: center
+}
+.active {
+	position: absolute;
+	opacity: 0.4;
+	cursor: move
+}
+.center {
+	width: 200px;
+	position: absolute;
+	left: 330px;
+	top: 80px;
+	font-size: 20px;
+	color: green
+}
