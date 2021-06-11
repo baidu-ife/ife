@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+}
+
+#p1 {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+}
