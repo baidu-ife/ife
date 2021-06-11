@@ -1,0 +1,240 @@
+.content {
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 0px;
+}
+.articals {
+    float: left;
+    width: 75%;
+    height: auto;
+    margin-top: 10px;
+}
+.artical {
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px 0;
+}
+.tag {
+    float: left;
+    margin-left: -50px;
+    position: absolute;
+}
+.tag ul {
+    list-style-type: none;
+    padding: 7px 0;
+    margin: 10px 0;
+    text-align: center;
+}
+.tag li {
+    width: 50px;
+    height: 40px;
+    padding-top: 10px;
+    margin: 0 auto;
+    color: #fff;
+    font-family: "Microsoft Yahei";
+}
+#date {
+    background-color: #6B8E23;
+}
+#type {
+    background-color: #3CB371;
+}
+.body {
+    padding: 0 20px;    
+}
+#title {
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    color: #3CB371;
+    font-weight: bold;
+}
+#sub-title {
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    color: #666;
+    font-weight: bold;
+}
+#main-body {
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    text-indent: 2em;
+    line-height: 200%;
+}
+#main-body p{
+    margin: 5px;
+}
+#mark {
+    font-size: 10px;
+    color: #888;
+    text-align: right;
+    margin: 5px 0;
+}
+
+#pageNo {
+    text-align: center;
+    font-size: 0;
+    letter-spacing: -4px;
+    word-spacing: -4px;
+}
+#pageNo ul {
+    list-style-type: none;
+}
+#pageNo li {
+    margin: 0 7.5px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-size: 12px;
+}
+#pageNo a {
+    display: block;
+    color: #000;
+    padding: 15px;
+    background-color: #fff;
+    font-family: "Microsoft Yahei";
+}
+#pageNo a:hover {
+    background-color: #6B8E23;
+    color: #fff;
+}
+
+.shortcut {
+    float: left;
+    width: 25%;
+    height: auto;
+    margin-top: 10px;
+}
+#search {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 20px;
+}
+#input {
+    height: 40px;
+    position: relative;
+}
+#search-icon {
+    float: left;
+    position: absolute;
+    padding: 5px;
+}
+#keywords input {
+    float: left;
+    height: 40px;
+    width: 80%;
+    padding-left: 40px;
+    color: #ccc;
+    border: solid 1px #ddd;
+}
+#keywords input:hover {
+    color: #888;
+    border: solid 1px #333;
+}
+#go input {
+    float: left;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border: 0;
+    font-size: 20px;
+    color: #fff;
+    background-color: #ccc;
+}
+#go input:hover {
+    background-color: #888;
+    border: solid 1px #333;
+}
+#blog-menu {
+    background-color: #fff;
+    margin: 10px 0;
+}
+#blog-menu ul {
+    padding: 0;
+    margin: 0;
+}
+#blog-menu li {
+    list-style-type: none;
+    line-height: 300%;
+    background-color: #fff;
+    padding-left: 20px;
+    border-left: solid 4px #AC6;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+}
+#blog-menu li:hover {
+    border-left-color: #6B8E23;
+}
+#blog-menu li a {
+    color: #888;
+    font-family: "Microsoft Yahei";
+}
+#blog-menu li a:hover {
+    color: #444;
+}
+
+#calendar {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 20px;
+}
+#calendar table {
+    width: 100%;
+}
+#calendar table a:hover {
+    color: #fff;
+    background-color: #6B8E23;
+}
+#calendar td {
+    border-bottom: solid 1px #ddd;
+    line-height: 150%;
+    color: #888;
+    text-align: center;
+    font-family: "Microsoft Yahei";
+}
+#calendar th a{
+    color: #6B8E23;
+    font-weight: bold;
+    line-height: 150%;
+    font-family: "Microsoft Yahei";
+}
+#calendar td a{
+    padding: 5px;
+    color: #888;
+    font-family: "Microsoft Yahei";
+}
+
+#tag-chart {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+}
+#tag-chart p {
+    margin-top: 0;
+    color: #888;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+#tags a {
+    color: #6B8E23;
+    font-family: "Microsoft YaHei";
+}
+#tags a:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #6B8E23;
+}
+#level1 {
+    font-size: 28px;
+}
+#level2 {
+    font-size: 20px;
+}
+#level3 {
+    font-size: 14px;
+}
+#level4 {
+    font-size: 10px;
+}

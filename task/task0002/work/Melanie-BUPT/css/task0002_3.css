@@ -1,0 +1,60 @@
+* {
+    font-family: "Microsoft YaHei", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    margin: 21px 0;
+}
+
+.hint {
+    color: #ab466a;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+#carousel-container {
+    min-width: 720px;
+    width: 720px;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+#carousel-container ul {
+    position: absolute;
+}
+
+#carousel-container ul li {
+    list-style-type: none;
+}
+
+#carousel-container ul li img {
+    position: relative;
+}
+
+#carousel-btn {
+    position: absolute;
+    width: 720px;
+    text-align: center;
+    bottom: 10px;
+}
+
+#carousel-btn a {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #fff;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0);
+}
+
+#carousel-btn a.active {
+    background-color: #fff;
+}
+
+#carousel-btn a:hover {
+    background-color: #fff;
+}

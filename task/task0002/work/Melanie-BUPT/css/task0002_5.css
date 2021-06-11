@@ -1,0 +1,48 @@
+* {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.hint {
+    color: #ab466a;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 510px;
+    height: 500px;
+    background-color: #ddd;
+}
+
+#left-parent,
+#right-parent {
+    width: 150px;
+    height: 400px;
+    border: solid 1px #000;
+    background-color: #fff;
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+}
+
+#left-parent div,
+#right-parent div {
+    width: 100%;
+    height: 50px;
+    border: solid 1px #000;
+    background-color: #f00;
+    position: absolute;
+    left: -1px;
+}
+
+.active {
+    opacity: 0.5;
+    /* For IE8 and earlier */
+    filter: alpha(opacity=50);
+    cursor: move;
+}

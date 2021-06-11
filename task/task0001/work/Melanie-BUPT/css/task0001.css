@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Yeahey'; 
+    src: url('Yeahey.eot');
+    src: url('Yeahey.eot?#iefix') format('eot'),
+         url('Yeahey.woff') format('woff'),
+         url('Yeahey.ttf') format('truetype'),
+         url('Yeahey.svg#webfontjKg17VrE') format('svg');
+}
+
+body{
+    width: 100%;
+    /*text-align: center;*/
+}
+
+h1{
+    color: blue;
+}
+
+h2{
+    font-size: 14px;
+}
+
+p.example{
+    font-size: 12px;
+    color: yellow;
+    background-color: black;
+}
+
+img{
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
+}
+
+p.text_indent{
+    padding-left: 5em;
+    text-indent: 3em;
+}
+
+p.text_transform{
+    text-transform: uppercase;
+}
+
+p.text_decoration{
+    text-decoration: underline;
+}
+
+p.text_align{
+    text-align: center;
+}
+
+p.word_spacing{
+    word-spacing: 15px;
+}
+
+p.white_space{
+    white-space: pre;
+}
+
+p.color{
+    color: #f00;
+}
+
+p.line_height{
+    line-height: 300%;
+}
+
+p.font{
+    font: 50% bold italic "Times New Roman";
+}
+
+p.font_family{
+    font-family: fantasy;
+}
+
+p.font_size{
+    font-size: 200%;
+}
+
+p.font_weight{
+    font-weight: bold;
+}
+
+p.font_face{
+    font:13px Yeahey,Arial;
+}
+
+div.one{
+    background-color: #f00;
+    width: 960px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+div.two{
+    text-align: center;
+    clear:both;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+div.three{
+    background-color: #f00;
+    width: 960px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    margin-left: -480px;
+    margin-bottom: 100px;
+    overflow: auto;
+}
+
+
