@@ -1,0 +1,268 @@
+* {
+	margin: 0;
+	padding: 0;
+} 
+body {
+	background-color: #000;
+	margin: 0;
+}
+ul { 
+	list-style: none 
+}
+a {
+	text-decoration: none;
+}
+.clearfix:after { 
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+.clearfix { 
+	display: inline-block; 
+}
+* html .clearfix { 
+	height: 1%;
+}
+.clearfix { 
+	display: block; 
+}
+.fl {
+	float: left;
+}
+.fr	{
+	float: right;
+}
+.head,
+.banner-content,
+.contain,
+.foot-text {
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto; 
+	position: relative;
+}
+.mr10 {
+	margin-right: 10px;
+}
+@media screen and (max-width: 960px) {
+ 	.github-logo { 
+		display: none;
+ 	}
+}
+
+/*------------header----------*/
+.header {
+	height: 80px;
+	background: #522a5c;
+	position: relative;
+}
+.mylogo{
+	font: 80px/1 "Microsoft YaHei", Arial, sans-serif;
+}
+.mylogo div {
+	background-color: #ccc;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	border-radius: 40px 40px 40px 40px;
+	color: #522a5c;
+}
+.nav { 
+	position: absolute; 
+	bottom: 0px;
+	right: 0;
+}
+.nav li{
+	margin: 50px 0px 5px 28px;
+	float: left;
+}
+.nav li a{
+	font-size: 14px/1 "SimSun";
+	color: #fff;
+}
+.github-logo {
+	position: absolute;
+	bottom: 0;
+	right:10px;
+}
+/*---------header---end------*/
+
+
+
+
+
+
+/*---------banner------------*/
+.banner {
+	background: url(../img/banner-bg.jpg) no-repeat;
+}
+.banner-content {
+	position: relative;
+	height: 480px;
+}
+.banner-box { 
+	position: absolute;
+	overflow: hidden;
+	bottom: 0;
+	right: 0;
+	width: 361px;
+	height: 222px;
+}
+.banner-bg,
+.banner-text {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.banner-bg {
+	background: #fff;
+	background: -webkit-linear-gradient(top,  rgba(255, 255, 255, .5) 75%, rgba(255, 255, 255, 0) 100%);
+	opacity: .3\0;
+}
+.banner-text {
+	position: relative;
+	color: #fff;
+	overflow: hidden;
+}
+.banner-text h3{
+	margin-top: 12px;
+	text-align: center;
+	font-size: 14px/1em;
+}
+/*----因为line-height:150%，font-size：12px，即6 + 6 = 12px---*/
+.banner-text p{
+	padding: 6px 10px 30px 10px;
+	font-size: 12px;
+	line-height: 150%;
+	text-indent: 2em;
+}
+/*---------banner-----end-------*/
+
+
+
+/*---------container--------*/
+.container {
+	background: #bfbfbf;
+	padding-bottom: 110px;
+}
+.contain {
+	padding-top: 10px;
+}
+.cont-wrap {
+	float: left;
+	width: 320px;
+	background: #fff;
+}
+.cont-wrap img {
+	width: 300px;
+	height: 180px;
+	margin:10px 10px 15px 10px;
+}
+.cont-text {
+	margin:0 30px 25px 30px;
+}
+.cont-text p {
+	font-size: 12px;
+	line-height: 170%;
+	text-indent: 2em;
+}
+/*---------container----end----*/
+
+
+/*---------info----------------*/
+.info {
+	position: relative;
+	background: #fff;
+}
+.info-wrap {
+	margin: 0 auto;
+}
+.info-img {
+	position: absolute;
+	left: 50%;
+	margin-left: -80px;
+	top: -50px;
+	width: 160px;
+	height: 160px;
+	border-radius: 80px;
+}
+.info-text {
+	width: 600px;
+	margin:0 auto;
+	padding-top: 157px;
+}
+.info-text h3{
+	font: 20px/1em "Century Gothic";
+	color: #000;
+	text-align: center;
+}
+.info-text p {
+	overflow: hidden;
+	line-height: 26px;
+	padding-top: 36px;
+	padding-bottom: 186px;
+	font-size: 14px;
+	color: #000;
+	text-indent: 2em;
+}
+/*---------info-----end----------*/
+
+
+
+/*-----------footer-------------*/
+.footer {
+	background: #000;
+}
+.foot-title {
+	text-align: center;
+	border-bottom: 1px solid #666;
+}
+.foot-title a {
+	display: inline-block;
+	height: 36px;
+	margin: 0 10px;
+	font-size: 12px "Microsoft YaHei";
+	line-height: 36px;
+	color: #fff;
+}
+.link li{
+	float: left;
+	margin-top: 38px;
+	margin-right: 122px;
+}
+.foot-link {
+	text-align: center;
+}
+.foot-link h3 {
+	margin-bottom: 20px;
+	font-size: 14px;
+	color: #fff;
+}
+.foot-link a {
+	display: block;
+	height: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	letter-spacing: 1px;
+}
+.foot-link a:hover {
+	color: #666;
+}
+.copy-right {
+	margin-top: 100px;
+	text-align: center;
+}
+.copy-right p{
+	color: #fff;
+	text-align: center;
+}
+.copy-right a img{
+	margin: 0 auto;
+
+/*-----------footer-----end--------*/

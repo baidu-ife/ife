@@ -1,0 +1,257 @@
+* {
+	margin: 0;
+	padding: 0;
+} 
+body {
+	background-color: #ccc;
+}
+ul { 
+	list-style: none 
+}
+a {
+	text-decoration: none;
+}
+.clearfix:after { 
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+.clearfix { 
+	display: inline-block; 
+}
+* html .clearfix { 
+	height: 1%;
+}
+.clearfix { 
+	display: block; 
+}
+.fl {
+	float: left;
+}
+.fr	{
+	float: right;
+}
+.head,
+.banner-content,
+.contain,
+.foot-text {
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto; 
+	position: relative;
+}
+.mr10 {
+	margin-right: 10px;
+}
+@media screen and (max-width: 960px) {
+ 	.github-logo { 
+		display: none;
+ 	}
+}
+
+/*------------header----------*/
+.header {
+	height: 80px;
+	background: #522a5c;
+	position: relative;
+}
+.mylogo{
+	font: 80px/1 "Microsoft YaHei", Arial, sans-serif;
+}
+.mylogo div {
+	background-color: #ccc;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	border-radius: 40px 40px 40px 40px;
+	color: #522a5c;
+}
+.nav { 
+	position: absolute; 
+	bottom: 0px;
+	right: 0;
+}
+.nav li{
+	margin: 50px 0px 5px 28px;
+	float: left;
+}
+.nav li a{
+	font-size: 14px/1 "SimSun";
+	color: #fff;
+}
+.github-logo {
+	position: absolute;
+	bottom: 0;
+	right:10px;
+}
+/*---------header---end------*/
+
+
+.about {
+	position: relative;
+	background: #fff;
+	width: 980px;
+	margin:  100px auto 30px auto;
+	padding-top: 135px;
+}
+.about h1 {
+	font-size: 20px;
+}
+.about p {
+	font-size: 14px;
+	line-height: 26px;
+}
+.about .line {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	width: 6px;
+	margin-left: -3px;
+	background: #eee;
+}
+.about-head {
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	width: 160px;
+	height: 160px;
+	margin-left: -80px;
+	border-radius: 100px;
+	border: 10px solid #eee;
+}
+.about-frist {
+	position: relative;
+	margin-bottom: 315px;
+}
+.about-second {
+	position: relative;
+	margin-bottom: 250px;
+}
+.about-third {
+	position: relative;
+	margin-bottom: 345px;
+}
+.about-fourth {
+	position: relative;
+	margin-bottom: 400px;
+}
+.about-frist h1,
+.about-second h1,
+.about-third h1,
+.about-fourth h1{
+	position: absolute;
+	top: 0;
+	left:35%;
+}
+.about-frist p,
+.about-second p,
+.about-third p,
+.about-fourth p{
+	position: absolute;
+	top: 0;
+	left: 55%;
+	width: 315px;
+}
+.about-frist p{
+	text-indent: 2em;
+}
+.about-contact {
+	position: absolute;
+	top: 325px;
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	margin-left: -50px;
+	border-radius: 60px;
+	border: 6px solid #eee;
+}
+.about-house {
+	position: absolute;
+	top: 565px;
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	margin-left: -50px;
+	border-radius: 60px;
+	border: 6px solid #eee;
+}
+.about-third em,
+.about-fourth em {
+	position: absolute;
+	left: -82px;
+	padding: 0 15px;
+	color: #666;
+	border: 5px solid #eee;
+	border-radius: 12px;
+	background: #fff;
+}
+.about-temp {
+	font-size: 14px;
+}
+.about-menu {
+	position: absolute;
+	top: 910px;
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	margin-left: -50px;
+	border-radius: 60px;
+	border: 6px solid #eee;
+}
+
+/*-----------footer-------------*/
+.footer {
+	background: #000;
+}
+.foot-title {
+	text-align: center;
+	border-bottom: 1px solid #666;
+}
+.foot-title a {
+	display: inline-block;
+	height: 36px;
+	margin: 0 10px;
+	font-size: 12px "Microsoft YaHei";
+	line-height: 36px;
+	color: #fff;
+}
+.link li{
+	float: left;
+	margin-top: 38px;
+	margin-right: 122px;
+}
+.foot-link {
+	text-align: center;
+}
+.foot-link h3 {
+	margin-bottom: 20px;
+	font-size: 14px;
+	color: #fff;
+}
+.foot-link a {
+	display: block;
+	height: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	letter-spacing: 1px;
+}
+.foot-link a:hover {
+	color: #666;
+}
+.copy-right {
+	margin-top: 100px;
+	text-align: center;
+}
+.copy-right p{
+	color: #fff;
+	text-align: center;
+}
+.copy-right a img{
+	margin: 0 auto;
+
+/*-----------footer-----end--------*/
