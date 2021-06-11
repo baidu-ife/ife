@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>task0002_3界面拖拽交互</title>
+<link href="css/task0002_5.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+    <h1>小练习5：拖拽交互</h1>
+        <div id="boxA"
+            ondragenter="return dragEnter(event)"
+            ondrop="return dragDrop(event)"
+            ondragover="return dragOver(event)">
+
+          <div id="drag1" draggable="true"
+                ondragstart="return dragStart(event)"
+                ondragend="return dragEnd(event)">drag1</div>
+
+          <div id="drag2" draggable="true"
+                ondragstart="return dragStart(event)"
+                ondragend="return dragEnd(event)">drag2</div>
+
+          <div id="drag3" draggable="true"
+                ondragstart="return dragStart(event)"
+                ondragend="return dragEnd(event)">drag3</div>
+        </div>
+        <div id="boxB"
+            ondragenter="return dragEnter(event)"
+            ondrop="return dragDrop(event)"
+            ondragover="return dragOver(event)">
+        </div>
+    </div>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/task0002_5.js"></script>
+</body>
+</html>

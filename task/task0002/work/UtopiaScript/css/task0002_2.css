@@ -1,0 +1,36 @@
+*{font-family: "Microsoft Yahei";}
+h1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+form{
+    width: 980px;
+    margin: 0 auto;
+}
+#btn{
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    float: right;
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    color: #333;
+    cursor: pointer;
+}
+#btn:hover, #btn:active, #btn:focus{
+    outline: none;
+}
+#btn:hover{
+    background-color: #ddd;
+}
+#time{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    outline-style: none;
+}

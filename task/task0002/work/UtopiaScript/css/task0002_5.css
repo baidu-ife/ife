@@ -1,0 +1,32 @@
+*{font-family: "Microsoft Yahei";}
+h1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+.wrapper{
+    height:400px;
+    width: 980px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#boxA, #boxB{
+    float:left; 
+    width:150px;
+    height:300px; 
+    margin-right:70px;
+    padding-right: 2px;
+    border: 1px solid #999;
+}
+
+#drag1, #drag2, #drag3 {
+    width:100%; 
+    height:50px; 
+    text-align: center;
+    line-height: 50px;
+    -moz-user-select:none;
+    cursor:move;
+    background-color: red;
+    border: 1px solid #000;
+}
