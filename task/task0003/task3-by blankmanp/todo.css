@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    min-width: 780px;
+    min-height: 480px;
+}
+ul {
+    list-style: none;
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+
+.title {
+    border: 1px solid #cecece;
+    height: 10%;
+    font-size: 25px;
+    background: #ddd;
+    color: #919191;
+}
+.titleContent {
+    padding: 1%;
+}
+.pullLeft {
+    float: left;
+}
+.pullRight {
+    float: right;
+}
+.menu {
+    min-width: 200px;
+    width: 15%;
+    height: 89.5%;
+    min-height: 400px;
+    border-right: 1px solid #cacaca;
+}
+.menuContent {
+    height: 92%;
+    border-bottom: 1px solid #cecece;
+}
+.menuTitle {
+    padding: 20px 0 0 10px;
+    font-size: 14px;
+}
+.supMenu {
+    background: #f2f2f2;
+}
+#taskClass ul {
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%;
+    list-style-image: none;
+    font-size: 14px;
+}
+.taskList {
+    padding: 10px;
+}
+.titleli>img {
+	padding-right: 20px;
+}
+.titleli>p {
+    display: inline-block;
+}
+.titleli:hover {
+    cursor: pointer;
+}
+.taskNum {
+    display: inline-block;
+    padding-left: 10%;
+}
+.subTaskList {
+	padding: 10px 40px;
+	margin-top: 5px;
+}
+.menuDelete {
+    margin-right: 10px;
+    display: inline-block;
+}
+.menuDelete>b:hover {
+    cursor: pointer;
+}
+.add {
+    height: 8%;
+    background: #f2f2f2;
+}
+.add ul:hover {
+    cursor: pointer;
+}
+.add li {
+    margin: 5px 10px;
+    display: inline-block;
+}
+.addContent {
+    vertical-align: text-bottom;
+    line-height: 15px;
+}
+.addIcon {
+    line-height: 30px;
+    font-size: 30px;
+}
+
+/* SUBTITLE BEGINS */
+#subTitle {
+    background: #f2f2f2;
+    height: 8%;
+    border-bottom: 1px solid #cecece;
+}
+.subMenuTitle {
+    margin: 4% 6%;
+    padding: 1%;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+.done {
+    color: #337e15;
+}
+.choosen {
+    background: #fff;
+}
+.time {
+    background: #fafaee;
+}
+.todotime {
+    padding: 10px 18px;
+    font-size: 14px;
+}
+.todotask {
+    font-size: 14px;
+}
+.todotask>li:hover {
+    cursor: pointer;
+    background: #f2f2f2;
+}
+.todotask p {
+    padding: 5px 30px;
+}
+.todochoosen {
+    background: #f2f2f2;
+}
+
+/* TODO CONTENT BEGINS*/
+.edit {
+    height: 89.5%;
+    width: 69.85%;
+}
+#todoTitle {
+    height: 10%;
+    width: 100%;
+    background: #f2f2f2;
+    font-size: 20px;
+    border-bottom: 1px solid #cecece;
+}
+#todoText {
+    display: inline-block;
+    padding: 1.5%;
+}
+.todoIcon {
+    cursor: pointer;
+    margin: 10px;
+}
+#taskTime {
+    height: 10%;
+    border-bottom: 1px solid #cecece;
+}
+#taskTime p {
+    padding: 1.8%;
+}
+#taskContent p {
+    padding: 10px;
+}
+
+/* FORM */
+#todoForm {
+    height: 100%;
+}
+#formTitle, #formTime {
+    display: inline-block;
+    width: 100%;
+    height: 10%;
+    font-size: 25px;
+    padding-left: 10px;
+    border: 0;
+    border-bottom: 1px solid #cecece;
+    color: #ccc;
+}
+#formTitle {
+    width: 80%;
+    background: #f2f2f2;
+}
+#formTitle:focus, #formTime:focus {
+    color: #000;
+}
+#formTime {
+    font-size: 20px;
+}
+#click {
+    display: inline-block;
+    height: 10%;
+    width: 20%;
+    background: #f2f2f2;
+    border-bottom: 1px solid #cecece;
+}
+.formButton {
+    display: inline-block;
+    margin: 5%;
+    padding: 3%;
+    width: 40%;
+    height: 70%;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+}
+#formContent {
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    font-size: 20px;
+    border: 0;
+}
+
+.blacker {
+	width: 100%;
+	height: 100%;
+	min-width: 780px;
+    min-height: 480px;
+	position: absolute;
+	background: #000;
+	opacity: 0.6;
+	z-index: 100;
+}
+.popbox {
+	top: 20%;
+	left: 40%;
+	width: 400px;
+	height: 200px;
+	z-index: 101;
+	border-bottom: 1px solid #ccc;
+	position: absolute;
+	border-radius: 10px;
+	background: #fff;
+}
+.popbox form {
+	width: 320px;
+	margin: auto;
+	margin-top: 20px;
+}
+.addInput {
+	margin-top: 20px;
+}
+.formInput {
+	width: 150px;
+	padding-left: 10px;
+	font-size: 16px;
+	margin-top: 20px;
+}
+.addButton {
+	margin-top: 20%;
+}
+::-webkit-datetime-edit-text {
+	color: #ccc;
+}
+::-webkit-inner-spin-button {
+	margin-top: 1%;
+}
+.button {
+	display: inline-block;
+	width: 140px;
+	margin-left: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	text-align: center;
+}
+.button:hover {
+	background: #eee;
+	cursor: pointer;
+}
+
+.clear {
+    clear: both;
+}
