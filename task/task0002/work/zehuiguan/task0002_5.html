@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- 
+    实现一个可拖拽交互的界面
+    如示例图，左右两侧各有一个容器，里面的选项可以通过拖拽来左右移动
+    被选择拖拽的容器在拖拽过程后，在原容器中消失，跟随鼠标移动
+    注意拖拽释放后，要添加到准确的位置
+    拖拽到什么位置认为是可以添加到新容器的规则自己定
+    注意交互中良好的用户体验和使用引导
+ -->
+    <div class="container">
+        <h1>拖拽</h1>
+        <div class="drag-block">
+            <div class="block block-left">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+            <div class="block block-right">
+                <div class="box">4</div>
+                <div class="box">5</div>
+                <div class="box">6</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/task0002_5.js"></script>    
+</body>
+</html>

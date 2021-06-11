@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- 
+    在和上一任务同一目录下面创建一个task0002_3.html文件，在js目录中创建task0002_3.js，并在其中编码，实现一个轮播图的功能。
+
+    图片数量及URL均在HTML中写好
+    可以配置轮播的顺序（正序、逆序）、是否循环、间隔时长
+    图片切换的动画要流畅
+    在轮播图下方自动生成对应图片的小点，点击小点，轮播图自动动画切换到对应的图片
+    效果示例：http://echarts.baidu.com/ 上面的轮播图（不需要做左右两个箭头）  
+ -->
+    <div class="container">
+        <h1>轮播图</h1>
+        <h2>我滴个神啊</h2>
+        <div class="img-circle">
+            <ul class="img-wrap">
+                <li><img src="img/img1.jpg"></li>
+                <li><img src="img/img2.jpg"></li>
+                <li><img src="img/img3.jpg"></li>
+                <li><img src="img/img4.jpg"></li>
+                <li><img src="img/img5.jpg"></li>
+                <li><img src="img/img6.jpg"></li>
+            </ul>
+            <div class="point">
+                <a href="javascript:;" class="active"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+        <div class="img-control">
+            播放顺序：
+            <select id="play-order">
+                <option value="0" selected="selected">正序</option>
+                <option value="1">反序</option>
+            </select>
+
+            <label id="chk-circle"><input type="checkbox" checked="checked">循环</label>
+
+            间隔时长：
+            <select id="pause_time">
+                <option value="1000">短</option>
+                <option value="2000" selected="selected">中</option>
+                <option value="5000">长</option>
+            </select>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/task0002_3.js"></script>
+</body>
+</html>
