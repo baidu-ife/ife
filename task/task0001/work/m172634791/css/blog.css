@@ -1,0 +1,201 @@
+
+.hr200 {
+    height: 200px;
+}
+
+.my-blog {
+    overflow: hidden;
+    margin-top: 20px;
+}
+.blog-content {
+    width: 710px;
+    float: left;
+}
+.blog-content .blog-content-list {
+    background: #fff;
+    padding:15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.blog-content .blog-content-list dl {
+    color: #A660B7;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 25px;
+}
+.blog-content .blog-content-list dt {
+    color: #666666;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.blog-content .blog-content-list dd {
+    text-indent: 2em;
+    font-size: 12px;
+    line-height: 20px;
+    display: block;;
+}
+.blog-content .blog-write-info {
+    font-size: 12px;
+    color: #999999;
+    padding-top: 30px;
+    text-align: right;
+    width: 100%;
+    float:left;
+    display: block;
+    position: relative;
+}
+
+/*微博翻页*/
+.blog-content .blog-page {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.blog-page ul {
+    overflow: hidden;
+    display: inline;
+}
+.blog-page li {
+    list-style: none;
+    margin: 0 5px;
+    display: inline;
+}
+
+.blog-page li a {
+    padding: 0 16px;
+    background: #fff;
+    text-decoration: none;
+    line-height: 35px;
+    display: inline-block;
+    height: 35px;
+}
+
+
+/*右侧信息栏*/
+.blog-info {
+    width: 260px;
+    float: right;
+}
+/*搜索栏*/
+.blog-info .search {
+    padding: 20px;
+    background: #fff;
+    overflow: auto;
+}
+.blog-info .search-input {
+    width: 131px;
+    height: 38px;
+    border: #999 solid 1px;
+    border-right: none;
+    display: inline-block;
+    float: left;
+    line-height: 38px;
+    padding-left: 38px;
+}
+.blog-info .search-btn {
+    height: 40px;
+    border: #999 solid 1px;
+    border-left: none;
+    width: 50px;
+    cursor: pointer;
+    float:left;
+}
+
+/*信息分类栏*/
+.blog-info .blog-class {
+    background: #fff;
+    margin-top: 10px;
+}
+.blog-info .blog-class-list {
+    list-style: none;
+    border-bottom: #ccc solid 1px;
+}
+.blog-info .blog-class-list li {
+    width: 234px;
+    border-top: #ccc solid 1px;
+    border-right: #ccc solid 1px;
+    border-left: #ccc solid 5px;
+    height: 49px;
+    padding-left: 20px;
+    line-height: 49px;
+}
+.blog-info .blog-class-list a {
+    text-decoration: none;
+    color: #999;
+    font-size: 16px;
+}
+.blog-info .blog-class-list li.active {
+    border-left: #522A5C solid 5px;
+}
+
+/*日历表*/
+.blog-time {
+    overflow: hidden;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 20px 25px;
+    width:210px;
+}
+.blog-time .left-btn {
+    float: left;
+    cursor: pointer;
+}
+.blog-time .right-btn {
+    float: right;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.blog-time .blog-date-month {
+    text-align: center;
+    padding: 0 20px;
+}
+.blog-time ul li {
+    float: left;
+    list-style: none;
+    line-height: 30px;
+}
+.blog-time ul li,.blog-time ul a {
+    width: 30px;
+    height: 30px;
+}
+.blog-time ul a{
+    border-bottom: #ccc solid 1px;
+    text-align: center;
+    text-decoration: none;
+    color: #444;
+    display: block;
+    font-weight: bold;
+}
+.blog-time ul a:visited {
+    color: #773C88;
+    font-weight: bolder;
+}
+.blog-time ul a:hover {
+    color: #fff;
+    background: #773C88;
+}
+
+/*tags*/
+.blog-tags {
+    background: #fff;
+    margin-top: 10px;
+}
+.blog-tags h1, .blog-tags h2, .blog-tags h3, .blog-tags span {
+    display: inline;
+}
+.blog-tags .h1, .blog-tags .h2, .blog-tags .h3 {
+    font-weight: bold;
+    line-height: 30px;
+}
+.blog-tags .h1 {
+    font-size: 30px;
+}
+.blog-tags .h2 {
+    font-size: 25px;
+}
+.blog-tags .h1 {
+    font-size: 20px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .hb3-checkbox-p {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        #hb3_info {
+            width: 500px;
+            height: 30px;
+            background: greenyellow;
+        }
+        .info-no {
+            color: red;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+<div id="hb1">
+    <p>请输入你的爱好，要求用半角空格分隔爱好</p>
+    <input type="text" id="hobby1" class="hobby1" placeholder="请输入">
+    <input type="button" id="hobby_btn1" class="hobby-btn1" value="提交">
+</div>
+<div id="hb2">
+    <p>请输入你的爱好，你可以用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。</p>
+    <textarea id="hobby2" rows="8" cols="100" class="hobby2"></textarea>
+    <input type="button" id="hobby_btn2" class="hobby-btn2" value="提交">
+</div>
+
+<div id="hb3">
+    <p>提示：爱好数量不能超过10个</p>
+    <textarea id="hobby3" rows="8" cols="100" class="hobby3"></textarea>
+    <div id="hb3_info">提示：输入爱好数量不能超过10个</div>
+    <input type="button" id="hobby_btn3" class="hobby-btn3" value="提交" disabled>
+</div>
+
+
+
+<script src="./js/util.js"></script>
+<script src="./js/task0002_1.js"></script>
+</body>
+</html>

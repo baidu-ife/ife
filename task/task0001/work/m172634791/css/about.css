@@ -1,0 +1,87 @@
+
+.about-me {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.about-me .about-part {
+    display: inline-block;
+    background: #fff;
+}
+.about-me .about-left, .about-me .about-right {
+    width: 485px;
+}
+.about-me .about-left {
+    float: left;
+    clear: both;
+}
+.about-me .about-left h3{
+    padding-top: 85px;
+    padding-right:70px;
+    text-align: right;
+    font-size: 30px;
+}
+
+.about-me .about-left h3.big {
+    padding-top: 105px;
+}
+.about-me .about-right {
+    float: right;
+    border-left: #eee solid 10px;
+    padding-bottom: 80px;
+}
+.about-me .about-right p {
+    padding: 10px 140px 0px 20px;
+    line-height: 24px;
+}
+.about-me .about-right .about-me-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 160px;
+    border: 10px solid #eee;
+    background: #fff url("../img/userlogo.png") center center;
+    margin-top: -95px;
+    margin-left: -95px;
+    position: relative;
+}
+.about-me .about-right .about-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 10px solid #eee;
+    margin-top: -65px;
+    margin-left: -65px ;
+    background: #fff;
+    position: relative;
+}
+.about-me .about-right .about-img-tel {
+    background: #fff url("../img/tel.png") center center;
+}
+.about-me .about-right .about-img-edu {
+    background: #fff url("../img/edu.png") center center;
+}
+.about-me .about-right .edu-year-n {
+    height: 25px;
+    width: 60px;
+    border-radius: 15px;
+    border: 10px solid #eee;
+    margin-left: -45px;
+    background: #fff;
+    text-align: center;
+    line-height: 25px;
+    position: relative;
+}
+.about-me .about-right .edu-year {
+    float: left;
+    display: inline-block;
+}
+.about-me .about-right .edu-exp {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    clear: both;
+    float: left;
+}
+.about-me .about-right .edu-info {
+    float: left;
+    padding-left: 10px;
+    padding-top: 5px;
+}

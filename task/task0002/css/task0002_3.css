@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+img {
+    margin: 0;
+    padding: 0;
+}
+#banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 500px;
+}
+#banner > .item > img, #banner .item {
+    width: 100%;
+    height: 500px;
+    min-width: 1200px;
+}
+.item {
+    position: absolute;
+}
+.item {
+    position: absolute;
+    top: 0;
+    left: -100%;
+}
+.active {
+    left: 0;
+}
+.next{
+    left: 100%;
+}

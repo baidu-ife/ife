@@ -1,0 +1,94 @@
+body, ul, li, img {
+    margin: 0;
+    padding: 0;
+}
+#pr3 {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    height: 500px;
+}
+#banner {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    left: 0;
+}
+
+#banner li {
+    list-style: none;
+    float: left;
+}
+#banner li img {
+    width: 1200px;
+    height: 500px;
+    display: block;
+}
+#item {
+    height: 30px;
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    z-index: 10;
+}
+.index {
+    width: 30px;
+    height: 30px;
+    background: #33f;
+    display: inline-block;
+    margin-left: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: solid 2px #55f;
+    color: #fff;
+    font-weight: bold;
+}
+.active {
+    background: #fff;
+    color: #33f;
+}
+
+#prevbg, #nextbg {
+    width: 200px;
+    height: 500px;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0.5;
+}
+#prevbg {
+    left: 0;
+    background-image: linear-gradient(to right, rgba(0, 0 ,0, .3) 0%, rgba(0, 0, 0, .0001) 100%);
+}
+
+#nextbg {
+    right: 0;
+    background-image: linear-gradient(to right, rgba(0, 0 ,0, .0001) 0%, rgba(0, 0, 0, .3) 100%);
+}
+#prevbg img, #nextbg img {
+    display: block;
+    margin-left: 50px;
+    margin-top: 226px;
+    cursor: pointer;
+    z-index: 4;
+
+}
+
+#direction {
+    position: absolute;
+    left: 50px;
+    bottom: 10px;
+    z-index: 9;
+}
+
+#direction button {
+    cursor: pointer;
+    background: linear-gradient(to top, rgba(23, 40, 88, 0.8),rgba(200, 201, 200, .2)) transparent;
+    border: 1px #eee solid;
+    border-radius: 4px;
+    color: #fff;
+    padding: 5px 10px;
+}

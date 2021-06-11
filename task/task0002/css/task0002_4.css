@@ -1,0 +1,63 @@
+ul, li {
+    padding: 0;
+    margin: 0;
+}
+form {
+    overflow: hidden;
+}
+#form1 {
+    width: 600px;
+    border: 1px #888 solid;
+    height: 30px;
+    margin-left: 100px;
+    position: relative;
+}
+#form1 input {
+    margin: 0;
+    float: left;
+    height: 30px;
+}
+#text {
+    width: 490px;
+    border: none;
+    padding: 0 0 0 10px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #555;
+    font-family: "Microsoft YaHei";
+}
+#btn {
+    width: 100px;
+    border: none;
+    background: #77f;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 4px;
+    cursor: pointer;
+}
+
+#search_list {
+    width: 600px;
+    border: 1px #888 solid;
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    display: none;
+    padding-bottom: 5px;
+}
+
+#form1 li {
+    list-style: none;
+    padding-left: 10px;
+    height: 26px;
+    line-height: 26px;
+    color: #55f;
+    font-family: "Microsoft YaHei";
+    cursor: default;
+}
+
+.active {
+    background: #eee;
+}

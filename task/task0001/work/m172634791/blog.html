@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>个人博客</title>
+    <link href="./css/index.css" rel="stylesheet" />
+    <link href="./css/blog.css" rel="stylesheet" />
+</head>
+<body>
+<div class="header">
+    <div class="nav-top">
+        <div class="nav-top-inner comWidth">
+            <div class="my-logo"><a href="#"><img class="logo-size" src="./img/mylogo.PNG" /></a></div>
+            <div class="nav-list">
+                <ul class="nav-ul">
+                    <li><a href="./index.html">首页</a></li>
+                    <li><a href="./blog.html">文档</a></li>
+                    <li><a href="./gallery.html">作品</a></li>
+                    <li><a href="./about.html">关于</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="github-logo"><a href="#"><img src="./img/icon-github.png" /></a></div>
+<div class="my-blog comWidth">
+    <div class="blog-content">
+        <div class="blog-content-list">
+            <dl>我对本次学习的总结(2)</dl>
+            <dt>我的主页和文档部分的总结</dt>
+            <dd>
+                <p>首先非常感谢百度前端学院的引导，让我有了学习的动力！！！</p>
+                <h2>一、看到index.html的设计图图时</h2>
+                <p>1、想到index页面分为三部分header(包括最上面的导航栏和导航栏下面的banner图片栏)，但在重构页面头部时遇到一些问题</p>
+                <p>
+                    1)根据要求<i>（页面实际内容宽度为980px，头部背景、大图、底部背景均为100%宽，当浏览器宽度低于980px时，页面宽度不变，
+                    允许出现横向滚动条。右上角的Github图标在浏览器低于980px时消失）</i>这点我尝试了两种方法，都是用到的position:absolute。
+                    方法：第一种是以头部980px宽作position:relative，然后通过right:-34px定位到头部980px右边。想要的效果貌似是达到了
+                    ，但是仔细观察发现，当浏览器宽度等于980px时出现滚动条，拉动滚动条发现github的logo还是存在。
+                </p>
+                <p>
+                    解决办法
+                    后来尝试方法二，就是用z-index来实现，github的logo以body进行定位,它的z-index要小于头部980px宽div的z-index，
+                    就是我现在页面使用的样式。后来查询资料和群里的交流使用媒体查询，当视口的宽度小于980px时，将logo的设置display:none，
+                    我尝试的试了下，但是在低版本的IE浏览器中无法使用，所以我没有使用这种方法。
+                </p>
+                <p>
+                    2）再是头部banner部分的右下角文字说明部分，那种半透明的效果，首先我使用的是background: rgab(255,255,255, 0.2)，
+                    后来我也尝试了用两个同级div,通过position: absolute设置一个div作为背景，一个div用来设置内容，设置底层div的opacity: 0.2;
+                    filter:alpha(opacity=20);
+                </p>
+                <p>
+                    2、中部正文部分
+                </p>
+                <p>
+                    观察设计图，这部分内容有三栏，用一个ul解决，一开始设置了每个li的高度为等高。但是它下面的内容是不同高度的，我应该根据内容
+                    来自适应它的高度。根据网上的资料，模仿事例。所以我换成3个div进行编写每个部分的内容,外层div设置overflow: hidden, 内层3
+                    个div的padding-bottom: 10000px; margin-bottom: -10000px;解决，一开始感觉思想真的好奇妙，后来才理解它的真正原理。
+                </p>
+                <h2>二、对blog页面部分的总结</h2>
+                <p>看到设计图,头部导航和底部的部分和Index页面一样。中间部分可以分为左边content部分，右边info部分。</p>
+                <p>遇到的问题两个部分</p>
+                <p>1）左边底部翻页部分， 写第一遍时首先用ul，设置 li, li a {display: block}; li{float:left}
+                    但是低版本IE无法实现居中对齐,总靠右后来
+                </p>
+                <p>
+                    解决办法：经过<a href="http://www.imooc.com/code/2049">慕课网</a>的内联元素的学习,
+                    设置li{display: inline; float: none} 成功解决
+                </p>
+                <p>
+                    2）右边tags部分无法达到效果
+                    首先我用的是用 h1,h2,h3标签来写,但是后来发现h1,h2,h3为块级元素（以前还真没去研究，因为我好少用，
+                    都是自己命名字体
+                </p>
+                <p>
+                    解决办法
+                    第一种，直接重写设置h1,h2,h2 {display: inline}。第二种是干脆自己命名3个class，
+                    class为h1,h2,h3自己设置文字样式，通过span标签包含，成功达到效果
+                </p>
+            </dd>
+            <span class="blog-write-info">WEN　XINPING 发表于 2015年4月20日</span>
+        </div>
+        <div class="blog-content-list">
+            <dl>我对本次学习的总结(1)</dl>
+            <dt>对gallery和about页面的总结</dt>
+            <dd>
+                <p>这两个页面我改了，好几次，但是感觉效果还是欠缺，有很多不足，以后慢慢补</p>
+                <h2>一、对gallery页面分析</h2>
+                <p>这个页面和前面blog页面大体相似。我大部分时间花费在这些图片的布局。</p>
+                <p>1）我尝试了3种方法去做左边图片的布局。</p>
+                <p>第一次用的全部用的 float:left，但是在我现在的认知中，这种方法只用在固定高度的li，并且要在
+                    大li等于两倍小div的height，显然这种不太合理，因为可能图片和图片下面的描述都不是确定的高度
+                    。
+                </p>
+                <p>
+                    第二次方法，我干脆用两个ul去做，每个ul左边图片li {float:left}, 右边li{float:right}。我试了
+                    下还算可以。但是也存在很大问题，当左边li高于右边li时，又出现了空白。所以效果不好。
+                    第三次方法， 我干脆对每个li进行绝对定位,但是不用js好麻烦。
+                    综上，我还要研究
+                </p>
+                <p>
+                    2） 页面右边暂时比较满意
+                </p>
+                <h2>二、对about页面分析</h2>
+                <p>这个页面我也尝试了两种方法去写</p>
+                <p>第一次是叫这个页面，一中心分界线分为两个部分，然后对齐左右独立写，但是这样写无法知道每个版块的高度，
+                    所以左边的标题和右边简介的高度存在差别，这个不是很好。</p>
+                <p>第二次，我尝试对每个版块进行分左右，左边左飘，右边又飘，这种效果可以达到，但是还是存在些许问题：
+                    低版本ie无法对齐</p>
+                <p>
+                    现在,我的想法是用到index页面的对每个版块的左右两栏设置{padding-bottom: 10000px; margin-bottom: -10000px;}
+                    把图片放在每个版块的父级上，进行绝对地位，效果应该可以
+                </p>
+
+            </dd>
+            <span class="blog-write-info">WEN　XINPING 发表于 2015年4月20日</span>
+        </div>
+        <div class="blog-page">
+            <ul>
+                <li><a href="#">第一页</a></li>
+                <li><a href="#">上一页</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">下一页</a></li>
+                <li><a href="#">最后页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="blog-info">
+        <div class="search">
+            <input type="text" placeholder="Keywords" class="search-input"/>
+            <input type="button" value="GO" class="search-btn" />
+        </div>
+        <div class="blog-class">
+            <ul class="blog-class-list">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li class="active"><a href="#">JavaScript</a></li>
+                <li><a href="#">其他文章</a></li>
+            </ul>
+        </div>
+        <div class="blog-time">
+            <div class="blog-date-month">
+                <img class="left-btn" src="./img/left.png" alt="向左" />
+                <img class="right-btn" src="./img/right.png" alt="向右" />
+                <span>2015.04</span>
+            </div>
+            <ul>
+                <li><a href="#1">1</a></li>
+                <li><a href="#2">2</a></li>
+                <li><a href="#3">3</a></li>
+                <li><a href="#4">4</a></li>
+                <li><a href="#4">5</a></li>
+                <li><a href="#5">6</a></li>
+                <li><a href="#7">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><a href="#">10</a></li>
+                <li><a href="#">11</a></li>
+                <li><a href="#">12</a></li>
+                <li><a href="#">13</a></li>
+                <li><a href="#">14</a></li>
+                <li><a href="#">15</a></li>
+                <li><a href="#">16</a></li>
+                <li><a href="#">17</a></li>
+                <li><a href="#">18</a></li>
+                <li><a href="#">19</a></li>
+                <li><a href="#">20</a></li>
+                <li><a href="#">21</a></li>
+                <li><a href="#">22</a></li>
+                <li><a href="#">23</a></li>
+                <li><a href="#">24</a></li>
+                <li><a href="#">25</a></li>
+                <li><a href="#">26</a></li>
+                <li><a href="#">27</a></li>
+                <li><a href="#">28</a></li>
+                <li><a href="#">29</a></li>
+                <li><a href="#">30</a></li>
+            </ul>
+        </div>
+        <div class="blog-tags">
+            <p><h3>Tags</h3></p>
+            <span class="h1">JavaScript</span><span class="h2">css</span> flex webGl <span class="h1">HTML</span> Canvas prototype <span class="h2">HTML5</span> grid<span class="h3"> nodeJS</span> css3<span class="h3"> jQuery Echarts</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="hr200"></div>
+<div class="index-footer">
+    <div class="index-footer-nav comWidth">
+        <ul class="nav-ul">
+            <li><a href="./index.html">首页</a></li>
+            <li><a href="./blog.html">文档</a></li>
+            <li><a href="./gallery.html">作品</a></li>
+            <li><a href="./about.html">关于</a></li>
+        </ul>
+    </div>
+    <div class="index-footer-content">
+        <div class="footer-link comWidth">
+            <ul class="footer-link-list">
+                <li class="link-li-list"><h3><a href="#">友情链接</a></h3>
+                    <ul class="link">
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                    </ul>
+                </li>
+                <li class="link-li-list"><h3><a href="#">友情链接</a></h3>
+                    <ul class="link">
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                    </ul>
+                </li>
+                <li class="link-li-list"><h3><a href="#">友情链接</a></h3>
+                    <ul class="link">
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                    </ul>
+                </li>
+                <li class="link-li-list"><h3><a href="#">友情链接</a></h3>
+                    <ul class="link">
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                        <li><a href="#">LINK</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>版权信息</p>
+        <img src="./img/icon-github.png"/>
+    </div>
+
+</div>
+</body>
+</html>
