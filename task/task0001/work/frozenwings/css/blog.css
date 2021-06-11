@@ -1,0 +1,217 @@
+/*左侧文章区域*/
+.main{
+    width:710px;
+    float:left;
+    margin-top:10px;
+}
+.aside{
+    width:260px;
+    float:right;
+    margin-top:20px;
+    font-family: "Microsoft YaHei";
+}
+
+.article{
+    padding:20px;
+    background-color:#ffffff;
+    position:relative;
+    margin:10px 0;
+    font-family: "Microsoft YaHei";
+}
+.article span{
+    height:40px;
+    width:50px;
+    line-height:40px;
+    position:absolute;
+    left:-50px;
+    text-align: center;
+    font-size:14px;
+    color:#ffffff;
+    z-index:9;
+}
+.article .date{
+    background-color:#522a5c;
+    top:20px;
+}
+.article .tag{
+    background-color:#a660b7;
+    top:70px;
+}
+.article > h1{
+    padding:5px 0;
+    font-size:14px;
+    font-weight: bold;
+    color:#a660b7;
+}
+.article > h2{
+    padding:5px 0;
+    font-size:12px;
+    font-weight: bold;
+    color:#666666;
+}
+.article > .content{
+    font-size:14px;
+    padding:15px 0;
+    line-height:1.7;
+    color:#000000;
+}
+.article p{
+    text-indent: 2em;
+}
+.article > .info{
+    color:#999999;
+    text-align: right;
+}
+/*分页*/
+.pagination {
+    text-align: center;
+    font-size: 0;
+    margin-bottom:10px;
+}
+.pagination ul{
+    font-size:0;
+}
+.pagination li{
+    margin: 0 5px;
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+    font-size: 12px;
+}
+.pagination a {
+    text-decoration: none;
+    letter-spacing: normal;
+    display: block;
+    height:35px;
+    line-height: 35px;
+    color: #000000;
+    padding: 0 15px;
+    background-color:#ffffff;
+}
+.pagination li:hover>a,.pagination li.active>a {
+    color:#ffffff;
+    background-color:#a660b7;
+}
+.pagination li.disable>a{
+    color:#999999;
+    background-color:#ffffff;
+    cursor:default;
+}
+/*左侧文章区域结束*/
+
+
+/*文章右侧导航*/
+.aside > div{
+    margin-bottom:10px;
+}
+.sidebar ul{
+    width:100%;
+}
+.sidebar li{
+    height:50px;
+    line-height:50px;
+    background-color:#ffffff;
+    font-size:14px;
+    padding:0 15px;
+    border-top:1px solid #dddddd;
+    border-left:4px solid #dfc6e6;
+}
+.sidebar a{
+    color:#666666;
+    display:block;
+    height:100%;
+}
+.sidebar li.active,.sidebar li:hover{
+    border-left:4px solid #522a5c;
+}
+/*文章右侧日历*/
+.calendar{
+    background-color:#ffffff;
+    padding:18px 20px 26px 20px;
+}
+.calendar h2{
+    font-size:10px;
+    padding:6px 19px;
+    color:#773c88;
+    position:relative;
+    text-align:center;
+    font-weight:bold;
+}
+.prev{
+    width:26px;
+    float:left;
+}
+.next{
+    width:26px;
+    float:right;
+}
+.prev:hover,.next:hover{
+    background-color:#773c88;
+    color:#ffffff;
+}
+.year,.month{
+    width:auto;
+}
+.calendar p{
+    font-size:0;
+    color:#999999;
+    height:34px;
+    border-bottom: 1px solid #eeeeee;
+    padding:4px 19px;
+    overflow: hidden;
+}
+.calendar a{
+    font-size:10px;
+    text-decoration: none;
+    text-align:center;
+    color:#773c88;
+    display:inline-block;
+    line-height:26px;
+}
+.calendar p a{
+    width:26px;
+}
+.calendar p a:hover,.calendar p a.active{
+    background-color:#773c88;
+    color:#ffffff;
+}
+.calendar p a.disable{
+    cursor:default;
+    background-color:#ffffff;
+    color:#999999;
+}
+/*文章右侧日历结束*/
+/*文章右侧标签云*/
+.tags{
+    background-color:#ffffff;
+    padding:0 10px 15px 10px;
+    overflow:hidden;
+}
+.tags h2{
+    font-size:12px;
+    color:#666666;
+    padding:15px 5px;
+}
+.tags p{
+    line-height:1.5;
+    vertical-align: bottom;
+}
+.tags a{
+    color:#773c88;
+    cursor:pointer;
+    padding:0 2px;
+}
+.tag-1{
+    font-size:28px;
+    font-weight: bold;
+}
+.tag-2{
+    font-size:22px;
+    font-weight: bold;
+}
+.tag-3{
+    font-size:18px;
+}
+.tag-4{
+    font-size:14px;
+}

@@ -1,0 +1,44 @@
+.main{
+    /*position:relative;*/
+    width:600px;
+    height:600px;
+    margin:100px auto 0 auto;
+    padding:20px;
+    color:#ffffff;
+    background-color:lightgray;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+.main ul{
+    height:500px;
+    width:180px;
+    border:1px solid black;
+}
+.main li{
+    list-style: none;
+    border:1px solid black;
+    width:180px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    background-color:red;
+    cursor:pointer;
+}
+.main li.move {
+    opacity:0.75;
+}
+.main span{
+    display:block;
+    height:100%;
+}
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+
