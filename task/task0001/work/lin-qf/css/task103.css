@@ -1,0 +1,125 @@
+#part_2 {
+		width: 980px;
+		margin: 10px auto 50px;
+	}
+	#sidebar{
+		float: right;
+		width: 260px;
+	}
+	#main{
+		margin-right: 270px;
+	}
+	#tabs a{
+		background: white;
+		float: left;
+		padding: 15px 20px 20px;
+		border-left:1px solid rgb(200,200,200);
+		border-bottom: 1px solid rgb(200,200,200);
+		border-top: 3px solid  rgb(245,126,242);
+	}
+	 #tabs a:hover{
+		border-top: 3px solid rgb(232,12,89);
+		border-bottom: none;
+	}
+	#tabs a:first-child{
+		border-left: none;
+	}
+	#disp{
+		background: white;
+		width: 100%;
+		display: -webkit-flex;
+		display: flex;
+		clear: left;
+	}
+	#c1 {
+		-webkit-flex:2;
+		flex:2;
+		padding: 10px 5px 10px 10px;
+	}
+	#c1 .pic {
+		background: rgb(232,12,89);
+		color: white;
+	}
+	#c2 .pic{
+		background: rgb(232,173,12);
+		color: white;
+	}
+	#c3 .pic{
+		background: rgb(12,96,232);
+		color: white;
+	}
+	#c11,#c12{
+		width: 163px;
+		float: left;
+	}
+	#c11 {
+		margin-right: 10px;
+	}
+	#c2,#c3{
+		-webkit-flex:1;
+		flex:1;
+		padding: 10px 5px 10px 5px;
+	}
+	#c1 img,#c2 img,#c3 img{
+		width: 100%;
+	}
+	.pic {
+		margin-bottom: 10px;
+	}
+	#disp span{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		padding: 3px;
+		font-size: 14px;
+		text-align: center;
+		color: white;
+		border:1px solid white;
+		float: left;
+		border-radius: 30px;
+		margin:10px 10px 0 10px;
+	}
+	#disp p{overflow: hidden;
+			padding:0 10px 10px 0; }
+	#main #more{
+		text-align: center;
+		margin: 10px auto;
+		padding: 10px;
+		background: white;
+	}
+	#sidebar *{
+		background: white;
+		margin-bottom: 10px;
+	}
+	#sidebar #calendar{
+		height: 200px;
+	}
+	#sidebar #search{
+		height: 80px;
+	}
+	#sidebar #rate{
+		height: 200px;
+		padding: 20px;
+	}
+	#search{
+		padding: 20px 20px 20px 20px;
+		box-sizing:border-box; 
+	}
+	#form {
+		width: 220px;
+		height: 30px;
+		position: relative;
+	}
+	#search #text{
+		width: 170px;
+		height: 100%;
+	}
+	#search #btn{
+		position: absolute;
+		width: 50px;
+		padding: 4px 0;
+		font-size: 20px;
+		text-align: center;
+		background: rgba(0,0,0,0.3);
+		color: white;
+	}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>blog</title>
+</head>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/basic.css">
+<link rel="stylesheet" href="css/task102.css">
+<body >
+	<div id="part_1">
+	<div id="header">
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">主页</a></li>
+				<li><a href="blog.html">文章</a></li>
+				<li><a href="gallery.html">作品</a></li>
+				<li><a href="about.html">关于</a></li>
+			</ul>
+		</div>
+		</div>
+		<a href="http://www.github.com" id="icon"><img src="img/icon-github.png" alt="github"></a>
+	</div>
+	<div id="part_2">
+		<div id="sidebar">
+			<div id="search">
+					<form action="#" id="form">
+						<input type="text" id="text" placeholder="Keywords">
+						<span id="btn">Go</span>
+					</form>
+			</div>
+			<div id="category">
+				<ul id="catelist">
+					<li><a href="#">HTML</a></li>
+					<li ><a href="#">CSS</a></li>
+					<li><a href="#">Javascript</a></li>
+					<li><a href="#">Other</a></li>
+				</ul>
+			</div>
+			<div id="calendar">Calendar</div>
+			<div id="tags">
+				<h4>Tags</h4>
+			</div>
+		</div>
+		<div id="main">
+			<article id="a1">
+				<span class="date">4.12</span>
+				<span class="type">CSS</span>
+				<h3>遇到的问题和解决方法</h3>
+				<h4>。。。</h4>
+				<p>首先是index.html中间的那三个div的高度一致问题，如果内容确定的话那么直接设定高度就行了但是在内容不确定的情况下，就不能固定高度，我用了flex布局的方法，那么就可以是三个div的高度和包含它们的div的高度一致，并且可以根据内容自动调整高度。<br>
+					然后是窗口缩小时，header的导航部分会有部分没有背景色，主要有两种解决方法，一是设max-width为980px,而是直接再为header加一层背景。
+				 <br>
+					然后是about.html中的那个图片定位及border的问题，刚开始我是让图片根据最外层容器定位的，但是这样的话图片跟内容就没有办法联系起来，于是我将整个容器分成四个模块，每个模块分成左右两边，每个图片都根据左边的来定位。然后就是教育经历那个年份和文字结合起来的，不能把年份单独定位，所以将显示年份的span和信息放在一个容器里一起定位<br>
+					还有就是border颜色的问题，因为之前一直根据alpha值来调整颜色的深浅，但是这样做的话border的颜色会跟背景颜色重合起来，所以还是用rgb()来调整颜色。<br>
+					最后是那个瀑布流问题，我刚开始用的都是flex，但是这样没办法将第一列再分成两边，于是我在第一列又用了浮动布局。
+				</p>
+				<p class="detail">
+					发表于2015年4月12日
+				</p>
+			</article>
+			<article id="a2">
+				<span class="date">4.12</span>
+				<span class="type">CSS</span>
+				<h3>还未解决的问题</h3>
+				<h4>title2</h4>
+				<p>
+					主要是about.html中，图片中那几个年份之间的距离是相等的，但是我用ul弄出来的第一个span会超出ul的盒子。<br>
+					在gallery.html中导航部分和瀑布流部分之间总是有间距。<br>
+					只在chrome,firefox,IE9中测试过。导航栏那几个用nth-child()设置不同的效果时总是没有成功。
+				</p>
+				<p class="detail">
+					发表于2015年4月12日
+				</p>
+			</article>
+			<article id="a3">
+				<span class="date">4.12</span>
+				<span class="type">CSS</span>
+				<h3>总结</h3>
+				<h4>title2</h4>
+				<p>这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文
+			这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文
+			这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文
+			这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文
+			这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文
+			这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文
+			这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文
+			这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文，这里是正文这里是正文</p>
+				<p class="detail">
+					发表于2015年4月12日
+				</p>
+			</article>
+			<div id="explore">
+				<span><a href="#">第一页</a></span>
+				<span><a href="#">上一页</a></span>
+				<span><a href="#">1</a></span>
+				<span><a href="#">2</a></span>
+				<span><a href="#" id="css">3</a></span>
+				<span><a href="#">4</a></span>
+				<span><a href="#">...</a></span>
+				<span><a href="#">下一页</a></span>
+				<span><a href="#">最后页</a></span>
+			</div>
+		</div>
+	</div>
+	<div id="part_5">
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">主页</a></li>
+				<li><a href="blog.html">文章</a></li>
+				<li><a href="gallery.html">作品</a></li>
+				<li><a href="about.html">关于</a></li>
+			</ul>
+		</div>
+		<div id="moreinfo">
+			<div>
+				<h4>学习资料</h4>
+				<ul>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				</ul>
+			</div>
+			<div>
+				<h4>友情链接</h4>
+				<ul>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				</ul>
+			</div>
+			<div>
+				<h4>学习资料</h4>
+				<ul>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				</ul>
+			</div>
+			<div>
+				<h4>学习资料</h4>
+				<ul>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				</ul>
+			</div>
+			<div>
+				<h4>学习资料</h4>
+				<ul>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				<li>link</li>
+				</ul>
+			</div>
+		</div>
+		<div id="copyright">
+			<h3>版权信息</h3>
+		</div>
+	</div>
+</body>
+</html>
