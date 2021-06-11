@@ -1,0 +1,214 @@
+main {
+    width: 710px;
+    float: left;
+    display: inline;
+    margin: 20px 10px 10px 0;
+    position: relative;
+}
+
+main .gallery-title {
+    width: 655px;
+    height: 50px;
+    background: #ffffff;
+}
+
+main .gallery-title li {
+    float: left;
+    display: inline;
+    padding: 15px 20px 20px 20px;
+    border-right: 1px solid #eeeeee;
+}
+
+main .gallery-title li span {
+    font-family: "microsoft yahei", serif;
+}
+
+.color1 {
+    border-top: 5px solid #dfc6e6;
+}
+
+.color2 {
+    border-top: 5px solid #522a5c;
+}
+
+.color3 {
+    border-top: 5px solid #5900b2;
+}
+
+.color4 {
+    border-top: 5px solid #8c2300;
+}
+
+.color5 {
+    border-top: 5px solid #d9a300;
+}
+
+.gallery-title .active {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.gallery-list {
+    width: 670px;
+    height: 610px;
+    padding: 20px 20px 30px 20px;
+    background: #ffffff;
+    position: relative;
+}
+
+.gallery-list article {
+    display: block;
+    position: absolute;
+}
+
+.bg-purple {
+    background: #522a5c;
+}
+
+.bg-yellow {
+    background: #d9a300;
+}
+
+.bg-red {
+    background: #8c2300;;
+}
+
+.bg-blue {
+    background: #5900b2;;
+}
+
+.gallery-list article s {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-decoration: none;
+    display: block;
+    border-radius: 13px;
+    margin: 12px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    float: left;
+    text-align: center;
+}
+
+.gallery-list article h1 {
+    font-size: 16px;
+    padding: 10px 10px 5px 50px;
+    color: #ffffff;
+    text-overflow: ellipsis;
+}
+
+.gallery-list article p {
+    font-size: 12px;
+    color: #ffffff;
+    padding: 0 10px 20px 50px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.gallery-more {
+    margin-top: 10px;
+    width: 710px;
+    height: 50px;
+    line-height: 50px;
+    background: #ffffff;
+}
+
+.gallery-more s {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    float: left;
+    display: inline;
+    margin-left: 315px;
+    background: url(img/gallery-more.png) no-repeat scroll center center;
+}
+
+.gallery-more a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #666666;
+}
+
+aside {
+    width: 260px;
+    float: right;
+    margin-top: 70px;
+}
+
+.aside-list {
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+
+aside .chart {
+    width: 230px;
+    height: 210px;
+    padding: 15px;
+}
+
+aside .chart li {
+    height: 28px;
+    line-height: 28px;
+}
+
+aside .chart h1 {
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+aside .chart s {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    display: inline-block;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    color: #ffffff;
+    background: #522a5c;
+    text-align: center;
+}
+
+aside .chart .level {
+    display: inline-block;
+    width: 100px;
+    height: 18px;
+    border: 1px solid #522a5c;
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.chart .level span {
+    display: inline-block;
+    height: 18px;
+    background: #522a5c;
+    text-indent: -9999px;
+}
+
+.chart .level .p100 {
+    width: 100%;
+}
+
+.chart .level .p80 {
+    width: 80%;
+}
+
+.chart .level .p60 {
+    width: 60%;
+}
+
+.chart .level .p40 {
+    width: 40%;
+}
+
+.chart .level .p25 {
+    width: 25%;
+}
+
+.chart .title {
+    font-size: 14px;
+    font-family: arial, "microsoft yahei", serif;
+}

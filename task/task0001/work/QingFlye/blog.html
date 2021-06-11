@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <title>ife task之我的博客</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/common.css"/>
+        <link rel="stylesheet" href="css/blog.css"/>
+        <script src="js/html5.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="wrapper">
+                <nav>
+                    <a href="index.html">首页</a><a href="blog.html">文章</a><a href="gallery.html">作品</a><a href="about.html">关于</a>
+                </nav>
+                <a class="header-logo" href="index.html">青青flye</a>
+            </div>
+            <a class="git" href="https://github.com/QingFlye">我的GitHub</a>
+        </header>
+        <div class="wrapper clearfix">
+            <article>
+                <span class="article-date article-flag">4.12</span>
+                <span class="article-tag article-flag">CSS</span>
+                <div class="article-content clearfix">
+                    <h1>javaScript兼容性问题总结</h1>
+                    <h2>DOM方面的兼容</h2>
+                    <p>我们通常把特征(attribute)和属性(property)统称为属性，但是他们确实是不同的概念，
+                        特征(attribute)会表现在HTML文本中，对特征的修改一定会表现在元素的outerHTML中，并且特征只存在于元素节点中；
+                        属性(property)是对于JS对象进行修改，除了浏览器内置的部分特征外，其它的属性操作并不会影响HTML文本。
+                    </p>
+                    <p>IE6/7不区分属性和特征：其它浏览器会区分属性和特征，而IE67并不会区分它们，在IE67下我们只能用属性名来删除特征，
+                        虽然这两个名字很多时候一样，但总会有不一样的地方。
+                    </p>
+                    <p>IE6/7不区分属性和特征的后遗症，在获取style这个属性的时候，使用elem.style.cssText就好了。</p>
+                    <p>IE6/7会解析相对URL成为绝对URL，这个问题甚至导致了IE6/7下空的src属性会产生重复的请求，
+                        可以使用getAttribute('href/src', 4)。
+                    </p>
+                    <span class="article-note">青青flye发表于2015年3月30日</span>
+                </div>
+            </article>
+            <article>
+                <span class="article-date article-flag">4.12</span>
+                <span class="article-tag article-flag">CSS</span>
+                <div class="article-content clearfix">
+                    <h1>javaScript兼容性问题总结</h1>
+                    <h2>DOM方面的兼容</h2>
+                    <p>我们通常把特征(attribute)和属性(property)统称为属性，但是他们确实是不同的概念，
+                        特征(attribute)会表现在HTML文本中，对特征的修改一定会表现在元素的outerHTML中，并且特征只存在于元素节点中；
+                        属性(property)是对于JS对象进行修改，除了浏览器内置的部分特征外，其它的属性操作并不会影响HTML文本。
+                    </p>
+                    <p>IE6/7不区分属性和特征：其它浏览器会区分属性和特征，而IE67并不会区分它们，在IE67下我们只能用属性名来删除特征，
+                        虽然这两个名字很多时候一样，但总会有不一样的地方。
+                    </p>
+                    <p>IE6/7不区分属性和特征的后遗症，在获取style这个属性的时候，使用elem.style.cssText就好了。</p>
+                    <p>IE6/7会解析相对URL成为绝对URL，这个问题甚至导致了IE6/7下空的src属性会产生重复的请求，
+                        可以使用getAttribute('href/src', 4)。
+                    </p>
+                    <span class="article-note">青青flye发表于2015年3月30日</span>
+                </div>
+            </article>
+            <article>
+                <span class="article-date article-flag">4.12</span>
+                <span class="article-tag article-flag">CSS</span>
+                <div class="article-content clearfix">
+                    <h1>javaScript兼容性问题总结</h1>
+                    <h2>DOM方面的兼容</h2>
+                    <p>我们通常把特征(attribute)和属性(property)统称为属性，但是他们确实是不同的概念，
+                        特征(attribute)会表现在HTML文本中，对特征的修改一定会表现在元素的outerHTML中，并且特征只存在于元素节点中；
+                        属性(property)是对于JS对象进行修改，除了浏览器内置的部分特征外，其它的属性操作并不会影响HTML文本。
+                    </p>
+                    <p>IE6/7不区分属性和特征：其它浏览器会区分属性和特征，而IE67并不会区分它们，在IE67下我们只能用属性名来删除特征，
+                        虽然这两个名字很多时候一样，但总会有不一样的地方。
+                    </p>
+                    <p>IE6/7不区分属性和特征的后遗症，在获取style这个属性的时候，使用elem.style.cssText就好了。</p>
+                    <p>IE6/7会解析相对URL成为绝对URL，这个问题甚至导致了IE6/7下空的src属性会产生重复的请求，
+                        可以使用getAttribute('href/src', 4)。
+                    </p>
+                    <span class="article-note">青青flye发表于2015年3月30日</span>
+                </div>
+            </article>
+            <div class="page-list">
+                <a class="c-gray " href="#">第一页</a><a class="c-gray" href="#">上一页</a><span class="first-page">1</span><a href="">2</a><a href="">3</a><a href="">4</a><span>…</span><a href="#">下一页</a><a href="#">最后页</a>
+            </div>
+            <aside>
+                <div class="aside-list search">
+                    <form action="" method="post">
+                        <s></s>
+                        <input class="search-keywords" type="text" placeholder="Keywords">
+                        <input class="search-submit" type="submit" value="GO">
+                    </form>
+                </div>
+                <ul class="aside-list title">
+                    <li><a href="">Html</a></li>
+                    <li class="active"><a href="">CSS</a></li>
+                    <li><a href="">JavaScript</a></li>
+                    <li><a href="">其他文章</a></li>
+                </ul>
+                <div class="aside-list date">
+                    <table>
+                        <tr class="line">
+                            <th>&lt</th>
+                            <th colspan="5">2015.04</th>
+                            <th>&gt</th>
+                        </tr>
+                        <tr>
+                            <td><span>M</span></td>
+                            <td><span>T</span></td>
+                            <td><span>W</span></td>
+                            <td><span>T</span></td>
+                            <td><span>F</span></td>
+                            <td><span>S</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>1</span></td>
+                            <td><span>2</span></td>
+                            <td><span>3</span></td>
+                            <td><span class="active">4</span></td>
+                            <td><span>5</span></td>
+                            <td><span>6</span></td>
+                            <td><span>7</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>8</span></td>
+                            <td><span>9</span></td>
+                            <td><span>10</span></td>
+                            <td><span>11</span></td>
+                            <td><span>12</span></td>
+                            <td><span>13</span></td>
+                            <td><span>14</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>1</span></td>
+                            <td><span>2</span></td>
+                            <td><span>3</span></td>
+                            <td><span>4</span></td>
+                            <td><span>5</span></td>
+                            <td><span>6</span></td>
+                            <td><span>7</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>1</span></td>
+                            <td><span>2</span></td>
+                            <td><span>3</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="aside-list tags">
+                    <h1>Tags</h1>
+                    <div class="tag-list clearfix">
+                        <a class="tag-l" href="#">JavaScript</a><a class="tag-l" href="#">css</a><a class="tag-s" href="#">flex</a><a class="tag-s" href="#">webGL</a><a class="tag-l" href="#">HTML</a><a class="tag-m" href="#">Canvas</a><a class="tag-m" href="#">prototype</a><a class="tag-l" href="#">HTML5</a><a class="tag-s" href="#">grid</a><a class="tag-m" href="#">nodeJS</a><a class="tag-m" href="#">CSS3</a><a class="tag-l" href="#">JQuery</a><a class="tag-l" href="#">ECharts</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <footer>
+            <nav>
+                <div class="wrapper">
+                    <a href="index.html">首页</a><a href="blog.html">文章</a><a href="gallery.html">作品</a><a href="about.html">关于</a>
+                </div>
+            </nav>
+            <div class="wrapper clearfix">
+                <dl class="link-study">
+                    <dt>学习资料</dt>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">百度前端技术学院</a></dd>
+                    <dd><a href="">百度EFE team</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                </dl>
+                <dl class="link-study">
+                    <dt>学习资料</dt>
+                    <dd><a href="">百度前端技术学院</a></dd>
+                    <dd><a href="">百度EFE team</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">百度EFE team</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                </dl>
+                <dl class="link-study">
+                    <dt>学习资料</dt>
+                    <dd><a href="">百度EFE team</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                </dl>
+                <dl class="link-study">
+                    <dt>学习资料</dt>
+                    <dd><a href="">百度前端技术学院</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                </dl>
+                <dl class="link-study">
+                    <dt>学习资料</dt>
+                    <dd><a href="">百度前端技术学院</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                    <dd><a href="">web前端</a></dd>
+                </dl>
+            </div>
+            <div class="wrapper author">
+                <span>Copyright &copy; 张平 2015</span>
+                <s></s>
+            </div>
+        </footer>
+    </body>
+</html>
