@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>GTD tools</title>
+    <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="header">
+        <h1><a href="#">GTD Tools</a></h1>
+    </div>
+
+    <div class="row">
+
+        <div class="left task-category">
+            <nav>
+                <ul id="navigation">
+                    <li><a href="#" data-index="all-tasks">所有任务</a></li>
+                    <li><a href="#">分类列表</a>
+                        <ul id="categoryList">
+                            <!--<li><a href="#" class="cat-left">默认分类</a><span class="cat-right">x</span></li>-->
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="panel-footer">
+                    <a href="#categoryModal">新增分类</a>
+                </div>
+            </nav>
+
+            <div id="categoryModal" class="modal-dialog">
+                <div>
+                    <a href="#close" title="关闭" class="close">X</a>
+
+                    <h2>添加分类</h2>
+
+                    <form id="newCategoryForm" onsubmit="return false;">
+
+                        <div>
+                            <label for="nameInput">分类名称</label>
+                            <input type="text" name="name" id="nameInput"/>
+                        </div>
+
+                        <div>
+                            <label for="parentInput">上层分类</label>
+                            <select name="parent" id="parentInput">
+                            </select>
+                        </div>
+
+                        <button id="newCategoryBtn"><a href="#close">确定</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="task-list">
+                <div class="task-list-header">
+                    <ul>
+                        <li><a href="#" id="all-tasks-btn">所有</a></li>
+                        <li><a href="#" id="unfinish-tasks-btn">未完成</a></li>
+                        <li><a href="#" id="finish-tasks-btn">已完成</a></li>
+                    </ul>
+                </div>
+
+                <div class="task-list-detail">
+                    <ul id="task-list">
+                        <!--<li class="task-date">2015-04-29</li>-->
+                        <!--<li><a href="#" class="task-left">task 1</a><span class="task-right">删除</span></li>-->
+                    </ul>
+                </div>
+
+                <div class="panel-footer">
+                    <a href="#taskModal" id="newTaskBtn">新增任务</a>
+                </div>
+
+                <div id="taskModal" class="modal-dialog">
+                    <div>
+                        <a href="#close" title="关闭" class="close">X</a>
+
+                        <h2>添加任务</h2>
+
+                        <form id="newTaskForm" onsubmit="return false;">
+
+                            <div>
+                                <label for="taskTitleInput">任务名称</label>
+                                <input type="text" name="title" id="taskTitleInput"/>
+                            </div>
+
+                            <div>
+                                <label for="taskDueInput">截止时间</label>
+                                <input type="date" name="due" id="taskDueInput"/>
+                            </div>
+
+                            <div>
+                                <label for="taskContentArea">任务内容</label>
+                                <textarea name="content" id="taskContentArea" cols="30" rows="10"></textarea>
+                            </div>
+
+                            <button id="addTaskBtn"><a href="#close">确定</a></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="editor">
+                <div id="todo-title" class="todo-title"></div>
+                <div class="todo-date">任务日期：<span id="todo-date"></span>
+                    <span class="todo-status"><a href="#" id="changeTaskStatusBtn">更改状态</a></span>
+                    <span class="todo-modify"><a href="#modifyTaskModal" id="modifyTaskBtn" data-index="">修改</a></span>
+                </div>
+                <div id="todo-content" class="todo-content"></div>
+            </div>
+
+            <div id="modifyTaskModal" class="modal-dialog">
+                <div>
+                    <a href="#close" title="关闭" class="close">X</a>
+
+                    <h2>修改任务</h2>
+
+                    <form id="modifyTaskForm" onsubmit="return false;">
+
+                        <div>
+                            <label for="taskTitleInput">任务名称</label>
+                            <input type="text" name="title" id="taskTitleInput1"/>
+                        </div>
+
+                        <div>
+                            <label for="taskDueInput">截止时间</label>
+                            <input type="date" name="due" id="taskDueInput1"/>
+                        </div>
+
+                        <div>
+                            <label for="taskContentArea">任务内容</label>
+                            <textarea name="content" id="taskContentArea1" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <button id="isModifyBtn"><a href="#close">确定</a></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!--JavaScript Files-->
+<script src="scripts/Category.js"></script>
+<script src="scripts/Task.js"></script>
+<script src="scripts/util.js"></script>
+<script src="scripts/task0003.js"></script>
+</body>
+</html>

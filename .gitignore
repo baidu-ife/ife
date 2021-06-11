@@ -1,6 +1,5 @@
-*.gz
-*.min
-Thumbs.db
-.DS_Store
-*.swp
-/dist
+.idea/
+
+task/task0002/work/wwsun/node_modules/
+
+libs
