@@ -1,0 +1,17 @@
+.drawer {
+  padding: 12px 8px;
+  width: 80px;
+  height: 500px;
+  border: 2px solid #000000;
+  float: left;
+  margin: 30px 100px;
+}
+.box {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border: 2px solid #993399;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+}

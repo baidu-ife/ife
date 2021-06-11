@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <title>task0002 小练习-1</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/util.js"></script>
+  </head>
+  <body>
+    <form class="container">
+      <h1>小练习1</h1>
+      <div class="form-group">
+        <label>单行变成多行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。</label>
+        <textarea rows="10" class="form-control" id="input"></textarea>
+      </div>
+      <div class="alert bg-danger text-danger" id="alert" style="display: none">
+        Invalid Input
+      </div>
+      <button type="button" class="btn btn-primary" id="submit">按钮</button>
+      <hr />
+      <div id="output"></div>
+    </form>
+    <script type="text/template" id="template">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"><%= label %>
+        </label>
+      </div>
+    </script>
+    <script type="text/javascript" src="js/task0002_1.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <title>task0002 小练习-2</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/util.js"></script>
+  </head>
+  <body>
+    <form class="container form-inline">
+      <h1>小练习2</h1>
+      <div class="form-group">
+        <label>输入一个时间 (YYYY-MM-DD)</label>
+        <input type="text" class="form-control" id="input" maxlength="10" />
+      </div>
+      <button type="button" class="btn btn-primary" id="submit">按钮</button>
+    </form>
+    <div id="output" class="container help-block" style="margin-top: 30px">
+    </div>
+    <script type="text/template" id="template">
+      距离 <%=yy%> 年 <%=mm%> 月 <%=dd%> 日 还有 <%=cy%> 年 <%=cm%> 月 <%=cd%> 日 <%=ch%> 小时 <%=cf%> 分 <%=cs%> 秒
+    </script>
+    <script type="text/javascript" src="js/task0002_2.js"></script>
+  </body>
+</html>
