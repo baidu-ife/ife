@@ -1,0 +1,145 @@
+.no-name {
+    width: 980px;
+    margin: 20px auto;
+    overflow:hidden;
+}
+.mainBar{
+    float:left;
+    padding-bottom:20px;
+    background-color:#ffffff;
+}
+
+.tab li{
+   float:left;
+   padding:15px 20px 20px;
+   font-family:"times new roman";
+   font-size:17px;
+    border-top:solid 2px #cc90bf;
+    border-bottom:solid 1px #acaab1;
+    border-right:solid 1px #acaab1;
+}
+
+.tab li:hover{
+    border-top:solid 2px #6a11cd;
+    border-bottom:none;
+}
+.tab:after{
+    display:block;
+    visibility:hidden;
+    font-size:0;
+    line-height:0;
+    clear:both;
+    content:"";
+
+}
+
+.waterfall{
+    padding:20px 11px;
+    overflow:hidden;
+    /*background-color:#ffffff;*/
+}
+.waterfall p{
+    font-size:13px;
+    padding:5px;
+}
+.waterfall h1{
+    font-size:20px;
+    text-align:center;
+}
+.waterfall-left,.waterfall-middle,.waterfall-right{
+    float:left;
+}
+.waterfall-left{
+    width:335px;
+}
+.waterfall-left div{
+    display:inline-block;
+    vertical-align:top;
+}
+
+.waterfall-con{
+    overflow:hidden;/*left列可以不用写，为什么？？因为display:inline-block产生BFC*/
+}
+.waterfall-con .circle{
+    width:30px;
+    height:30px;
+    line-height:30px;
+    border-radius:30px;
+    border:1px solid #cccccc;
+    text-align:center;
+    float:left;
+}
+.waterfall-con .waterfall-word{
+    float:right;
+    width:120px;
+}
+.J1{
+    margin:10px;
+}
+.J1 .waterfall-word{
+    width:250px;
+}
+.A,.F,.J,.U{
+    width:153px;
+    margin:10px 5px;
+ }
+.A{
+    background-color: #6495ed;
+}
+.F{
+    background-color: #bbed79;
+}
+.J,.J1{
+    background-color: #edcfd3;
+}
+.U{
+    background-color: #d1a0e2;
+}
+.more{
+   width:683px;
+   border-top:10px solid #cccccc;
+}
+.more .center{
+    width:150px;
+    margin:20px auto;
+    background:url("img/down.png")left center no-repeat;
+}
+.more span{
+    margin-left:25px;
+}
+.sideBar{
+    float:right;
+    width: 250px;
+
+}
+.sideBar h1{
+    font-size:15px;
+}
+.ranklist{
+   margin-top:10px;
+    background-color:#ffffff;
+    padding:15px ;
+
+}
+.ranklist .num{
+   width:16px;
+    height:16px;
+    border-radius:16px;
+    background-color:#8a2be2;
+    text-align:center;
+    float:left;
+}
+.ranklist .rank{
+    float:left;
+    width:90px;
+    height:15px;
+    border:1px solid #cccccc;
+    margin: 0 10px;
+}
+.ranklist .inner{
+    height:15px;
+    background-color:#8a2be2;
+}
+.ranklist span{
+    font-size:15px;
+}

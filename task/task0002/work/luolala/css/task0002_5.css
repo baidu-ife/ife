@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style:none;
+    width:200px;
+    height:30px;
+    border:solid 1px #000000;
+    background:#dc143c;
+    text-align:center;
+    line-height:30px;
+    position:absolute;
+    cursor:move;
+
+}
+
+.wrapper{
+    margin:20px auto;
+    width:600px;
+}
+.firstBox,.secondBox{
+
+    float:left;
+
+    margin:30px 30px;
+    width:200px;
+    height:360px;
+    border:solid 1px #000000;
+}
+.dragging{
+    position:absolute;
+}

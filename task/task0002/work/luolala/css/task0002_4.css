@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+}
+.search{
+    width:200px;
+    margin:30px 50px 0;
+}
+.suggestBox{
+    display:none;
+    border:solid #000000 1px;
+    margin-left:50px;
+    width:202px;
+}
+li{
+    list-style:none;
+    color:#bbbcbc;
+    font-family:"times new roman";
+    /*display:none;*/
+}
+li:hover{
+    cursor:pointer;
+    color:black;
+}
+.active{
+    color:#000000;
+
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+<div class="header">
+   <h1>GTD Tools</h1>
+</div>
+<div class="content">
+    <div class="category">
+        <h2>所有任务<span class="allTask">()</span></h2>
+        <h2>分类列表</h2>
+        <div class="container">
+            <ul>
+             <li class="categoryList default" categoryIndex="1">默认分类<span class="unfinishedCount">()</span><a href="#" class="deleteCategory"></a></li>
+            </ul>
+        </div>
+        <div class="addCategory">新增分类</div>
+  </div>
+    <div class="tasks">
+    <div class="finishOrNot">
+       <span class="all">所有</span>
+       <span class="unFinished">未完成</span>
+       <span class="finished">已完成</span>
+    </div>
+     <div class="taskList">
+
+     </div>
+    <div class="addTask">新增任务</div>
+    </div>
+    <div class="wrap">
+      <div class="taskDescription">
+           <p><input type="text" class="taskTitle"/>标题</p>
+           <p><input type="text" class="taskDate"/>任务日期(请按yyyy-mm-dd输入)</p>
+           <textarea class="taskDe">任务描述:</textarea>
+           <span class="saveOrNot">保存</span>
+           <span class="cancelOrNot">取消</span>
+     </div>
+    <div class="perTask">
+   </div>
+</div>
+</div>
+
+<script src="util.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

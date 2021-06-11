@@ -1,0 +1,18 @@
+#hobby-input{
+    display: inline-block;
+    width:200px;
+    height:200px;
+}
+#hobby-btn{
+position:absolute;
+top:190px;
+left:220px;
+}
+#error{
+    position:absolute;
+    top:150px;
+    left:220px;
+}
+.errorWarn{
+color:red;
+}

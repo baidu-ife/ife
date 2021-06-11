@@ -1,0 +1,153 @@
+
+ .scenery{
+     background:url("img/banner-bg2.png") no-repeat;
+     width:100%;
+     height:300px;
+ }
+.info{
+    width:300px;
+    height:150px;
+    position:relative;
+    left:800px;
+    top:130px;
+    color:white;
+    padding: 10px 10px 30px 10px;
+
+    background: -moz-linear-gradient(top,rgba(255,255,255,.7),rgba(255,255,255,.5)75%,rgba(255,255,255,0));
+    background: -webkit-linear-gradient(top,rgba(255,255,255,.7),rgba(255,255,255,.5)75%,rgba(255,255,255,0));
+    background:-o-linear-gradient(top,rgba(255,255,255,.7),rgba(255,255,255,.5)75%,rgba(255,255,255,0)));
+    filter:alpha(opacity=70 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=150)
+     progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);
+    -ms-filter:alpha(opacity=70 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=150)
+progid:DXImageTransform.Microsoft.gradient(startcolorstr=white,endcolorstr=white,gradientType=0);/*IE8*/
+}
+.info h1{
+    font-size:14px;
+    text-align:right;
+}
+.info p{
+    font-size:12px;
+    line-height:150%;
+    margin-top:12px;
+    text-indent:24px;
+}
+.wrapper{
+    width:100%;
+}
+.content{
+    width:980px;
+    margin:0 auto;
+    overflow:hidden;
+    padding-top:10px;
+}
+.columns{
+    width:250px;
+    float:left;
+    margin-bottom:-9999px;
+    padding-bottom:9999px;
+    padding-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+    background-color:white;
+}
+.now,.future{
+    margin-left:55px;
+}
+
+
+.intro{
+    margin-top:90px;
+    width:100%;
+    background-color:white;
+    padding-bottom:50px;
+}
+
+.selfIntro{
+    width:600px;
+    position:relative;
+    margin:0 auto;
+    padding-top:160px;}
+.selfIntro img{
+    display:block;
+    width:160px;
+    height:160px;
+    border-radius:100%;
+    position:absolute;
+    left:50%;
+    margin-left:-80px;
+    top:-50px;
+  }
+.selfIntro{
+    margin-top:100px;
+}
+.selfIntro h1{
+    font-family:"Century Gothic","Times New Roman" ;
+    font-size:20px;
+    text-align:center;}
+.selfIntro p{
+    font-size:14px;
+    text-indent:2em;
+    padding-top:30px;
+    word-wrap:break-word;
+    word-break:break-all;
+    }
+footer{
+    width:100%;
+    background:#000000;
+    text-align:center;
+
+}
+.footer-t{
+    width:100%;
+    overflow:hidden;
+    border-bottom:solid 1px #cccccc;
+}
+.footer-head{
+    width:980px;
+    margin:10px auto;
+
+}
+.footer-head ul{
+    display:block;
+    margin-left:350px;
+}
+.footer-head li{
+   float:left;margin-left:33px;
+}
+.linkInfo{
+    width:980px;
+    margin:0 auto;
+    overflow:hidden;
+    color:#ffffff;
+}
+.linkIn{
+    float:left;
+    width:196px;
+}
+
+.linkIn dt {
+     margin-top: 40px;
+     margin-bottom: 20px;
+     font-size: 14px;
+ }
+.linkIn dd{
+     height: 20px;
+     line-height:20px;
+     font-size:15px;
+    font-family:'times new roman';
+ }
+.linkIn a:hover{
+    text-decoration:underline;
+}
+.the-last{
+    width:100px;
+    margin:40px auto 0;
+    color:#ffffff;
+    font-size:12px;
+}
+.icon{
+    background:url("img/icon-github.png")no-repeat;
+    width:30px;
+    height:34px;
+    margin:5px auto 0;
+}
