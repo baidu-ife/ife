@@ -1,0 +1,48 @@
+@charset "utf-8";
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+h1 { color: blue; }
+h2 { font-size: 18px; text-align: center; border: 1px solid red;}
+h5 { color: #333; }
+.p1 { font-size: 12px; color: yellow; background-color: black; text-indent: 2em; line-height: 2; font-family: "sans-serif"; word-spacing: 25px; }
+.p1 span { text-decoration: underline; font-weight: 700; color: red; font-size: 16px; word-spacing:25px; }
+img { border: 2px solid red; }
+.p3 { text-transform: capitalize; font-size: 30px;}
+.warp1 { margin-bottom: 50px; color:#fff; }
+.warp1 .sidle{ float: left; height: 100px; }
+.warp1 .sidle { width: 180px; background-color: red; padding: 10px;}
+.warp1 .content { height: 100px; margin-left: 200px; background-color: blue; padding: 10px; overflow: hidden;}
+
+.warp2 { position: relative; margin-bottom: 50px; color:#fff; height: 121px; }
+.warp2 .sidle { position: absolute; width: 200px; height: 100px; background-color: red; padding: 10px;}
+.warp2 .content { position: absolute; left:200px;right: 0; height: 100px; background-color: blue; padding: 10px; overflow: hidden; }
+
+.warp3 { margin-bottom: 50px; color:#fff; }
+.warp3 .sidle { float: left; width: 200px; height: 120px; background-color: red; }
+.warp3 .content { height: 100px; padding: 10px; background-color: #f80; overflow: hidden; }
+.warp3 .tool {float: right; width: 200px; height: 120px; background-color: blue; }
+
+.warp4{ position: relative; margin-bottom: 50px; color:#fff;}
+.warp4 .sidle { float: left; width: 200px; height: 120px; margin-left: -100%; background-color: red; }
+.warp4 .content { float: left; height: 100px; padding: 10px 210px; background-color: #f80;  }
+.warp4 .tool { float: left; right: 0; top: 0; width: 200px; height: 120px; margin-left: -200px; background-color: blue; }
+
+.box { position: relative; width: 300px; height: 100px; border: 1px solid black; }
+.box .radioslt,
+.box .radiosrt,
+.box .radioslb,
+.box .radiosrb { position: absolute; z-index: 2; width: 9px; height: 9px; background-repeat: no-repeat; background-position: center center; }
+.box .radioslt { left: -1px; top: -1px; background: url(../img/radioslt.jpg); }
+.box .radiosrt { right: -1px; top: -1px; background: url(../img/radiosrt.jpg); }
+.box .radioslb { left: -1px; bottom: -1px; background: url(../img/radioslb.jpg); }
+.box .radiosrb { right: -1px; bottom: -1px; background: url(../img/radiosrb.jpg); }
+.box .box-centent{position: absolute;top:0;left:0;right:0; bottom:0;z-index: 1;/*background: red; */padding: 8px;}
+
+.list-warp { background-color: red; padding-top: 10px;}
+.list-warp li { float: left; width: 100px;height: 50px; margin-right: 30px; margin-bottom: 10px; background-color: blue; list-style: none; }
+
+.auto960 { width: 960px; height: 100px; background: red; margin-left: auto; margin-right: auto; }
+.auto960-2 { position: relative; left: 50%; margin-left: -480px; width: 960px; height: 100px; background: red; }
