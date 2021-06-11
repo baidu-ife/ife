@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task0002_4</title>
+	<style>
+
+		#suggests {
+			margin:-1px 0 0;
+			padding: 0;
+			position: absolute;
+			border: 1px solid #ccc;
+		}
+
+		#suggests li{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			width: 300px;
+			line-height: 30px;
+			cursor: pointer;
+		}
+		
+		#suggests .active {
+			background: #eee;
+		}
+		
+		#suggests em {
+			font-style: normal;
+			color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<input id="search" type="search" value="Text" autocomplete="off">
+	<ul id="suggests">
+		<li><em>Text</em>123</li>
+		<li class="active"><em>Text</em>123rrr</li>
+		<li><em>Text</em>123www</li>
+		<li><em>Text</em>123wer</li>
+	</ul>
+	<script src="js/util.js"></script>
+	<script src="js/task0002_4.js"></script>
+</body>
+</html>

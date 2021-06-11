@@ -1,0 +1,20 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 error Error: ENOENT, open 'D:\Program Files (x86)\Zend\Apache2\htdocs\ife\task0002\qushuangru\server\public\package.json'
+6 error If you need help, you may report this *entire* log,
+6 error including the npm and node versions, at:
+6 error     <http://github.com/npm/npm/issues>
+7 error System Windows_NT 6.1.7601
+8 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+9 error cwd D:\Program Files (x86)\Zend\Apache2\htdocs\ife\task0002\qushuangru\server\public
+10 error node -v v0.10.33
+11 error npm -v 1.4.28
+12 error path D:\Program Files (x86)\Zend\Apache2\htdocs\ife\task0002\qushuangru\server\public\package.json
+13 error code ENOENT
+14 error errno 34
+15 verbose exit [ 34, true ]

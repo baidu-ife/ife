@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task0002_3</title>
+    <style>
+    #pic-round {
+        width: 425px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    #pic-round ul {
+        position: relative;
+        width: 10000px;
+        height: 260px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    #pic-round .pics li {
+        float: left;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #pic-round {
+        position: relative;
+    }
+    
+    #pic-round .pic-radio {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        z-index: 15;
+        width: 60%;
+        margin: 0 auto 0 -30%; 
+        padding-left: 0;
+        text-align: center;
+        list-style: none;
+    }
+    
+    .pic-radio li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin:0 5px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #000 \9;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid #fff;
+        border-radius: 10px;
+    }
+    .pic-radio .active {
+        background:#fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="pic-round">
+        <ul class="pics">
+            <li><img src="imgs/pic1.jpg" alt="pic1"></li>
+            <li><img src="imgs/pic2.jpg" alt="pic2"></li>
+            <li><img src="imgs/pic3.jpg" alt="pic3"></li>
+            <li><img src="imgs/pic4.jpg" alt="pic4"></li>
+        </ul>
+
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/task0002_3.js"></script>
+</body>
+
+</html>
