@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-zmn-Hans">
+    <meta charset="UTF-8">
+    <title>task0002</title>
+</head>
+<body>
+<ul id="list">
+    <li id="item1">Simon</li>
+    <li id="item2">Kenner</li>
+    <li id="item3">Erik<span class="fuck" data-log="2015"></span></li>
+</ul>
+<button id="btn">Change</button>
+<script src="js/util.js"></script>
+<script>
+//    之前知道script为什么要放在后面，但是不知道要放在</body>之前。。。
+//    按照html5标准中的html语法规则，如果在</body>后在出现<script>或任何元素的开始标签，都是parse error，浏览器会忽略之前的</body>
+//    即视作仍然在body内，所以实际效果和写在</body>之前是没有区别的
+
+//    function $(id) {
+//        return document.getElementById(id);
+//    }
+//
+//    function add(num1, num2) {
+//        return num1 + num2;
+//    }
+//
+//    function renderResult(result) {
+//        $("result").innerHTML = result;
+//    }
+//
+//    function addEventHandle() {
+//        var num1 = $("number1").value;
+//        var num2 = $("number2").value;
+//        var result = add(num1, num2);
+//        renderResult(result);
+//    }
+//
+//    function initEvent() {
+//        $("addbtn").addEventListener("click", addEventHandle, false);
+//    }
+//
+//    initEvent();
+function clickListener(event) {
+    console.log(event);
+}
+
+function renderList() {
+    $("#list").innerHTML = '<li>new item</li>';
+}
+
+function init() {
+    $.delegate("#list", "li", "click", clickListener);
+
+    $.click("#btn", renderList);
+}
+init();
+    console.log($(".fuck"));
+</script>
+</body>
+</html>
