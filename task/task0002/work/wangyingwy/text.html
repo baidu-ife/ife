@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" class="btn" id="btn1" data-log="123" data-time="2015"/>
+</body>
+<script src="js/util.js"></script>
+<script>
+    $("[data-time=2015]").onclick = function() {
+        console.log("a");
+    }
+</script>
+</html>
