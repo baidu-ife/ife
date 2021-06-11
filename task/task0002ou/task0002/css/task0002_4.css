@@ -1,0 +1,31 @@
+body{
+	background-color: #333;
+}
+#serch,#btn{
+	margin-top: 50px;
+	
+
+}
+#suggest{
+	width: 173px;
+	background-color: #fff;
+
+
+}
+#suggest ul{
+	list-style: none;
+	border:0;
+
+	margin: 0;
+	padding: 0;
+}
+#suggest ul li{
+	padding: 3px;
+	font-size: 14px;
+	line-height: 25px;
+	cursor: pointer;
+}
+#suggest ul li:hover{
+	text-decoration: underline;
+	background-color: #e5e5e5;
+}

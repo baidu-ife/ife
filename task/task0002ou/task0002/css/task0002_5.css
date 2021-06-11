@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#board{
+	width: 500px;
+	height: 400px;
+	background: #dedede;
+}
+#container_l{
+	float: left;
+	margin-left: 46px;
+	margin-top: 20px;
+	width: 150px;
+	height: 360px;
+	border: 1px solid #000000;
+	background: #ffffff;
+}
+#container_r{
+	float: left;
+	margin-left: 100px;
+	margin-top: 20px;
+	width: 150px;
+	height: 360px;
+	border: 1px solid #000000;
+	background: #ffffff;
+}
+#one{
+	width: 150px;
+	height: 40px;
+	background: #ff0000;
+	border-bottom: 1px solid #000000;
+	cursor: move;
+	position: absolute;
+}
