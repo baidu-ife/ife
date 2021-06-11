@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002_3作业</title>
+    <link rel="stylesheet" href="css/task0002_3.css">
+</head>
+<body>
+<div id="myCarousel">
+    <div class="container">
+        <div class="item"><img src="img/slide-01.png" alt="slide01"></div>
+        <div class="item"><img src="img/slide-02.png" alt="slide02"></div>
+        <div class="item"><img src="img/slide-03.png" alt="slide03"></div>
+        <div class="item"><img src="img/slide-04.png" alt="slide04"></div>
+        <div class="item"><img src="img/slide-05.jpg" alt="slide05"></div>
+    </div>
+</div>
+<div id="controlPanel">
+    <h2>播放选项</h2>
+    <label>播放顺序：
+        <input type="radio" name="order" value="0" checked="checked"/> 顺序
+        <input type="radio" name="order" value="1" /> 逆序
+    </label>
+
+    <label>是否循环：
+        <input type="radio" name="isloop" value="0" checked="checked"/> 是
+        <input type="radio" name="isloop" value="1" /> 否
+    </label>
+
+    <label>播放间隔：
+        <select id="playTime">
+            <option value=1000>1s</option>
+            <option value=2000>2s</option>
+            <option value=3000 selected="selected">3s</option>
+            <option value=4000>4s</option>
+            <option value=5000>5s</option>
+        </select>
+    </label>
+    <input id="submmit" type="button" value="确认"/>
+</div>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/task0002_3.js"></script>
+</body>
+</html>

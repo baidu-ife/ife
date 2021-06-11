@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img {
+    border: none;
+    vertical-align: top;
+}
+
+li {
+    list-style: none;
+}
+
+/*轮播图父级*/
+#myCarousel {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#myCarousel .item {
+    width: 100%;
+    position: absolute;
+}
+
+#myCarousel img {
+    width: 100%;
+    height: 400px;
+}
+
+#carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    text-align: center;
+}
+
+#carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin: 0 4px;
+    background: url(../img/circle.png) no-repeat;
+    cursor: pointer;
+}
+
+#carousel-indicators li.active {
+    background-position: 0 -12px;
+}
+
+#controlPanel{
+    text-align: center;
+    font-size: 14px;
+}
+#controlPanel h2{
+    font-size: 26px;
+    font-family: 微软雅黑;
+    margin: 20px auto;
+}
+#controlPanel label{
+    margin: 0 10px;
+}

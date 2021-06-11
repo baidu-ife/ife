@@ -1,0 +1,23 @@
+#hint{
+    list-style-type: none;
+    width: 200px;
+    background-color: #ffffff;
+    /*border: solid 1px #000000;*/
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+#hint li:hover{
+    background-color: #999;
+    cursor: pointer;
+}
+#hint span{
+    color: red;
+}
+.active {
+    border: 1px solid #999;
+}
+.selected{
+    background-color: #999;
+}
