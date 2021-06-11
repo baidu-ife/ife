@@ -1,0 +1,110 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: arial, sans-serif;
+  font-size: 15px;
+}
+html,
+body {
+  height: 100%;
+}
+#caption {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+#main-container {
+  box-sizing: border-box;
+  padding-top: 50px;
+  height: 100%;
+  width: 100%;
+  padding-left: 400px;
+}
+#main-container #task-list,
+#main-container #todo-list,
+#main-container #todo-detail {
+  height: 100%;
+  float: left;
+}
+#main-container #task-list {
+  background: #F2F2F2;
+  width: 200px;
+  margin-left: -200px;
+  position: relative;
+  left: -200px;
+  box-sizing: border-box;
+  border-right: 1px solid #cccccc;
+  padding-bottom: 40px;
+}
+#main-container #task-list > div:nth-child(1),
+#main-container #task-list > div:nth-child(2) {
+  padding-left: 5px;
+  height: 30px;
+  line-height: 30px;
+}
+#main-container #task-list li.selected {
+  background-color: white;
+}
+#main-container #task-list li {
+  cursor: pointer;
+}
+#main-container #task-list li.category {
+  padding: 5px 10px;
+  padding-left: 20px;
+}
+#main-container #task-list li.task {
+  padding: 5px 10px;
+  padding-left: 40px;
+}
+#main-container #todo-list {
+  width: 200px;
+  margin-left: -200px;
+  box-sizing: border-box;
+  position: relative;
+  border-right: 1px solid #cccccc;
+  padding-bottom: 40px;
+}
+#main-container #todo-detail {
+  width: 100%;
+}
+#main-container .list li .btn-remove {
+  float: right;
+  display: none;
+}
+#main-container .list li:hover .btn-remove {
+  display: inline;
+}
+#main-container .list li.fixed .btn-remove {
+  display: none !important;
+}
+#main-container #create-task,
+#main-container #create-todo {
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+  border-top: 1px solid #cccccc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.num:before {
+  content: '(';
+}
+.num:after {
+  content: ')';
+}
+#main-container,
+#task-creator {
+  display: none;
+  padding-top: 50px;
+}

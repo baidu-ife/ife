@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.err-msg{
+    color: red;
+}
+.carousel{
+    overflow: hidden;
+    font-size: 0;
+    height: 372px;
+    position: relative;
+}
+.carousel .container{
+    position: relative;
+}
+.carousel img{
+    position: absolute;
+}
+.carousel .dots-container{
+    position: absolute;
+    text-align: center;
+    bottom: 10%;
+    width: 100%;
+}
+.carousel .dot{
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    border: white solid 1px;
+    display: inline-block;
+    margin: 0 2px;
+    border-radius: 50%;
+}
+.carousel .dot.selected{
+    background-color: white;
+    border: white solid 1px;
+}
+.list{
+    width: 100px;
+    list-style: none;
+    border: solid lightgray 1px;
+    padding-left: 0;
+    margin: 0;
+}
+.list:empty{
+    display: none;
+}
+.list .item{
+    padding: 2px 4px;
+}
+.list .item.selected{
+    background-color: lightgray;
+}
+.list .item .highlight{
+    color: red;
+}
+
+.container{
+    background-color: white;
+    border: black solid 1px;
+    width: 150px;
+    height: 400px;
+    float: left;
+    margin-right: 150px;
+}
+.container .item{
+    height: 50px;
+    background-color: red;
+    border-bottom: 1px black solid;
+}
+.container .item.moving{
+    left: 0;
+    right: 0;
+    cursor: move;
+    position: relative;
+    border: 1px black solid;
+    opacity: 0.8;
+}
