@@ -1,0 +1,38 @@
+.header {
+    height: 80px;
+    background-color: #542A59;
+    position: relative;
+}
+h1 {
+    float: left;
+    font-size: 17px;
+    line-height: 47px;
+    margin-top: 33px;
+    color: #FFF;
+}
+.nav {
+    float: right;
+    margin-top: 36px;
+}
+.nav-item {
+    float: left;
+    padding-left: 28px;
+}
+.nav-item-link {
+    font-size:14px;
+    line-height: 44px;
+    color: #FFF;
+}
+.github-icon {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    height: 34px;
+    width: 30px;
+    background: url(../img/icon-github.png) no-repeat center center;
+}
+@media screen and (max-width: 980px) {
+    .github-icon {
+        display: none;
+    }
+}

@@ -1,0 +1,100 @@
+body {
+    font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, simsun, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.wrapper {
+    background-color: #EEE;
+}
+.inner {
+    width: 980px;
+    margin: 0 auto;
+}
+.banner {
+    height: 525px;
+    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.banner .inner {
+    position: relative;
+    height: 100%;
+}
+.banner-description {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    width: 340px;
+    padding: 10px 10px 30px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0));
+    background: -moz-linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0));
+    background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', endColorstr='#00ffffff',GradientType=0 );
+}
+.banner-hd {
+    float: right;
+    font-size: 14px;
+    padding-bottom: 9px;
+    color: #FFF;
+}
+.banner-bd {
+    float: right;
+    color: #FFF;
+    text-indent: 2em;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.content {
+    margin-bottom: 110px;
+}
+.content-list{
+    overflow: hidden;
+    margin-right: -10px;
+}
+.content-item {
+    float: left;
+    width: 300px;
+    padding: 10px 10px 0 10px;
+    background-color: #FFF;
+    margin-right: 10px;
+    margin-bottom: -999px;
+    padding-bottom: 999px;
+}
+.content-p {
+    padding: 11px 20px 25px 20px;
+    line-height: 1.7;
+    text-indent: 2em;
+}
+.blog {
+    background-color: #FFF;
+}
+.blog-inner {
+    width: 600px;
+    margin: 0 auto;
+}
+.blog-item {
+    position: relative;
+    left: 50%;
+    margin-left: -80px;
+    top: -50px;
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: url(../img/blog.png) no-repeat center center;
+}
+.blog-hd {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Century Gothic";
+    padding-bottom: 30px;
+}
+.blog-bd {
+    font-size: 14px;
+    padding-bottom: 188px;
+    line-height: 25px;
+    text-indent: 2em;
+}

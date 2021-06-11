@@ -1,0 +1,26 @@
+.search {
+    background-color: #FFF;
+    padding: 20px;
+}
+.search-input {
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    width: 118px;
+    border: 1px solid #DDD;
+    padding-left: 50px;
+    vertical-align: middle;
+    background: url(../img/search.png) no-repeat 8px center #FFF;
+}
+.search-go {
+    border: none;
+    height: 42px;
+    width: 50px;
+    vertical-align: middle;
+    background: url(../img/go.png) no-repeat 8px center #DDD;
+}
+.search-input:focus,
+.search-go:focus {
+    outline: none;
+    border: 1px solid #000;
+}

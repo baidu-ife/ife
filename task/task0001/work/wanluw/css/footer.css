@@ -1,0 +1,50 @@
+.footer {
+    color: #FFF;
+    background-color: #000;
+}
+.footer-nav {
+    border-bottom: 1px solid #333;
+    margin-bottom: 43px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+.footer-nav-item {
+    margin-right: 25px;
+    color: #FFF;
+}
+.footer-nav-last {
+    margin-right: 0px;
+}
+.footer-list {
+    overflow: hidden;
+    margin-right: -20px;
+    margin-bottom: 98px;
+}
+.footer-item {
+    float: left;
+    width: 200px;
+}
+.footer-inner-link {
+    line-height: 20px;
+    color: #FFF;
+}
+.footer-inner-link:hover {
+    text-decoration: underline;
+}
+.footer-inner-hd {
+    color: #CCC;
+    padding-bottom: 27px;
+}
+.copyright {
+    text-align: center;
+}
+.copyright-title {
+    padding-bottom: 20px;
+}
+.footer-github-icon {
+    display: inline-block;
+    height: 34px;
+    width: 30px;
+    background: url(../img/icon-github.png) no-repeat center center;
+}

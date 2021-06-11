@@ -1,0 +1,206 @@
+body {
+    font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, simsun, sans-serif;
+}
+.wrapper {
+    background-color: #EEE;
+}
+a {
+    text-decoration: none;
+}
+.header {
+    margin-bottom: 20px;
+}
+.inner {
+    width: 980px;
+    margin: 0 auto;
+}
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.center {
+    float: left;
+    width: 710px;
+}
+.content {
+    padding: 20px 21px 15px 17px;
+    margin-bottom: 10px;
+    background-color: #FFF;
+    position: relative;
+}
+.content-date {
+    position: absolute;
+    top: 20px;
+    left: -50px;
+    height: 40px;
+    line-height: 40px;
+    width: 50px;
+    text-align: center;
+    color: #FFF;
+    background-color: #542A59;
+}
+.content-type {
+    position: absolute;
+    left: -50px;
+    top: 60px;
+    height: 40px;
+    line-height: 40px;
+    width: 50px;
+    text-align: center;
+    color: #FFF;
+    background-color: #AA61B2;
+}
+.content-title {
+    font-size: 16px;
+    color: #AA61B2;
+}
+.content-vice-title {
+    padding-top: 7px;
+    padding-bottom: 10px;
+    color: #666;
+}
+.content-bd {
+    padding-bottom: 35px;
+}
+.content-bd-item {
+    line-height: 20px;
+    text-indent: 2em;
+}
+.content-ft {
+    text-align: right;
+    color: #999;
+}
+.page {
+    text-align: center;
+    margin-bottom: 330px;
+}
+.page-item {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 40px;
+    background-color: #FFF;
+    margin-right: 10px;
+    color: #000;
+}
+.page-item-wordage {
+    width: 70px;
+}
+.page-this {
+    background-color: #AA61B2;
+    color: #FFF;
+}
+.sidebar {
+    float: right;
+    width: 260px;
+}
+.sidebar-item {
+    margin-bottom: 10px;
+}
+.menu {
+    background-color: #FFF;
+}
+.menu-list {
+    border-bottom: 1px solid #DDD;
+}
+.menu-item {
+    display: block;
+    border-top: 1px solid #DDD;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 18px;
+    border-left: 4px solid #E1C6E4;
+    color: #666;
+}
+.menu-item:hover,
+.menu-this {
+    border-left: 4px solid #542A59;
+}
+.calendar {
+    height: 192px;
+    background-color: #FFF;
+    padding: 24px 20px 26px;
+}
+.calendar-title {
+    text-align: center;
+    color: #7A3D84;
+    padding: 0 15px 8px 15px;
+    font-weight: 700;
+    overflow: hidden;
+}
+.calender-page-left {
+    float: left;
+    color: #7A3D84;
+}
+.calender-page-right {
+    float: right;
+    color: #7A3D84;
+}
+.calendar-table {
+    color: #999;
+    width: 220px;
+}
+.calendar-item {
+    display: inline-block;
+    color: #999;
+    height: 20px;
+    line-height: 20px;
+    width: 26px;
+}
+.calendar-item:hover {
+    background-color: #7A3D84;
+    color: #FFF;
+}
+.calendar-this {
+    color: #7A3D84;
+    font-weight: 700;
+}
+.calendar-table tr,
+.calendar-table th {
+    text-align: center;
+    height: 33px;
+    border-bottom: 1px solid #EEE;
+}
+.tags {
+    height: 197px;
+    padding: 10px 20px 30px 15px;
+    background-color: #FFF;
+    color: #7A3D84;
+}
+.tags-title {
+    padding-bottom: 15px;
+    color: #666;
+}
+.tags-item  {
+    display: inline-block;
+    color: #542A59;
+    margin-right: 8px;
+}
+.tags-js {
+    font-size: 29px;
+}
+.tags-css {
+    font-size: 15px;
+}
+.tags-html {
+    font-size: 23px;
+}
+.tags-canvas {
+    font-size: 12px;
+}
+.tags-prototype {
+    font-size: 14px;
+}
+.tags-html5 {
+    font-size: 16px;
+}
+.tags-jquery {
+    font-size: 19px;
+}
+.tags-echarts {
+    font-size: 13px;
+}
