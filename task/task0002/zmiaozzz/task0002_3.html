@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002_3</title>
+    <link rel="stylesheet" href="css/task0002_3.css">
+</head>
+<body>
+<div class="carousel">
+    <div class="slide">
+        <div id="slide1" class="item">
+            <img src="img/slide-01.jpg">
+        </div>
+        <div id="slide2" class="item">
+            <img src="img/slide-02.jpg">
+        </div>
+        <div id="slide3" class="item">
+            <img src="img/slide-03.jpg">
+        </div>
+        <div id="slide4" class="item">
+            <img src="img/slide-04.jpg">
+        </div>
+        <div id="slide5" class="item ">
+            <img src="img/slide-05.jpg">
+        </div>
+    </div>
+    <ol class="indicator">
+        <li id="indicator1" slide-to="1"></li>
+        <li id="indicator2" slide-to="2"></li>
+        <li id="indicator3" slide-to="3"></li>
+        <li id="indicator4" slide-to="4"></li>
+        <li id="indicator5" slide-to="5"></li>
+    </ol>
+
+</div>
+<div id="control-panel">
+    <input id="pos-order" type="button" value="正序循环">
+    <input id="neg-order" type="button" value="逆序循环">
+    <input id="cycle" type="button" value="循环">
+    <input id="non-cycle" type="button" value="不循环">
+    <input id="time" type="text" placeholder="输入间隔时间" value=""><span>s</span>
+</div>
+<script src="js/util.js"></script>
+<script src="js/task0002_3.js"></script>
+</body>
+</html>

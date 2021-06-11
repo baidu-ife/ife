@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>task0002</title>
+    <style>
+        .drag-wrap,
+        .eventTest {
+            width: 300px;
+            height: 200px;
+            background: #A660B7;
+        }
+        .drag-head {
+            width: 300px;
+            height: 80px;
+            background: #11a3ff;
+        }
+    </style>
+</head>
+<body>
+<input id="number1" type="text">
+<input id="number2" class="testClass1 testClass2" type="text">
+<span id="result" fff-f="123"></span>
+<button id="add1-btn" value="add">add</button>
+<div id="div1">
+    <div class="div1" fff-f="123">
+        <div></div>
+    </div>
+    <div class="div2">
+        <span about="div3"></span>
+    </div>
+    <div class="div3">
+        <div about="div3"></div>
+    </div>
+</div>
+<div id="div2">
+    <div class="div1">
+        <div></div>
+    </div>
+    <div class="div2">
+        <div about="div3"></div>
+    </div>
+    <div class="div3">
+        <div about="div3"></div>
+    </div>
+</div>
+
+<div class="eventTest">
+</div>
+
+<div class="drag-wrap">
+    <div class="drag-head"></div>
+</div>
+
+<ul id="list">
+    <li id="item1">Simon</li>
+    <li id="item2">Kenner</li>
+    <li id="item3">Erik</li>
+</ul>
+<script src="js/util.js"></script>
+<script>
+//    function $(id) {
+//        return document.getElementById(id);
+//    }
+//
+//    function add(num1, num2) {
+//        return num1 + num2;
+//    }
+//    function renderResult(result) {
+//        $("result").innerHTML = result;
+//    }
+//    function addEventHandle() {
+//        var num1 = $("number1").value;
+//        var num2 = $("number2").value;
+//        var result = add(num1,num2);
+//        renderResult(result);
+//    }
+//    function initEvent() {
+//        $("addbtn").addEventListener("click", addEventHandle, false);
+//    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文章</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- header -->
+<div class="header">
+    <div class="header-wrap">
+        <p>zmiaozzz</p>
+        <ul class="menu-wrap">
+            <li class="submenu"><a href="index.html">首页</a></li>
+            <li class="submenu"><a href="blog.html">文章</a></li>
+            <li class="submenu"><a href="gallery.html">作品</a></li>
+            <li class="submenu"><a href="about.html">关于</a></li>
+        </ul>
+    </div>
+    <a class="logo" href="https://github.com/" target="_blank">
+        <img src="img/icon-github.png" >
+    </a>
+</div>
+<!-- 页面中间内容 -->
+<div class="blog-main">
+    <div class="blog-container clearfix">
+        <div class="blog-wrap ">
+            <div class="blog">
+                <div class="item">
+                    <div class="item-top">4.23</div>
+                    <div class="item-bottom">CSS</div>
+                </div>
+                <h1>Github图标在浏览器窗口小于980px时消失</h1>
+                <h2>z-index</h2>
+                <p>Github图标采用绝对定位的方式定位到页面header的右下角。要求Github图标在浏览器窗口小于980px时消失，因此设置当浏览器窗口小于980px时，Github图标隐藏在header之下。</p>
+                <p>z-index只对于定位元素起作用。因此需要对设置z-index的元素设置定位方式。</p>
+                <span>zmiaozzz发表于2015年4月23日</span>
+            </div>
+            <div class="blog">
+                <div class="item">
+                    <div class="item-top">4.23</div>
+                    <div class="item-bottom">CSS</div>
+                </div>
+                <h1>小问题解决</h1>
+                <h2>已解决</h2>
+                <p>1. float元素等高：先设置padding-bottom为一个较高值a，然后设置margin-bottom为-a。</p>
+                <p>2. 颜色渐变设置background-image:linear-gradient，但是在ie8下不兼容，ie8下使用滤镜，但是颜色变化从起始到最终只能单一变化。</p>
+                <p>3. 图片下面有空隙，设置display:block或者vertical-align:bottom解决。</p>
+                <p>4. 圆角矩形，利用border-radius属性设置。在ie8下不兼容，可以画圆解决，由于代码较长，没有使用。</p>
+                <p>5. 瀑布流布局中使用的是传统的多列布局方式。</p>
+                <span>zmiaozzz发表于2015年4月23日</span>
+            </div>
+            <div class="blog">
+                <div class="item">
+                    <div class="item-top">4.23</div>
+                    <div class="item-bottom">CSS</div>
+                </div>
+                <h1>小问题</h1>
+                <h2>未解决</h2>
+                <p>1. 背景图片的显示，ie8不支持background-size属性，因此显示的图片与正常浏览器上不同。网上资料说使用滤镜，我用了没效果。没有找到比较好的解决方式。</p>
+                <p>2. 对于p标签中文字，若换行，在浏览器中显示出现空格，没有找到解决方法。因此html中的文字没有换行。</p>
+                <p></p>
+                <span>zmiaozzz发表于2015年4月23日</span>
+            </div>
+
+
+            <ul class="page-container">
+                <li class="page unenable"><a href="#">第一页</a></li>
+                <li class="page unenable"><a href="#">上一页</a></li>
+                <li class="page clicked"><a href="#">1</a></li>
+                <li class="page"><a href="#">2</a></li>
+                <li class="page"><a href="#">3</a></li>
+                <li class="page"><a href="#">4</a></li>
+                <li class="page">...</li>
+                <li class="page"><a href="#">下一页</a></li>
+                <li class="page"><a href="#">最后页</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-wrap">
+            <div class="sub-container">
+                <span class="search">
+                    <span class="search-img"></span>
+                    <input class="search-input" type="text" placeholder="Keywords">
+                    <input class="search-button" type="button" value="GO">
+                </span>
+            </div>
+            <div class="sub-container">
+                <div class="nav"><a href="#">HTML</a></div>
+                <div class="nav nav-clicked"><a href="#">CSS</a></div>
+                <div class="nav"><a href="#">Javascript</a></div>
+                <div class="nav"><a href="#">其他文章</a></div>
+            </div>
+            <div class="sub-container">
+                <span class="calendar-top">
+                    <a class="click-left" href="#">&lt;</a>
+                    <span>2015.04</span>
+                    <a class="click-right" href="#">&gt;</a>
+                </span>
+                <div class="calendar-body-container">
+                <table class="calendar-body" rules="rows" >
+                    <tbody >
+                    <tr>
+                        <td>M</td>
+                        <td>T</td>
+                        <td>W</td>
+                        <td>T</td>
+                        <td>F</td>
+                        <td>S</td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td class="clicked">8</td>
+                        <td>9</td>
+                        <td class="noted">10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            <div class="sub-container">
+                <div class="tag-title">Tags</div>
+                <div class="tag">
+                    <span class="tag1">JavaScript</span><span class="tag2">CSS</span><span class="tag3">flex</span>
+                </div>
+                <div class="tag">
+                    <span class="tag4">webGL</span><span class="tag5">HTML</span><span class="tag6">Canvas</span>
+                </div>
+                <div class="tag">
+                    <span class="tag7">prototype</span><span class="tag8">HTML5</span><span class="tag9">grid</span><span class="tag10">nodeJS</span>
+                </div>
+                <div class="tag">
+                    <span class="tag11">CSS3</span><span class="tag12">jQuery</span><span class="tag13">ECharts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer -->
+<div class="footer">
+    <ul class="footer-menu-wrap">
+        <li class="footer-submenu"><a href="index.html">首页</a></li>
+        <li class="footer-submenu"><a href="blog.html">文章</a></li>
+        <li class="footer-submenu"><a href="gallery.html">作品</a></li>
+        <li class="footer-submenu"><a href="about.html">关于</a></li>
+    </ul>
+    <table class="friendlink-container">
+        <tr class="friendlink first">
+            <td>学习资料</td>
+            <td>学习资料</td>
+            <td>友情链接</td>
+            <td>学习资料</td>
+            <td>友情链接</td>
+        </tr>
+        <tr class="friendlink">
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+        </tr>
+        <tr class="friendlink">
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+        </tr>
+        <tr class="friendlink">
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+        </tr>
+        <tr class="friendlink">
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+        </tr>
+        <tr class="friendlink">
+            <td><a href="#">LINK</a></td>
+            <td></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td></td>
+        </tr>
+        <tr class="friendlink">
+            <td><a href="#">LINK</a></td>
+            <td></td>
+            <td><a href="#">LINK</a></td>
+            <td><a href="#">LINK</a></td>
+            <td></td>
+        </tr>
+    </table>
+    <p>版权信息</p>
+    <div class="footer-logo"><img src="img/icon-github.png"></div>
+</div>
+
+</body>
+</html>

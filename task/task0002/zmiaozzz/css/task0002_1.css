@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 980px;
+    background-color: #EEE;
+}
+.main-wrap {
+    width: 980px;
+    margin: 0 auto;
+}
+.content-wrap {
+    width: 100%;
+}
+#first-input,
+#second-input,
+#third-input {
+    width: 300px;
+}
+#display-button1,
+#display-button2,
+#display-button3 {
+    display: block;
+    margin-top: 10px;
+}
+#first-display,
+#second-display,
+#third-display {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.content-wrap h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.content-wrap p {
+    margin-bottom: 10px;
+}
+.content-wrap span {
+    display: none;
+    color: #FE0000;
+    font-size: 12px;
+}
